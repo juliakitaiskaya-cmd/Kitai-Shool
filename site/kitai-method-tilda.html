@@ -1,0 +1,395 @@
+<!-- ============================================================
+     Kitai School — «Методика и платформа» (/method)
+     Stand-alone блок для Tilda (T123). CTA → #popup:zayavka
+     Демо-ссылки: method.kitai-school.ru/demo — проверьте актуальность.
+     ============================================================ -->
+<div id="ks-mtd">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    #ks-mtd{
+      --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+      --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;
+      --cream:#FAF7F2;--cream-2:#F3EDE3;--highlight:#FCF6E2;
+      --hairline:#EAE3D8;--hairline-2:#DED5C6;
+      font-family:'Inter',-apple-system,Arial,sans-serif !important;color:var(--ink) !important;background:var(--cream);line-height:1.5;
+    }
+    #ks-mtd *{box-sizing:border-box}
+    #ks-mtd h1,#ks-mtd h2,#ks-mtd h3,#ks-mtd h4,#ks-mtd p,#ks-mtd ul{margin:0}
+    #ks-mtd ul{padding:0;list-style:none}
+    #ks-mtd a{text-decoration:none;color:inherit}
+    #ks-mtd [style*="Cormorant"]{font-family:'Cormorant Garamond',Georgia,serif !important}
+    #ks-mtd .ks-in{max-width:1120px;margin:0 auto;padding:0 24px}
+    #ks-mtd .ks-sec{padding:74px 0}
+    #ks-mtd .ks-eyebrow{font:600 12.5px/1 'Inter';letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin-bottom:14px}
+    #ks-mtd .ks-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:40px;line-height:1.12;margin-bottom:16px}
+    #ks-mtd .ks-h2 i{font-style:italic;color:var(--brick)}
+    #ks-mtd .ks-sub{font:400 17px/1.6 'Inter';color:var(--ink-2);max-width:680px}
+    #ks-mtd .ks-btn{display:inline-flex;align-items:center;gap:9px;border-radius:8px;font:600 15px/1 'Inter';padding:15px 26px;transition:.18s;cursor:pointer}
+    #ks-mtd .ks-btn-primary{background:var(--brick);color:#fff;box-shadow:0 8px 20px rgba(164,30,58,.22)}
+    #ks-mtd .ks-btn-primary:hover{background:var(--brick-deep);transform:translateY(-1px)}
+    #ks-mtd .ks-btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--hairline-2)}
+    #ks-mtd .ks-btn-ghost:hover{border-color:var(--brick);color:var(--brick)}
+    #ks-mtd .ks-arr{transition:transform .18s}#ks-mtd .ks-btn:hover .ks-arr{transform:translateX(3px)}
+    #ks-mtd .ks-img{display:block;width:100%;height:100%;object-fit:cover;background:linear-gradient(135deg,#EFE7DA,#E4D9C7)}
+
+    /* HERO */
+    #ks-mtd .ks-hero{background:radial-gradient(120% 90% at 80% -10%,#FDF8F1,var(--cream) 60%,var(--cream-2));border-bottom:1px solid var(--hairline)}
+    #ks-mtd .ks-hero-in{padding:72px 0 62px;text-align:center}
+    #ks-mtd .ks-h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:52px;line-height:1.08;margin-bottom:18px}
+    #ks-mtd .ks-h1 i{font-style:italic;color:var(--brick)}
+    #ks-mtd .ks-hero-lead{font:400 18px/1.6 'Inter';color:var(--ink-2);max-width:640px;margin:0 auto 32px}
+    #ks-mtd .ks-hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:660px;margin:0 auto 32px}
+    #ks-mtd .ks-hero-stats div{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:22px 14px}
+    #ks-mtd .ks-hero-stats b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;color:var(--brick);line-height:1}
+    #ks-mtd .ks-hero-stats span{font:500 13px/1.35 'Inter';color:var(--ink-2);display:block;margin-top:7px}
+    #ks-mtd .ks-hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+    /* ODIN */
+    #ks-mtd .ks-odin{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 0}
+    #ks-mtd .ks-odin span{background:#fff;border:1px solid var(--hairline);border-radius:8px;padding:12px 16px;font:500 14.5px/1.3 'Inter';color:var(--ink-2)}
+    #ks-mtd .ks-odin span b{color:var(--brick);font-weight:700}
+    #ks-mtd .ks-mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+    #ks-mtd .ks-mcard{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:22px}
+    #ks-mtd .ks-mcard .ic{width:40px;height:40px;border-radius:10px;background:var(--brick-soft);display:flex;align-items:center;justify-content:center;color:var(--brick);margin-bottom:14px}
+    #ks-mtd .ks-mcard .ic svg{width:20px;height:20px}
+    #ks-mtd .ks-mcard h4{font:600 15.5px/1.3 'Inter';margin-bottom:5px}
+    #ks-mtd .ks-mcard p{font:400 14px/1.55 'Inter';color:var(--ink-2)}
+
+    /* 5 STEPS (dark) */
+    #ks-mtd .ks-steps-sec{background:var(--ink);color:#fff}
+    #ks-mtd .ks-steps-sec .ks-h2{color:#fff}
+    #ks-mtd .ks-steps-sec .ks-sub{color:rgba(255,255,255,.72)}
+    #ks-mtd .ks-lessline{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:8px 16px;font:600 13.5px/1 'Inter';color:#fff;margin-top:18px}
+    #ks-mtd .ks-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+    #ks-mtd .ks-step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:22px 16px}
+    #ks-mtd .ks-step .n{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px;color:#E9A6B4;line-height:1}
+    #ks-mtd .ks-step h4{font:600 14.5px/1.3 'Inter';margin:10px 0 5px}
+    #ks-mtd .ks-step p{font:400 13px/1.45 'Inter';color:rgba(255,255,255,.62)}
+    #ks-mtd .ks-noimpro{margin-top:26px;font:500 15px/1.5 'Inter';color:rgba(255,255,255,.9)}
+
+    /* 12 MODULES (accordion) */
+    #ks-mtd .ks-mods{max-width:820px}
+    #ks-mtd .ks-mods details{background:#fff;border:1px solid var(--hairline);border-radius:12px;margin-bottom:10px;overflow:hidden}
+    #ks-mtd .ks-mods summary{list-style:none;cursor:pointer;padding:18px 20px;font:600 16px/1.4 'Inter';display:flex;justify-content:space-between;gap:14px;align-items:center}
+    #ks-mtd .ks-mods summary::-webkit-details-marker{display:none}
+    #ks-mtd .ks-mods summary:after{content:"+";font-size:22px;color:var(--brick);transition:.2s}
+    #ks-mtd .ks-mods details[open] summary:after{transform:rotate(45deg)}
+    #ks-mtd .ks-mods ol{margin:0;padding:0 20px 20px 20px;list-style:none;counter-reset:m;columns:2;column-gap:26px}
+    #ks-mtd .ks-mods ol li{counter-increment:m;position:relative;padding:8px 0 8px 34px;font:400 14.5px/1.4 'Inter';color:var(--ink-2);break-inside:avoid}
+    #ks-mtd .ks-mods ol li:before{content:counter(m);position:absolute;left:0;top:7px;width:22px;height:22px;border-radius:6px;background:var(--brick-soft);color:var(--brick);font:600 12px/22px 'Inter';text-align:center}
+
+    /* 11 criteria */
+    #ks-mtd .ks-crit{background:var(--cream-2)}
+    #ks-mtd .ks-crit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+    #ks-mtd .ks-crit-grid div{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid var(--hairline);border-radius:10px;padding:14px 16px;font:500 14px/1.4 'Inter'}
+    #ks-mtd .ks-crit-grid div b{flex:0 0 auto;width:24px;height:24px;border-radius:6px;background:var(--ink);color:#fff;font:600 12px/24px 'Inter';text-align:center}
+    #ks-mtd .ks-callout{margin-top:22px;background:var(--highlight);border:1px solid #EDE2C2;border-radius:12px;padding:18px 22px;font:400 14.5px/1.6 'Inter';color:var(--ink-2)}
+
+    /* PLATFORM modules */
+    #ks-mtd .ks-pf{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;margin-bottom:22px}
+    #ks-mtd .ks-pf:nth-child(even) .ks-pf-txt{order:2}
+    #ks-mtd .ks-pf-shot{border-radius:16px;overflow:hidden;aspect-ratio:16/10;box-shadow:0 14px 36px rgba(44,36,32,.14);border:1px solid var(--hairline)}
+    #ks-mtd .ks-pf .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:var(--brick);color:#fff;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;margin-bottom:12px}
+    #ks-mtd .ks-pf h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;margin-bottom:8px}
+    #ks-mtd .ks-pf p{font:400 15px/1.6 'Inter';color:var(--ink-2)}
+    #ks-mtd .ks-pf .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+    #ks-mtd .ks-pf .tags span{font:600 11.5px/1 'Inter';background:var(--cream-2);border:1px solid var(--hairline);color:var(--ink-2);border-radius:6px;padding:6px 9px}
+    #ks-mtd .ks-extra{background:#fff;border:1px dashed var(--hairline-2);border-radius:14px;padding:22px 24px;margin-top:6px}
+    #ks-mtd .ks-extra b{font:600 14.5px/1.4 'Inter'}
+    #ks-mtd .ks-extra span{font:400 14.5px/1.6 'Inter';color:var(--ink-2)}
+
+    /* how together (dark schema) */
+    #ks-mtd .ks-together{background:var(--ink);color:#fff}
+    #ks-mtd .ks-together .ks-h2{color:#fff}
+    #ks-mtd .ks-together .ks-sub{color:rgba(255,255,255,.72)}
+    #ks-mtd .ks-flow{display:flex;align-items:stretch;gap:12px;margin-top:34px;flex-wrap:wrap}
+    #ks-mtd .ks-fnode{flex:1 1 190px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px 20px;position:relative}
+    #ks-mtd .ks-fnode .ic{width:42px;height:42px;border-radius:11px;background:rgba(233,166,180,.16);display:flex;align-items:center;justify-content:center;color:#E9A6B4;margin-bottom:14px}
+    #ks-mtd .ks-fnode .ic svg{width:22px;height:22px}
+    #ks-mtd .ks-fnode h4{font:600 15px/1.3 'Inter';margin-bottom:6px}
+    #ks-mtd .ks-fnode p{font:400 13px/1.5 'Inter';color:rgba(255,255,255,.62)}
+
+    /* comparison */
+    #ks-mtd .ks-cmp{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1px solid var(--hairline);border-radius:14px;overflow:hidden}
+    #ks-mtd .ks-cmp th,#ks-mtd .ks-cmp td{padding:16px 18px;text-align:left;font:400 14.5px/1.45 'Inter';border-bottom:1px solid var(--hairline);vertical-align:top}
+    #ks-mtd .ks-cmp thead th{font:600 13px/1.2 'Inter';background:var(--cream-2);color:var(--ink)}
+    #ks-mtd .ks-cmp thead th:last-child{color:var(--brick)}
+    #ks-mtd .ks-cmp td:first-child{font-weight:600;color:var(--ink)}
+    #ks-mtd .ks-cmp td:last-child{color:var(--ink);font-weight:500}
+    #ks-mtd .ks-cmp tr:last-child td{border-bottom:0}
+
+    /* demo */
+    #ks-mtd .ks-demo{background:radial-gradient(120% 120% at 20% 0,#FDF8F1,var(--cream-2));text-align:center;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+    #ks-mtd .ks-demo .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--hairline);border-radius:999px;padding:8px 16px;font:600 13px/1 'Inter';color:var(--brick);margin-bottom:16px}
+    #ks-mtd .ks-demo-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+
+    /* b2b */
+    #ks-mtd .ks-b2b{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;background:var(--highlight);border:1px solid #EDE2C2;border-radius:18px;padding:32px 36px}
+    #ks-mtd .ks-b2b h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;margin-bottom:6px}
+    #ks-mtd .ks-b2b p{font:400 15px/1.55 'Inter';color:var(--ink-2);max-width:560px}
+
+    /* final */
+    #ks-mtd .ks-final{text-align:center}
+    #ks-mtd .ks-final .ks-h2{max-width:640px;margin:0 auto 16px}
+    #ks-mtd .ks-final .ks-sub{margin:0 auto}
+
+    @media(max-width:960px){
+      #ks-mtd .ks-hero-stats{grid-template-columns:1fr}
+      #ks-mtd .ks-mgrid,#ks-mtd .ks-crit-grid{grid-template-columns:1fr 1fr}
+      #ks-mtd .ks-steps{grid-template-columns:repeat(2,1fr)}
+      #ks-mtd .ks-pf{grid-template-columns:1fr;gap:18px}
+      #ks-mtd .ks-pf:nth-child(even) .ks-pf-txt{order:0}
+      #ks-mtd .ks-mods ol{columns:1}
+      #ks-mtd .ks-cmp thead{display:none}
+      #ks-mtd .ks-cmp,#ks-mtd .ks-cmp tbody,#ks-mtd .ks-cmp tr,#ks-mtd .ks-cmp td{display:block;width:100%}
+      #ks-mtd .ks-cmp td{border-bottom:0;padding:6px 18px}
+      #ks-mtd .ks-cmp tr{border-bottom:1px solid var(--hairline);padding:12px 0}
+      #ks-mtd .ks-cmp td:first-child{padding-top:14px;font-size:16px}
+      #ks-mtd .ks-cmp td:last-child:before{content:"Kitai School: ";color:var(--brick);font-weight:600}
+    }
+    @media(max-width:600px){
+      #ks-mtd .ks-sec{padding:52px 0}#ks-mtd .ks-in{padding:0 18px}
+      #ks-mtd .ks-h1{font-size:36px}#ks-mtd .ks-h2{font-size:30px}
+      #ks-mtd .ks-hero-in{padding:46px 0 40px}#ks-mtd .ks-hero-lead{font-size:16px}
+      #ks-mtd .ks-mgrid,#ks-mtd .ks-crit-grid,#ks-mtd .ks-steps{grid-template-columns:1fr}
+      #ks-mtd .ks-btn{width:100%;justify-content:center}
+      #ks-mtd .ks-b2b{flex-direction:column;align-items:flex-start}
+    }
+  
+    /* Тильда-фикс читаемости тёмных секций */
+    #ks-mtd .ks-steps-sec :is(h1,h2,h3,h4,h5,h6,p,li,figcaption,.role,.cap,.who,.meta,.date,.num,.ks-node,.lead){color:#fff !important}
+    #ks-mtd .ks-steps-sec .ks-sub{color:rgba(255,255,255,.75) !important}
+    #ks-mtd .ks-steps-sec .ks-eyebrow{color:#E9A6B4 !important}
+    #ks-mtd .ks-steps-sec h2 i,#ks-mtd .ks-steps-sec .ks-h2 i{color:#E9A6B4 !important}
+    #ks-mtd .ks-steps-sec .ks-stars{color:#E0A72E !important}
+    #ks-mtd .ks-steps-sec .n{color:#E9A6B4 !important}
+    #ks-mtd .ks-steps-sec .status{color:#8FE0AC !important}
+    #ks-mtd .ks-together :is(h1,h2,h3,h4,h5,h6,p,li,figcaption,.role,.cap,.who,.meta,.date,.num,.ks-node,.lead){color:#fff !important}
+    #ks-mtd .ks-together .ks-sub{color:rgba(255,255,255,.75) !important}
+    #ks-mtd .ks-together .ks-eyebrow{color:#E9A6B4 !important}
+    #ks-mtd .ks-together h2 i,#ks-mtd .ks-together .ks-h2 i{color:#E9A6B4 !important}
+    #ks-mtd .ks-together .ks-stars{color:#E0A72E !important}
+    #ks-mtd .ks-together .n{color:#E9A6B4 !important}
+    #ks-mtd .ks-together .status{color:#8FE0AC !important}
+    #ks-mtd .ks-step :is(h1,h2,h3,h4,h5,h6,p,li,figcaption,.role,.cap,.who,.meta,.date,.num,.ks-node,.lead){color:#fff !important}
+    #ks-mtd .ks-step .ks-sub{color:rgba(255,255,255,.75) !important}
+    #ks-mtd .ks-step .ks-eyebrow{color:#E9A6B4 !important}
+    #ks-mtd .ks-step h2 i,#ks-mtd .ks-step .ks-h2 i{color:#E9A6B4 !important}
+    #ks-mtd .ks-step .ks-stars{color:#E0A72E !important}
+    #ks-mtd .ks-step .n{color:#E9A6B4 !important}
+    #ks-mtd .ks-step .status{color:#8FE0AC !important}
+  </style>
+
+  <!-- HERO -->
+  <section class="ks-hero">
+    <div class="ks-in ks-hero-in">
+      <div class="ks-eyebrow">Методика и платформа</div>
+      <h1 class="ks-h1">Как устроено обучение <i>в Kitai School</i></h1>
+      <p class="ks-hero-lead">Не курс, а система: от структуры урока до алгоритма повторения слов. Авторская методика «ОДиН М» и собственная платформа работают как единое целое.</p>
+      <div class="ks-hero-stats">
+        <div><b>20 лет</b><span>развитию методики</span></div>
+        <div><b>2292</b><span>слова в тренажёре</span></div>
+        <div><b>11</b><span>критериев контроля урока</span></div>
+      </div>
+      <div class="ks-hero-cta">
+        <a class="ks-btn ks-btn-primary" href="https://method.kitai-school.ru/demo" target="_blank" rel="noopener">Попробовать платформу<span class="ks-arr">→</span></a>
+        <a class="ks-btn ks-btn-ghost" href="#popup:zayavka">Записаться на урок</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- МЕТОДИКА ОДиН М -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Методика «ОДиН М»</div>
+      <h2 class="ks-h2">Система, <i>а не набор приёмов</i></h2>
+      <p class="ks-sub">«ОДиН М» — авторская методика преподавания китайского как иностранного. Её более 20 лет развивает главный методист школы Татьяна Иоффе. По ней работают все 30+ преподавателей — поэтому нет риска «повезёт / не повезёт с преподавателем».</p>
+      <div class="ks-odin">
+        <span><b>О</b>знакомим с приёмами</span>
+        <span><b>Д</b>адим материалы</span>
+        <span><b>и Н</b>аучим</span>
+        <span><b>М</b>етодике</span>
+      </div>
+      <div class="ks-mgrid">
+        <div class="ks-mcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div><h4>Есть автор</h4><p>Татьяна Иоффе: 30 лет практики, победитель Всероссийского «Язык дружбы» и Международного конкурса институтов Конфуция РФ.</p></div>
+        <div class="ks-mcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h4>Под китайский язык</h4><p>Разработана специально для китайского, а не адаптирована из методик английского и европейских языков.</p></div>
+        <div class="ks-mcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 19v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 19v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Единый стандарт</h4><p>Одна система для всех преподавателей — снимает риск «у каждого свой учебник и свой подход».</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 ЭТАПОВ -->
+  <section class="ks-sec ks-steps-sec">
+    <div class="ks-in">
+      <div class="ks-eyebrow" style="color:#E9A6B4">Структура урока</div>
+      <h2 class="ks-h2">Пять этапов <i>каждого занятия</i></h2>
+      <p class="ks-sub">Урок строится по единой структуре — ученик всегда понимает, что и зачем происходит.</p>
+      <div class="ks-lessline"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>55 минут · единый ритм</div>
+      <div class="ks-steps">
+        <div class="ks-step"><div class="n">I</div><h4>Разминка</h4><p>Настройка на язык, фонетика, вход в тему.</p></div>
+        <div class="ks-step"><div class="n">II</div><h4>Повторение</h4><p>Закрепление пройденного в речи.</p></div>
+        <div class="ks-step"><div class="n">III</div><h4>Новый материал</h4><p>Лексика, грамматика, иероглифика по системе.</p></div>
+        <div class="ks-step"><div class="n">IV</div><h4>Практика</h4><p>Отработка в реальных ситуациях, говорение.</p></div>
+        <div class="ks-step"><div class="n">V</div><h4>Рефлексия</h4><p>Итог, обратная связь, план на дом.</p></div>
+      </div>
+      <p class="ks-noimpro">Никакой импровизации — только система.</p>
+    </div>
+  </section>
+
+  <!-- 12 МОДУЛЕЙ (аккордеон) -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Глубина методики</div>
+      <h2 class="ks-h2">12 модулей — <i>все аспекты преподавания</i></h2>
+      <p class="ks-sub" style="margin-bottom:24px">Методика охватывает не только «разговорную практику». Полная программа лежит в основе курса для преподавателей «ОДиН М».</p>
+      <div class="ks-mods">
+        <details>
+          <summary>Развернуть 12 модулей методики</summary>
+          <ol>
+            <li>Общие вопросы методики</li>
+            <li>Обучение фонетике</li>
+            <li>Обучение грамматике</li>
+            <li>Обучение лексике</li>
+            <li>Обучение аудированию</li>
+            <li>Обучение чтению</li>
+            <li>Обучение говорению</li>
+            <li>Обучение иероглифике и письму</li>
+            <li>Лингвострановедение</li>
+            <li>Подготовка к экзаменам YCT, HSK, HSKK</li>
+            <li>Лингвокоучинг в преподавании</li>
+            <li>Конструирование современного урока</li>
+          </ol>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТРОЛЬ 11 КРИТЕРИЕВ -->
+  <section class="ks-sec ks-crit">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Контроль качества</div>
+      <h2 class="ks-h2">Каждый урок разбирается <i>по 11 критериям</i></h2>
+      <p class="ks-sub">Методист регулярно оценивает уроки по единому чек-листу — это не разовая проверка, а постоянная супервизия.</p>
+      <div class="ks-crit-grid">
+        <div><b>1</b>Соблюдение плана и структуры урока</div>
+        <div><b>2</b>Темп и тайминг занятия</div>
+        <div><b>3</b>Баланс китайского и русского в речи</div>
+        <div><b>4</b>Корректность объяснения материала</div>
+        <div><b>5</b>Работа над произношением и тонами</div>
+        <div><b>6</b>Исправление и разбор ошибок</div>
+        <div><b>7</b>Вовлечённость и активность ученика</div>
+        <div><b>8</b>Поощрение и обратная связь</div>
+        <div><b>9</b>Отработка новой лексики в речи</div>
+        <div><b>10</b>Проверка домашнего задания</div>
+        <div><b>11</b>Итог урока и постановка цели</div>
+      </div>
+      <div class="ks-callout"><b>Что при проблеме?</b> Методист корректирует подход преподавателя, а при необходимости меняет преподавателя — бесплатно и без потери учебного времени. <em>Точную формулировку 11 критериев уточните у методиста — этот список приведён по смыслу.</em></div>
+    </div>
+  </section>
+
+  <!-- ПЛАТФОРМА -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Платформа</div>
+      <h2 class="ks-h2">Собственная разработка, <i>а не Zoom + сервисы</i></h2>
+      <p class="ks-sub" style="margin-bottom:34px">Всё для практики между уроками — в одном месте, настроено под методику школы.</p>
+
+      <div class="ks-pf">
+        <div class="ks-pf-txt"><div class="num" style="font-family:'Cormorant Garamond',serif">1</div><h3 style="font-family:'Cormorant Garamond',serif">Тренажёр слов</h3><p>2292 слова уровней HSK 1–4, 6 режимов тренировки и алгоритм интервальных повторений (SRS) — слова возвращаются ровно тогда, когда начинают забываться.</p><div class="tags"><span>2292 слова</span><span>6 режимов</span><span>SRS</span></div></div>
+        <div class="ks-pf-shot"><img class="ks-img" src="https://static.tildacdn.com/tild3532-3939-4362-a663-653730316666/trainer.png" alt="Тренажёр слов Kitai School"></div>
+      </div>
+      <div class="ks-pf">
+        <div class="ks-pf-txt"><div class="num" style="font-family:'Cormorant Garamond',serif">2</div><h3 style="font-family:'Cormorant Garamond',serif">AI-разбор произношения</h3><p>Система оценивает речь по слогам, показывает, где сбита тональность, и подсказывает, как поправить. Тоны ставятся не «на слух преподавателя», а с объективной обратной связью.</p><div class="tags"><span>оценка по слогам</span><span>постановка тонов</span></div></div>
+        <div class="ks-pf-shot"><img class="ks-img" src="https://static.tildacdn.com/tild6239-6334-4433-b661-353839626635/pronunciation.png" alt="AI-разбор произношения"></div>
+      </div>
+      <div class="ks-pf">
+        <div class="ks-pf-txt"><div class="num" style="font-family:'Cormorant Garamond',serif">3</div><h3 style="font-family:'Cormorant Garamond',serif">Прописи иероглифов</h3><p>Образец рядом с полем для написания, проверка правильного порядка черт. Иероглифика ставится сразу верно, а не переучивается потом.</p><div class="tags"><span>порядок черт</span><span>образец рядом</span></div></div>
+        <div class="ks-pf-shot"><img class="ks-img" src="https://static.tildacdn.com/tild6533-3561-4335-a366-306564636633/stroke.png" alt="Прописи иероглифов с проверкой порядка черт"></div>
+      </div>
+      <div class="ks-pf">
+        <div class="ks-pf-txt"><div class="num" style="font-family:'Cormorant Garamond',serif">4</div><h3 style="font-family:'Cormorant Garamond',serif">Персональные задания после урока</h3><p>Около 85 упражнений формируются автоматически по материалу именно вашего занятия и вашим ошибкам (блок «Мои ошибки») — а не универсальная домашка «для всех».</p><div class="tags"><span>~85 упражнений</span><span>по вашим ошибкам</span></div></div>
+        <div class="ks-pf-shot"><img class="ks-img" src="https://static.tildacdn.com/tild6135-3161-4430-a661-613435326462/home.png" alt="Персональные задания и личный кабинет"></div>
+      </div>
+      <div class="ks-pf">
+        <div class="ks-pf-txt"><div class="num" style="font-family:'Cormorant Garamond',serif">5</div><h3 style="font-family:'Cormorant Garamond',serif">Чтение по урокам</h3><p>К каждому уроку — 3+ уникальных текста (рассказы, диалоги, письма) строго на пройденной лексике, с вопросами на понимание. Читать можно с первых занятий.</p><div class="tags"><span>3+ текста к уроку</span><span>вопросы на понимание</span></div></div>
+        <div class="ks-pf-shot"><img class="ks-img" src="https://static.tildacdn.com/tild3034-6562-4464-b962-396237386432/chtenie_uroki.webp" alt="Чтение по урокам"></div>
+      </div>
+      <div class="ks-pf">
+        <div class="ks-pf-txt"><div class="num" style="font-family:'Cormorant Garamond',serif">6</div><h3 style="font-family:'Cormorant Garamond',serif">Личный кабинет / дашборд</h3><p>Прогресс, расписание, ежедневная цель и аналитика — видно, сколько слов освоено и что подтянуть дальше.</p><div class="tags"><span>прогресс</span><span>ежедневная цель</span><span>аналитика</span></div></div>
+        <div class="ks-pf-shot"><img class="ks-img" src="https://static.tildacdn.com/tild3334-3833-4732-b165-643035383566/growth.png" alt="Дашборд и аналитика прогресса"></div>
+      </div>
+
+      <div class="ks-extra"><b>А ещё на платформе: </b><span>словарь по контексту, аудирование, домашние задания, чат с преподавателем, разговорные клубы и геймификация прогресса.</span></div>
+    </div>
+  </section>
+
+  <!-- КАК РАБОТАЮТ ВМЕСТЕ -->
+  <section class="ks-sec ks-together">
+    <div class="ks-in">
+      <div class="ks-eyebrow" style="color:#E9A6B4">Единая система</div>
+      <h2 class="ks-h2">Методика и платформа — <i>не два отдельных плюса</i></h2>
+      <p class="ks-sub">Урок и практика связаны: преподаватель и ученик видят одни и те же данные о прогрессе.</p>
+      <div class="ks-flow">
+        <div class="ks-fnode"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg></div><h4>1. Урок по методике</h4><p>Занятие проходит по единой структуре «ОДиН М».</p></div>
+        <div class="ks-fnode"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></div><h4>2. Платформа собирает практику</h4><p>Автоматически формирует персональный блок упражнений по итогам именно этого урока.</p></div>
+        <div class="ks-fnode"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-5"/></svg></div><h4>3. Прогресс виден обоим</h4><p>На следующем уроке преподаватель видит те же данные и строит занятие с учётом прогресса.</p></div>
+      </div>
+      <p class="ks-sub" style="margin-top:24px;color:rgba(255,255,255,.72)">Так не бывает «урок отдельно, домашка отдельно, а общей картины не видит никто».</p>
+    </div>
+  </section>
+
+  <!-- СРАВНЕНИЕ -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Сравнение</div>
+      <h2 class="ks-h2">Чем это <i>отличается</i></h2>
+      <table class="ks-cmp">
+        <thead><tr><th>Аспект</th><th>Обычное обучение / репетитор</th><th>Kitai School</th></tr></thead>
+        <tbody>
+          <tr><td>Методика</td><td>Учебник + личный опыт преподавателя</td><td>Авторский курс с 20-летней практикой</td></tr>
+          <tr><td>Разбор урока</td><td>Эпизодический контроль или его нет</td><td>Анализ каждого урока по 11 критериям</td></tr>
+          <tr><td>Тренажёр</td><td>Общие приложения (Quizlet и т.п.)</td><td>Настроен под методику школы и ваши ошибки</td></tr>
+          <tr><td>Темп до HSK 3</td><td>Обычно 2–3 года</td><td>8–12 месяцев</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ДЕМО -->
+  <section class="ks-sec ks-demo">
+    <div class="ks-in">
+      <div class="badge"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>7 дней полного доступа</div>
+      <h2 class="ks-h2">Попробуйте платформу <i>сами</i></h2>
+      <p class="ks-sub" style="margin:0 auto">Откройте тренажёр, прописи и разбор произношения — посмотрите изнутри, как устроена практика.</p>
+      <div class="ks-demo-cta">
+        <a class="ks-btn ks-btn-primary" href="https://method.kitai-school.ru/demo" target="_blank" rel="noopener">Открыть демо-доступ<span class="ks-arr">→</span></a>
+        <a class="ks-btn ks-btn-ghost" href="https://method.kitai-school.ru/demo-mini" target="_blank" rel="noopener">Мини-демо без регистрации</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-b2b">
+        <div>
+          <div class="ks-eyebrow">Преподавателям</div>
+          <h3 style="font-family:'Cormorant Garamond',serif">Изучите методику «ОДиН М» сами</h3>
+          <p>«ОДиН М» — не только внутренний инструмент школы, но и коммерческий курс повышения квалификации для преподавателей китайского языка.</p>
+        </div>
+        <a class="ks-btn ks-btn-primary" href="https://kitai-school.ru/course_metodika">Перейти к курсу методики<span class="ks-arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФИНАЛ -->
+  <section class="ks-sec ks-final">
+    <div class="ks-in">
+      <div class="ks-eyebrow" style="text-align:center">Увидеть в действии</div>
+      <h2 class="ks-h2">Посмотрите, как работает методика — <i>на пробном уроке</i></h2>
+      <p class="ks-sub">Проведём диагностику, покажем платформу и структуру занятия вживую. Бесплатно.</p>
+      <div style="margin-top:26px"><a class="ks-btn ks-btn-primary" href="#popup:zayavka">Записаться на пробный урок<span class="ks-arr">→</span></a></div>
+    </div>
+  </section>
+</div>

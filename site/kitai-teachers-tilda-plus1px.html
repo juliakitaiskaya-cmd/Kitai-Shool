@@ -1,0 +1,364 @@
+<!-- ============================================================
+     Kitai School — страница «Преподаватели» (/prepodavateli)
+     Stand-alone блок для Tilda (T123 «HTML-код»). Без шапки/футера.
+     CTA → #popup:zayavka
+     ============================================================ -->
+<div id="ks-tch">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    #ks-tch{
+      --brick:#A41E3A; --brick-deep:#841630; --brick-soft:#F7E6EB;
+      --ink:#2C2420; --ink-2:#5A4F45; --taupe:#8B7D6B;
+      --cream:#FAF7F2; --cream-2:#F3EDE3; --highlight:#FCF6E2;
+      --hairline:#EAE3D8; --hairline-2:#DED5C6;
+      font-family:'Inter',-apple-system,Arial,sans-serif !important; color:var(--ink) !important;
+      background:var(--cream); line-height:1.5;
+    }
+    #ks-tch *{box-sizing:border-box}
+    #ks-tch h1,#ks-tch h2,#ks-tch h3,#ks-tch h4,#ks-tch p,#ks-tch ul{margin:0}
+    #ks-tch ul{padding:0;list-style:none}
+    #ks-tch a{text-decoration:none;color:inherit}
+    #ks-tch [style*="Cormorant"]{font-family:'Cormorant Garamond',Georgia,serif !important}
+    #ks-tch [style*="Noto Serif"]{font-family:'Noto Serif SC',serif !important}
+    #ks-tch .ks-in{max-width:1120px;margin:0 auto;padding:0 24px}
+    #ks-tch .ks-sec{padding:74px 0}
+    #ks-tch .ks-eyebrow{font:600 13.5px/1 'Inter';letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin-bottom:14px}
+    #ks-tch .ks-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:41px;line-height:1.12;color:var(--ink);margin-bottom:16px}
+    #ks-tch .ks-h2 i{font-style:italic;color:var(--brick)}
+    #ks-tch .ks-sub{font:400 18px/1.6 'Inter';color:var(--ink-2);max-width:660px}
+    #ks-tch .ks-btn{display:inline-flex;align-items:center;gap:9px;border-radius:8px;font:600 16px/1 'Inter';padding:15px 26px;transition:.18s;cursor:pointer}
+    #ks-tch .ks-btn-primary{background:var(--brick);color:#fff;box-shadow:0 8px 20px rgba(164,30,58,.22)}
+    #ks-tch .ks-btn-primary:hover{background:var(--brick-deep);transform:translateY(-1px)}
+    #ks-tch .ks-btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--hairline-2)}
+    #ks-tch .ks-btn-ghost:hover{border-color:var(--brick);color:var(--brick)}
+    #ks-tch .ks-arr{transition:transform .18s}
+    #ks-tch .ks-btn:hover .ks-arr{transform:translateX(3px)}
+    #ks-tch .ks-img{display:block;width:100%;height:100%;object-fit:cover;background:linear-gradient(135deg,#EFE7DA,#E4D9C7)}
+
+    /* HERO */
+    #ks-tch .ks-hero{background:radial-gradient(120% 90% at 80% -10%,#FDF8F1,var(--cream) 60%,var(--cream-2));border-bottom:1px solid var(--hairline)}
+    #ks-tch .ks-hero-in{padding:72px 0 60px;text-align:center}
+    #ks-tch .ks-h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:53px;line-height:1.08;color:var(--ink);margin-bottom:20px}
+    #ks-tch .ks-h1 i{font-style:italic;color:var(--brick)}
+    #ks-tch .ks-hero-lead{font:400 19px/1.6 'Inter';color:var(--ink-2);max-width:660px;margin:0 auto 32px}
+    #ks-tch .ks-hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:760px;margin:0 auto 34px}
+    #ks-tch .ks-hero-stats div{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:22px 14px}
+    #ks-tch .ks-hero-stats b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:37px;color:var(--brick);line-height:1}
+    #ks-tch .ks-hero-stats span{font:500 14px/1.35 'Inter';color:var(--ink-2);display:block;margin-top:7px}
+
+    /* CATEGORIES */
+    #ks-tch .ks-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+    #ks-tch .ks-cat{border-radius:16px;padding:28px;border:1px solid var(--hairline);background:#fff}
+    #ks-tch .ks-cat.muted{background:var(--cream-2);border-style:dashed;opacity:.9}
+    #ks-tch .ks-cat.accent{background:var(--ink);color:#fff;border-color:var(--ink)}
+    #ks-tch .ks-cat .tag{display:inline-block;font:600 12.5px/1 'Inter';letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:7px;margin-bottom:16px}
+    #ks-tch .ks-cat.muted .tag{background:#E6DCCB;color:var(--taupe)}
+    #ks-tch .ks-cat .tag.base{background:var(--brick-soft);color:var(--brick)}
+    #ks-tch .ks-cat.accent .tag{background:rgba(255,255,255,.14);color:#E9A6B4}
+    #ks-tch .ks-cat h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;margin-bottom:10px}
+    #ks-tch .ks-cat.accent h3{color:#fff}
+    #ks-tch .ks-cat p{font:400 15.5px/1.55 'Inter';color:var(--ink-2)}
+    #ks-tch .ks-cat.accent p{color:rgba(255,255,255,.72)}
+    #ks-tch .ks-reqs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+    #ks-tch .ks-req{display:flex;gap:13px;align-items:flex-start;background:var(--highlight);border:1px solid #EDE2C2;border-radius:12px;padding:18px 20px}
+    #ks-tch .ks-req svg{flex:0 0 auto;width:22px;height:22px;color:var(--brick);margin-top:1px}
+    #ks-tch .ks-req b{font:600 15.5px/1.3 'Inter';display:block;margin-bottom:3px}
+    #ks-tch .ks-req span{font:400 14.5px/1.5 'Inter';color:var(--ink-2)}
+
+    /* KEY FIGURES */
+    #ks-tch .ks-key{background:var(--cream-2)}
+    #ks-tch .ks-figure{display:grid;grid-template-columns:230px 1fr;gap:30px;background:#fff;border:1px solid var(--hairline);border-radius:18px;padding:30px;margin-bottom:20px;box-shadow:0 8px 24px rgba(44,36,32,.05)}
+    #ks-tch .ks-figure .ph{border-radius:14px;overflow:hidden;aspect-ratio:3/4}
+    #ks-tch .ks-figure h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:29px;color:var(--ink);margin-bottom:4px}
+    #ks-tch .ks-figure .role{font:600 13.5px/1.3 'Inter';letter-spacing:.04em;color:var(--brick);text-transform:uppercase;margin-bottom:16px}
+    #ks-tch .ks-figure li{position:relative;padding-left:22px;font:400 15.5px/1.55 'Inter';color:var(--ink-2);margin-bottom:9px}
+    #ks-tch .ks-figure li:before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:50%;background:var(--brick)}
+
+    /* TEACHERS GRID */
+    #ks-tch .ks-grp-title{font:600 14px/1 'Inter';letter-spacing:.1em;text-transform:uppercase;color:var(--taupe);margin:34px 0 16px}
+    #ks-tch .ks-team{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    #ks-tch .ks-card{background:#fff;border:1px solid var(--hairline);border-radius:16px;padding:24px;box-shadow:0 6px 18px rgba(44,36,32,.05)}
+    #ks-tch .ks-ava{width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:31px;color:#fff;background:linear-gradient(135deg,var(--brick),var(--brick-deep));margin-bottom:16px;overflow:hidden}
+    #ks-tch .ks-ava img{width:100%;height:100%;object-fit:cover}
+    #ks-tch .ks-card h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;color:var(--ink);margin-bottom:3px}
+    #ks-tch .ks-card .cn{font:500 14px/1.3 'Noto Serif SC',serif;color:var(--taupe);margin-bottom:10px}
+    #ks-tch .ks-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+    #ks-tch .ks-b{font:600 12px/1 'Inter';padding:5px 9px;border-radius:6px;background:var(--cream-2);color:var(--ink-2)}
+    #ks-tch .ks-b.native{background:var(--brick-soft);color:var(--brick)}
+    #ks-tch .ks-card p{font:400 14.5px/1.55 'Inter';color:var(--ink-2)}
+
+    /* SYSTEM */
+    #ks-tch .ks-sys{background:var(--ink);color:#fff}
+    #ks-tch .ks-sys .ks-h2{color:#fff}
+    #ks-tch .ks-sys .ks-sub{color:rgba(255,255,255,.72)}
+    #ks-tch .ks-flow{display:flex;align-items:stretch;gap:14px;margin-top:36px;flex-wrap:wrap}
+    #ks-tch .ks-node{flex:1 1 180px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px 20px}
+    #ks-tch .ks-node .ic{width:42px;height:42px;border-radius:11px;background:rgba(233,166,180,.16);display:flex;align-items:center;justify-content:center;color:#E9A6B4;margin-bottom:14px}
+    #ks-tch .ks-node .ic svg{width:22px;height:22px}
+    #ks-tch .ks-node h4{font:600 16.5px/1.3 'Inter';margin-bottom:6px}
+    #ks-tch .ks-node p{font:400 14px/1.5 'Inter';color:rgba(255,255,255,.62)}
+    #ks-tch .ks-node.center-you{background:var(--brick);border-color:var(--brick)}
+    #ks-tch .ks-node.center-you .ic{background:rgba(255,255,255,.16);color:#fff}
+
+    /* SUPPORT (Женни) */
+    #ks-tch .ks-support{display:flex;gap:22px;align-items:center;background:#fff;border:1px solid var(--hairline);border-radius:16px;padding:24px 28px;margin-top:8px}
+    #ks-tch .ks-support .ph{flex:0 0 auto;width:84px;height:84px;border-radius:50%;overflow:hidden;box-shadow:0 6px 16px rgba(44,36,32,.14)}
+    #ks-tch .ks-support h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:23px;margin-bottom:3px}
+    #ks-tch .ks-support .role{font:600 13px/1.3 'Inter';letter-spacing:.03em;color:var(--brick);text-transform:uppercase;margin-bottom:8px}
+    #ks-tch .ks-support p{font:400 15.5px/1.55 'Inter';color:var(--ink-2)}
+
+    /* B2B bridge */
+    #ks-tch .ks-b2b{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;background:var(--highlight);border:1px solid #EDE2C2;border-radius:18px;padding:32px 36px}
+    #ks-tch .ks-b2b h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;color:var(--ink);margin-bottom:6px}
+    #ks-tch .ks-b2b p{font:400 16px/1.55 'Inter';color:var(--ink-2);max-width:560px}
+
+    /* REVIEWS */
+    #ks-tch .ks-reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+    #ks-tch .ks-review{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:24px}
+    #ks-tch .ks-stars{color:#E0A72E;font-size:15px;letter-spacing:2px;margin-bottom:11px}
+    #ks-tch .ks-review p{font:400 15.5px/1.62 'Inter';color:var(--ink);margin-bottom:15px}
+    #ks-tch .ks-review .who{font:600 15px/1.3 'Inter';color:var(--ink)}
+    #ks-tch .ks-review .who span{display:block;font-weight:400;font-size:14px;color:var(--taupe);margin-top:2px}
+
+    /* FINAL */
+    #ks-tch .ks-final{background:radial-gradient(120% 120% at 50% 0,#FDF8F1,var(--cream-2));text-align:center;border-top:1px solid var(--hairline)}
+    #ks-tch .ks-final .ks-h2{max-width:640px;margin:0 auto 16px}
+    #ks-tch .ks-final .ks-sub{margin:0 auto}
+    #ks-tch .ks-final-cta{margin-top:26px}
+
+    /* ADAPTIVE */
+    @media(max-width:960px){
+      #ks-tch .ks-hero-stats{grid-template-columns:repeat(2,1fr)}
+      #ks-tch .ks-cats,#ks-tch .ks-reqs{grid-template-columns:1fr}
+      #ks-tch .ks-team,#ks-tch .ks-reviews{grid-template-columns:1fr 1fr}
+      #ks-tch .ks-figure{grid-template-columns:1fr;gap:22px}
+      #ks-tch .ks-figure .ph{max-width:240px}
+    }
+    @media(max-width:600px){
+      #ks-tch .ks-sec{padding:52px 0}
+      #ks-tch .ks-in{padding:0 18px}
+      #ks-tch .ks-h1{font-size:37px}
+      #ks-tch .ks-h2{font-size:31px}
+      #ks-tch .ks-hero-in{padding:46px 0 40px}
+      #ks-tch .ks-hero-lead{font-size:17px}
+      #ks-tch .ks-team,#ks-tch .ks-reviews{grid-template-columns:1fr}
+      #ks-tch .ks-btn{width:100%;justify-content:center}
+      #ks-tch .ks-b2b{flex-direction:column;align-items:flex-start}
+    }
+  
+    /* Тильда-фикс читаемости тёмных секций */
+    #ks-tch .ks-sys :is(h1,h2,h3,h4,h5,h6,p,li,figcaption,.role,.cap,.who,.meta,.date,.num,.ks-node,.lead){color:#fff !important}
+    #ks-tch .ks-sys .ks-sub{color:rgba(255,255,255,.75) !important}
+    #ks-tch .ks-sys .ks-eyebrow{color:#E9A6B4 !important}
+    #ks-tch .ks-sys h2 i,#ks-tch .ks-sys .ks-h2 i{color:#E9A6B4 !important}
+    #ks-tch .ks-sys .ks-stars{color:#E0A72E !important}
+    #ks-tch .ks-sys .n{color:#E9A6B4 !important}
+    #ks-tch .ks-sys .status{color:#8FE0AC !important}
+  </style>
+
+  <!-- HERO -->
+  <section class="ks-hero">
+    <div class="ks-in ks-hero-in">
+      <div class="ks-eyebrow">Наши преподаватели</div>
+      <h1 class="ks-h1">Команда преподавателей <i>Kitai School</i></h1>
+      <p class="ks-hero-lead">Уроки ведут не случайные репетиторы, а подготовленные педагоги: с профильным образованием, единой методикой «ОДиН М» и постоянным контролем методиста. В команде — и носители языка.</p>
+      <div class="ks-hero-stats">
+        <div><b>30+</b><span>преподавателей</span></div>
+        <div><b>3</b><span>методиста</span></div>
+        <div><b>5+</b><span>носителей языка</span></div>
+        <div><b>20 лет</b><span>развитию методики</span></div>
+      </div>
+      <a class="ks-btn ks-btn-primary" href="#popup:zayavka">Записаться на пробный урок<span class="ks-arr">→</span></a>
+    </div>
+  </section>
+
+  <!-- КАК ОТБИРАЕМ -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Как мы отбираем преподавателей</div>
+      <h2 class="ks-h2">Не «просто знающие язык», <i>а система</i></h2>
+      <p class="ks-sub">На рынке репетиторов китайского встречаются три категории специалистов. Мы объясняем разницу честно — чтобы вы понимали, кто именно проведёт ваш урок.</p>
+      <div class="ks-cats">
+        <div class="ks-cat muted">
+          <span class="tag">Таких у нас нет</span>
+          <h3 style="font-family:'Cormorant Garamond',serif">Просто знающие язык</h3>
+          <p>Знают китайский, но не владеют методикой преподавания. Могут «поговорить», но не выстроить системный путь к результату.</p>
+        </div>
+        <div class="ks-cat">
+          <span class="tag base">Основной состав</span>
+          <h3 style="font-family:'Cormorant Garamond',serif">Опытные преподаватели</h3>
+          <p>Педагоги с профильным образованием и опытом. Работают по единой методике школы под постоянным контролем методистов.</p>
+        </div>
+        <div class="ks-cat accent">
+          <span class="tag">Высшая квалификация</span>
+          <h3 style="font-family:'Cormorant Garamond',serif">Ведущие эксперты</h3>
+          <p>15+ лет опыта, авторы методики и пособий. Не только ведут уроки, но и обучают других преподавателей школы.</p>
+        </div>
+      </div>
+      <div class="ks-reqs">
+        <div class="ks-req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg><div><b>Образование + опыт</b><span>Педагогическое образование и реальная практика преподавания — обязательны.</span></div></div>
+        <div class="ks-req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><div><b>Методика «ОДиН М»</b><span>После найма — обучение единой авторской методике школы, без «своих учебников».</span></div></div>
+        <div class="ks-req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><div><b>Контроль каждого урока</b><span>Регулярная супервизия: методист разбирает уроки по чек-листу из 11 критериев.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КЛЮЧЕВЫЕ ФИГУРЫ -->
+  <section class="ks-sec ks-key">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Ключевые фигуры</div>
+      <h2 class="ks-h2">Те, кто <i>задаёт стандарт</i></h2>
+      <div class="ks-figure">
+        <div class="ph"><img class="ks-img" src="https://static.tildacdn.com/tild3236-6634-4764-b564-653936653538/yulia_komanda.webp" alt="Юлия Горяина"></div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif">Юлия Горяина</h3>
+          <div class="role">Основатель школы · преподаватель</div>
+          <ul>
+            <li>Преподаватель МГУ, Высшая школа бизнеса (программа Doing Business with China)</li>
+            <li>Докторант Шаньдунского университета (г. Цзинань); диплом Столичного университета экономики и бизнеса (г. Пекин), специальность «Китайский язык»</li>
+            <li>Преподаватель в 4-м поколении, переводчик, опыт 20+ лет</li>
+            <li>Член Ассоциации развития синологии и Ассоциации преподавателей китайского языка РФ</li>
+            <li>Повышение квалификации: Stanford, Harvard, Пекинский университет, Пекинский университет языка и культуры</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ks-figure">
+        <div class="ph"><img class="ks-img" src="https://static.tildacdn.com/tild3932-3230-4336-a566-663163353966/tatyana_komanda.webp" alt="Татьяна Иоффе"></div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif">Татьяна Иоффе</h3>
+          <div class="role">Главный методист · автор методики «ОДиН М»</div>
+          <ul>
+            <li>Доцент кафедры восточных языков ОмГПУ (г. Омск), 30 лет преподавания</li>
+            <li>Победитель I Всероссийского конкурса «Язык дружбы»</li>
+            <li>Победитель III Международного конкурса институтов Конфуция РФ «Лучший сценарий урока китайского языка»</li>
+            <li>Диплом Фуданьского университета (г. Шанхай)</li>
+            <li>Автор учебных пособий и научных статей (20+ публикаций на eLIBRARY.RU)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОСТАЛЬНАЯ КОМАНДА -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Команда преподавателей</div>
+      <h2 class="ks-h2">Специализация <i>под вашу цель</i></h2>
+      <p class="ks-sub">У нас не «один преподаватель на всё»: внутри команды есть узкая специализация — фонетика, иероглифика, подготовка к HSK, детская методика, разговорная практика с носителями.</p>
+
+      <div class="ks-grp-title">Русскоязычные преподаватели</div>
+      <div class="ks-team">
+        <div class="ks-card">
+          <div class="ks-ava">ЗМ</div>
+          <h4 style="font-family:'Cormorant Garamond',serif">Зульфия Миргалимова</h4>
+          <div class="ks-badges"><span class="ks-b">HSK</span><span class="ks-b">Перевод</span></div>
+          <p>Филолог, преподаватель китайского языка и литературы (КФУ). Квалификация практического психолога, опыт устного/письменного перевода и международной торговли.</p>
+        </div>
+      </div>
+
+      <div class="ks-grp-title">Носители языка</div>
+      <div class="ks-team">
+        <div class="ks-card">
+          <div class="ks-ava">任</div>
+          <h4 style="font-family:'Cormorant Garamond',serif">Ваньин</h4>
+          <div class="cn" style="font-family:'Noto Serif SC',serif">任婉滢</div>
+          <div class="ks-badges"><span class="ks-b native">носитель</span><span class="ks-b">разговорный</span></div>
+          <p>Бакалавр Пекинского университета иностранных языков (русский язык), аспирант РУДН.</p>
+        </div>
+        <div class="ks-card">
+          <div class="ks-ava">薛</div>
+          <h4 style="font-family:'Cormorant Garamond',serif">Вероника</h4>
+          <div class="cn" style="font-family:'Noto Serif SC',serif">薛嘉雯</div>
+          <div class="ks-badges"><span class="ks-b native">носитель</span><span class="ks-b">все возрасты</span></div>
+          <p>Уроженка Пекина, 7 лет опыта преподавания китайского иностранцам всех возрастов.</p>
+        </div>
+        <div class="ks-card">
+          <div class="ks-ava">李</div>
+          <h4 style="font-family:'Cormorant Garamond',serif">Анастасия</h4>
+          <div class="cn" style="font-family:'Noto Serif SC',serif">李冠瑶</div>
+          <div class="ks-badges"><span class="ks-b native">носитель</span><span class="ks-b">HSK</span></div>
+          <p>Аспирант МГУ, магистратура МГУ с отличием. Опыт работы в Институте Конфуция.</p>
+        </div>
+      </div>
+      <p class="ks-sub" style="margin-top:22px;font-size:16px;color:var(--taupe)">Это витрина команды. Всего в школе более 30 преподавателей — конкретного вам подберут на пробном уроке под цель, возраст и удобное расписание.</p>
+    </div>
+  </section>
+
+  <!-- КАК ФОРМИРУЕТСЯ КОМАНДА -->
+  <section class="ks-sec ks-sys">
+    <div class="ks-in">
+      <div class="ks-eyebrow" style="color:#E9A6B4">Как формируется ваша команда</div>
+      <h2 class="ks-h2">Один преподаватель — <i>но за ним целая система</i></h2>
+      <p class="ks-sub">На занятиях с вами работает один преподаватель, подобранный под вашу цель. Но качество обеспечивает вся команда: методисты, кураторы платформы и единый стандарт.</p>
+      <div class="ks-flow">
+        <div class="ks-node center-you">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/></svg></div>
+          <h4>Вы / ваш ребёнок</h4><p>Цель, уровень и удобный формат — точка отсчёта.</p>
+        </div>
+        <div class="ks-node">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg></div>
+          <h4>Преподаватель</h4><p>Ведёт уроки по единой методике, подобран под вашу задачу.</p>
+        </div>
+        <div class="ks-node">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <h4>Методист</h4><p>Разбирает уроки по 11 критериям, помогает преподавателю.</p>
+        </div>
+        <div class="ks-node">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></div>
+          <h4>Куратор платформы</h4><p>Домашние задания, тренажёр и обратная связь между уроками.</p>
+        </div>
+      </div>
+      <p class="ks-sub" style="margin-top:24px;color:rgba(255,255,255,.72)">Если преподаватель по каким-то причинам не подойдёт — заменим бесплатно и в тот же день, без потери прогресса.</p>
+
+      <!-- Женни (поддержка) -->
+      <div class="ks-support" style="margin-top:30px">
+        <div class="ph"><img class="ks-img" src="https://static.tildacdn.com/tild6238-6664-4566-a361-393062633761/jenny_komanda.webp" alt="Женни Рэй"></div>
+        <div>
+          <h4 style="font-family:'Cormorant Garamond',serif">Женни Рэй</h4>
+          <div class="role">Операционный директор</div>
+          <p>Отвечает за технологии и качество процессов — от работы платформы до соблюдения единых стандартов преподавания. Не ведёт уроки, но следит, чтобы система вокруг вашего результата работала без сбоев.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ДЛЯ ПРЕПОДАВАТЕЛЕЙ -->
+  <section class="ks-sec ks-key">
+    <div class="ks-in">
+      <div class="ks-b2b">
+        <div>
+          <div class="ks-eyebrow">Преподавателям</div>
+          <h3 style="font-family:'Cormorant Garamond',serif">Хотите преподавать в Kitai School или повысить квалификацию?</h3>
+          <p>У нас есть отдельное направление для педагогов: курсы по методике «ОДиН М», курс иероглифики и вакансии. Присоединяйтесь к команде или прокачайте свои занятия.</p>
+        </div>
+        <a class="ks-btn ks-btn-primary" href="https://kitai-school.ru/teachers">Перейти в раздел для преподавателей<span class="ks-arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОТЗЫВЫ О ПРЕПОДАВАТЕЛЯХ -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Отзывы о преподавателях</div>
+      <h2 class="ks-h2">Что говорят <i>об уроках</i></h2>
+      <div class="ks-reviews">
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Разговорный клуб с носителем из Пекина — лучшее, что могло случиться с моим китайским. Барьер ушёл за пару месяцев».</p><div class="who">Ольга<span>о занятиях с носителем</span></div></div>
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Преподаватель у сына очень терпеливый, объясняет иероглифы через историю их появления — ребёнок реально запоминает».</p><div class="who">Наталья<span>мама ученика, 8 лет</span></div></div>
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Готовилась к HSK 5 — преподаватель чётко вела по плану, методист дополнительно проверял слабые места. Сдала с первого раза».</p><div class="who">Виктория<span>о подготовке к HSK</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФИНАЛЬНЫЙ CTA -->
+  <section class="ks-sec ks-final">
+    <div class="ks-in">
+      <div class="ks-eyebrow" style="text-align:center">Знакомство</div>
+      <h2 class="ks-h2">Познакомьтесь с преподавателем <i>на пробном уроке</i></h2>
+      <p class="ks-sub">Подберём преподавателя под вашу цель прямо на бесплатной диагностике — без каталогов и случайного выбора.</p>
+      <div class="ks-final-cta">
+        <a class="ks-btn ks-btn-primary" href="#popup:zayavka">Записаться на пробный урок<span class="ks-arr">→</span></a>
+      </div>
+    </div>
+  </section>
+</div>

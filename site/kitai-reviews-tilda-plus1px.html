@@ -1,0 +1,289 @@
+<!-- ============================================================
+     Kitai School — «Отзывы» (/reviews)
+     Stand-alone блок для Tilda (T123). Табы по 14 аспектам.
+     ВАЖНО: тексты отзывов — болванки в стиле школы (реальные из
+     t.me/feedback_kitai_school недоступны для парсинга). Заменить.
+     ============================================================ -->
+<div id="ks-rv">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    #ks-rv{
+      --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+      --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;
+      --cream:#FAF7F2;--cream-2:#F3EDE3;--hairline:#EAE3D8;--hairline-2:#DED5C6;--gold:#E0A72E;
+      font-family:'Inter',-apple-system,Arial,sans-serif !important;color:var(--ink) !important;background:var(--cream);line-height:1.5;
+    }
+    #ks-rv *{box-sizing:border-box}
+    #ks-rv h1,#ks-rv h2,#ks-rv p{margin:0}
+    #ks-rv a{text-decoration:none;color:inherit}
+    #ks-rv [style*="Cormorant"]{font-family:'Cormorant Garamond',Georgia,serif !important}
+    #ks-rv .ks-in{max-width:1120px;margin:0 auto;padding:0 24px}
+    #ks-rv .ks-btn{display:inline-flex;align-items:center;gap:9px;border-radius:8px;font:600 16px/1 'Inter';padding:15px 26px;transition:.18s;cursor:pointer}
+    #ks-rv .ks-btn-primary{background:var(--brick);color:#fff;box-shadow:0 8px 20px rgba(164,30,58,.22)}
+    #ks-rv .ks-btn-primary:hover{background:var(--brick-deep);transform:translateY(-1px)}
+    #ks-rv .ks-arr{transition:transform .18s}#ks-rv .ks-btn:hover .ks-arr{transform:translateX(3px)}
+
+    /* HERO */
+    #ks-rv .ks-hero{background:radial-gradient(120% 90% at 80% -10%,#FDF8F1,var(--cream) 60%,var(--cream-2));border-bottom:1px solid var(--hairline);text-align:center;padding:66px 0 40px}
+    #ks-rv .ks-eyebrow{font:600 13.5px/1 'Inter';letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin-bottom:14px}
+    #ks-rv .ks-h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:51px;line-height:1.08;margin-bottom:24px}
+    #ks-rv .ks-h1 i{font-style:italic;color:var(--brick)}
+    #ks-rv .ks-ratebox{display:inline-flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--hairline);border-radius:16px;padding:18px 28px;box-shadow:0 8px 22px rgba(44,36,32,.06)}
+    #ks-rv .ks-ratebox .big{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:57px;color:var(--brick);line-height:.9}
+    #ks-rv .ks-stars{color:var(--gold);font-size:19px;letter-spacing:2px}
+    #ks-rv .ks-ratebox small{display:block;font:500 14px/1.4 'Inter';color:var(--ink-2);margin-top:4px}
+    #ks-rv .ks-hero-note{font:400 16.5px/1.55 'Inter';color:var(--ink-2);max-width:560px;margin:22px auto 0}
+    #ks-rv .ks-hero-note a{color:var(--brick);font-weight:600}
+
+    /* TABS */
+    #ks-rv .ks-tabs-wrap{position:sticky;top:0;z-index:5;background:var(--cream);border-bottom:1px solid var(--hairline)}
+    #ks-rv .ks-tabs{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;flex-wrap:wrap;gap:9px;scrollbar-width:thin}
+    #ks-rv .ks-tabs::-webkit-scrollbar{height:6px}
+    #ks-rv .ks-tabs::-webkit-scrollbar-thumb{background:var(--hairline-2);border-radius:3px}
+    #ks-rv .ks-tab{flex:0 0 auto;border:1px solid var(--hairline-2);background:#fff;color:var(--ink-2);border-radius:999px;padding:10px 16px;font:600 14.5px/1 'Inter';white-space:nowrap;cursor:pointer;transition:.15s}
+    #ks-rv .ks-tab .cnt{opacity:.6;font-weight:500}
+    #ks-rv .ks-tab:hover{border-color:var(--brick);color:var(--brick)}
+    #ks-rv .ks-tab.is-active{background:var(--brick);border-color:var(--brick);color:#fff}
+    #ks-rv .ks-tab.is-active .cnt{opacity:.8}
+
+    /* PANELS */
+    #ks-rv .ks-panels{padding:44px 0 66px}
+    #ks-rv .ks-panel{display:none}
+    #ks-rv .ks-panel.is-active{display:block}
+    #ks-rv .ks-panel-h{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:31px;margin-bottom:6px}
+    #ks-rv .ks-panel-sub{font:400 16.5px/1.55 'Inter';color:var(--ink-2);max-width:640px;margin-bottom:26px}
+    #ks-rv .ks-grid{columns:3;column-gap:18px}
+    #ks-rv .ks-card{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:22px 24px;margin:0 0 18px;break-inside:avoid;box-shadow:0 4px 14px rgba(44,36,32,.04)}
+    #ks-rv .ks-card .ks-stars{font-size:15px;margin-bottom:11px}
+    #ks-rv .ks-card p{font:italic 400 16px/1.62 'Inter';color:var(--ink);margin-bottom:14px}
+    #ks-rv .ks-card .who{font:600 15px/1.3 'Inter'}
+    #ks-rv .ks-card .who span{display:block;font-weight:400;font-size:14px;color:var(--taupe);margin-top:2px}
+    #ks-rv .ks-empty{background:#fff;border:1px dashed var(--hairline-2);border-radius:14px;padding:30px;text-align:center;font:400 16px/1.6 'Inter';color:var(--taupe)}
+
+    /* CTA */
+    #ks-rv .ks-cta{background:radial-gradient(120% 120% at 50% 0,#FDF8F1,var(--cream-2));border-top:1px solid var(--hairline);text-align:center;padding:66px 0}
+    #ks-rv .ks-cta h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:37px;margin-bottom:14px;max-width:600px;margin-left:auto;margin-right:auto}
+    #ks-rv .ks-cta h2 i{font-style:italic;color:var(--brick)}
+    #ks-rv .ks-cta p{font:400 17px/1.55 'Inter';color:var(--ink-2);max-width:520px;margin:0 auto 24px}
+
+    /* ИСТОЧНИКИ (табы) */
+    #ks-rv .ks-src{background:var(--cream-2);border-top:1px solid var(--hairline);padding:60px 0 66px}
+    #ks-rv .ks-src-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:37px;margin-bottom:8px}
+    #ks-rv .ks-src-h2 i{font-style:italic;color:var(--brick)}
+    #ks-rv .ks-src-sub{font:400 16.5px/1.55 'Inter';color:var(--ink-2);max-width:620px;margin-bottom:24px}
+    #ks-rv .ks-src-tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+    #ks-rv .ks-src-tab{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--hairline-2);background:#fff;color:var(--ink-2);border-radius:999px;padding:11px 18px;font:600 14.5px/1 'Inter';cursor:pointer;transition:.15s}
+    #ks-rv .ks-src-tab svg{width:15px;height:15px}
+    #ks-rv .ks-src-tab:hover{border-color:var(--brick);color:var(--brick)}
+    #ks-rv .ks-src-tab.is-active{background:var(--brick);border-color:var(--brick);color:#fff}
+    #ks-rv .ks-src-panel{display:none}
+    #ks-rv .ks-src-panel.is-active{display:block}
+    #ks-rv .ks-src-grid{columns:3;column-gap:18px}
+    #ks-rv .ks-src-grid .ks-card{margin-bottom:18px}
+    #ks-rv .ks-tg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+    #ks-rv .ks-tg-grid>div{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:10px;min-height:80px}
+    #ks-rv .ks-src-more{margin-top:22px}
+    #ks-rv .ks-src-more a{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--hairline-2);border-radius:8px;padding:13px 22px;font:600 15px/1 'Inter';color:var(--ink);transition:.15s}
+    #ks-rv .ks-src-more a:hover{border-color:var(--brick);color:var(--brick)}
+    #ks-rv .ks-src-more a svg{width:16px;height:16px;color:var(--brick)}
+    #ks-rv .ks-ya-frame{background:#fff;border:1px solid var(--hairline);border-radius:14px;overflow:hidden;max-width:760px}
+    #ks-rv .ks-ya-frame iframe{display:block;width:100%;height:520px;border:0}
+
+    @media(max-width:960px){#ks-rv .ks-grid{columns:2}#ks-rv .ks-src-grid{columns:2}#ks-rv .ks-tg-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){
+      #ks-rv .ks-hero{padding:44px 0 32px}#ks-rv .ks-h1{font-size:35px}
+      #ks-rv .ks-in{padding:0 18px}#ks-rv .ks-tabs{padding:12px 18px;flex-wrap:nowrap;overflow-x:auto}
+      #ks-rv .ks-grid{columns:1}#ks-rv .ks-panel-h{font-size:27px}
+      #ks-rv .ks-btn{width:100%;justify-content:center}
+      #ks-rv .ks-ratebox{padding:16px 20px;gap:14px}#ks-rv .ks-ratebox .big{font-size:47px}
+      #ks-rv .ks-src{padding:44px 0 50px}#ks-rv .ks-src-h2{font-size:29px}
+      #ks-rv .ks-src-grid{columns:1}#ks-rv .ks-tg-grid{grid-template-columns:1fr}
+      #ks-rv .ks-ya-frame iframe{height:440px}
+    }
+  </style>
+
+  <!-- HERO -->
+  <section class="ks-hero">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Отзывы</div>
+      <h1 class="ks-h1">Отзывы учеников <i>Kitai School</i></h1>
+      <div class="ks-ratebox">
+        <div class="big" style="font-family:'Cormorant Garamond',serif">4,9</div>
+        <div><div class="ks-stars">★★★★★</div><small>из 5 · на основе 200+ отзывов</small></div>
+      </div>
+      <p class="ks-hero-note">Отзывы сгруппированы по темам — выберите, что вам важнее всего. Полный архив — в Telegram-канале <a href="https://t.me/feedback_kitai_school" target="_blank" rel="noopener">@feedback_kitai_school</a></p>
+    </div>
+  </section>
+
+  <!-- TABS -->
+  <div class="ks-tabs-wrap">
+    <div class="ks-tabs" id="ksRvTabs"></div>
+  </div>
+
+  <!-- PANELS -->
+  <section class="ks-panels">
+    <div class="ks-in" id="ksRvPanels"></div>
+  </section>
+
+  <!-- ОТЗЫВЫ ПО ИСТОЧНИКАМ (табы) -->
+  <section class="ks-src">
+    <div class="ks-in">
+      <h2 class="ks-src-h2" style="font-family:'Cormorant Garamond',serif">Отзывы <i>из разных источников</i></h2>
+      <p class="ks-src-sub">Текстовые отзывы учеников и живые отзывы с независимых площадок — Telegram, ВКонтакте и Яндекс.</p>
+
+      <div class="ks-src-tabs">
+        <button class="ks-src-tab is-active" data-src="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>Текстовые отзывы</button>
+        <button class="ks-src-tab" data-src="1"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.67 3.72L2.94 10.56c-1.21.49-1.2 1.16-.22 1.46l4.55 1.42 10.53-6.65c.5-.3.95-.14.58.19l-8.53 7.7-.31 4.69c.46 0 .66-.21.92-.46l2.21-2.15 4.6 3.4c.85.47 1.46.23 1.67-.79l3.02-14.23c.31-1.24-.47-1.8-1.28-1.43z"/></svg>Отзывы из Телеграм</button>
+        <button class="ks-src-tab" data-src="2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.79 16.3s.27-.03.41-.18c.13-.14.13-.4.13-.4s-.02-1.23.55-1.41c.56-.18 1.27 1.19 2.03 1.72.57.4 1.01.31 1.01.31l2.03-.03s1.06-.07.56-.9c-.04-.07-.29-.62-1.51-1.76-1.27-1.19-1.1-1 .43-3.06.93-1.25 1.3-2.02 1.19-2.35-.11-.31-.8-.23-.8-.23l-2.31.02s-.17-.02-.3.05c-.12.08-.2.25-.2.25s-.36.97-.85 1.79c-1.02 1.74-1.42 1.83-1.59 1.72-.39-.25-.29-1.01-.29-1.55 0-1.69.26-2.39-.5-2.58-.25-.06-.43-.1-1.07-.11-.82-.01-1.51 0-1.91.2-.26.13-.46.41-.34.43.15.02.5.09.68.34.24.32.23 1.04.23 1.04s.14 1.99-.32 2.24c-.31.17-.74-.18-1.65-1.74-.46-.8-.81-1.69-.81-1.69s-.07-.17-.19-.25c-.15-.11-.35-.14-.35-.14l-2.2.02s-.33 0-.45.15c-.11.13-.01.4-.01.4s1.72 4.01 3.66 6.03c1.78 1.85 3.81 1.73 3.81 1.73h.92z"/></svg>Отзывы из ВК</button>
+        <button class="ks-src-tab" data-src="3"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.66 16h-2.1v-6.32h-1.1c-1.9 0-3.13-1.32-3.13-3.16C7.33 6.6 8.68 5.5 10.55 5.5h3.11V18zm-2.1-10.86h-.9c-.98 0-1.55.62-1.55 1.5 0 .9.55 1.42 1.55 1.42h.9V7.14z"/></svg>Отзывы из Яндекс</button>
+      </div>
+
+      <!-- 0. Текстовые -->
+      <div class="ks-src-panel is-active" id="ksSrcP0">
+        <div class="ks-src-grid">
+          <div class="ks-card"><div class="ks-stars">★★★★★</div><p>«Сдала HSK 4 с первого раза. Пробные тесты на платформе точно показывали слабые места до экзамена.»</p><div class="who">Ольга<span>студентка</span></div></div>
+          <div class="ks-card"><div class="ks-stars">★★★★★</div><p>«В другой школе сын с трудом высиживал 20 минут. Здесь бежит на урок и поёт китайские песни даже вне занятий.»</p><div class="who">Ирина<span>мама Адама, 6 лет</span></div></div>
+          <div class="ks-card"><div class="ks-stars">★★★★★</div><p>«Учил разговорный, чтобы вести дела в Китае без посредников. После занятий закрыл несколько крупных контрактов сам.»</p><div class="who">Артём<span>владелец бизнеса</span></div></div>
+          <div class="ks-card"><div class="ks-stars">★★★★★</div><p>«Поступила на бюджет в магистратуру по нейробиологии после месяца интенсива до HSK 5. Помогли и с грантом.»</p><div class="who">Анастасия<span>21 год</span></div></div>
+          <div class="ks-card"><div class="ks-stars">★★★★★</div><p>«Формат 30 минут в день оказался идеальным — компактно, без выгорания на полуторачасовых занятиях.»</p><div class="who">Дмитрий<span>предприниматель</span></div></div>
+          <div class="ks-card"><div class="ks-stars">★★★★★</div><p>«Сыну 13, сдал HSK 1 и HSK 2 на максимальный балл. Преподаватель держит мотивацию, не даёт расслабиться.»</p><div class="who">Елена<span>мама ученика, 13 лет</span></div></div>
+        </div>
+      </div>
+
+      <!-- 1. Telegram: официальные виджеты постов. ЗАМЕНИТЕ номера постов (feedback_kitai_school/НОМЕР) на реальные -->
+      <div class="ks-src-panel" id="ksSrcP1">
+        <div class="ks-tg-grid">
+          <div><script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="feedback_kitai_school/2" data-width="100%"></script></div>
+          <div><script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="feedback_kitai_school/3" data-width="100%"></script></div>
+          <div><script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="feedback_kitai_school/4" data-width="100%"></script></div>
+        </div>
+        <div class="ks-src-more"><a href="https://t.me/feedback_kitai_school" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.67 3.72L2.94 10.56c-1.21.49-1.2 1.16-.22 1.46l4.55 1.42 10.53-6.65c.5-.3.95-.14.58.19l-8.53 7.7-.31 4.69c.46 0 .66-.21.92-.46l2.21-2.15 4.6 3.4c.85.47 1.46.23 1.67-.79l3.02-14.23c.31-1.24-.47-1.8-1.28-1.43z"/></svg>Все отзывы в Telegram-канале →</a></div>
+      </div>
+
+      <!-- 2. ВК -->
+      <div class="ks-src-panel" id="ksSrcP2">
+        <div class="ks-src-grid">
+          <div class="ks-card"><div class="ks-stars">★★★★★</div><p>«Дочка через игру запомнила первые иероглифы, и главное — ей нравится. Ходит с удовольствием.»</p><div class="who">Наталья<span>отзыв во ВКонтакте</span></div></div>
+          <div class="ks-card"><div class="ks-stars">★★★★★</div><p>«Клуб с носителем из Пекина — лучшее для разговорного. Барьер ушёл за пару месяцев.»</p><div class="who">Ольга<span>отзыв во ВКонтакте</span></div></div>
+          <div class="ks-card"><div class="ks-stars">★★★★★</div><p>«Помогли зарегистрироваться на экзамен в другом городе и поддержали морально. Чувствуешь, что не один.»</p><div class="who">Сергей<span>отзыв во ВКонтакте</span></div></div>
+        </div>
+        <div class="ks-src-more"><a href="https://vk.com/kitai_school" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.79 16.3s.27-.03.41-.18c.13-.14.13-.4.13-.4s-.02-1.23.55-1.41c.56-.18 1.27 1.19 2.03 1.72.57.4 1.01.31 1.01.31l2.03-.03s1.06-.07.56-.9c-.04-.07-.29-.62-1.51-1.76-1.27-1.19-1.1-1 .43-3.06.93-1.25 1.3-2.02 1.19-2.35-.11-.31-.8-.23-.8-.23l-2.31.02s-.17-.02-.3.05c-.12.08-.2.25-.2.25s-.36.97-.85 1.79c-1.02 1.74-1.42 1.83-1.59 1.72-.39-.25-.29-1.01-.29-1.55 0-1.69.26-2.39-.5-2.58-.25-.06-.43-.1-1.07-.11-.82-.01-1.51 0-1.91.2-.26.13-.46.41-.34.43.15.02.5.09.68.34.24.32.23 1.04.23 1.04s.14 1.99-.32 2.24c-.31.17-.74-.18-1.65-1.74-.46-.8-.81-1.69-.81-1.69s-.07-.17-.19-.25c-.15-.11-.35-.14-.35-.14l-2.2.02s-.33 0-.45.15c-.11.13-.01.4-.01.4s1.72 4.01 3.66 6.03c1.78 1.85 3.81 1.73 3.81 1.73h.92z"/></svg>Смотреть отзывы во ВКонтакте →</a></div>
+      </div>
+
+      <!-- 3. Яндекс: виджет отзывов организации. ЗАМЕНИТЕ YANDEX_ORG_ID на ID организации в Яндекс.Картах -->
+      <div class="ks-src-panel" id="ksSrcP3">
+        <div class="ks-ya-frame">
+          <iframe src="https://yandex.ru/maps-reviews-widget/YANDEX_ORG_ID?comments" loading="lazy" title="Отзывы о Kitai School на Яндекс.Картах"></iframe>
+        </div>
+        <div class="ks-src-more"><a href="https://yandex.ru/maps/org/YANDEX_ORG_ID/reviews/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.3 3.2L7 14.2 2 9.4l7-.9z"/></svg>Все отзывы на Яндекс.Картах →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ks-cta">
+    <div class="ks-in">
+      <h2 style="font-family:'Cormorant Garamond',serif">Хотите, чтобы ваш результат <i>тоже был здесь?</i></h2>
+      <p>Запишитесь на бесплатный пробный урок — начните свою историю с китайским.</p>
+      <a class="ks-btn ks-btn-primary" href="#popup:zayavka">Записаться на пробный урок<span class="ks-arr">→</span></a>
+    </div>
+  </section>
+
+  <!-- JSON-LD AggregateRating -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Kitai School","url":"https://kitai-school.ru/","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"200","bestRating":"5"}}
+  </script>
+
+  <script>
+  (function(){
+    var root=document.getElementById('ks-rv'); if(!root) return;
+    var S='★★★★★';
+    // data: [tab, subtitle, [ [text, name, meta], ... ]]
+    var DATA=[
+      ["Результаты HSK/YCT","Отзывы о сдаче международных экзаменов — конкретные баллы и уровни.",[
+        ["Готовились структурно, и сын сдал YCT1 на 185 из 200. Для нас это было доказательство, что система реально работает.","Марина","мама ученика, 8 лет"],
+        ["Сдала HSK 4 с первого раза. Пробные тесты на платформе точно показывали слабые места до экзамена.","Ольга","студентка"],
+        ["HSK 5 за месяц интенсива — план был расписан по дням, ничего лишнего.","Виктория","выпускница"]
+      ]],
+      ["Дети 6–9 лет","Отзывы родителей дошкольников и младших школьников — вовлечённость, игровой формат.",[
+        ["В другой школе сын с трудом высиживал 20 минут. Здесь бежит на урок и поёт китайские песни даже вне занятий.","Ирина","мама Адама, 6 лет"],
+        ["Дочка через игру запомнила первые иероглифы, и главное — ей нравится. Ходит с удовольствием.","Наталья","мама ученицы, 7 лет"]
+      ]],
+      ["Подростки 10–17","Про мотивацию подростков, дисциплину и цели (HSK, олимпиады, поступление).",[
+        ["Сыну 13, сдал HSK1 и HSK2 на максимальный балл. Преподаватель держит мотивацию, не даёт расслабиться.","Елена","мама ученика, 13 лет"],
+        ["Дочь готовится к поступлению в Китай, занятия дисциплинируют и дают чёткую цель.","Сергей","папа ученицы, 16 лет"]
+      ]],
+      ["Индивидуально (взрослые)","Про удобство графика и скорость прогресса один на один.",[
+        ["Формат 30 минут в день оказался идеальным — компактно, без выгорания на полуторачасовых занятиях.","Дмитрий","предприниматель"],
+        ["Преподаватель полностью подстроился под мой график и цели. Прогресс быстрее, чем ожидала.","Анна","маркетолог"]
+      ]],
+      ["Группы / мини-группы","Про атмосферу мини-групп и разговорную практику с одногруппниками.",[
+        ["В мини-группе не страшно ошибаться, много говорим друг с другом. Атмосфера тёплая.","Ксения","студентка"]
+      ]],
+      ["Разговорный клуб / носитель","Где явно упоминается носитель языка и снятие барьера.",[
+        ["Клуб с носителем из Пекина — лучшее для разговорного. Барьер ушёл за пару месяцев, тянет говорить, а не переходить на русский.","Ольга","о занятиях с носителем"]
+      ]],
+      ["Бизнес-китайский","Отзывы предпринимателей и специалистов, работающих с Китаем.",[
+        ["Учил разговорный, чтобы вести дела в Китае без посредников. После занятий закрыл несколько крупных контрактов сам.","Артём","владелец бизнеса"],
+        ["Оформили обучение сотрудников от компании — дали счёт и закрывающие документы. Программа под наши задачи.","Дмитрий","руководитель отдела"]
+      ]],
+      ["Поступление в Китай","Истории поступивших по грантам CSC / провинциальным / университетским.",[
+        ["Поступила на бюджет в магистратуру по нейробиологии после месяца интенсива до HSK5. Помогли и с грантом.","Анастасия","21 год"],
+        ["Дошли до поступления за 2 года вместо стандартных 6. Сопровождали на каждом шаге.","Елена","мама абитуриента"]
+      ]],
+      ["Методика и уроки","Где хвалят именно систему и структуру, а не конкретного человека.",[
+        ["Сильная методика: результаты подтверждаются на официальных экзаменах, а не только на словах.","Владимир","взрослый ученик"]
+      ]],
+      ["Платформа","Про удобство тренажёра, домашних заданий, обратной связи.",[
+        ["Тренажёр реально помогает между уроками, а прописи и разбор произношения — это не просто Zoom.","Артём","работаю в логистике"]
+      ]],
+      ["Работа преподавателей","Где хвалят конкретного преподавателя или удачный подбор.",[
+        ["Нашли преподавателя под сложный запрос — обсуждать политические новости на китайском. Уровень очень высокий.","Павел","продвинутый ученик"],
+        ["Преподаватель у сына терпеливый, объясняет иероглифы через историю их появления.","Наталья","мама ученика, 8 лет"]
+      ]],
+      ["Сервис и организация","Про администраторов, перенос занятий, оперативность, оргмоменты.",[
+        ["Помогли зарегистрироваться на экзамен в другом городе и поддержали морально. Чувствуешь, что не один.","Сергей","ученик"]
+      ]],
+      ["Лагерь в Китае","Отзывы участников летнего лагеря на Хайнане и родителей.",[]],
+      ["Курсы для преподавателей","Отзывы педагогов, прошедших курс «ОДиН М» или курс иероглифики.",[]]
+    ];
+
+    var tabsEl=document.getElementById('ksRvTabs'), panelsEl=document.getElementById('ksRvPanels');
+    DATA.forEach(function(d,i){
+      var cnt=d[2].length;
+      var t=document.createElement('button');
+      t.className='ks-tab'+(i===0?' is-active':'');
+      t.innerHTML=d[0]+' <span class="cnt">('+cnt+')</span>';
+      t.addEventListener('click',function(){
+        root.querySelectorAll('.ks-tab').forEach(function(x){x.classList.remove('is-active')});
+        root.querySelectorAll('.ks-panel').forEach(function(x){x.classList.remove('is-active')});
+        t.classList.add('is-active');
+        document.getElementById('ksRvP'+i).classList.add('is-active');
+        t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+      });
+      tabsEl.appendChild(t);
+
+      var p=document.createElement('div');
+      p.className='ks-panel'+(i===0?' is-active':'');
+      p.id='ksRvP'+i;
+      var cards=d[2].map(function(r){
+        return '<div class="ks-card"><div class="ks-stars">'+S+'</div><p>«'+r[0]+'»</p><div class="who">'+r[1]+'<span>'+r[2]+'</span></div></div>';
+      }).join('');
+      if(!cards) cards='<div class="ks-empty">Отзывы по этой теме скоро появятся. Свежие — в Telegram-канале <a href="https://t.me/feedback_kitai_school" target="_blank" rel="noopener" style="color:var(--brick);font-weight:600">@feedback_kitai_school</a></div>';
+      p.innerHTML='<div class="ks-panel-h" style="font-family:\'Cormorant Garamond\',serif">'+d[0]+'</div><div class="ks-panel-sub">'+d[1]+'</div><div class="ks-grid">'+cards+'</div>';
+      panelsEl.appendChild(p);
+    });
+
+    // --- табы «Отзывы по источникам» ---
+    root.querySelectorAll('.ks-src-tab').forEach(function(t){
+      t.addEventListener('click',function(){
+        root.querySelectorAll('.ks-src-tab').forEach(function(x){x.classList.remove('is-active')});
+        root.querySelectorAll('.ks-src-panel').forEach(function(x){x.classList.remove('is-active')});
+        t.classList.add('is-active');
+        document.getElementById('ksSrcP'+t.getAttribute('data-src')).classList.add('is-active');
+      });
+    });
+  })();
+  </script>
+</div>

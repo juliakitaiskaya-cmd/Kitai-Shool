@@ -1,0 +1,186 @@
+<!-- ============================================================
+     Kitai School — «О нас в СМИ / Признание» (/press)
+     Stand-alone блок для Tilda (T123). «Мягкий запуск»: только
+     подтверждённые факты (награды, выставка, статусы спикеров).
+     Карточки публикаций — добавляйте по мере появления материалов.
+     ============================================================ -->
+<div id="ks-pr">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    #ks-pr{
+      --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+      --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;
+      --cream:#FAF7F2;--cream-2:#F3EDE3;--hairline:#EAE3D8;--hairline-2:#DED5C6;
+      font-family:'Inter',-apple-system,Arial,sans-serif !important;color:var(--ink) !important;background:var(--cream);line-height:1.5;
+    }
+    #ks-pr *{box-sizing:border-box}
+    #ks-pr h1,#ks-pr h2,#ks-pr h3,#ks-pr p{margin:0}
+    #ks-pr a{text-decoration:none;color:inherit}
+    #ks-pr [style*="Cormorant"]{font-family:'Cormorant Garamond',Georgia,serif !important}
+    #ks-pr .ks-in{max-width:1080px;margin:0 auto;padding:0 24px}
+    #ks-pr .ks-sec{padding:64px 0}
+    #ks-pr .ks-eyebrow{font:600 13.5px/1 'Inter';letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin-bottom:14px}
+    #ks-pr .ks-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:37px;line-height:1.12;margin-bottom:14px}
+    #ks-pr .ks-h2 i{font-style:italic;color:var(--brick)}
+    #ks-pr .ks-sub{font:400 17.5px/1.6 'Inter';color:var(--ink-2);max-width:680px}
+    #ks-pr .ks-btn{display:inline-flex;align-items:center;gap:9px;border-radius:8px;font:600 16px/1 'Inter';padding:14px 24px;transition:.18s;background:var(--brick);color:#fff;box-shadow:0 8px 20px rgba(164,30,58,.22)}
+    #ks-pr .ks-btn:hover{background:var(--brick-deep);transform:translateY(-1px)}
+    #ks-pr .ks-btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--hairline-2);box-shadow:none}
+    #ks-pr .ks-btn-ghost:hover{border-color:var(--brick);color:var(--brick);background:#fff}
+    #ks-pr .ks-arr{transition:transform .18s}#ks-pr .ks-btn:hover .ks-arr{transform:translateX(3px)}
+
+    /* HERO */
+    #ks-pr .ks-hero{background:radial-gradient(120% 90% at 80% -10%,#FDF8F1,var(--cream) 60%,var(--cream-2));border-bottom:1px solid var(--hairline);text-align:center;padding:64px 0 48px}
+    #ks-pr .ks-h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:51px;line-height:1.08;margin-bottom:16px}
+    #ks-pr .ks-h1 i{font-style:italic;color:var(--brick)}
+    #ks-pr .ks-hero p{font:400 18px/1.6 'Inter';color:var(--ink-2);max-width:600px;margin:0 auto}
+
+    /* AWARDS */
+    #ks-pr .ks-awards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px}
+    #ks-pr .ks-award{display:flex;gap:18px;background:#fff;border:1px solid var(--hairline);border-radius:16px;padding:26px;box-shadow:0 6px 18px rgba(44,36,32,.05)}
+    #ks-pr .ks-award .medal{flex:0 0 auto;width:52px;height:52px;border-radius:13px;background:var(--brick-soft);display:flex;align-items:center;justify-content:center;color:var(--brick)}
+    #ks-pr .ks-award .medal svg{width:26px;height:26px}
+    #ks-pr .ks-award .yr{font:600 13px/1 'Inter';letter-spacing:.06em;color:var(--taupe);text-transform:uppercase;margin-bottom:6px}
+    #ks-pr .ks-award h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;line-height:1.25;margin-bottom:6px}
+    #ks-pr .ks-award p{font:400 15px/1.5 'Inter';color:var(--ink-2)}
+    #ks-pr .ks-award .who{font:600 14px/1.3 'Inter';color:var(--brick);margin-top:8px}
+
+    /* STATUS list */
+    #ks-pr .ks-status{background:var(--cream-2)}
+    #ks-pr .ks-status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+    #ks-pr .ks-st{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:22px}
+    #ks-pr .ks-st .ic{width:38px;height:38px;border-radius:10px;background:var(--brick-soft);display:flex;align-items:center;justify-content:center;color:var(--brick);margin-bottom:12px}
+    #ks-pr .ks-st .ic svg{width:19px;height:19px}
+    #ks-pr .ks-st p{font:400 15.5px/1.55 'Inter';color:var(--ink-2)}
+    #ks-pr .ks-st b{color:var(--ink)}
+
+    /* EVENT (exhibition) */
+    #ks-pr .ks-event{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+    #ks-pr .ks-event .ph{border-radius:16px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 14px 36px rgba(44,36,32,.14);border:1px solid var(--hairline)}
+    #ks-pr .ks-event .ph img{display:block;width:100%;height:100%;object-fit:cover}
+    #ks-pr .ks-event .role{display:inline-block;font:600 13px/1 'Inter';letter-spacing:.06em;text-transform:uppercase;color:var(--brick);background:var(--brick-soft);border-radius:7px;padding:6px 11px;margin-bottom:14px}
+
+    /* PUBLICATIONS placeholder */
+    #ks-pr .ks-pub{background:var(--ink);color:#fff}
+    #ks-pr .ks-pub .ks-h2{color:#fff}#ks-pr .ks-pub .ks-sub{color:rgba(255,255,255,.72)}
+    #ks-pr .ks-pub-empty{background:rgba(255,255,255,.05);border:1px dashed rgba(255,255,255,.24);border-radius:16px;padding:34px;text-align:center;margin-top:22px}
+    #ks-pr .ks-pub-empty p{font:400 16.5px/1.6 'Inter';color:rgba(255,255,255,.7);max-width:560px;margin:0 auto}
+
+    /* CTA */
+    #ks-pr .ks-cta{text-align:center}
+    #ks-pr .ks-cta .ks-h2{max-width:560px;margin:0 auto 18px}
+
+    @media(max-width:820px){
+      #ks-pr .ks-awards,#ks-pr .ks-status-grid,#ks-pr .ks-event{grid-template-columns:1fr}
+    }
+    @media(max-width:600px){
+      #ks-pr .ks-sec{padding:46px 0}#ks-pr .ks-in{padding:0 18px}
+      #ks-pr .ks-h1{font-size:35px}#ks-pr .ks-h2{font-size:30px}
+      #ks-pr .ks-hero{padding:44px 0 36px}#ks-pr .ks-btn{width:100%;justify-content:center}
+    }
+  
+    /* Тильда-фикс читаемости тёмных секций */
+    #ks-pr .ks-pub :is(h1,h2,h3,h4,h5,h6,p,li,figcaption,.role,.cap,.who,.meta,.date,.num,.ks-node,.lead){color:#fff !important}
+    #ks-pr .ks-pub .ks-sub{color:rgba(255,255,255,.75) !important}
+    #ks-pr .ks-pub .ks-eyebrow{color:#E9A6B4 !important}
+    #ks-pr .ks-pub h2 i,#ks-pr .ks-pub .ks-h2 i{color:#E9A6B4 !important}
+    #ks-pr .ks-pub .ks-stars{color:#E0A72E !important}
+    #ks-pr .ks-pub .n{color:#E9A6B4 !important}
+    #ks-pr .ks-pub .status{color:#8FE0AC !important}
+  </style>
+
+  <!-- HERO -->
+  <section class="ks-hero">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Признание</div>
+      <h1 class="ks-h1">Kitai School <i>в профессиональной среде</i></h1>
+      <p>Награды преподавателей, участие в мероприятиях и статусы наших экспертов. Раздел пополняется по мере новых публикаций.</p>
+    </div>
+  </section>
+
+  <!-- НАГРАДЫ -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Награды и победы</div>
+      <h2 class="ks-h2">Признание <i>в профессиональных конкурсах</i></h2>
+      <div class="ks-awards">
+        <div class="ks-award">
+          <div class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M9 13.5l-1 7.5 4-2 4 2-1-7.5"/></svg></div>
+          <div>
+            <div class="yr">Всероссийский уровень</div>
+            <h3 style="font-family:'Cormorant Garamond',serif">Победитель I Всероссийского конкурса «Язык дружбы»</h3>
+            <p>Конкурс профессионального мастерства преподавателей китайского языка.</p>
+            <div class="who">Татьяна Иоффе · главный методист</div>
+          </div>
+        </div>
+        <div class="ks-award">
+          <div class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M9 13.5l-1 7.5 4-2 4 2-1-7.5"/></svg></div>
+          <div>
+            <div class="yr">Международный уровень</div>
+            <h3 style="font-family:'Cormorant Garamond',serif">Победитель III Международного конкурса институтов Конфуция РФ</h3>
+            <p>Номинация «Лучший сценарий урока китайского языка».</p>
+            <div class="who">Татьяна Иоффе · главный методист</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СТАТУСЫ -->
+  <section class="ks-sec ks-status">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Экспертность</div>
+      <h2 class="ks-h2">Статусы <i>наших экспертов</i></h2>
+      <div class="ks-status-grid">
+        <div class="ks-st">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg></div>
+          <p><b>Спикер</b> международных конференций и бизнес-форумов — Юлия Горяина, основатель школы.</p>
+        </div>
+        <div class="ks-st">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 19v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 19v-2a4 4 0 0 0-3-3.87"/></svg></div>
+          <p><b>Член</b> Ассоциации развития синологии и Ассоциации преподавателей китайского языка РФ.</p>
+        </div>
+        <div class="ks-st">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <p><b>Автор</b> учебных пособий и 20+ научных публикаций на eLIBRARY.RU — методическая база школы.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВЫСТАВКА -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-event">
+        <div class="ph"><img loading="lazy" src="https://static.tildacdn.com/tild3534-3631-4438-a263-313633626633/noroot.png" alt="Kitai School на образовательной выставке"></div>
+        <div>
+          <span class="role">Участие · экспонент</span>
+          <h2 class="ks-h2" style="font-size:31px">На образовательной выставке</h2>
+          <p class="ks-sub">Школа участвует в профильных образовательных мероприятиях — представляет методику и знакомит посетителей с системой обучения китайскому языку.</p>
+          <p class="ks-sub" style="margin-top:12px;font-style:italic;color:var(--taupe)">Название и дату выставки уточните у администрации — подпишем корректно.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПУБЛИКАЦИИ (пусто пока) -->
+  <section class="ks-sec ks-pub">
+    <div class="ks-in">
+      <div class="ks-eyebrow" style="color:#E9A6B4">Публикации в СМИ</div>
+      <h2 class="ks-h2">Материалы <i>и интервью</i></h2>
+      <p class="ks-sub">Здесь будут публикации, интервью и гостевые материалы о школе и её экспертах.</p>
+      <div class="ks-pub-empty">
+        <p>Раздел наполняется. Если у вас есть ссылки на публикации, интервью или упоминания школы в СМИ — пришлите, и мы оформим их карточками со ссылкой на первоисточник.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA (ненавязчивый) -->
+  <section class="ks-sec ks-cta">
+    <div class="ks-in">
+      <h2 class="ks-h2">Хотите познакомиться со школой <i>ближе?</i></h2>
+      <a class="ks-btn ks-btn-ghost" href="#popup:zayavka">Записаться на пробный урок<span class="ks-arr">→</span></a>
+    </div>
+  </section>
+</div>

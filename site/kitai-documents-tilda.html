@@ -1,0 +1,245 @@
+<!-- ============================================================
+     Kitai School — «Документы / Сведения об образовательной организации»
+     Stand-alone блок для Tilda (T123). Юридическая страница-хаб с якорями.
+     Тон нейтральный, без маркетинга и CTA (по ТЗ).
+     Замените ссылки-заглушки: DOC_LICENSE, DOC_OFERTA, /privacy.
+     ============================================================ -->
+<div id="ks-doc">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    #ks-doc{
+      --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+      --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;
+      --cream:#FAF7F2;--cream-2:#F3EDE3;--hairline:#EAE3D8;--hairline-2:#DED5C6;--success:#27B260;
+      font-family:'Inter',-apple-system,Arial,sans-serif !important;color:var(--ink) !important;background:var(--cream);line-height:1.55;
+    }
+    #ks-doc *{box-sizing:border-box}
+    #ks-doc h1,#ks-doc h2,#ks-doc h3,#ks-doc h4,#ks-doc p,#ks-doc ul{margin:0}
+    #ks-doc ul{padding:0;list-style:none}
+    #ks-doc a{color:var(--brick);text-decoration:none}
+    #ks-doc a:hover{text-decoration:underline}
+    #ks-doc [style*="Cormorant"]{font-family:'Cormorant Garamond',Georgia,serif !important}
+    #ks-doc .ks-in{max-width:1040px;margin:0 auto;padding:0 24px}
+
+    /* HEADER */
+    #ks-doc .ks-head{background:var(--cream-2);border-bottom:1px solid var(--hairline);padding:56px 0 40px}
+    #ks-doc .ks-eyebrow{font:600 12.5px/1 'Inter';letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin-bottom:14px}
+    #ks-doc .ks-h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:42px;line-height:1.1;margin-bottom:14px}
+    #ks-doc .ks-head p{font:400 16px/1.6 'Inter';color:var(--ink-2);max-width:720px}
+
+    /* TOC */
+    #ks-doc .ks-toc{background:#fff;border:1px solid var(--hairline);border-radius:16px;padding:24px 26px;margin-top:28px}
+    #ks-doc .ks-toc h4{font:600 12px/1 'Inter';letter-spacing:.1em;text-transform:uppercase;color:var(--taupe);margin-bottom:14px}
+    #ks-doc .ks-toc ol{margin:0;padding:0;list-style:none;counter-reset:t;columns:2;column-gap:30px}
+    #ks-doc .ks-toc li{counter-increment:t;position:relative;padding:8px 0 8px 30px;break-inside:avoid}
+    #ks-doc .ks-toc li:before{content:counter(t);position:absolute;left:0;top:7px;width:22px;height:22px;border-radius:6px;background:var(--brick-soft);color:var(--brick);font:600 12px/22px 'Inter';text-align:center}
+    #ks-doc .ks-toc a{font:500 14.5px/1.4 'Inter';color:var(--ink)}
+
+    /* SECTIONS */
+    #ks-doc .ks-body{padding:20px 0 60px}
+    #ks-doc .ks-sec{padding:34px 0;border-bottom:1px solid var(--hairline);scroll-margin-top:20px}
+    #ks-doc .ks-sec:last-child{border-bottom:0}
+    #ks-doc .ks-num{font:600 12px/1 'Inter';letter-spacing:.1em;color:var(--brick);text-transform:uppercase;margin-bottom:8px}
+    #ks-doc .ks-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:12px}
+    #ks-doc .ks-sec p{font:400 15px/1.65 'Inter';color:var(--ink-2);margin-bottom:12px;max-width:760px}
+    #ks-doc .ks-hint{font:400 14px/1.55 'Inter';color:var(--taupe);font-style:italic}
+    #ks-doc .ks-dl{display:grid;grid-template-columns:220px 1fr;gap:6px 20px;max-width:760px;margin:8px 0 6px}
+    #ks-doc .ks-dl dt{font:600 14.5px/1.5 'Inter';color:var(--ink)}
+    #ks-doc .ks-dl dd{font:400 14.5px/1.5 'Inter';color:var(--ink-2);margin:0}
+    #ks-doc .ks-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    #ks-doc .ks-file{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--hairline-2);border-radius:9px;padding:11px 16px;font:600 14px/1 'Inter';color:var(--ink)}
+    #ks-doc .ks-file:hover{border-color:var(--brick);color:var(--brick);text-decoration:none}
+    #ks-doc .ks-file svg{width:17px;height:17px;color:var(--brick)}
+    #ks-doc .ks-ul li{position:relative;padding:6px 0 6px 20px;font:400 14.5px/1.55 'Inter';color:var(--ink-2)}
+    #ks-doc .ks-ul li:before{content:"";position:absolute;left:2px;top:13px;width:6px;height:6px;border-radius:50%;background:var(--brick)}
+
+    /* LICENSE accent */
+    #ks-doc .ks-lic{background:var(--ink);color:#fff;border-radius:16px;padding:30px 34px;margin:6px 0 4px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+    #ks-doc .ks-lic h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;color:#fff;margin-bottom:10px}
+    #ks-doc .ks-lic .num{font:600 15px/1.5 'Inter';color:#fff}
+    #ks-doc .ks-lic .meta{font:400 14px/1.6 'Inter';color:rgba(255,255,255,.66)}
+    #ks-doc .ks-lic .status{display:inline-flex;align-items:center;gap:7px;background:rgba(39,178,96,.16);color:#8FE0AC;border-radius:999px;padding:6px 13px;font:600 12.5px/1 'Inter';margin-top:12px}
+    #ks-doc .ks-lic .status svg{width:13px;height:13px}
+    #ks-doc .ks-lic-btns{display:flex;flex-direction:column;gap:10px}
+    #ks-doc .ks-lic-btns a{display:inline-flex;align-items:center;gap:9px;justify-content:center;border-radius:8px;padding:13px 22px;font:600 14px/1 'Inter';white-space:nowrap}
+    #ks-doc .ks-lic-btns .primary{background:var(--brick);color:#fff}
+    #ks-doc .ks-lic-btns .primary:hover{background:var(--brick-deep);text-decoration:none}
+    #ks-doc .ks-lic-btns .ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2)}
+    #ks-doc .ks-lic-btns .ghost:hover{background:rgba(255,255,255,.14);text-decoration:none}
+    #ks-doc .ks-benefit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    #ks-doc .ks-benefit div{background:#fff;border:1px solid var(--hairline);border-radius:12px;padding:16px 18px;font:400 13.5px/1.5 'Inter';color:var(--ink-2)}
+    #ks-doc .ks-benefit div b{display:block;font:600 14.5px/1.3 'Inter';color:var(--ink);margin-bottom:4px}
+
+    @media(max-width:760px){
+      #ks-doc .ks-toc ol{columns:1}
+      #ks-doc .ks-dl{grid-template-columns:1fr;gap:2px 0;margin-bottom:14px}
+      #ks-doc .ks-dl dt{margin-top:8px}
+      #ks-doc .ks-lic{grid-template-columns:1fr}
+      #ks-doc .ks-benefit{grid-template-columns:1fr}
+    }
+    @media(max-width:600px){
+      #ks-doc .ks-in{padding:0 18px}
+      #ks-doc .ks-h1{font-size:32px}#ks-doc .ks-head{padding:40px 0 30px}
+    }
+  
+    /* Тильда-фикс читаемости тёмных секций */
+    #ks-doc .ks-lic :is(h1,h2,h3,h4,h5,h6,p,li,figcaption,.role,.cap,.who,.meta,.date,.num,.ks-node,.lead){color:#fff !important}
+    #ks-doc .ks-lic .ks-sub{color:rgba(255,255,255,.75) !important}
+    #ks-doc .ks-lic .ks-eyebrow{color:#E9A6B4 !important}
+    #ks-doc .ks-lic h2 i,#ks-doc .ks-lic .ks-h2 i{color:#E9A6B4 !important}
+    #ks-doc .ks-lic .ks-stars{color:#E0A72E !important}
+    #ks-doc .ks-lic .n{color:#E9A6B4 !important}
+    #ks-doc .ks-lic .status{color:#8FE0AC !important}
+  </style>
+
+  <!-- HEADER -->
+  <header class="ks-head">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Сведения об образовательной организации</div>
+      <h1 class="ks-h1" style="font-family:'Cormorant Garamond',serif">Документы</h1>
+      <p>На этой странице собраны сведения об образовательной организации, публикуемые в открытом доступе в соответствии со ст. 29 ФЗ «Об образовании в Российской Федерации». Раздел информационный: он подтверждает легальность работы школы и права обучающихся.</p>
+      <nav class="ks-toc">
+        <h4>Содержание</h4>
+        <ol>
+          <li><a href="#doc-1">Основные сведения</a></li>
+          <li><a href="#doc-2">Структура и органы управления</a></li>
+          <li><a href="#doc-3">Документы</a></li>
+          <li><a href="#doc-4">Образование</a></li>
+          <li><a href="#doc-5">Руководство. Педагогический состав</a></li>
+          <li><a href="#doc-6">Материально-техническое обеспечение</a></li>
+          <li><a href="#doc-7">Платные образовательные услуги</a></li>
+          <li><a href="#doc-8">Вакантные места для приёма</a></li>
+          <li><a href="#doc-9">Доступная среда</a></li>
+          <li><a href="#doc-10">Международное сотрудничество</a></li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ks-body">
+    <div class="ks-in">
+
+      <!-- 1 -->
+      <section class="ks-sec" id="doc-1">
+        <div class="ks-num">01</div>
+        <h2 class="ks-h2" style="font-family:'Cormorant Garamond',serif">Основные сведения</h2>
+        <dl class="ks-dl">
+          <dt>Организационно-правовая форма</dt><dd>Индивидуальный предприниматель Горяина Юлия Павловна</dd>
+          <dt>Дата государственной регистрации</dt><dd>21 апреля 2024 года</dd>
+          <dt>ИНН</dt><dd>228900391328</dd>
+          <dt>ОГРНИП</dt><dd>324774600267683</dd>
+          <dt>Адрес</dt><dd>129337, г. Москва, Ярославское шоссе, д. 122, корп. 1, кв. 133</dd>
+          <dt>Режим работы</dt><dd>Пн–Пт, 10:00–18:00</dd>
+          <dt>Контакты</dt><dd>info@kitai-school.ru · <a href="https://kitai-school.ru/">kitai-school.ru</a></dd>
+        </dl>
+        <p class="ks-hint">Школа как образовательный проект ведёт преподавательскую деятельность с 2005 года; 2024 год — дата государственной регистрации текущей организационно-правовой формы (ИП).</p>
+      </section>
+
+      <!-- 2 -->
+      <section class="ks-sec" id="doc-2">
+        <div class="ks-num">02</div>
+        <h2 class="ks-h2" style="font-family:'Cormorant Garamond',serif">Структура и органы управления</h2>
+        <p>Образовательную деятельность осуществляет индивидуальный предприниматель. Руководство деятельностью, включая методическое и административное, осуществляется руководителем (ИП Горяина Ю. П.) при участии главного методиста и административной службы.</p>
+        <p class="ks-hint">Раздел актуализируется. Точную структуру управления просьба уточнять у администрации школы.</p>
+      </section>
+
+      <!-- 3 -->
+      <section class="ks-sec" id="doc-3">
+        <div class="ks-num">03</div>
+        <h2 class="ks-h2" style="font-family:'Cormorant Garamond',serif">Документы</h2>
+        <div class="ks-lic">
+          <div>
+            <h3 style="font-family:'Cormorant Garamond',serif">Лицензия на образовательную деятельность</h3>
+            <div class="num">№ Л035-01298-77/02285772</div>
+            <div class="meta">Выдана Департаментом образования и науки города Москвы. Действует с 07.05.2025.</div>
+            <div class="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Действует · запись в госреестре Рособрнадзора</div>
+          </div>
+          <div class="ks-lic-btns">
+            <a class="primary" href="https://islod.obrnadzor.gov.ru/view/35512" target="_blank" rel="noopener">Проверить в реестре</a>
+            <a class="ghost" href="DOC_LICENSE" target="_blank" rel="noopener">Скачать PDF</a>
+          </div>
+        </div>
+        <div class="ks-benefit">
+          <div><b>Налоговый вычет 13%</b>Можно вернуть часть стоимости обучения.</div>
+          <div><b>Официальный статус</b>Обучение по государственной лицензии.</div>
+          <div><b>Оплата от юрлица</b>Счёт и закрывающие документы для компаний.</div>
+        </div>
+        <p style="margin-top:16px">Иные документы: свидетельство о государственной регистрации ИП, локальные акты (положение об оказании платных образовательных услуг, правила приёма).</p>
+        <p class="ks-hint">Перечень локальных актов уточняется у администрации.</p>
+      </section>
+
+      <!-- 4 -->
+      <section class="ks-sec" id="doc-4">
+        <div class="ks-num">04</div>
+        <h2 class="ks-h2" style="font-family:'Cormorant Garamond',serif">Образование</h2>
+        <ul class="ks-ul">
+          <li>Реализуемые программы: дополнительные образовательные программы по китайскому языку (общий курс, разговорный, подготовка к экзаменам HSK/HSKK/YCT, китайский для детей, деловой китайский).</li>
+          <li>Форма обучения: очно-дистанционная (онлайн).</li>
+          <li>Язык обучения: русский и китайский.</li>
+          <li>Нормативные сроки: определяются программой и уровнем подготовки обучающегося.</li>
+        </ul>
+        <p class="ks-hint">Подробное описание программ — на соответствующих страницах курсов.</p>
+      </section>
+
+      <!-- 5 -->
+      <section class="ks-sec" id="doc-5">
+        <div class="ks-num">05</div>
+        <h2 class="ks-h2" style="font-family:'Cormorant Garamond',serif">Руководство. Педагогический состав</h2>
+        <p>Руководитель организации — ИП Горяина Юлия Павловна. Педагогический состав — более 30 преподавателей с профильным образованием; методическое сопровождение осуществляют методисты школы.</p>
+        <p>Формальные сведения о педагогических работниках (ФИО, должность, образование, квалификация, стаж) предоставляются по запросу. Развёрнутые профили преподавателей — на странице <a href="https://kitai-school.ru/teachers">«Преподаватели»</a>.</p>
+      </section>
+
+      <!-- 6 -->
+      <section class="ks-sec" id="doc-6">
+        <div class="ks-num">06</div>
+        <h2 class="ks-h2" style="font-family:'Cormorant Garamond',serif">Материально-техническое обеспечение</h2>
+        <ul class="ks-ul">
+          <li>Обучение проводится дистанционно на собственной цифровой платформе (тренажёр лексики, разбор произношения, прописи иероглифов, личный кабинет).</li>
+          <li>Для проведения занятий используется оборудование для видеосвязи и электронные образовательные ресурсы.</li>
+          <li>Условия охраны здоровья: дистанционный формат, регламент экранного времени для детей.</li>
+        </ul>
+      </section>
+
+      <!-- 7 -->
+      <section class="ks-sec" id="doc-7">
+        <div class="ks-num">07</div>
+        <h2 class="ks-h2" style="font-family:'Cormorant Garamond',serif">Платные образовательные услуги</h2>
+        <p>Обучение осуществляется на возмездной основе. Порядок оказания услуг, права и обязанности сторон определяются договором-офертой.</p>
+        <div class="ks-links">
+          <a class="ks-file" href="DOC_OFERTA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Договор-оферта</a>
+          <a class="ks-file" href="/privacy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Политика конфиденциальности</a>
+        </div>
+      </section>
+
+      <!-- 8 -->
+      <section class="ks-sec" id="doc-8">
+        <div class="ks-num">08</div>
+        <h2 class="ks-h2" style="font-family:'Cormorant Garamond',serif">Вакантные места для приёма (перевода)</h2>
+        <p>Обучение ведётся по индивидуальным и групповым программам без ограничения набора. Запись на обучение открыта постоянно.</p>
+        <p class="ks-hint">Формат раздела уточняется с учётом специфики онлайн-обучения.</p>
+      </section>
+
+      <!-- 9 -->
+      <section class="ks-sec" id="doc-9">
+        <div class="ks-num">09</div>
+        <h2 class="ks-h2" style="font-family:'Cormorant Garamond',serif">Доступная среда</h2>
+        <p>Образовательный процесс реализуется дистанционно. Специальных условий доступности физического пространства не требуется; обучение доступно из любого места при наличии интернета. По вопросам организации обучения для лиц с ОВЗ — по контактам школы.</p>
+      </section>
+
+      <!-- 10 -->
+      <section class="ks-sec" id="doc-10">
+        <div class="ks-num">10</div>
+        <h2 class="ks-h2" style="font-family:'Cormorant Garamond',serif">Международное сотрудничество</h2>
+        <p>Школа сопровождает поступление в вузы Китая и взаимодействует с китайскими университетами, в том числе:</p>
+        <ul class="ks-ul">
+          <li>Shanghai International Studies University (Шанхайский университет иностранных языков)</li>
+          <li>Beijing Language and Culture University (Пекинский университет языка и культуры)</li>
+          <li>Wuhan University (Уханьский университет) и другие вузы-партнёры</li>
+        </ul>
+        <p>Осуществляется сопровождение поступления по грантам CSC, провинциальным и университетским стипендиям. Подробнее — на странице <a href="https://kitai-school.ru/ks-university">«Поступление в Китай»</a>.</p>
+      </section>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,284 @@
+<!-- ============================================================
+     Kitai School — ШАПКА v3 (расширенное меню + мега-меню «Обучение»)
+     Stand-alone блок для Tilda (T123 «HTML-код»).
+     ============================================================ -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@500&display=swap">
+<style>
+#ks-hdr{position:sticky;top:0;z-index:1000;background:#FAF7F2;color:#2C2420;font-family:'Inter',-apple-system,Arial,sans-serif;border-bottom:1px solid #EAE3D8}
+#ks-hdr *{box-sizing:border-box}
+#ks-hdr a{text-decoration:none}
+#ks-hdr .ks-wrap{max-width:1280px;margin:0 auto;padding:0 28px;height:76px;display:flex;align-items:center;gap:22px}
+#ks-hdr .ks-logo{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+#ks-hdr .ks-nav{display:flex;align-items:center;gap:22px;flex:1 1 auto;margin-left:30px}
+#ks-hdr .ks-item{position:relative;height:76px;display:flex;align-items:center}
+#ks-hdr .ks-item.has-mega{position:static}
+#ks-hdr .ks-item>a,#ks-hdr .ks-item>span{display:inline-flex;align-items:center;gap:7px;cursor:pointer;font:500 15.5px/1 'Inter',sans-serif;color:#5A4F45;transition:color .15s;white-space:nowrap}
+#ks-hdr .ks-item:hover>a,#ks-hdr .ks-item:hover>span{color:#A41E3A}
+#ks-hdr .ks-ic{flex:0 0 auto;width:16px;height:16px}
+#ks-hdr .ks-caret{flex:0 0 auto;width:8px;height:8px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:.18s}
+#ks-hdr .ks-item:hover .ks-caret{transform:rotate(-135deg) translateY(-1px)}
+
+/* обычное выпадающее */
+#ks-hdr .ks-sub{position:absolute;top:76px;left:-14px;min-width:262px;background:#fff;border:1px solid #EAE3D8;border-radius:14px;box-shadow:0 12px 34px rgba(44,36,32,.14);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.16s;z-index:20}
+#ks-hdr .ks-item:hover .ks-sub,#ks-hdr .ks-item:focus-within .ks-sub{opacity:1;visibility:visible;transform:translateY(0)}
+#ks-hdr .ks-sub a{display:flex;align-items:center;gap:11px;font:500 15px/1.3 'Inter',sans-serif;color:#5A4F45;padding:11px 14px;border-radius:9px;white-space:nowrap}
+#ks-hdr .ks-sub a:hover{background:#F3EDE3;color:#A41E3A}
+#ks-hdr .ks-sub .ks-ic{color:#A41E3A;opacity:.9}
+
+/* МЕГА-МЕНЮ */
+#ks-hdr .ks-mega{position:absolute;top:76px;left:0;right:0;background:#fff;border-top:1px solid #EAE3D8;border-bottom:1px solid #EAE3D8;box-shadow:0 18px 40px rgba(44,36,32,.13);opacity:0;visibility:hidden;transform:translateY(8px);transition:.16s;z-index:15}
+#ks-hdr .ks-item:hover .ks-mega,#ks-hdr .ks-item:focus-within .ks-mega{opacity:1;visibility:visible;transform:translateY(0)}
+#ks-hdr .ks-mega-in{max-width:1280px;margin:0 auto;padding:26px 28px 30px;display:grid;grid-template-columns:repeat(4,1fr);gap:26px 30px}
+#ks-hdr .ks-col{min-width:0}
+#ks-hdr .ks-col-h{display:flex;align-items:center;gap:8px;font:600 13px/1 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#A41E3A;padding-bottom:11px;margin-bottom:8px;border-bottom:1px solid #EAE3D8}
+#ks-hdr .ks-col-h svg{width:15px;height:15px}
+#ks-hdr .ks-mega a.ks-ml{display:block;font:500 15px/1.35 'Inter',sans-serif;color:#5A4F45;padding:7px 9px;margin:0 -9px;border-radius:8px;transition:.13s}
+#ks-hdr .ks-mega a.ks-ml:hover{background:#F7E6EB;color:#A41E3A}
+#ks-hdr .ks-mega a.ks-ml.is-parent{font-weight:600;color:#2C2420}
+#ks-hdr .ks-chips{display:flex;flex-wrap:wrap;gap:6px;padding:4px 0 8px 9px;margin:0 -9px}
+#ks-hdr .ks-chips a{font:500 13.5px/1 'Inter',sans-serif;color:#5A4F45;background:#F3EDE3;border:1px solid #EAE3D8;border-radius:7px;padding:6px 9px;transition:.13s}
+#ks-hdr .ks-chips a:hover{background:#A41E3A;border-color:#A41E3A;color:#fff}
+
+/* right side */
+#ks-hdr .ks-right{display:flex;align-items:center;gap:16px;flex:0 0 auto}
+#ks-hdr .ks-phone{font:600 15px/1 'Inter',sans-serif;color:#2C2420;white-space:nowrap}
+#ks-hdr .ks-phone:hover{color:#A41E3A}
+#ks-hdr .ks-cta{background:#A41E3A;color:#fff;font:600 14.5px/1 'Inter',sans-serif;border-radius:8px;padding:12px 18px;white-space:nowrap;box-shadow:0 6px 16px rgba(164,30,58,.2);transition:background .15s}
+#ks-hdr .ks-cta:hover{background:#841630}
+#ks-hdr .ks-soc{display:flex;align-items:center;gap:8px}
+#ks-hdr .ks-soc a{width:34px;height:34px;border:1px solid #DED5C6;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#5A4F45;transition:.15s}
+#ks-hdr .ks-soc a:hover{border-color:#A41E3A;color:#A41E3A}
+#ks-hdr .ks-soc svg{width:16px;height:16px}
+
+/* mobile */
+#ks-hdr .ks-mtools{display:none;align-items:center;gap:8px;flex:0 0 auto}
+#ks-hdr .ks-mphone{width:42px;height:42px;border-radius:50%;border:1px solid #DED5C6;display:flex;align-items:center;justify-content:center;color:#2C2420}
+#ks-hdr .ks-mphone:hover{border-color:#A41E3A;color:#A41E3A}
+#ks-hdr .ks-mphone svg{width:20px;height:20px}
+#ks-hdr .ks-burger{display:flex;flex-direction:column;gap:5px;width:42px;height:42px;justify-content:center;align-items:center;background:none;border:0;cursor:pointer;flex:0 0 auto}
+#ks-hdr .ks-burger span{display:block;width:24px;height:2px;background:#2C2420;transition:.2s}
+#ks-hdr .ks-burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#ks-hdr .ks-burger.is-open span:nth-child(2){opacity:0}
+#ks-hdr .ks-burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#ks-hdr .ks-mobile{display:none;background:#FAF7F2;border-top:1px solid #EAE3D8;padding:10px 28px 24px;max-height:82vh;overflow:auto}
+#ks-hdr .ks-mobile.is-open{display:block}
+#ks-hdr .ks-mgrp{font:600 12px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#A41E3A;margin:20px 0 4px}
+#ks-hdr .ks-mobile a{display:flex;align-items:center;gap:12px;font:500 16px/1.3 'Inter',sans-serif;color:#5A4F45;padding:12px 0;border-bottom:1px solid rgba(44,36,32,.06)}
+#ks-hdr .ks-mobile a:hover{color:#A41E3A}
+#ks-hdr .ks-mobile a.ks-msub{padding-left:16px;font-size:15.5px;color:#6B6055}
+#ks-hdr .ks-mobile .ks-m-phone{color:#2C2420;font-weight:600;border-bottom:0;padding-top:18px}
+#ks-hdr .ks-mobile .ks-m-cta{justify-content:center;background:#A41E3A;color:#fff;border-radius:8px;padding:15px;margin-top:10px;border-bottom:0}
+#ks-hdr .ks-mobile .ks-m-soc{display:flex;gap:12px;margin-top:18px}
+#ks-hdr .ks-mobile .ks-m-soc a{width:42px;height:42px;border:1px solid #DED5C6;border-radius:50%;justify-content:center;color:#5A4F45;padding:0;border-bottom:1px solid #DED5C6}
+#ks-hdr [style*="Cormorant"]{font-family:'Cormorant Garamond',Georgia,serif !important}
+#ks-hdr .ks-logo-svg{display:block;height:46px;width:auto}
+@media (max-width:1240px){
+  #ks-hdr .ks-nav,#ks-hdr .ks-right{display:none}
+  #ks-hdr .ks-mtools{display:flex}
+  #ks-hdr .ks-wrap{justify-content:space-between}
+}
+</style>
+<header id="ks-hdr">
+  <div class="ks-wrap">
+    <a class="ks-logo" href="https://kitai-school.ru/" aria-label="Kitai School"><svg class="ks-logo-svg" width="116" height="46" viewBox="0 0 218 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M97.5739 50C97.6323 47.5457 97.6616 45.0769 97.6616 42.5934C97.6908 40.1099 97.7054 37.6264 97.7054 35.143V32.8202C97.7054 30.3075 97.6908 27.824 97.6616 25.3697C97.6616 22.8863 97.6323 20.4028 97.5739 17.9193H102.176C102.146 20.3736 102.117 22.8424 102.088 25.3259C102.088 27.8094 102.088 30.3075 102.088 32.8202V37.159C102.088 38.8243 102.088 40.7673 102.088 42.9878C102.117 45.1791 102.146 47.5165 102.176 50H97.5739ZM93.2351 50V48.6414L99.4584 48.0717H100.466L106.427 48.6414V50H93.2351ZM93.2351 19.2779V17.9193H106.646V19.2779L100.466 19.8038H99.4584L93.2351 19.2779ZM111.204 50V48.6414L117.077 48.0717H117.909L123.519 48.6414V50H111.204ZM111.16 19.2779V17.9193H122.16V19.2779L117.515 19.8038L116.507 19.8915L111.16 19.2779ZM99.809 41.4539L99.6776 38.912H100.203L101.08 37.8163L117.339 17.9193H119.487L99.809 41.4539ZM115.981 50L106.383 32.5572L109.275 29.1826L120.889 50H115.981ZM125.762 50V48.6414L131.986 48.0717H132.994L139.305 48.6414V50H125.762ZM130.101 50C130.189 47.5457 130.233 45.0769 130.233 42.5934C130.233 40.1099 130.233 37.6264 130.233 35.143V32.8202C130.233 30.3075 130.233 27.824 130.233 25.3697C130.233 22.8863 130.189 20.4028 130.101 17.9193H134.922C134.864 20.3736 134.82 22.8424 134.79 25.3259C134.79 27.8094 134.79 30.3075 134.79 32.8202V35.0991C134.79 37.6118 134.79 40.1099 134.79 42.5934C134.82 45.0477 134.864 47.5165 134.922 50H130.101ZM125.762 19.2779V17.9193H139.305V19.2779L132.994 19.8038H131.986L125.762 19.2779ZM148.996 50V48.6414L155.57 48.0717H156.841L163.502 48.6414V50H148.996ZM153.861 50C153.919 47.5457 153.948 45.0769 153.948 42.5934C153.978 40.1099 153.992 37.6264 153.992 35.143V32.8202C153.992 30.3075 153.978 27.824 153.948 25.3697C153.948 22.8863 153.919 20.4028 153.861 17.9193H158.594C158.565 20.3736 158.535 22.8424 158.506 25.3259C158.506 27.8094 158.506 30.3075 158.506 32.8202V35.0991C158.506 37.6118 158.506 40.1099 158.506 42.5934C158.535 45.0477 158.565 47.5165 158.594 50H153.861ZM142.51 26.4654L142.86 17.9193H169.594L169.945 26.4654H167.929L166.132 17.9193L168.279 19.497H144.131L146.323 17.9193L144.526 26.4654H142.51ZM168.436 50V48.6414L172.774 48.1155H173.563L178.296 48.6414V50H168.436ZM171.591 50L182.328 17.7002H185.177L196.134 50H191.488L181.934 20.6803H182.854L182.679 21.2939L173.519 50H171.591ZM176.368 39.175L176.543 37.7725H190.042L190.261 39.175H176.368ZM186.141 50V48.6414L192.014 48.1155H193.592L199.377 48.6414V50H186.141ZM201.645 50V48.6414L207.868 48.0717H208.876L215.187 48.6414V50H201.645ZM205.984 50C206.071 47.5457 206.115 45.0769 206.115 42.5934C206.115 40.1099 206.115 37.6264 206.115 35.143V32.8202C206.115 30.3075 206.115 27.824 206.115 25.3697C206.115 22.8863 206.071 20.4028 205.984 17.9193H210.804C210.746 20.3736 210.702 22.8424 210.673 25.3259C210.673 27.8094 210.673 30.3075 210.673 32.8202V35.0991C210.673 37.6118 210.673 40.1099 210.673 42.5934C210.702 45.0477 210.746 47.5165 210.804 50H205.984ZM201.645 19.2779V17.9193H215.187V19.2779L208.876 19.8038H207.868L201.645 19.2779Z" fill="#2C2420"></path>
+<path d="M102.659 65.9091C102.557 65.0455 102.142 64.375 101.415 63.8977C100.688 63.4205 99.7955 63.1818 98.7386 63.1818C97.9659 63.1818 97.2898 63.3068 96.7102 63.5568C96.1364 63.8068 95.6875 64.1506 95.3636 64.5881C95.0455 65.0256 94.8864 65.5227 94.8864 66.0795C94.8864 66.5455 94.9972 66.946 95.2188 67.2812C95.446 67.6108 95.7358 67.8864 96.0881 68.108C96.4403 68.3239 96.8097 68.5028 97.196 68.6449C97.5824 68.7812 97.9375 68.892 98.2614 68.9773L100.034 69.4545C100.489 69.5739 100.994 69.7386 101.551 69.9489C102.114 70.1591 102.651 70.446 103.162 70.8097C103.679 71.1676 104.105 71.6278 104.44 72.1903C104.776 72.7528 104.943 73.4432 104.943 74.2614C104.943 75.2045 104.696 76.0568 104.202 76.8182C103.713 77.5795 102.997 78.1847 102.054 78.6335C101.116 79.0824 99.9773 79.3068 98.6364 79.3068C97.3864 79.3068 96.304 79.1051 95.3892 78.7017C94.4801 78.2983 93.7642 77.7358 93.2415 77.0142C92.7244 76.2926 92.4318 75.4545 92.3636 74.5H94.5455C94.6023 75.1591 94.8239 75.7045 95.2102 76.1364C95.6023 76.5625 96.0966 76.8807 96.6932 77.0909C97.2955 77.2955 97.9432 77.3977 98.6364 77.3977C99.4432 77.3977 100.168 77.267 100.81 77.0057C101.452 76.7386 101.96 76.3693 102.335 75.8977C102.71 75.4205 102.898 74.8636 102.898 74.2273C102.898 73.6477 102.736 73.1761 102.412 72.8125C102.088 72.4489 101.662 72.1534 101.134 71.9261C100.605 71.6989 100.034 71.5 99.4205 71.3295L97.2727 70.7159C95.9091 70.3239 94.8295 69.7642 94.0341 69.0369C93.2386 68.3097 92.8409 67.358 92.8409 66.1818C92.8409 65.2045 93.1051 64.3523 93.6335 63.625C94.1676 62.892 94.8835 62.3239 95.7812 61.9205C96.6847 61.5114 97.6932 61.3068 98.8068 61.3068C99.9318 61.3068 100.932 61.5085 101.807 61.9119C102.682 62.3097 103.375 62.8551 103.886 63.5483C104.403 64.2415 104.676 65.0284 104.705 65.9091H102.659ZM127.264 67H125.15C125.025 66.392 124.806 65.858 124.494 65.3977C124.187 64.9375 123.812 64.5511 123.369 64.2386C122.931 63.9205 122.446 63.6818 121.912 63.5227C121.377 63.3636 120.821 63.2841 120.241 63.2841C119.184 63.2841 118.227 63.5511 117.369 64.0852C116.517 64.6193 115.838 65.4062 115.332 66.446C114.832 67.4858 114.582 68.7614 114.582 70.2727C114.582 71.7841 114.832 73.0597 115.332 74.0994C115.838 75.1392 116.517 75.9261 117.369 76.4602C118.227 76.9943 119.184 77.2614 120.241 77.2614C120.821 77.2614 121.377 77.1818 121.912 77.0227C122.446 76.8636 122.931 76.6278 123.369 76.3153C123.812 75.9972 124.187 75.608 124.494 75.1477C124.806 74.6818 125.025 74.1477 125.15 73.5455H127.264C127.105 74.4375 126.815 75.2358 126.394 75.9403C125.974 76.6449 125.451 77.2443 124.826 77.7386C124.201 78.2273 123.5 78.5994 122.721 78.8551C121.948 79.1108 121.122 79.2386 120.241 79.2386C118.752 79.2386 117.429 78.875 116.269 78.1477C115.11 77.4205 114.198 76.3864 113.534 75.0455C112.869 73.7045 112.537 72.1136 112.537 70.2727C112.537 68.4318 112.869 66.8409 113.534 65.5C114.198 64.1591 115.11 63.125 116.269 62.3977C117.429 61.6705 118.752 61.3068 120.241 61.3068C121.122 61.3068 121.948 61.4347 122.721 61.6903C123.5 61.946 124.201 62.321 124.826 62.8153C125.451 63.304 125.974 63.9006 126.394 64.6051C126.815 65.304 127.105 66.1023 127.264 67ZM135.479 79V61.5455H137.593V69.3182H146.9V61.5455H149.013V79H146.9V71.1932H137.593V79H135.479ZM172.772 70.2727C172.772 72.1136 172.44 73.7045 171.775 75.0455C171.11 76.3864 170.198 77.4205 169.039 78.1477C167.88 78.875 166.556 79.2386 165.068 79.2386C163.579 79.2386 162.255 78.875 161.096 78.1477C159.937 77.4205 159.025 76.3864 158.36 75.0455C157.695 73.7045 157.363 72.1136 157.363 70.2727C157.363 68.4318 157.695 66.8409 158.36 65.5C159.025 64.1591 159.937 63.125 161.096 62.3977C162.255 61.6705 163.579 61.3068 165.068 61.3068C166.556 61.3068 167.88 61.6705 169.039 62.3977C170.198 63.125 171.11 64.1591 171.775 65.5C172.44 66.8409 172.772 68.4318 172.772 70.2727ZM170.727 70.2727C170.727 68.7614 170.474 67.4858 169.968 66.446C169.468 65.4062 168.789 64.6193 167.931 64.0852C167.079 63.5511 166.124 63.2841 165.068 63.2841C164.011 63.2841 163.053 63.5511 162.195 64.0852C161.343 64.6193 160.664 65.4062 160.159 66.446C159.659 67.4858 159.409 68.7614 159.409 70.2727C159.409 71.7841 159.659 73.0597 160.159 74.0994C160.664 75.1392 161.343 75.9261 162.195 76.4602C163.053 76.9943 164.011 77.2614 165.068 77.2614C166.124 77.2614 167.079 76.9943 167.931 76.4602C168.789 75.9261 169.468 75.1392 169.968 74.0994C170.474 73.0597 170.727 71.7841 170.727 70.2727ZM195.853 70.2727C195.853 72.1136 195.521 73.7045 194.856 75.0455C194.191 76.3864 193.28 77.4205 192.12 78.1477C190.961 78.875 189.637 79.2386 188.149 79.2386C186.66 79.2386 185.336 78.875 184.177 78.1477C183.018 77.4205 182.106 76.3864 181.441 75.0455C180.777 73.7045 180.444 72.1136 180.444 70.2727C180.444 68.4318 180.777 66.8409 181.441 65.5C182.106 64.1591 183.018 63.125 184.177 62.3977C185.336 61.6705 186.66 61.3068 188.149 61.3068C189.637 61.3068 190.961 61.6705 192.12 62.3977C193.28 63.125 194.191 64.1591 194.856 65.5C195.521 66.8409 195.853 68.4318 195.853 70.2727ZM193.808 70.2727C193.808 68.7614 193.555 67.4858 193.049 66.446C192.549 65.4062 191.87 64.6193 191.012 64.0852C190.16 63.5511 189.206 63.2841 188.149 63.2841C187.092 63.2841 186.135 63.5511 185.277 64.0852C184.424 64.6193 183.745 65.4062 183.24 66.446C182.74 67.4858 182.49 68.7614 182.49 70.2727C182.49 71.7841 182.74 73.0597 183.24 74.0994C183.745 75.1392 184.424 75.9261 185.277 76.4602C186.135 76.9943 187.092 77.2614 188.149 77.2614C189.206 77.2614 190.16 76.9943 191.012 76.4602C191.87 75.9261 192.549 75.1392 193.049 74.0994C193.555 73.0597 193.808 71.7841 193.808 70.2727ZM204.207 79V61.5455H206.321V77.125H214.435V79H204.207Z" fill="#2C2420"></path>
+<text x="39.5" y="53" text-anchor="middle" font-family="&#39;Noto Serif SC&#39;,&#39;Songti SC&#39;,serif" font-size="31" font-weight="500" fill="#2C2420">启</text>
+<text x="39.5" y="68.5" text-anchor="middle" font-family="&#39;Inter&#39;,sans-serif" font-size="6.6" font-weight="500" letter-spacing="1.7" fill="#8B7D6B">EST · 2005</text>
+<circle cx="39.5" cy="47.5" r="33.5" stroke="#2C2420" stroke-width="1"></circle>
+<circle cx="39.5" cy="47.5" r="38.5" stroke="#2C2420" stroke-width="2.4"></circle>
+</svg></a>
+
+    <nav class="ks-nav">
+      <!-- О школе (как было) -->
+      <div class="ks-item">
+        <a href="https://kitai-school.ru/about"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>О школе</span> <i class="ks-caret"></i></a>
+        <div class="ks-sub">
+          <a href="https://kitai-school.ru/about"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>О школе</span></a>
+          <a href="https://kitai-school.ru/prepodavateli"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 19v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 19v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Преподаватели</span></a>
+          <a href="https://kitai-school.ru/otzyvy"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.3 3.2L7 14.2 2 9.4l7-.9z"/></svg><span>Отзывы</span></a>
+          <a href="https://kitai-school.ru/o-nas-v-smi"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h13v16H4z"/><path d="M17 8h3v10a2 2 0 0 1-2 2"/><path d="M7 8h7M7 12h7M7 16h5"/></svg><span>О нас в СМИ</span></a>
+          <a href="https://kitai-school.ru/foto-video"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg><span>Фото и видео</span></a>
+          <a href="https://kitai-school.ru/licenzii"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M9 13.5l-1 7.5 4-2 4 2-1-7.5"/></svg><span>Лицензии</span></a>
+          <a href="https://kitai-school.ru/metodika-i-platforma"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Методика и платформа</span></a>
+        </div>
+      </div>
+
+      <!-- Обучение — МЕГА-МЕНЮ -->
+      <div class="ks-item has-mega">
+        <span><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h7z"/></svg><span>Обучение</span> <i class="ks-caret"></i></span>
+        <div class="ks-mega">
+          <div class="ks-mega-in">
+            <!-- Колонка 1: Онлайн-курсы -->
+            <div class="ks-col">
+              <div class="ks-col-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Онлайн-курсы</div>
+              <a class="ks-ml" href="https://kitai-school.ru/ks-indiv">Индивидуальные занятия</a>
+              <a class="ks-ml" href="https://kitai-school.ru/ks-group">Группы</a>
+              <a class="ks-ml" href="https://kitai-school.ru/razgovornyy-ustnyy-kitayskiy">Разговорный / устный</a>
+              <a class="ks-ml" href="https://kitai-school.ru/razgovornyy-klub-s-nositelem">Разговорный клуб с носителем</a>
+              <a class="ks-ml" href="https://kitai-school.ru/grammatika">Грамматика</a>
+              <a class="ks-ml" href="https://kitai-school.ru/fonetika-proiznoshenie-kitayskogo">Фонетика / произношение</a>
+              <a class="ks-ml" href="https://kitai-school.ru/ieroglifika">Иероглифика</a>
+              <a class="ks-ml" href="https://kitai-school.ru/kitayskiy-dlya-detey">Китайский для детей</a>
+              <a class="ks-ml" href="https://kitai-school.ru/kitayskiy-dlya-malyshey">Китайский для малышей</a>
+            </div>
+
+            <!-- Колонка 2: Экзамены -->
+            <div class="ks-col">
+              <div class="ks-col-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Экзамены</div>
+              <a class="ks-ml is-parent" href="https://kitai-school.ru/hsk-exam">Подготовка к HSK</a>
+              <div class="ks-chips">
+                <a href="https://kitai-school.ru/hsk1">HSK 1</a><a href="https://kitai-school.ru/hsk2">HSK 2</a><a href="https://kitai-school.ru/hsk3">HSK 3</a><a href="https://kitai-school.ru/hsk4">HSK 4</a><a href="https://kitai-school.ru/hsk5">HSK 5</a>
+              </div>
+              <a class="ks-ml" href="https://kitai-school.ru/hskk">Подготовка к HSKK</a>
+              <a class="ks-ml" href="https://kitai-school.ru/yct">Подготовка к YCT</a>
+              <a class="ks-ml is-parent" href="https://kitai-school.ru/csca">CSCA — вступительный экзамен</a>
+              <div class="ks-chips">
+                <a href="https://kitai-school.ru/csca-matematika">Математика</a><a href="https://kitai-school.ru/csca-fizika">Физика</a><a href="https://kitai-school.ru/csca-himiya">Химия</a>
+              </div>
+              <a class="ks-ml" href="https://kitai-school.ru/podgotovka-k-olimpiadam-po-kitayskomu">Подготовка к олимпиадам</a>
+              <a class="ks-ml" href="https://kitai-school.ru/podgotovka-k-eg-po-kitayskomu">Подготовка к ЕГЭ</a>
+            </div>
+
+            <!-- Колонка 3: Поступление в Китай -->
+            <div class="ks-col">
+              <div class="ks-col-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg>Поступление в Китай</div>
+              <a class="ks-ml" href="https://kitai-school.ru/obuchenie-v-kitae-posle-9-klassa">Обучение в Китае после 9 класса</a>
+              <a class="ks-ml" href="https://kitai-school.ru/obuchenie-v-kitae-posle-11-klassa">Обучение в Китае после 11 класса</a>
+              <a class="ks-ml" href="https://kitai-school.ru/obuchenie-v-kitae-posle-kolledzha">Обучение в Китае после колледжа</a>
+              <a class="ks-ml" href="https://kitai-school.ru/bakalavriat-v-kitae">Бакалавриат в Китае</a>
+              <a class="ks-ml" href="https://kitai-school.ru/magistratura-v-kitae">Магистратура в Китае</a>
+              <a class="ks-ml" href="https://kitai-school.ru/yazykovoy-god-v-kitae">Языковой год в Китае</a>
+              <a class="ks-ml" href="https://kitai-school.ru/yazykovye-kursy-v-kitae">Языковые курсы в Китае</a>
+              <a class="ks-ml" href="https://kitai-school.ru/stajirovka-v-kitae">Стажировка в Китае</a>
+              <a class="ks-ml" href="https://kitai-school.ru/proforientaciya-dlya-postupleniya-v-kitay">Профориентация для поступления</a>
+            </div>
+
+            <!-- Колонка 4: Ещё -->
+            <div class="ks-col">
+              <div class="ks-col-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.2 6.6H21l-5.4 4 2 6.6L12 15.8 6.4 19.2l2-6.6L3 8.6h6.8z"/></svg>Ещё</div>
+              <a class="ks-ml" href="https://kitai-school.ru/kitayskiy-dlya-puteshestviy">Китайский для путешествий</a>
+              <a class="ks-ml" href="https://kitai-school.ru/teachers">Курсы для преподавателей</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Лагерь -->
+      <div class="ks-item"><a href="https://kitai-school.ru/language_camp"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 17H3z"/><path d="M12 3v17M8.5 12l3.5 8 3.5-8"/></svg><span>Лагерь</span></a></div>
+
+      <!-- Бизнесу — выпадающее -->
+      <div class="ks-item">
+        <a href="https://kitai-school.ru/business"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>Бизнесу</span> <i class="ks-caret"></i></a>
+        <div class="ks-sub">
+          <a href="https://kitai-school.ru/corporate_chinese"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>Корпоративное обучение</span></a>
+          <a href="https://kitai-school.ru/kitayskiy-dlya-marketinga"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-5"/></svg><span>Китайский для маркетинга</span></a>
+          <a href="https://kitai-school.ru/kitayskiy-dlya-logistiki"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="15" height="12" rx="1"/><path d="M16 9h4l3 3v6h-7z"/><circle cx="5.5" cy="18.5" r="1.7"/><circle cx="18.5" cy="18.5" r="1.7"/></svg><span>Китайский для логистики</span></a>
+          <a href="https://kitai-school.ru/tehnicheskiy-kitayskiy"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2l6 6-8 8-6 0 0-6z"/><path d="M4 20h16"/></svg><span>Технический китайский</span></a>
+          <a href="https://kitai-school.ru/uridicheskiy-kitayskiy"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4 7h16M6 21h12"/><path d="M4 7l-2 5a4 4 0 0 0 8 0z"/><path d="M20 7l2 5a4 4 0 0 1-8 0z"/></svg><span>Юридический китайский</span></a>
+          <a href="https://kitai-school.ru/konomicheskiy-kitayskiy"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5a3 3 0 0 0-3-1.5c-1.7 0-3 1-3 2.2 0 2.8 6 1.4 6 4.3 0 1.3-1.4 2.2-3 2.2a3.2 3.2 0 0 1-3-1.6"/><path d="M12 6v1.5M12 16.5V18"/></svg><span>Экономический китайский</span></a>
+        </div>
+      </div>
+
+      <!-- Контакты -->
+      <div class="ks-item"><a href="https://kitai-school.ru/contacts"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Контакты</span></a></div>
+    </nav>
+
+    <div class="ks-right">
+      <a class="ks-phone" href="tel:+79585387080">+7 (958) 538-70-80</a>
+      <a class="ks-cta" href="#popup:zayavka">Бесплатный урок</a>
+      <div class="ks-soc">
+        <a href="https://vk.com/kitai_school" target="_blank" rel="noopener" title="ВКонтакте" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.79 16.3s.27-.03.41-.18c.13-.14.13-.4.13-.4s-.02-1.23.55-1.41c.56-.18 1.27 1.19 2.03 1.72.57.4 1.01.31 1.01.31l2.03-.03s1.06-.07.56-.9c-.04-.07-.29-.62-1.51-1.76-1.27-1.19-1.1-1 .43-3.06.93-1.25 1.3-2.02 1.19-2.35-.11-.31-.8-.23-.8-.23l-2.31.02s-.17-.02-.3.05c-.12.08-.2.25-.2.25s-.36.97-.85 1.79c-1.02 1.74-1.42 1.83-1.59 1.72-.39-.25-.29-1.01-.29-1.55 0-1.69.26-2.39-.5-2.58-.25-.06-.43-.1-1.07-.11-.82-.01-1.51 0-1.91.2-.26.13-.46.41-.34.43.15.02.5.09.68.34.24.32.23 1.04.23 1.04s.14 1.99-.32 2.24c-.31.17-.74-.18-1.65-1.74-.46-.8-.81-1.69-.81-1.69s-.07-.17-.19-.25c-.15-.11-.35-.14-.35-.14l-2.2.02s-.33 0-.45.15c-.11.13-.01.4-.01.4s1.72 4.01 3.66 6.03c1.78 1.85 3.81 1.73 3.81 1.73h.92z"/></svg></a>
+        <a href="https://t.me/kitai_school" target="_blank" rel="noopener" title="Telegram" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.67 3.72L2.94 10.56c-1.21.49-1.2 1.16-.22 1.46l4.55 1.42 10.53-6.65c.5-.3.95-.14.58.19l-8.53 7.7-.31 4.69c.46 0 .66-.21.92-.46l2.21-2.15 4.6 3.4c.85.47 1.46.23 1.67-.79l3.02-14.23c.31-1.24-.47-1.8-1.28-1.43z"/></svg></a>
+        <a href="https://max.ru/id228900391328_biz" target="_blank" rel="noopener" title="MAX" aria-label="MAX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5C6.9 3.5 2.75 6.86 2.75 11c0 2.27 1.24 4.3 3.2 5.67L5.2 20.2l3.86-2.05c.92.24 1.9.36 2.94.36 5.1 0 9.25-3.36 9.25-7.51S17.1 3.5 12 3.5z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ks-mtools">
+      <a class="ks-mphone" href="tel:+79585387080" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+      <button class="ks-burger" type="button" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="ks-mobile">
+    <div class="ks-mgrp">О школе</div>
+    <a href="https://kitai-school.ru/about"><span>О школе</span></a>
+    <a href="https://kitai-school.ru/prepodavateli"><span>Преподаватели</span></a>
+    <a href="https://kitai-school.ru/otzyvy"><span>Отзывы</span></a>
+    <a href="https://kitai-school.ru/o-nas-v-smi"><span>О нас в СМИ</span></a>
+    <a href="https://kitai-school.ru/foto-video"><span>Фото и видео</span></a>
+    <a href="https://kitai-school.ru/licenzii"><span>Лицензии</span></a>
+    <a href="https://kitai-school.ru/metodika-i-platforma"><span>Методика и платформа</span></a>
+
+    <div class="ks-mgrp">Обучение · Онлайн-курсы</div>
+    <a href="https://kitai-school.ru/ks-indiv"><span>Индивидуальные занятия</span></a>
+    <a href="https://kitai-school.ru/ks-group"><span>Группы</span></a>
+    <a href="https://kitai-school.ru/razgovornyy-ustnyy-kitayskiy"><span>Разговорный / устный</span></a>
+    <a href="https://kitai-school.ru/razgovornyy-klub-s-nositelem"><span>Разговорный клуб с носителем</span></a>
+    <a href="https://kitai-school.ru/grammatika"><span>Грамматика</span></a>
+    <a href="https://kitai-school.ru/fonetika-proiznoshenie-kitayskogo"><span>Фонетика / произношение</span></a>
+    <a href="https://kitai-school.ru/ieroglifika"><span>Иероглифика</span></a>
+    <a href="https://kitai-school.ru/kitayskiy-dlya-detey"><span>Китайский для детей</span></a>
+    <a href="https://kitai-school.ru/kitayskiy-dlya-malyshey"><span>Китайский для малышей</span></a>
+
+    <div class="ks-mgrp">Обучение · Экзамены</div>
+    <a href="https://kitai-school.ru/hsk-exam"><span>Подготовка к HSK</span></a>
+    <a class="ks-msub" href="https://kitai-school.ru/hsk1"><span>HSK 1 · 2 · 3 · 4 · 5</span></a>
+    <a href="https://kitai-school.ru/hskk"><span>Подготовка к HSKK</span></a>
+    <a href="https://kitai-school.ru/yct"><span>Подготовка к YCT</span></a>
+    <a href="https://kitai-school.ru/csca"><span>CSCA — вступительный экзамен</span></a>
+    <a class="ks-msub" href="https://kitai-school.ru/csca-matematika"><span>Математика · Физика · Химия</span></a>
+    <a href="https://kitai-school.ru/podgotovka-k-olimpiadam-po-kitayskomu"><span>Подготовка к олимпиадам</span></a>
+    <a href="https://kitai-school.ru/podgotovka-k-eg-po-kitayskomu"><span>Подготовка к ЕГЭ</span></a>
+
+    <div class="ks-mgrp">Обучение · Поступление в Китай</div>
+    <a href="https://kitai-school.ru/obuchenie-v-kitae-posle-9-klassa"><span>Обучение в Китае после 9 класса</span></a>
+    <a href="https://kitai-school.ru/obuchenie-v-kitae-posle-11-klassa"><span>Обучение в Китае после 11 класса</span></a>
+    <a href="https://kitai-school.ru/obuchenie-v-kitae-posle-kolledzha"><span>Обучение в Китае после колледжа</span></a>
+    <a href="https://kitai-school.ru/bakalavriat-v-kitae"><span>Бакалавриат в Китае</span></a>
+    <a href="https://kitai-school.ru/magistratura-v-kitae"><span>Магистратура в Китае</span></a>
+    <a href="https://kitai-school.ru/yazykovoy-god-v-kitae"><span>Языковой год в Китае</span></a>
+    <a href="https://kitai-school.ru/yazykovye-kursy-v-kitae"><span>Языковые курсы в Китае</span></a>
+    <a href="https://kitai-school.ru/stajirovka-v-kitae"><span>Стажировка в Китае</span></a>
+    <a href="https://kitai-school.ru/proforientaciya-dlya-postupleniya-v-kitay"><span>Профориентация для поступления</span></a>
+
+    <div class="ks-mgrp">Обучение · Ещё</div>
+    <a href="https://kitai-school.ru/kitayskiy-dlya-puteshestviy"><span>Китайский для путешествий</span></a>
+    <a href="https://kitai-school.ru/teachers"><span>Курсы для преподавателей</span></a>
+
+    <div class="ks-mgrp">Лагерь</div>
+    <a href="https://kitai-school.ru/language_camp"><span>Языковой лагерь</span></a>
+
+    <div class="ks-mgrp">Бизнесу</div>
+    <a href="https://kitai-school.ru/corporate_chinese"><span>Корпоративное обучение</span></a>
+    <a href="https://kitai-school.ru/kitayskiy-dlya-marketinga"><span>Китайский для маркетинга</span></a>
+    <a href="https://kitai-school.ru/kitayskiy-dlya-logistiki"><span>Китайский для логистики</span></a>
+    <a href="https://kitai-school.ru/tehnicheskiy-kitayskiy"><span>Технический китайский</span></a>
+    <a href="https://kitai-school.ru/uridicheskiy-kitayskiy"><span>Юридический китайский</span></a>
+    <a href="https://kitai-school.ru/konomicheskiy-kitayskiy"><span>Экономический китайский</span></a>
+
+    <div class="ks-mgrp">Контакты</div>
+    <a href="https://kitai-school.ru/contacts"><span>Контакты</span></a>
+
+    <a class="ks-m-phone" href="tel:+79585387080"><svg class="ks-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+7 (958) 538-70-80</span></a>
+    <a class="ks-m-cta" href="#popup:zayavka">Бесплатный урок</a>
+    <div class="ks-m-soc">
+      <a href="https://vk.com/kitai_school" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.79 16.3s.27-.03.41-.18c.13-.14.13-.4.13-.4s-.02-1.23.55-1.41c.56-.18 1.27 1.19 2.03 1.72.57.4 1.01.31 1.01.31l2.03-.03s1.06-.07.56-.9c-.04-.07-.29-.62-1.51-1.76-1.27-1.19-1.1-1 .43-3.06.93-1.25 1.3-2.02 1.19-2.35-.11-.31-.8-.23-.8-.23l-2.31.02s-.17-.02-.3.05c-.12.08-.2.25-.2.25s-.36.97-.85 1.79c-1.02 1.74-1.42 1.83-1.59 1.72-.39-.25-.29-1.01-.29-1.55 0-1.69.26-2.39-.5-2.58-.25-.06-.43-.1-1.07-.11-.82-.01-1.51 0-1.91.2-.26.13-.46.41-.34.43.15.02.5.09.68.34.24.32.23 1.04.23 1.04s.14 1.99-.32 2.24c-.31.17-.74-.18-1.65-1.74-.46-.8-.81-1.69-.81-1.69s-.07-.17-.19-.25c-.15-.11-.35-.14-.35-.14l-2.2.02s-.33 0-.45.15c-.11.13-.01.4-.01.4s1.72 4.01 3.66 6.03c1.78 1.85 3.81 1.73 3.81 1.73h.92z"/></svg></a>
+      <a href="https://t.me/kitai_school" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.67 3.72L2.94 10.56c-1.21.49-1.2 1.16-.22 1.46l4.55 1.42 10.53-6.65c.5-.3.95-.14.58.19l-8.53 7.7-.31 4.69c.46 0 .66-.21.92-.46l2.21-2.15 4.6 3.4c.85.47 1.46.23 1.67-.79l3.02-14.23c.31-1.24-.47-1.8-1.28-1.43z"/></svg></a>
+      <a href="https://max.ru/id228900391328_biz" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5C6.9 3.5 2.75 6.86 2.75 11c0 2.27 1.24 4.3 3.2 5.67L5.2 20.2l3.86-2.05c.92.24 1.9.36 2.94.36 5.1 0 9.25-3.36 9.25-7.51S17.1 3.5 12 3.5z"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<script>
+(function(){
+  var hdr=document.getElementById('ks-hdr'); if(!hdr) return;
+  var b=hdr.querySelector('.ks-burger'), m=hdr.querySelector('.ks-mobile');
+  b.addEventListener('click',function(){
+    var open=m.classList.toggle('is-open');
+    b.classList.toggle('is-open',open);
+    b.setAttribute('aria-expanded',open?'true':'false');
+  });
+  m.addEventListener('click',function(e){var a=e.target.closest('a');if(a){m.classList.remove('is-open');b.classList.remove('is-open');}});
+})();
+</script>

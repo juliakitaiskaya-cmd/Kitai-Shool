@@ -1,0 +1,244 @@
+<!-- ===== Kitai School — FAQ (двухколоночный, статический HTML + JSON-LD FAQPage) =====
+     Вставка в Tilda: блок «Другое -> T123 (HTML-код)». Аккордеон нативный (<details>),
+     работает без JS и индексируется Google и Яндексом. Стили заскоуплены под .ksfaq. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500&display=swap">
+<style>
+.ksfaq{background:#FAF7F2;padding:84px 0;font-family:'Inter',-apple-system,Arial,sans-serif}
+.ksfaq *{box-sizing:border-box}
+.ksfaq__wrap{max-width:1180px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:0.82fr 1.18fr;gap:72px;align-items:start}
+/* ---- left intro ---- */
+.ksfaq__eyebrow{font:500 12.5px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B7D6B;margin:0 0 18px}
+.ksfaq__title{font:600 46px/1.1 'Cormorant Garamond',Georgia,serif;color:#2C2420;margin:0 0 22px}
+.ksfaq__title i{font-style:italic;color:#A41E3A}
+.ksfaq__sub{font:400 18px/1.55 'Inter',sans-serif;color:#5A4F45;max-width:30em;margin:0 0 32px}
+.ksfaq__card{background:#F3EDE3;border:1px solid #EAE3D8;border-radius:16px;padding:26px 28px}
+.ksfaq__card h3{font:600 20px/1.2 'Cormorant Garamond',Georgia,serif;color:#2C2420;margin:0 0 10px}
+.ksfaq__card p{font:400 14.5px/1.55 'Inter',sans-serif;color:#5A4F45;margin:0 0 14px}
+.ksfaq__tg{display:inline-block;font:500 14.5px/1 'Inter',sans-serif;color:#A41E3A;text-decoration:none;border-bottom:1px solid rgba(164,30,58,.35);padding-bottom:2px}
+.ksfaq__tg:hover{color:#841630;border-color:#841630}
+/* ---- right accordion ---- */
+.ksfaq__list{margin:0;padding:0}
+.ksfaq-item{border-top:1px solid #EAE3D8}
+.ksfaq-item:last-child{border-bottom:1px solid #EAE3D8}
+.ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:24px;cursor:pointer;list-style:none;padding:26px 4px;font:500 22px/1.3 'Cormorant Garamond',Georgia,serif;color:#2C2420}
+.ksfaq-q::-webkit-details-marker{display:none}
+.ksfaq-q:hover{color:#A41E3A}
+.ksfaq-chev{flex:0 0 auto;color:#B8AC9C;transition:transform .22s ease,color .22s ease}
+.ksfaq-item[open] .ksfaq-chev{transform:rotate(180deg);color:#A41E3A}
+.ksfaq-a{padding:0 4px 26px}
+.ksfaq-a p{font:400 16px/1.7 'Inter',sans-serif;color:#5A4F45;margin:0 0 14px}
+.ksfaq-a p:last-child{margin-bottom:0}
+@media(max-width:900px){
+  .ksfaq{padding:56px 0}
+  .ksfaq__wrap{grid-template-columns:1fr;gap:36px}
+  .ksfaq__title{font-size:34px}
+  .ksfaq-q{font-size:19px;padding:20px 2px}
+  .ksfaq-a{padding:0 2px 22px}
+}
+</style>
+
+<section class="ksfaq">
+  <div class="ksfaq__wrap">
+    <div class="ksfaq__intro">
+      <p class="ksfaq__eyebrow">Вопросы и ответы</p>
+      <h2 class="ksfaq__title">Ответы на <i>ваши</i> вопросы</h2>
+      <p class="ksfaq__sub">Самое важное о формате, стоимости, гарантиях и условиях обучения.</p>
+      <div class="ksfaq__card">
+        <h3>Не нашли свой вопрос?</h3>
+        <p>Напишите нашему менеджеру в Telegram — ответим в течение 15 минут в рабочее время.</p>
+        <a class="ksfaq__tg" href="https://t.me/kitai_school" target="_blank" rel="noopener">Написать в Telegram &rarr;</a>
+      </div>
+    </div>
+    <div class="ksfaq__list">
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>С какого возраста можно начинать?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>С 6 лет. Для младших — короткие игровые уроки, для подростков — система и подготовка к экзаменам. Берём детей с нуля, опыт не нужен.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Это безопасно — учиться онлайн?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Уроки проходят в Zoom, всё видно родителю. Доступ к учебной платформе и прогрессу ребёнка — у вас в личном кабинете в любое время.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Преподаватель русскоязычный или носитель?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Базовые уроки ведёт русскоязычный преподаватель с педагогическим образованием. Разговорный клуб — с носителем языка, чтобы снять языковой барьер.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Сколько стоит и есть ли рассрочка?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Индивидуально — от 2 100 ₽ за урок, мини-группа 2–4 человека — 2 200 ₽ за урок с человека (пакет 8 уроков — 17 600 ₽/мес). Есть гибридный формат — от 12 000 ₽ за 3 месяца. Первое занятие бесплатное; доступны налоговый вычет 13% и оплата от юридического лица.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Что если ребёнок пропустил урок?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Занятие можно перенести, предупредив заранее. Учебные материалы и записи остаются на платформе — ребёнок ничего не теряет.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Как проходит обучение и с чего начать?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Изучение китайского начинается с оценки уровня знаний: определяем стартовый уровень владения языком и подбираем индивидуальные занятия, которые подойдут именно вашему ребёнку. Обучение проходит в игровой форме — простые фразы, новые слова и фразы ребёнок осваивает уже на первых уроках. Чтобы начать, оставьте заявку — и получите бесплатный пробный урок.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Кто преподаёт и как готовите к экзаменам?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Подготовка к экзамену (YCT, HSK, ЕГЭ) — отдельное направление. Носитель китайского помогает правильно произносить тоны и новые слова, чтобы изучать китайский было легко и в удовольствие. Сложные темы могут быть поданы доступно — по мере роста уровня владения добавляем тексты посложнее.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Какие документы и согласия нужны?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Все сведения об образовательной организации и лицензия Департамента образования г. Москвы опубликованы на сайте. Оставляя заявку, вы даёте согласие на обработку персональных данных. Изучайте языки с официальной лицензированной школой — это надёжно и прозрачно.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Зачем ребёнку китайский язык и как это влияет на развитие?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Китайский язык открывает новые знания и возможности для развития: тренирует память, внимание и речь. Иероглифы, звуки и тоны делают изучение увлекательным, поэтому учиться по-настоящему интересно, а узнаёт ребёнок при этом больше — о культуре народов мира и о жизни в Китае. Поэтому важно начать вовремя: интерес к языку часто перерастает в успехи в школе, а другие школьные предметы и дела идут легче — это поможет в учёбе и не заставит долго ждать результата.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Как проходит занятие и почему детям нравится учиться?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Каждое занятие — это живое общение, игры, песни и простые диалоги. Мы строим процесс обучения в игровой форме: ребёнок осваивает базовый набор слов, новые иероглифы и правила, выполняет задания и мини-игры, поёт песни и слушает звуки языка. Дети изучают язык с увлечением и удовольствием — сначала интерес, потом первые знания; им нравится говорить и заниматься, поэтому многие сами просят: «хочу ещё урок». Благодаря такому подходу мы помогаем сделать учёбу лёгкой, а мотивацию поддерживает живой интерес.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Кто преподаёт — учителя, репетиторы или носители языка?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Занятия ведут опытные учителя и репетиторы с педагогическим образованием; в преподавателе мы ценим не только знание языка, но и умение объяснять и заинтересовать. Китайский объясняем понятно, опираясь на русский язык как основу. Разговорные темы можно вести с носителем китайского — живое погружение помогает правильно говорить, понимать речь и уверенно общаться. Наши педагоги работают для школьников и подростков, у них большой опыт работы, а ребёнок не боится задавать вопросы. Как говорит наставник Анна: «я даю каждому ученику внимание и поддержку».</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Какие материалы и ресурсы получает ученик?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Все учебные материалы — на собственной платформе: видео, тексты, аудио, песни, задания и записи уроков. С помощью тренажёра ребёнок закрепляет языковые навыки и может читать и повторять в любое удобное время; после занятия открыты дополнительные материалы и расписание. Платформа помогает закреплять знания — и учёба становится привычной частью дня. Мы регулярно проводим открытые уроки, чтобы родители видели процесс.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Для кого подходят курсы — детям, подросткам или взрослым?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Курсы рассчитаны на любой возраст: дошкольники, школьники с 1 класса, подростки, студенты и даже взрослые — есть направления и для взрослых. Для самых маленьких — знакомство со звуками, игры и лёгкий базовый уровень; для подростков — система и подготовка к экзамену. Мы подбираем индивидуальные программы именно под ребёнка, с учётом возраста, целей и уровня знаний, поэтому начать может ученик любого уровня. Есть несколько форматов — индивидуально, в паре и в мини-группе; вы знаете своего ребёнка, а мы поможем найти формат. Подходит ли китайский вашему ребёнку — покажем на пробном уроке.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Какие экзамены и сертификаты можно получить?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Готовим к международным экзаменам YCT и HSK; ученики получают официальные сертификаты, которые ценят вузы и работодатели по всему миру. Китайский — иностранный язык, который всё чаще выбирают как второй; он, как и английский, открывает большие возможности и даёт возможность учиться и работать с международным охватом. Это один из самых востребованных языков мира. Хотите узнать условия — оставьте заявку, и мы поможем найти лучший вариант.</p></div>
+      </details>
+      <details class="ksfaq-item">
+        <summary class="ksfaq-q"><span>Как записаться и что входит в обучение?</span><svg class="ksfaq-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ksfaq-a"><p>Чтобы записаться, напишите нам или оставьте заявку — первый пробный урок дарим в подарок. Наш подход прост и понятен: после открытия доступа к платформе ребёнок сразу начинает заниматься, а урок идёт в комфортном темпе. Записи занятий — часть курса и остаются у вас; программу осваивают и младшие школьники, и немало студентов. Сведения об образовательной организации и лицензия открыты на сайте, а ваши права как родителя мы соблюдаем.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "С какого возраста можно начинать?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "С 6 лет. Для младших — короткие игровые уроки, для подростков — система и подготовка к экзаменам. Берём детей с нуля, опыт не нужен."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Это безопасно — учиться онлайн?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Уроки проходят в Zoom, всё видно родителю. Доступ к учебной платформе и прогрессу ребёнка — у вас в личном кабинете в любое время."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Преподаватель русскоязычный или носитель?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Базовые уроки ведёт русскоязычный преподаватель с педагогическим образованием. Разговорный клуб — с носителем языка, чтобы снять языковой барьер."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько стоит и есть ли рассрочка?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Индивидуально — от 2 100 ₽ за урок, мини-группа 2–4 человека — 2 200 ₽ за урок с человека (пакет 8 уроков — 17 600 ₽/мес). Есть гибридный формат — от 12 000 ₽ за 3 месяца. Первое занятие бесплатное; доступны налоговый вычет 13% и оплата от юридического лица."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что если ребёнок пропустил урок?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Занятие можно перенести, предупредив заранее. Учебные материалы и записи остаются на платформе — ребёнок ничего не теряет."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как проходит обучение и с чего начать?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Изучение китайского начинается с оценки уровня знаний: определяем стартовый уровень владения языком и подбираем индивидуальные занятия, которые подойдут именно вашему ребёнку. Обучение проходит в игровой форме — простые фразы, новые слова и фразы ребёнок осваивает уже на первых уроках. Чтобы начать, оставьте заявку — и получите бесплатный пробный урок."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Кто преподаёт и как готовите к экзаменам?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Подготовка к экзамену (YCT, HSK, ЕГЭ) — отдельное направление. Носитель китайского помогает правильно произносить тоны и новые слова, чтобы изучать китайский было легко и в удовольствие. Сложные темы могут быть поданы доступно — по мере роста уровня владения добавляем тексты посложнее."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие документы и согласия нужны?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Все сведения об образовательной организации и лицензия Департамента образования г. Москвы опубликованы на сайте. Оставляя заявку, вы даёте согласие на обработку персональных данных. Изучайте языки с официальной лицензированной школой — это надёжно и прозрачно."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Зачем ребёнку китайский язык и как это влияет на развитие?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Китайский язык открывает новые знания и возможности для развития: тренирует память, внимание и речь. Иероглифы, звуки и тоны делают изучение увлекательным, поэтому учиться по-настоящему интересно, а узнаёт ребёнок при этом больше — о культуре народов мира и о жизни в Китае. Поэтому важно начать вовремя: интерес к языку часто перерастает в успехи в школе, а другие школьные предметы и дела идут легче — это поможет в учёбе и не заставит долго ждать результата."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как проходит занятие и почему детям нравится учиться?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Каждое занятие — это живое общение, игры, песни и простые диалоги. Мы строим процесс обучения в игровой форме: ребёнок осваивает базовый набор слов, новые иероглифы и правила, выполняет задания и мини-игры, поёт песни и слушает звуки языка. Дети изучают язык с увлечением и удовольствием — сначала интерес, потом первые знания; им нравится говорить и заниматься, поэтому многие сами просят: «хочу ещё урок». Благодаря такому подходу мы помогаем сделать учёбу лёгкой, а мотивацию поддерживает живой интерес."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Кто преподаёт — учителя, репетиторы или носители языка?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Занятия ведут опытные учителя и репетиторы с педагогическим образованием; в преподавателе мы ценим не только знание языка, но и умение объяснять и заинтересовать. Китайский объясняем понятно, опираясь на русский язык как основу. Разговорные темы можно вести с носителем китайского — живое погружение помогает правильно говорить, понимать речь и уверенно общаться. Наши педагоги работают для школьников и подростков, у них большой опыт работы, а ребёнок не боится задавать вопросы. Как говорит наставник Анна: «я даю каждому ученику внимание и поддержку»."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие материалы и ресурсы получает ученик?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Все учебные материалы — на собственной платформе: видео, тексты, аудио, песни, задания и записи уроков. С помощью тренажёра ребёнок закрепляет языковые навыки и может читать и повторять в любое удобное время; после занятия открыты дополнительные материалы и расписание. Платформа помогает закреплять знания — и учёба становится привычной частью дня. Мы регулярно проводим открытые уроки, чтобы родители видели процесс."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Для кого подходят курсы — детям, подросткам или взрослым?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Курсы рассчитаны на любой возраст: дошкольники, школьники с 1 класса, подростки, студенты и даже взрослые — есть направления и для взрослых. Для самых маленьких — знакомство со звуками, игры и лёгкий базовый уровень; для подростков — система и подготовка к экзамену. Мы подбираем индивидуальные программы именно под ребёнка, с учётом возраста, целей и уровня знаний, поэтому начать может ученик любого уровня. Есть несколько форматов — индивидуально, в паре и в мини-группе; вы знаете своего ребёнка, а мы поможем найти формат. Подходит ли китайский вашему ребёнку — покажем на пробном уроке."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие экзамены и сертификаты можно получить?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Готовим к международным экзаменам YCT и HSK; ученики получают официальные сертификаты, которые ценят вузы и работодатели по всему миру. Китайский — иностранный язык, который всё чаще выбирают как второй; он, как и английский, открывает большие возможности и даёт возможность учиться и работать с международным охватом. Это один из самых востребованных языков мира. Хотите узнать условия — оставьте заявку, и мы поможем найти лучший вариант."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как записаться и что входит в обучение?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Чтобы записаться, напишите нам или оставьте заявку — первый пробный урок дарим в подарок. Наш подход прост и понятен: после открытия доступа к платформе ребёнок сразу начинает заниматься, а урок идёт в комфортном темпе. Записи занятий — часть курса и остаются у вас; программу осваивают и младшие школьники, и немало студентов. Сведения об образовательной организации и лицензия открыты на сайте, а ваши права как родителя мы соблюдаем."
+      }
+    }
+  ]
+}
+</script>

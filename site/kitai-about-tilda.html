@@ -1,0 +1,778 @@
+<!-- ============================================================
+     Kitai School — страница «О школе» (/about)
+     Stand-alone блок для Tilda (T123 «HTML-код»). Без шапки/футера.
+     Картинки: замените data-src-заглушки на ваши ссылки static.tildacdn.com
+     CTA → #popup:zayavka   |   PDF лицензии → замените LICENSE_PDF
+     ============================================================ -->
+<div id="ks-about">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    #ks-about{
+      --brick:#A41E3A; --brick-deep:#841630; --brick-soft:#F7E6EB;
+      --ink:#2C2420; --ink-2:#5A4F45; --taupe:#8B7D6B; --taupe-soft:#B8AC9C;
+      --cream:#FAF7F2; --cream-2:#F3EDE3; --highlight:#FCF6E2;
+      --success:#27B260; --hairline:#EAE3D8; --hairline-2:#DED5C6;
+      font-family:'Inter',-apple-system,Arial,sans-serif !important; color:var(--ink) !important;
+      background:var(--cream); line-height:1.5;
+    }
+    #ks-about *{box-sizing:border-box}
+    #ks-about h1,#ks-about h2,#ks-about h3,#ks-about h4,#ks-about p,#ks-about ul{margin:0}
+    #ks-about ul{padding:0;list-style:none}
+    #ks-about a{text-decoration:none;color:inherit}
+    #ks-about [style*="Cormorant"]{font-family:'Cormorant Garamond',Georgia,serif !important}
+    #ks-about [style*="Noto Serif"]{font-family:'Noto Serif SC',serif !important}
+    #ks-about .ks-in{max-width:1120px;margin:0 auto;padding:0 24px}
+    #ks-about .ks-sec{padding:76px 0}
+    #ks-about .ks-eyebrow{font:600 12.5px/1 'Inter';letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin-bottom:14px}
+    #ks-about .ks-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:40px;line-height:1.12;color:var(--ink);margin-bottom:16px}
+    #ks-about .ks-h2 i{font-style:italic;color:var(--brick)}
+    #ks-about .ks-sub{font:400 17px/1.6 'Inter';color:var(--ink-2);max-width:640px}
+    #ks-about .ks-btn{display:inline-flex;align-items:center;gap:9px;border-radius:8px;font:600 15px/1 'Inter';padding:15px 26px;transition:.18s;cursor:pointer}
+    #ks-about .ks-btn-primary{background:var(--brick);color:#fff;box-shadow:0 8px 20px rgba(164,30,58,.22)}
+    #ks-about .ks-btn-primary:hover{background:var(--brick-deep);transform:translateY(-1px)}
+    #ks-about .ks-btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--hairline-2)}
+    #ks-about .ks-btn-ghost:hover{border-color:var(--brick);color:var(--brick)}
+    #ks-about .ks-arr{transition:transform .18s}
+    #ks-about .ks-btn:hover .ks-arr{transform:translateX(3px)}
+
+    /* фото-заглушка */
+    #ks-about .ks-img{display:block;width:100%;height:100%;object-fit:cover;background:linear-gradient(135deg,#EFE7DA,#E4D9C7)}
+
+    /* HERO */
+    #ks-about .ks-hero{background:radial-gradient(120% 90% at 80% -10%,#FDF8F1,var(--cream) 60%,var(--cream-2));border-bottom:1px solid var(--hairline)}
+    #ks-about .ks-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:70px 0 64px}
+    #ks-about .ks-badge{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--hairline);border-radius:999px;padding:9px 16px;font:600 13px/1 'Inter';color:var(--ink-2);margin-bottom:22px}
+    #ks-about .ks-badge svg{width:15px;height:15px;color:var(--brick)}
+    #ks-about .ks-h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:52px;line-height:1.08;color:var(--ink);margin-bottom:20px}
+    #ks-about .ks-h1 i{font-style:italic;color:var(--brick)}
+    #ks-about .ks-hero-lead{font:400 18px/1.6 'Inter';color:var(--ink-2);margin-bottom:30px;max-width:560px}
+    #ks-about .ks-hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+    #ks-about .ks-stats{display:flex;gap:34px;flex-wrap:wrap}
+    #ks-about .ks-stat b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;color:var(--brick);line-height:1}
+    #ks-about .ks-stat span{font:500 13.5px/1.35 'Inter';color:var(--ink-2);display:block;margin-top:6px}
+    #ks-about .ks-hero-photo{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 20px 50px rgba(44,36,32,.16)}
+    #ks-about .ks-hero-photo .ks-emb{position:absolute;left:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:var(--brick);display:flex;align-items:center;justify-content:center;font-family:'Noto Serif SC',serif;font-weight:700;font-size:26px;color:#fff;box-shadow:0 8px 18px rgba(164,30,58,.3)}
+
+    /* TIMELINE */
+    #ks-about .ks-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+    #ks-about .ks-tl{position:relative;padding-top:26px;border-top:2px solid var(--hairline-2)}
+    #ks-about .ks-tl:before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--brick)}
+    #ks-about .ks-tl b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;color:var(--brick);line-height:1;display:block;margin-bottom:8px}
+    #ks-about .ks-tl p{font:400 14.5px/1.5 'Inter';color:var(--ink-2)}
+
+    /* METHOD */
+    #ks-about .ks-method{background:var(--ink);color:#fff}
+    #ks-about .ks-method .ks-h2{color:#fff}
+    #ks-about .ks-method .ks-sub{color:rgba(255,255,255,.72)}
+    #ks-about .ks-odin{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 6px}
+    #ks-about .ks-odin span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:8px;padding:12px 16px;font:500 14.5px/1.3 'Inter'}
+    #ks-about .ks-odin span b{color:#E9A6B4;font-weight:700}
+    #ks-about .ks-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:36px}
+    #ks-about .ks-step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:20px 16px}
+    #ks-about .ks-step .n{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;color:#E9A6B4;line-height:1}
+    #ks-about .ks-step h4{font:600 14.5px/1.3 'Inter';margin:10px 0 5px}
+    #ks-about .ks-step p{font:400 13px/1.45 'Inter';color:rgba(255,255,255,.62)}
+
+    /* PLATFORM */
+    #ks-about .ks-plat-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:14px}
+    #ks-about .ks-feat{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--hairline)}
+    #ks-about .ks-feat:last-child{border-bottom:0}
+    #ks-about .ks-feat .ic{flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--brick-soft);display:flex;align-items:center;justify-content:center;color:var(--brick)}
+    #ks-about .ks-feat .ic svg{width:20px;height:20px}
+    #ks-about .ks-feat h4{font:600 15.5px/1.3 'Inter';margin-bottom:4px}
+    #ks-about .ks-feat p{font:400 14px/1.5 'Inter';color:var(--ink-2)}
+    #ks-about .ks-plat-shot{border-radius:16px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 16px 40px rgba(44,36,32,.14);border:1px solid var(--hairline)}
+    #ks-about .ks-note{font:400 14px/1.5 'Inter';color:var(--taupe);margin-top:18px}
+
+    /* TEAM */
+    #ks-about .ks-team{background:var(--cream-2)}
+    #ks-about .ks-team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+    #ks-about .ks-person{background:#fff;border:1px solid var(--hairline);border-radius:16px;padding:26px;box-shadow:0 8px 22px rgba(44,36,32,.05)}
+    #ks-about .ks-person .ph{width:96px;height:96px;border-radius:50%;overflow:hidden;margin-bottom:18px;border:3px solid #fff;box-shadow:0 6px 16px rgba(44,36,32,.14)}
+    #ks-about .ks-person h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:23px;color:var(--ink);margin-bottom:4px}
+    #ks-about .ks-person .role{font:600 12.5px/1.3 'Inter';letter-spacing:.03em;color:var(--brick);text-transform:uppercase;margin-bottom:12px}
+    #ks-about .ks-person p{font:400 14.5px/1.55 'Inter';color:var(--ink-2)}
+    #ks-about .ks-team-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+    #ks-about .ks-team-nums div{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:28px 24px;text-align:center;box-shadow:0 6px 18px rgba(44,36,32,.05)}
+    #ks-about .ks-team-nums div b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:52px;color:var(--brick);line-height:1;display:block;margin-bottom:8px}
+    #ks-about .ks-team-nums div span{font:500 14.5px/1.4 'Inter';color:var(--ink-2)}
+    #ks-about .ks-team-note{margin-top:26px;font:400 15px/1.6 'Inter';color:var(--ink-2);max-width:760px}
+
+    /* RESULTS */
+    #ks-about .ks-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+    #ks-about .ks-fact{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:26px 22px;text-align:center}
+    #ks-about .ks-fact b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:42px;color:var(--brick);line-height:1;display:block;margin-bottom:8px}
+    #ks-about .ks-fact span{font:500 14px/1.45 'Inter';color:var(--ink-2)}
+    #ks-about .ks-cases{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+    #ks-about .ks-case{display:flex;gap:16px;background:var(--highlight);border:1px solid #EDE2C2;border-radius:14px;padding:22px}
+    #ks-about .ks-case .av{flex:0 0 auto;width:46px;height:46px;border-radius:50%;background:var(--brick);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px}
+    #ks-about .ks-case h4{font:600 15px/1.3 'Inter';margin-bottom:5px}
+    #ks-about .ks-case p{font:400 14px/1.5 'Inter';color:var(--ink-2)}
+
+    /* GALLERY */
+    #ks-about .ks-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+    #ks-about .ks-gal figure{margin:0;border-radius:14px;overflow:hidden;aspect-ratio:4/3;position:relative}
+    #ks-about .ks-gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 14px;background:linear-gradient(transparent,rgba(44,36,32,.78));color:#fff;font:500 13.5px/1.35 'Inter'}
+
+    /* LICENSE */
+    #ks-about .ks-lic{background:var(--ink);color:#fff}
+    #ks-about .ks-lic-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+    #ks-about .ks-lic .ks-eyebrow{color:#E9A6B4}
+    #ks-about .ks-lic .ks-h2{color:#fff}
+    #ks-about .ks-lic ul{margin-top:22px}
+    #ks-about .ks-lic li{display:flex;gap:12px;padding:11px 0;font:400 15px/1.5 'Inter';color:rgba(255,255,255,.82);border-bottom:1px solid rgba(255,255,255,.1)}
+    #ks-about .ks-lic li svg{flex:0 0 auto;width:20px;height:20px;color:#8FE0AC;margin-top:1px}
+    #ks-about .ks-lic-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:30px}
+    #ks-about .ks-lic-card .doc{width:52px;height:52px;border-radius:12px;background:var(--brick);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:18px}
+    #ks-about .ks-lic-card .doc svg{width:26px;height:26px}
+    #ks-about .ks-lic-card .num{font:600 15px/1.4 'Inter';margin-bottom:4px}
+    #ks-about .ks-lic-card .date{font:400 14px/1.4 'Inter';color:rgba(255,255,255,.6);margin-bottom:20px}
+
+    /* REVIEWS */
+    #ks-about .ks-rev-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #ks-about .ks-rating{display:flex;align-items:center;gap:14px}
+    #ks-about .ks-rating .big{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:56px;color:var(--brick);line-height:1}
+    #ks-about .ks-stars{color:#E0A72E;font-size:18px;letter-spacing:2px}
+    #ks-about .ks-rating small{font:500 13.5px/1.4 'Inter';color:var(--ink-2);display:block;margin-top:3px}
+    #ks-about .ks-rev-banner{display:flex;align-items:center;gap:28px;flex-wrap:wrap;background:var(--ink);color:#fff;border-radius:18px;padding:30px 36px;margin:30px 0 26px}
+    #ks-about .ks-rev-banner .big{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:72px;color:#fff;line-height:.9}
+    #ks-about .ks-rev-banner .ks-stars{color:#E0A72E;font-size:22px;letter-spacing:3px}
+    #ks-about .ks-rev-banner .cap{font:500 15px/1.5 'Inter';color:rgba(255,255,255,.75);margin-top:6px}
+    #ks-about .ks-rev-banner .sep{width:1px;align-self:stretch;background:rgba(255,255,255,.16)}
+    #ks-about .ks-rev-banner .tgbtn{margin-left:auto;display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--ink);border-radius:8px;padding:14px 22px;font:600 14.5px/1 'Inter';transition:.16s}
+    #ks-about .ks-rev-banner .tgbtn:hover{background:var(--brick);color:#fff}
+    #ks-about .ks-rev-banner .tgbtn svg{width:18px;height:18px}
+    #ks-about .ks-reviews{columns:3;column-gap:18px;margin-top:2px}
+    #ks-about .ks-review{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:22px 24px;margin:0 0 18px;break-inside:avoid;box-shadow:0 4px 14px rgba(44,36,32,.04)}
+    #ks-about .ks-review .ks-stars{font-size:14px;margin-bottom:11px}
+    #ks-about .ks-review p{font:400 14.5px/1.62 'Inter';color:var(--ink);margin-bottom:15px}
+    #ks-about .ks-review .who{font:600 14px/1.3 'Inter';color:var(--ink)}
+    #ks-about .ks-review .who span{display:block;font-weight:400;font-size:13px;color:var(--taupe);margin-top:2px}
+
+    /* FAQ */
+    #ks-about .ks-faq{max-width:820px;margin:0 auto}
+    #ks-about .ks-faq details{background:#fff;border:1px solid var(--hairline);border-radius:12px;margin-bottom:12px;overflow:hidden}
+    #ks-about .ks-faq summary{list-style:none;cursor:pointer;padding:20px 22px;font:600 16.5px/1.4 'Inter';color:var(--ink);display:flex;justify-content:space-between;gap:16px;align-items:center}
+    #ks-about .ks-faq summary::-webkit-details-marker{display:none}
+    #ks-about .ks-faq summary:after{content:"+";font-weight:400;font-size:24px;color:var(--brick);flex:0 0 auto;transition:.2s}
+    #ks-about .ks-faq details[open] summary:after{transform:rotate(45deg)}
+    #ks-about .ks-faq .a{padding:0 22px 22px;font:400 15px/1.65 'Inter';color:var(--ink-2)}
+
+    /* FINAL */
+    #ks-about .ks-final{background:radial-gradient(120% 120% at 50% 0,#FDF8F1,var(--cream-2));text-align:center;border-top:1px solid var(--hairline)}
+    #ks-about .ks-final .ks-h2{max-width:640px;margin-left:auto;margin-right:auto}
+    #ks-about .ks-final-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+
+    /* ADAPTIVE */
+    @media(max-width:960px){
+      #ks-about .ks-hero-grid,#ks-about .ks-plat-grid,#ks-about .ks-lic-grid{grid-template-columns:1fr;gap:32px}
+      #ks-about .ks-hero-photo{max-width:380px}
+      #ks-about .ks-steps{grid-template-columns:repeat(2,1fr)}
+      #ks-about .ks-timeline{grid-template-columns:repeat(2,1fr);gap:26px}
+      #ks-about .ks-facts{grid-template-columns:repeat(2,1fr)}
+      #ks-about .ks-team-grid,#ks-about .ks-gal{grid-template-columns:1fr 1fr}
+      #ks-about .ks-team-nums{grid-template-columns:repeat(2,1fr)}
+      #ks-about .ks-reviews{columns:2}
+      #ks-about .ks-cases{grid-template-columns:1fr}
+    }
+    @media(max-width:600px){
+      #ks-about .ks-sec{padding:52px 0}
+      #ks-about .ks-in{padding:0 18px}
+      #ks-about .ks-h1{font-size:36px}
+      #ks-about .ks-h2{font-size:30px}
+      #ks-about .ks-hero-grid{padding:44px 0 40px}
+      #ks-about .ks-hero-lead{font-size:16px}
+      #ks-about .ks-stats{gap:22px}
+      #ks-about .ks-stat b{font-size:28px}
+      #ks-about .ks-steps,#ks-about .ks-facts,#ks-about .ks-team-grid,#ks-about .ks-gal,#ks-about .ks-timeline,#ks-about .ks-team-nums{grid-template-columns:1fr}
+      #ks-about .ks-reviews{columns:1}
+      #ks-about .ks-rev-banner{padding:24px 24px}
+      #ks-about .ks-rev-banner .tgbtn{margin-left:0;width:100%;justify-content:center}
+      #ks-about .ks-hero-cta .ks-btn,#ks-about .ks-final-cta .ks-btn{width:100%;justify-content:center}
+      #ks-about .ks-hero-photo{max-width:none}
+    }
+  
+    /* Тильда-фикс читаемости тёмных секций */
+    #ks-about .ks-method :is(h1,h2,h3,h4,h5,h6,p,li,figcaption,.role,.cap,.who,.meta,.date,.num,.ks-node,.lead){color:#fff !important}
+    #ks-about .ks-method .ks-sub{color:rgba(255,255,255,.75) !important}
+    #ks-about .ks-method .ks-eyebrow{color:#E9A6B4 !important}
+    #ks-about .ks-method h2 i,#ks-about .ks-method .ks-h2 i{color:#E9A6B4 !important}
+    #ks-about .ks-method .ks-stars{color:#E0A72E !important}
+    #ks-about .ks-method .n{color:#E9A6B4 !important}
+    #ks-about .ks-method .status{color:#8FE0AC !important}
+    #ks-about .ks-lic :is(h1,h2,h3,h4,h5,h6,p,li,figcaption,.role,.cap,.who,.meta,.date,.num,.ks-node,.lead){color:#fff !important}
+    #ks-about .ks-lic .ks-sub{color:rgba(255,255,255,.75) !important}
+    #ks-about .ks-lic .ks-eyebrow{color:#E9A6B4 !important}
+    #ks-about .ks-lic h2 i,#ks-about .ks-lic .ks-h2 i{color:#E9A6B4 !important}
+    #ks-about .ks-lic .ks-stars{color:#E0A72E !important}
+    #ks-about .ks-lic .n{color:#E9A6B4 !important}
+    #ks-about .ks-lic .status{color:#8FE0AC !important}
+    #ks-about .ks-rev-banner :is(h1,h2,h3,h4,h5,h6,p,li,figcaption,.role,.cap,.who,.meta,.date,.num,.ks-node,.lead){color:#fff !important}
+    #ks-about .ks-rev-banner .ks-sub{color:rgba(255,255,255,.75) !important}
+    #ks-about .ks-rev-banner .ks-eyebrow{color:#E9A6B4 !important}
+    #ks-about .ks-rev-banner h2 i,#ks-about .ks-rev-banner .ks-h2 i{color:#E9A6B4 !important}
+    #ks-about .ks-rev-banner .ks-stars{color:#E0A72E !important}
+    #ks-about .ks-rev-banner .n{color:#E9A6B4 !important}
+    #ks-about .ks-rev-banner .status{color:#8FE0AC !important}
+  </style>
+
+  <!-- ============ HERO ============ -->
+  <section class="ks-hero">
+    <div class="ks-in">
+      <div class="ks-hero-grid">
+        <div>
+          <div class="ks-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M9 13.5l-1 7.5 4-2 4 2-1-7.5"/></svg>Лицензия Департамента образования · 20 лет опыта</div>
+          <h1 class="ks-h1">Школа китайского языка <i>с 2005 года</i></h1>
+          <p class="ks-hero-lead">Мы учим говорить по-китайски системно: авторская методика, контроль каждого урока методистом и собственная цифровая платформа — а не разрозненные занятия «от урока к уроку».</p>
+          <div class="ks-hero-cta">
+            <a class="ks-btn ks-btn-primary" href="#popup:zayavka">Записаться на пробный урок<span class="ks-arr">→</span></a>
+            <a class="ks-btn ks-btn-ghost" href="#ks-method">Узнать о методике</a>
+          </div>
+          <div class="ks-stats">
+            <div class="ks-stat"><b>20 лет</b><span>развиваем школу<br>и методику</span></div>
+            <div class="ks-stat"><b>30+</b><span>преподавателей<br>в команде</span></div>
+            <div class="ks-stat"><b>100%</b><span>учеников сдают HSK<br>с первого раза</span></div>
+          </div>
+        </div>
+        <div class="ks-hero-photo">
+          <img class="ks-img" src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина — основатель Kitai School">
+          <div class="ks-emb" style="font-family:'Noto Serif SC',serif">启</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ИСТОРИЯ ============ -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-eyebrow">История школы</div>
+      <h2 class="ks-h2">Двадцать лет — <i>шаг за шагом</i></h2>
+      <p class="ks-sub">Kitai School основана в 2005 году китаистом Юлией Горяиной. За это время школа выросла из индивидуальных занятий в системную онлайн-школу с собственной методикой, платформой и направлением поступления в вузы Китая. Ниже — ключевые вехи без прикрас: только даты и факты.</p>
+      <div class="ks-timeline">
+        <div class="ks-tl"><b>2005</b><p>Основание школы Юлией Горяиной. Первые ученики, первые авторские материалы.</p></div>
+        <div class="ks-tl"><b>2020</b><p>Старт направления поступления в вузы Китая и работы с грантами CSC.</p></div>
+        <div class="ks-tl"><b>2025</b><p>Подтверждение образовательной лицензии Департамента образования Москвы (07.05.2025).</p></div>
+        <div class="ks-tl"><b>2026</b><p>Запуск собственной цифровой платформы, подготовка к CSCA и языковой лагерь на Хайнане.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ЛИЦЕНЗИЯ ============ -->
+  <section class="ks-sec ks-lic">
+    <div class="ks-in">
+      <div class="ks-lic-grid">
+        <div>
+          <div class="ks-eyebrow">Лицензия и статус</div>
+          <h2 class="ks-h2">Официальная образовательная лицензия</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Выдана Департаментом образования и науки города Москвы</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Можно оформить налоговый вычет 13% за обучение</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Возможна оплата от юридического лица — счёт и закрывающие документы</li>
+          </ul>
+        </div>
+        <div class="ks-lic-card">
+          <div class="doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
+          <div class="num">№ Л035-01298-77/02285772</div>
+          <div class="date">Действует с 07.05.2025 · запись в госреестре Рособрнадзора</div>
+          <a class="ks-btn ks-btn-primary" href="https://islod.obrnadzor.gov.ru/view/35512" target="_blank" rel="noopener">Проверить лицензию в реестре<span class="ks-arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ МЕТОДИКА ============ -->
+  <section id="ks-method" class="ks-sec ks-method">
+    <div class="ks-in">
+      <div class="ks-eyebrow" style="color:#E9A6B4">Методика «ОДиН М»</div>
+      <h2 class="ks-h2">Единая авторская методика — <i>а не приёмы отдельных преподавателей</i></h2>
+      <p class="ks-sub">«ОДиН М» — комплексная методика преподавания китайского, которую более 20 лет развивает главный методист школы Татьяна Иоффе. По ней работают все преподаватели школы, поэтому качество не зависит от того, к кому вы попали.</p>
+      <div class="ks-odin">
+        <span><b>О</b>знакомим с приёмами</span>
+        <span><b>Д</b>адим материалы</span>
+        <span><b>и Н</b>аучим</span>
+        <span><b>М</b>етодике</span>
+      </div>
+      <div class="ks-steps">
+        <div class="ks-step"><div class="n">I</div><h4>Разминка</h4><p>Настройка на язык, фонетика, вход в тему.</p></div>
+        <div class="ks-step"><div class="n">II</div><h4>Повторение</h4><p>Закрепление прошлого материала в речи.</p></div>
+        <div class="ks-step"><div class="n">III</div><h4>Новый материал</h4><p>Лексика, грамматика, иероглифика с опорой на систему.</p></div>
+        <div class="ks-step"><div class="n">IV</div><h4>Практика</h4><p>Говорение и отработка в реальных ситуациях.</p></div>
+        <div class="ks-step"><div class="n">V</div><h4>Рефлексия</h4><p>Итог урока, обратная связь, план на дом.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПЛАТФОРМА (оригинал с kitai-school.ru) -->
+  <!-- 05. Платформа · 6 скринов --> <style>
+  .ks-platform {
+    background: #FAF7F2;
+    padding: 90px 24px;
+  }
+  .ks-platform-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .ks-platform-grid {
+    display: grid;
+    grid-template-columns: 33% 1fr;
+    gap: 50px;
+    align-items: start;
+  }
+
+  /* === Левая колонка === */
+  .ks-platform-left {
+    position: sticky;
+    top: 80px;
+  }
+  .ks-platform-uptitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #8B7D6B;
+    margin-bottom: 16px;
+  }
+  .ks-platform h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: #2C2C2A;
+    line-height: 1.18;
+    margin: 0 0 18px;
+    letter-spacing: -0.3px;
+  }
+  .ks-platform h2 em {
+    font-style: italic;
+    color: #A41E3A;
+    font-weight: 600;
+  }
+  .ks-platform-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #5F5E5A;
+    line-height: 1.65;
+    margin: 0 0 28px;
+  }
+  .ks-platform-feat {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+  .ks-platform-fi {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .ks-platform-fi-r {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #C5B9A8;
+    letter-spacing: 1.3px;
+    flex-shrink: 0;
+    width: 16px;
+    padding-top: 1px;
+  }
+  .ks-platform-fi-t {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #2C2C2A;
+    line-height: 1.55;
+  }
+  .ks-platform-fi-t b { font-weight: 500; }
+  .ks-platform-fi-t span { color: #5F5E5A; font-weight: 400; }
+
+  .ks-platform-bp {
+    display: inline-block;
+    background: #A41E3A;
+    color: #fff !important;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: background 0.2s;
+  }
+  .ks-platform-bp:hover { background: #7E152C; }
+
+  .ks-platform-bs {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #5F5E5A !important;
+    text-decoration: none;
+    border-bottom: 0.5px dashed #C5B9A8;
+    padding-bottom: 2px;
+    width: fit-content;
+    transition: all 0.2s;
+    margin-bottom: 28px;
+  }
+  .ks-platform-bs:hover {
+    color: #A41E3A !important;
+    border-bottom-color: #A41E3A;
+  }
+
+  /* === Блок "И ещё на платформе" в левой колонке === */
+  .ks-platform-more {
+    padding: 18px 20px;
+    background: #F1ECE0;
+    border-radius: 10px;
+    border: 0.5px solid #E8E2D8;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #5F5E5A;
+    line-height: 1.65;
+  }
+  .ks-platform-more b {
+    color: #2C2C2A;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    letter-spacing: -0.1px;
+  }
+
+  /* === Сетка карточек (3×2) === */
+  .ks-platform-cards-wrap {
+    background: #FFFFFF;
+    padding: 24px;
+    border-radius: 16px;
+    border: 0.5px solid #E8E2D8;
+  }
+  .ks-platform-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .ks-pc {
+    display: flex;
+    flex-direction: column;
+  }
+  .ks-pc-img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: #FFFFFF;
+    border: 1px solid #D9CFB8;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 14px rgba(44, 44, 42, 0.08), 0 2px 4px rgba(44, 44, 42, 0.05) !important;
+    transition: all 0.25s ease;
+    cursor: zoom-in;
+    position: relative;
+  }
+  .ks-pc-img::after {
+    content: '⤢';
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    background: rgba(44, 44, 42, 0.78);
+    color: #FAF7F2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    opacity: 0.85;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  .ks-pc:hover .ks-pc-img {
+    box-shadow: 0 10px 28px rgba(44, 44, 42, 0.14), 0 3px 8px rgba(44, 44, 42, 0.08) !important;
+    transform: translateY(-3px);
+  }
+  .ks-pc:hover .ks-pc-img::after {
+    opacity: 1;
+    background: rgba(164, 30, 58, 0.9);
+  }
+  .ks-pc-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .ks-pc-img.top img { object-position: center top; }
+  .ks-pc-h {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2C2C2A;
+    line-height: 1.3;
+    margin: 0 0 6px;
+    letter-spacing: -0.2px;
+  }
+  .ks-pc-d {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #5F5E5A;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .ks-platform-hint {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    color: #8B7D6B;
+    margin-top: 22px;
+    letter-spacing: 0.2px;
+  }
+
+  /* === Lightbox === */
+  .ks-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(28, 28, 26, 0.94);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    cursor: zoom-out;
+  }
+  .ks-lightbox.active { display: flex; }
+  .ks-lightbox img {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    cursor: default;
+  }
+  .ks-lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 28px;
+    width: 40px;
+    height: 40px;
+    background: rgba(250, 247, 242, 0.1);
+    color: #FAF7F2;
+    border: 0.5px solid rgba(250, 247, 242, 0.3);
+    border-radius: 50%;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    cursor: pointer;
+    z-index: 10000;
+    transition: background 0.2s;
+    line-height: 1;
+    padding: 0;
+  }
+  .ks-lightbox-close:hover { background: rgba(250, 247, 242, 0.2); }
+
+  /* === Адаптив === */
+  @media (max-width: 980px) {
+    .ks-platform { padding: 60px 20px; }
+    .ks-platform-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .ks-platform-left { position: static; }
+    .ks-platform h2 { font-size: 30px; }
+    .ks-platform-sub { font-size: 15px; }
+    .ks-platform-cards-wrap { padding: 18px; }
+    .ks-platform-cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .ks-platform-cards { grid-template-columns: 1fr; }
+    .ks-platform-cards-wrap { padding: 14px; }
+    .ks-platform-more { padding: 16px 18px; font-size: 13px; }
+  }
+</style> <section class="ks-platform"> <div class="ks-platform-inner"> <div class="ks-platform-grid"> <div class="ks-platform-left"> <div class="ks-platform-uptitle">Платформа</div> <h2>Платформа,<br>которая <em>знает</em><br>каждый ваш урок</h2> <p class="ks-platform-sub">Не Zoom + Google Docs, а собственная экосистема. Каждый ваш урок становится материалом для тренировки между занятиями.</p> <div class="ks-platform-feat"> <div class="ks-platform-fi"> <div class="ks-platform-fi-r">I</div> <div class="ks-platform-fi-t"><b>Тренажёр</b> <span>— 2292 слова, 6 режимов, интервальные повторения</span></div> </div> <div class="ks-platform-fi"> <div class="ks-platform-fi-r">II</div> <div class="ks-platform-fi-t"><b>AI-разбор произношения</b> <span>— оценка по слогам с подсказками</span></div> </div> <div class="ks-platform-fi"> <div class="ks-platform-fi-r">III</div> <div class="ks-platform-fi-t"><b>Прописи иероглифов</b> <span>— проверка порядка черт</span></div> </div> <div class="ks-platform-fi"> <div class="ks-platform-fi-r">IV</div> <div class="ks-platform-fi-t"><b>Связь с уроками</b> <span>— платформа сама готовит вам тренировки</span></div> </div> </div> <a href="https://method.kitai-school.ru/demo-mini?utm_source=site&utm_medium=cta&utm_content=platform-mini" target="_blank" rel="noopener" class="ks-platform-bp">Попробовать сейчас →</a> <a href="https://method.kitai-school.ru/demo?utm_source=site&utm_medium=cta&utm_content=platform-full" target="_blank" rel="noopener" class="ks-platform-bs">Получить 7 дней полного доступа →</a> <div class="ks-platform-more"> <b>И ещё на платформе</b>
+          Словарь по контексту, аудирование, грамматика, чтение по урокам, домашние задания, чат с преподавателем, разговорные клубы, ежедневные цели и геймификация.
+        </div> </div> <div class="ks-platform-cards-wrap"> <div class="ks-platform-cards"> <div class="ks-pc"> <div class="ks-pc-img"> <img src="https://static.tildacdn.com/tild6135-3161-4430-a661-613435326462/home.png" alt="Дашборд ученика"> </div> <h3 class="ks-pc-h">Дашборд</h3> <p class="ks-pc-d">Прогресс, расписание и ежедневная цель — на одной странице.</p> </div> <div class="ks-pc"> <div class="ks-pc-img"> <img src="https://static.tildacdn.com/tild3532-3939-4362-a663-653730316666/trainer.png" alt="Тренажёр"> </div> <h3 class="ks-pc-h">Тренажёр</h3> <p class="ks-pc-d">2292 слова, 6 режимов, интервальные повторения, грамматика.</p> </div> <div class="ks-pc"> <div class="ks-pc-img top"> <img src="https://static.tildacdn.com/tild6239-6334-4433-b661-353839626635/pronunciation.png" alt="AI-разбор произношения"> </div> <h3 class="ks-pc-h">AI-произношение</h3> <p class="ks-pc-d">Оценка произношения с подсказками — ставим тоны.</p> </div> <div class="ks-pc"> <div class="ks-pc-img"> <img src="https://static.tildacdn.com/tild6533-3561-4335-a366-306564636633/stroke.png" alt="Прописи иероглифов"> </div> <h3 class="ks-pc-h">Прописи иероглифов</h3> <p class="ks-pc-d">Образец рядом с полем для написания, проверка порядка черт.</p> </div> <div class="ks-pc"> <div class="ks-pc-img"> <img src="https://static.tildacdn.com/tild3264-3861-4666-b930-363434326339/lessons.png" alt="Связь с уроками"> </div> <h3 class="ks-pc-h">Связь с уроками</h3> <p class="ks-pc-d">Платформа персонально подстраивает мини-блок по результатам прошлого занятия.</p> </div> <div class="ks-pc"> <div class="ks-pc-img"> <img src="https://static.tildacdn.com/tild3334-3833-4732-b165-643035383566/growth.png" alt="Аналитика прогресса"> </div> <h3 class="ks-pc-h">Аналитика</h3> <p class="ks-pc-d">Оценка вашего прогресса.</p> </div> </div> <p class="ks-platform-hint">Нажмите на любой экран — откроется в полном размере</p> </div> </div> </div> </section> <!-- Lightbox для увеличения скринов --> <div class="ks-lightbox" id="ksLightbox"> <button type="button" class="ks-lightbox-close" aria-label="Закрыть">×</button> <img src="" alt="" id="ksLightboxImg"> </div> <script>
+(function() {
+  var lb = document.getElementById('ksLightbox');
+  var lbImg = document.getElementById('ksLightboxImg');
+  if (!lb || !lbImg) return;
+
+  document.querySelectorAll('.ks-pc-img').forEach(function(card) {
+    card.addEventListener('click', function() {
+      var img = card.querySelector('img');
+      if (img) {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt || '';
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  function close() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  lb.addEventListener('click', function(e) {
+    if (e.target === lb || e.target.classList.contains('ks-lightbox-close')) {
+      close();
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lb.classList.contains('active')) close();
+  });
+})();
+</script>
+
+  <!-- ============ КОМАНДА ============ -->
+  <section class="ks-sec ks-team">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Наша команда</div>
+      <h2 class="ks-h2">За школой стоят <i>конкретные люди</i></h2>
+      <div class="ks-team-grid">
+        <div class="ks-person">
+          <div class="ph"><img class="ks-img" src="https://static.tildacdn.com/tild3236-6634-4764-b564-653936653538/yulia_komanda.webp" alt="Юлия Горяина"></div>
+          <h3 style="font-family:'Cormorant Garamond',serif">Юлия Горяина</h3>
+          <div class="role">Основатель школы</div>
+          <p>Китаист с 20-летним стажем, преподаватель Высшей школы бизнеса МГУ, докторант Шаньдунского университета.</p>
+        </div>
+        <div class="ks-person">
+          <div class="ph"><img class="ks-img" src="https://static.tildacdn.com/tild3932-3230-4336-a566-663163353966/tatyana_komanda.webp" alt="Татьяна Иоффе"></div>
+          <h3 style="font-family:'Cormorant Garamond',serif">Татьяна Иоффе</h3>
+          <div class="role">Главный методист</div>
+          <p>Доцент ОмГУ, автор методики «ОДиН М», победитель Всероссийского и Международного конкурсов на лучший урок китайского. 30 лет в профессии.</p>
+        </div>
+        <div class="ks-person">
+          <div class="ph"><img class="ks-img" src="https://static.tildacdn.com/tild6238-6664-4566-a361-393062633761/jenny_komanda.webp" alt="Женни Рэй"></div>
+          <h3 style="font-family:'Cormorant Garamond',serif">Женни Рэй</h3>
+          <div class="role">Операционный директор</div>
+          <p>Отвечает за технологии и качество процессов — от платформы до контроля стандартов преподавания.</p>
+        </div>
+      </div>
+      <p class="ks-team-note">Мы берём преподавателей по трём критериям: педагогическое образование, реальный опыт преподавания и обязательное обучение единой методике школы. Поэтому у нас не «просто носители» и не «просто люди, знающие язык» — а подготовленные педагоги, работающие по одной системе. В команде есть и носители языка.</p>
+      <div class="ks-team-nums">
+        <div><b>30+</b><span>преподавателей</span></div>
+        <div><b>3</b><span>методиста</span></div>
+        <div><b>3</b><span>администратора</span></div>
+        <div><b>5+</b><span>носителей языка<br>в команде</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ РЕЗУЛЬТАТЫ ============ -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Результаты</div>
+      <h2 class="ks-h2">Цифры, <i>которые можно проверить</i></h2>
+      <div class="ks-facts">
+        <div class="ks-fact"><b>100%</b><span>учеников сдают HSK<br>с первого раза</span></div>
+        <div class="ks-fact"><b>80%</b><span>приходят<br>по рекомендациям</span></div>
+        <div class="ks-fact"><b>20 лет</b><span>развитию<br>методики</span></div>
+        <div class="ks-fact"><b>4,9★</b><span>средний рейтинг<br>(200+ отзывов)</span></div>
+      </div>
+      <div class="ks-cases">
+        <div class="ks-case"><div class="av">А</div><div><h4>Анастасия, 21 год</h4><p>Сдала HSK 5 за месяц подготовки и получила грант на магистратуру по нейробиологии в Китае.</p></div></div>
+        <div class="ks-case"><div class="av">А</div><div><h4>Артём, 13 лет</h4><p>Сдал HSK 1 и HSK 2 на максимальный балл, продолжает готовиться к следующему уровню.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ НЕ ТОЛЬКО ОНЛАЙН ============ -->
+  <section class="ks-sec ks-team">
+    <div class="ks-in">
+      <div class="ks-eyebrow">Не только онлайн</div>
+      <h2 class="ks-h2">Мы рядом <i>и в офлайне</i></h2>
+      <p class="ks-sub">Уроки идут онлайн, но в ключевые моменты школа присутствует лично: поддерживаем учеников на сдаче HSK, организуем языковые лагеря в Китае и участвуем в образовательных выставках.</p>
+      <div class="ks-gal">
+        <figure><img class="ks-img" src="https://static.tildacdn.com/tild6232-3235-4139-b132-326332366636/photo_2024-10-20_15-.jpg" alt="Языковой лагерь в Китае"><figcaption>Языковой лагерь на Хайнане, Китай</figcaption></figure>
+        <figure><img class="ks-img" src="https://static.tildacdn.com/tild3534-3631-4438-a263-313633626633/noroot.png" alt="Образовательная выставка"><figcaption>Школа на образовательной выставке</figcaption></figure>
+        <figure><img class="ks-img" src="https://static.tildacdn.com/tild3236-6431-4738-b264-356237656634/photo_2025-05-17_16-.jpg" alt="Очная поддержка на сдаче HSK"><figcaption>Очная поддержка на сдаче HSK · 17 мая 2025</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ОТЗЫВЫ ============ -->
+  <section class="ks-sec">
+    <div class="ks-in">
+      <div style="text-align:center;margin-bottom:6px">
+        <div class="ks-eyebrow">Отзывы</div>
+        <h2 class="ks-h2" style="margin-bottom:0">Что говорят <i>наши ученики</i></h2>
+      </div>
+      <div class="ks-rev-banner">
+        <div class="big" style="font-family:'Cormorant Garamond',serif">4,9</div>
+        <div>
+          <div class="ks-stars">★★★★★</div>
+          <div class="cap">Средняя оценка на основе<br>200+ реальных отзывов учеников и родителей</div>
+        </div>
+        <div class="sep"></div>
+        <div><div class="big" style="font-family:'Cormorant Garamond',serif;font-size:52px">80%</div><div class="cap" style="margin-top:2px">приходят к нам<br>по рекомендациям</div></div>
+        <a class="tgbtn" href="https://t.me/feedback_kitai_school" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.67 3.72L2.94 10.56c-1.21.49-1.2 1.16-.22 1.46l4.55 1.42 10.53-6.65c.5-.3.95-.14.58.19l-8.53 7.7-.31 4.69c.46 0 .66-.21.92-.46l2.21-2.15 4.6 3.4c.85.47 1.46.23 1.67-.79l3.02-14.23c.31-1.24-.47-1.8-1.28-1.43z"/></svg>Все отзывы в Telegram</a>
+      </div>
+      <div class="ks-reviews">
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Дочка занимается второй год. Виден системный подход: методист даёт обратную связь после каждого урока, а не просто “позанимались”».</p><div class="who">Марина<span>мама ученицы, 9 лет</span></div></div>
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Сравнивала с репетиторами — здесь именно школа: единая программа, платформа, контроль. Сдала HSK 4 с первого раза».</p><div class="who">Ольга<span>студентка</span></div></div>
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Оформили обучение сотрудников от компании — дали счёт и все документы. Преподаватель подобрали под наши задачи по деловому китайскому».</p><div class="who">Дмитрий<span>руководитель отдела</span></div></div>
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Сын готовился к поступлению в вуз Китая. Помогли не только с языком, но и разобраться с грантом CSC. Поступил на бюджет».</p><div class="who">Елена<span>мама абитуриента</span></div></div>
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Занимаюсь индивидуально, преподаватель подстраивается под мой график и цели. Платформа с тренажёром реально помогает между уроками».</p><div class="who">Артём<span>работаю в логистике</span></div></div>
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Дошли до HSK 3 с нуля за год. Нравится, что есть прописи и разбор произношения — это не просто разговоры по Zoom».</p><div class="who">Ксения<span>студентка</span></div></div>
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Ребёнку 8 лет, боялась, что будет скучно. Уроки в игровой форме, но по системе — уже читает первые иероглифы».</p><div class="who">Наталья<span>мама ученика, 8 лет</span></div></div>
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Готовилась к HSK 5 для магистратуры. Чёткий план, пробные тесты, поддержка методиста. Сдала с первого раза».</p><div class="who">Виктория<span>выпускница</span></div></div>
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Отдельное спасибо за очную поддержку на экзамене — приехали, помогли с оргвопросами. Чувствуешь, что ты не один».</p><div class="who">Сергей<span>ученик</span></div></div>
+        <div class="ks-review"><div class="ks-stars">★★★★★</div><p>«Долго выбирала школу и не пожалела. Прозрачно с документами, есть лицензия, оформила налоговый вычет за обучение».</p><div class="who">Ирина<span>мама ученицы</span></div></div>
+      </div>
+      <p class="ks-note" style="margin-top:26px;text-align:center">Это лишь часть отзывов. Полный список с фото и скриншотами — в нашем Telegram-канале <a href="https://t.me/feedback_kitai_school" target="_blank" rel="noopener" style="color:var(--brick);font-weight:600">@feedback_kitai_school</a></p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="ks-sec ks-team">
+    <div class="ks-in">
+      <div style="text-align:center;margin-bottom:34px">
+        <div class="ks-eyebrow">Вопросы о школе</div>
+        <h2 class="ks-h2" style="margin-bottom:0">Коротко о главном</h2>
+      </div>
+      <div class="ks-faq">
+        <details><summary>Как школа контролирует качество преподавания?</summary><div class="a">Каждый урок оценивается методистом по 11 критериям — от корректности объяснений до вовлечённости ученика. Все преподаватели работают по единой методике «ОДиН М», поэтому качество не зависит от конкретного педагога.</div></details>
+        <details><summary>Что будет, если преподаватель не подойдёт?</summary><div class="a">Мы подберём другого преподавателя без потери оплаченных занятий и передадим ваш прогресс — программа и платформа общие, поэтому переход проходит бесшовно.</div></details>
+        <details><summary>Можно ли получить документы для налогового вычета или оплаты от юрлица?</summary><div class="a">Да. У школы есть образовательная лицензия, поэтому вы можете оформить налоговый вычет 13%, а компании — оплатить обучение по счёту с закрывающими документами.</div></details>
+        <details><summary>Чем вы отличаетесь от репетитора или другой онлайн-школы?</summary><div class="a">Мы институция, а не отдельный преподаватель: единая авторская методика, контроль методиста, собственная цифровая платформа, лицензия и команда из 30+ педагогов. Это система с обратной связью, а не «урок и забыли».</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ФИНАЛЬНЫЙ CTA ============ -->
+  <section class="ks-sec ks-final">
+    <div class="ks-in">
+      <div class="ks-eyebrow" style="text-align:center">Познакомимся?</div>
+      <h2 class="ks-h2">Начните с <i>пробного урока</i></h2>
+      <p class="ks-sub" style="margin:0 auto">Покажем платформу, определим уровень и составим план под вашу цель. Без обязательств и оплаты.</p>
+      <div class="ks-final-cta">
+        <a class="ks-btn ks-btn-primary" href="#popup:zayavka">Записаться на пробный урок<span class="ks-arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Kitai School","description":"Лицензированная онлайн-школа китайского языка с 2005 года. Авторская методика «ОДиН М», 30+ преподавателей.","foundingDate":"2005","url":"https://kitai-school.ru/","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"200"}}
+  </script>
+</div>
+
+<script>
+(function(){
+  // Замените заглушки data-src на реальные ссылки static.tildacdn.com,
+  // либо этот скрипт подставит их, если задать base ниже.
+  var BASE=""; // напр. "https://static.tildacdn.com/tildXXXX/"
+  if(BASE){
+    document.querySelectorAll('#ks-about img[data-src]').forEach(function(im){
+      im.src=BASE+im.getAttribute('data-src');
+    });
+  }
+})();
+</script>

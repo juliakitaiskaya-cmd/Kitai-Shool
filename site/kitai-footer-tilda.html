@@ -1,0 +1,246 @@
+<!-- ============================================================
+     Kitai School — ФУТЕР (глобальный)
+     Stand-alone блок для Tilda (T123 «HTML-код»).
+     CTA обратной связи → #popup:zayavka
+     Проставьте реальные URL вместо # там, где страниц ещё нет.
+     ============================================================ -->
+<footer id="ks-ft">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
+  <style>
+    #ks-ft{
+      --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+      --ink:#2C2420;--paper:#F3EDE3;--taupe:#8B7D6B;--success:#27B260;
+      --line:rgba(255,255,255,.12);--tx:rgba(255,255,255,.68);--tx2:rgba(255,255,255,.46);
+      background:#241C18;color:#fff;font-family:'Inter',-apple-system,Arial,sans-serif !important;line-height:1.5;
+    }
+    #ks-ft *{box-sizing:border-box}
+    #ks-ft a{text-decoration:none;color:inherit}
+    #ks-ft h3,#ks-ft h4,#ks-ft p{margin:0}
+    #ks-ft [style*="Cormorant"]{font-family:'Cormorant Garamond',Georgia,serif !important}
+    #ks-ft [style*="Noto Serif"]{font-family:'Noto Serif SC',serif !important}
+    #ks-ft .ks-in{max-width:1200px;margin:0 auto;padding:0 28px}
+
+    /* верх: контакты + лицензия */
+    #ks-ft .ks-top{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;padding:56px 0 40px;border-bottom:1px solid var(--line)}
+    #ks-ft .ks-brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    #ks-ft .ks-emb{width:52px;height:52px;border-radius:50%;background:var(--brick);display:flex;align-items:center;justify-content:center;font-family:'Noto Serif SC',serif;font-weight:600;font-size:26px;color:#fff;flex:0 0 auto}
+    #ks-ft .ks-brand b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;letter-spacing:1px;display:block}
+    #ks-ft .ks-brand span{font:500 11px/1.3 'Inter';letter-spacing:2px;color:var(--tx2);text-transform:uppercase}
+    #ks-ft .ks-tagline{font:400 15px/1.6 'Inter';color:var(--tx);max-width:440px;margin-bottom:24px}
+    #ks-ft .ks-contacts{display:flex;flex-wrap:wrap;gap:22px 40px;margin-bottom:24px}
+    #ks-ft .ks-ci .l{font:600 11px/1 'Inter';letter-spacing:.1em;text-transform:uppercase;color:var(--tx2);margin-bottom:7px}
+    #ks-ft .ks-ci a,#ks-ft .ks-ci p{font:600 17px/1.3 'Inter';color:#fff}
+    #ks-ft .ks-ci a:hover{color:#E9A6B4}
+    #ks-ft .ks-ci small{font:400 13px/1.4 'Inter';color:var(--tx);display:block;margin-top:3px}
+    #ks-ft .ks-cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    #ks-ft .ks-btn{display:inline-flex;align-items:center;gap:9px;border-radius:8px;font:600 14.5px/1 'Inter';padding:14px 24px;transition:.18s}
+    #ks-ft .ks-btn-primary{background:var(--brick);color:#fff;box-shadow:0 8px 20px rgba(164,30,58,.28)}
+    #ks-ft .ks-btn-primary:hover{background:var(--brick-deep);transform:translateY(-1px)}
+    #ks-ft .ks-arr{transition:transform .18s}#ks-ft .ks-btn:hover .ks-arr{transform:translateX(3px)}
+    #ks-ft .ks-soc{display:flex;gap:10px}
+    #ks-ft .ks-soc a{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--tx);transition:.15s}
+    #ks-ft .ks-soc a:hover{border-color:var(--brick);background:var(--brick);color:#fff}
+    #ks-ft .ks-soc svg{width:18px;height:18px}
+
+    /* лицензия */
+    #ks-ft .ks-lic{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;padding:26px}
+    #ks-ft .ks-lic .h{display:flex;gap:13px;align-items:flex-start;margin-bottom:14px}
+    #ks-ft .ks-lic .ic{flex:0 0 auto;width:44px;height:44px;border-radius:11px;background:var(--brick);display:flex;align-items:center;justify-content:center;color:#fff}
+    #ks-ft .ks-lic .ic svg{width:22px;height:22px}
+    #ks-ft .ks-lic h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:#fff;margin-bottom:3px}
+    #ks-ft .ks-lic .num{font:600 13.5px/1.4 'Inter';color:#fff}
+    #ks-ft .ks-lic .meta{font:400 12.5px/1.5 'Inter';color:var(--tx2);margin-top:2px}
+    #ks-ft .ks-lic .status{display:inline-flex;align-items:center;gap:6px;background:rgba(39,178,96,.16);color:#8FE0AC;border-radius:999px;padding:5px 11px;font:600 11.5px/1 'Inter';margin:12px 0 14px}
+    #ks-ft .ks-lic .status svg{width:12px;height:12px}
+    #ks-ft .ks-lic .lbtns{display:flex;gap:9px;flex-wrap:wrap}
+    #ks-ft .ks-lic .lbtns a{font:600 12.5px/1 'Inter';border-radius:7px;padding:10px 14px;transition:.15s}
+    #ks-ft .ks-lic .lbtns .p{background:var(--brick);color:#fff}#ks-ft .ks-lic .lbtns .p:hover{background:var(--brick-deep)}
+    #ks-ft .ks-lic .lbtns .g{background:rgba(255,255,255,.07);color:#fff;border:1px solid var(--line)}#ks-ft .ks-lic .lbtns .g:hover{background:rgba(255,255,255,.13)}
+    #ks-ft .ks-lic .benefits{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+    #ks-ft .ks-lic .benefits span{font:600 11px/1 'Inter';background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:6px;padding:6px 9px;color:var(--tx)}
+
+    /* каталоги */
+    #ks-ft .ks-cols{display:grid;grid-template-columns:2fr 2fr 1.3fr;gap:36px;padding:44px 0}
+    #ks-ft .ks-colgrp{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+    #ks-ft .ks-col h4{font:600 12px/1 'Inter';letter-spacing:.12em;text-transform:uppercase;color:#E9A6B4;margin-bottom:16px}
+    #ks-ft .ks-col li{margin-bottom:10px}
+    #ks-ft .ks-col a{font:400 14px/1.4 'Inter';color:var(--tx);transition:.13s}
+    #ks-ft .ks-col a:hover{color:#fff}
+    #ks-ft ul{list-style:none;padding:0;margin:0}
+
+    /* низ */
+    #ks-ft .ks-bottom{border-top:1px solid var(--line);padding:22px 0 36px;display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;justify-content:space-between}
+    #ks-ft .ks-legal{display:flex;flex-wrap:wrap;gap:8px 20px}
+    #ks-ft .ks-legal a{font:400 13px/1.4 'Inter';color:var(--tx2)}
+    #ks-ft .ks-legal a:hover{color:#fff}
+    #ks-ft .ks-copy{font:400 13px/1.5 'Inter';color:var(--tx2)}
+
+    @media(max-width:900px){
+      #ks-ft .ks-top{grid-template-columns:1fr;gap:32px}
+      #ks-ft .ks-cols{grid-template-columns:1fr}
+    }
+    @media(max-width:560px){
+      #ks-ft .ks-in{padding:0 20px}
+      #ks-ft .ks-top{padding:42px 0 32px}
+      #ks-ft .ks-colgrp{grid-template-columns:1fr}
+      #ks-ft .ks-btn{width:100%;justify-content:center}
+      #ks-ft .ks-cta-row{gap:14px}
+      #ks-ft .ks-bottom{flex-direction:column;align-items:flex-start}
+    }
+
+    /* Тильда-фикс: её глобальный CSS перебивал цвета текста в тёмном футере — форсируем палитру */
+    #ks-ft .ks-brand b,#ks-ft .ks-emb,#ks-ft .ks-ci a,#ks-ft .ks-ci p,
+    #ks-ft .ks-lic h4,#ks-ft .ks-lic .num,#ks-ft .ks-btn-primary,
+    #ks-ft .ks-lic .lbtns .p,#ks-ft .ks-lic .lbtns .g{color:#fff !important}
+    #ks-ft .ks-tagline,#ks-ft .ks-ci small,#ks-ft .ks-col a,
+    #ks-ft .ks-soc a,#ks-ft .ks-lic .benefits span{color:rgba(255,255,255,.68) !important}
+    #ks-ft .ks-brand span,#ks-ft .ks-ci .l,#ks-ft .ks-lic .meta,
+    #ks-ft .ks-legal a,#ks-ft .ks-copy{color:rgba(255,255,255,.46) !important}
+    #ks-ft .ks-col h4{color:#E9A6B4 !important}
+    #ks-ft .ks-lic .status{color:#8FE0AC !important}
+  </style>
+
+  <div class="ks-in">
+    <!-- ВЕРХ: контакты + лицензия -->
+    <div class="ks-top">
+      <div>
+        <div class="ks-brand">
+          <div class="ks-emb" style="font-family:'Noto Serif SC',serif">启</div>
+          <div><b style="font-family:'Cormorant Garamond',serif">KITAI SCHOOL</b><span>онлайн-школа китайского</span></div>
+        </div>
+        <p class="ks-tagline">Лицензированная онлайн-школа китайского языка. Работаем с 2005 года. Авторская методика «ОДиН М», собственная платформа и контроль каждого урока.</p>
+
+        <div class="ks-contacts">
+          <div class="ks-ci"><div class="l">Телефон</div><a href="tel:+79585387080">+7 (958) 538-70-80</a><small>Пн–Пт, 10:00–18:00</small></div>
+          <div class="ks-ci"><div class="l">Почта</div><a href="mailto:info@kitai-school.ru">info@kitai-school.ru</a><small>Ответим в течение дня</small></div>
+        </div>
+
+        <div class="ks-cta-row">
+          <a class="ks-btn ks-btn-primary" href="#popup:zayavka">Оставить заявку<span class="ks-arr">→</span></a>
+          <div class="ks-soc">
+            <a href="https://vk.com/kitai_school" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.79 16.3s.27-.03.41-.18c.13-.14.13-.4.13-.4s-.02-1.23.55-1.41c.56-.18 1.27 1.19 2.03 1.72.57.4 1.01.31 1.01.31l2.03-.03s1.06-.07.56-.9c-.04-.07-.29-.62-1.51-1.76-1.27-1.19-1.1-1 .43-3.06.93-1.25 1.3-2.02 1.19-2.35-.11-.31-.8-.23-.8-.23l-2.31.02s-.17-.02-.3.05c-.12.08-.2.25-.2.25s-.36.97-.85 1.79c-1.02 1.74-1.42 1.83-1.59 1.72-.39-.25-.29-1.01-.29-1.55 0-1.69.26-2.39-.5-2.58-.25-.06-.43-.1-1.07-.11-.82-.01-1.51 0-1.91.2-.26.13-.46.41-.34.43.15.02.5.09.68.34.24.32.23 1.04.23 1.04s.14 1.99-.32 2.24c-.31.17-.74-.18-1.65-1.74-.46-.8-.81-1.69-.81-1.69s-.07-.17-.19-.25c-.15-.11-.35-.14-.35-.14l-2.2.02s-.33 0-.45.15c-.11.13-.01.4-.01.4s1.72 4.01 3.66 6.03c1.78 1.85 3.81 1.73 3.81 1.73h.92z"/></svg></a>
+            <a href="https://t.me/kitai_school" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.67 3.72L2.94 10.56c-1.21.49-1.2 1.16-.22 1.46l4.55 1.42 10.53-6.65c.5-.3.95-.14.58.19l-8.53 7.7-.31 4.69c.46 0 .66-.21.92-.46l2.21-2.15 4.6 3.4c.85.47 1.46.23 1.67-.79l3.02-14.23c.31-1.24-.47-1.8-1.28-1.43z"/></svg></a>
+            <a href="https://max.ru/id228900391328_biz" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5C6.9 3.5 2.75 6.86 2.75 11c0 2.27 1.24 4.3 3.2 5.67L5.2 20.2l3.86-2.05c.92.24 1.9.36 2.94.36 5.1 0 9.25-3.36 9.25-7.51S17.1 3.5 12 3.5z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ЛИЦЕНЗИЯ -->
+      <div class="ks-lic">
+        <div class="h">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
+          <div>
+            <h4 style="font-family:'Cormorant Garamond',serif">Образовательная лицензия</h4>
+            <div class="num">№ Л035-01298-77/02285772</div>
+            <div class="meta">Департамент образования и науки г. Москвы · с 07.05.2025</div>
+          </div>
+        </div>
+        <div class="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Действует · запись в госреестре</div>
+        <div class="benefits"><span>Налоговый вычет 13%</span><span>Оплата от юрлица</span></div>
+        <div class="lbtns" style="margin-top:14px">
+          <a class="p" href="https://islod.obrnadzor.gov.ru/view/35512" target="_blank" rel="noopener">Проверить в реестре</a>
+          <a class="g" href="https://kitai-school.ru/documents">Документы</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- КАТАЛОГИ (набор пунктов как в шапке) -->
+    <div class="ks-cols">
+      <!-- Онлайн-курсы + Экзамены -->
+      <div class="ks-col">
+        <div class="ks-colgrp">
+          <div>
+            <h4>Онлайн-курсы</h4>
+            <ul>
+              <li><a href="https://kitai-school.ru/onlayn-kursy-kitayskogo">Все онлайн-курсы</a></li>
+              <li><a href="https://kitai-school.ru/ks-indiv">Индивидуальные занятия</a></li>
+              <li><a href="https://kitai-school.ru/ks-group">Группы</a></li>
+              <li><a href="https://kitai-school.ru/razgovornyy-ustnyy-kitayskiy">Разговорный / устный</a></li>
+              <li><a href="https://kitai-school.ru/razgovornyy-klub-s-nositelem">Разговорный клуб с носителем</a></li>
+              <li><a href="https://kitai-school.ru/grammatika">Грамматика</a></li>
+              <li><a href="https://kitai-school.ru/fonetika-proiznoshenie-kitayskogo">Фонетика / произношение</a></li>
+              <li><a href="https://kitai-school.ru/ieroglifika">Иероглифика</a></li>
+              <li><a href="https://kitai-school.ru/kitayskiy-dlya-detey">Китайский для детей</a></li>
+              <li><a href="https://kitai-school.ru/kitayskiy-dlya-malyshey">Китайский для малышей</a></li>
+              <li><a href="https://kitai-school.ru/kitayskiy-dlya-puteshestviy">Китайский для путешествий</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Экзамены</h4>
+            <ul>
+              <li><a href="https://kitai-school.ru/hsk-exam">Подготовка к HSK</a></li>
+              <li><a href="https://kitai-school.ru/hsk1">HSK 1 · 2 · 3 · 4 · 5</a></li>
+              <li><a href="https://kitai-school.ru/hskk">Подготовка к HSKK</a></li>
+              <li><a href="https://kitai-school.ru/yct">Подготовка к YCT</a></li>
+              <li><a href="https://kitai-school.ru/csca">CSCA — вступительный экзамен</a></li>
+              <li><a href="https://kitai-school.ru/csca-matematika">Математика · Физика · Химия</a></li>
+              <li><a href="https://kitai-school.ru/podgotovka-k-olimpiadam-po-kitayskomu">Подготовка к олимпиадам</a></li>
+              <li><a href="https://kitai-school.ru/podgotovka-k-eg-po-kitayskomu">Подготовка к ЕГЭ</a></li>
+              <li><a href="https://kitai-school.ru/hsk-raspisanie">Расписание экзаменов</a></li>
+              <li><a href="https://kitai-school.ru/hsk-test">HSK 1-5 Тесты</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Поступление в Китай + Бизнесу -->
+      <div class="ks-col">
+        <div class="ks-colgrp">
+          <div>
+            <h4>Поступление в Китай</h4>
+            <ul>
+              <li><a href="https://kitai-school.ru/obuchenie-v-kitae-posle-9-klassa">Обучение в Китае после 9 класса</a></li>
+              <li><a href="https://kitai-school.ru/obuchenie-v-kitae-posle-11-klassa">Обучение в Китае после 11 класса</a></li>
+              <li><a href="https://kitai-school.ru/bakalavriat-v-kitae">Бакалавриат в Китае</a></li>
+              <li><a href="https://kitai-school.ru/magistratura-v-kitae">Магистратура в Китае</a></li>
+              <li><a href="https://kitai-school.ru/yazykovoy-god-v-kitae">Языковой год в Китае</a></li>
+              <li><a href="https://kitai-school.ru/yazykovye-kursy-v-kitae">Языковые курсы в Китае</a></li>
+              <li><a href="https://kitai-school.ru/stajirovka-v-kitae">Стажировка в Китае</a></li>
+              <li><a href="https://kitai-school.ru/proforientaciya-dlya-postupleniya-v-kitay">Профориентация для поступления</a></li>
+              <li><a href="https://kitai-school.ru/language_camp">Языковой лагерь</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Бизнесу</h4>
+            <ul>
+              <li><a href="https://kitai-school.ru/business">Деловой китайский</a></li>
+              <li><a href="https://kitai-school.ru/corporate_chinese">Корпоративное обучение</a></li>
+              <li><a href="https://kitai-school.ru/kitayskiy-dlya-marketinga">Китайский для маркетинга</a></li>
+              <li><a href="https://kitai-school.ru/kitayskiy-dlya-logistiki">Китайский для логистики</a></li>
+              <li><a href="https://kitai-school.ru/tehnicheskiy-kitayskiy">Технический китайский</a></li>
+              <li><a href="https://kitai-school.ru/uridicheskiy-kitayskiy">Юридический китайский</a></li>
+              <li><a href="https://kitai-school.ru/konomicheskiy-kitayskiy">Экономический китайский</a></li>
+              <li><a href="https://kitai-school.ru/teachers">Курсы для преподавателей</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- О школе -->
+      <div class="ks-col">
+        <h4>О школе</h4>
+        <ul>
+          <li><a href="https://kitai-school.ru/about">О школе</a></li>
+          <li><a href="https://kitai-school.ru/prepodavateli">Преподаватели</a></li>
+          <li><a href="https://kitai-school.ru/otzyvy">Отзывы</a></li>
+          <li><a href="https://kitai-school.ru/o-nas-v-smi">О нас в СМИ</a></li>
+          <li><a href="https://kitai-school.ru/foto-video">Фото и видео</a></li>
+          <li><a href="https://kitai-school.ru/licenzii">Лицензии</a></li>
+          <li><a href="https://kitai-school.ru/metodika-i-platforma">Методика и платформа</a></li>
+          <li><a href="https://kitai-school.ru/contacts">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- НИЗ -->
+    <div class="ks-bottom">
+      <div class="ks-copy">© 2005–2026 Kitai School · ИП Горяина Ю. П. · ИНН 228900391328</div>
+      <div class="ks-legal">
+        <a href="https://kitai-school.ru/documents">Реквизиты</a>
+        <a href="https://docs.yandex.ru/docs/view?url=ya-disk-public%3A%2F%2F5PhOdX6KN8snAgnDdMIuf8XfFAgz%2F0eUppcmge%2B7DtB4s2FXfsYs5T9RGTSyPf26q%2FJ6bpmRyOJonT3VoXnDag%3D%3D%3A%2F%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80-%D0%BE%D1%84%D0%B5%D1%80%D1%82%D0%B0%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8%20%D0%BF%D0%BE%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BE%D1%82%2001.09.2025.docx&amp;name=%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80-%D0%BE%D1%84%D0%B5%D1%80%D1%82%D0%B0%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8%20%D0%BF%D0%BE%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BE%D1%82%2001.09.2025.docx" target="_blank" rel="noopener">Договор-оферта</a>
+        <a href="/privacy">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </div>
+</footer>
