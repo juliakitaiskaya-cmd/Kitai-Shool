@@ -1,0 +1,26 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--cream);font-family:var(--font-sans)}
+  .wrap{padding:22px 28px;display:flex;flex-direction:column;gap:14px}
+  .lab{font-size:10.5px;color:var(--taupe);letter-spacing:.04em}
+  /* schedule row: white card with left brick border + count pill */
+  .sched{background:#fff;border-radius:var(--r-md);box-shadow:var(--shadow-card);border:1px solid var(--brick);
+         padding:16px 18px;display:flex;align-items:center;justify-content:space-between}
+  .sched .t{font-weight:600;color:var(--brick);font-size:16px}
+  .sched .n{background:var(--cream-2);color:var(--ink-2);border-radius:var(--r-pill);width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+  /* feedback callout: green left border + cream highlight inner */
+  .fb{background:#fff;border-radius:var(--r-md);box-shadow:var(--shadow-card);border:1px solid var(--hairline);padding:16px 18px}
+  .fb p{margin:0 0 10px;font-size:14px;color:var(--ink-2);line-height:1.55}
+  .hl{background:var(--highlight);border-radius:var(--r-sm);padding:10px 12px;font-size:13.5px;color:var(--ink-2)}
+  .cta{color:var(--brick);font-weight:600;font-size:13.5px;margin-top:8px}
+</style></head>
+<body><div class="wrap">
+  <div><div class="lab">SCHEDULE ROW — count pill</div>
+    <div class="sched"><span class="t">Июнь 2026 г.</span><span class="n">9</span></div></div>
+  <div><div class="lab">FEEDBACK CALLOUT — highlight</div>
+    <div class="fb"><p>Анна, отличный урок! Ты уверенно использовала конструкцию 把 и быстро переключалась с русского на китайский.</p>
+      <div class="hl">На завтра в тренажёре готов мини-блок: 5 предложений с конструкцией 把.</div>
+      <div class="cta">Откройте тренажёр — занятие на 8 минут уже подобрано.</div></div></div>
+</div></body></html>

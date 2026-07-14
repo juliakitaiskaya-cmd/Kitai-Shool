@@ -1,0 +1,145 @@
+/* platform.css — Kitai School learning-platform UI kit styles */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--cream); font-family: var(--font-sans); color: var(--ink); }
+
+.ks-app { display: flex; min-height: 100vh; }
+
+/* ---------- Sidebar ---------- */
+.ks-sidebar {
+  width: 80px; flex: none; background: #fff; border-right: 1px solid var(--hairline);
+  display: flex; flex-direction: column; align-items: center; padding: 14px 0; gap: 16px;
+  position: sticky; top: 0; height: 100vh;
+}
+.ks-side-logo { font-family: var(--font-han); font-size: 26px; color: var(--brick); }
+.ks-side-items { display: flex; flex-direction: column; gap: 2px; width: 100%; padding: 0 8px; }
+.ks-side-item {
+  border: 0; background: transparent; cursor: pointer; width: 100%;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 9px 2px; border-radius: var(--r-sm); font-family: inherit;
+  font-size: 11px; color: var(--taupe); transition: background .15s, color .15s;
+}
+.ks-side-item:hover { background: var(--cream-2); }
+.ks-side-item.on { background: #FFF0E0; color: var(--ink); font-weight: 600; }
+.ks-side-ico { line-height: 0; color: var(--taupe); }
+.ks-side-item.on .ks-side-ico { color: var(--brick); }
+
+/* ---------- Content shell ---------- */
+.ks-main { flex: 1; display: flex; justify-content: center; padding: 40px 32px 80px; }
+.ks-screen { width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 18px; }
+
+/* ---------- Header ---------- */
+.ks-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 2px; }
+.ks-header > div:first-child { flex: none; }
+.ks-greet { font-family: var(--font-display); font-weight: 700; font-size: 38px; margin: 0; color: var(--ink); white-space: nowrap; line-height: 1.05; }
+.ks-greet-sub { color: var(--taupe); font-size: 14px; margin-top: 2px; }
+.ks-header-right { display: flex; align-items: center; gap: 14px; }
+.ks-support { background: #fff; border: 1px solid var(--hairline-2); border-radius: var(--r-sm);
+  padding: 9px 16px; font-family: inherit; font-size: 13.5px; color: var(--ink-2); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 7px; }
+.ks-streak { color: var(--warn); font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 5px; }
+
+/* ---------- Cards ---------- */
+.ks-card { background: var(--surface); border-radius: var(--r-md); border: 1px solid var(--hairline); }
+.ks-pad { padding: 22px 24px; }
+.ks-card-title { font-weight: 600; font-size: 17px; color: var(--ink); margin-bottom: 8px; display: flex; align-items: center; gap: 9px; }
+.ks-card-text { font-size: 14.5px; line-height: 1.55; color: var(--ink-2); margin: 0 0 16px; }
+.ks-lesson-row { display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--brick); }
+.ks-lesson-row .ks-card-title { color: var(--brick); }
+.ks-section-label { margin: 6px 0 -6px; }
+
+/* ---------- Buttons ---------- */
+.ks-btn { font-family: inherit; font-size: 14.5px; font-weight: 600; border: 0; cursor: pointer;
+  border-radius: var(--r-btn); padding: 12px 22px; transition: background .15s, transform .05s; }
+.ks-btn:active { transform: translateY(1px); }
+.ks-btn-primary { background: var(--brick); color: #fff; }
+.ks-btn-primary:hover { background: var(--brick-deep); }
+.ks-btn-success { background: var(--success); color: #fff; }
+.ks-btn-success:hover { filter: brightness(.95); }
+.ks-btn-ghost { background: #fff; color: #8B7D6B; border: 1px solid var(--hairline-2); }
+.ks-btn-ghost:hover { background: var(--cream-2); }
+.ks-btn-soft { background: var(--brick-soft); color: var(--brick-deep); }
+
+/* ---------- Daily goal ---------- */
+.ks-goal { background: var(--brick-soft); border-radius: var(--r-md); padding: 16px 22px;
+  display: flex; align-items: center; gap: 16px; }
+.ks-goal-ring { width: 44px; height: 44px; border-radius: 50%; flex: none; display: flex; align-items: center;
+  justify-content: center; font-size: 13px; font-weight: 700; color: var(--brick);
+  background: conic-gradient(var(--brick) 0 80%, #f0d2d2 80% 100%); }
+.ks-goal-ring::before { content: ''; position: absolute; width: 32px; height: 32px; border-radius: 50%; background: var(--brick-soft); }
+.ks-goal-ring { position: relative; }
+.ks-goal-ring { z-index: 0; }
+.ks-goal-title { font-weight: 600; font-size: 15px; }
+.ks-goal-sub { color: var(--taupe); font-size: 13px; }
+
+/* ---------- Stat tiles ---------- */
+.ks-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.ks-tile { background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--r-md);
+  padding: 18px; text-align: center; }
+.ks-tile-ico { color: var(--brick); display: flex; justify-content: center; }
+.ks-tile-num { font-family: var(--font-display); font-weight: 600; font-size: 26px; margin-top: 6px; }
+.ks-tile-cap { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--taupe); margin-top: 2px; }
+
+/* ---------- Learn: progress ---------- */
+.ks-progress { display: flex; flex-direction: column; gap: 10px; }
+.ks-progress-bar { height: 10px; border-radius: var(--r-sm); background: var(--cream-2); overflow: hidden; }
+.ks-progress-bar span { display: block; height: 100%; background: var(--brick); border-radius: var(--r-sm); }
+.ks-progress-row { display: flex; align-items: baseline; justify-content: space-between; }
+.ks-progress-num { font-family: var(--font-display); font-size: 24px; }
+.ks-progress-pct { font-family: var(--font-display); font-size: 24px; }
+.ks-muted { color: var(--taupe); font-size: 13px; }
+.ks-legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: var(--ink-2); }
+.ks-legend i.d { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+.d.g { background: var(--success); } .d.y { background: #E5B53C; } .d.r { background: var(--brick); } .d.n { background: var(--taupe-soft); }
+
+/* ---------- chips & search ---------- */
+.ks-chip-row { display: flex; gap: 10px; }
+.ks-chip { border: 1px solid var(--hairline-2); background: #fff; color: var(--ink-2); border-radius: var(--r-sm);
+  padding: 8px 16px; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.ks-chip-dot { width: 7px; height: 7px; border-radius: 50%; border: 1px solid var(--taupe); }
+.ks-search { background: #fff; border: 1px solid var(--hairline-2); border-radius: var(--r-md);
+  padding: 16px 18px; color: var(--taupe); font-size: 15px; display: flex; align-items: center; gap: 10px; }
+.ks-search-ico { color: var(--taupe); display: flex; }
+.ks-han { font-family: var(--font-han-ui); color: var(--ink-2); }
+
+/* ---------- Learn: mode grid ---------- */
+.ks-modes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ks-mode { text-align: left; background: #fff; border: 1px solid var(--hairline); border-radius: var(--r-md);
+  padding: 18px 20px; cursor: pointer; font-family: inherit;
+  display: flex; align-items: center; gap: 14px; transition: border-color .15s, transform .1s; }
+.ks-mode:hover { border-color: var(--taupe-soft); transform: translateY(-1px); }
+.ks-mode-ico { flex: none; color: var(--brick); display: flex; }
+.ks-mode-title { font-weight: 600; font-size: 16px; color: var(--ink); white-space: pre-line; line-height: 1.2; }
+.ks-btn-soft { display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+.ks-mode-hint { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--taupe); margin-left: auto; text-align: right; }
+.ks-accordion { background: #fff; border: 1px solid var(--hairline); border-radius: var(--r-md);
+  padding: 16px 20px; font-family: inherit; font-size: 14.5px; color: var(--ink-2); text-align: left; cursor: pointer; }
+
+/* ---------- Flashcard ---------- */
+.ks-flash-screen { align-items: center; }
+.ks-flash-top { display: flex; align-items: center; gap: 12px; width: 100%; max-width: 560px; }
+.ks-round { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--hairline-2); background: #fff;
+  cursor: pointer; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; color: var(--ink-2); }
+.ks-round svg { display: block; }
+.ks-counter { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--hairline-2); background:#fff;
+  display: flex; align-items: center; justify-content: center; font-size: 9px; color: var(--taupe); text-align:center; line-height:1; }
+.ks-flash-mode { margin-left: auto; color: var(--taupe); font-size: 13px; }
+.ks-flash-card { position: relative; background: #fff; border: 1px solid var(--hairline); border-radius: var(--r-md);
+  width: 100%; max-width: 560px; padding: 40px 32px 28px; text-align: center; }
+.ks-audio { position: absolute; top: 18px; right: 18px; background: var(--brick-soft); border-color: transparent; color: var(--brick-deep); }
+.ks-flash-han { font-family: var(--font-han); font-size: 60px; color: var(--ink); line-height: 1; }
+.ks-flash-pin { color: var(--taupe); font-size: 18px; margin-top: 8px; }
+.ks-flash-mean { font-size: 15px; color: var(--ink-2); margin-top: 8px; }
+.ks-flash-tag { font-size: 12px; color: var(--info); margin-top: 6px; }
+.ks-flash-grade { background: #fbf3ec; border-radius: var(--r-md); padding: 16px; margin-top: 18px; }
+.ks-tone-row { display: flex; gap: 12px; justify-content: center; }
+.ks-tone { font-family: var(--font-han); font-size: 20px; border: 1px solid #e7c9c9; border-radius: var(--r-sm); padding: 6px 14px; background:#fff; }
+.ks-tone sub { font-family: var(--font-sans); font-size: 11px; color: var(--taupe); }
+.ks-tone-score { font-size: 13px; color: var(--ink-2); margin: 10px 0; }
+.ks-highlight { background: var(--highlight); border-radius: var(--r-sm); padding: 12px; font-size: 13px; color: var(--ink-2); line-height: 1.5; text-align: left; }
+.ks-again { margin-top: 12px; }
+.ks-flash-example { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--hairline); font-family: var(--font-han); font-size: 18px; color: var(--ink); }
+.ks-flash-example .ks-muted { font-family: var(--font-sans); margin-top: 4px; }
+.ks-sm { width: 28px; height: 28px; font-size: 12px; vertical-align: middle; }
+.ks-flash-actions { display: flex; gap: 12px; width: 100%; max-width: 560px; }
+.ks-flash-actions .ks-btn { flex: 1; }

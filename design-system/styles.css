@@ -1,0 +1,8 @@
+/* ============================================================
+   KITAI SCHOOL — Design System root stylesheet
+   Single entry point for consumers. Import this file and you get
+   all design tokens (colors, type, spacing, radii, shadows) plus
+   the typographic helper classes.
+   ============================================================ */
+
+@import "colors_and_type.css";

@@ -1,0 +1,109 @@
+/* ============================================================
+   KITAI SCHOOL — Design Tokens (colors + type)
+   Онлайн-школа китайского языка · kitai-school.ru
+   ============================================================
+   Fonts are loaded from Google Fonts. The live marketing site
+   runs on Tilda; the elegant high-contrast italics in headings
+   match Cormorant Garamond, the UI sans matches Inter, and the
+   Chinese glyphs use Noto Serif SC / Noto Sans SC. These are
+   best-match substitutions — confirm exact webfonts if available.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+:root {
+  /* ---------- Brand palette ---------- */
+  --brick:        #A41E3A;  /* primary action / brand red (deep crimson) */
+  --brick-deep:   #841630;  /* hover / pressed red */
+  --brick-soft:   #F7E6EB;  /* pink-red tint surface (daily goal, alerts) */
+
+  --ink:          #2C2420;  /* near-black warm brown — primary text, logo */
+  --ink-2:        #5A4F45;  /* secondary text */
+  --taupe:        #8B7D6B;  /* muted captions, labels, sub-headings */
+  --taupe-soft:   #B8AC9C;  /* disabled / faint */
+
+  --cream:        #FAF7F2;  /* page background — warm ivory */
+  --cream-2:      #F3EDE3;  /* alt section background */
+  --surface:      #FFFFFF;  /* cards, panels */
+  --highlight:    #FCF6E2;  /* cream callout / "next task" box */
+
+  /* ---------- Semantic ---------- */
+  --success:      #27B260;  /* "Знаю" / "Получилось" green */
+  --success-soft: #E3F6E9;
+  --warn:         #E08A1E;  /* streak flame, warnings */
+  --info:         #3E7BC2;  /* links, info icons in platform */
+
+  /* ---------- Lines & elevation ---------- */
+  --hairline:     #EAE3D8;  /* warm hairline border */
+  --hairline-2:   #DED5C6;  /* stronger divider */
+  --shadow-sm:    0 1px 2px rgba(44,36,32,.05);
+  --shadow-card:  0 2px 14px rgba(44,36,32,.06);
+  --shadow-lift:  0 10px 34px rgba(44,36,32,.10);
+
+  /* ---------- Radii ---------- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;    /* default card radius */
+  --r-lg: 22px;    /* large feature cards */
+  --r-btn: 14px;   /* buttons — soft rounded rectangle (not pill) */
+  --r-pill: 999px; /* chips, badges, tags */
+
+  /* ---------- Spacing scale (4px base) ---------- */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px; --sp-9: 96px;
+
+  /* ---------- Font families ---------- */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans:    'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-han:     'Noto Serif SC', 'Songti SC', 'SimSun', serif;     /* decorative / flashcard hanzi */
+  --font-han-ui:  'Noto Sans SC', 'PingFang SC', sans-serif;          /* hanzi inside UI */
+
+  /* ---------- Type scale ---------- */
+  --fs-display: 64px;  --lh-display: 1.04; /* @kind font */ /* hero headline */
+  --fs-h1: 46px;       --lh-h1: 1.08; /* @kind font */
+  --fs-h2: 34px;       --lh-h2: 1.12; /* @kind font */
+  --fs-h3: 24px;       --lh-h3: 1.2; /* @kind font */
+  --fs-lg: 19px;       --lh-lg: 1.5; /* @kind font */
+  --fs-body: 16px;     --lh-body: 1.6; /* @kind font */
+  --fs-sm: 14px;       --lh-sm: 1.5; /* @kind font */
+  --fs-xs: 12px;       --lh-xs: 1.4; /* @kind font */ /* eyebrow / label, usually uppercase + tracking */
+}
+
+/* ============================================================
+   SEMANTIC TYPOGRAPHY
+   ============================================================ */
+
+.ks-eyebrow {                 /* small label above a heading */
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+.ks-display {                 /* hero headline — serif, with italic accent words */
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+
+.ks-h1 { font-family: var(--font-display); font-size: var(--fs-h1); line-height: var(--lh-h1); font-weight: 600; color: var(--ink); }
+.ks-h2 { font-family: var(--font-display); font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: 600; color: var(--ink); }
+.ks-h3 { font-family: var(--font-display); font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 600; color: var(--ink); }
+
+/* signature move: an italic word inside a serif heading, in ink (not red) */
+.ks-accent { font-style: italic; font-weight: 500; }
+
+.ks-lead { font-family: var(--font-sans); font-size: var(--fs-lg); line-height: var(--lh-lg); color: var(--ink-2); }
+.ks-body { font-family: var(--font-sans); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--ink-2); }
+.ks-small { font-family: var(--font-sans); font-size: var(--fs-sm); line-height: var(--lh-sm); color: var(--taupe); }
+
+/* roman-numeral section marker, e.g. I II III IV */
+.ks-numeral { font-family: var(--font-display); font-style: italic; font-weight: 500; color: var(--brick); }
+
+/* big stat number */
+.ks-stat { font-family: var(--font-display); font-weight: 600; font-size: 56px; line-height: 1; color: var(--ink); }
