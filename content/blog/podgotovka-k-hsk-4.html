@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://kitai-school.ru/img/podgotovka-hsk-4.jpg">
 <meta property="og:image:alt" content="Структура экзамена HSK 4: аудирование, чтение, письмо">
 <meta property="article:published_time" content="2026-07-14">
-<meta property="article:modified_time" content="2026-07-14">
+<meta property="article:modified_time" content="2026-07-15">
 <meta property="article:author" content="Юлия Горяина">
 <meta property="article:section" content="Экзамены HSK">
 <meta property="article:tag" content="HSK 4">
@@ -44,7 +44,7 @@
       "description": "Подготовка к HSK 4: 1200 слов, три раздела, 180 из 300 баллов и учёт перехода на HSK 3.0.",
       "inLanguage": "ru",
       "datePublished": "2026-07-14",
-      "dateModified": "2026-07-14",
+      "dateModified": "2026-07-15",
       "image": "https://kitai-school.ru/img/podgotovka-hsk-4.jpg",
       "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
       "publisher": {"@id": "https://kitai-school.ru/#org"},
@@ -83,8 +83,11 @@
       "@id": "https://kitai-school.ru/#org",
       "name": "Kitai School",
       "url": "https://kitai-school.ru",
-      "address": {"@type": "PostalAddress", "addressLocality": "Москва"},
-      "sameAs": ["https://vk.com/kitai_school", "https://t.me/kitai_school"]
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
     },
     {
       "@type": "FAQPage",
@@ -116,109 +119,113 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
 
-:root{
+#ks-art{
   --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
   --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
   --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
   --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
   --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
-  --font-display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-  --font-sans:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
-  --font-han:'Noto Serif SC','Songti SC','SimSun',serif;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:760px;margin:0 auto;padding:40px 22px 72px;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
 }
-*{box-sizing:border-box}html,body{margin:0}
-body{background:var(--cream);font-family:var(--font-sans);color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
-.wrap{max-width:760px;margin:0 auto;padding:40px 22px 72px}
-nav.crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
-nav.crumbs a{color:var(--taupe);text-decoration:none}nav.crumbs a:hover{color:var(--brick)}
-.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick);margin:0 0 12px}
-h1{font-family:var(--font-display);font-weight:600;font-size:46px;line-height:1.08;letter-spacing:-.01em;color:var(--ink);margin:0 0 20px}
-h2{font-family:var(--font-display);font-weight:600;font-size:33px;line-height:1.14;color:var(--ink);margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
-h3{font-family:var(--font-display);font-weight:600;font-size:23px;line-height:1.22;color:var(--ink);margin:30px 0 8px}
-.italic{font-style:italic;font-weight:500}
-p{margin:0 0 16px}a{color:var(--brick)}
-.passport{font-size:19px;line-height:1.55;color:var(--ink)}
+#ks-art *{box-sizing:border-box}
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:46px;line-height:1.08;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:500}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
 
-/* author byline (top) */
-.byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
-.byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
-.byline .n{font-weight:600;color:var(--ink);font-size:15.5px}
-.byline .r{font-size:13px;color:var(--taupe);line-height:1.4}
-.byline time{font-size:13px;color:var(--taupe)}
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
 
-.tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
-.tldr b{display:block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin-bottom:8px}
-.tldr p{margin:0;color:var(--ink)}
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
 
-figure.ks-photo{margin:28px auto;text-align:center}
-figure.ks-photo img{width:100%;max-width:480px;height:auto;display:block;margin:0 auto;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
-figure.ks-photo figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe);margin:12px auto 0;max-width:480px}
+#ks-art .ks-photo{margin:28px auto;text-align:center}
+#ks-art .ks-photo img{width:100%;max-width:480px;height:auto;display:block;margin:0 auto;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px auto 0;max-width:480px}
 
-/* quote with source */
-blockquote.ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--font-display);font-size:22px;line-height:1.35;color:var(--ink)}
-blockquote.ks-quote p{margin:0 0 10px}
-blockquote.ks-quote cite{display:block;font-family:var(--font-sans);font-style:normal;font-size:13.5px;color:var(--taupe)}
-blockquote.ks-quote cite a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.35)}
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+#ks-art .ks-quote cite a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.35)}
 
-/* story block */
-.story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:26px 28px;margin:30px 0}
-.story .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 10px}
-.story h3{margin-top:0}
-.story p:last-child{margin-bottom:0}
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:26px 28px;margin:30px 0}
+#ks-art .story .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 10px}
+#ks-art .story h3{margin-top:0}#ks-art .story p:last-child{margin-bottom:0}
 
-.table-wrap{overflow-x:auto;margin:20px 0}
-table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-card)}
-caption{text-align:left;font-size:13.5px;color:var(--taupe);margin-bottom:10px;line-height:1.45}
-th,td{border-bottom:1px solid var(--hairline);padding:12px 16px;text-align:left;vertical-align:top}
-thead th{background:var(--cream-2);color:var(--ink);font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
-tbody tr:last-child td{border-bottom:0}tbody td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
-.note{font-size:14.5px;line-height:1.55;color:var(--ink-2);background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .review{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:30px 0;box-shadow:var(--shadow-card)}
+#ks-art .review .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 10px}
+#ks-art .review blockquote{margin:0}
+#ks-art .review p{font-family:var(--fd)!important;font-size:21px;line-height:1.4;color:var(--ink)!important;margin:0 0 10px}
+#ks-art .review .han{font-family:var(--fh)!important;font-size:18px;color:var(--brick)!important;margin:0 0 12px}
+#ks-art .review cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:14px;color:var(--taupe)!important}
 
-/* FAQ accordion */
-.ksfaq__list{margin:8px 0 0;padding:0}
-.ksfaq-item{border-top:1px solid var(--hairline)}.ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
-.ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--font-display);font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)}
-.ksfaq-q::-webkit-details-marker{display:none}.ksfaq-q:hover{color:var(--brick)}
-.ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
-.ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
-.ksfaq-a{padding:0 4px 22px}.ksfaq-a p{font-size:16px;line-height:1.7;margin:0}
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:12px 16px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
 
-.cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
-.cta p:last-child{margin:0}
-.btn{display:inline-block;background:var(--brick);color:#fff;font-weight:600;font-size:15.5px;text-decoration:none;border-radius:var(--r-btn);padding:13px 26px;margin:6px 0 2px}
-.btn:hover{background:var(--brick-deep)}
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
 
-/* sources */
-.sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
-.sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
-.sources ol{margin:0;padding-left:20px}
-.sources li{font-size:14px;line-height:1.6;color:var(--ink-2);margin-bottom:8px}
-.sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
 
-.sign{font-family:var(--font-display);font-style:italic;font-size:21px;color:var(--ink);margin-top:32px}
-.sign .han{font-family:var(--font-han);font-style:normal;color:var(--brick)}
-.tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
-.tags span{font-size:12.5px;color:var(--taupe);background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
 
-/* author card (bottom) */
-.author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
-.author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
-.author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
-.author-card h3{font-family:var(--font-display);font-size:24px;margin:0 0 8px;color:var(--ink)}
-.author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2);margin:0 0 10px}
-.author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
 
-.site-footer{background:var(--ink);color:#c9bdae;border-radius:var(--r-md);padding:32px 34px;margin-top:44px;font-size:14.5px;line-height:1.7}
-.site-footer h4{color:#fff;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px}
-.site-footer a{color:#fff;text-decoration:none}
-.site-footer .lic{color:#a99e8f;font-size:12.5px;margin-top:12px}
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
 
-@media(max-width:600px){h1{font-size:36px}h2{font-size:28px}.wrap{padding:28px 16px 56px}.author-card{flex-direction:column}}
+#ks-art .site-footer{background:var(--ink)!important;color:#c9bdae!important;border-radius:var(--r-md);padding:32px 34px;margin-top:44px;font-size:14.5px;line-height:1.7}
+#ks-art .site-footer h4{color:#fff!important;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px}
+#ks-art .site-footer p{color:#c9bdae!important}
+#ks-art .site-footer a{color:#fff!important;text-decoration:none}
+#ks-art .site-footer .lic{color:#a99e8f!important;font-size:12.5px;margin-top:12px}
+
+@media(max-width:600px){#ks-art h1{font-size:36px}#ks-art h2{font-size:28px}#ks-art{padding:28px 16px 56px}#ks-art .author-card{flex-direction:column}}
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<div id="ks-art">
 
 <nav class="crumbs">
   <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Подготовка к HSK 4
@@ -233,7 +240,7 @@ tbody tr:last-child td{border-bottom:0}tbody td:first-child{font-weight:600;colo
   <div>
     <div class="n">Юлия Горяина</div>
     <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
-    <time datetime="2026-07-14">14 июля 2026</time>
+    <time datetime="2026-07-15">Обновлено 15 июля 2026</time>
   </div>
 </div>
 
@@ -249,14 +256,14 @@ tbody tr:last-child td{border-bottom:0}tbody td:first-child{font-weight:600;colo
 
 <blockquote class="ks-quote">
   <p>«Сдавшие HSK 4 могут свободно беседовать по-китайски на широкий круг тем и достаточно бегло общаться с носителями языка».</p>
-  <cite>— официальный дескриптор уровня HSK 4, <a href="https://www.confuciusinstitute.ac.uk/wp-content/uploads/2020/12/HSK-level-4.pdf" target="_blank" rel="noopener">HSK Level 4 (Институт Конфуция)</a></cite>
+  <cite>— официальный дескриптор уровня HSK 4, <a href="https://www.confuciusinstitute.ac.uk/wp-content/uploads/2020/12/HSK-level-4.pdf" target="_blank" rel="noopener nofollow">HSK Level 4 (Институт Конфуция)</a></cite>
 </blockquote>
 
 <p>На практике HSK 4 нужен для трёх вещей: поступления в вузы Китая, рабочей визы и подтверждения уровня для работодателя. Большинство университетов КНР требуют для бакалавриата минимум HSK 4, и на инженерные и естественно-научные программы его обычно достаточно.</p>
 
 <blockquote class="ks-quote">
   <p>«Научно-технические программы, как правило, принимают HSK 4 (180–210 баллов), тогда как гуманитарные и социальные — чаще HSK 5 или HSK 6».</p>
-  <cite>— обзор требований вузов, <a href="https://improvemandarin.com/hsk-level-score-requirements/" target="_blank" rel="noopener">ImproveMandarin: HSK requirements</a></cite>
+  <cite>— обзор требований вузов, <a href="https://improvemandarin.com/hsk-level-score-requirements/" target="_blank" rel="noopener nofollow">ImproveMandarin: HSK requirements</a></cite>
 </blockquote>
 
 <h3>Соответствие CEFR (B1–B2)</h3>
@@ -268,6 +275,15 @@ tbody tr:last-child td{border-bottom:0}tbody td:first-child{font-weight:600;colo
   <p>Расскажу, зачем это всё, на живом примере. Пару лет назад ко мне пришла студентка, назовём её Аней, — начинала с нуля, «просто для себя». Через год регулярных занятий она вышла на HSK 3, а ещё за несколько месяцев добрала лексику и грамматику до HSK 4.</p>
   <p>А дальше случилось то, чего она сама не планировала: с сертификатом HSK 4 Аня подала документы на инженерную программу в китайский университет — там как раз хватало этого уровня. Экзамен из «галочки для себя» превратился в билет.</p>
   <p>Я вижу это постоянно, в том числе на себе: я докторант Шаньдунского университета и знаю изнутри, что для приёмной комиссии HSK — не формальность, а первый фильтр. Поэтому к нему стоит готовиться не «на удачу», а по структуре. О ней ниже.</p>
+</div>
+
+<div class="review">
+  <p class="lbl">Отзыв ученицы</p>
+  <blockquote>
+    <p>«Сдавала 17.05 HSK 4. Благодаря учителям школы чувствовала себя уверенно на экзамене. Очень помогли интерактивные уроки, которые регулярно всплывают в памяти 🌸»</p>
+    <p class="han">老师们，谢谢您们的支持 💜</p>
+    <cite>— Люда, ученица Kitai School, май 2026</cite>
+  </blockquote>
 </div>
 
 <figure class="ks-photo">
@@ -303,12 +319,12 @@ tbody tr:last-child td{border-bottom:0}tbody td:first-child{font-weight:600;colo
 
 <blockquote class="ks-quote">
   <p>«Сам сертификат HSK бессрочен, но справка о результатах действительна два года — именно её принимают при поступлении в вузы Китая».</p>
-  <cite>— <a href="https://improvemandarin.com/hsk-certificate-score-validity/" target="_blank" rel="noopener">ImproveMandarin: срок действия результатов HSK</a></cite>
+  <cite>— <a href="https://improvemandarin.com/hsk-certificate-score-validity/" target="_blank" rel="noopener nofollow">ImproveMandarin: срок действия результатов HSK</a></cite>
 </blockquote>
 
 <h2>HSK 4 по новой системе HSK <span class="italic">3.0</span></h2>
 <p>Здесь главное, что нужно знать в 2026 году. HSK переходит на новую систему HSK 3.0: вместо 6 уровней — 9, обновлённая лексика (включая современные слова вроде 人工智能, «искусственный интеллект»), и главное для разговорной части — устный экзамен HSKK становится обязательным начиная с HSK 3.</p>
-<p class="note">Синтабус HSK 3.0 опубликован 15 ноября 2025 года, полное внедрение в мире — с 1 июля 2026 года. Формат и требования по уровню могут отличаться от привычной редакции 2.0. Перед регистрацией обязательно сверьтесь с официальным сайтом <a href="https://www.chinesetest.cn/" target="_blank" rel="noopener">chinesetest.cn</a>.</p>
+<p class="note">Синтабус HSK 3.0 опубликован 15 ноября 2025 года, полное внедрение в мире — с 1 июля 2026 года. Формат и требования по уровню могут отличаться от привычной редакции 2.0. Перед регистрацией обязательно сверьтесь с официальным сайтом <a href="https://www.chinesetest.cn/" target="_blank" rel="noopener nofollow">chinesetest.cn</a>.</p>
 
 <h2>План подготовки по <span class="italic">неделям</span></h2>
 <p>Срок зависит от базы. Если вы уже на HSK 3, до HSK 4 обычно идут 1–1,5 года в спокойном режиме или интенсивный добор за 4–8 недель перед датой. Рабочая схема на интенсиве:</p>
@@ -351,8 +367,8 @@ tbody tr:last-child td{border-bottom:0}tbody td:first-child{font-weight:600;colo
 
 <div class="cta">
   <p>Хотите сдать HSK 4 с первого раза? На диагностическом уроке мы определим ваш текущий уровень, найдём слабый раздел и соберём план подготовки под вашу дату экзамена.</p>
-  <p><a class="btn" href="https://t.me/manager_kitai_school" target="_blank" rel="noopener">Записаться на диагностический урок →</a></p>
-  <p>Или напишите слово <b>ЭКЗАМЕН</b> в личные сообщения <a href="https://t.me/manager_kitai_school" target="_blank" rel="noopener">@manager_kitai_school</a> — подберём формат подготовки. Без обязательств: решение о продолжении — после урока.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на диагностический урок →</a></p>
+  <p>Или напишите слово <b>ЭКЗАМЕН</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём формат подготовки. Без обязательств: решение о продолжении — после урока.</p>
 </div>
 
 <p>Дальше по теме: если ещё выбираете срок и цель, посмотрите разбор <a href="https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya" target="_blank" rel="noopener">за сколько реально выучить китайский с нуля</a> — сроки по уровням HSK и ориентир FSI.</p>
@@ -360,13 +376,13 @@ tbody tr:last-child td{border-bottom:0}tbody td:first-child{font-weight:600;colo
 <div class="sources">
   <h2>Источники</h2>
   <ol>
-    <li><a href="https://www.chinesetest.cn/" target="_blank" rel="noopener">chinesetest.cn</a> — официальный сайт экзамена HSK (актуальный формат, регистрация, HSK 3.0).</li>
-    <li><a href="https://www.confuciusinstitute.ac.uk/wp-content/uploads/2020/12/HSK-level-4.pdf" target="_blank" rel="noopener">HSK Level 4 (Институт Конфуция)</a> — официальное описание уровня и структуры.</li>
-    <li><a href="https://www.chinaeducenter.com/en/hsk/hsklevel4.php" target="_blank" rel="noopener">China Education Center: HSK Level 4</a> — разделы, число вопросов, баллы.</li>
-    <li><a href="https://improvemandarin.com/hsk-certificate-score-validity/" target="_blank" rel="noopener">ImproveMandarin: срок действия результатов HSK</a> — 2 года для поступления.</li>
-    <li><a href="https://improvemandarin.com/hsk-level-score-requirements/" target="_blank" rel="noopener">ImproveMandarin: требования вузов по HSK</a> — какой уровень нужен для поступления.</li>
-    <li><a href="https://studycli.org/hsk/the-new-hsk/" target="_blank" rel="noopener">StudyCLI: новый HSK 3.0</a> — 9 уровней, обязательный HSKK, сроки внедрения.</li>
-    <li><a href="https://ru.wikipedia.org/wiki/HSK" target="_blank" rel="noopener">Википедия: HSK</a> — общая справка об экзамене.</li>
+    <li><a href="https://www.chinesetest.cn/" target="_blank" rel="noopener nofollow">chinesetest.cn</a> — официальный сайт экзамена HSK (актуальный формат, регистрация, HSK 3.0).</li>
+    <li><a href="https://www.confuciusinstitute.ac.uk/wp-content/uploads/2020/12/HSK-level-4.pdf" target="_blank" rel="noopener nofollow">HSK Level 4 (Институт Конфуция)</a> — официальное описание уровня и структуры.</li>
+    <li><a href="https://www.chinaeducenter.com/en/hsk/hsklevel4.php" target="_blank" rel="noopener nofollow">China Education Center: HSK Level 4</a> — разделы, число вопросов, баллы.</li>
+    <li><a href="https://improvemandarin.com/hsk-certificate-score-validity/" target="_blank" rel="noopener nofollow">ImproveMandarin: срок действия результатов HSK</a> — 2 года для поступления.</li>
+    <li><a href="https://improvemandarin.com/hsk-level-score-requirements/" target="_blank" rel="noopener nofollow">ImproveMandarin: требования вузов по HSK</a> — какой уровень нужен для поступления.</li>
+    <li><a href="https://studycli.org/hsk/the-new-hsk/" target="_blank" rel="noopener nofollow">StudyCLI: новый HSK 3.0</a> — 9 уровней, обязательный HSKK, сроки внедрения.</li>
+    <li><a href="https://ru.wikipedia.org/wiki/HSK" target="_blank" rel="noopener nofollow">Википедия: HSK</a> — общая справка об экзамене.</li>
   </ol>
 </div>
 
@@ -378,7 +394,7 @@ tbody tr:last-child td{border-bottom:0}tbody td:first-child{font-weight:600;colo
     <p class="lbl">Автор статьи</p>
     <h3>Юлия Горяина</h3>
     <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики с китайскими компаниями — TCL, Great Wall Motors, FAW. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
-    <p><a href="https://t.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
   </div>
 </div>
 
@@ -388,10 +404,10 @@ tbody tr:last-child td{border-bottom:0}tbody td:first-child{font-weight:600;colo
 
 <div class="site-footer">
   <h4>Для записи</h4>
-  <p><a href="https://t.me/manager_kitai_school" target="_blank" rel="noopener">@manager_kitai_school</a>&nbsp;&nbsp;<a href="https://t.me/manager2_kitai_school" target="_blank" rel="noopener">@manager2_kitai_school</a><br>
-  Лицензированная онлайн-школа китайского языка <a href="https://t.me/kitai_school" target="_blank" rel="noopener">@kitai_school</a><br>
-  Сайт: <a href="https://kitai-school.ru" target="_blank" rel="noopener">Kitai-School.ru</a></p>
-  <p class="lic">Лицензия Департамента образования г. Москвы № Л035-01298-77/02285772</p>
+  <p><a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">@manager_kitai_school</a>&nbsp;&nbsp;<a href="https://telegram.me/manager2_kitai_school" target="_blank" rel="noopener">@manager2_kitai_school</a><br>
+  Лицензированная онлайн-школа китайского языка <a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">@kitai_school</a><br>
+  Сайт: <a href="https://kitai-school.ru" target="_blank" rel="noopener">Kitai-School.ru</a> · Тел. +7 (958) 538-70-80 · info@kitai-school.ru</p>
+  <p class="lic">ИП Горяина Юлия Павловна · ИНН 228900391328 · ОГРНИП 324774600267683 · Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы, с 07.05.2025)</p>
 </div>
 
 </article>
