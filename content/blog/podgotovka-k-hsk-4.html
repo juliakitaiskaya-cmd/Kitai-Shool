@@ -119,7 +119,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
 
-#ks-art{
+#ks-wrap{
   --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
   --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
   --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
@@ -128,10 +128,24 @@
   --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
   --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
   --fh:'Noto Serif SC','Songti SC','SimSun',serif;
-  max-width:760px;margin:0 auto;padding:40px 22px 72px;background:var(--cream);
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
   font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
 }
-#ks-art *{box-sizing:border-box}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+/* sticky sidebar */
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+#ks-side .price-row{display:flex;justify-content:space-between;gap:10px;font-family:var(--fs)!important;font-size:14px;padding:6px 0;color:var(--ink-2)!important}
+#ks-side .price-row b{color:var(--brick)!important;font-weight:700;white-space:nowrap}
 #ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
 #ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
 #ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
@@ -221,11 +235,13 @@
 #ks-art .site-footer a{color:#fff!important;text-decoration:none}
 #ks-art .site-footer .lic{color:#a99e8f!important;font-size:12.5px;margin-top:12px}
 
-@media(max-width:600px){#ks-art h1{font-size:36px}#ks-art h2{font-size:28px}#ks-art{padding:28px 16px 56px}#ks-art .author-card{flex-direction:column}}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:36px}#ks-art h2{font-size:28px}#ks-art .author-card{flex-direction:column}}
 </style>
 </head>
 <body>
 
+<div id="ks-wrap">
 <div id="ks-art">
 
 <nav class="crumbs">
@@ -404,5 +420,42 @@
 
 </article>
 </div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlajn-kursy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-malyshey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/bakalavriat-v-kitae" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/business" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>Бизнес-китайский</a>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+  <div class="side-card">
+    <div class="side-h">Стоимость</div>
+    <div class="price-row"><span>Разговорный клуб</span><b>от 1 200 ₽</b></div>
+    <div class="price-row"><span>Мини-группа</span><b>от 2 200 ₽</b></div>
+    <a class="side-btn" href="#popup:zayavka">Узнать цены →</a>
+  </div>
+</aside>
+
+</div>
+
+<script>
+/* Kitai School — sticky sidebar fix для Tilda: снимаем overflow/transform у предков (только десктоп) */
+(function(){
+  if (window.innerWidth <= 900) return;
+  var side = document.getElementById('ks-side');
+  if (!side) return;
+  var el = side.parentElement;
+  while (el && el !== document.body) {
+    var cs = getComputedStyle(el);
+    if (cs.overflow !== 'visible') el.style.overflow = 'visible';
+    if (cs.transform !== 'none') el.style.transform = 'none';
+    el = el.parentElement;
+  }
+})();
+</script>
 </body>
 </html>
