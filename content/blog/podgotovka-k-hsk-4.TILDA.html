@@ -12,7 +12,7 @@
   --fh:'Noto Serif SC','Songti SC','SimSun',serif;
   max-width:1120px;margin:0 auto;padding:28px 22px 48px;
   display:flex;gap:44px;align-items:flex-start;background:var(--cream);
-  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
 }
 #ks-wrap *{box-sizing:border-box}
 #ks-art{flex:1 1 auto;min-width:0}
@@ -43,6 +43,7 @@
 #ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
 #ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
 #ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
 #ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
 #ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
 #ks-art .byline time{font-size:13px;color:var(--taupe)!important}
@@ -109,6 +110,7 @@
 #ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
 #ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
 #ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
 #ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
 #ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
 #ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
@@ -120,8 +122,8 @@
 #ks-art .site-footer a{color:#fff!important;text-decoration:none}
 #ks-art .site-footer .lic{color:#a99e8f!important;font-size:12.5px;margin-top:12px}
 
-@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
-@media(max-width:600px){#ks-art h1{font-size:36px}#ks-art h2{font-size:28px}#ks-art .author-card{flex-direction:column}}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
 </style>
 <div id="ks-wrap">
 <div id="ks-art">
