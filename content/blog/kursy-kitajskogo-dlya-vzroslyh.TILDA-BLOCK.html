@@ -29,7 +29,7 @@
 <p>Тем, кто начинает с нуля «для себя», для работы с Китаем, для поездок или переезда, для поступления в китайский вуз. Возраст не помеха: у нас учатся и студенты, и люди сильно за сорок. Группы формируются по уровню, а не по возрасту, поэтому в одной подгруппе оказываются те, кому одинаково комфортно по темпу.</p>
 
 <figure class="ks-photo">
-  <img src="https://kitai-school.ru/img/yulia-students-china-lobby.jpg" alt="Юлия с учениками Kitai School в поездке по Китаю" loading="lazy" width="960" height="1280">
+  <img src="assets/yulia-students-china-lobby.jpg" alt="Юлия с учениками Kitai School в поездке по Китаю" loading="lazy" width="960" height="1280">
   <figcaption>Языковые поездки в Китай — часть обучения в Kitai School: практика в среде ускоряет прогресс сильнее всего.</figcaption>
 </figure>
 
@@ -198,17 +198,33 @@
 </div>
 
 <script>
-/* Kitai School — sticky sidebar fix для Tilda: снимаем overflow/transform у предков (только десктоп) */
+/* Kitai School — sticky sidebar fix для Tilda: снимаем overflow/transform/filter
+   у предков, которые ломают position:sticky. Повторяем несколько раз, т.к. Tilda
+   применяет стили после загрузки (только десктоп). */
 (function(){
-  if (window.innerWidth <= 900) return;
-  var side = document.getElementById('ks-side');
-  if (!side) return;
-  var el = side.parentElement;
-  while (el && el !== document.body) {
-    var cs = getComputedStyle(el);
-    if (cs.overflow !== 'visible') el.style.overflow = 'visible';
-    if (cs.transform !== 'none') el.style.transform = 'none';
-    el = el.parentElement;
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side');
+    if (!side) return;
+    var el = side.parentElement;
+    while (el && el !== document.body && el !== document.documentElement) {
+      var cs = getComputedStyle(el);
+      if (cs.overflow !== 'visible' || cs.overflowX !== 'visible' || cs.overflowY !== 'visible') {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (cs.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (cs.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (cs.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      if (cs.willChange !== 'auto') el.style.setProperty('will-change','auto','important');
+      el = el.parentElement;
+    }
   }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150, 500, 1200, 2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
 })();
 </script>
