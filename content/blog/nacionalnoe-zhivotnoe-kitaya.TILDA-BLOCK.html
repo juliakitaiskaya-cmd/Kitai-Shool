@@ -202,34 +202,3 @@
 </aside>
 
 </div>
-<script>
-/* Kitai School — sticky sidebar fix для Tilda: снимаем overflow/transform/filter
-   у предков, которые ломают position:sticky. Повторяем несколько раз, т.к. Tilda
-   применяет стили после загрузки (только десктоп). */
-(function(){
-  function fix(){
-    if (window.innerWidth <= 900) return;
-    var side = document.getElementById('ks-side');
-    if (!side) return;
-    var el = side.parentElement;
-    while (el && el !== document.body && el !== document.documentElement) {
-      var cs = getComputedStyle(el);
-      if (cs.overflow !== 'visible' || cs.overflowX !== 'visible' || cs.overflowY !== 'visible') {
-        el.style.setProperty('overflow','visible','important');
-        el.style.setProperty('overflow-x','visible','important');
-        el.style.setProperty('overflow-y','visible','important');
-      }
-      if (cs.transform !== 'none') el.style.setProperty('transform','none','important');
-      if (cs.filter !== 'none') el.style.setProperty('filter','none','important');
-      if (cs.perspective !== 'none') el.style.setProperty('perspective','none','important');
-      if (cs.willChange !== 'auto') el.style.setProperty('will-change','auto','important');
-      el = el.parentElement;
-    }
-  }
-  fix();
-  document.addEventListener('DOMContentLoaded', fix);
-  window.addEventListener('load', fix);
-  [150, 500, 1200, 2500].forEach(function(t){ setTimeout(fix, t); });
-  window.addEventListener('resize', fix);
-})();
-</script>
