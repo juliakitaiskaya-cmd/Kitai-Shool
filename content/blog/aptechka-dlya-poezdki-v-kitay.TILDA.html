@@ -1,0 +1,429 @@
+<div id="ks-wrap">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:46px;line-height:1.08;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .disclaimer{display:flex;gap:12px;align-items:flex-start;background:#FBF3E4;border:1px solid #E7D8B8;border-left:4px solid #C98A2B;border-radius:var(--r-sm);padding:14px 18px;margin:24px 0}
+#ks-art .disclaimer svg{flex:0 0 auto;width:20px;height:20px;color:#C98A2B;margin-top:1px}
+#ks-art .disclaimer p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+#ks-art .ks-quote cite a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:12px 16px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .site-footer{background:var(--ink)!important;color:#c9bdae!important;border-radius:var(--r-md);padding:32px 34px;margin-top:44px;font-size:14.5px;line-height:1.7}
+#ks-art .site-footer h4{color:#fff!important;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px}
+#ks-art .site-footer p{color:#c9bdae!important}
+#ks-art .site-footer a{color:#fff!important;text-decoration:none}
+#ks-art .site-footer .lic{color:#a99e8f!important;font-size:12.5px;margin-top:12px}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Аптечка для поездки в Китай
+</nav>
+
+<article>
+<p class="eyebrow">Поездка в Китай</p>
+<h1>Какие лекарства взять с собой в <span class="italic">Китай</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-07-17">17 июля 2026</time>
+  </div>
+</div>
+
+<p class="passport">Собирая аптечку в Китай, держите в голове два правила. Первое: большинство привычных безрецептурных средств — парацетамол, ибупрофен, лоперамид, антигистаминные без пометки «-D» — брать можно. Второе: часть препаратов в Китае запрещена или строго контролируется — это всё с кодеином и опиоидами, псевдоэфедрин (Судафед и средства с «-D»), а также стимуляторы вроде Аддералла и Риталина. Рецептурные лекарства везут с рецептом и справкой от врача, в оригинальной упаковке и в разумном личном количестве. Контролируемые вещества обязательно декларируют на границе.</p>
+
+<div class="disclaimer">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+  <p>Это информационный обзор, а не медицинская консультация. Состав аптечки согласуйте с врачом, а актуальные правила ввоза — с посольством КНР и таможней перед поездкой: перечни контролируемых веществ меняются.</p>
+</div>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Берите базовое безрецептурное: парацетамол/ибупрофен (боль, температура), лоперамид и регидратацию (ЖКТ), антигистаминные без «-D», пластыри и антисептик. Нельзя или строго контролируется: кодеин и опиоиды, псевдоэфедрин (Судафед, «-D»), стимуляторы (Аддералл, Риталин). Рецептурное — с рецептом, справкой и в оригинальной упаковке; контролируемое — декларировать. Это не медицинская консультация: сверяйтесь с врачом и таможней.</p>
+</div>
+
+<h2>Что взять в <span class="italic">аптечку</span></h2>
+<p>Базовый набор для поездки собирается вокруг четырёх ситуаций: боль и температура, живот, простуда с аллергией и мелкие травмы. Всё это — привычные безрецептурные средства, которые везти можно.</p>
+
+<h3>Боль и температура</h3>
+<p>Основа — парацетамол (ацетаминофен) и ибупрофен. Оба разрешены к ввозу и продаются в китайских аптеках, но со своим названием на упаковке, так что проще взять своё.</p>
+
+<h3>ЖКТ и отравления</h3>
+<p>Смена еды и воды — классика поездки. Возьмите лоперамид (Имодиум) от диареи, порошки для регидратации (соли), сорбент и что-то от изжоги. Это самая востребованная часть аптечки в первые дни.</p>
+
+<h3>Простуда и аллергия</h3>
+<p>От аллергии и насморка берите простые антигистаминные — лоратадин или цетиризин. Важный нюанс: избегайте комбинированных средств с пометкой «-D» и Судафеда — в них псевдоэфедрин, а он в Китае под запретом (подробнее ниже).</p>
+
+<h3>Прочее: раны, дорога</h3>
+<p>Пластыри, антисептик (хлоргексидин или салфетки), средство от укачивания, личные мелочи. Всё — в оригинальной упаковке: так и вам проще, и вопросов на границе меньше.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Базовый состав дорожной аптечки в Китай (безрецептурное). Конкретные препараты и дозировки согласуйте с врачом.</caption>
+  <thead><tr><th>Категория</th><th>Что взять</th><th>Зачем</th></tr></thead>
+  <tbody>
+    <tr><td>Боль и температура</td><td>Парацетамол, ибупрофен</td><td>жар, головная и зубная боль</td></tr>
+    <tr><td>ЖКТ</td><td>Лоперамид, регидратация, сорбент, антацид</td><td>диарея, отравления, изжога</td></tr>
+    <tr><td>Простуда и аллергия</td><td>Антигистаминные без «-D» (лоратадин, цетиризин)</td><td>насморк, аллергия</td></tr>
+    <tr><td>Раны и дорога</td><td>Пластыри, антисептик, средство от укачивания</td><td>мелкие травмы, переезды</td></tr>
+    <tr><td>Личное</td><td>Хронические препараты (с рецептом)</td><td>по назначению врача</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Что <span class="italic">нельзя</span> ввозить или строго контролируется</h2>
+<p>Здесь и кроется главная разница с домом: то, что у нас лежит в любой аптечке, в Китае может оказаться под запретом. Законы о контролируемых веществах строже западных, а на границе действует принцип почти нулевой терпимости.</p>
+
+<h3>Кодеин и опиоиды</h3>
+<p>Всё, что содержит кодеин, оксикодон, гидрокодон, морфин, трамадол или фентанил, в Китае считается наркотиком. Особая ловушка — кодеин: в ряде стран он продаётся без рецепта, а в Китае строго контролируется.</p>
+
+<blockquote class="ks-quote">
+  <p>«Всё, что содержит кодеин, оксикодон, гидрокодон, морфин, трамадол или фентанил, рассматривается как наркотик».</p>
+  <cite>— <a href="https://chinasurvivalkit.com/blog/bring-medicine-to-china" target="_blank" rel="noopener nofollow">China Survival Kit: провоз лекарств в Китай</a></cite>
+</blockquote>
+
+<h3>Псевдоэфедрин (Судафед и «-D»)</h3>
+<p>Псевдоэфедрин строго контролируется, потому что используется в производстве метамфетамина. Средства от простуды на его основе — Судафед и любые с пометкой «-D» — к ввозу запрещены. Поэтому и советуем простые антигистаминные без «-D».</p>
+
+<h3>Стимуляторы (Аддералл, Риталин)</h3>
+<p>Препараты от СДВГ — Аддералл, Риталин, Vyvanse — в Китае фактически под запретом, за редкими исключениями. Если принимаете такое по назначению, это отдельная история: заранее выясните правила в посольстве, а не везите наугад.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Что запрещено или строго контролируется при ввозе в Китай. Перечни меняются — сверяйтесь с посольством и таможней перед поездкой.</caption>
+  <thead><tr><th>Группа</th><th>Примеры</th><th>Статус</th></tr></thead>
+  <tbody>
+    <tr><td>Опиоиды и кодеин</td><td>кодеин, оксикодон, морфин, трамадол, фентанил</td><td>наркотики, почти нулевая терпимость</td></tr>
+    <tr><td>Псевдоэфедрин</td><td>Судафед, средства с «-D»</td><td>прекурсор, к ввозу запрещён</td></tr>
+    <tr><td>Стимуляторы (СДВГ)</td><td>Аддералл, Риталин, Vyvanse</td><td>фактически запрещены</td></tr>
+    <tr><td>Психотропные, сильные снотворные</td><td>ряд рецептурных</td><td>контролируются, декларировать</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Рецептурные лекарства: <span class="italic">документы</span></h2>
+<p>Рецептурные препараты везти можно, но решают два слова: документы и количество. Возьмите рецепт и справку от врача, а контролируемое — обязательно задекларируйте на границе.</p>
+
+<blockquote class="ks-quote">
+  <p>«На рецептурные препараты нужен рецепт или справка от врача с именем путешественника, международным (непатентованным) названием лекарства и дозировкой».</p>
+  <cite>— <a href="https://www.cdc.gov/yellow-book/hcp/travelers-with-additional-considerations/traveling-with-prohibited-or-restricted-medications.html" target="_blank" rel="noopener nofollow">CDC Yellow Book: провоз лекарств</a></cite>
+</blockquote>
+
+<p>Совет на будущее: в справке указывайте <b>международное непатентованное название</b> (МНН), а не торговую марку. В Китае то же вещество называется иначе, и по МНН врач или фармацевт поймёт вас быстрее.</p>
+
+<h2>Личные <span class="italic">хронические</span> лекарства</h2>
+<p>Если принимаете что-то постоянно, берите с запасом на всю поездку — ориентировочно на месяц. Жёсткой единой нормы в законе нет, но большие количества привлекают внимание. Держите лекарства в оригинальной упаковке и вместе с рецептом: так проще и на границе, и если понадобится купить ещё.</p>
+
+<h2>Как купить лекарство в <span class="italic">Китае</span></h2>
+<p>Аптеки (<span class="hanline">药店</span>, yàodiàn) в городах на каждом шагу, часть работает круглосуточно. Многие простые средства продаются свободно, но что-то требует рецепта (<span class="hanline">处方</span>). Называйте препарат по международному названию или показывайте упаковку — так вас поймут вернее, чем по русской торговой марке.</p>
+
+<h2>Мини-словарь: аптека <span class="italic">по-китайски</span></h2>
+<p>Несколько слов, с которыми в аптеке и у врача будет спокойнее.</p>
+<div class="table-wrap">
+<table>
+  <caption>Базовая лексика для аптеки: иероглиф → пиньинь → перевод.</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td>药</td><td>yào</td><td>лекарство</td></tr>
+    <tr><td>药店</td><td>yàodiàn</td><td>аптека</td></tr>
+    <tr><td>处方</td><td>chǔfāng</td><td>рецепт</td></tr>
+    <tr><td>退烧药</td><td>tuìshāoyào</td><td>жаропонижающее</td></tr>
+    <tr><td>止痛药</td><td>zhǐtòngyào</td><td>обезболивающее</td></tr>
+    <tr><td>止泻药</td><td>zhǐxièyào</td><td>средство от диареи</td></tr>
+    <tr><td>过敏</td><td>guòmǐn</td><td>аллергия</td></tr>
+    <tr><td>医院</td><td>yīyuàn</td><td>больница</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Однажды в поездке у меня к вечеру поднялась температура, и я впервые пошла в китайскую аптеку сама. Помню, как растерялась у полок: названия незнакомые, всё иероглифами. Спасло одно слово — <span class="hanline">退烧药</span> (жаропонижающее). Я произнесла его, фармацевт кивнула и сразу принесла то, что нужно.</p>
+  <p>С тех пор я всегда прошу учеников выучить перед поездкой несколько «аптечных» слов: <span class="hanline">药店</span>, <span class="hanline">处方</span>, <span class="hanline">过敏</span>. Это тот случай, когда пара иероглифов реально выручает — не в теории, а когда тебе нехорошо и надо быстро объясниться.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие лекарства можно взять с собой в Китай?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Базовые безрецептурные: парацетамол, ибупрофен, лоперамид, регидратацию, антигистаминные без «-D», пластыри, антисептик. В оригинальной упаковке и разумном количестве.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие лекарства нельзя ввозить в Китай?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Всё с кодеином и опиоидами, псевдоэфедрин (Судафед и «-D»), стимуляторы (Аддералл, Риталин). Они запрещены или строго контролируются.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужен ли рецепт на лекарства в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На рецептурные и контролируемые — да: везите рецепт и справку от врача (имя, международное название, дозировка) и декларируйте на границе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько лекарств можно везти?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Разумный личный запас на поездку (ориентировочно на месяц); жёсткой единой нормы в законе нет, но большие количества привлекают внимание.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Аптека, врач, состав на упаковке — это ровно те ситуации в поездке, где язык перестаёт быть «приятным бонусом» и становится нужным здесь и сейчас. Хотите объясниться в аптеке и понять ответ, а не тыкать в переводчик? Всё начинается с языка. На диагностическом уроке подберём программу под вашу цель и ритм.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на диагностический урок →</a></p>
+  <p>Или напишите слово <b>ЯЗЫК</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подскажем формат. Без обязательств: решение о продолжении — после урока.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли в Китае</a> и <a href="https://kitai-school.ru/article/skolko-stoit-metro-v-kitae" target="_blank" rel="noopener">сколько стоит метро в Китае</a> — практичные разборы для поездки.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://www.cdc.gov/yellow-book/hcp/travelers-with-additional-considerations/traveling-with-prohibited-or-restricted-medications.html" target="_blank" rel="noopener nofollow">CDC Yellow Book: провоз запрещённых и ограниченных лекарств</a> — документы и правила.</li>
+    <li><a href="https://wwwnc.cdc.gov/travel/destinations/china/traveler/packing-list" target="_blank" rel="noopener nofollow">CDC: China Traveler Packing List</a> — состав аптечки.</li>
+    <li><a href="https://chinasurvivalkit.com/blog/bring-medicine-to-china" target="_blank" rel="noopener nofollow">China Survival Kit: Bringing Medicine to China</a> — запрещённые группы.</li>
+    <li><a href="https://chinasurvivalkit.com/blog/prohibited-medications-china-complete-list-2026" target="_blank" rel="noopener nofollow">China Survival Kit: Prohibited Medications (2026)</a> — перечень.</li>
+    <li><a href="https://chinamustknow.com/travel/carry-prescription-medication-into-china/" target="_blank" rel="noopener nofollow">China Must Know: рецептурные лекарства в Китай</a> — документы.</li>
+    <li><a href="https://www.wikidata.org/wiki/Q148" target="_blank" rel="noopener nofollow">Wikidata: Китай (Q148)</a> — канонический узел страны.</li>
+  </ol>
+</div>
+
+<p class="sign">Здоровья и лёгкой дороги! <span class="han">一路平安！</span></p>
+
+<div class="tags">
+  <span>#аптечкаВКитай</span> <span>#药店</span> <span>#поездкаВКитай</span> <span>#провозЛекарств</span> <span>#Китай_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики с китайскими компаниями — TCL, Great Wall Motors, FAW. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+<div class="site-footer">
+  <h4>Для записи</h4>
+  <p><a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">@manager_kitai_school</a>&nbsp;&nbsp;<a href="https://telegram.me/manager2_kitai_school" target="_blank" rel="noopener">@manager2_kitai_school</a><br>
+  Лицензированная онлайн-школа китайского языка <a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">@kitai_school</a><br>
+  Сайт: <a href="https://kitai-school.ru" target="_blank" rel="noopener">Kitai-School.ru</a> · Тел. +7 (958) 538-70-80 · info@kitai-school.ru</p>
+  <p class="lic">ИП Горяина Юлия Павловна · ИНН 228900391328 · ОГРНИП 324774600267683 · Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы, с 07.05.2025)</p>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/business" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Бизнес-китайский</a>
+    <p class="side-note">Определим уровень и покажем платформу бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/aptechka-dlya-poezdki-v-kitay#article",
+      "headline": "Аптечка для поездки в Китай: какие лекарства взять и что учесть на границе",
+      "description": "Состав дорожной аптечки в Китай, что нельзя ввозить, документы на рецептурные лекарства и лексика для аптеки. Информационный обзор.",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-17",
+      "dateModified": "2026-07-17",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/aptechka-dlya-poezdki-v-kitay",
+      "about": [
+        {"@type": "Country", "name": "Китай", "sameAs": "https://www.wikidata.org/wiki/Q148"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какие лекарства можно взять с собой в Китай?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Базовые безрецептурные: парацетамол, ибупрофен, лоперамид, регидратацию, антигистаминные без «-D», пластыри, антисептик. В оригинальной упаковке и разумном количестве."}},
+        {"@type": "Question", "name": "Какие лекарства нельзя ввозить в Китай?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Всё с кодеином и опиоидами, псевдоэфедрин (Судафед и «-D»), стимуляторы (Аддералл, Риталин). Они запрещены или строго контролируются."}},
+        {"@type": "Question", "name": "Нужен ли рецепт на лекарства в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "На рецептурные и контролируемые — да: везите рецепт и справку от врача (имя, международное название, дозировка) и декларируйте на границе."}},
+        {"@type": "Question", "name": "Сколько лекарств можно везти?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Разумный личный запас на поездку (ориентировочно на месяц); жёсткой единой нормы в законе нет, но большие количества привлекают внимание."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Аптечка для поездки в Китай"}
+      ]
+    }
+  ]
+}
+</script>
