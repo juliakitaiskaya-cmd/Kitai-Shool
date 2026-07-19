@@ -1,0 +1,404 @@
+<div id="ks-wrap">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:46px;line-height:1.08;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+#ks-art .ks-quote cite a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:12px 16px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .site-footer{background:var(--ink)!important;color:#c9bdae!important;border-radius:var(--r-md);padding:32px 34px;margin-top:44px;font-size:14.5px;line-height:1.7}
+#ks-art .site-footer h4{color:#fff!important;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px}
+#ks-art .site-footer p{color:#c9bdae!important}
+#ks-art .site-footer a{color:#fff!important;text-decoration:none}
+#ks-art .site-footer .lic{color:#a99e8f!important;font-size:12.5px;margin-top:12px}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Есть ли в Китае колледжи
+</nav>
+
+<article>
+<p class="eyebrow">Учёба в Китае</p>
+<h1>Есть ли в Китае <span class="italic">колледжи</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-07-17">17 июля 2026</time>
+  </div>
+</div>
+
+<p class="passport">Да, колледжи в Китае есть — и это целая система профессионального образования (<span class="hanline">职业教育</span>), сопоставимая по масштабу с университетской. После 9 класса (окончания <span class="hanline">初中</span>) китайские школьники могут пойти в среднее профучилище — <span class="hanline">中职</span>, где за 3–4 года получают рабочую специальность. Высшее профессиональное образование — это <span class="hanline">高职</span>: колледжи, которые после старшей школы дают диплом <span class="hanline">专科</span> (大专) за 2–3 года, с упором на практику. Для иностранца путь обычно другой: сначала язык до уровня HSK 4, затем поступление в <span class="hanline">专科</span> или вуз. Единого «списка колледжей для русских после 9 класса» не существует — важнее понимать саму систему.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Колледжи в Китае есть — среднее профобразование (中职, после 9 класса) и высшее профессиональное (高职, диплом 专科 за 2–3 года). 中职 после 9 класса — в основном для местных; иностранцу реалистичнее выучить китайский до HSK 4 и поступать в 专科 после школы. Готового «списка для русских» нет: нужны язык, аттестат и документы. Колледж (专科) — это практика за 2–3 года, вуз (本科) — бакалавриат за 4 года.</p>
+</div>
+
+<h2>Есть ли в Китае <span class="italic">колледжи</span></h2>
+<p>Да, и это не пара училищ на всю страну, а огромная система. Китай сознательно развивает профобразование так, чтобы около половины выпускников старшей школы и студентов шли по профессиональному треку, а не только в академические вузы. Так что колледж в Китае — это массовый и уважаемый путь, а не «запасной аэродром».</p>
+
+<h2>Как устроено <span class="italic">профобразование</span> в Китае</h2>
+<p>Проще всего представить систему как лестницу: после школы у человека есть развилка — академический путь или профессиональный. И на профессиональном есть свои ступени.</p>
+
+<h3>После 9 класса: <span class="hanline">中职</span></h3>
+<p>Обязательное образование в Китае — девять лет: начальная школа плюс неполная средняя (<span class="hanline">初中</span>). После 9 класса школьник выбирает: академическая старшая школа или среднее профучилище — <span class="hanline">中职</span> (zhōngzhí). Там за 3–4 года дают конкретную рабочую специальность.</p>
+
+<h3>После школы: <span class="hanline">高职</span> и <span class="hanline">专科</span></h3>
+<p>Высшая ступень профобразования — <span class="hanline">高职</span> (gāozhí), профессиональные колледжи. Туда поступают после старшей школы — как академической, так и профильной. Колледж даёт диплом <span class="hanline">专科</span> (zhuānkē, он же 大专) за 2–3 года, с сильным упором на практику и профессию.</p>
+
+<h3><span class="hanline">专科</span> против <span class="hanline">本科</span>: колледж и вуз</h3>
+<p>Ключевое различие в китайском высшем образовании — между <span class="hanline">专科</span> (колледж, среднее звено) и <span class="hanline">本科</span> (běnkē, полноценный бакалавриат в университете). Первый короче и практичнее, второй длиннее и академичнее.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Ступени образования в Китае (упрощённо). Сроки типовые; бывают исключения, например профессиональный бакалавриат (职业本科) на 4 года.</caption>
+  <thead><tr><th>Ступень</th><th>По-китайски</th><th>Срок</th><th>Куда после</th></tr></thead>
+  <tbody>
+    <tr><td>Неполная средняя школа</td><td>初中 (chūzhōng)</td><td>до 9 класса</td><td>中职 или старшая школа</td></tr>
+    <tr><td>Среднее профучилище</td><td>中职 (zhōngzhí)</td><td>3–4 года</td><td>работа или 高职</td></tr>
+    <tr><td>Колледж (высшее проф.)</td><td>高职 → 专科</td><td>2–3 года</td><td>работа или переход в 本科</td></tr>
+    <tr><td>Университет</td><td>本科 (běnkē)</td><td>4 года</td><td>магистратура</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Чем колледж <span class="italic">отличается</span> от университета</h2>
+<p>Если коротко: колледж (专科) готовит специалиста-практика за 2–3 года — программа заточена под профессию и трудоустройство. Университет (本科) даёт бакалавриат за 4 года с более широкой академической базой. Конкурс в сильные вузы выше, но и колледж — не тупик: из <span class="hanline">专科</span> можно перейти в <span class="hanline">本科</span> и достроить образование до бакалавриата.</p>
+
+<h2>Можно ли поступить <span class="italic">после 9 класса</span></h2>
+<p>Здесь и живёт главное недопонимание. В самом Китае после 9 класса — да, идут в <span class="hanline">中职</span>. Но это внутренний трек для китайских школьников. Для иностранца после 9 класса напрямую поступить в китайский колледж сложно: такие программы редки и оформляются отдельно.</p>
+<p>Реалистичный путь для россиянина выглядит иначе: сначала выучить китайский до нужного уровня (обычно HSK 4), закончить школу дома — и уже после этого поступать в <span class="hanline">专科</span> или вуз. Язык здесь не формальность, а ключ: без него ни документы, ни учёба не двигаются.</p>
+
+<h2>Может ли иностранец поступить в китайский <span class="italic">колледж</span></h2>
+<p>Да, профессиональные колледжи принимают иностранных студентов. Но есть входной барьер — язык и документы. По правилам Минобразования КНР иностранный студент, поступающий на программу на китайском, должен подтвердить владение языком.</p>
+
+<blockquote class="ks-quote">
+  <p>«Иностранным абитуриентам профессиональных колледжей обычно требуется сертификат HSK 4; тем, у кого его нет, — год подготовительного языкового курса перед основной программой».</p>
+  <cite>— <a href="https://chinaschooling.com/diploma-program-scholarships-at-chinese-vocational-colleges-for-international-students/" target="_blank" rel="noopener nofollow">China Schooling: программы колледжей для иностранцев</a></cite>
+</blockquote>
+
+<div class="table-wrap">
+<table>
+  <caption>Что обычно нужно иностранцу для поступления в колледж или вуз Китая. Точные требования зависят от учреждения — уточняйте на месте.</caption>
+  <thead><tr><th>Что</th><th>Детали</th></tr></thead>
+  <tbody>
+    <tr><td>Язык</td><td>HSK 4 (или подготовительный языковой год)</td></tr>
+    <tr><td>Аттестат</td><td>с транскриптом и печатью школы</td></tr>
+    <tr><td>Документы</td><td>паспорт, медсправка, фото, анкета-заявление</td></tr>
+    <tr><td>Финансы</td><td>подтверждение оплаты и содержания</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Как <span class="italic">выбрать</span> и подать</h2>
+<p>Готового «списка колледжей для русских после 9 класса» в природе нет — и если такой список вам обещают, это повод насторожиться. Колледжи набирают иностранцев по-разному, а условия и специальности отличаются. Действовать стоит от обратного: сначала определить специальность и город, затем смотреть конкретные колледжи и их требования к иностранцам, и только потом — язык и документы под выбранную программу.</p>
+<p class="note">Поступление в китайский колледж или вуз — это всегда про конкретное учреждение и актуальные правила. Сверяйтесь с официальным сайтом колледжа и посольством КНР: требования по языку, возрасту и документам меняются.</p>
+
+<h2>Мини-словарь: образование <span class="italic">по-китайски</span></h2>
+<p>Несколько слов, которые сразу наводят порядок в теме.</p>
+<div class="table-wrap">
+<table>
+  <caption>Базовая лексика об образовании: иероглиф → пиньинь → значение.</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td>职业教育</td><td>zhíyè jiàoyù</td><td>профессиональное образование</td></tr>
+    <tr><td>职业学院</td><td>zhíyè xuéyuàn</td><td>профессиональный колледж</td></tr>
+    <tr><td>中职</td><td>zhōngzhí</td><td>среднее профучилище (после 9 класса)</td></tr>
+    <tr><td>高职</td><td>gāozhí</td><td>высшее профессиональное (колледж)</td></tr>
+    <tr><td>专科 / 大专</td><td>zhuānkē / dàzhuān</td><td>диплом колледжа (2–3 года)</td></tr>
+    <tr><td>本科</td><td>běnkē</td><td>бакалавриат (вуз, 4 года)</td></tr>
+    <tr><td>高考</td><td>gāokǎo</td><td>единый госэкзамен (гаокао)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Ко мне не раз приходили ребята с одним и тем же вопросом: «Хочу учиться в Китае — с чего начать?» И почти всегда за этим стоял миф, что можно как-то «сразу поступить», а язык подтянется по ходу. На деле всё наоборот: язык — это входной билет, без него не открывается ни одна дверь.</p>
+  <p>Одна моя ученица начинала с нуля, за полтора года дошла до HSK 4 — и именно этот сертификат стал её пропуском на программу в Китае. Не список колледжей, не связи, а спокойные регулярные занятия языком. Поэтому, когда спрашивают «есть ли колледжи в Китае», я отвечаю: есть, и они ближе, чем кажется, — если начать с китайского.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Есть ли в Китае колледжи?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, в Китае большая система профобразования: среднее (中职, после 9 класса) и высшее профессиональное (高职, диплом 专科 за 2–3 года).</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли поступить в китайский колледж после 9 класса?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В Китае после 9 класса идут в среднее профучилище (中职), но это в основном для местных. Иностранцу реалистичнее сначала выучить язык до HSK 4 и поступать в 专科 после школы.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что нужно иностранцу для поступления?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Обычно HSK 4, аттестат с транскриптом (с печатью школы), паспорт и медсправка; без HSK 4 — подготовительный языковой год.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем колледж отличается от университета?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Колледж (专科) даёт практическую специальность за 2–3 года; университет (本科) — бакалавриат за 4 года с более академической программой.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Учёба в Китае начинается не с выбора колледжа, а с языка: именно HSK 4 открывает и документы, и программы. Хотите поступить в китайский колледж или вуз? Мы помогаем с языком и подготовкой к HSK, а на диагностическом уроке определим уровень и составим план под вашу цель.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на диагностический урок →</a></p>
+  <p>Или напишите слово <b>КИТАЙ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подскажем формат. Направление «Учёба в Китае» — на <a href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener">отдельной странице</a>.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya" target="_blank" rel="noopener">за сколько реально выучить китайский с нуля</a> и <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли в Китае</a> — полезно, если планируете учёбу.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://www.scholaro.com/db/countries/china/education-system" target="_blank" rel="noopener nofollow">Scholaro: China Education System</a> — структура ступеней, 专科 и 本科.</li>
+    <li><a href="https://link.springer.com/chapter/10.1007/978-981-97-7415-9_8" target="_blank" rel="noopener nofollow">Springer: Vocational Education in China</a> — среднее и высшее профобразование.</li>
+    <li><a href="https://news.cgtn.com/news/3d49444d31637a4d/index.html" target="_blank" rel="noopener nofollow">CGTN: крупнейшая в мире система профобразования</a> — масштаб.</li>
+    <li><a href="https://chinaschooling.com/diploma-program-scholarships-at-chinese-vocational-colleges-for-international-students/" target="_blank" rel="noopener nofollow">China Schooling: колледжи для иностранцев</a> — HSK 4 и подготовительный год.</li>
+    <li><a href="https://improvemandarin.com/hsk-level-score-requirements/" target="_blank" rel="noopener nofollow">ImproveMandarin: HSK requirements</a> — языковые требования вузов.</li>
+    <li><a href="https://www.wikidata.org/wiki/Q148" target="_blank" rel="noopener nofollow">Wikidata: Китай (Q148)</a> — канонический узел страны.</li>
+  </ol>
+</div>
+
+<p class="sign">Удачи с поступлением! <span class="han">金榜题名！</span></p>
+
+<div class="tags">
+  <span>#колледжиКитая</span> <span>#职业教育</span> <span>#учёбаВКитае</span> <span>#专科</span> <span>#Китай_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики с китайскими компаниями — TCL, Great Wall Motors, FAW. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+<div class="site-footer">
+  <h4>Для записи</h4>
+  <p><a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">@manager_kitai_school</a>&nbsp;&nbsp;<a href="https://telegram.me/manager2_kitai_school" target="_blank" rel="noopener">@manager2_kitai_school</a><br>
+  Лицензированная онлайн-школа китайского языка <a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">@kitai_school</a><br>
+  Сайт: <a href="https://kitai-school.ru" target="_blank" rel="noopener">Kitai-School.ru</a> · Тел. +7 (958) 538-70-80 · info@kitai-school.ru</p>
+  <p class="lic">ИП Горяина Юлия Павловна · ИНН 228900391328 · ОГРНИП 324774600267683 · Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы, с 07.05.2025)</p>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/business" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Бизнес-китайский</a>
+    <p class="side-note">Определим уровень и покажем платформу бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/est-li-v-kitae-kolledzhi#article",
+      "headline": "Есть ли в Китае колледжи: как устроено среднее профессиональное образование",
+      "description": "Система профобразования Китая: среднее (中职) и высшее профессиональное (高职), диплом 专科, отличие от вузов и поступление иностранцу.",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-17",
+      "dateModified": "2026-07-17",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/est-li-v-kitae-kolledzhi",
+      "about": [
+        {"@type": "Country", "name": "Китай", "sameAs": "https://www.wikidata.org/wiki/Q148"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Есть ли в Китае колледжи?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Да, в Китае большая система профобразования: среднее (中职, после 9 класса) и высшее профессиональное (高职, диплом 专科 за 2–3 года)."}},
+        {"@type": "Question", "name": "Можно ли поступить в китайский колледж после 9 класса?",
+         "acceptedAnswer": {"@type": "Answer", "text": "В Китае после 9 класса идут в среднее профучилище (中职), но это в основном для местных. Иностранцу реалистичнее сначала выучить язык до HSK 4 и поступать в 专科 после школы."}},
+        {"@type": "Question", "name": "Что нужно иностранцу для поступления?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Обычно HSK 4, аттестат с транскриптом (с печатью школы), паспорт и медсправка; без HSK 4 — подготовительный языковой год."}},
+        {"@type": "Question", "name": "Чем колледж отличается от университета?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Колледж (专科) даёт практическую специальность за 2–3 года; университет (本科) — бакалавриат за 4 года с более академической программой."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Есть ли в Китае колледжи"}
+      ]
+    }
+  ]
+}
+</script>
