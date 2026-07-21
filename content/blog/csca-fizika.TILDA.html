@@ -1,0 +1,448 @@
+<div id="ks-wrap">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:46px;line-height:1.08;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin-top:12px}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+#ks-art .ks-quote cite a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:12px 16px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important;font-family:var(--fh)!important;font-size:18px}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .site-footer{background:var(--ink)!important;color:#c9bdae!important;border-radius:var(--r-md);padding:32px 34px;margin-top:44px;font-size:14.5px;line-height:1.7}
+#ks-art .site-footer h4{color:#fff!important;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px}
+#ks-art .site-footer p{color:#c9bdae!important}
+#ks-art .site-footer a{color:#fff!important;text-decoration:none}
+#ks-art .site-footer .lic{color:#a99e8f!important;font-size:12.5px;margin-top:12px}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Физика на CSCA
+</nav>
+
+<article>
+<p class="eyebrow">Экзамены</p>
+<h1>Физика на CSCA: как выучить физическую <span class="italic">терминологию</span> на китайском</h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-07-21">21 июля 2026</time>
+  </div>
+</div>
+
+<p class="passport">Физика (<span class="hanline">物理</span>, wùlǐ) на CSCA — предмет по выбору: его сдают для инженерных, физико-технических и естественнонаучных специальностей. Формат тот же, что у остальных: 48 вопросов с выбором ответа за 60 минут, на китайском или английском. И главная сложность здесь не сама физика, а терминология: механика (<span class="hanline">力学</span>), термодинамика (<span class="hanline">热学</span>), электричество (<span class="hanline">电学</span>), а также единицы измерения на китайском. Хорошая новость — многие термины собираются из знакомых частей: <span class="hanline">加速度</span> (ускорение) = <span class="hanline">加</span> (добавить) + <span class="hanline">速度</span> (скорость).</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Физика на CSCA — предмет по выбору (48 вопросов, 60 минут, на китайском или английском). Сложность — терминология. Учите разделами: механика (力, 速度, 加速度, 功), термодинамика (温度, 热量), электричество (电流, 电压, 电阻) — и единицы (牛顿, 焦耳, 瓦特, 伏特). Лайфхак: термины часто композиционны — 电压 = 电 + 压 (давление) = напряжение.</p>
+</div>
+
+<h2>Физика на CSCA: что <span class="italic">учесть</span></h2>
+<p>Первое: физика — не обязательный предмет, а по выбору. Её сдают те, чья будущая специальность связана с инженерией, техникой, физикой или другими естественными науками. Если физика вам нужна — это ваш профильный предмет, и готовиться к нему стоит не «с нуля», а как к своему предмету на чужом языке.</p>
+<p>Потому что настоящая сложность — терминологическая. Законы, формулы и логика у подготовленного абитуриента есть. Спотыкаются на словах: как называется величина, единица, закон — всё это на экзамене на китайском.</p>
+
+<h2>Как устроены <span class="italic">задания</span> по физике</h2>
+<p>Формат единый для всех предметов CSCA: закрытые вопросы с вариантами ответа и жёсткий лимит времени. Физику, как математику и химию, можно сдавать на китайском или английском.</p>
+
+<blockquote class="ks-quote">
+  <p>«Каждый предмет — 48 вопросов с выбором ответа, по 60 минут; математику, физику и химию можно сдавать на китайском или английском».</p>
+  <cite>— <a href="https://www.china-admissions.com/blog/big-change-for-2026-applicants-entrance-test-csca/" target="_blank" rel="noopener nofollow">China Admissions: формат CSCA</a></cite>
+</blockquote>
+
+<p>Даже если вы выберете английский, базовые термины на китайском всё равно пригодятся — на самой учёбе, где лекции и лабораторные будут на китайском. Так что учить их стоит в любом случае.</p>
+
+<h2>Механика: базовая <span class="italic">лексика</span></h2>
+<p>С механики удобно начинать — это фундамент школьной физики, и её лексика встречается чаще всего.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Механика (力学): базовые величины и понятия.</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td>力</td><td>lì</td><td>сила</td></tr>
+    <tr><td>速度</td><td>sùdù</td><td>скорость</td></tr>
+    <tr><td>加速度</td><td>jiāsùdù</td><td>ускорение</td></tr>
+    <tr><td>质量</td><td>zhìliàng</td><td>масса</td></tr>
+    <tr><td>重力 / 摩擦力</td><td>zhònglì / mócālì</td><td>сила тяжести / трения</td></tr>
+    <tr><td>功 / 功率</td><td>gōng / gōnglǜ</td><td>работа / мощность</td></tr>
+    <tr><td>动能 / 势能</td><td>dòngnéng / shìnéng</td><td>кинетическая / потенциальная энергия</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Термодинамика и <span class="italic">электричество</span></h2>
+<p>Два больших раздела, где особенно много «своих» слов. Учите их блоками — так лексика ложится системно.</p>
+
+<h3>Термодинамика</h3>
+<div class="table-wrap">
+<table>
+  <caption>Термодинамика (热学): тепло и состояния вещества.</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td>温度</td><td>wēndù</td><td>температура</td></tr>
+    <tr><td>热量</td><td>rèliàng</td><td>количество теплоты</td></tr>
+    <tr><td>内能</td><td>nèinéng</td><td>внутренняя энергия</td></tr>
+    <tr><td>比热容</td><td>bǐrèróng</td><td>удельная теплоёмкость</td></tr>
+    <tr><td>熔化 / 汽化 / 凝固</td><td>rónghuà / qìhuà / nínggù</td><td>плавление / испарение / затвердевание</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Электричество</h3>
+<div class="table-wrap">
+<table>
+  <caption>Электричество (电学): ток, цепи и поля.</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td>电流</td><td>diànliú</td><td>электрический ток</td></tr>
+    <tr><td>电压</td><td>diànyā</td><td>напряжение</td></tr>
+    <tr><td>电阻</td><td>diànzǔ</td><td>сопротивление</td></tr>
+    <tr><td>电路</td><td>diànlù</td><td>электрическая цепь</td></tr>
+    <tr><td>电荷</td><td>diànhè</td><td>электрический заряд</td></tr>
+    <tr><td>电场 / 磁场</td><td>diànchǎng / cíchǎng</td><td>электрическое / магнитное поле</td></tr>
+    <tr><td>欧姆定律</td><td>ōumǔ dìnglǜ</td><td>закон Ома</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Оптика, волны и <span class="italic">кванты</span></h2>
+<p>Ближе к концу школьного курса идут оптика, волновые явления и начала современной физики. Здесь пригодится такой набор: <span class="hanline">光</span> (guāng — свет), <span class="hanline">波</span> (bō — волна), <span class="hanline">频率</span> (pínlǜ — частота), <span class="hanline">波长</span> (bōcháng — длина волны), <span class="hanline">折射</span> / <span class="hanline">反射</span> (zhéshè / fǎnshè — преломление / отражение), <span class="hanline">量子</span> (liàngzǐ — квант), <span class="hanline">原子核</span> (yuánzǐhé — атомное ядро).</p>
+
+<h2>Единицы <span class="italic">измерения</span></h2>
+<p>Отдельно и обязательно — единицы. В условии и вариантах ответа они встречаются постоянно, а их китайские названия — это чаще всего транскрипция фамилии учёного.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Единицы измерения (单位) и их китайские названия. В скобках — обозначение.</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Единица</th></tr></thead>
+  <tbody>
+    <tr><td>牛顿</td><td>niúdùn</td><td>ньютон (N) — сила</td></tr>
+    <tr><td>焦耳</td><td>jiāo'ěr</td><td>джоуль (J) — энергия, работа</td></tr>
+    <tr><td>瓦特</td><td>wǎtè</td><td>ватт (W) — мощность</td></tr>
+    <tr><td>伏特</td><td>fútè</td><td>вольт (V) — напряжение</td></tr>
+    <tr><td>安培</td><td>ānpéi</td><td>ампер (A) — ток</td></tr>
+    <tr><td>欧姆</td><td>ōumǔ</td><td>ом (Ω) — сопротивление</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Как <span class="italic">читать</span> условие задачи по физике</h2>
+<p>Схема та же, что в математике и химии, — она спасает от паники перед иероглифами:</p>
+<p><b>1. Найдите слово-команду.</b> Что от вас хотят — <span class="hanline">求</span> (найти), <span class="hanline">计算</span> (вычислить), <span class="hanline">判断</span> (определить)?<br>
+<b>2. Найдите <span class="hanline">已知</span>.</b> Что дано — величины, единицы, условия.<br>
+<b>3. Прочитайте вопрос</b> и варианты (<span class="hanline">选项</span> A、B、C、D).<br>
+<b>4. Решайте</b>, держа термины и единицы в голове на китайском, не переводя обратно.</p>
+
+<h2>Как <span class="italic">запоминать</span> термины</h2>
+<p>Главный лайфхак физики — состав слова. Китайские физические термины редко бывают «сплошными»: они собираются из знакомых кубиков, и если понять логику, половина лексики учится сама.</p>
+<p>— <span class="hanline">加速度</span> = <span class="hanline">加</span> (добавлять) + <span class="hanline">速度</span> (скорость) → ускорение.<br>
+— <span class="hanline">电压</span> = <span class="hanline">电</span> (электричество) + <span class="hanline">压</span> (давление) → напряжение.<br>
+— <span class="hanline">电阻</span> = <span class="hanline">电</span> + <span class="hanline">阻</span> (препятствовать) → сопротивление.<br>
+— <span class="hanline">功率</span> = <span class="hanline">功</span> (работа) + <span class="hanline">率</span> (доля в единицу времени) → мощность.<br>
+— <span class="hanline">磁场</span> = <span class="hanline">磁</span> (магнит) + <span class="hanline">场</span> (поле) → магнитное поле.</p>
+<p class="note">Дальше подключайте привычное: учите блоками по разделам (力学, 热学, 电学), ведите личный глоссарий, обязательно заучите единицы и решайте задачи сразу на китайском.</p>
+
+<h2>Мини-словарь: физика <span class="italic">по-китайски</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Сводная лексика для старта подготовки к физике CSCA.</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td>物理</td><td>wùlǐ</td><td>физика</td></tr>
+    <tr><td>定律</td><td>dìnglǜ</td><td>закон (физический)</td></tr>
+    <tr><td>公式</td><td>gōngshì</td><td>формула</td></tr>
+    <tr><td>实验</td><td>shíyàn</td><td>эксперимент</td></tr>
+    <tr><td>物体</td><td>wùtǐ</td><td>тело (физическое)</td></tr>
+    <tr><td>电子</td><td>diànzǐ</td><td>электрон</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Готовила я к CSCA будущего инженера — парень щёлкал задачи, но на пробнике сыпался. Разобрались: он путал <span class="hanline">功</span> (работа) и <span class="hanline">功率</span> (мощность), а ещё <span class="hanline">动能</span> и <span class="hanline">势能</span>. Отличие в один иероглиф — а ответ мимо.</p>
+  <p>Мы разложили термины на части: увидел <span class="hanline">率</span> (доля во времени) — значит «мощность», а не «работа». Когда слова перестали быть монолитом и превратились в конструктор, физика у него пошла как надо. Знал он её и так — не хватало только языка, на котором её спрашивают.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Физика обязательна на CSCA?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, физика и химия — предметы по выбору; их сдают, если этого требует специальность (инженерные, физико-технические, естественнонаучные).</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что сложнее всего в физике CSCA для иностранца?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Терминология: разделы (механика, термодинамика, электричество) и единицы измерения на китайском.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как запоминать физические термины?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Разделами (力学, 热学, 电学) и через состав слова: 加速度 = 加 + 速度. Плюс учить единицы (牛顿, 焦耳, 瓦特).</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>На каком языке сдают физику CSCA?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На китайском или английском — на выбор; 48 вопросов за 60 минут.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Физика на CSCA — это ваш предмет, заданный на чужом языке. Мы готовим к экзамену с языковой стороны: ставим физическую терминологию по разделам, единицы и чтение условий на китайском. На диагностическом уроке определим уровень и составим план под нужные предметы и сроки.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на диагностический урок →</a></p>
+  <p>Или напишите слово <b>CSCA</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подскажем формат. Направление «Учёба в Китае» — на <a href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener">отдельной странице</a>.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/csca-matematika" target="_blank" rel="noopener">математика на CSCA</a>, <a href="https://kitai-school.ru/article/csca-himiya" target="_blank" rel="noopener">химия на CSCA</a> и общий разбор <a href="https://kitai-school.ru/article/csca-ekzamen" target="_blank" rel="noopener">экзамена CSCA</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://www.china-admissions.com/blog/big-change-for-2026-applicants-entrance-test-csca/" target="_blank" rel="noopener nofollow">China Admissions: экзамен CSCA</a> — формат и предметы по выбору.</li>
+    <li><a href="https://csca.app/en/exam-guide" target="_blank" rel="noopener nofollow">CSCA Academy: Exam Guide</a> — синтабус и предметы.</li>
+    <li><a href="https://csca.cn" target="_blank" rel="noopener nofollow">csca.cn — официальный сайт экзамена</a> — актуальные правила и лексический минимум.</li>
+    <li><a href="https://www.wikidata.org/wiki/Q148" target="_blank" rel="noopener nofollow">Wikidata: Китай (Q148)</a> — канонический узел страны.</li>
+  </ol>
+</div>
+
+<p class="sign">Удачи на экзамене! <span class="han">马到成功！</span></p>
+
+<div class="tags">
+  <span>#CSCA</span> <span>#物理</span> <span>#физикаНаКитайском</span> <span>#учёбаВКитае</span> <span>#Китай_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики с китайскими компаниями — TCL, Great Wall Motors, FAW. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+<div class="site-footer">
+  <h4>Для записи</h4>
+  <p><a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">@manager_kitai_school</a>&nbsp;&nbsp;<a href="https://telegram.me/manager2_kitai_school" target="_blank" rel="noopener">@manager2_kitai_school</a><br>
+  Лицензированная онлайн-школа китайского языка <a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">@kitai_school</a><br>
+  Сайт: <a href="https://kitai-school.ru" target="_blank" rel="noopener">Kitai-School.ru</a> · Тел. +7 (958) 538-70-80 · info@kitai-school.ru</p>
+  <p class="lic">ИП Горяина Юлия Павловна · ИНН 228900391328 · ОГРНИП 324774600267683 · Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы, с 07.05.2025)</p>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/business" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Бизнес-китайский</a>
+    <p class="side-note">Определим уровень и покажем платформу бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/csca-fizika#article",
+      "headline": "CSCA по физике на китайском: от законов Ньютона до квантов — полный гид по терминам",
+      "description": "Физическая лексика CSCA на китайском: механика, термодинамика, электричество и единицы измерения.",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-21",
+      "dateModified": "2026-07-21",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/csca-fizika",
+      "about": [
+        {"@type": "Country", "name": "Китай", "sameAs": "https://www.wikidata.org/wiki/Q148"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Физика обязательна на CSCA?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Нет, физика и химия — предметы по выбору; их сдают, если этого требует специальность (инженерные, физико-технические, естественнонаучные)."}},
+        {"@type": "Question", "name": "Что сложнее всего в физике CSCA для иностранца?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Терминология: разделы (механика, термодинамика, электричество) и единицы измерения на китайском."}},
+        {"@type": "Question", "name": "Как запоминать физические термины?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Разделами (力学, 热学, 电学) и через состав слова: 加速度 = 加 + 速度. Плюс учить единицы (牛顿, 焦耳, 瓦特)."}},
+        {"@type": "Question", "name": "На каком языке сдают физику CSCA?",
+         "acceptedAnswer": {"@type": "Answer", "text": "На китайском или английском — на выбор; 48 вопросов за 60 минут."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Физика на CSCA"}
+      ]
+    }
+  ]
+}
+</script>
