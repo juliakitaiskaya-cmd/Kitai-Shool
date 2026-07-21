@@ -1,0 +1,440 @@
+<div id="ks-wrap">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:46px;line-height:1.08;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin-top:12px}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+#ks-art .ks-quote cite a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:12px 16px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important;font-family:var(--fh)!important;font-size:18px}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .site-footer{background:var(--ink)!important;color:#c9bdae!important;border-radius:var(--r-md);padding:32px 34px;margin-top:44px;font-size:14.5px;line-height:1.7}
+#ks-art .site-footer h4{color:#fff!important;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px}
+#ks-art .site-footer p{color:#c9bdae!important}
+#ks-art .site-footer a{color:#fff!important;text-decoration:none}
+#ks-art .site-footer .lic{color:#a99e8f!important;font-size:12.5px;margin-top:12px}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Химия на CSCA
+</nav>
+
+<article>
+<p class="eyebrow">Экзамены</p>
+<h1>Химия на CSCA: как выучить китайскую химическую <span class="italic">терминологию</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-07-20">20 июля 2026</time>
+  </div>
+</div>
+
+<p class="passport">Химия (<span class="hanline">化学</span>, huàxué) на CSCA — предмет по выбору: его сдают, если этого требует специальность, например медицинская, химическая или инженерная. Формат тот же, что у остальных: 48 вопросов с выбором ответа за 60 минут, на китайском или английском. И главная сложность здесь не сама химия, а терминология: названия элементов (<span class="hanline">元素</span>), соединений (<span class="hanline">化合物</span>), типов реакций (<span class="hanline">化学反应</span>) и лабораторного оборудования на китайском. Хорошая новость — в китайских названиях элементов зашита подсказка: радикал показывает агрегатное состояние (<span class="hanline">气</span> — газы, <span class="hanline">钅</span> — металлы, <span class="hanline">石</span> — твёрдые неметаллы).</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Химия на CSCA — предмет по выбору (48 вопросов, 60 минут, на китайском или английском). Сложность — терминология на китайском. Учите блоками: элементы (氢, 氧, 碳, 钠, 铁), соединения (酸, 碱, 盐), типы реакций (化合, 分解, 置换, 氧化还原) и оборудование (试管, 烧杯). Лайфхак: радикал в названии элемента показывает состояние — 气 (газ), 钅 (металл), 石 (твёрдый неметалл).</p>
+</div>
+
+<h2>Химия на CSCA: что <span class="italic">учесть</span></h2>
+<p>Первое и важное: химия — не обязательный предмет, а по выбору. Её сдают те, чья будущая специальность связана с медициной, химией, биологией или инженерией. Если химия вам нужна — готовьтесь к ней всерьёз, но не как к отдельному экзамену «с нуля», а как к своему предмету на чужом языке.</p>
+<p>Потому что настоящая сложность — терминологическая. Формулы и логика реакций у подготовленного абитуриента есть. Спотыкаются на названиях: элемент, соединение, тип реакции, прибор — всё это на экзамене на китайском.</p>
+
+<h2>Как устроены <span class="italic">задания</span> по химии</h2>
+<p>Формат единый для всех предметов CSCA: закрытые вопросы с вариантами ответа, жёсткий лимит времени. Химию, как и математику с физикой, можно сдавать на китайском или английском.</p>
+
+<blockquote class="ks-quote">
+  <p>«Каждый предмет — 48 вопросов с выбором ответа, по 60 минут; математику, физику и химию можно сдавать на китайском или английском».</p>
+  <cite>— <a href="https://www.china-admissions.com/blog/big-change-for-2026-applicants-entrance-test-csca/" target="_blank" rel="noopener nofollow">China Admissions: формат CSCA</a></cite>
+</blockquote>
+
+<p>Даже если вы выберете английский, базовые термины на китайском всё равно пригодятся — на самой учёбе, где лабораторные и лекции будут на китайском. Так что учить их стоит в любом случае.</p>
+
+<h2>Химические <span class="italic">элементы</span> по-китайски</h2>
+<p>С них удобно начинать. Элементов в школьном курсе не так много, а их китайские названия — это в основном односложные иероглифы с говорящим радикалом.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Частые химические элементы (元素) и их китайские названия. В скобках — химический символ.</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Элемент</th></tr></thead>
+  <tbody>
+    <tr><td>氢</td><td>qīng</td><td>водород (H)</td></tr>
+    <tr><td>氧</td><td>yǎng</td><td>кислород (O)</td></tr>
+    <tr><td>碳</td><td>tàn</td><td>углерод (C)</td></tr>
+    <tr><td>氮</td><td>dàn</td><td>азот (N)</td></tr>
+    <tr><td>钠</td><td>nà</td><td>натрий (Na)</td></tr>
+    <tr><td>氯</td><td>lǜ</td><td>хлор (Cl)</td></tr>
+    <tr><td>铁</td><td>tiě</td><td>железо (Fe)</td></tr>
+    <tr><td>铜</td><td>tóng</td><td>медь (Cu)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Соединения, реакции и <span class="italic">лаборатория</span></h2>
+<p>После элементов идут три блока лексики: вещества, реакции и то, чем в лаборатории работают.</p>
+
+<h3>Соединения и вещества</h3>
+<div class="table-wrap">
+<table>
+  <caption>Соединения и агрегатные состояния.</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td>化合物</td><td>huàhéwù</td><td>соединение</td></tr>
+    <tr><td>分子 / 原子</td><td>fēnzǐ / yuánzǐ</td><td>молекула / атом</td></tr>
+    <tr><td>酸 / 碱 / 盐</td><td>suān / jiǎn / yán</td><td>кислота / щёлочь / соль</td></tr>
+    <tr><td>溶液</td><td>róngyè</td><td>раствор</td></tr>
+    <tr><td>气体 / 固体 / 液体</td><td>qìtǐ / gùtǐ / yètǐ</td><td>газ / твёрдое / жидкость</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Типы реакций</h3>
+<div class="table-wrap">
+<table>
+  <caption>Основные типы химических реакций (化学反应).</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td>化合反应</td><td>huàhé fǎnyìng</td><td>реакция соединения</td></tr>
+    <tr><td>分解反应</td><td>fēnjiě fǎnyìng</td><td>реакция разложения</td></tr>
+    <tr><td>置换反应</td><td>zhìhuàn fǎnyìng</td><td>реакция замещения</td></tr>
+    <tr><td>氧化还原反应</td><td>yǎnghuà huányuán</td><td>окислительно-восстановительная</td></tr>
+    <tr><td>催化剂</td><td>cuīhuàjì</td><td>катализатор</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Лабораторное оборудование</h3>
+<div class="table-wrap">
+<table>
+  <caption>Приборы и посуда в лаборатории (实验器材).</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td>试管</td><td>shìguǎn</td><td>пробирка</td></tr>
+    <tr><td>烧杯</td><td>shāobēi</td><td>химический стакан</td></tr>
+    <tr><td>酒精灯</td><td>jiǔjīngdēng</td><td>спиртовка</td></tr>
+    <tr><td>漏斗</td><td>lòudǒu</td><td>воронка</td></tr>
+    <tr><td>量筒 / 天平</td><td>liángtǒng / tiānpíng</td><td>мерный цилиндр / весы</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Как <span class="italic">читать</span> условие задачи по химии</h2>
+<p>Схема та же, что и в математике, — она спасает от паники перед иероглифами:</p>
+<p><b>1. Найдите слово-команду.</b> Что от вас хотят — <span class="hanline">求</span> (найти), <span class="hanline">写出</span> (написать, например уравнение), <span class="hanline">判断</span> (определить)?<br>
+<b>2. Найдите <span class="hanline">已知</span>.</b> Что дано — вещества, условия, количества.<br>
+<b>3. Прочитайте вопрос</b> и варианты (<span class="hanline">选项</span> A、B、C、D).<br>
+<b>4. Решайте</b>, держа термины в голове на китайском, не переводя обратно.</p>
+
+<h2>Как <span class="italic">запоминать</span> сложные термины</h2>
+<p>Главный лайфхак химии — радикал-подсказка. Китайские названия элементов не случайны: их левая или верхняя часть говорит об агрегатном состоянии вещества при обычных условиях.</p>
+<p>— <b><span class="hanline">气</span> (газ)</b> сверху — газообразные элементы: <span class="hanline">氢</span> (водород), <span class="hanline">氧</span> (кислород), <span class="hanline">氮</span> (азот), <span class="hanline">氯</span> (хлор).<br>
+— <b><span class="hanline">钅</span> (металл)</b> слева — металлы: <span class="hanline">钠</span> (натрий), <span class="hanline">铁</span> (железо), <span class="hanline">铜</span> (медь), <span class="hanline">铝</span> (алюминий).<br>
+— <b><span class="hanline">石</span> (камень)</b> — твёрдые неметаллы: <span class="hanline">碳</span> (углерод), <span class="hanline">硫</span> (сера), <span class="hanline">磷</span> (фосфор).<br>
+— <b><span class="hanline">氵</span> (вода)</b> — жидкие при обычных условиях: <span class="hanline">溴</span> (бром), <span class="hanline">汞</span> (ртуть).</p>
+<p class="note">Увидели незнакомый элемент — посмотрите на радикал, и вы уже знаете, газ это, металл или твёрдый неметалл. Дальше подключайте флешкарты «иероглиф → элемент», личный глоссарий по темам и решение задач сразу на китайском.</p>
+
+<h2>Мини-словарь: химия <span class="italic">по-китайски</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Сводная лексика для старта подготовки к химии CSCA.</caption>
+  <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td>化学</td><td>huàxué</td><td>химия</td></tr>
+    <tr><td>元素</td><td>yuánsù</td><td>элемент</td></tr>
+    <tr><td>化学式</td><td>huàxuéshì</td><td>химическая формула</td></tr>
+    <tr><td>浓度</td><td>nóngdù</td><td>концентрация</td></tr>
+    <tr><td>沉淀</td><td>chéndiàn</td><td>осадок</td></tr>
+    <tr><td>溶解</td><td>róngjiě</td><td>растворять(ся)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Была у меня ученица, которая шла на медицинское направление, и химия ей была обязательна. На первых занятиях она честно призналась: «Я не понимаю даже, где в задаче элемент, а где вещество». Формулы знала, а слова — нет.</p>
+  <p>Мы начали не с реакций, а с радикалов. Когда она увидела, что <span class="hanline">气</span> — это всегда газ, а <span class="hanline">钅</span> — всегда металл, названия элементов перестали быть случайным набором черт. Через месяц она читала условие по-китайски почти без запинок. Химия у неё была — не хватало только языка, на котором её спрашивают.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Химия обязательна на CSCA?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, физика и химия — предметы по выбору; их сдают, если этого требует специальность (медицина, химия, инженерия).</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что сложнее всего в химии CSCA для иностранца?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Терминология: названия элементов, соединений и типов реакций на китайском.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как запомнить названия элементов?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По радикалу-подсказке: 气 — газы (氢, 氧), 钅 — металлы (钠, 铁), 石 — твёрдые неметаллы (碳, 硫).</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>На каком языке сдают химию CSCA?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На китайском или английском — на выбор; 48 вопросов за 60 минут.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Химия на CSCA — это ваш предмет, заданный на чужом языке. Мы готовим к экзамену с языковой стороны: ставим химическую терминологию, учим читать условия и названия реакций на китайском. На диагностическом уроке определим уровень и составим план под нужные предметы и сроки.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на диагностический урок →</a></p>
+  <p>Или напишите слово <b>CSCA</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подскажем формат. Направление «Учёба в Китае» — на <a href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener">отдельной странице</a>.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/csca-matematika" target="_blank" rel="noopener">математика на CSCA</a> — слова-команды и лексика, и общий разбор <a href="https://kitai-school.ru/article/csca-ekzamen" target="_blank" rel="noopener">экзамена CSCA</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://www.china-admissions.com/blog/big-change-for-2026-applicants-entrance-test-csca/" target="_blank" rel="noopener nofollow">China Admissions: экзамен CSCA</a> — формат и предметы по выбору.</li>
+    <li><a href="https://csca.app/en/exam-guide" target="_blank" rel="noopener nofollow">CSCA Academy: Exam Guide</a> — синтабус и предметы.</li>
+    <li><a href="https://csca.cn" target="_blank" rel="noopener nofollow">csca.cn — официальный сайт экзамена</a> — актуальные правила и лексический минимум.</li>
+    <li><a href="https://www.wikidata.org/wiki/Q148" target="_blank" rel="noopener nofollow">Wikidata: Китай (Q148)</a> — канонический узел страны.</li>
+  </ol>
+</div>
+
+<p class="sign">Удачи на экзамене! <span class="han">考试顺利！</span></p>
+
+<div class="tags">
+  <span>#CSCA</span> <span>#化学</span> <span>#химияНаКитайском</span> <span>#учёбаВКитае</span> <span>#Китай_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики с китайскими компаниями — TCL, Great Wall Motors, FAW. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+<div class="site-footer">
+  <h4>Для записи</h4>
+  <p><a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">@manager_kitai_school</a>&nbsp;&nbsp;<a href="https://telegram.me/manager2_kitai_school" target="_blank" rel="noopener">@manager2_kitai_school</a><br>
+  Лицензированная онлайн-школа китайского языка <a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">@kitai_school</a><br>
+  Сайт: <a href="https://kitai-school.ru" target="_blank" rel="noopener">Kitai-School.ru</a> · Тел. +7 (958) 538-70-80 · info@kitai-school.ru</p>
+  <p class="lic">ИП Горяина Юлия Павловна · ИНН 228900391328 · ОГРНИП 324774600267683 · Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы, с 07.05.2025)</p>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/business" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Бизнес-китайский</a>
+    <p class="side-note">Определим уровень и покажем платформу бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/csca-himiya#article",
+      "headline": "Химия на CSCA: как выучить китайскую химическую терминологию и сдать экзамен",
+      "description": "Химическая лексика CSCA на китайском: элементы, соединения, типы реакций и лабораторное оборудование.",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-20",
+      "dateModified": "2026-07-20",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/csca-himiya",
+      "about": [
+        {"@type": "Country", "name": "Китай", "sameAs": "https://www.wikidata.org/wiki/Q148"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Химия обязательна на CSCA?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Нет, физика и химия — предметы по выбору; их сдают, если этого требует специальность (медицина, химия, инженерия)."}},
+        {"@type": "Question", "name": "Что сложнее всего в химии CSCA для иностранца?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Терминология: названия элементов, соединений и типов реакций на китайском."}},
+        {"@type": "Question", "name": "Как запомнить названия элементов?",
+         "acceptedAnswer": {"@type": "Answer", "text": "По радикалу-подсказке: 气 — газы (氢, 氧), 钅 — металлы (钠, 铁), 石 — твёрдые неметаллы (碳, 硫)."}},
+        {"@type": "Question", "name": "На каком языке сдают химию CSCA?",
+         "acceptedAnswer": {"@type": "Answer", "text": "На китайском или английском — на выбор; 48 вопросов за 60 минут."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Химия на CSCA"}
+      ]
+    }
+  ]
+}
+</script>
