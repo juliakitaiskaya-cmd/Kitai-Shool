@@ -1,0 +1,414 @@
+<div id="ks-wrap">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:46px;line-height:1.08;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo{margin:28px auto;text-align:center}
+#ks-art .ks-photo img{width:100%;max-width:460px;height:auto;display:block;margin:0 auto;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px auto 0;max-width:460px}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+#ks-art .ks-quote cite a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:12px 16px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → HSK 2 пробный тест
+</nav>
+
+<article>
+<p class="eyebrow">Экзамены HSK</p>
+<h1>HSK 2 пробный тест: как понять, что ты <span class="italic">действительно готов</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-07-22">22 июля 2026</time>
+  </div>
+</div>
+
+<p class="passport">Пробный тест HSK 2 (<span class="hanline">模拟考试</span>, mónǐ kǎoshì) — это репетиция реального экзамена: те же два раздела (аудирование 35 вопросов и чтение 25), тот же тайминг около 55 минут и максимум 200 баллов, проходной — 120. Но «прошёл тест онлайн» и «готов» — не одно и то же. Балл на пробнике честный только тогда, когда вы проходите его в реальных условиях: с таймером, с аудио «один раз» и, главное, в чтении — не опираясь на пиньинь.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Пробный тест HSK 2 зеркалит экзамен — аудирование (35) + чтение (25) = 60 вопросов, ~55 минут, максимум 200 баллов, проходной 120. Готов ли ты на самом деле — покажет только пробник в реальных условиях: таймер, аудио один раз, без пауз, и чтение без опоры на пиньинь. А главная ценность — не балл, а разбор ошибок по категориям.</p>
+</div>
+
+<h2>Что такое пробный тест HSK 2 и <span class="italic">зачем</span> он нужен</h2>
+<p>Пробный тест — это полный прогон экзамена дома и заранее, в тех же рамках, что на реальной сдаче. Он отвечает на главный вопрос перед регистрацией: готов ли я на самом деле, или мне только так кажется. Между «я вроде всё знаю» и реальным баллом на тесте часто лежит пропасть — и лучше увидеть её до экзамена, а не на нём.</p>
+<p>Вторая задача пробника — снять стресс формата. На HSK 2 аудирование заметно длиннее, чем на HSK 1, а в чтении появляются связные тексты. Когда вы уже прошли это на пробнике, на экзамене нет сюрпризов: знакомы и темп, и типы заданий, и ощущение таймера.</p>
+
+<h2>Как устроен пробный тест: <span class="italic">структура</span></h2>
+<p>Хороший пробник в точности повторяет реальный HSK 2. Сверяйтесь со структурой: если число вопросов или разделов не сходится — это не настоящий формат.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Структура HSK 2, которую должен зеркалить пробный тест (по редакции HSK 2.0).</caption>
+  <thead>
+    <tr><th>Раздел</th><th>Вопросов</th><th>Время</th><th>Баллы</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Аудирование (听力)</td><td>35</td><td>≈ 25 минут</td><td>до 100</td></tr>
+    <tr><td>Чтение (阅读)</td><td>25</td><td>≈ 22 минуты</td><td>до 100</td></tr>
+    <tr><td>Итого</td><td>60</td><td>≈ 55 минут (с анкетой)</td><td>200 · проходной 120</td></tr>
+  </tbody>
+</table>
+</div>
+
+<blockquote class="ks-quote">
+  <p>«HSK 2 состоит из двух частей — аудирования (35 вопросов) и чтения (25), всего 60 заданий; максимум — 200 баллов, а для сдачи нужно набрать 120».</p>
+  <cite>— <a href="https://improvemandarin.com/hsk-level-2/" target="_blank" rel="noopener nofollow">ImproveMandarin: HSK Level 2</a></cite>
+</blockquote>
+
+<p>Полный разбор самого экзамена — в статье про <a href="https://kitai-school.ru/article/hsk-2" target="_blank" rel="noopener">HSK 2</a>. Здесь — только про то, как выжать из пробника максимум.</p>
+
+<h2>Как симулировать реальные <span class="italic">условия</span></h2>
+<p>Главная ошибка — «порешать в удобном режиме»: на паузе, переслушивая аудио, подглядывая в словарь. Такой балл красивый, но врёт. Чтобы пробник что-то показал, условия должны совпадать с экзаменом:</p>
+<p><b>Таймер включён.</b> Ставьте общее время и не растягивайте.<br>
+<b>Аудио звучит один раз.</b> На HSK 2 запись длиннее — тем важнее не отматывать и не ставить на паузу.<br>
+<b>Без словаря и подсказок.</b> Не поняли слово — по контексту, а не через переводчик.<br>
+<b>Тишина, один заход.</b> Без перерывов между разделами, телефон в сторону.<br>
+<b>Перенос ответов в бланк.</b> Если готовитесь к бумажному формату, тренируйте перенос — на него уходит время.</p>
+
+<h2>Задания без пиньиня: главная тренировка <span class="italic">HSK 2</span></h2>
+<p>Вот приём, который отличает «прорешал» от «подготовился». На HSK 2 над иероглифами всё ещё печатают пиньинь — и это ловушка: кажется, что читать легко. Но если на пробнике вы держите глаза на транскрипции и проговариваете каждый слог, вы <b>не успеваете</b> и не тренируете то, что реально решает, — узнавание слов.</p>
+<p>Поэтому на подготовительных пробниках закрывайте пиньинь: полоской бумаги на печатном тесте или отдельным режимом в тренажёре. Заставьте себя узнавать слово по иероглифам. Сначала будет медленно и некомфортно — зато на экзамене, где пиньинь есть, чтение полетит, и вы уложитесь в 25 вопросов за 22 минуты с запасом.</p>
+<p class="note">Правило простое: тренируемся тяжелее, чем на экзамене. Читаешь пробник без пиньиня — на реальном тесте с пиньинем будет легко. Наоборот не работает.</p>
+
+<h2>Где теряют баллы на пробнике <span class="italic">HSK 2</span></h2>
+<p>По пробникам хорошо видно типовые провалы — и почти все они не про «мало слов», а про формат и восприятие:</p>
+<p><b>Чтение на скорость.</b> Опора на пиньинь замедляет — 25 вопросов за 22 минуты требуют беглого узнавания.<br>
+<b>Длинное аудирование.</b> 35 вопросов, запись один раз: «зависнешь» на одном — пропустишь следующий.<br>
+<b>Новые форматы чтения.</b> «Заполни пропуск» и «сопоставь» требуют понять смысл, а не просто прочитать.<br>
+<b>Тоны на слух.</b> Похожие по звучанию слова путаются, если учить только глазами.</p>
+
+<h2>Как анализировать <span class="italic">ошибки</span> после теста</h2>
+<p>Ценность пробника — в разборе, а не в баллe. После каждого прогона пройдите по ошибкам и разложите их по категориям — так видно, что чинить:</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Разбор ошибок пробного теста HSK 2 по категориям — и что с каждой делать.</caption>
+  <thead><tr><th>Тип ошибки</th><th>Что делать</th></tr></thead>
+  <tbody>
+    <tr><td>Не узнал слово по иероглифам</td><td>В список слов, учить «в лицо», тренировать без пиньиня</td></tr>
+    <tr><td>Перепутал тон / не расслышал</td><td>Слушать слово и минимальные пары каждый день</td></tr>
+    <tr><td>Не понял, что требуется в задании</td><td>Разобрать формат этой части, прорешать похожие</td></tr>
+    <tr><td>Знал, но не успел</td><td>Тренировать темп: лимит времени на блок</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Ведите журнал ошибок: дата, балл по разделам и 3–5 главных промахов. Через 2–3 теста повторяющиеся ошибки станут вашим планом на «дотянуть».</p>
+
+<h2>Где взять пробные тесты <span class="italic">HSK 2</span></h2>
+<p>Приоритет — официальным материалам: только они гарантированно совпадают с форматом.</p>
+<p><b>chinesetest.cn</b> — официальный сайт экзамена: образцы тестов (sample papers) с аудио.<br>
+<b>HSK Standard Course 2</b> — в стандартном учебнике и рабочей тетради есть пробные варианты.<br>
+<b>Онлайн-тренажёры</b> — удобны для быстрой практики, но проверяйте, что формат совпадает со структурой выше.</p>
+
+<h2>Сколько пробников и <span class="italic">когда</span></h2>
+<p>Количество не цель — важнее разбор. Рабочая схема при подготовке с базой HSK 1:</p>
+<div class="table-wrap">
+<table>
+  <caption>Когда и сколько пробных тестов проходить при подготовке к HSK 2.</caption>
+  <thead><tr><th>Этап</th><th>Что делать с пробником</th></tr></thead>
+  <tbody>
+    <tr><td>В начале</td><td>Один диагностический — понять стартовую точку и слабый раздел</td></tr>
+    <tr><td>За 3–4 недели</td><td>Пробники по разделам + чтение без пиньиня на скорость</td></tr>
+    <tr><td>За 1–2 недели</td><td>1–2 полных теста на время, с полным разбором ошибок</td></tr>
+    <tr><td>Накануне</td><td>Не новый тест, а повторение своих ошибок и слов</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Ученица уверенно «сдавала» пробники HSK 2 дома — и удивилась, когда на моём контрольном чтение просело. Причина всплыла сразу: дома она читала, скользя по пиньиню, и не замечала, что не узнаёт сами слова.</p>
+  <p>Мы стали проходить пробники с закрытым пиньинем. Первые разы — медленно и с ошибками, но через три теста она начала узнавать слова мгновенно. На реальном экзамене, где пиньинь на месте, чтение уже не было проблемой. Пробник показывает готовность честно только тогда, когда вы не даёте себе поблажек.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где взять пробный тест HSK 2?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Официальные образцы — на chinesetest.cn; ещё пробники есть в сборнике HSK Standard Course 2 и в онлайн-тренажёрах.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как понять, что я готов к HSK 2?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Если в реальных условиях (таймер, аудио один раз) вы стабильно набираете выше проходного 120 из 200, а чтение не проседает без опоры на пиньинь.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как проходить пробный тест правильно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Целиком и на время, с аудио «один раз» и без пауз, затем переносить ответы в бланк.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что значит «задания без пиньиня»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Приём подготовки: закрывать пиньинь и узнавать слова по иероглифам, чтобы не зависеть от транскрипции и успевать по времени.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Хотите пройти пробный тест HSK 2 в настоящих условиях и с разбором? На диагностическом уроке мы проведём пробник, покажем ваш реальный балл по разделам и проверим, как у вас с чтением без пиньиня — а затем соберём план под вашу дату.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на диагностический урок →</a></p>
+  <p>Или напишите слово <b>HSK</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подскажем формат. Заниматься можно на <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсах</a> или <a href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener">индивидуально</a>.</p>
+</div>
+
+<p>Дальше по теме: полный разбор экзамена — <a href="https://kitai-school.ru/article/hsk-2" target="_blank" rel="noopener">HSK 2 без стресса</a>; с чего начинали — <a href="https://kitai-school.ru/article/hsk-1-probnyy-test" target="_blank" rel="noopener">HSK 1 пробный тест</a> и <a href="https://kitai-school.ru/article/hsk-1" target="_blank" rel="noopener">HSK 1</a>; общий ориентир по срокам — <a href="https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya" target="_blank" rel="noopener">за сколько выучить китайский с нуля</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://www.chinesetest.cn/" target="_blank" rel="noopener nofollow">chinesetest.cn</a> — официальный сайт экзамена HSK (образцы тестов, регистрация, HSK 3.0).</li>
+    <li><a href="https://improvemandarin.com/hsk-level-2/" target="_blank" rel="noopener nofollow">ImproveMandarin: HSK Level 2</a> — структура, 60 вопросов, баллы.</li>
+    <li><a href="https://www.wikidata.org/wiki/Q535477" target="_blank" rel="noopener nofollow">Wikidata: HSK (Q535477)</a> — канонический узел экзамена.</li>
+    <li><a href="https://ru.wikipedia.org/wiki/HSK" target="_blank" rel="noopener nofollow">Википедия: HSK</a> — общая справка об экзамене.</li>
+  </ol>
+</div>
+
+<p class="sign">Удачи на экзамене! <span class="han">加油！</span></p>
+
+<div class="tags">
+  <span>#HSK2</span> <span>#пробныйтест</span> <span>#HSK2test</span> <span>#подготовкакHSK</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики с китайскими компаниями — TCL, Great Wall Motors, FAW. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/business" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Бизнес-китайский</a>
+    <p class="side-note">Определим уровень и покажем платформу бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/hsk-2-probnyy-test#article",
+      "headline": "HSK 2 пробный тест: проходишь тесты онлайн — но готов ли ты на самом деле?",
+      "description": "Как правильно работать с пробными тестами HSK 2: симуляция условий, тренировка без пиньиня и разбор ошибок.",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-22",
+      "dateModified": "2026-07-22",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/hsk-2-probnyy-test",
+      "about": {
+        "@type": "Thing",
+        "name": "HSK 2",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q535477",
+          "https://www.chinesetest.cn/",
+          "https://ru.wikipedia.org/wiki/HSK"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "Course",
+      "name": "Курс подготовки к HSK 2",
+      "description": "Систематическая подготовка к HSK 2: 300 слов, грамматика, аудирование и чтение, пробные тесты в реальных условиях.",
+      "provider": {"@id": "https://kitai-school.ru/#org"},
+      "inLanguage": "zh",
+      "educationalLevel": "HSK 2 / CEFR A2",
+      "teaches": "Китайский язык до уровня HSK 2"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Где взять пробный тест HSK 2?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Официальные образцы — на chinesetest.cn; ещё пробники есть в сборнике HSK Standard Course 2 и в онлайн-тренажёрах."}},
+        {"@type": "Question", "name": "Как понять, что я готов к HSK 2?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Если в реальных условиях (таймер, аудио один раз) вы стабильно набираете выше проходного 120 из 200, а чтение не проседает без опоры на пиньинь."}},
+        {"@type": "Question", "name": "Как проходить пробный тест правильно?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Целиком и на время, с аудио «один раз» и без пауз, затем переносить ответы в бланк."}},
+        {"@type": "Question", "name": "Что значит «задания без пиньиня»?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Приём подготовки: закрывать пиньинь и узнавать слова по иероглифам, чтобы не зависеть от транскрипции и успевать по времени."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "HSK 2 пробный тест"}
+      ]
+    }
+  ]
+}
+</script>
