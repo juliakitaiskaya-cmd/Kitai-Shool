@@ -1,0 +1,453 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:46px;line-height:1.08;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo{margin:28px auto;text-align:center}
+#ks-art .ks-photo img{width:100%;max-width:460px;height:auto;display:block;margin:0 auto;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px auto 0;max-width:460px}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .hancell td:first-child{font-family:var(--fh)!important;font-size:22px;color:var(--brick)!important;white-space:nowrap}
+#ks-art .hancell td .py{font-family:var(--fs)!important;font-size:13px;color:var(--taupe)!important;font-weight:500}
+#ks-art .hancell .ex{font-family:var(--fh)!important;font-size:16px;color:var(--ink)!important}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/bazovye-glagoly-kitajskogo-yazyka#article",
+      "headline": "Топ-50 базовых глаголов китайского языка с примерами употребления",
+      "description": "Базовые глаголы китайского языка: движения, состояния и действия с пиньинем, переводом и примерами. Почему глаголы не спрягаются и как выразить время частицами 了 и 过.",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-28",
+      "dateModified": "2026-07-28",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/bazovye-glagoly-kitajskogo-yazyka",
+      "about": {
+        "@type": "Thing",
+        "name": "Китайский глагол",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Китайский_язык",
+          "https://en.wikipedia.org/wiki/Chinese_grammar"
+        ]
+      },
+      "mentions": [
+        {"@type": "Thing", "name": "Видовые частицы (了, 过, 着)", "sameAs": "https://en.wikipedia.org/wiki/Chinese_grammar"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Спрягаются ли глаголы в китайском языке?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Нет. Форма глагола не меняется по лицам, числам и временам: 我吃 (я ем), 你吃 (ты ешь), 他吃 (он ест) — глагол 吃 одинаковый. Время и завершённость передают частицы (了, 过) и слова-маркеры времени."}},
+        {"@type": "Question", "name": "Как в китайском выразить прошедшее время?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Частицей 了 (завершённое действие) или 过 (был опыт), а также словами вроде 昨天 (вчера). Например: 我吃了 — я поел; 我去过中国 — я бывал в Китае."}},
+        {"@type": "Question", "name": "Чем 不 отличается от 没 при отрицании глагола?",
+         "acceptedAnswer": {"@type": "Answer", "text": "不 (bù) отрицает настоящее, привычное и будущее: 我不喝酒 — я не пью. 没(有) (méi) отрицает совершение действия в прошлом: 我没吃 — я не ел."}},
+        {"@type": "Question", "name": "Сколько глаголов нужно для базового общения на китайском?",
+         "acceptedAnswer": {"@type": "Answer", "text": "На старте достаточно 50–100 самых частотных: движения (来去走回), бытийные (是有在) и действия (吃喝看说做). Этого хватает для HSK 1–2 и повседневных диалогов."}},
+        {"@type": "Question", "name": "Чем отличаются глаголы 是 и 在?",
+         "acceptedAnswer": {"@type": "Answer", "text": "是 (shì) — «быть, являться» для качеств и определений: 我是老师 (я учитель). 在 (zài) — «находиться» для места: 我在家 (я дома). Для местоположения 是 не используют."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Базовые глаголы китайского языка"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Базовые глаголы китайского языка
+</nav>
+
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Топ-50 базовых глаголов китайского языка <span class="italic">с примерами</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-07-28">28 июля 2026</time>
+  </div>
+</div>
+
+<p class="passport">Глагол (<span class="hanline">动词</span>, dòngcí) — самое благодарное, что есть в китайской грамматике: он не спрягается. Одна и та же форма подходит для «я», «ты» и «он», для сегодня и вчера. Выучив 50 базовых глаголов движения, состояния и действия, вы уже можете строить простые фразы. Ниже — системная подборка с пиньинем, переводом и примерами в предложениях, а также короткий разбор, как без спряжений выразить время и отрицание.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Китайский глагол не меняет форму: 我吃 / 你吃 / 他吃 — «ем / ешь / ест» с одним и тем же 吃. Время и завершённость передают частицы: 了 (действие завершено), 过 (был опыт), 着 (длится). Отрицание — 不 (настоящее, привычка, будущее) и 没 (не было в прошлом). Достаточно 50–100 частотных глаголов — движения (来去回), бытийных (是有在) и действий (吃喝看说做) — чтобы заговорить на уровне HSK 1–2.</p>
+</div>
+
+<h2>Почему китайские глаголы — это <span class="italic">просто</span></h2>
+<p>Для тех, кто мучился со спряжениями в европейских языках, здесь хорошая новость. В китайском у глагола <b>одна форма на всё</b>: нет лица, числа, рода и времени.</p>
+<p><b>Нет спряжения по лицам.</b> 我去 (wǒ qù) — я иду, 你去 (nǐ qù) — ты идёшь, 他们去 (tāmen qù) — они идут. Глагол 去 неизменен.<br>
+<b>Нет форм времени.</b> Само по себе 我吃饭 значит «я ем / ем вообще». Когда это произошло — уточняют словами (今天 сегодня, 昨天 вчера, 明天 завтра) и частицами.<br>
+<b>Смысл собирает порядок слов.</b> Базовая схема — «кто → (когда/где) → глагол → что»: <span class="hanline">我 + 喝 + 茶</span> (wǒ hē chá) — «я пью чай».</p>
+<p class="note">Сложность китайского глагола не в форме, а в <b>виде</b> (завершено / длится / было в опыте) и в служебных словах вокруг него. Именно это мы разбираем ниже — и именно это отрабатывается на уроках до автоматизма.</p>
+
+<h2>Глаголы <span class="italic">движения</span></h2>
+<p>С них удобно начинать: они частотны, короткие и сразу дают ощущение «я говорю». Многие потом работают как модификаторы направления (来/去 после других глаголов).</p>
+<div class="table-wrap">
+<table class="hancell">
+  <caption>Базовые глаголы движения. В примерах — пиньинь и перевод.</caption>
+  <thead><tr><th>Глагол</th><th>Пиньинь</th><th>Перевод</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td>来</td><td><span class="py">lái</span></td><td>приходить, прийти</td><td><span class="ex">他明天来。</span><br><span class="py">Tā míngtiān lái. — Он придёт завтра.</span></td></tr>
+    <tr><td>去</td><td><span class="py">qù</span></td><td>идти, уходить (туда)</td><td><span class="ex">我去学校。</span><br><span class="py">Wǒ qù xuéxiào. — Я иду в школу.</span></td></tr>
+    <tr><td>走</td><td><span class="py">zǒu</span></td><td>идти пешком, уходить</td><td><span class="ex">我们走吧。</span><br><span class="py">Wǒmen zǒu ba. — Пойдём.</span></td></tr>
+    <tr><td>回</td><td><span class="py">huí</span></td><td>возвращаться</td><td><span class="ex">我回家。</span><br><span class="py">Wǒ huí jiā. — Я иду домой.</span></td></tr>
+    <tr><td>到</td><td><span class="py">dào</span></td><td>прибывать, доходить</td><td><span class="ex">我到了。</span><br><span class="py">Wǒ dào le. — Я на месте / приехал.</span></td></tr>
+    <tr><td>进</td><td><span class="py">jìn</span></td><td>входить</td><td><span class="ex">请进！</span><br><span class="py">Qǐng jìn! — Входите, пожалуйста!</span></td></tr>
+    <tr><td>出</td><td><span class="py">chū</span></td><td>выходить</td><td><span class="ex">他出去了。</span><br><span class="py">Tā chūqù le. — Он вышел.</span></td></tr>
+    <tr><td>上</td><td><span class="py">shàng</span></td><td>подниматься, садиться (в транспорт)</td><td><span class="ex">上车吧。</span><br><span class="py">Shàng chē ba. — Садись в машину.</span></td></tr>
+    <tr><td>下</td><td><span class="py">xià</span></td><td>спускаться, выходить (из транспорта)</td><td><span class="ex">我在这儿下车。</span><br><span class="py">Wǒ zài zhèr xià chē. — Я выхожу здесь.</span></td></tr>
+    <tr><td>跑</td><td><span class="py">pǎo</span></td><td>бегать, бежать</td><td><span class="ex">他跑得很快。</span><br><span class="py">Tā pǎo de hěn kuài. — Он бегает быстро.</span></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Глаголы <span class="italic">состояния</span> и модальные</h2>
+<p>Сюда входят «служебные» глаголы — быть, иметь, находиться — и модальные (хотеть, уметь, мочь). Без них не построить почти ни одной фразы.</p>
+<div class="table-wrap">
+<table class="hancell">
+  <caption>Бытийные, эмоциональные и модальные глаголы.</caption>
+  <thead><tr><th>Глагол</th><th>Пиньинь</th><th>Перевод</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td>是</td><td><span class="py">shì</span></td><td>быть, являться</td><td><span class="ex">我是学生。</span><br><span class="py">Wǒ shì xuésheng. — Я студент.</span></td></tr>
+    <tr><td>有</td><td><span class="py">yǒu</span></td><td>иметь, иметься</td><td><span class="ex">我有时间。</span><br><span class="py">Wǒ yǒu shíjiān. — У меня есть время.</span></td></tr>
+    <tr><td>在</td><td><span class="py">zài</span></td><td>находиться (где-то)</td><td><span class="ex">他在家。</span><br><span class="py">Tā zài jiā. — Он дома.</span></td></tr>
+    <tr><td>想</td><td><span class="py">xiǎng</span></td><td>хотеть; думать; скучать</td><td><span class="ex">我想喝茶。</span><br><span class="py">Wǒ xiǎng hē chá. — Я хочу выпить чаю.</span></td></tr>
+    <tr><td>要</td><td><span class="py">yào</span></td><td>хотеть, нужно, собираться</td><td><span class="ex">我要这个。</span><br><span class="py">Wǒ yào zhège. — Я хочу это.</span></td></tr>
+    <tr><td>会</td><td><span class="py">huì</span></td><td>уметь; будет (вероятность)</td><td><span class="ex">我会说中文。</span><br><span class="py">Wǒ huì shuō Zhōngwén. — Я умею говорить по-китайски.</span></td></tr>
+    <tr><td>能</td><td><span class="py">néng</span></td><td>мочь (быть в состоянии)</td><td><span class="ex">你能帮我吗？</span><br><span class="py">Nǐ néng bāng wǒ ma? — Ты можешь мне помочь?</span></td></tr>
+    <tr><td>可以</td><td><span class="py">kěyǐ</span></td><td>можно (разрешение)</td><td><span class="ex">可以进来吗？</span><br><span class="py">Kěyǐ jìnlái ma? — Можно войти?</span></td></tr>
+    <tr><td>喜欢</td><td><span class="py">xǐhuan</span></td><td>нравиться, любить</td><td><span class="ex">我喜欢中国菜。</span><br><span class="py">Wǒ xǐhuan Zhōngguó cài. — Мне нравится китайская кухня.</span></td></tr>
+    <tr><td>爱</td><td><span class="py">ài</span></td><td>любить</td><td><span class="ex">我爱你。</span><br><span class="py">Wǒ ài nǐ. — Я тебя люблю.</span></td></tr>
+    <tr><td>觉得</td><td><span class="py">juéde</span></td><td>считать, полагать; чувствовать</td><td><span class="ex">我觉得很好。</span><br><span class="py">Wǒ juéde hěn hǎo. — По-моему, это хорошо.</span></td></tr>
+    <tr><td>知道</td><td><span class="py">zhīdào</span></td><td>знать (факт)</td><td><span class="ex">我不知道。</span><br><span class="py">Wǒ bù zhīdào. — Я не знаю.</span></td></tr>
+    <tr><td>认识</td><td><span class="py">rènshi</span></td><td>быть знакомым, узнавать</td><td><span class="ex">我认识他。</span><br><span class="py">Wǒ rènshi tā. — Я его знаю (знаком).</span></td></tr>
+    <tr><td>希望</td><td><span class="py">xīwàng</span></td><td>надеяться, желать</td><td><span class="ex">我希望你来。</span><br><span class="py">Wǒ xīwàng nǐ lái. — Надеюсь, ты придёшь.</span></td></tr>
+    <tr><td>需要</td><td><span class="py">xūyào</span></td><td>нуждаться, требоваться</td><td><span class="ex">我需要帮助。</span><br><span class="py">Wǒ xūyào bāngzhù. — Мне нужна помощь.</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note"><b>Не путайте 是 и 在.</b> 是 (shì) — «быть кем/чем» (我是老师 — я учитель), 在 (zài) — «быть где» (我在北京 — я в Пекине). Для местоположения 是 не используют.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Когда ученики узнают, что глаголы не спрягаются, у них загораются глаза: «И всё?!» А через неделю приходят с другой проблемой — «я знаю слова, но не понимаю, где ставить 了». Это нормально: трудность китайского глагола не в формах, а в том, как показать, что действие <i>завершилось</i> или <i>уже случалось</i>.</p>
+  <p>Поэтому на уроках я советую учить глагол не голым списком, а сразу «пучком»: 吃 → 吃饭 → 吃了饭 → 吃过 → 想吃. Одно слово в пяти живых контекстах запоминается прочнее, чем десять слов из столбика. Через месяц такой практики частицы 了/过/着 перестают пугать и встают на места сами.</p>
+</div>
+
+<h2>Глаголы <span class="italic">действия</span> (быт и учёба)</h2>
+<p>Самая большая группа — то, что мы делаем каждый день. Именно эти глаголы дают основу для бытовых диалогов: в кафе, в магазине, на учёбе, дома.</p>
+<div class="table-wrap">
+<table class="hancell">
+  <caption>Частотные глаголы действия для повседневных ситуаций.</caption>
+  <thead><tr><th>Глагол</th><th>Пиньинь</th><th>Перевод</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td>吃</td><td><span class="py">chī</span></td><td>есть, кушать</td><td><span class="ex">我吃米饭。</span><br><span class="py">Wǒ chī mǐfàn. — Я ем рис.</span></td></tr>
+    <tr><td>喝</td><td><span class="py">hē</span></td><td>пить</td><td><span class="ex">我喝水。</span><br><span class="py">Wǒ hē shuǐ. — Я пью воду.</span></td></tr>
+    <tr><td>看</td><td><span class="py">kàn</span></td><td>смотреть, читать</td><td><span class="ex">我看书。</span><br><span class="py">Wǒ kàn shū. — Я читаю книгу.</span></td></tr>
+    <tr><td>听</td><td><span class="py">tīng</span></td><td>слушать</td><td><span class="ex">我听音乐。</span><br><span class="py">Wǒ tīng yīnyuè. — Я слушаю музыку.</span></td></tr>
+    <tr><td>说</td><td><span class="py">shuō</span></td><td>говорить, сказать</td><td><span class="ex">请慢点儿说。</span><br><span class="py">Qǐng màn diǎnr shuō. — Говорите помедленнее.</span></td></tr>
+    <tr><td>读</td><td><span class="py">dú</span></td><td>читать (вслух), учиться</td><td><span class="ex">他在读课文。</span><br><span class="py">Tā zài dú kèwén. — Он читает текст.</span></td></tr>
+    <tr><td>写</td><td><span class="py">xiě</span></td><td>писать</td><td><span class="ex">我写汉字。</span><br><span class="py">Wǒ xiě Hànzì. — Я пишу иероглифы.</span></td></tr>
+    <tr><td>做</td><td><span class="py">zuò</span></td><td>делать, заниматься</td><td><span class="ex">你做什么？</span><br><span class="py">Nǐ zuò shénme? — Что ты делаешь?</span></td></tr>
+    <tr><td>买</td><td><span class="py">mǎi</span></td><td>покупать</td><td><span class="ex">我买东西。</span><br><span class="py">Wǒ mǎi dōngxi. — Я покупаю вещи.</span></td></tr>
+    <tr><td>卖</td><td><span class="py">mài</span></td><td>продавать</td><td><span class="ex">他们卖水果。</span><br><span class="py">Tāmen mài shuǐguǒ. — Они продают фрукты.</span></td></tr>
+    <tr><td>学习</td><td><span class="py">xuéxí</span></td><td>учиться, изучать</td><td><span class="ex">我学习中文。</span><br><span class="py">Wǒ xuéxí Zhōngwén. — Я учу китайский.</span></td></tr>
+    <tr><td>工作</td><td><span class="py">gōngzuò</span></td><td>работать</td><td><span class="ex">他在北京工作。</span><br><span class="py">Tā zài Běijīng gōngzuò. — Он работает в Пекине.</span></td></tr>
+    <tr><td>用</td><td><span class="py">yòng</span></td><td>использовать, применять</td><td><span class="ex">我用筷子。</span><br><span class="py">Wǒ yòng kuàizi. — Я пользуюсь палочками.</span></td></tr>
+    <tr><td>找</td><td><span class="py">zhǎo</span></td><td>искать</td><td><span class="ex">我找我的手机。</span><br><span class="py">Wǒ zhǎo wǒ de shǒujī. — Я ищу свой телефон.</span></td></tr>
+    <tr><td>给</td><td><span class="py">gěi</span></td><td>давать</td><td><span class="ex">给我看看。</span><br><span class="py">Gěi wǒ kànkan. — Дай посмотреть.</span></td></tr>
+    <tr><td>拿</td><td><span class="py">ná</span></td><td>брать, держать (в руке)</td><td><span class="ex">拿着这个。</span><br><span class="py">Názhe zhège. — Держи это.</span></td></tr>
+    <tr><td>开</td><td><span class="py">kāi</span></td><td>открывать, включать, водить</td><td><span class="ex">请开门。</span><br><span class="py">Qǐng kāi mén. — Откройте дверь, пожалуйста.</span></td></tr>
+    <tr><td>关</td><td><span class="py">guān</span></td><td>закрывать, выключать</td><td><span class="ex">关灯吧。</span><br><span class="py">Guān dēng ba. — Выключи свет.</span></td></tr>
+    <tr><td>坐</td><td><span class="py">zuò</span></td><td>сидеть, садиться; ехать (на)</td><td><span class="ex">请坐。</span><br><span class="py">Qǐng zuò. — Садитесь, пожалуйста.</span></td></tr>
+    <tr><td>站</td><td><span class="py">zhàn</span></td><td>стоять</td><td><span class="ex">别站在门口。</span><br><span class="py">Bié zhàn zài ménkǒu. — Не стой в дверях.</span></td></tr>
+    <tr><td>睡觉</td><td><span class="py">shuìjiào</span></td><td>спать, ложиться спать</td><td><span class="ex">我要睡觉了。</span><br><span class="py">Wǒ yào shuìjiào le. — Я иду спать.</span></td></tr>
+    <tr><td>起床</td><td><span class="py">qǐchuáng</span></td><td>вставать (с постели)</td><td><span class="ex">我七点起床。</span><br><span class="py">Wǒ qī diǎn qǐchuáng. — Я встаю в семь.</span></td></tr>
+    <tr><td>打</td><td><span class="py">dǎ</span></td><td>бить; играть (в мяч); звонить</td><td><span class="ex">我给你打电话。</span><br><span class="py">Wǒ gěi nǐ dǎ diànhuà. — Я тебе позвоню.</span></td></tr>
+    <tr><td>帮</td><td><span class="py">bāng</span></td><td>помогать</td><td><span class="ex">谢谢你帮我。</span><br><span class="py">Xièxie nǐ bāng wǒ. — Спасибо, что помог.</span></td></tr>
+    <tr><td>等</td><td><span class="py">děng</span></td><td>ждать</td><td><span class="ex">等一下。</span><br><span class="py">Děng yíxià. — Подожди немного.</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note"><b>Обратите внимание на 睡觉, 起床, 打电话.</b> Это «глагол + дополнение» (离合词): между частями можно вставлять слова — 睡了一觉, 起了床. На старте достаточно запомнить их целиком.</p>
+
+<h2>Как выразить время без <span class="italic">спряжений</span></h2>
+<p>Раз глагол не меняется, время и характер действия показывают три инструмента: слова-маркеры, видовые частицы и правильное отрицание.</p>
+<h3>Видовые частицы: 了, 过, 着</h3>
+<p><b>了 (le)</b> — действие <b>завершилось</b> или произошло изменение: 我吃<b>了</b>饭 (wǒ chī le fàn) — «я поел».<br>
+<b>过 (guo)</b> — <b>был опыт</b>, «доводилось»: 我去<b>过</b>中国 (wǒ qù guo Zhōngguó) — «я бывал в Китае».<br>
+<b>着 (zhe)</b> — состояние <b>длится</b>: 门开<b>着</b> (mén kāi zhe) — «дверь открыта (стоит открытой)».</p>
+<h3>Отрицание: 不 и 没</h3>
+<p><b>不 (bù)</b> — настоящее, привычка, будущее, желание: 我<b>不</b>喝酒 (wǒ bù hē jiǔ) — «я не пью (алкоголь)».<br>
+<b>没(有) (méi yǒu)</b> — действие <b>не совершилось</b> в прошлом: 我<b>没</b>吃 (wǒ méi chī) — «я не ел». С 没 частица 了 не ставится.</p>
+<div class="table-wrap">
+<table class="hancell">
+  <caption>Один глагол 吃 в разных «временах» — форма не меняется.</caption>
+  <thead><tr><th>Фраза</th><th>Пиньинь</th><th>Смысл</th></tr></thead>
+  <tbody>
+    <tr><td>我吃饭</td><td><span class="py">wǒ chī fàn</span></td><td>я ем / ем вообще</td></tr>
+    <tr><td>我吃了饭</td><td><span class="py">wǒ chī le fàn</span></td><td>я поел (завершено)</td></tr>
+    <tr><td>我吃过日本菜</td><td><span class="py">wǒ chī guo Rìběn cài</span></td><td>я пробовал японскую кухню</td></tr>
+    <tr><td>我在吃饭</td><td><span class="py">wǒ zài chī fàn</span></td><td>я (сейчас) ем</td></tr>
+    <tr><td>我没吃饭</td><td><span class="py">wǒ méi chī fàn</span></td><td>я не ел</td></tr>
+    <tr><td>我明天吃</td><td><span class="py">wǒ míngtiān chī</span></td><td>я поем завтра</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Частые ошибки <span class="italic">новичков</span></h2>
+<p><b>Ставят 了 в отрицании.</b> Неверно ✗ 我没吃了 → верно ✓ 我没吃 (с 没 частица 了 не нужна).<br>
+<b>Путают 不 и 没.</b> «Вчера не ел» — это факт прошлого: 昨天没吃, а не 昨天不吃.<br>
+<b>Используют 是 для места.</b> Неверно ✗ 我是家 → верно ✓ 我在家.<br>
+<b>Пытаются «спрягать».</b> Не ищите окончаний — их нет. Меняется не глагол, а слова и частицы вокруг него.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Спрягаются ли глаголы в китайском языке?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. Форма глагола не меняется по лицам, числам и временам: 我吃 (я ем), 你吃 (ты ешь), 他吃 (он ест) — глагол 吃 одинаковый. Время и завершённость передают частицы (了, 过) и слова-маркеры времени.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как в китайском выразить прошедшее время?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Частицей 了 (завершённое действие) или 过 (был опыт), а также словами вроде 昨天 (вчера). Например: 我吃了 — я поел; 我去过中国 — я бывал в Китае.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 不 отличается от 没 при отрицании глагола?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>不 (bù) отрицает настоящее, привычное и будущее: 我不喝酒 — я не пью. 没(有) (méi) отрицает совершение действия в прошлом: 我没吃 — я не ел. С 没 частица 了 не ставится.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько глаголов нужно для базового общения на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На старте достаточно 50–100 самых частотных: движения (来去走回), бытийные (是有在) и действия (吃喝看说做). Этого хватает для HSK 1–2 и повседневных диалогов.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем отличаются глаголы 是 и 在?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>是 (shì) — «быть, являться» для качеств и определений: 我是老师 (я учитель). 在 (zài) — «находиться» для места: 我在家 (я дома). Для местоположения 是 не используют.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Хотите не просто выучить список, а научиться свободно строить фразы? На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсах Kitai School</a> мы ставим глаголы «в работу» с первого урока: частицы 了/过/着, отрицания и порядок слов — на живых диалогах, а не в теории.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на диагностический урок →</a></p>
+  <p>Или напишите слово <b>ГЛАГОЛЫ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — пришлём разбор и подберём формат.</p>
+</div>
+
+<p>Дальше по теме: с чего вообще начинать — <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify" target="_blank" rel="noopener">иероглифы или буквы</a>; сколько времени займёт язык — <a href="https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya" target="_blank" rel="noopener">за сколько выучить китайский с нуля</a>; как устроен первый экзамен — <a href="https://kitai-school.ru/article/hsk-1" target="_blank" rel="noopener">HSK 1</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://en.wikipedia.org/wiki/Chinese_grammar" target="_blank" rel="noopener nofollow">Wikipedia: Chinese grammar</a> — глагол, вид, видовые частицы 了/过/着.</li>
+    <li><a href="https://ru.wikipedia.org/wiki/Китайский_язык" target="_blank" rel="noopener nofollow">Википедия: Китайский язык</a> — грамматический строй, отсутствие словоизменения.</li>
+    <li>Практика Kitai School — методика постановки базовой лексики и глагольного вида на уроках.</li>
+  </ol>
+</div>
+
+<p class="sign">Успехов в учёбе! <span class="han">加油！</span></p>
+
+<div class="tags">
+  <span>#китайскиеглаголы</span> <span>#动词</span> <span>#лексикакитайского</span> <span>#грамматикакитайского</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/business" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Бизнес-китайский</a>
+    <p class="side-note">Определим уровень и покажем платформу бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
