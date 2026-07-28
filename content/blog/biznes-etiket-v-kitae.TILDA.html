@@ -1,4 +1,3 @@
-<div id="ks-wrap">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
 
@@ -44,6 +43,9 @@
 #ks-art .ks-photo{margin:28px auto;text-align:center}
 #ks-art .ks-photo img{width:100%;max-width:460px;height:auto;display:block;margin:0 auto;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
 #ks-art .ks-photo figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px auto 0;max-width:460px}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
 
 #ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
 #ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
@@ -112,7 +114,83 @@
 @media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
 @media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
 </style>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/biznes-etiket-v-kitae#article",
+      "headline": "Бизнес-этикет в Китае: 5 правил делового общения, которые решают всё",
+      "description": "Китайский деловой этикет: гуаньси и «лицо», приветствия, визитки, подарки и банкет — 5 правил, которые решают исход сделки.",
+      "image": "https://static.tildacdn.com/tild3436-3763-4566-a363-656233303232/biznesetiketvkitae.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-22",
+      "dateModified": "2026-07-22",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/biznes-etiket-v-kitae",
+      "about": {
+        "@type": "Thing",
+        "name": "Гуаньси",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Гуаньси",
+          "https://en.wikipedia.org/wiki/Guanxi"
+        ]
+      },
+      "mentions": [
+        {"@type": "Thing", "name": "Мяньцзы (лицо)", "sameAs": "https://en.wikipedia.org/wiki/Face_(sociological_concept)"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями (TCL, Great Wall Motors, FAW). Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что такое гуаньси?",
+         "acceptedAnswer": {"@type": "Answer", "text": "关系 (guānxi) — сеть личных связей и взаимного доверия. В Китае бизнес строится на отношениях, а не только на контракте."}},
+        {"@type": "Question", "name": "Что значит «сохранить лицо»?",
+         "acceptedAnswer": {"@type": "Answer", "text": "面子 (miànzi) — репутация и достоинство человека. Нельзя публично критиковать, ставить в неловкое положение или резко отказывать — это «отнимает лицо»."}},
+        {"@type": "Question", "name": "Как обмениваться визитками в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Двумя руками, текстом к собеседнику; визитку нужно принять, прочитать и не убирать сразу, не писать на ней при владельце."}},
+        {"@type": "Question", "name": "Какие подарки нельзя дарить китайцам?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Часы (送钟 созвучно «проводам в последний путь»), наборы из четырёх (四 ≈ 死 «смерть»), острое (нож — «разрыв»), зелёную шляпу; избегать белой и чёрной упаковки."}},
+        {"@type": "Question", "name": "Как вести себя на деловом банкете?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Дождаться хозяина, не начинать есть первым; на тосте 干杯 чокаться, держа свой бокал чуть ниже, чем у старшего, — это знак уважения."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Бизнес-этикет в Китае"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
 <div id="ks-art">
 
 <nav class="crumbs">
@@ -131,6 +209,8 @@
     <time datetime="2026-07-22">22 июля 2026</time>
   </div>
 </div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tild3436-3763-4566-a363-656233303232/biznesetiketvkitae.png" alt="Бизнес-этикет в Китае — 礼: гуаньси, лицо и 5 правил переговоров" width="1200" height="630"></figure>
 
 <p class="passport">Бизнес-этикет в Китае (<span class="hanline">商务礼仪</span>, shāngwù lǐyí) — это не «вежливость для галочки», а то, от чего напрямую зависит сделка. В китайской деловой культуре сначала строят отношения и берегут «лицо», и только потом обсуждают цифры. Иностранец теряет контракт не из-за цены, а из-за мелочей: подал визитку одной рукой, поспорил при всех, подарил не то. Ниже — пять правил, которые решают исход переговоров: гуаньси, лицо, визитки, подарки и деловой банкет.</p>
 
@@ -159,6 +239,8 @@
   <p>За 20 с лишним лет работы с китайскими компаниями — TCL, Great Wall Motors, FAW — я насмотрелась, как переговоры рушатся не на цене, а на мелочи. Один российский руководитель при всех поправил китайского коллегу — по делу, но публично. Формально он был прав; фактически — «отнял лицо», и тёплая встреча мгновенно остыла.</p>
   <p>Спасли ситуацию отношения: вечером за ужином извинились неформально, «дали лицо» старшему тостом — и сделка вернулась в русло. С тех пор я всем повторяю: в Китае важно не только что вы говорите, но и при ком. Форма здесь — часть содержания.</p>
 </div>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tild3664-3965-4331-b437-663164646338/biznesetiketvkitae5p.png" alt="5 правил бизнес-этикета в Китае: гуаньси (关系), лицо (面子), визитки (名片), подарки (礼物), банкет (宴会)" loading="lazy" width="1200" height="840"><figcaption>Пять правил, которые часто решают исход переговоров сильнее, чем сама цена.</figcaption></figure>
 
 <h2>Правило 3. Визитки (<span class="italic">名片</span>): только двумя руками</h2>
 <p>Обмен визитками (<span class="hanline">名片</span>, míngpiàn) — маленький ритуал, по которому считывают воспитание. Правила простые, но важные:</p>
@@ -285,6 +367,7 @@
     <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
   </div>
 </aside>
+
 <script>
 /* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
    снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
@@ -316,78 +399,3 @@
 })();
 </script>
 </div>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "@id": "https://kitai-school.ru/article/biznes-etiket-v-kitae#article",
-      "headline": "Бизнес-этикет в Китае: 5 правил делового общения, которые решают всё",
-      "description": "Китайский деловой этикет: гуаньси и «лицо», приветствия, визитки, подарки и банкет — 5 правил, которые решают исход сделки.",
-      "inLanguage": "ru",
-      "datePublished": "2026-07-22",
-      "dateModified": "2026-07-22",
-      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
-      "publisher": {"@id": "https://kitai-school.ru/#org"},
-      "mainEntityOfPage": "https://kitai-school.ru/article/biznes-etiket-v-kitae",
-      "about": {
-        "@type": "Thing",
-        "name": "Гуаньси",
-        "sameAs": [
-          "https://ru.wikipedia.org/wiki/Гуаньси",
-          "https://en.wikipedia.org/wiki/Guanxi"
-        ]
-      },
-      "mentions": [
-        {"@type": "Thing", "name": "Мяньцзы (лицо)", "sameAs": "https://en.wikipedia.org/wiki/Face_(sociological_concept)"}
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://kitai-school.ru/#yulia-goryaina",
-      "name": "Юлия Горяина",
-      "url": "https://kitai-school.ru/about",
-      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
-      "worksFor": {"@id": "https://kitai-school.ru/#org"},
-      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
-      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями (TCL, Great Wall Motors, FAW). Основатель международной лицензированной онлайн-школы Kitai School.",
-      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
-    },
-    {
-      "@type": "EducationalOrganization",
-      "@id": "https://kitai-school.ru/#org",
-      "name": "Kitai School",
-      "url": "https://kitai-school.ru",
-      "telephone": "+7 958 538-70-80",
-      "email": "info@kitai-school.ru",
-      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
-      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
-      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "Что такое гуаньси?",
-         "acceptedAnswer": {"@type": "Answer", "text": "关系 (guānxi) — сеть личных связей и взаимного доверия. В Китае бизнес строится на отношениях, а не только на контракте."}},
-        {"@type": "Question", "name": "Что значит «сохранить лицо»?",
-         "acceptedAnswer": {"@type": "Answer", "text": "面子 (miànzi) — репутация и достоинство человека. Нельзя публично критиковать, ставить в неловкое положение или резко отказывать — это «отнимает лицо»."}},
-        {"@type": "Question", "name": "Как обмениваться визитками в Китае?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Двумя руками, текстом к собеседнику; визитку нужно принять, прочитать и не убирать сразу, не писать на ней при владельце."}},
-        {"@type": "Question", "name": "Какие подарки нельзя дарить китайцам?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Часы (送钟 созвучно «проводам в последний путь»), наборы из четырёх (四 ≈ 死 «смерть»), острое (нож — «разрыв»), зелёную шляпу; избегать белой и чёрной упаковки."}},
-        {"@type": "Question", "name": "Как вести себя на деловом банкете?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Дождаться хозяина, не начинать есть первым; на тосте 干杯 чокаться, держа свой бокал чуть ниже, чем у старшего, — это знак уважения."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
-        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
-        {"@type": "ListItem", "position": 3, "name": "Бизнес-этикет в Китае"}
-      ]
-    }
-  ]
-}
-</script>
