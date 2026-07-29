@@ -1,0 +1,349 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:46px;line-height:1.08;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo{margin:28px auto;text-align:center}
+#ks-art .ks-photo img{width:100%;max-width:460px;height:auto;display:block;margin:0 auto;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px auto 0;max-width:460px}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .hancell td:first-child{font-family:var(--fh)!important;font-size:20px;color:var(--brick)!important}
+#ks-art .hancell .py{font-family:var(--fs)!important;font-size:13px;color:var(--taupe)!important;font-weight:500;display:block;margin-top:2px}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+#ks-art .wrong{color:#9A1C1C;font-weight:600}
+#ks-art .right{color:#2F7A44;font-weight:600}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Вопросительная частица 吗
+</nav>
+
+<article>
+<p class="eyebrow">Грамматика</p>
+<h1>Как задавать вопросы на китайском: всё о частице <span class="italic">吗 (ma)</span> за 5 минут</h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-07-29">29 июля 2026</time>
+  </div>
+</div>
+
+<p class="passport">Вопросительная частица <span class="hanline">吗</span> (ma) — самый быстрый способ научиться спрашивать по-китайски. Она превращает любое утверждение в вопрос без перестановки слов: берёте готовую фразу, добавляете в конец 吗 — и получаете вопрос с ответом «да/нет». Никаких изменений порядка слов, как в английском, и никакой обязательной интонации, как в русском. Ниже — где стоит 吗, чем она отличается от интонационного вопроса, когда её нельзя ставить и как правильно отвечать.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>吗 (ma) — конечная вопросительная частица. Ставится в самом конце утвердительного предложения и делает из него общий вопрос: 你是学生 (ты студент) → 你是学生吗？ (ты студент?). Слова не переставляются, интонацию менять не нужно — вопрос создаёт сама частица. 吗 не используют с вопросительными словами (谁, 什么, 哪儿) и в вопросах «есть-нет» (你是不是…). Отвечают повтором глагола: 是 / 不是, 去 / 不去.</p>
+</div>
+
+<h2>Что такое частица <span class="italic">吗</span></h2>
+<p><span class="hanline">吗</span> (ma) — это служебное слово, «частица», которая сама по себе ничего не значит и не переводится. Её единственная работа — стоять в конце фразы и сигналить: «это вопрос, ответь да или нет». Такой вопрос называют <b>общим</b> (или «да/нет»-вопросом).</p>
+<p>Читается 吗 <b>нейтральным (лёгким) тоном</b> — коротко и безударно, поэтому в пиньине над ним нет знака тона: просто <i>ma</i>. Иероглиф состоит из ключа «рот» <span class="hanline">口</span> и фонетика <span class="hanline">马</span> (mǎ, «лошадь») — отсюда и звучание.</p>
+
+<h2>Где стоит 吗: <span class="italic">только в конце</span></h2>
+<p>Правило простое и без исключений: <b>吗 ставится в самом конце предложения</b>, после всех остальных слов — подлежащего, глагола, дополнения. Порядок слов утверждения при этом полностью сохраняется.</p>
+<div class="ks-quote">
+  <p>你 + 有 + 时间 + <span class="han-big">吗</span>？</p>
+  <cite>Nǐ yǒu shíjiān ma? — У тебя есть время?</cite>
+</div>
+<p>Сравните структуру: сначала строите обычное утвердительное предложение по схеме «кто → глагол → что», а затем просто «навешиваете» 吗 в хвост. Ничего не переставляя.</p>
+
+<h2>Из утверждения — <span class="italic">в вопрос</span></h2>
+<p>Вот как одна и та же фраза превращается в вопрос добавлением 吗:</p>
+<div class="table-wrap">
+<table class="hancell">
+  <caption>Утверждение → общий вопрос с 吗. Порядок слов не меняется.</caption>
+  <thead><tr><th>Утверждение</th><th>Вопрос с 吗</th><th>Перевод вопроса</th></tr></thead>
+  <tbody>
+    <tr><td>你是学生<span class="py">nǐ shì xuésheng</span></td><td>你是学生吗？<span class="py">nǐ shì xuésheng ma?</span></td><td>Ты студент?</td></tr>
+    <tr><td>他是中国人<span class="py">tā shì Zhōngguó rén</span></td><td>他是中国人吗？<span class="py">tā shì Zhōngguó rén ma?</span></td><td>Он китаец?</td></tr>
+    <tr><td>你喝茶<span class="py">nǐ hē chá</span></td><td>你喝茶吗？<span class="py">nǐ hē chá ma?</span></td><td>Будешь чай? / Пьёшь чай?</td></tr>
+    <tr><td>你会说中文<span class="py">nǐ huì shuō Zhōngwén</span></td><td>你会说中文吗？<span class="py">nǐ huì shuō Zhōngwén ma?</span></td><td>Ты умеешь говорить по-китайски?</td></tr>
+    <tr><td>这是你的<span class="py">zhè shì nǐ de</span></td><td>这是你的吗？<span class="py">zhè shì nǐ de ma?</span></td><td>Это твоё?</td></tr>
+    <tr><td>你们有时间<span class="py">nǐmen yǒu shíjiān</span></td><td>你们有时间吗？<span class="py">nǐmen yǒu shíjiān ma?</span></td><td>У вас есть время?</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Классическое приветствие <span class="hanline">你好吗？</span> (Nǐ hǎo ma? — «Как дела?») устроено точно так же: утверждение 你好 («ты хорош/в порядке») + 吗.</p>
+
+<h2>吗 против русской <span class="italic">интонации</span></h2>
+<p>Здесь — главное отличие для русскоязычного. В русском мы делаем вопрос <b>голосом</b>: «Ты студент.» и «Ты студент?» — одни и те же слова, разница только в восходящей интонации в конце.</p>
+<p>В китайском так делать не принято. Вопрос создаёт не интонация, а <b>частица 吗</b>. Слова остаются ровно теми же, что в утверждении, и повышать голос не требуется — хотя лёгкий подъём в конце звучит естественно и ошибкой не будет.</p>
+<div class="table-wrap">
+<table>
+  <caption>Как оформляется общий вопрос в разных языках.</caption>
+  <thead><tr><th>Язык</th><th>Что меняется</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td>Русский</td><td>только интонация</td><td>Ты студент. → Ты студент? <i>(вверх голосом)</i></td></tr>
+    <tr><td>Английский</td><td>порядок слов (инверсия)</td><td>You are… → Are you a student?</td></tr>
+    <tr><td>Китайский</td><td>частица 吗 в конце</td><td>你是学生 → 你是学生吗？</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Вывод: для китайского вопроса не нужно ни переставлять слова, ни «играть голосом». Достаточно поставить 吗 — и это огромное облегчение на старте.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>На первых уроках почти каждый ученик по инерции «задаёт вопрос интонацией»: произносит 你是学生 с русским вопросительным подъёмом — и ждёт, что этого хватит. Китаец в этот момент слышит просто утверждение и в лучшем случае переспросит. Поэтому я сразу ставлю привычку: хочешь спросить — не тяни голос вверх, а поставь 吗.</p>
+  <p>Мой любимый приём для тренировки — «эхо с хвостиком»: беру любую фразу ученика и прошу мгновенно повторить её вопросом, добавив 吗. 我喝咖啡 → 你喝咖啡吗？ Пять минут такой игры — и рука сама «дописывает» 吗 в конце. Через пару занятий вопросы перестают быть проблемой вообще.</p>
+</div>
+
+<h2>Когда 吗 ставить <span class="italic">нельзя</span></h2>
+<p>吗 годится только для вопросов «да/нет». Есть два случая, где её добавлять <b>ошибка</b>.</p>
+<h3>1. С вопросительными словами</h3>
+<p>Если в предложении уже есть вопросительное слово — <span class="hanline">谁</span> (кто), <span class="hanline">什么</span> (что), <span class="hanline">哪儿/哪里</span> (где), <span class="hanline">几/多少</span> (сколько), <span class="hanline">怎么</span> (как), <span class="hanline">为什么</span> (почему) — вопрос уже задан. Ставить ещё и 吗 не нужно.</p>
+<p><span class="wrong">✗ 你去哪儿吗？</span> &nbsp;→&nbsp; <span class="right">✓ 你去哪儿？</span> <span class="py">(Nǐ qù nǎr? — Куда ты идёшь?)</span><br>
+<span class="wrong">✗ 这是什么吗？</span> &nbsp;→&nbsp; <span class="right">✓ 这是什么？</span> <span class="py">(Zhè shì shénme? — Что это?)</span></p>
+<h3>2. В вопросах «есть-нет» (A-не-A)</h3>
+<p>Есть второй способ задать общий вопрос — повтор глагола в форме «А-не-А»: <span class="hanline">你是不是学生？</span> (ты студент или нет?). Он уже вопросительный, поэтому 吗 с ним <b>не сочетается</b>.</p>
+<p><span class="wrong">✗ 你是不是学生吗？</span> &nbsp;→&nbsp; <span class="right">✓ 你是不是学生？</span> <b>или</b> <span class="right">✓ 你是学生吗？</span></p>
+<p class="note">Проще говоря: <b>吗</b> и <b>是不是 / 去不去</b> — это два разных инструмента для одного и того же вопроса. Выбирайте один, не смешивайте.</p>
+
+<h2>Как <span class="italic">отвечать</span> на вопрос с 吗</h2>
+<p>В китайском нет универсальных «да» и «нет». Отвечают <b>повтором глагола</b> из вопроса — с отрицанием или без.</p>
+<div class="table-wrap">
+<table class="hancell">
+  <caption>Ответ = глагол вопроса (утвердительно или с 不/没).</caption>
+  <thead><tr><th>Вопрос</th><th>Да</th><th>Нет</th></tr></thead>
+  <tbody>
+    <tr><td>你是学生吗？<span class="py">ты студент?</span></td><td>是。/ 对。<span class="py">shì / duì</span></td><td>不是。<span class="py">bú shì</span></td></tr>
+    <tr><td>你去吗？<span class="py">ты идёшь?</span></td><td>去。<span class="py">qù</span></td><td>不去。<span class="py">bú qù</span></td></tr>
+    <tr><td>你有时间吗？<span class="py">есть время?</span></td><td>有。<span class="py">yǒu</span></td><td>没有。<span class="py">méi yǒu</span></td></tr>
+    <tr><td>你喝茶吗？<span class="py">будешь чай?</span></td><td>喝。/ 好。<span class="py">hē / hǎo</span></td><td>不喝，谢谢。<span class="py">bù hē, xièxie</span></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>吗 и другие частицы: <span class="italic">呢 и 吧</span></h2>
+<p>Чтобы не путать, коротко о «соседях» 吗 — их тоже ставят в конец, но смысл другой:</p>
+<div class="table-wrap">
+<table class="hancell">
+  <caption>Три частые конечные частицы.</caption>
+  <thead><tr><th>Частица</th><th>Зачем</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td>吗<span class="py">ma</span></td><td>общий вопрос «да/нет»</td><td>你忙吗？<span class="py">Nǐ máng ma? — Ты занят?</span></td></tr>
+    <tr><td>呢<span class="py">ne</span></td><td>«а…?» / «а где?»</td><td>我很好，你呢？<span class="py">Wǒ hěn hǎo, nǐ ne? — Я хорошо, а ты?</span></td></tr>
+    <tr><td>吧<span class="py">ba</span></td><td>предположение / мягкое предложение</td><td>你是学生吧？<span class="py">Nǐ shì xuésheng ba? — Ты ведь студент?</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note"><b>Разница на пальцах:</b> 吗 — искренне спрашиваю и не знаю ответа; 吧 — почти уверен и уточняю («ведь так?»); 呢 — переадресую вопрос или спрашиваю «а где …?».</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое частица 吗 в китайском языке?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>吗 (ma) — конечная вопросительная частица. Её ставят в конце утвердительного предложения, и оно превращается в общий вопрос (с ответом «да/нет»). Читается нейтральным тоном: 你是学生吗？ — Ты студент?</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где ставится частица 吗 в предложении?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В самом конце предложения, после всех остальных слов: 你有时间吗？ Порядок слов утверждения при этом не меняется — 吗 просто добавляется в хвост.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли менять интонацию, если есть 吗?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. В русском вопрос создаёт интонация («Ты студент?»), а в китайском — сама частица 吗. Слова остаются как в утверждении, повышать голос не обязательно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Когда частица 吗 не используется?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>吗 не ставят с вопросительными словами (谁, 什么, 哪儿, 几, 怎么) и в вопросах «есть-нет» (你是不是学生？). Там вопрос уже выражен, добавлять 吗 нельзя.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как отвечать на вопрос с 吗?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Повтором глагола: на 你去吗？ отвечают 去 или 不去; на 你是学生吗？ — 是 или 不是. «Да/нет» в китайском передают самим глаголом, а не отдельным словом.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 吗 отличается от 呢 и 吧?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>吗 — общий вопрос «да/нет». 呢 (ne) — «а…?» (我很好，你呢？) или «где?». 吧 (ba) — предположение или мягкое предложение (你是学生吧？ — ты ведь студент?).</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Хотите не заучивать правила, а сразу свободно задавать вопросы и отвечать? На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсах Kitai School</a> грамматику ставят через живой диалог: 吗, 呢, 吧, вопросительные слова — на реальных фразах, а не в теории.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на диагностический урок →</a></p>
+  <p>Или напишите слово <b>ВОПРОС</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — пришлём разбор и подберём формат.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/bazovye-glagoly-kitajskogo-yazyka" target="_blank" rel="noopener">топ-50 базовых глаголов</a> (из них удобно строить вопросы); с чего начинать — <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify" target="_blank" rel="noopener">иероглифы или буквы</a>; первый экзамен — <a href="https://kitai-school.ru/article/hsk-1" target="_blank" rel="noopener">HSK 1</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://en.wikipedia.org/wiki/Chinese_grammar" target="_blank" rel="noopener nofollow">Wikipedia: Chinese grammar</a> — конечные частицы, общий вопрос с 吗.</li>
+    <li><a href="https://ru.wikipedia.org/wiki/Китайский_язык" target="_blank" rel="noopener nofollow">Википедия: Китайский язык</a> — грамматический строй, вопросительные конструкции.</li>
+    <li>Практика Kitai School — методика постановки вопросов на начальном уровне.</li>
+  </ol>
+</div>
+
+<p class="sign">Спрашивайте смело! <span class="han">你明白了吗？</span></p>
+
+<div class="tags">
+  <span>#частица吗</span> <span>#вопросыпокитайски</span> <span>#грамматикакитайского</span> <span>#吗呢吧</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/business" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Бизнес-китайский</a>
+    <p class="side-note">Определим уровень и покажем платформу бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
