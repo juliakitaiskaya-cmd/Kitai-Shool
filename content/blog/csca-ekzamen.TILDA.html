@@ -1,4 +1,3 @@
-<div id="ks-wrap">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
 
@@ -112,7 +111,73 @@
 @media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
 @media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
 </style>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/csca-ekzamen#article",
+      "headline": "CSCA на китайском: всё, что нужно знать о главном экзамене для поступления в вузы КНР",
+      "description": "Что такое CSCA (China Scholastic Competency Assessment), предметы, формат, даты и как готовиться на китайском.",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-20",
+      "dateModified": "2026-07-20",
+      "image": "https://static.tildacdn.com/tild6366-3134-4435-b037-323436356131/cscaekzamen.png",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/csca-ekzamen",
+      "about": [
+        {"@type": "Country", "name": "Китай", "sameAs": "https://www.wikidata.org/wiki/Q148"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что такое CSCA?",
+         "acceptedAnswer": {"@type": "Answer", "text": "China Scholastic Competency Assessment — новый стандартизированный экзамен для иностранцев, поступающих в вузы КНР; результат нужен до подачи документов."}},
+        {"@type": "Question", "name": "Какие предметы в CSCA?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Профессиональный китайский (гуманитарный или STEM) и математика — обязательные; физика и химия — по выбору в зависимости от специальности."}},
+        {"@type": "Question", "name": "На каком языке сдают CSCA?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Математику, физику и химию можно сдавать на китайском или английском; профессиональный китайский — на китайском. Каждый предмет — 60 минут, 48 вопросов."}},
+        {"@type": "Question", "name": "Сколько раз в год проводят CSCA?",
+         "acceptedAnswer": {"@type": "Answer", "text": "В 2026 году пять раз: в январе, марте, апреле, июне и декабре; регистрация на официальном сайте csca.cn."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "CSCA — экзамен для вузов Китая"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
 <div id="ks-art">
 
 <nav class="crumbs">
@@ -312,6 +377,7 @@
     <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
   </div>
 </aside>
+
 <script>
 /* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
    снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
@@ -343,69 +409,3 @@
 })();
 </script>
 </div>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "@id": "https://kitai-school.ru/article/csca-ekzamen#article",
-      "headline": "CSCA на китайском: всё, что нужно знать о главном экзамене для поступления в вузы КНР",
-      "description": "Что такое CSCA (China Scholastic Competency Assessment), предметы, формат, даты и как готовиться на китайском.",
-      "inLanguage": "ru",
-      "datePublished": "2026-07-20",
-      "dateModified": "2026-07-20",
-      "image": "https://static.tildacdn.com/tild6366-3134-4435-b037-323436356131/cscaekzamen.png",
-      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
-      "publisher": {"@id": "https://kitai-school.ru/#org"},
-      "mainEntityOfPage": "https://kitai-school.ru/article/csca-ekzamen",
-      "about": [
-        {"@type": "Country", "name": "Китай", "sameAs": "https://www.wikidata.org/wiki/Q148"}
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://kitai-school.ru/#yulia-goryaina",
-      "name": "Юлия Горяина",
-      "url": "https://kitai-school.ru/about",
-      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
-      "worksFor": {"@id": "https://kitai-school.ru/#org"},
-      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
-      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями. Основатель международной лицензированной онлайн-школы Kitai School.",
-      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
-    },
-    {
-      "@type": "EducationalOrganization",
-      "@id": "https://kitai-school.ru/#org",
-      "name": "Kitai School",
-      "url": "https://kitai-school.ru",
-      "telephone": "+7 958 538-70-80",
-      "email": "info@kitai-school.ru",
-      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
-      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
-      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "Что такое CSCA?",
-         "acceptedAnswer": {"@type": "Answer", "text": "China Scholastic Competency Assessment — новый стандартизированный экзамен для иностранцев, поступающих в вузы КНР; результат нужен до подачи документов."}},
-        {"@type": "Question", "name": "Какие предметы в CSCA?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Профессиональный китайский (гуманитарный или STEM) и математика — обязательные; физика и химия — по выбору в зависимости от специальности."}},
-        {"@type": "Question", "name": "На каком языке сдают CSCA?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Математику, физику и химию можно сдавать на китайском или английском; профессиональный китайский — на китайском. Каждый предмет — 60 минут, 48 вопросов."}},
-        {"@type": "Question", "name": "Сколько раз в год проводят CSCA?",
-         "acceptedAnswer": {"@type": "Answer", "text": "В 2026 году пять раз: в январе, марте, апреле, июне и декабре; регистрация на официальном сайте csca.cn."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
-        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
-        {"@type": "ListItem", "position": 3, "name": "CSCA — экзамен для вузов Китая"}
-      ]
-    }
-  ]
-}
-</script>
