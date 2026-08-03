@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Все статьи Kitai School — каталог по темам</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-cat{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-md:16px;--r-lg:22px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:32px 22px 56px;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-cat *{box-sizing:border-box}
+#ks-cat .cat-head{margin:0 0 30px}
+#ks-cat .cat-eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-cat h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.08;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 12px}
+#ks-cat .cat-lead{font-size:18px;color:var(--ink-2);max-width:60ch;margin:0}
+
+#ks-cat .cat-nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 8px;padding:18px 0 0;border-top:1px solid var(--hairline)}
+#ks-cat .cat-nav a{font-family:var(--fs)!important;font-size:13.5px;font-weight:500;color:var(--ink)!important;text-decoration:none;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:7px 15px;transition:.15s}
+#ks-cat .cat-nav a:hover{background:var(--brick)!important;color:#fff!important;border-color:var(--brick)}
+
+#ks-cat .cat-sec{margin-top:46px;scroll-margin-top:90px}
+#ks-cat .cat-sec-h{display:flex;align-items:center;gap:14px;margin:0 0 20px;padding-bottom:14px;border-bottom:2px solid var(--brick-soft)}
+#ks-cat .cat-sec-h .ic{flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:var(--brick);color:#fff;font-family:var(--fh)!important;font-weight:700;font-size:26px;display:flex;align-items:center;justify-content:center}
+#ks-cat .cat-sec-h h2{font-family:var(--fd)!important;font-weight:600;font-size:29px;line-height:1.1;color:var(--ink)!important;margin:0}
+#ks-cat .cat-sec-h .cnt{font-family:var(--fs)!important;font-size:13px;font-weight:600;color:var(--taupe)!important;margin-left:auto;white-space:nowrap}
+
+#ks-cat .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+#ks-cat a.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;text-decoration:none;box-shadow:var(--shadow-card);transition:.16s;position:relative}
+#ks-cat a.card:hover{border-color:var(--brick);box-shadow:0 8px 26px rgba(164,30,58,.13);transform:translateY(-2px)}
+#ks-cat a.card .t{font-family:var(--fd)!important;font-weight:600;font-size:20px;line-height:1.2;color:var(--ink)!important;margin:0 0 8px}
+#ks-cat a.card:hover .t{color:var(--brick)!important}
+#ks-cat a.card .d{font-family:var(--fs)!important;font-size:14px;line-height:1.5;color:var(--ink-2)!important;margin:0 0 14px;flex:1 1 auto}
+#ks-cat a.card .go{font-family:var(--fs)!important;font-size:13.5px;font-weight:600;color:var(--brick)!important;display:inline-flex;align-items:center;gap:6px}
+#ks-cat a.card .go svg{width:14px;height:14px;transition:.16s}
+#ks-cat a.card:hover .go svg{transform:translateX(3px)}
+
+#ks-cat .cat-foot{margin-top:50px;padding:26px 30px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);box-shadow:var(--shadow-card);text-align:center}
+#ks-cat .cat-foot p{margin:0 0 14px;color:var(--ink-2)!important;font-family:var(--fs)!important}
+#ks-cat .cat-foot .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border-radius:14px!important;padding:13px 28px!important}
+#ks-cat .cat-foot .btn:hover{background:var(--brick-deep)!important}
+
+@media(max-width:600px){
+  #ks-cat{padding:24px 14px 44px}
+  #ks-cat h1{font-size:32px}
+  #ks-cat .cat-grid{grid-template-columns:1fr}
+  #ks-cat .cat-sec-h h2{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<div id="ks-cat">
+
+<div class="cat-head">
+  <p class="cat-eyebrow">Блог Kitai School</p>
+  <h1>Все статьи по темам</h1>
+  <p class="cat-lead">Экзамены HSK и CSCA, грамматика и лексика, иероглифы, культура Китая, учёба и жизнь в стране. Выбирайте тему — и читайте.</p>
+</div>
+
+<nav class="cat-nav">
+  <a href="#hsk">Экзамены HSK</a>
+  <a href="#csca">Экзамен CSCA</a>
+  <a href="#grammar">Грамматика</a>
+  <a href="#lexika">Лексика и произношение</a>
+  <a href="#ieroglify">Иероглифы</a>
+  <a href="#kultura">Культура Китая</a>
+  <a href="#postuplenie">Учёба и поступление</a>
+  <a href="#zhizn">Жизнь в Китае</a>
+  <a href="#oyazyke">О языке и обучении</a>
+</nav>
+
+<!-- ЭКЗАМЕНЫ HSK -->
+<section class="cat-sec" id="hsk">
+  <div class="cat-sec-h"><span class="ic">试</span><h2>Экзамены HSK</h2><span class="cnt">10 статей</span></div>
+  <div class="cat-grid">
+    <a class="card" href="https://kitai-school.ru/article/hsk-1" target="_blank" rel="noopener"><span class="t">HSK 1</span><span class="d">Первый уровень: 150 слов, структура, форматы заданий и типичные ловушки экзамена.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/hsk-1-probnyy-test" target="_blank" rel="noopener"><span class="t">HSK 1 — пробный тест</span><span class="d">Как использовать онлайн-тренажёр и честно проверить готовность к первому уровню.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/hsk-2" target="_blank" rel="noopener"><span class="t">HSK 2</span><span class="d">Второй уровень: 300 слов, первые связные тексты и главная ловушка иероглифики.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/hsk-2-probnyy-test" target="_blank" rel="noopener"><span class="t">HSK 2 — пробный тест</span><span class="d">Готов ли ты на самом деле: как проходить пробник без пиньиня и разбирать ошибки.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/hsk-3" target="_blank" rel="noopener"><span class="t">HSK 3</span><span class="d">Уровень, где исчезает пиньинь: 600 слов, три раздела и добавляется письмо.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/hsk-3-probnyy-test" target="_blank" rel="noopener"><span class="t">HSK 3 — пробный тест</span><span class="d">Прыжок на новый уровень: как готовиться к чтению без пиньиня и письму.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/hsk-4" target="_blank" rel="noopener"><span class="t">HSK 4</span><span class="d">Уровень «свободно говорю»: 1200 слов, новые форматы и как сдать в 2026.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/hsk-4-probnyy-test" target="_blank" rel="noopener"><span class="t">HSK 4 — пробный тест</span><span class="d">Как понять, что ты действительно готов: скорость чтения и стратегия по времени.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/podgotovka-k-hsk-4" target="_blank" rel="noopener"><span class="t">Подготовка к HSK 4</span><span class="d">Структура экзамена и понятный план занятий, чтобы дойти до сдачи.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/hsk-5" target="_blank" rel="noopener"><span class="t">HSK 5</span><span class="d">«Университетский» уровень: 2500 слов, длинные тексты и ловушки с синонимами.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+
+<!-- ЭКЗАМЕН CSCA -->
+<section class="cat-sec" id="csca">
+  <div class="cat-sec-h"><span class="ic">考</span><h2>Экзамен CSCA</h2><span class="cnt">4 статьи</span></div>
+  <div class="cat-grid">
+    <a class="card" href="https://kitai-school.ru/article/csca-ekzamen" target="_blank" rel="noopener"><span class="t">CSCA: экзамен для вузов Китая</span><span class="d">Что это за экзамен, из каких предметов состоит, структура и даты.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/csca-matematika" target="_blank" rel="noopener"><span class="t">Математика на CSCA</span><span class="d">Темы, лексика и как не потерять баллы на «мелочах» вроде 至少 и 至多.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/csca-fizika" target="_blank" rel="noopener"><span class="t">Физика на CSCA</span><span class="d">Как читать физические термины по составу слова и учить лексику быстрее.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/csca-himiya" target="_blank" rel="noopener"><span class="t">Химия на CSCA</span><span class="d">Названия элементов и радикал-подсказка: как устроена химическая лексика.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+
+<!-- ГРАММАТИКА -->
+<section class="cat-sec" id="grammar">
+  <div class="cat-sec-h"><span class="ic">语</span><h2>Грамматика</h2><span class="cnt">2 статьи</span></div>
+  <div class="cat-grid">
+    <a class="card" href="https://kitai-school.ru/article/voprositelnaya-chastica-ma" target="_blank" rel="noopener"><span class="t">Вопросительная частица 吗</span><span class="d">Как из утверждения сделать вопрос и чем это отличается от русской интонации.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/voprositelnye-mestoimeniya-v-kitajskom" target="_blank" rel="noopener"><span class="t">Вопросительные местоимения</span><span class="d">Конструктор вопросов: слово-вопрос стоит на месте ответа. 谁, 什么, 哪儿, 几.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+
+<!-- ЛЕКСИКА И ПРОИЗНОШЕНИЕ -->
+<section class="cat-sec" id="lexika">
+  <div class="cat-sec-h"><span class="ic">词</span><h2>Лексика и произношение</h2><span class="cnt">3 статьи</span></div>
+  <div class="cat-grid">
+    <a class="card" href="https://kitai-school.ru/article/bazovye-glagoly-kitajskogo-yazyka" target="_blank" rel="noopener"><span class="t">Топ-50 базовых глаголов</span><span class="d">Движение, состояние, действие — с пиньинем, переводом и примерами.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/vremya-po-kitajski" target="_blank" rel="noopener"><span class="t">Время по-китайски</span><span class="d">Часы и минуты (点, 分), и почему 2 часа — это 两点, а не 二点.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/do-svidaniya-po-kitajski" target="_blank" rel="noopener"><span class="t">«До свидания» по-китайски</span><span class="d">Как на самом деле читается 再见 и почему «цзайцзянь» лишь приблизительно.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+
+<!-- ИЕРОГЛИФЫ -->
+<section class="cat-sec" id="ieroglify">
+  <div class="cat-sec-h"><span class="ic">字</span><h2>Иероглифы и письменность</h2><span class="cnt">2 статьи</span></div>
+  <div class="cat-grid">
+    <a class="card" href="https://kitai-school.ru/article/voda-na-kitajskom-ieroglif" target="_blank" rel="noopener"><span class="t">Иероглиф «вода» 水</span><span class="d">Логика ключей: как устроен радикал 氵 и как он управляет смыслом других знаков.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify" target="_blank" rel="noopener"><span class="t">В Китае буквы или иероглифы?</span><span class="d">Как устроена китайская письменность и зачем нужен пиньинь.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+
+<!-- КУЛЬТУРА -->
+<section class="cat-sec" id="kultura">
+  <div class="cat-sec-h"><span class="ic">礼</span><h2>Культура Китая</h2><span class="cnt">4 статьи</span></div>
+  <div class="cat-grid">
+    <a class="card" href="https://kitai-school.ru/article/kitajskij-etiket-obshcheniya" target="_blank" rel="noopener"><span class="t">Китайский этикет общения</span><span class="d">Уважение к старшим, иерархия и понятие «лица» (面子) в повседневной речи.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/biznes-etiket-v-kitae" target="_blank" rel="noopener"><span class="t">Бизнес-этикет в Китае</span><span class="d">Гуаньси, лицо, визитки, подарки и банкет: 5 правил деловых переговоров.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/vesna-po-kitajski" target="_blank" rel="noopener"><span class="t">Весна по-китайски (春天)</span><span class="d">Слова весны, праздник 立春 и как китайцы говорят о смене сезонов.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/nacionalnoe-zhivotnoe-kitaya" target="_blank" rel="noopener"><span class="t">Национальное животное Китая</span><span class="d">Большая панда: символ страны, «панда-дипломатия» и интересные факты.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+
+<!-- УЧЁБА И ПОСТУПЛЕНИЕ -->
+<section class="cat-sec" id="postuplenie">
+  <div class="cat-sec-h"><span class="ic">学</span><h2>Учёба и поступление в Китае</h2><span class="cnt">2 статьи</span></div>
+  <div class="cat-grid">
+    <a class="card" href="https://kitai-school.ru/article/csc-stipendiya-v-kitae" target="_blank" rel="noopener"><span class="t">Стипендия CSC в Китае</span><span class="d">Полный гайд: что покрывает, каналы подачи, документы, Study Plan и интервью.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/est-li-v-kitae-kolledzhi" target="_blank" rel="noopener"><span class="t">Есть ли в Китае колледжи?</span><span class="d">Система профессионального образования и путь для иностранца.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+
+<!-- ЖИЗНЬ В КИТАЕ -->
+<section class="cat-sec" id="zhizn">
+  <div class="cat-sec-h"><span class="ic">中</span><h2>Жизнь в Китае</h2><span class="cnt">3 статьи</span></div>
+  <div class="cat-grid">
+    <a class="card" href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener"><span class="t">Дорого ли в Китае?</span><span class="d">Цены на еду, жильё и транспорт по городам — от Пекина до провинции.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/skolko-stoit-metro-v-kitae" target="_blank" rel="noopener"><span class="t">Сколько стоит метро в Китае</span><span class="d">Тарифы по городам, как оплатить проезд и сколько стоит поездка.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/aptechka-dlya-poezdki-v-kitay" target="_blank" rel="noopener"><span class="t">Аптечка для поездки в Китай</span><span class="d">Что можно и что нельзя везти, какие лекарства под запретом и как их декларировать.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+
+<!-- О ЯЗЫКЕ И ОБУЧЕНИИ -->
+<section class="cat-sec" id="oyazyke">
+  <div class="cat-sec-h"><span class="ic">中文</span><h2>О языке и обучении</h2><span class="cnt">3 статьи</span></div>
+  <div class="cat-grid">
+    <a class="card" href="https://kitai-school.ru/article/zachem-uchit-kitajskij-yazyk" target="_blank" rel="noopener"><span class="t">Зачем учить китайский язык</span><span class="d">Карьера, культура и неожиданные бонусы для мозга — практичные причины начать.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya" target="_blank" rel="noopener"><span class="t">За сколько выучить китайский с нуля</span><span class="d">Реальные сроки по уровням HSK и от чего зависит скорость.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="card" href="https://kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh" target="_blank" rel="noopener"><span class="t">Курсы китайского для взрослых</span><span class="d">Обучение с нуля до HSK 4: форматы, цены и как проходит пробный урок.</span><span class="go">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+
+<div class="cat-foot">
+  <p>Не знаете, с чего начать? Определим ваш уровень и подберём программу на бесплатном диагностическом уроке.</p>
+  <a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a>
+</div>
+
+</div>
+</body>
+</html>
