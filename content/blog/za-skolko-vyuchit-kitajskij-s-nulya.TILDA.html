@@ -34,8 +34,9 @@
 #ks-art .byline time{font-size:13px;color:var(--taupe)!important}
 
 #ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
-#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
 #ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
 
 #ks-art .ks-photo{margin:28px auto;text-align:center}
 #ks-art .ks-photo img{width:100%;max-width:460px;height:auto;display:block;margin:0 auto;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
@@ -93,6 +94,77 @@
 
 @media(max-width:600px){#ks-art{overflow-x:hidden}#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art{padding:28px 16px 56px}#ks-art .author-card{flex-direction:column}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya#article",
+      "headline": "За сколько можно выучить китайский язык с нуля: реальные сроки по уровням",
+      "description": "Сроки изучения китайского с нуля: ориентир FSI 2200 часов, сроки по уровням HSK.",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-13",
+      "dateModified": "2026-07-15",
+      "image": "https://kitai-school.ru/img/za-skolko-vyuchit-kitajskij.jpg",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya",
+      "about": [
+        {"@type": "Thing", "name": "HSK", "sameAs": "https://www.wikidata.org/wiki/Q535477"},
+        {"@type": "Thing", "name": "FSI language difficulty", "sameAs": "https://www.state.gov/national-foreign-affairs-training-center/foreign-language-training"},
+        {"@type": "Language", "name": "путунхуа", "sameAs": "https://www.wikidata.org/wiki/Q727694"},
+        {"@type": "Thing", "name": "пиньинь", "sameAs": "https://www.wikidata.org/wiki/Q42222"},
+        {"@type": "Thing", "name": "китайские иероглифы", "sameAs": "https://www.wikidata.org/wiki/Q54610"},
+        {"@type": "Thing", "name": "CEFR", "sameAs": "https://www.wikidata.org/wiki/Q881466"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями (TCL, Great Wall Motors, FAW). Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "За сколько реально заговорить на китайском?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Простые бытовые фразы — за 2–3 месяца регулярных занятий; свободный разговор (HSK 4) — примерно за 1,5–2 года."}},
+        {"@type": "Question", "name": "Сколько учить китайский до HSK 4?",
+         "acceptedAnswer": {"@type": "Answer", "text": "С нуля до HSK 4 обычно идут примерно 1,5–2 года; при интенсиве или языковом погружении — быстрее."}},
+        {"@type": "Question", "name": "Можно ли выучить китайский самостоятельно?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Базу и иероглифы — да; но постановку тонов и разговор эффективнее ставить с преподавателем."}},
+        {"@type": "Question", "name": "Что значит «2200 часов»?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Оценка FSI до профессионального владения; для бытового общения нужно значительно меньше."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "За сколько выучить китайский с нуля"}
+      ]
+    }
+  ]
+}
+</script>
 <div id="ks-art">
 
 <nav class="crumbs">
@@ -196,7 +268,7 @@
 <p>Быстрее всего идут те, кто держит регулярность: короткие занятия каждый день работают лучше редких длинных. Языковая среда сжимает сроки сильнее всего — месяц в Китае или ежедневный разговорный клуб с носителем стоит нескольких месяцев учёбы «в тетради». И произношение: если поставить тоны сразу и правильно, вы не тратите потом полгода на переучивание.</p>
 
 <figure class="ks-photo">
-  <img src="https://kitai-school.ru/img/yulia-students-china-lobby.jpg" alt="Юлия с учениками Kitai School в поездке по Китаю" loading="lazy" width="960" height="1280">
+  <img src="assets/yulia-students-china-lobby.jpg" alt="Юлия с учениками Kitai School в поездке по Китаю" loading="lazy" width="960" height="1280">
   <figcaption>Языковая среда ускоряет сильнее всего. Поездки в Китай — часть обучения в Kitai School: Юлия с учениками школы.</figcaption>
 </figure>
 
@@ -262,74 +334,3 @@
 
 </article>
 </div>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "@id": "https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya#article",
-      "headline": "За сколько можно выучить китайский язык с нуля: реальные сроки по уровням",
-      "description": "Сроки изучения китайского с нуля: ориентир FSI 2200 часов, сроки по уровням HSK.",
-      "inLanguage": "ru",
-      "datePublished": "2026-07-13",
-      "dateModified": "2026-07-15",
-      "image": "https://kitai-school.ru/img/za-skolko-vyuchit-kitajskij.jpg",
-      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
-      "publisher": {"@id": "https://kitai-school.ru/#org"},
-      "mainEntityOfPage": "https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya",
-      "about": [
-        {"@type": "Thing", "name": "HSK", "sameAs": "https://www.wikidata.org/wiki/Q535477"},
-        {"@type": "Thing", "name": "FSI language difficulty", "sameAs": "https://www.state.gov/national-foreign-affairs-training-center/foreign-language-training"},
-        {"@type": "Language", "name": "путунхуа", "sameAs": "https://www.wikidata.org/wiki/Q727694"},
-        {"@type": "Thing", "name": "пиньинь", "sameAs": "https://www.wikidata.org/wiki/Q42222"},
-        {"@type": "Thing", "name": "китайские иероглифы", "sameAs": "https://www.wikidata.org/wiki/Q54610"},
-        {"@type": "Thing", "name": "CEFR", "sameAs": "https://www.wikidata.org/wiki/Q881466"}
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://kitai-school.ru/#yulia-goryaina",
-      "name": "Юлия Горяина",
-      "url": "https://kitai-school.ru/about",
-      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
-      "worksFor": {"@id": "https://kitai-school.ru/#org"},
-      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
-      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями (TCL, Great Wall Motors, FAW). Основатель международной лицензированной онлайн-школы Kitai School.",
-      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
-    },
-    {
-      "@type": "EducationalOrganization",
-      "@id": "https://kitai-school.ru/#org",
-      "name": "Kitai School",
-      "url": "https://kitai-school.ru",
-      "telephone": "+7 958 538-70-80",
-      "email": "info@kitai-school.ru",
-      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
-      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
-      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "За сколько реально заговорить на китайском?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Простые бытовые фразы — за 2–3 месяца регулярных занятий; свободный разговор (HSK 4) — примерно за 1,5–2 года."}},
-        {"@type": "Question", "name": "Сколько учить китайский до HSK 4?",
-         "acceptedAnswer": {"@type": "Answer", "text": "С нуля до HSK 4 обычно идут примерно 1,5–2 года; при интенсиве или языковом погружении — быстрее."}},
-        {"@type": "Question", "name": "Можно ли выучить китайский самостоятельно?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Базу и иероглифы — да; но постановку тонов и разговор эффективнее ставить с преподавателем."}},
-        {"@type": "Question", "name": "Что значит «2200 часов»?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Оценка FSI до профессионального владения; для бытового общения нужно значительно меньше."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
-        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
-        {"@type": "ListItem", "position": 3, "name": "За сколько выучить китайский с нуля"}
-      ]
-    }
-  ]
-}
-</script>

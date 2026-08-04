@@ -1,4 +1,3 @@
-<div id="ks-wrap">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
 
@@ -53,8 +52,9 @@
 #ks-art .byline time{font-size:13px;color:var(--taupe)!important}
 
 #ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
-#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
 #ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
 
 #ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
 #ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
@@ -111,7 +111,73 @@
 @media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
 @media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
 </style>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/skolko-stoit-metro-v-kitae#article",
+      "headline": "Сколько стоит метро в Китае: цены на проезд и как устроена оплата",
+      "description": "Метро в Китае недорогое, тариф зависит от расстояния. Цены по городам, способы оплаты (карта, QR-код, Alipay/WeChat) и базовая лексика.",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-17",
+      "dateModified": "2026-07-17",
+      "image": "https://static.tildacdn.com/tild6237-3031-4563-a639-343734333738/image-1784270419409.jpg",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/skolko-stoit-metro-v-kitae",
+      "about": [
+        {"@type": "Country", "name": "Китай", "sameAs": "https://www.wikidata.org/wiki/Q148"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Сколько стоит одна поездка в метро в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Старт 2–3 юаня (примерно 20–35 ₽), тариф растёт с расстоянием. В Пекине и Шанхае — от 3 юаней, в Гуанчжоу и Шэньчжэне — от 2."}},
+        {"@type": "Question", "name": "Как оплатить метро в Китае иностранцу?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Проще всего привязать зарубежную карту к Alipay или WeChat и показывать QR-код (乘车码) на турникете; код активируют отдельно для каждого города. Подойдут также транспортная карта и одноразовый билет из автомата."}},
+        {"@type": "Question", "name": "Можно ли расплатиться в метро наличными?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Наличными — только в автомате за одноразовый билет, и не везде принимают крупные купюры. Основные способы — карта и QR-код."}},
+        {"@type": "Question", "name": "Дети ездят в метро бесплатно?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Да, дети ростом ниже 1,3 метра едут бесплатно (обычно до двух с одним взрослым); в Пекине для роста 1,3–1,5 м — скидка 50%."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Сколько стоит метро в Китае"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
 <div id="ks-art">
 
 <nav class="crumbs">
@@ -327,6 +393,7 @@
   </div>
 </aside>
 
+
 <script>
 /* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
    снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
@@ -358,69 +425,3 @@
 })();
 </script>
 </div>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "@id": "https://kitai-school.ru/article/skolko-stoit-metro-v-kitae#article",
-      "headline": "Сколько стоит метро в Китае: цены на проезд и как устроена оплата",
-      "description": "Метро в Китае недорогое, тариф зависит от расстояния. Цены по городам, способы оплаты (карта, QR-код, Alipay/WeChat) и базовая лексика.",
-      "inLanguage": "ru",
-      "datePublished": "2026-07-17",
-      "dateModified": "2026-07-17",
-      "image": "https://static.tildacdn.com/tild6237-3031-4563-a639-343734333738/image-1784270419409.jpg",
-      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
-      "publisher": {"@id": "https://kitai-school.ru/#org"},
-      "mainEntityOfPage": "https://kitai-school.ru/article/skolko-stoit-metro-v-kitae",
-      "about": [
-        {"@type": "Country", "name": "Китай", "sameAs": "https://www.wikidata.org/wiki/Q148"}
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://kitai-school.ru/#yulia-goryaina",
-      "name": "Юлия Горяина",
-      "url": "https://kitai-school.ru/about",
-      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
-      "worksFor": {"@id": "https://kitai-school.ru/#org"},
-      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
-      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями. Основатель международной лицензированной онлайн-школы Kitai School.",
-      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
-    },
-    {
-      "@type": "EducationalOrganization",
-      "@id": "https://kitai-school.ru/#org",
-      "name": "Kitai School",
-      "url": "https://kitai-school.ru",
-      "telephone": "+7 958 538-70-80",
-      "email": "info@kitai-school.ru",
-      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
-      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
-      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "Сколько стоит одна поездка в метро в Китае?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Старт 2–3 юаня (примерно 20–35 ₽), тариф растёт с расстоянием. В Пекине и Шанхае — от 3 юаней, в Гуанчжоу и Шэньчжэне — от 2."}},
-        {"@type": "Question", "name": "Как оплатить метро в Китае иностранцу?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Проще всего привязать зарубежную карту к Alipay или WeChat и показывать QR-код (乘车码) на турникете; код активируют отдельно для каждого города. Подойдут также транспортная карта и одноразовый билет из автомата."}},
-        {"@type": "Question", "name": "Можно ли расплатиться в метро наличными?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Наличными — только в автомате за одноразовый билет, и не везде принимают крупные купюры. Основные способы — карта и QR-код."}},
-        {"@type": "Question", "name": "Дети ездят в метро бесплатно?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Да, дети ростом ниже 1,3 метра едут бесплатно (обычно до двух с одним взрослым); в Пекине для роста 1,3–1,5 м — скидка 50%."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
-        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
-        {"@type": "ListItem", "position": 3, "name": "Сколько стоит метро в Китае"}
-      ]
-    }
-  ]
-}
-</script>

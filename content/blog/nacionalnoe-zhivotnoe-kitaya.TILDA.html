@@ -1,4 +1,3 @@
-<div id="ks-wrap">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
 
@@ -53,8 +52,9 @@
 #ks-art .byline time{font-size:13px;color:var(--taupe)!important}
 
 #ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
-#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
 #ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
 
 #ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
 #ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
@@ -107,7 +107,74 @@
 @media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
 @media(max-width:600px){#ks-art h1{font-size:30px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
 </style>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/nacionalnoe-zhivotnoe-kitaya#article",
+      "headline": "Национальное животное Китая: большая панда как символ и дипломатический инструмент",
+      "description": "Большая панда — неофициальный символ Китая и участник панда-дипломатии; культура, охранный статус, название на китайском.",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-15",
+      "dateModified": "2026-07-15",
+      "image": "https://static.tildacdn.com/tild3065-3263-4964-b332-653366663134/simvolkitayapanda.png",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/nacionalnoe-zhivotnoe-kitaya",
+      "about": [
+        {"@type": "Thing", "name": "большая панда", "sameAs": "https://www.wikidata.org/wiki/Q33602"},
+        {"@type": "Country", "name": "Китай", "sameAs": "https://www.wikidata.org/wiki/Q148"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какое национальное животное в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Официально закреплённого нацживотного нет; неофициальный символ страны — большая панда (大熊猫)."}},
+        {"@type": "Question", "name": "Почему панда — символ Китая?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Это редкий эндемик Китая; она стала лицом охраны природы (логотип WWF) и панда-дипломатии."}},
+        {"@type": "Question", "name": "Что такое панда-дипломатия?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Практика передачи панд другим странам как жест расположения; с 1984 года — в аренду, до 1 млн долларов в год."}},
+        {"@type": "Question", "name": "Панды всё ещё под угрозой исчезновения?",
+         "acceptedAnswer": {"@type": "Answer", "text": "С 2016 года статус МСОП — уязвимый (ранее под угрозой); в 2021 Китай объявил, что вид больше не под угрозой."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Национальное животное Китая"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
 <div id="ks-art">
 
 <nav class="crumbs">
@@ -302,6 +369,7 @@
   </div>
 </aside>
 
+
 <script>
 /* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
    снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
@@ -333,70 +401,3 @@
 })();
 </script>
 </div>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "@id": "https://kitai-school.ru/article/nacionalnoe-zhivotnoe-kitaya#article",
-      "headline": "Национальное животное Китая: большая панда как символ и дипломатический инструмент",
-      "description": "Большая панда — неофициальный символ Китая и участник панда-дипломатии; культура, охранный статус, название на китайском.",
-      "inLanguage": "ru",
-      "datePublished": "2026-07-15",
-      "dateModified": "2026-07-15",
-      "image": "https://static.tildacdn.com/tild3065-3263-4964-b332-653366663134/simvolkitayapanda.png",
-      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
-      "publisher": {"@id": "https://kitai-school.ru/#org"},
-      "mainEntityOfPage": "https://kitai-school.ru/article/nacionalnoe-zhivotnoe-kitaya",
-      "about": [
-        {"@type": "Thing", "name": "большая панда", "sameAs": "https://www.wikidata.org/wiki/Q33602"},
-        {"@type": "Country", "name": "Китай", "sameAs": "https://www.wikidata.org/wiki/Q148"}
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://kitai-school.ru/#yulia-goryaina",
-      "name": "Юлия Горяина",
-      "url": "https://kitai-school.ru/about",
-      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
-      "worksFor": {"@id": "https://kitai-school.ru/#org"},
-      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
-      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями. Основатель международной лицензированной онлайн-школы Kitai School.",
-      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
-    },
-    {
-      "@type": "EducationalOrganization",
-      "@id": "https://kitai-school.ru/#org",
-      "name": "Kitai School",
-      "url": "https://kitai-school.ru",
-      "telephone": "+7 958 538-70-80",
-      "email": "info@kitai-school.ru",
-      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
-      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
-      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "Какое национальное животное в Китае?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Официально закреплённого нацживотного нет; неофициальный символ страны — большая панда (大熊猫)."}},
-        {"@type": "Question", "name": "Почему панда — символ Китая?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Это редкий эндемик Китая; она стала лицом охраны природы (логотип WWF) и панда-дипломатии."}},
-        {"@type": "Question", "name": "Что такое панда-дипломатия?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Практика передачи панд другим странам как жест расположения; с 1984 года — в аренду, до 1 млн долларов в год."}},
-        {"@type": "Question", "name": "Панды всё ещё под угрозой исчезновения?",
-         "acceptedAnswer": {"@type": "Answer", "text": "С 2016 года статус МСОП — уязвимый (ранее под угрозой); в 2021 Китай объявил, что вид больше не под угрозой."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
-        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
-        {"@type": "ListItem", "position": 3, "name": "Национальное животное Китая"}
-      ]
-    }
-  ]
-}
-</script>

@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Все статьи Kitai School — каталог по темам</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-cat{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-md:16px;--r-lg:22px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:32px 22px 56px;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-cat *{box-sizing:border-box}
+#ks-cat .cat-head{margin:0 0 30px}
+#ks-cat .cat-eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-cat h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.08;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 12px}
+#ks-cat .cat-lead{font-size:18px;color:var(--ink-2);max-width:60ch;margin:0}
+
+#ks-cat .cat-nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 8px;padding:18px 0 0;border-top:1px solid var(--hairline)}
+#ks-cat .cat-nav a{font-family:var(--fs)!important;font-size:13.5px;font-weight:500;color:var(--ink)!important;text-decoration:none;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:7px 15px;transition:.15s}
+#ks-cat .cat-nav a:hover{background:var(--brick)!important;color:#fff!important;border-color:var(--brick)}
+
+#ks-cat .cat-sec{margin-top:46px;scroll-margin-top:90px}
+#ks-cat .cat-sec-h{display:flex;align-items:center;gap:14px;margin:0 0 20px;padding-bottom:14px;border-bottom:2px solid var(--brick-soft)}
+#ks-cat .cat-sec-h .ic{flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:var(--brick);color:#fff;font-family:var(--fh)!important;font-weight:700;font-size:26px;display:flex;align-items:center;justify-content:center}
+#ks-cat .cat-sec-h h2{font-family:var(--fd)!important;font-weight:600;font-size:29px;line-height:1.1;color:var(--ink)!important;margin:0}
+#ks-cat .cat-sec-h .cnt{font-family:var(--fs)!important;font-size:13px;font-weight:600;color:var(--taupe)!important;margin-left:auto;white-space:nowrap}
+
+#ks-cat .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+#ks-cat a.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;text-decoration:none;box-shadow:var(--shadow-card);transition:.16s;position:relative}
+#ks-cat a.card:hover{border-color:var(--brick);box-shadow:0 8px 26px rgba(164,30,58,.13);transform:translateY(-2px)}
+#ks-cat a.card .t{font-family:var(--fd)!important;font-weight:600;font-size:20px;line-height:1.2;color:var(--ink)!important;margin:0 0 8px}
+#ks-cat a.card:hover .t{color:var(--brick)!important}
+#ks-cat a.card .d{font-family:var(--fs)!important;font-size:14px;line-height:1.5;color:var(--ink-2)!important;margin:0 0 14px;flex:1 1 auto}
+#ks-cat a.card .go{font-family:var(--fs)!important;font-size:13.5px;font-weight:600;color:var(--brick)!important;display:inline-flex;align-items:center;gap:6px}
+#ks-cat a.card .go svg{width:14px;height:14px;transition:.16s}
+#ks-cat a.card:hover .go svg{transform:translateX(3px)}
+
+#ks-cat .cat-foot{margin-top:50px;padding:26px 30px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);box-shadow:var(--shadow-card);text-align:center}
+#ks-cat .cat-foot p{margin:0 0 14px;color:var(--ink-2)!important;font-family:var(--fs)!important}
+#ks-cat .cat-foot .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border-radius:14px!important;padding:13px 28px!important}
+#ks-cat .cat-foot .btn:hover{background:var(--brick-deep)!important}
+
+@media(max-width:600px){
+  #ks-cat{padding:24px 14px 44px}
+  #ks-cat h1{font-size:32px}
+  #ks-cat .cat-grid{grid-template-columns:1fr}
+  #ks-cat .cat-sec-h h2{font-size:24px}
+}
+</style>
