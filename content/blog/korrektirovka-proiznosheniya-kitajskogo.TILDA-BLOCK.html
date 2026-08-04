@@ -1,0 +1,326 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo{margin:28px auto;text-align:center}
+#ks-art .ks-photo img{width:100%;max-width:460px;height:auto;display:block;margin:0 auto;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px auto 0;max-width:460px}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Корректировка произношения в китайском
+</nav>
+
+<article>
+<p class="eyebrow">Произношение</p>
+<h1>Корректировка произношения в китайском: как поставить тоны и звуки, <span class="italic">чтобы вас понимали</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-04">4 августа 2026</time>
+  </div>
+</div>
+
+<p class="passport">Корректировка произношения — это работа над тем, чтобы вас понимали носители. В китайском это не «шлифовка красоты», а базовая необходимость: тон меняет само значение слова, а несколько звуков просто отсутствуют в русском, поэтому язык не знает, куда их деть. Хорошая новость: и то, и другое ставится тренировкой. Разберём по-честному, почему нас чаще всего не понимают, как услышать разницу между тонами, куда девать язык в «неудобных» звуках и какие упражнения реально работают — в том числе без преподавателя.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Главная причина, по которой носители не понимают, — <b>тоны</b>, а не «неправильные» звуки. Сначала учитесь слышать и различать четыре тона, потом ставьте сами звуки. Труднее всего русскоговорящим даются шипящие с загнутым языком (<b>zh, ch, sh, r</b>), мягкие <b>j, q, x</b> и гласный <b>ü</b>. Работайте по одной ошибке за раз, тренируйтесь на минимальных парах, записывайте себя на диктофон и сравнивайте с носителем.</p>
+</div>
+
+<h2>Почему носители нас <span class="italic">не понимают</span></h2>
+<p>Самая частая жалоба на занятиях: «Я же сказал слово правильно, а меня не поняли». Почти всегда причина одна — <b>тон</b>. В русском мы меняем высоту голоса, чтобы передать эмоцию или задать вопрос. В китайском высота встроена в само слово: скажешь другим тоном — получится другое слово.</p>
+<p>Классический пример — слог <b>ma</b>. С разными тонами это четыре совершенно разных слова: 妈 (mā) «мама», 麻 (má) «конопля», 马 (mǎ) «лошадь», 骂 (mà) «ругать». Если вы произнесёте звуки идеально, но не тем тоном, для носителя это просто другое слово — и он честно не понимает, о чём вы. Поэтому корректировку произношения всегда начинают именно с тонов.</p>
+
+<h2>Четыре тона: как <span class="italic">услышать разницу</span></h2>
+<p>В путунхуа четыре основных тона плюс нейтральный (короткий, безударный). Проще всего представить их как движение голоса — вверх, вниз или ровно. Вот они на том же слоге <b>ma</b>:</p>
+<div class="table-wrap">
+<table>
+  <caption>Четыре тона на слоге ma — движение голоса и значение.</caption>
+  <thead><tr><th>Тон</th><th>Как звучит</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td>1-й — ровный высокий</td><td>тянется ровно и высоко, как звук «а-а-а» у врача</td><td>mā 妈 — мама</td></tr>
+    <tr><td>2-й — восходящий</td><td>голос идёт вверх, как в удивлённом «да?»</td><td>má 麻 — конопля</td></tr>
+    <tr><td>3-й — нисходяще-восходящий</td><td>сначала вниз, потом вверх, как задумчивое «ну-у…»</td><td>mǎ 马 — лошадь</td></tr>
+    <tr><td>4-й — нисходящий</td><td>резко вниз, как строгое «Стоп!»</td><td>mà 骂 — ругать</td></tr>
+    <tr><td>Нейтральный</td><td>короткий и лёгкий, без ударения</td><td>ma 吗 — вопрос</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Начинать корректировку лучше не с говорения, а со <b>слуха</b>. Пока ухо не отличает 2-й тон от 3-го, рот их тоже не различит. Полезно послушать вопросительную частицу и её роль в речи — про неё мы отдельно писали в статье про <a href="https://kitai-school.ru/article/voprositelnaya-chastica-ma" target="_blank" rel="noopener">частицу 吗</a>.</p>
+
+<h2>«Неудобные» звуки: <span class="italic">что даётся тяжелее всего</span></h2>
+<p>Второй фронт после тонов — сами звуки. Большинство согласных китайского близки к русским, но есть три группы, которые ломают язык русскоговорящим. Дело не в «неспособности» — просто этих звуков нет в русском, и язык по привычке подставляет ближайший похожий. Вот они:</p>
+<div class="table-wrap">
+<table>
+  <caption>Самые трудные звуки для русскоговорящих и куда девать язык.</caption>
+  <thead><tr><th>Звук</th><th>В чём сложность и как ставить</th></tr></thead>
+  <tbody>
+    <tr><td>zh, ch, sh, r</td><td>шипящие с загнутым назад языком. Кончик языка поднимается к бугорку за верхними зубами, но не касается. Русское «ж/ш» — плоское, здесь язык «загнут»</td></tr>
+    <tr><td>j, q, x</td><td>мягкие, произносятся с растянутыми в улыбке губами, кончик языка — у нижних зубов. q — это не «к», а мягкое «ць»; x — не «кс», а мягкое «сь»</td></tr>
+    <tr><td>z, c, s</td><td>свистящие у самых зубов. Главное — не путать их с шипящими zh/ch/sh: z ≈ «дз», c ≈ «ц», s ≈ «с»</td></tr>
+    <tr><td>ü</td><td>звука нет в русском: сложите губы для «у», но произнесите «и». Встречается в nü, lü, ju, qu, xu</td></tr>
+    <tr><td>-n и -ng</td><td>конечное -n — язык у зубов (как в «он»); -ng — язык у нёба, звук «в нос» (как английское -ng). Их путают чаще всего, а они различают слова</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Важно ставить звуки от <b>пиньиня</b>, а не от русской транскрипции. Записи вроде «ни хао» или «сесе» закрепляют акцент: буквы <b>q, x, zh, r</b> в пиньине читаются совсем не так, как выглядят. Про логику записи слогов удобно посмотреть на простом примере в статье про <a href="https://kitai-school.ru/article/do-svidaniya-po-kitajski" target="_blank" rel="noopener">«до свидания» по слогам</a>.</p>
+
+<h2>Минимальные пары: <span class="italic">тренируем слух</span></h2>
+<p>Лучший инструмент корректировки — <b>минимальные пары</b>. Это два слова, которые отличаются всего одним звуком или тоном. Слушая и проговаривая их подряд, вы учите ухо и язык ловить именно ту разницу, которая важна. Начните с пар, где путаница встречается чаще всего:</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Минимальные пары: что с чем путают и что тренировать.</caption>
+  <thead><tr><th>Пара</th><th>Что отличается</th></tr></thead>
+  <tbody>
+    <tr><td>mǎi 买 (купить) / mài 卖 (продать)</td><td>3-й и 4-й тон — почти противоположный смысл</td></tr>
+    <tr><td>sì 四 (четыре) / shì 是 (быть)</td><td>свистящий s против шипящего sh</td></tr>
+    <tr><td>jiā 家 (дом) / qiā 掐 (щипать)</td><td>мягкие j и q рядом</td></tr>
+    <tr><td>nǚ 女 (женщина) / nǔ 努 (усилие)</td><td>гласный ü против u</td></tr>
+    <tr><td>xīn 新 (новый) / xīng 星 (звезда)</td><td>конечные -n и -ng</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Схема простая: услышали пару у носителя → повторили обе → записали себя → сравнили. Когда разница «щёлкает» в ухе, язык подстраивается сам. Это скучновато, но именно так уходит акцент — не «вообще», а по одной паре за раз.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Ко мне часто приходят ученики, которые уже год-два учат китайский сами и в отчаянии: «Меня не понимают даже в кафе». Начинаем разбираться — и почти всегда оказывается, что звуки-то неплохие, а вот тоны «плавают». Человек привык говорить с русской интонацией: вопрос — вверх, точка — вниз, а слова при этом теряют свой тон.</p>
+  <p>Мы не бросаемся исправлять всё сразу. Берём одну проблему — например, что 2-й и 3-й тон звучат одинаково, — и неделю работаем только с ней: слушаем, поём тоны рукой, записываем на диктофон. Через пару недель ученик сам слышит разницу в записи и удивляется: «Это правда я так говорил?». Вот этот момент, когда начинаешь слышать себя со стороны, и есть настоящая корректировка.</p>
+</div>
+
+<h2>Упражнения, которые можно делать <span class="italic">без преподавателя</span></h2>
+<p>Базу произношения реально прокачать самостоятельно — нужны только наушники, диктофон в телефоне и немного дисциплины. Вот что работает лучше всего:</p>
+<div class="table-wrap">
+<table>
+  <caption>Самостоятельные упражнения для постановки произношения.</caption>
+  <thead><tr><th>Упражнение</th><th>Как делать</th></tr></thead>
+  <tbody>
+    <tr><td>Повтор за носителем (шэдоуинг)</td><td>включите короткую фразу и повторяйте синхронно, копируя мелодию и тон, а не только слова</td></tr>
+    <tr><td>Запись себя</td><td>запишите одну фразу на диктофон, послушайте сразу после носителя, найдите одно отличие — и переделайте</td></tr>
+    <tr><td>Тоны рукой</td><td>проговаривая слог, рисуйте тон в воздухе: ровно, вверх, вниз-вверх, вниз. Тело помогает запомнить движение</td></tr>
+    <tr><td>Зеркало</td><td>для zh/ch/sh/r и j/q/x следите за языком и губами в зеркале — так видно, где привычно «съезжаете» на русский</td></tr>
+    <tr><td>Минимальные пары</td><td>каждый день 5 пар: слушать, повторять, записывать. Ухо тренируется быстрее, чем кажется</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Одно честное «но»: себя со стороны мы слышим плохо, поэтому диктофон обязателен, а несколько занятий с преподавателем экономят месяцы. Живой человек ловит ошибку, которую вы не замечаете, и сразу показывает, куда девать язык. Дальше можно снова тренироваться самому — но уже зная, что именно исправлять.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С чего начать корректировку произношения в китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>С тонов. Именно из-за них носители чаще всего не понимают, а не из-за «неправильных» звуков. Научитесь слышать и различать четыре тона на слоге ma, а потом переносите это на реальные слова. Звуки ставятся уже вторым шагом.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему китайцы меня не понимают, хотя я говорю слова правильно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Чаще всего дело в тоне. В китайском тон меняет само значение слова: mā — «мама», mǎ — «лошадь», mà — «ругать». Если вы говорите правильные звуки, но не тем тоном, для носителя это просто другое слово.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие звуки китайского самые трудные для русскоговорящих?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Труднее всего даются три группы: шипящие с загнутым языком (zh, ch, sh, r), мягкие j, q, x и гласный ü. Ещё частая ошибка — путать конечные -n и -ng. Все они ставятся упражнениями, если понять, куда девать язык и губы.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли поставить произношение без преподавателя?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Базу — да: слушать носителя и повторять за ним (шэдоуинг), записывать себя на диктофон и сравнивать, тренироваться перед зеркалом, работать с минимальными парами. Но себя со стороны слышно плохо, поэтому хотя бы несколько занятий с преподавателем сильно ускоряют результат.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как убрать русский акцент в китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Акцент уходит не «вообще», а по деталям: ровные тоны, чёткая разница между свистящими и шипящими, отсутствие лишнего смягчения. Работайте по одной ошибке за раз, записывайте себя и сравнивайте с носителем — так вы слышите прогресс и не пытаетесь исправить всё сразу.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Хотите, чтобы произношение проверил живой преподаватель? На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсах Kitai School</a> мы ставим тоны и звуки с первых уроков и мягко исправляем то, что вы сами не слышите. Диагностический урок — бесплатный: послушаем вашу речь и покажем, над чем поработать.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>ТОНЫ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подскажем, с чего начать.</p>
+</div>
+
+<p>Дальше по теме: с чего начинается китайская речь — <a href="https://kitai-school.ru/article/voprositelnaya-chastica-ma" target="_blank" rel="noopener">вопросительная частица 吗</a>; как устроены слоги — <a href="https://kitai-school.ru/article/do-svidaniya-po-kitajski" target="_blank" rel="noopener">«до свидания» по-китайски</a>; сколько времени занимает весь путь — <a href="https://kitai-school.ru/article/za-skolko-vyuchit-kitajskij-s-nulya" target="_blank" rel="noopener">за сколько выучить китайский с нуля</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://ru.wikipedia.org/wiki/Тоны_в_китайском_языке" target="_blank" rel="noopener nofollow">Википедия: Тоны в китайском языке</a> — система четырёх тонов и нейтрального.</li>
+    <li><a href="https://ru.wikipedia.org/wiki/Пиньинь" target="_blank" rel="noopener nofollow">Википедия: Пиньинь</a> — система записи звуков и её отличие от русской транскрипции.</li>
+    <li>Практика Kitai School — постановка и корректировка произношения у взрослых и детей, работа с типичными ошибками русскоговорящих.</li>
+  </ol>
+</div>
+
+<p class="sign">Вас обязательно поймут! <span class="han">加油！</span></p>
+
+<div class="tags">
+  <span>#произношение</span> <span>#тоны</span> <span>#фонетикакитайского</span> <span>#китайскийакцент</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики, учит китайскому с нуля взрослых и детей. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Поставим тоны и звуки с первого урока — диагностика бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
