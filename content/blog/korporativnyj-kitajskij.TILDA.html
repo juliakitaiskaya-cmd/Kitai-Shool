@@ -1,0 +1,397 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo{margin:28px auto;text-align:center}
+#ks-art .ks-photo img{width:100%;max-width:460px;height:auto;display:block;margin:0 auto;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px auto 0;max-width:460px}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/korporativnyj-kitajskij#article",
+      "headline": "Корпоративный китайский: зачем компании вкладываются в обучение сотрудников и как это работает",
+      "description": "Практический разбор корпоративного обучения китайскому: зачем это бизнесу, как составить программу под отдел, какие форматы работают в офисе и как измерить прогресс сотрудников.",
+      "inLanguage": "ru",
+      "datePublished": "2026-08-03",
+      "dateModified": "2026-08-03",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/korporativnyj-kitajskij"
+    },
+    {
+      "@type": "Course",
+      "name": "Корпоративный китайский — Kitai School",
+      "description": "Корпоративное обучение китайскому языку под задачи компании: программы для отделов продаж, ВЭД и топ-менеджмента, гибкие форматы в офисе и онлайн, измеримый прогресс.",
+      "provider": {"@id": "https://kitai-school.ru/#org"},
+      "inLanguage": "ru",
+      "teaches": "Китайский язык для рабочих задач бизнеса",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["online", "onsite"],
+        "courseWorkload": "PT2H",
+        "offers": {"@type": "Offer", "category": "paid", "url": "https://kitai-school.ru/business"}
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики с китайскими компаниями (TCL, Great Wall Motors, FAW). Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что такое корпоративный китайский?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Это обучение сотрудников компании китайскому языку под рабочие задачи: переговоры, переписку, документы, работу с фабриками. Программа строится под конкретный отдел и цели бизнеса, а не «язык вообще»."}},
+        {"@type": "Question", "name": "Зачем компании учить сотрудников китайскому?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Чтобы работать с китайскими партнёрами напрямую: быстрее переговоры и переписка, меньше потерь и ошибок «на переводе», ниже зависимость от посредников. А ещё это заметный бонус для сотрудников — рост и лояльность."}},
+        {"@type": "Question", "name": "Как построить программу обучения под отдел?",
+         "acceptedAnswer": {"@type": "Answer", "text": "От задач отдела. Продажи — переговоры и презентации; ВЭД и закупки — документы, переписка с фабриками, термины поставок; топ-менеджмент — деловой этикет, small talk, встречи. Лексику и ситуации подбирают под реальную работу."}},
+        {"@type": "Question", "name": "Какие форматы занятий работают в офисе?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Короткие регулярные занятия (45–60 минут 1–2 раза в неделю), мини-группы по уровню, онлайн или в офисе, смешанный формат с короткими самостоятельными заданиями. Главное — регулярность и привязка к рабочим ситуациям."}},
+        {"@type": "Question", "name": "Как измерить прогресс сотрудников?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Входная диагностика уровня, понятные цели (например, по ступеням HSK), регулярные срезы и отчёты для HR, а главное — оценка на реальных задачах: провёл переговоры, написал письмо партнёру, оформил документы."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Корпоративный китайский"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Корпоративный китайский
+</nav>
+
+<article>
+<p class="eyebrow">Для бизнеса</p>
+<h1>Корпоративный китайский: зачем компании вкладываются в обучение сотрудников <span class="italic">и как это работает</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-03">3 августа 2026</time>
+  </div>
+</div>
+
+<p class="passport">Корпоративный китайский — это обучение сотрудников не «языку вообще», а тому китайскому, который нужен для работы: переговоров, переписки, документов, общения с фабриками и партнёрами. Компании вкладываются в него по простой причине: свой человек, говорящий по-китайски, работает быстрее и точнее переводчика, а бизнес меньше зависит от посредников. Разберём по-деловому: зачем это нужно, как собрать программу под отдел продаж, ВЭД или руководителей, какие форматы реально работают в офисе и как измерить результат. Материал для HR и руководителей, которые думают запустить обучение.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Корпоративный китайский — обучение сотрудников под рабочие задачи, а не «язык вообще». <b>Зачем:</b> прямая работа с партнёрами, быстрее переговоры и переписка, меньше потерь «на переводе». <b>Как:</b> программу собирают под отдел (продажи, ВЭД, топ-менеджмент), занятия делают короткими и регулярными (45–60 мин, 1–2 раза в неделю), в офисе или онлайн. <b>Результат</b> измеряют диагностикой, целями по HSK и оценкой на реальных задачах.</p>
+</div>
+
+<h2>Зачем компании вкладываются в <span class="italic">китайский</span></h2>
+<p>Работа с Китаем через переводчика — это всегда «испорченный телефон» и лишнее звено. Когда сотрудник понимает язык хотя бы на рабочем уровне, меняется многое:</p>
+<p><b>Переговоры идут быстрее.</b> Не нужно ждать перевода каждой фразы, проще уловить настроение и нюансы.<br>
+<b>Меньше ошибок в деталях.</b> В спецификациях, ценах и сроках мелочь решает всё, а на переводе именно детали и теряются.<br>
+<b>Ниже зависимость от посредников.</b> Своя команда не «утекает» вместе с внешним переводчиком и лучше защищает интересы компании.<br>
+<b>Крепче отношения с партнёрами.</b> В Китае личный контакт и уважение к языку ценят особенно — это часть деловой культуры.</p>
+<p>И ещё один эффект, который важен для HR: обучение языку — сильный бонус для сотрудников. Это рост, новые задачи и лояльность, а для компании — удержание ценных людей.</p>
+
+<h2>Программа под задачи <span class="italic">отдела</span></h2>
+<p>Главное отличие корпоративного обучения от обычных курсов — программа строится не «по учебнику», а под реальные задачи конкретного отдела. Одному нужны переговоры, другому — документы, третьему — деловой этикет. Вот как это выглядит:</p>
+<div class="table-wrap">
+<table>
+  <caption>Разные отделы — разные цели и лексика.</caption>
+  <thead><tr><th>Кому</th><th>Что в программе</th></tr></thead>
+  <tbody>
+    <tr><td>Отдел продаж</td><td>переговоры, презентация продукта, работа с возражениями, small talk с клиентом</td></tr>
+    <tr><td>ВЭД и закупки</td><td>переписка с фабриками, спецификации и документы, термины поставок, контроль сроков</td></tr>
+    <tr><td>Логистика</td><td>оформление грузов, общение с перевозчиками, работа с площадками и складами</td></tr>
+    <tr><td>Топ-менеджмент</td><td>деловой этикет, встречи и банкеты, короткие речи, уверенный small talk</td></tr>
+    <tr><td>Поддержка и сервис</td><td>типовые ответы клиентам, вежливые формулы, решение частых вопросов</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Про деловые тонкости, которые особенно важны топ-менеджменту, мы подробно писали в статьях про <a href="https://kitai-school.ru/article/biznes-etiket-v-kitae" target="_blank" rel="noopener">бизнес-этикет в Китае</a> и <a href="https://kitai-school.ru/article/kitajskij-etiket-obshcheniya" target="_blank" rel="noopener">этикет общения</a> — их полезно дать сотрудникам как «культурную» часть программы.</p>
+
+<h2>Форматы, которые работают <span class="italic">в офисе</span></h2>
+<p>Занятость сотрудников — главный враг корпоративного обучения. Люди пропускают долгие пары, «горят» на работе и бросают. Поэтому важнее не количество часов, а формат, который встраивается в рабочий день:</p>
+<div class="table-wrap">
+<table>
+  <caption>Форматы корпоративных занятий и когда они подходят.</caption>
+  <thead><tr><th>Формат</th><th>Когда подходит</th></tr></thead>
+  <tbody>
+    <tr><td>Мини-группы по уровню</td><td>несколько сотрудников с похожими задачами; дешевле и с командным духом</td></tr>
+    <tr><td>Индивидуально</td><td>для руководителей и узких задач, под плотный график</td></tr>
+    <tr><td>Онлайн</td><td>распределённые команды и филиалы; экономит время на дорогу</td></tr>
+    <tr><td>В офисе</td><td>когда важны дисциплина и «живой» контакт с преподавателем</td></tr>
+    <tr><td>Смешанный</td><td>занятие + короткие самостоятельные задания между встречами</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Что действительно работает: <b>короткие регулярные занятия</b> (45–60 минут 1–2 раза в неделю) лучше редких марафонов. Плюс привязка к рабочим ситуациям — сотрудник сразу применяет выученное в переписке или на встрече, и язык не «висит мёртвым грузом».</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>За годы работы с китайскими компаниями — TCL, Great Wall Motors, FAW — я видела, как по-разному компании подходят к обучению. Кто-то отправляет весь отдел на «общий китайский с нуля» — и через три месяца группа редеет, потому что менеджеру по продажам не нужны детские диалоги про семью, ему нужны переговоры.</p>
+  <p>Работает другое: сначала честная диагностика и разговор с руководителем — что именно людям нужно делать на китайском. Потом короткая программа под эти задачи. Когда сотрудник уже на четвёртом занятии пишет первое настоящее письмо партнёру и получает ответ, мотивация держится сама. Обучение окупается не «часами», а тем, что человек начинает решать рабочие задачи на языке.</p>
+</div>
+
+<h2>Как измерить <span class="italic">прогресс</span></h2>
+<p>Для бизнеса обучение без измеримого результата — просто статья расходов. Хорошая программа с самого начала показывает, за что платит компания:</p>
+<p><b>Входная диагностика.</b> Замеряем стартовый уровень каждого сотрудника, чтобы не собирать «новичков с продвинутыми» в одну группу.<br>
+<b>Понятные цели.</b> Например, ступени <a href="https://kitai-school.ru/article/hsk-1" target="_blank" rel="noopener">HSK</a> или конкретные навыки: «вести переписку по заказам», «провести короткую презентацию».<br>
+<b>Регулярные срезы.</b> Небольшие контрольные и отчёты для HR: кто как продвигается, где нужна поддержка.<br>
+<b>Оценка на реальных задачах.</b> Главный показатель — не балл, а то, что сотрудник уже делает по работе: провёл переговоры, оформил документы, ответил клиенту.</p>
+<p class="note">Такой подход удобно показать руководству: видно и динамику по людям, и практическую отдачу для бизнеса.</p>
+
+<h2>Как запустить обучение: <span class="italic">по шагам</span></h2>
+<p>Чтобы HR было проще, вот рабочая последовательность:</p>
+<div class="table-wrap">
+<table>
+  <caption>С чего начать корпоративное обучение китайскому.</caption>
+  <thead><tr><th>Шаг</th><th>Что сделать</th></tr></thead>
+  <tbody>
+    <tr><td>1. Цель</td><td>определить, кому и зачем нужен китайский (отдел, задачи, сроки)</td></tr>
+    <tr><td>2. Диагностика</td><td>замерить уровни сотрудников и собрать группы по уровню и задачам</td></tr>
+    <tr><td>3. Программа</td><td>подобрать лексику, ситуации и формат под реальную работу</td></tr>
+    <tr><td>4. Старт</td><td>запустить короткие регулярные занятия, удобные для графика</td></tr>
+    <tr><td>5. Контроль</td><td>срезы, отчёты и оценка на рабочих задачах — и корректировка</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое корпоративный китайский?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это обучение сотрудников компании китайскому языку под рабочие задачи: переговоры, переписку, документы, работу с фабриками. Программа строится под конкретный отдел и цели бизнеса, а не «язык вообще».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Зачем компании учить сотрудников китайскому?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Чтобы работать с китайскими партнёрами напрямую: быстрее переговоры и переписка, меньше потерь и ошибок «на переводе», ниже зависимость от посредников. А ещё это заметный бонус для сотрудников — рост и лояльность.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как построить программу обучения под отдел?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>От задач отдела. Продажи — переговоры и презентации; ВЭД и закупки — документы, переписка с фабриками, термины поставок; топ-менеджмент — деловой этикет, small talk, встречи. Лексику и ситуации подбирают под реальную работу.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие форматы занятий работают в офисе?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Короткие регулярные занятия (45–60 минут 1–2 раза в неделю), мини-группы по уровню, онлайн или в офисе, смешанный формат с короткими самостоятельными заданиями. Главное — регулярность и привязка к рабочим ситуациям.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как измерить прогресс сотрудников?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Входная диагностика уровня, понятные цели (например, по ступеням HSK), регулярные срезы и отчёты для HR, а главное — оценка на реальных задачах: провёл переговоры, написал письмо партнёру, оформил документы.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Думаете запустить корпоративное обучение китайскому? <a href="https://kitai-school.ru/business" target="_blank" rel="noopener">Kitai School</a> составит программу под ваши отделы и задачи, проведёт диагностику сотрудников и предложит удобный формат — в офисе или онлайн, с понятными отчётами по прогрессу.</p>
+  <p><a class="btn" href="#popup:zayavka">Обсудить программу для компании →</a></p>
+  <p>Или напишите слово <b>КОМПАНИЯ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — рассчитаем формат под ваш штат.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/biznes-etiket-v-kitae" target="_blank" rel="noopener">бизнес-этикет в Китае</a> для переговоров; <a href="https://kitai-school.ru/article/zachem-uchit-kitajskij-yazyk" target="_blank" rel="noopener">зачем вообще учить китайский</a>; сколько времени занимает язык — <a href="https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya" target="_blank" rel="noopener">за сколько выучить с нуля</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — корпоративное обучение и работа с китайскими компаниями (TCL, Great Wall Motors, FAW).</li>
+    <li><a href="https://ru.wikipedia.org/wiki/HSK" target="_blank" rel="noopener nofollow">Википедия: HSK</a> — уровни экзамена как ориентир для целей обучения.</li>
+    <li>Методика Kitai School — программы под задачи отделов и оценка прогресса на реальных ситуациях.</li>
+  </ol>
+</div>
+
+<p class="sign">Успехов вашей команде! <span class="han">合作愉快！</span></p>
+
+<div class="tags">
+  <span>#корпоративныйкитайский</span> <span>#обучениесотрудников</span> <span>#бизнесскитаем</span> <span>#HR</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики с китайскими компаниями — TCL, Great Wall Motors, FAW. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/business" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Бизнес-китайский</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Составим программу под ваши отделы и задачи</p>
+    <a class="side-btn" href="#popup:zayavka">Программа для компании →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
