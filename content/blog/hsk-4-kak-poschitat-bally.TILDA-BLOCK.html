@@ -1,0 +1,367 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo{margin:28px auto;text-align:center}
+#ks-art .ks-photo img{width:100%;max-width:460px;height:auto;display:block;margin:0 auto;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px auto 0;max-width:460px}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Система оценки HSK 4: как посчитать баллы
+</nav>
+
+<article>
+<p class="eyebrow">Экзамены HSK</p>
+<h1>Система оценки HSK 4: как посчитать свой результат и набрать заветные <span class="italic">180+ баллов</span> для вуза</h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-04">4 августа 2026</time>
+  </div>
+</div>
+
+<p class="passport">Почти каждый, кто готовится к HSK 4, в какой-то момент берёт пробный тест, считает правильные ответы и пытается понять: «А я уже прошёл?». И вот здесь начинаются ошибки. Простой подсчёт «один правильный ответ — один балл» на HSK не работает: у разделов разный вес, а письмо вообще оценивает человек по критериям. Разберёмся честно, как устроены 300 баллов HSK 4, откуда берётся порог 180, почему самопроверка часто завышает результат и как всё-таки прикинуть свой реальный уровень перед официальной сдачей.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>В HSK 4 <b>300 баллов</b>: три раздела (аудирование, чтение, письмо) по 100 баллов. Порог сдачи — <b>180</b> (60%). Считать «один ответ — один балл» нельзя: в аудировании 45 вопросов, в чтении 40, в письме 15, а весят они одинаково. Для прикидки берите <b>долю правильных в разделе × 100</b> и складывайте. Письмо оценивайте строго — при самопроверке его почти всегда завышают.</p>
+</div>
+
+<h2>Как устроен HSK 4: <span class="italic">три раздела и 300 баллов</span></h2>
+<p>Сначала общая картина. HSK 4 состоит из трёх разделов, и каждый даёт ровно по 100 баллов — независимо от того, сколько в нём вопросов. Отсюда и берётся максимум 300 и порог 180.</p>
+<div class="table-wrap">
+<table>
+  <caption>Структура HSK 4: разделы, число вопросов и баллы.</caption>
+  <thead><tr><th>Раздел</th><th>Вопросов</th><th>Баллов</th></tr></thead>
+  <tbody>
+    <tr><td>Аудирование (听力)</td><td>45</td><td>100</td></tr>
+    <tr><td>Чтение (阅读)</td><td>40</td><td>100</td></tr>
+    <tr><td>Письмо (书写)</td><td>15</td><td>100</td></tr>
+    <tr><td>Итого</td><td>100</td><td>300</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Проходной балл — <b>180 из 300</b>, это 60%. Отдельного минимума по каждому разделу для сдачи нет: официально важна сумма. Но провал в одном разделе тянет вниз всё, поэтому «дотягивать» до 180 за счёт только аудирования — рискованная стратегия. Полный разбор форматов заданий мы даём в статье <a href="https://kitai-school.ru/article/hsk-4" target="_blank" rel="noopener">про сам экзамен HSK 4</a>.</p>
+
+<h2>Почему «один ответ — один балл» <span class="italic">не работает</span></h2>
+<p>Это главная ловушка самопроверки. Смотрите: разделы весят одинаково (по 100 баллов), а вопросов в них разное количество. Значит, «цена» одного вопроса везде разная:</p>
+<div class="table-wrap">
+<table>
+  <caption>Сколько примерно «стоит» один правильный ответ в каждом разделе HSK 4.</caption>
+  <thead><tr><th>Раздел</th><th>Цена одного ответа</th></tr></thead>
+  <tbody>
+    <tr><td>Аудирование (45 вопросов)</td><td>≈ 2,2 балла за ответ</td></tr>
+    <tr><td>Чтение (40 вопросов)</td><td>≈ 2,5 балла за ответ</td></tr>
+    <tr><td>Письмо (15 заданий)</td><td>≈ 6,7 балла за задание</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Разница огромная: одна ошибка в письме стоит примерно как три ошибки в аудировании. Поэтому, если вы просто сложили все правильные ответы из ста вопросов и обрадовались цифре «70 из 100 — значит, 210 баллов», вы себя обманули. Реальный балл зависит от того, <b>в каком разделе</b> вы ошиблись.</p>
+<p class="note">Есть ещё один нюанс: официально HSK использует не простую пропорцию, а <b>масштабирование</b> — баллы выравнивают между разными вариантами экзамена, чтобы сложный и лёгкий тест были сопоставимы. Поэтому точный балл до сдачи не посчитает никто. Но для честной прикидки пропорция вполне годится.</p>
+
+<h2>Как прикинуть аудирование и чтение: <span class="italic">простая формула</span></h2>
+<p>Для разделов с выбором ответа (аудирование и чтение) прикидка честная и простая. Формула одна:</p>
+<div class="ks-quote">
+  <p>Баллы за раздел ≈ (правильные ответы ÷ всего вопросов) × 100</p>
+  <cite>Оценка по разделу, где ответы объективные</cite>
+</div>
+<p>Примеры на реальных числах HSK 4:</p>
+<div class="table-wrap">
+<table>
+  <caption>Прикидка баллов по аудированию и чтению.</caption>
+  <thead><tr><th>Результат</th><th>Расчёт</th><th>Баллы</th></tr></thead>
+  <tbody>
+    <tr><td>Аудирование: 36 из 45</td><td>36 ÷ 45 × 100</td><td>≈ 80</td></tr>
+    <tr><td>Аудирование: 27 из 45</td><td>27 ÷ 45 × 100</td><td>≈ 60</td></tr>
+    <tr><td>Чтение: 32 из 40</td><td>32 ÷ 40 × 100</td><td>≈ 80</td></tr>
+    <tr><td>Чтение: 24 из 40</td><td>24 ÷ 40 × 100</td><td>≈ 60</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Дальше складываете баллы за три раздела. Если аудирование ≈ 80, чтение ≈ 80, а письмо вы честно оценили в 40, то это 200 — уже выше порога. Как честно оценить письмо — в следующем разделе, потому что именно там прячется самообман.</p>
+
+<h2>Письмо: почему самопроверка <span class="italic">завышает баллы</span></h2>
+<p>Аудирование и чтение проверить легко — ответ либо верный, либо нет. А вот письмо в HSK 4 оценивает <b>человек</b> по критериям, и вот тут студенты себя жалеют. В разделе письма два типа заданий:</p>
+<div class="table-wrap">
+<table>
+  <caption>Задания раздела «Письмо» в HSK 4 и что в них проверяют.</caption>
+  <thead><tr><th>Задание</th><th>Что проверяет эксперт</th></tr></thead>
+  <tbody>
+    <tr><td>Составить предложение из данных слов</td><td>верный порядок слов, полнота, правильные иероглифы</td></tr>
+    <tr><td>Написать предложение по картинке и слову</td><td>грамматика, уместность по смыслу, верное написание иероглифов</td></tr>
+  </tbody>
+</table>
+</div>
+<p>При самопроверке типичные иллюзии такие: «иероглиф немного кривой, но узнать можно — засчитаю», «слово подошло по смыслу, хоть и не то, что на картинке — ладно», «порядок слов почти правильный». Эксперт так не делает: иероглиф с ошибкой — не засчитан, неверный порядок слов — минус балл, не по теме картинки — ноль. Поэтому свою письменную часть честнее показать преподавателю или занизить оценку с запасом.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Приходит ученик, гордо показывает пробник: «80 правильных из ста, я готов!». Начинаем считать по разделам — и оказывается, что почти все ошибки у него в письме, а его-то он себе засчитал «на глаз». Пересчитали честно: письмо тянет всего на 45 из 100, и сумма выходит 175 — на пять баллов ниже порога.</p>
+  <p>Это не повод расстраиваться, а повод понять, куда смотреть. Мы неделю поработали прицельно с письмом — порядок слов и аккуратные иероглифы, — и на официальном экзамене он спокойно взял свои 190. Вся разница была не в «уровне вообще», а в том, что раньше он считал баллы неправильно и не видел свою слабую зону.</p>
+</div>
+
+<h2>Пошаговый алгоритм <span class="italic">честной самооценки</span></h2>
+<p>Чтобы прикидка была правдивой, а не приятной, считайте по разделам и строго. Вот порядок:</p>
+<div class="table-wrap">
+<table>
+  <caption>Как честно оценить свой результат перед официальной сдачей.</caption>
+  <thead><tr><th>Шаг</th><th>Что сделать</th></tr></thead>
+  <tbody>
+    <tr><td>1. Аудирование</td><td>посчитайте правильные из 45, умножьте долю на 100</td></tr>
+    <tr><td>2. Чтение</td><td>посчитайте правильные из 40, умножьте долю на 100</td></tr>
+    <tr><td>3. Письмо</td><td>оцените строго по критериям или отдайте преподавателю; при сомнении — занижайте</td></tr>
+    <tr><td>4. Сумма</td><td>сложите три раздела — это ваш примерный балл из 300</td></tr>
+    <tr><td>5. Запас</td><td>цельтесь не в 180, а в 200+: на реальном экзамене нервы и время съедают баллы</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Совет из практики: не сдавайте, пока стабильно не выходите на <b>200+</b> на пробниках. Порог 180 — это минимум, а на официальном тесте всегда теряешь несколько баллов на волнении и тайминге. Как понять, что вы действительно готовы, мы подробно разобрали в статье про <a href="https://kitai-school.ru/article/hsk-4-probnyy-test" target="_blank" rel="noopener">пробный тест HSK 4</a>.</p>
+
+<h2>А как считать баллы <span class="italic">HSK 2 и HSK 3</span></h2>
+<p>Логика та же, меняются только числа. Главное отличие: в HSK 1 и HSK 2 нет письменного раздела, поэтому максимум там 200, а не 300. Сравните:</p>
+<div class="table-wrap">
+<table>
+  <caption>Максимум и проходной балл на разных уровнях HSK.</caption>
+  <thead><tr><th>Уровень</th><th>Разделы</th><th>Максимум</th><th>Порог</th></tr></thead>
+  <tbody>
+    <tr><td>HSK 2</td><td>аудирование + чтение</td><td>200</td><td>120</td></tr>
+    <tr><td>HSK 3</td><td>аудирование + чтение + письмо</td><td>300</td><td>180</td></tr>
+    <tr><td>HSK 4</td><td>аудирование + чтение + письмо</td><td>300</td><td>180</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Порог везде одинаковый — <b>60%</b> от максимума. Формула прикидки для аудирования и чтения та же: доля правильных × 100. А в HSK 3, где уже есть письмо, действует то же правило честности — оценивайте письменный раздел строго, а не «на глаз».</p>
+
+<h2>Сколько баллов нужно <span class="italic">для вуза</span></h2>
+<p>Формально HSK 4 «сдан» на 180 баллах. Но для поступления в китайский университет одной сдачи мало — смотрите требования конкретной программы:</p>
+<div class="table-wrap">
+<table>
+  <caption>Ориентиры по баллам HSK для поступления (уточняйте у вуза).</caption>
+  <thead><tr><th>Цель</th><th>Обычно требуется</th></tr></thead>
+  <tbody>
+    <tr><td>Языковые курсы при вузе</td><td>часто без HSK или HSK 3–4</td></tr>
+    <tr><td>Бакалавриат на китайском</td><td>HSK 4 от 180–210 баллов</td></tr>
+    <tr><td>Сильные вузы, магистратура</td><td>HSK 5 (иногда с минимумом по разделам)</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Некоторые университеты задают минимум не только по сумме, но и по отдельным разделам — например, «не ниже 60 за письмо». Поэтому равномерный результат по всем трём разделам ценнее, чем перекос в одну сторону. Если цель — учёба в Китае, полезно сразу смотреть в сторону <a href="https://kitai-school.ru/article/hsk-5" target="_blank" rel="noopener">HSK 5</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько баллов в HSK 4 и сколько нужно для сдачи?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В HSK 4 максимум 300 баллов: три раздела (аудирование, чтение, письмо) по 100 баллов каждый. Проходной порог — 180 баллов, то есть 60% от максимума. Отдельного минимума по каждому разделу нет: важна сумма.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как посчитать баллы HSK 4 самостоятельно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Точно — никак: официальная система масштабирует баллы, а не считает «один ответ — один балл». Для прикидки посчитайте долю правильных ответов в каждом разделе и умножьте на 100. Например, 36 из 45 в аудировании ≈ 80 баллов. Сложите три раздела — получите примерную оценку.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему нельзя считать один правильный ответ за один балл?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что в разделах разное число вопросов, а весят они одинаково — по 100 баллов. В аудировании 45 вопросов, в чтении 40, в письме 15. Значит «цена» одного вопроса везде разная: в письме один ответ стоит гораздо больше, чем в аудировании.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему при самопроверке письма легко себя переоценить?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Письмо проверяет человек по критериям: правильность грамматики, верные иероглифы, уместность предложения. При самопроверке студенты засчитывают «в целом понятно», хотя эксперт снял бы баллы за иероглиф с ошибкой или неверный порядок слов. Поэтому свою письменную часть стоит показать преподавателю.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько баллов HSK нужно для поступления в китайский вуз?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Зависит от программы. Для бакалавриата на китайском часто нужен HSK 4 от 180–210 баллов, для сильных вузов и магистратуры — HSK 5. Всегда смотрите требования конкретного университета: некоторые задают минимум не только по сумме, но и по отдельным разделам.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Хотите точно знать свой уровень перед сдачей? На <a href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener">курсах подготовки к HSK в Kitai School</a> мы разбираем пробники по разделам, честно оцениваем письмо и подводим к стабильным 200+ баллам. Диагностический урок — бесплатный: посмотрим, где вы теряете баллы.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>HSK</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подскажем, с чего начать подготовку.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/hsk-4" target="_blank" rel="noopener">полный разбор экзамена HSK 4</a>; <a href="https://kitai-school.ru/article/hsk-4-probnyy-test" target="_blank" rel="noopener">пробный тест HSK 4</a>; следующая ступень — <a href="https://kitai-school.ru/article/hsk-5" target="_blank" rel="noopener">HSK 5</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://ru.wikipedia.org/wiki/HSK" target="_blank" rel="noopener nofollow">Википедия: HSK</a> — уровни, структура и система баллов экзамена.</li>
+    <li>Официальные требования Hanban / Chinese Testing International — максимум 300 баллов и порог 180 для HSK 3–6.</li>
+    <li>Практика Kitai School — подготовка к HSK, разбор пробников по разделам и оценка письменной части.</li>
+  </ol>
+</div>
+
+<p class="sign">У вас всё получится! <span class="han">加油！</span></p>
+
+<div class="tags">
+  <span>#hsk4</span> <span>#баллыhsk</span> <span>#оценкаhsk</span> <span>#подготовкакhsk</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики, учит китайскому с нуля взрослых и детей. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <p class="side-note">Разберём пробник по разделам и подведём к 200+ — диагностика бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
