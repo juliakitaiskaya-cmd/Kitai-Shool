@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Считаем по-китайски: цифры от 0 до 10 с произношением — версия для ВК</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+:root{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hair:#EAE3D8;--hair2:#DED5C6;--shadow:0 2px 14px rgba(44,36,32,.06);
+  --fd:'Cormorant Garamond',Georgia,serif;--fs:'Inter',-apple-system,Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','WenQuanYi Zen Hei',serif;
+}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--ink2);font-family:var(--fs);font-size:18px;line-height:1.65;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:34px 20px 60px;overflow-wrap:break-word}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick);margin:0 0 12px}
+h1{font-family:var(--fd);font-weight:600;font-size:44px;line-height:1.08;letter-spacing:-.01em;color:var(--ink);margin:0 0 18px}
+h1 .it,h2 .it{font-style:italic;color:var(--brick)}
+h2{font-family:var(--fd);font-weight:600;font-size:31px;line-height:1.14;color:var(--ink);margin:46px 0 14px;padding-top:26px;border-top:1px solid var(--hair)}
+p{margin:0 0 15px;color:var(--ink2)}
+b{color:var(--ink)}
+.lead{font-size:20px;line-height:1.55;color:var(--ink)}
+.hz{font-family:var(--fh);color:var(--brick);font-weight:500}
+figure{margin:26px 0}
+.cover svg{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--hair);box-shadow:var(--shadow)}
+.note{font-size:16px;line-height:1.55;color:var(--ink2);background:var(--highlight);border:1px solid var(--hair);border-radius:12px;padding:14px 18px;margin:18px 0}
+.introh{font-family:var(--fs);font-weight:700;font-size:18px;color:var(--ink);margin:24px 0 8px;letter-spacing:.01em}
+ol.learn{margin:6px 0 16px;padding:0;list-style:none;counter-reset:l}
+ol.learn li{position:relative;padding:9px 0 9px 46px;border-bottom:1px solid var(--hair);font-size:17px;line-height:1.45;color:var(--ink);counter-increment:l}
+ol.learn li:last-child{border-bottom:0}
+ol.learn li::before{content:counter(l);position:absolute;left:0;top:8px;width:28px;height:28px;background:var(--brick);color:#fff;border-radius:50%;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.tbl{width:100%;border-collapse:collapse;margin:18px 0;background:var(--surface);border:1px solid var(--hair);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.tbl th{background:var(--brick-soft);color:var(--brick-deep);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;text-align:left;padding:11px 14px}
+.tbl td{border-top:1px solid var(--hair);padding:11px 14px;font-size:17px;color:var(--ink2);vertical-align:middle}
+.tbl td.h{font-family:var(--fh);font-size:26px;font-weight:700;color:var(--brick-deep);white-space:nowrap}
+.tbl td.p{font-style:italic;color:var(--taupe);white-space:nowrap}
+.tbl tr:nth-child(even) td{background:var(--cream)}
+.wraptbl{overflow-x:auto;margin:18px 0}
+.wraptbl .tbl{margin:0}
+.sign{font-family:var(--fd);font-style:italic;font-size:21px;color:var(--ink);margin-top:34px}
+.sign .han{font-family:var(--fh);font-style:normal;color:var(--brick)}
+.author{display:flex;gap:16px;align-items:flex-start;margin-top:26px;padding:20px 22px;background:var(--cream2);border:1px solid var(--hair);border-radius:18px}
+.author .lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 5px}
+.author h3{margin:0 0 7px;font-size:22px;font-family:var(--fd);font-weight:600;color:var(--ink)}
+.author p{font-size:15px;line-height:1.55;margin:0}
+.tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:13px;color:var(--taupe);background:var(--surface);border:1px solid var(--hair2);border-radius:999px;padding:5px 13px}
+@media(max-width:560px){h1{font-size:31px}h2{font-size:25px}body{font-size:17px}.tbl td.h{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="eyebrow">Китай · практика языка</p>
+<h1>Считаем по-китайски: цифры <span class="it">от 0 до 10</span> — и что дальше</h1>
+
+<figure class="cover">
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Цифры по-китайски">
+  <defs><linearGradient id="gB" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#841630"/><stop offset="1" stop-color="#A41E3A"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#gB)"/>
+  <text x="70" y="150" font-family="Inter,Arial" font-size="26" letter-spacing="6" fill="#F7E6EB">КИТАЙ · ПРАКТИКА ЯЗЫКА</text>
+  <text x="66" y="335" font-family="'Noto Serif SC',serif" font-size="220" font-weight="700" fill="#FAF7F2" opacity="0.96">数字</text>
+  <text x="70" y="470" font-family="'Cormorant Garamond',Georgia,serif" font-size="66" font-style="italic" fill="#FFFFFF">Цифры по-китайски</text>
+  <text x="72" y="545" font-family="Inter,Arial" font-size="30" fill="#F3D9E0">0–10 · произношение · счёт на пальцах</text>
+  <text x="1130" y="560" text-anchor="end" font-family="Inter,Arial" font-size="26" font-weight="600" fill="#F7E6EB">Kitai School</text>
+</svg>
+</figure>
+
+<p class="lead">Китайские цифры — одна из самых благодарных тем для новичка. Всего десять знаков, простая логика — и вы уже можете назвать любое число до 99, а там и до миллиона. Освоив их, вы сможете торговаться на рынке, понимать цены и даже считать на пальцах по-китайски — а это отдельное искусство.</p>
+
+<p>Разберём цифры от 0 до 10 с произношением, научимся строить большие числа и заодно узнаем, почему китайцы обожают восьмёрку и недолюбливают четвёрку.</p>
+
+<p class="introh">Кому будет полезна статья</p>
+<p>Тем, кто начинает учить китайский или едет в Китай. Вы выучите базовый счёт — то, что пригодится в первый же день поездки.</p>
+
+<p class="introh">Что вы узнаете</p>
+<ol class="learn">
+  <li>Цифры от 0 до 10 с чтением и тонами</li>
+  <li>Как из них собрать числа до 100 и больше</li>
+  <li>Чем <span class="hz">二</span> отличается от <span class="hz">两</span></li>
+  <li>Как китайцы показывают числа на одной руке</li>
+  <li>Почему 8 — счастливая, а 4 — несчастливая</li>
+</ol>
+
+<h2>Цифры <span class="it">от 0 до 10</span></h2>
+<p>Вот основа основ. Выучите эту таблицу — и половина дела сделана:</p>
+<div class="wraptbl"><table class="tbl"><thead><tr><th>Цифра</th><th>Иероглиф</th><th>Чтение</th></tr></thead><tbody><tr><td>0</td><td class="h">零</td><td class="p">líng</td></tr><tr><td>1</td><td class="h">一</td><td class="p">yī</td></tr><tr><td>2</td><td class="h">二</td><td class="p">èr</td></tr><tr><td>3</td><td class="h">三</td><td class="p">sān</td></tr><tr><td>4</td><td class="h">四</td><td class="p">sì</td></tr><tr><td>5</td><td class="h">五</td><td class="p">wǔ</td></tr><tr><td>6</td><td class="h">六</td><td class="p">liù</td></tr><tr><td>7</td><td class="h">七</td><td class="p">qī</td></tr><tr><td>8</td><td class="h">八</td><td class="p">bā</td></tr><tr><td>9</td><td class="h">九</td><td class="p">jiǔ</td></tr><tr><td>10</td><td class="h">十</td><td class="p">shí</td></tr></tbody></table></div>
+<p class="note">Заметьте первые три: <span class="hz">一</span>, <span class="hz">二</span>, <span class="hz">三</span> — это просто одна, две и три горизонтальные черты. Логичнее не придумаешь — эти иероглифы запоминаются за секунду.</p>
+
+<h2>Собираем числа <span class="it">до 100</span></h2>
+<p>Дальше начинается самое приятное: китайский счёт устроен как конструктор, без исключений. Работает чистая логика:</p>
+<p><b>11–19</b> = «десять + цифра». 11 — это <span class="hz">十一</span> (shí yī), буквально «десять-один». 15 — <span class="hz">十五</span> (shí wǔ).<br>
+<b>20, 30…</b> = «цифра + десять». 20 — <span class="hz">二十</span> (èr shí), «два-десять». 50 — <span class="hz">五十</span> (wǔ shí).<br>
+<b>Составные</b> = «десятки + единицы». 25 — <span class="hz">二十五</span> (èr shí wǔ), «два-десять-пять». 99 — <span class="hz">九十九</span> (jiǔ shí jiǔ).</p>
+<p>Никаких «одиннадцать» и «сорок» как отдельных слов — всё собирается из десяти базовых знаков. Поэтому, зная цифры до 10, вы автоматически знаете все числа до 99.</p>
+
+<h2>Сотни, тысячи и <span class="it">китайские</span> десятки тысяч</h2>
+<p>Для больших чисел добавляются новые разряды:</p>
+<div class="wraptbl"><table class="tbl"><thead><tr><th>Число</th><th>Иероглиф</th><th>Чтение</th></tr></thead><tbody><tr><td>100</td><td class="h">一百</td><td class="p">yì bǎi</td></tr><tr><td>1 000</td><td class="h">一千</td><td class="p">yì qiān</td></tr><tr><td>10 000</td><td class="h">一万</td><td class="p">yí wàn</td></tr></tbody></table></div>
+<p>И вот тут — главная особенность, о которую спотыкаются все. У нас крупный разряд — тысяча и миллион. А у китайцев особый разряд — <b>десять тысяч</b>, <span class="hz">万</span> (wàn). Поэтому 100 000 для китайца — это не «сто тысяч», а «десять по десять тысяч», <span class="hz">十万</span> (shí wàn). А миллион — <span class="hz">一百万</span> (yì bǎi wàn), «сто десятков тысяч». К этому нужно просто привыкнуть.</p>
+
+<h2>二 или 两: <span class="it">две</span> «двойки»</h2>
+<p>Небольшая, но важная тонкость. У числа «два» есть две формы. <span class="hz">二</span> (èr) — это «два» при счёте и в числах (два, двенадцать, двадцать). А вот когда мы считаем <b>предметы</b> — «два человека», «две чашки», — используется <span class="hz">两</span> (liǎng). «Два человека» — это <span class="hz">两个人</span> (liǎng ge rén), а не <span class="hz">二个人</span>. Правило простое: считаете вслух — <span class="hz">二</span>; считаете что-то конкретное — <span class="hz">两</span>.</p>
+
+<h2>Счёт <span class="it">на одной руке</span></h2>
+<p>Ещё один сюрприз для туриста: китайцы умеют показать все числа от 1 до 10 на <b>одной</b> руке. Цифры 1–5 показывают привычно, пальцами. А вот 6–10 — особыми жестами: например, 6 — это оттопыренные большой палец и мизинец («телефон»), 8 — большой и указательный «пистолетиком», 10 — скрещённые указательные пальцы или кулак. На рынке продавец легко «покажет» вам цену одной рукой — и полезно этот язык понимать.</p>
+
+<h2>Счастливые и <span class="it">несчастливые</span> цифры</h2>
+<p>Числа в Китае — это ещё и суеверия, причём вполне серьёзные, влияющие на цены квартир и номера машин. Причина — в созвучиях:</p>
+<p><b>8</b> (<span class="hz">八</span>, bā) — самая счастливая. Созвучна слову <span class="hz">发</span> (fā) — «богатеть, процветать». Номер с восьмёрками стоит дороже.<br>
+<b>6</b> (<span class="hz">六</span>, liù) — тоже удачная: созвучна <span class="hz">流</span> (liú) — «течь, гладко идти». «Всё пойдёт как по маслу».<br>
+<b>9</b> (<span class="hz">九</span>, jiǔ) — созвучна «долго» (<span class="hz">久</span>, jiǔ), символ долголетия.<br>
+<b>4</b> (<span class="hz">四</span>, sì) — несчастливая: почти как <span class="hz">死</span> (sǐ) — «смерть». В лифтах китайских домов нередко нет этажей с четвёркой, как у нас порой пропускают 13-й.</p>
+<p>Как видите, цифры — не только математика, но и окно в культуру. А начать легко: выучите десять знаков, потренируйтесь собирать из них числа — и уже завтра сможете назвать цену, номер и свой возраст по-китайски.</p>
+
+<p class="sign">Лёгкого вам счёта! <span class="han">八八大发！</span></p>
+
+<div class="author">
+  <div>
+    <p class="lbl">Автор</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (<span class="hz">山大</span>), основатель школы китайского языка. Более 20 лет живёт с китайским и учит так, чтобы язык сразу работал — в поездке, в разговоре, на экзамене.</p>
+  </div>
+</div>
+
+<div class="tags">
+  <span>#китай</span> <span>#китайскийязык</span> <span>#цифрыпокитайски</span> <span>#числанакитайском</span> <span>#数字</span> <span>#учимкитайский</span> <span>#китайскийснуля</span> <span>#中文</span>
+</div>
+
+</div>
+</body>
+</html>
