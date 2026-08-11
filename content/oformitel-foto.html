@@ -34,6 +34,17 @@ background:transparent;color:var(--brick);border-radius:10px;padding:9px;transit
 .empty{color:var(--taupe);font-size:14.5px;border:1px dashed var(--hairline-2);border-radius:14px;padding:30px;text-align:center}
 .hint{margin-top:24px;font-size:13px;color:var(--taupe);max-width:66ch}
 .btn:focus-visible,.cell button:focus-visible{outline:2px solid var(--brick);outline-offset:2px}
+.ov{position:fixed;inset:0;z-index:99;background:rgba(20,14,12,.72);display:flex;flex-direction:column;
+overflow:auto;padding:0}
+.ovbar{position:sticky;top:0;background:var(--card-bg);border-bottom:1px solid var(--hairline);
+padding:14px 18px;font-size:14px;color:var(--taupe);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.ovbar b{color:var(--ink)}
+.ovbar .ovx{margin-left:auto}
+.ovbody{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:22px;
+max-width:1100px;margin:0 auto;width:100%}
+.ovcard{display:flex;flex-direction:column;gap:12px;align-items:center}
+.ovcard img{width:100%;height:auto;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.ovcard a{text-decoration:none;text-align:center}
 </style>
 
 <div class="wrap">
@@ -145,17 +156,37 @@ function addImage(img,name){
   rec.cap=cap;
   const draw=()=>render(cv,img,document.getElementById('title').value,document.getElementById('fmt').value);
   rec.draw=draw;draw();
-  btn.onclick=()=>save(cv,rec.base);
+  btn.onclick=()=>showSave([rec]);
   cell.append(cv,cap,btn);grid.appendChild(cell);items.push(rec);
 }
-function save(cv,base){cv.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='kitai-'+base+'.png';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1000);},'image/png');}
+// Open an overlay with the rendered image(s). A real <a download> the user
+// clicks is the most reliable save path; the visible image is the fallback
+// (right-click / long-press → save) for sandboxed iframes that block downloads.
+function showSave(list){
+  const ov=document.createElement('div');ov.className='ov';
+  const bar=document.createElement('div');bar.className='ovbar';
+  bar.innerHTML='<b>Сохраните изображение.</b> Нажмите «Скачать файл», а если браузер не сохранит — на компьютере правый клик по картинке → «Сохранить изображение», на телефоне долгое нажатие → «Сохранить в фото».';
+  const x=document.createElement('button');x.className='btn ghost ovx';x.textContent='Закрыть';x.onclick=()=>ov.remove();
+  bar.appendChild(x);
+  const body=document.createElement('div');body.className='ovbody';
+  for(const it of list){
+    const url=it.cv.toDataURL('image/png');
+    const card=document.createElement('div');card.className='ovcard';
+    const im=document.createElement('img');im.src=url;im.alt='kitai-'+it.base;
+    const a=document.createElement('a');a.className='btn';a.href=url;a.download='kitai-'+it.base+'.png';a.textContent='⬇ Скачать файл';
+    card.append(im,a);body.appendChild(card);
+  }
+  ov.append(bar,body);
+  ov.onclick=e=>{if(e.target===ov)ov.remove();};
+  document.body.appendChild(ov);
+}
 function redrawAll(){for(const r of items)r.draw();}
 
 document.getElementById('pick').onclick=()=>document.getElementById('file').click();
 document.getElementById('file').onchange=e=>{for(const f of e.target.files){const im=new Image();im.onload=()=>addImage(im,f.name);im.src=URL.createObjectURL(f);}};
 document.getElementById('title').oninput=redrawAll;
 document.getElementById('fmt').onchange=redrawAll;
-document.getElementById('dlAll').onclick=async()=>{for(const r of items){save(r.cv,r.base);await new Promise(x=>setTimeout(x,320));}};
+document.getElementById('dlAll').onclick=()=>{if(items.length)showSave(items);};
 document.getElementById('theme').onclick=()=>{const r=document.documentElement,c=r.getAttribute('data-theme'),d=c?c==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.setAttribute('data-theme',d?'light':'dark');};
 
 // demo sample so the page isn't empty
