@@ -73,6 +73,9 @@ const W=1080,H=1350;
 
 // [slug,title,sub,icon,label]
 const CATS=[
+ ["Бесплатный старт","Знакомство с методикой и преподавателем без оплаты",[
+  ["probnyy-urok","Бесплатный пробный урок","Бесплатно, онлайн","gift"],
+ ]],
  ["Форматы и аспекты языка","Индивидуально, в группах, разговор, грамматика, фонетика, иероглифика",[
   ["ks-indiv","Индивидуальные занятия","Один на один, онлайн","laptop"],
   ["ks-group","Занятия в мини-группах","2–4 человека","group"],
@@ -170,6 +173,7 @@ const ICONS={
  chart(p){rr(p,-122,-122,244,244,18);F(p,WHITE);ST(p,"#E6D6BE",6);const hs=[62,102,82,142],cl=[TEAL,SKY,GOLD,BRICK];for(let i=0;i<4;i++){rr(p,-98+i*56,82-hs[i],38,hs[i],8);F(p,cl[i]);}p.beginPath();p.moveTo(-98,42);p.lineTo(-42,10);p.lineTo(14,26);p.lineTo(92,-72);ST(p,DEEP,8);circ(p,92,-72,10);F(p,DEEP);},
  board(p){rr(p,-132,-112,264,152,12);F(p,"#2E6E5E");ST(p,DEEP,8);for(const y of[-72,-32,8])ln(p,-102,y,58,y,"rgba(255,255,255,.6)",6);ln(p,66,80,10,14,GOLD,7);circ(p,98,62,26);F(p,BRICK);rr(p,66,88,64,50,20);F(p,BRICK);},
  pagoda(p){for(let i=0;i<3;i++){const y=-72+i*54,w=122-i*26;p.beginPath();p.moveTo(-w,y);p.lineTo(0,y-42);p.lineTo(w,y);p.closePath();F(p,i%2?BRICK:DEEP);rr(p,-w*0.6,y,w*1.2,40,4);F(p,CREAM);}rr(p,-16,86,32,42,4);F(p,DEEP);},
+ gift(p){rr(p,-112,-22,224,132,14);F(p,BRICK);rr(p,-122,-58,244,46,10);F(p,DEEP);rr(p,-20,-58,40,168,0);F(p,GOLD);circ(p,-26,-66,26);F(p,GOLD);circ(p,26,-66,26);F(p,GOLD);circ(p,0,-66,13);F(p,DEEP);p.save();p.translate(70,78);p.rotate(.18);rr(p,-48,-26,96,52,10);F(p,GOLD);lbl(p,"0 ₽",0,2,DEEP,34);p.restore();},
 };
 
 function motifs(p){const pts=[[120,120,'o',9],[210,200,'+',16],[300,110,'o',6],[820,120,'+',18],[910,210,'o',10],[980,120,'o',6],[560,90,'o',7],[660,150,'+',13],[430,150,'o',5]];for(const[x,y,t,s]of pts){p.strokeStyle=SOFT;p.fillStyle=SOFT;p.lineWidth=5;if(t==='o'){circ(p,x,y,s);p.fill();}else{p.beginPath();p.moveTo(x-s,y);p.lineTo(x+s,y);p.moveTo(x,y-s);p.lineTo(x,y+s);p.stroke();}}}
