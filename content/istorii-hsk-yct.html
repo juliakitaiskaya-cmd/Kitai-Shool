@@ -1,4 +1,4 @@
-<title>Истории: Экзамены HSK и YCT — Kitai School</title>
+<title>Истории: Экзамены HSK, YCT и HSKK — Kitai School</title>
 <style>
 /* cyrillic-ext */
 @font-face {
@@ -279,14 +279,14 @@ padding:14px 18px;font-size:14px;color:var(--taupe);display:flex;align-items:cen
 
 <div class="wrap">
   <p class="eyebrow">Kitai School · истории для Яндекс Бизнеса</p>
-  <h1>Экзамены HSK и <span class="i">YCT</span></h1>
+  <h1>Экзамены HSK, YCT и <span class="i">HSKK</span></h1>
   <p class="lead">Вертикальные истории 9:16 (1080×1920) в фирменном стиле Kitai School.</p>
 
   <div class="sec">
     <div class="sechead"><span class="num">I</span><h2>Обложка</h2></div>
     <p class="lead" style="font-size:15.5px">Готовая обложка-иллюстрация — без фото. Текст можно поменять, стиль — светлый или красный. Просто скачайте.</p>
     <div class="panel">
-      <label class="field">Заголовок (курсив: *слово*)<input type="text" id="cvTitle" value="Экзамены HSK и *YCT*"></label>
+      <label class="field">Заголовок (курсив: *слово*)<input type="text" id="cvTitle" value="HSK, YCT и *HSKK*"></label>
       <label class="field">Подпись<input type="text" id="cvSub" value="Международные сертификаты по китайскому языку"></label>
       <label class="field">Стиль<select id="cvStyle"><option value="cream">Светлый (кремовый)</option><option value="red">Красный</option></select></label>
       <button class="btn" id="cvDl">Скачать обложку</button>
@@ -300,7 +300,7 @@ padding:14px 18px;font-size:14px;color:var(--taupe);display:flex;align-items:cen
     <div class="panel">
       <button class="btn" id="pick">Загрузить фото</button>
       <input type="file" id="file" accept="image/*" multiple style="display:none">
-      <label class="field">Надзаголовок (на всех кадрах)<input type="text" id="topic" value="Экзамены · HSK и YCT"></label>
+      <label class="field">Надзаголовок (на всех кадрах)<input type="text" id="topic" value="Экзамены · HSK · YCT · HSKK"></label>
       <button class="btn ghost" id="dlAll">Скачать все</button>
       <button class="btn ghost" id="theme">Сменить тему</button>
     </div>
@@ -346,8 +346,8 @@ function drawScene(p,cx,cy,R,col,bg){
   const dw=R*0.96, dh=R*1.16, dx=cx-dw/2-R*0.06, dy=cy-dh/2-R*0.06;
   p.lineWidth=R*0.03;rr(p,dx,dy,dw,dh,R*0.05);p.stroke();
   // inner header: HSK · YCT
-  p.font='700 '+(R*0.165)+'px '+FSANS;p.textAlign='center';p.textBaseline='middle';
-  p.fillText('HSK · YCT',dx+dw/2,dy+dh*0.20);
+  p.font='700 '+(R*0.125)+'px '+FSANS;p.textAlign='center';p.textBaseline='middle';
+  p.fillText('HSK · YCT · HSKK',dx+dw/2,dy+dh*0.20);
   // divider
   p.lineWidth=R*0.014;p.beginPath();p.moveTo(dx+dw*0.18,dy+dh*0.32);p.lineTo(dx+dw*0.82,dy+dh*0.32);p.stroke();
   // text lines
