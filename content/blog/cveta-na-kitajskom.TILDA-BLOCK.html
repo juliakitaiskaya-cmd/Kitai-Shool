@@ -1,0 +1,345 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo{margin:28px auto;text-align:center}
+#ks-art .ks-photo img{width:100%;max-width:460px;height:auto;display:block;margin:0 auto;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art .ks-photo figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px auto 0;max-width:460px}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:20px;color:var(--brick)!important;font-weight:700}
+#ks-art .sw{display:inline-block;width:15px;height:15px;border-radius:5px;border:1px solid rgba(44,36,32,.2);vertical-align:-2px;margin-right:8px}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Цвета на китайском
+</nav>
+
+<article>
+<p class="eyebrow">Лексика и произношение</p>
+<h1>Полный словарь цветов на китайском языке <span class="italic">с иероглифами и пиньинем</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-09">9 августа 2026</time>
+  </div>
+</div>
+
+<p class="passport">Цвета — одна из самых благодарных тем в начале обучения: слов немного, они короткие и сразу идут в дело. Уже зная десяток базовых иероглифов, вы сможете описать одежду, выбрать товар в магазине и понять, о чём речь в тексте. Собрали полный словарь: базовые цвета и оттенки с иероглифами, пиньинем и переводом, объяснили, зачем к цвету добавляют 色, как получаются светлые и тёмные варианты и как правильно сказать «красная машина», чтобы вас поняли.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Слово «цвет» — <b>颜色</b> (yánsè). Базовые цвета: 红 hóng (красный), 黄 huáng (жёлтый), 蓝 lán (синий), 绿 lǜ (зелёный), 白 bái (белый), 黑 hēi (чёрный). В речи к ним добавляют <b>色</b> (sè): 红 → <b>红色</b>. Оттенки получаются с помощью <b>浅</b> (qiǎn, светлый) и <b>深</b> (shēn, тёмный): 浅蓝色, 深蓝色. Перед предметом ставят 的: <b>红色的车</b> — «красная машина».</p>
+</div>
+
+<h2>Слово «цвет» и <span class="italic">главный суффикс 色</span></h2>
+<p>Начнём с базы. Само слово «цвет» — <b class="han-big">颜色</b> (yánsè). А чтобы спросить «какого цвета?», используют 什么颜色 (shénme yánsè):</p>
+<div class="ks-quote">
+  <p>这是什么颜色？<br>Zhè shì shénme yánsè? — «Это какого цвета?»</p>
+  <cite>Самый полезный вопрос по теме</cite>
+</div>
+<p>Дальше важный момент, который экономит кучу путаницы. Многие цвета — это <b>один иероглиф</b>: 红 (красный), 蓝 (синий). Но сам по себе такой знак работает как признак, а полноценное «название цвета» получается, когда к нему добавляют <b class="han-big">色</b> (sè, «цвет»):</p>
+<div class="table-wrap">
+<table>
+  <caption>Как знак превращается в название цвета.</caption>
+  <thead><tr><th>Иероглиф</th><th>С 色</th><th>Как использовать</th></tr></thead>
+  <tbody>
+    <tr><td>红 hóng</td><td>红色 hóngsè</td><td>«красный цвет» — обычная форма в речи</td></tr>
+    <tr><td>蓝 lán</td><td>蓝色 lánsè</td><td>蓝色的天 — синее небо</td></tr>
+    <tr><td>白 bái</td><td>白色 báisè</td><td>白色的车 — белая машина</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Правило простое: если сомневаетесь — говорите с <b>色</b>. Это всегда звучит естественно.</p>
+
+<h2>Базовые цвета: <span class="italic">таблица для сохранения</span></h2>
+<p>Вот основа, которую стоит выучить первой. Этих слов хватает для большинства бытовых ситуаций:</p>
+<div class="table-wrap">
+<table>
+  <caption>Основные цвета на китайском с иероглифами и пиньинем.</caption>
+  <thead><tr><th>Цвет</th><th>Иероглиф</th><th>Пиньинь</th><th>Полная форма</th></tr></thead>
+  <tbody>
+    <tr><td><span class="sw" style="background:#C4122F"></span>Красный</td><td class="han-cell">红</td><td>hóng</td><td>红色 hóngsè</td></tr>
+    <tr><td><span class="sw" style="background:#E8B923"></span>Жёлтый</td><td class="han-cell">黄</td><td>huáng</td><td>黄色 huángsè</td></tr>
+    <tr><td><span class="sw" style="background:#2E6FD9"></span>Синий</td><td class="han-cell">蓝</td><td>lán</td><td>蓝色 lánsè</td></tr>
+    <tr><td><span class="sw" style="background:#2E9E5B"></span>Зелёный</td><td class="han-cell">绿</td><td>lǜ</td><td>绿色 lǜsè</td></tr>
+    <tr><td><span class="sw" style="background:#F4F1EA"></span>Белый</td><td class="han-cell">白</td><td>bái</td><td>白色 báisè</td></tr>
+    <tr><td><span class="sw" style="background:#2C2822"></span>Чёрный</td><td class="han-cell">黑</td><td>hēi</td><td>黑色 hēisè</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Обратите внимание на <b>绿 (lǜ)</b>: здесь тот самый гласный <b>ü</b> — губы складываем для «у», а произносим «и». Если сказать «лу», получится другое слово. Как ставить такие звуки, разбирали в статье про <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-kitajskogo" target="_blank" rel="noopener">корректировку произношения</a>.</p>
+
+<h2>Дополнительные цвета <span class="italic">и оттенки</span></h2>
+<p>Когда база освоена, добавляем вторую десятку. Здесь тоже всё логично: многие названия — составные, из уже знакомых знаков.</p>
+<div class="table-wrap">
+<table>
+  <caption>Дополнительные цвета: серый, розовый, оранжевый и другие.</caption>
+  <thead><tr><th>Цвет</th><th>Иероглифы</th><th>Пиньинь</th><th>Из чего состоит</th></tr></thead>
+  <tbody>
+    <tr><td><span class="sw" style="background:#8C8C8C"></span>Серый</td><td class="han-cell">灰色</td><td>huīsè</td><td>灰 — «пепел, зола»</td></tr>
+    <tr><td><span class="sw" style="background:#F2A0C0"></span>Розовый</td><td class="han-cell">粉红色</td><td>fěnhóngsè</td><td>粉 «пудра» + 红 «красный»</td></tr>
+    <tr><td><span class="sw" style="background:#E8762C"></span>Оранжевый</td><td class="han-cell">橙色</td><td>chéngsè</td><td>橙 — «апельсин»</td></tr>
+    <tr><td><span class="sw" style="background:#7A4FA3"></span>Фиолетовый</td><td class="han-cell">紫色</td><td>zǐsè</td><td>紫 — «пурпур»</td></tr>
+    <tr><td><span class="sw" style="background:#7A5230"></span>Коричневый</td><td class="han-cell">棕色</td><td>zōngsè</td><td>棕 — «пальмовое волокно»</td></tr>
+    <tr><td><span class="sw" style="background:#C9A227"></span>Золотой</td><td class="han-cell">金色</td><td>jīnsè</td><td>金 — «золото, металл»</td></tr>
+    <tr><td><span class="sw" style="background:#B8BCC0"></span>Серебряный</td><td class="han-cell">银色</td><td>yínsè</td><td>银 — «серебро»</td></tr>
+    <tr><td><span class="sw" style="background:#8FBF6A"></span>Сине-зелёный</td><td class="han-cell">青色</td><td>qīngsè</td><td>青 — старое слово «синий/зелёный»</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Видите логику? Розовый — это «пудрово-красный», оранжевый — «апельсиновый», золотой — «цвет металла». Многие слова угадываются, если знать составляющие знаки — про эту логику мы писали в статье о <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey-kak-ustroen-ieroglif-voda" target="_blank" rel="noopener">китайских ключах</a>.</p>
+
+<h2>Светлые и тёмные: <span class="italic">浅 и 深</span></h2>
+<p>Отдельные слова для «голубого» или «бордового» учить не нужно — оттенки строятся из двух помощников:</p>
+<div class="table-wrap">
+<table>
+  <caption>Как получить светлый и тёмный оттенок любого цвета.</caption>
+  <thead><tr><th>Помощник</th><th>Значение</th><th>Примеры</th></tr></thead>
+  <tbody>
+    <tr><td>浅 qiǎn</td><td>светлый, бледный</td><td>浅蓝色 — светло-синий (голубой), 浅绿色 — салатовый</td></tr>
+    <tr><td>深 shēn</td><td>тёмный, глубокий</td><td>深蓝色 — тёмно-синий, 深红色 — тёмно-красный, бордовый</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Их ставят <b>перед</b> цветом. Так из десяти базовых слов получаются десятки оттенков — и не нужно зубрить отдельные названия. Отдельно запомните <b>彩色</b> (cǎisè) — «цветной, многоцветный», например 彩色照片 — цветная фотография.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Тема цветов кажется простой, но именно на ней ученики совершают одну и ту же ошибку: говорят «红车» вместо «红色的车». Формально понятно, но звучит рвано — примерно как «красн машина». Китаец поймёт, однако сразу услышит иностранца.</p>
+  <p>Поэтому я всегда даю не отдельные слова, а сразу шаблон: <b>цвет + 色 + 的 + предмет</b>. Мы проходим по комнате и называем всё подряд: 白色的墙 (белая стена), 黑色的手机 (чёрный телефон), 红色的杯子 (красная чашка). Десять минут такой игры — и конструкция ложится намертво, без всякой зубрёжки.</p>
+</div>
+
+<h2>Как описывать предметы <span class="italic">по цвету</span></h2>
+<p>Теперь главное — как это встроить в речь. Есть две рабочие конструкции:</p>
+<div class="table-wrap">
+<table>
+  <caption>Две конструкции для описания предметов по цвету.</caption>
+  <thead><tr><th>Схема</th><th>Пример</th><th>Перевод</th></tr></thead>
+  <tbody>
+    <tr><td>цвет + 色 + 的 + предмет</td><td>红色的车 hóngsè de chē</td><td>красная машина</td></tr>
+    <tr><td>предмет + 是 + цвет + 色 + 的</td><td>车是红色的 chē shì hóngsè de</td><td>машина — красная</td></tr>
+    <tr><td>вопрос о цвете</td><td>这是什么颜色？</td><td>это какого цвета?</td></tr>
+    <tr><td>«мне нравится…»</td><td>我喜欢蓝色 wǒ xǐhuān lánsè</td><td>мне нравится синий</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Частица <b>的</b> (de) здесь — связка между признаком и предметом, примерно как окончание прилагательного в русском. Пропускать её в начале обучения не стоит: с ней фраза всегда звучит правильно.</p>
+<p class="note">И маленькая культурная поправка: цвет в Китае — это не только описание, но и смысл. Красный зовёт удачу, белый связан с трауром, а зелёная шляпа — обидный намёк. Об этом мы подробно рассказали в статье про <a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значение цветов в Китае</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как будет «цвет» по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Слово «цвет» — 颜色 (yánsè). Чтобы спросить «какого цвета?», говорят 什么颜色 (shénme yánsè). Например: 这是什么颜色？ (Zhè shì shénme yánsè?) — «Это какого цвета?»</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сказать «белый» и «синий» по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Белый — 白 (bái), полная форма 白色 (báisè). Синий — 蓝 (lán), полностью 蓝色 (lánsè). В речи чаще используют форму с 色: 白色的车 — «белая машина», 蓝色的天 — «синее небо».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Зачем к цвету добавляют 色?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Иероглиф 色 (sè) означает «цвет» и превращает знак в полноценное название цвета: 红 «красный» → 红色 «красный цвет». Перед существительным обычно используют форму с 色 и частицей 的: 红色的书 — «красная книга».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сказать «светло-» и «тёмно-» по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Светлый оттенок — 浅 (qiǎn), тёмный — 深 (shēn). Их ставят перед цветом: 浅蓝色 (qiǎn lánsè) — светло-синий, 深蓝色 (shēn lánsè) — тёмно-синий. Так из десяти базовых цветов получаются десятки оттенков.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что означает иероглиф 青 (qīng)?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>青 (qīng) — старое слово, которое может значить и синий, и зелёный, и даже чёрный, в зависимости от сочетания: 青天 — синее небо, 青草 — зелёная трава. В современной речи для синего используют 蓝色, для зелёного — 绿色, а 青 чаще встречается в устойчивых выражениях.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Хотите освоить такую лексику не списками, а сразу в живой речи? На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсах Kitai School</a> мы отрабатываем слова в готовых конструкциях — так они не забываются через неделю. Диагностический урок бесплатный.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>СТАРТ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подскажем, с чего начать.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значение цветов в Китае</a>; базовая лексика — <a href="https://kitai-school.ru/article/top-50-bazovyh-glagolov-kitayskogo-yazyka-s-primerami" target="_blank" rel="noopener">топ-50 глаголов</a>; как строить вопросы — <a href="https://kitai-school.ru/article/konstruktor-voprosov-v-kitayskom-shemy-i-pravila" target="_blank" rel="noopener">вопросительные местоимения</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://ru.wikipedia.org/wiki/Китайский_язык" target="_blank" rel="noopener nofollow">Википедия: Китайский язык</a> — общие сведения о лексике и словообразовании.</li>
+    <li>Официальные словарные списки HSK (Hanban / Chinese Testing International) — базовые цвета входят в лексику HSK 1–3.</li>
+    <li>Практика Kitai School — отработка бытовой лексики в конструкциях с 的.</li>
+  </ol>
+</div>
+
+<p class="sign">Сохраняйте таблицу и повторяйте вслух! <span class="han">加油！</span></p>
+
+<div class="tags">
+  <span>#цветанакитайском</span> <span>#лексика</span> <span>#иероглифы</span> <span>#китайскийснуля</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики, учит китайскому с нуля взрослых и детей. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Учим слова сразу в живой речи — диагностика бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
