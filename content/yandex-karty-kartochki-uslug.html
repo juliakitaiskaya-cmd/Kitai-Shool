@@ -216,11 +216,11 @@ function drawCard(ctx,item,img){
     ctx.fillStyle=WHITE;ctx.textAlign="center";ctx.textBaseline="middle";ctx.font='800 64px Arial,sans-serif';
     ctx.fillText((label&&label!=="*")?label:(icon[0].toUpperCase()),sx,sy+2);
   } else {
-    const cx=W/2, cy=585, T=272;
+    const cx=W/2, cy=560, T=304;
     ctx.save();ctx.shadowColor="rgba(44,36,32,.12)";ctx.shadowBlur=30;ctx.shadowOffsetY=10;
-    rr(ctx,cx-T,cy-T,T*2,T*2,44);F(ctx,PAPER);ctx.restore();
-    rr(ctx,cx-T,cy-T,T*2,T*2,44);ST(ctx,SOFT,3);
-    drawIconFitted(ctx,icon,label,cx,cy,T*2*0.80);
+    rr(ctx,cx-T,cy-T,T*2,T*2,48);F(ctx,PAPER);ctx.restore();
+    rr(ctx,cx-T,cy-T,T*2,T*2,48);ST(ctx,SOFT,3);
+    drawIconFitted(ctx,icon,label,cx,cy,T*2*0.88);
     chip(ctx,sub,cx,905,true);
     wave(ctx);titleTag(ctx,title);
   }
