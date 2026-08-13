@@ -1,0 +1,356 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .ok{color:#1E7A46!important;font-weight:600}
+#ks-art .bad{color:var(--brick)!important;font-weight:600;text-decoration:line-through}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Даты в китайском языке
+</nav>
+
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Дни, месяцы и годы на китайском: как правильно заполнять документы <span class="italic">и называть даты</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-12">12 августа 2026</time>
+  </div>
+</div>
+
+<p class="passport">Дата — то, что приходится писать чаще всего: в анкете на визу, в заявлении на стипендию, в договоре, просто в переписке. И здесь китайский устроен зеркально русскому: если мы идём от числа к году, то китайцы — наоборот, от большего к меньшему. Логика простая и на удивление удобная, когда привыкнешь. Разберём порядок записи, четыре ключевых иероглифа 年, 月, 日 и 号, чем письменная форма отличается от разговорной, как читается год и почему воскресенье выбивается из общего ряда дней недели.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Порядок обратный русскому: <b>год → месяц → число → день недели</b>. 12 августа 2026 года — это <b>2026年8月12日</b>. Иероглифы: <b>年</b> (nián) год, <b>月</b> (yuè) месяц, <b>日</b> (rì) число в письменной речи, <b>号</b> (hào) — в разговорной. Год читают по цифрам: 二零二六年. Дни недели — 星期 плюс номер, но воскресенье — <b>星期天</b>, а не «星期七».</p>
+</div>
+
+<h2>Главное правило: <span class="italic">от большего к меньшему</span></h2>
+<p>Запомнить порядок легко, если понять принцип: китайский всегда движется от общего к частному. Сначала называют страну, потом город; сначала фамилию, потом имя. С датой то же самое — от самой крупной единицы к самой мелкой.</p>
+<div class="ks-quote">
+  <p>2026年8月12日星期三<br>Год → месяц → число → день недели</p>
+  <cite>Ровно наоборот тому, как пишем мы</cite>
+</div>
+<p>Сравните напрямую:</p>
+<div class="table-wrap">
+<table>
+  <caption>Порядок элементов даты в русском и китайском.</caption>
+  <thead><tr><th>Язык</th><th>Порядок</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td>Русский</td><td>число → месяц → год</td><td>12 августа 2026 года</td></tr>
+    <tr><td>Китайский</td><td>год → месяц → число</td><td>2026年8月12日</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Кстати, тот же принцип «от большего к меньшему» работает и внутри дня: сначала часть суток, потом час, потом минуты. Про это у нас есть отдельный разбор — <a href="https://kitai-school.ru/article/uchimsya-nazyvat-vremya-chasy-i-minuty-na-kitayskom" target="_blank" rel="noopener">как называть время на китайском</a>.</p>
+
+<h2>Четыре иероглифа: <span class="italic">年, 月, 日, 号</span></h2>
+<p>Вся тема держится на четырёх знаках. Разберём каждый:</p>
+<div class="table-wrap">
+<table>
+  <caption>Ключевые иероглифы для записи даты.</caption>
+  <thead><tr><th>Иероглиф</th><th>Чтение</th><th>Значение</th><th>Как используется</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">年</td><td>nián</td><td>год</td><td>ставится после цифр года: 2026年</td></tr>
+    <tr><td class="han-cell">月</td><td>yuè</td><td>месяц</td><td>после номера месяца: 8月 — август</td></tr>
+    <tr><td class="han-cell">日</td><td>rì</td><td>число, день</td><td>письменно и официально: 12日</td></tr>
+    <tr><td class="han-cell">号</td><td>hào</td><td>число, номер</td><td>в разговорной речи: 12号</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Никаких названий месяцев учить не нужно — это огромное облегчение по сравнению с русским. Месяцы просто нумеруются: 一月 — январь, 二月 — февраль, и так до 十二月 — декабрь. То же с числами: 1日, 2日, 15日.</p>
+
+<h2>日 или 号: <span class="italic">где какое</span></h2>
+<p>Это самый частый вопрос по теме. Значение у них одно, разница — в стиле:</p>
+<div class="table-wrap">
+<table>
+  <caption>Когда использовать 日, а когда 号.</caption>
+  <thead><tr><th>Форма</th><th>Где используется</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td>日 (rì)</td><td>документы, анкеты, договоры, объявления, новости</td><td>2026年8月12日</td></tr>
+    <tr><td>号 (hào)</td><td>разговорная речь, переписка с друзьями</td><td>今天8号 — сегодня 8-е</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Простое правило: <b>пишете — 日, говорите — 号</b>. Ошибкой не будет ни то, ни другое, вас поймут в обоих случаях. Но в документе 号 будет выглядеть так же неуместно, как «восьмое числа» в официальной бумаге по-русски.</p>
+
+<h2>Как читается <span class="italic">год</span></h2>
+<p>А вот здесь ловушка, на которой спотыкаются почти все. Год в китайском <b>не читают как целое число</b> — его произносят по отдельным цифрам, как номер телефона.</p>
+<div class="table-wrap">
+<table>
+  <caption>Чтение года: по цифрам, а не целым числом.</caption>
+  <thead><tr><th>Год</th><th>Как читается</th><th>Дословно</th></tr></thead>
+  <tbody>
+    <tr><td>2026年</td><td class="ok">二零二六年 èr líng èr liù nián</td><td>два-ноль-два-шесть</td></tr>
+    <tr><td>1998年</td><td class="ok">一九九八年 yī jiǔ jiǔ bā nián</td><td>один-девять-девять-восемь</td></tr>
+    <tr><td>2026年</td><td class="bad">两千零二十六年</td><td>так не говорят</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Обратите внимание на ноль: в году он читается как <b class="han-big">零</b> (líng). И ещё одна деталь: в датах всегда используется <b>二</b> (èr), а не 两 (liǎng) — 二月 «февраль», а не «两月». Про разницу между этими двумя «двойками» мы подробно писали в статье про <a href="https://kitai-school.ru/article/uchimsya-nazyvat-vremya-chasy-i-minuty-na-kitayskom" target="_blank" rel="noopener">время по-китайски</a>.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Самая обидная ошибка, которую я видела, случилась при подаче документов на визу. Ученик заполнял анкету и вписал дату рождения как привык — сначала число, потом месяц. Получилось 12年8月2026日, то есть полная бессмыслица. Анкету вернули, срок подачи сдвинулся на неделю.</p>
+  <p>С тех пор я даю простой приём: смотрите на подсказки в самой форме. В китайских анкетах поля почти всегда подписаны — 年 月 日 идут именно в этом порядке, и достаточно просто вписать цифры в нужные окошки. Форма сама подсказывает правильный порядок, надо только не спешить.</p>
+</div>
+
+<h2>Дни недели: <span class="italic">星期 плюс номер</span></h2>
+<p>Здесь снова приятная новость: отдельных слов почти нет. К основе <b class="han-big">星期</b> (xīngqī) добавляется номер по порядку:</p>
+<div class="table-wrap">
+<table>
+  <caption>Дни недели на китайском.</caption>
+  <thead><tr><th>День</th><th>Иероглифы</th><th>Чтение</th></tr></thead>
+  <tbody>
+    <tr><td>Понедельник</td><td class="han-cell">星期一</td><td>xīngqī yī</td></tr>
+    <tr><td>Вторник</td><td class="han-cell">星期二</td><td>xīngqī èr</td></tr>
+    <tr><td>Среда</td><td class="han-cell">星期三</td><td>xīngqī sān</td></tr>
+    <tr><td>Четверг</td><td class="han-cell">星期四</td><td>xīngqī sì</td></tr>
+    <tr><td>Пятница</td><td class="han-cell">星期五</td><td>xīngqī wǔ</td></tr>
+    <tr><td>Суббота</td><td class="han-cell">星期六</td><td>xīngqī liù</td></tr>
+    <tr><td>Воскресенье</td><td class="han-cell">星期天 / 星期日</td><td>xīngqī tiān / xīngqī rì</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Единственное исключение — <b>воскресенье</b>. Логика ломается: вместо ожидаемого «星期七» говорят <b>星期天</b> (разговорно) или <b>星期日</b> (письменно). Слова «星期七» не существует — это классическая ошибка новичка.</p>
+<p>Есть и синонимы: <b>周一</b> (zhōu yī) — то же самое, что 星期一, часто встречается в расписаниях и деловой переписке. А в южных регионах можно услышать <b>礼拜一</b> (lǐbài yī). Смысл везде одинаковый.</p>
+
+<h2>Как спросить и ответить <span class="italic">про дату</span></h2>
+<p>Соберём рабочие фразы, которых хватит на все случаи:</p>
+<div class="table-wrap">
+<table>
+  <caption>Вопросы и ответы о дате.</caption>
+  <thead><tr><th>Фраза</th><th>Чтение</th><th>Перевод</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">今天几号？</td><td>Jīntiān jǐ hào?</td><td>Какое сегодня число?</td></tr>
+    <tr><td class="han-cell">今天几月几号？</td><td>Jīntiān jǐ yuè jǐ hào?</td><td>Какое сегодня число и месяц?</td></tr>
+    <tr><td class="han-cell">今天星期几？</td><td>Jīntiān xīngqī jǐ?</td><td>Какой сегодня день недели?</td></tr>
+    <tr><td class="han-cell">你的生日是几月几号？</td><td>Nǐ de shēngrì shì jǐ yuè jǐ hào?</td><td>Когда у тебя день рождения?</td></tr>
+    <tr><td class="han-cell">今天是八月十二号。</td><td>Jīntiān shì bā yuè shí èr hào.</td><td>Сегодня 12 августа.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Полезные слова рядом: <b>今天</b> (jīntiān) сегодня, <b>明天</b> (míngtiān) завтра, <b>昨天</b> (zuótiān) вчера, <b>今年</b> (jīnnián) в этом году, <b>去年</b> (qùnián) в прошлом году, <b>明年</b> (míngnián) в следующем.</p>
+<p class="note">И грамматическая мелочь, которая экономит слова: со словами «сегодня», «завтра» связка <b>是</b> часто опускается. Можно сказать 今天星期三 — без 是, и это будет абсолютно правильно.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>В каком порядке пишется дата на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>От большего к меньшему: год, месяц, число, а день недели идёт в самом конце. 12 августа 2026 года по-китайски будет 2026年8月12日. Это зеркально русскому порядку, где мы начинаем с числа.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 日 отличается от 号 в датах?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Значение одно — «число месяца», но 日 (rì) используют в письменной и официальной речи: документах, анкетах, объявлениях. А 号 (hào) — в разговорной: 今天几号？ «Какое сегодня число?» В документах пишите 日, в разговоре говорите 号.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как читается год на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Год читают по отдельным цифрам, а не как целое число. 2026年 — это 二零二六年 (èr líng èr liù nián), то есть «два-ноль-два-шесть», а не «две тысячи двадцать шесть». Ноль в году читается как 零 (líng).</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как называются дни недели на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>К слову 星期 (xīngqī) добавляют номер: 星期一 — понедельник, 星期二 — вторник и так до 星期六 — суббота. Воскресенье выбивается из логики: это 星期天 или 星期日, но никогда не 星期七.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как спросить «какое сегодня число» по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Разговорный вариант — 今天几号？ (Jīntiān jǐ hào?). Если нужен и месяц: 今天几月几号？ А чтобы узнать день недели, спрашивают 今天星期几？ (Jīntiān xīngqī jǐ?).</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Такие бытовые темы быстрее всего осваиваются в разговоре, а не по таблицам. На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсах Kitai School</a> мы сразу отрабатываем даты на реальных ситуациях — от анкеты до договорённости о встрече. Диагностический урок бесплатный.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>СТАРТ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подскажем, с чего начать.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/uchimsya-nazyvat-vremya-chasy-i-minuty-na-kitayskom" target="_blank" rel="noopener">время, часы и минуты</a>; базовая лексика — <a href="https://kitai-school.ru/article/top-50-bazovyh-glagolov-kitayskogo-yazyka-s-primerami" target="_blank" rel="noopener">топ-50 глаголов</a>; как строить вопросы — <a href="https://kitai-school.ru/article/konstruktor-voprosov-v-kitayskom-shemy-i-pravila" target="_blank" rel="noopener">вопросительные местоимения</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://ru.wikipedia.org/wiki/Китайский_язык" target="_blank" rel="noopener nofollow">Википедия: Китайский язык</a> — общие сведения о лексике и структуре.</li>
+    <li>Официальные словарные списки HSK (Hanban / Chinese Testing International) — даты и дни недели входят в лексику HSK 1–2.</li>
+    <li>Практика Kitai School — заполнение анкет и документов, отработка бытовых конструкций.</li>
+  </ol>
+</div>
+
+<p class="sign">Теперь дата не подведёт! <span class="han">加油！</span></p>
+
+<div class="tags">
+  <span>#датынакитайском</span> <span>#днинедели</span> <span>#лексика</span> <span>#китайскийснуля</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики, учит китайскому с нуля взрослых и детей. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <p class="side-note">Отработаем даты на реальных ситуациях — диагностика бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
