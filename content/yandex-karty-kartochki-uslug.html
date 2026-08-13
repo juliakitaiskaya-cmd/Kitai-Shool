@@ -176,6 +176,24 @@ const ICONS={
  gift(p){rr(p,-112,-22,224,132,14);F(p,BRICK);rr(p,-122,-58,244,46,10);F(p,DEEP);rr(p,-20,-58,40,168,0);F(p,GOLD);circ(p,-26,-66,26);F(p,GOLD);circ(p,26,-66,26);F(p,GOLD);circ(p,0,-66,13);F(p,DEEP);p.save();p.translate(70,78);p.rotate(.18);rr(p,-48,-26,96,52,10);F(p,GOLD);lbl(p,"0 ₽",0,2,DEEP,34);p.restore();},
 };
 
+// Auto-fit an icon: measure its real bounding box once, then scale+centre it
+// so every icon fills the tile evenly (removes the empty space around small ones).
+const _iconBounds={};
+function iconBounds(icon,label){
+  const key=icon+'|'+(label==null?'':label);
+  if(_iconBounds[key])return _iconBounds[key];
+  const S=640,tmp=document.createElement('canvas');tmp.width=S;tmp.height=S;const t=tmp.getContext('2d');
+  t.translate(S/2,S/2);(ICONS[icon]||ICONS.book)(t,label);
+  const d=t.getImageData(0,0,S,S).data;let minx=S,miny=S,maxx=0,maxy=0,found=false;
+  for(let y=0;y<S;y++){for(let x=0;x<S;x++){if(d[(y*S+x)*4+3]>10){found=true;if(x<minx)minx=x;if(x>maxx)maxx=x;if(y<miny)miny=y;if(y>maxy)maxy=y;}}}
+  const b=found?{cx:(minx+maxx)/2-S/2,cy:(miny+maxy)/2-S/2,w:maxx-minx,h:maxy-miny}:{cx:0,cy:0,w:220,h:220};
+  _iconBounds[key]=b;return b;
+}
+function drawIconFitted(ctx,icon,label,px,py,target){
+  const b=iconBounds(icon,label);
+  const s=target/Math.max(b.w,b.h);
+  ctx.save();ctx.translate(px,py);ctx.scale(s,s);ctx.translate(-b.cx,-b.cy);(ICONS[icon]||ICONS.book)(ctx,label);ctx.restore();
+}
 function motifs(p){const pts=[[120,120,'o',9],[210,200,'+',16],[300,110,'o',6],[820,120,'+',18],[910,210,'o',10],[980,120,'o',6],[560,90,'o',7],[660,150,'+',13],[430,150,'o',5]];for(const[x,y,t,s]of pts){p.strokeStyle=SOFT;p.fillStyle=SOFT;p.lineWidth=5;if(t==='o'){circ(p,x,y,s);p.fill();}else{p.beginPath();p.moveTo(x-s,y);p.lineTo(x+s,y);p.moveTo(x,y-s);p.lineTo(x,y+s);p.stroke();}}}
 function cover(p,img,x,y,w,h){const ir=img.width/img.height,tr=w/h;let sw,sh,sx,sy;if(ir>tr){sh=img.height;sw=sh*tr;sx=(img.width-sw)/2;sy=0;}else{sw=img.width;sh=sw/tr;sx=0;sy=(img.height-sh)/2;}p.drawImage(img,sx,sy,sw,sh,x,y,w,h);}
 function chip(p,text,cx,cy,center){p.font='600 30px Arial,sans-serif';const w=p.measureText(text).width+48;const x=center?cx-w/2:cx;p.save();p.shadowColor="rgba(44,36,32,.18)";p.shadowBlur=14;p.shadowOffsetY=4;rr(p,x,cy,w,58,29);F(p,WHITE);p.restore();p.fillStyle=DEEP;p.textAlign="left";p.textBaseline="alphabetic";p.fillText(text,x+24,cy+38);}
@@ -202,7 +220,7 @@ function drawCard(ctx,item,img){
     ctx.save();ctx.shadowColor="rgba(44,36,32,.12)";ctx.shadowBlur=30;ctx.shadowOffsetY=10;
     rr(ctx,cx-T,cy-T,T*2,T*2,44);F(ctx,PAPER);ctx.restore();
     rr(ctx,cx-T,cy-T,T*2,T*2,44);ST(ctx,SOFT,3);
-    ctx.save();ctx.translate(cx,cy);ctx.scale(1.52,1.52);(ICONS[icon]||ICONS.book)(ctx,label);ctx.restore();
+    drawIconFitted(ctx,icon,label,cx,cy,T*2*0.80);
     chip(ctx,sub,cx,905,true);
     wave(ctx);titleTag(ctx,title);
   }
