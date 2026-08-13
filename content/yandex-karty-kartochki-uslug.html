@@ -196,7 +196,7 @@ function drawIconFitted(ctx,icon,label,px,py,target){
 }
 function motifs(p){const pts=[[120,120,'o',9],[210,200,'+',16],[300,110,'o',6],[820,120,'+',18],[910,210,'o',10],[980,120,'o',6],[560,90,'o',7],[660,150,'+',13],[430,150,'o',5]];for(const[x,y,t,s]of pts){p.strokeStyle=SOFT;p.fillStyle=SOFT;p.lineWidth=5;if(t==='o'){circ(p,x,y,s);p.fill();}else{p.beginPath();p.moveTo(x-s,y);p.lineTo(x+s,y);p.moveTo(x,y-s);p.lineTo(x,y+s);p.stroke();}}}
 function cover(p,img,x,y,w,h){const ir=img.width/img.height,tr=w/h;let sw,sh,sx,sy;if(ir>tr){sh=img.height;sw=sh*tr;sx=(img.width-sw)/2;sy=0;}else{sw=img.width;sh=sw/tr;sx=0;sy=(img.height-sh)/2;}p.drawImage(img,sx,sy,sw,sh,x,y,w,h);}
-function chip(p,text,cx,cy,center){p.font='600 30px Arial,sans-serif';const w=p.measureText(text).width+48;const x=center?cx-w/2:cx;p.save();p.shadowColor="rgba(44,36,32,.18)";p.shadowBlur=14;p.shadowOffsetY=4;rr(p,x,cy,w,58,29);F(p,WHITE);p.restore();p.fillStyle=DEEP;p.textAlign="left";p.textBaseline="alphabetic";p.fillText(text,x+24,cy+38);}
+function chip(p,text,cx,cy,center){p.font='700 40px Arial,sans-serif';const w=p.measureText(text).width+64;const x=center?cx-w/2:cx;p.save();p.shadowColor="rgba(44,36,32,.18)";p.shadowBlur=16;p.shadowOffsetY=5;rr(p,x,cy,w,74,37);F(p,WHITE);p.restore();p.fillStyle=DEEP;p.textAlign="left";p.textBaseline="alphabetic";p.fillText(text,x+32,cy+50);}
 
 function titleTag(p,title){p.font='800 44px Arial,sans-serif';const words=title.toUpperCase().split(' ');const L=[];let l='';for(const wd of words){const t=l?l+' '+wd:wd;if(p.measureText(t).width>760&&l){L.push(l);l=wd;}else l=t;}if(l)L.push(l);let tw=0;for(const s of L)tw=Math.max(tw,p.measureText(s).width);const padX=42,padY=26,lh=52,boxW=tw+padX*2,boxH=L.length*lh+padY*2-8,bx=(W-boxW)/2,by=118;p.save();p.shadowColor="rgba(44,36,32,.20)";p.shadowBlur=18;p.shadowOffsetY=6;rr(p,bx,by,boxW,boxH,26);F(p,WARM);p.restore();rr(p,bx,by,boxW,boxH,26);ST(p,BRICK,3);p.fillStyle=DEEP;p.textAlign="center";p.textBaseline="alphabetic";let ty=by+padY+38;for(const s of L){p.fillText(s,W/2,ty);ty+=lh;}}
 
@@ -220,7 +220,9 @@ function drawCard(ctx,item,img){
     ctx.save();ctx.shadowColor="rgba(44,36,32,.12)";ctx.shadowBlur=30;ctx.shadowOffsetY=10;
     rr(ctx,cx-T,cy-T,T*2,T*2,48);F(ctx,PAPER);ctx.restore();
     rr(ctx,cx-T,cy-T,T*2,T*2,48);ST(ctx,SOFT,3);
-    drawIconFitted(ctx,icon,label,cx,cy,T*2*0.88);
+    ctx.save();rr(ctx,cx-T,cy-T,T*2,T*2,44);ctx.clip();
+    drawIconFitted(ctx,icon,label,cx,cy,T*2*0.96);
+    ctx.restore();
     chip(ctx,sub,cx,905,true);
     wave(ctx);titleTag(ctx,title);
   }
