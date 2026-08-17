@@ -1,0 +1,372 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Как поступить в Китай на бюджет
+</nav>
+
+<article>
+<p class="eyebrow">Учёба в Китае</p>
+<h1>Как поступить в Китай на бюджет: <span class="italic">гранты, стипендии и реальные требования</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-17">17 августа 2026</time>
+  </div>
+</div>
+
+<p class="passport">«Бесплатное обучение в Китае» звучит как рекламный лозунг, но за ним стоит вполне понятная система: государственные и университетские стипендии, у каждой — свои сроки, критерии и пакет документов. Место на такой программе не выдают за факт гражданства и не покупают через посредника: его выигрывают по конкурсу. Разберём без прикрас, что именно покрывает стипендия и что остаётся за ваш счёт, какие есть пять путей к оплаченному месту, какие требования по языку и возрасту, как выглядит календарь подачи и от чего на самом деле зависит решение комиссии.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Правильнее говорить не «бесплатно», а <b>за счёт стипендии</b>. Полная стипендия снимает плату за учёбу, даёт общежитие, страховку и деньги на жизнь; перелёт, визовый сбор и медосмотр остаются вашими. Путей к оплаченному месту <b>пять</b>: CSC, стипендия по китайскому языку, провинциальные, университетские и обменные программы. Требования: <b>HSK 4–5</b> для китайскоязычных программ, возрастные рамки, оценки и учебный план. Главный аргумент в досье — <b>письмо о предварительном приёме</b> от вуза.</p>
+</div>
+
+<h2>Что значит «на бюджет»: <span class="italic">что покрывают и что нет</span></h2>
+<p>Первое, что стоит понять: стипендии бывают полные и частичные, и разница между ними — десятки тысяч юаней в год. Вот из чего состоит полная государственная стипендия и что в неё не входит:</p>
+<div class="table-wrap">
+<table>
+  <caption>Полная стипендия: состав и то, что оплачиваете сами.</caption>
+  <thead><tr><th>Статья расходов</th><th>Кто платит</th></tr></thead>
+  <tbody>
+    <tr><td>Плата за обучение</td><td><span class="ok">стипендия</span> — перечисляется вузу напрямую</td></tr>
+    <tr><td>Общежитие</td><td><span class="ok">стипендия</span> — место в кампусе или доплата на жильё</td></tr>
+    <tr><td>Ежемесячные деньги на жизнь</td><td><span class="ok">стипендия</span> — сумма зависит от ступени</td></tr>
+    <tr><td>Медицинская страховка</td><td><span class="ok">стипендия</span> — базовая страховка для иностранных студентов</td></tr>
+    <tr><td>Перелёт</td><td>вы сами (кроме отдельных двусторонних программ)</td></tr>
+    <tr><td>Визовый сбор и медосмотр дома</td><td>вы сами</td></tr>
+    <tr><td>Медосмотр и вид на жительство в Китае</td><td>вы сами — оформляется после приезда</td></tr>
+    <tr><td>Учебники, быт, поездки</td><td>вы сами, из стипендии</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Ориентиры по ежемесячным выплатам: около <b>2500 ¥</b> на бакалавриате, <b>3000 ¥</b> в магистратуре и <b>3500 ¥</b> в докторантуре. Суммы и правила пересматривают, поэтому перед подачей их обязательно нужно сверить на текущий год. На жизнь этого хватает: сколько реально уходит в разных городах, мы считали в статье <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли жить в Китае</a>.</p>
+<p>Частичная стипендия покрывает только часть пунктов — чаще всего обучение, без общежития и выплат. Это тоже хороший вариант, но бюджет на год нужно считать заново.</p>
+
+<h2>Пять путей <span class="italic">к оплаченному месту</span></h2>
+<p>Ошибка большинства абитуриентов — знать только про CSC и подавать в одно окно. Путей больше:</p>
+<div class="table-wrap">
+<table>
+  <caption>Основные программы, по которым учатся за счёт стипендии.</caption>
+  <thead><tr><th>Путь</th><th>Кто даёт</th><th>Что покрывает</th><th>Кому подходит</th></tr></thead>
+  <tbody>
+    <tr><td>Государственная стипендия CSC</td><td>China Scholarship Council</td><td>чаще полная</td><td>бакалавриат, магистратура, докторантура</td></tr>
+    <tr><td>Стипендия по китайскому языку</td><td>центр CLEC (прежде — Институт Конфуция)</td><td>полная или частичная</td><td>языковые стажировки, преподавание китайского</td></tr>
+    <tr><td>Стипендии провинций и городов</td><td>власти региона</td><td>от обучения до полной</td><td>тем, кто выбрал конкретный регион</td></tr>
+    <tr><td>Университетские стипендии</td><td>сам вуз</td><td>чаще обучение, иногда с выплатой</td><td>тем, кто не прошёл на государственную</td></tr>
+    <tr><td>Программы обмена</td><td>договор между вузами</td><td>обучение, иногда общежитие</td><td>студентам российских вузов-партнёров</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Самая частая рабочая стратегия — подавать одновременно на несколько программ: CSC через вуз, отдельно на провинциальную и на университетскую. Это не запрещено, а вот держать две китайские государственные стипендии одновременно нельзя — если выиграете обе, придётся выбрать одну.</p>
+<p class="note">Как устроена именно государственная стипендия — каналы подачи Type A, B и C, учебный план и интервью — мы разобрали подробно в <a href="https://kitai-school.ru/article/stipendiya-csc-v-kitae-polnyy-gayd-po-polucheniu-dlya-studentov" target="_blank" rel="noopener">полном гайде по стипендии CSC</a>. А сборку сильного досье — в статье <a href="https://kitai-school.ru/article/granty-na-obuchenie-v-kitae" target="_blank" rel="noopener">как выиграть грант на обучение в Китае</a>. Эта статья — общая карта, чтобы понять, куда идти.</p>
+
+<h2>Реальные требования: <span class="italic">язык, возраст, оценки</span></h2>
+<p>Требования отличаются по программам, но костяк везде один:</p>
+<div class="table-wrap">
+<table>
+  <caption>Что спрашивают на входе.</caption>
+  <thead><tr><th>Критерий</th><th>Что обычно требуется</th></tr></thead>
+  <tbody>
+    <tr><td>Язык (программы на китайском)</td><td><b>HSK 4</b> как минимум, на гуманитарных направлениях чаще <b>HSK 5</b></td></tr>
+    <tr><td>Язык (программы на английском)</td><td>IELTS или TOEFL; HSK не требуется, но плюс в досье</td></tr>
+    <tr><td>Возраст</td><td>бакалавриат до 25, магистратура до 35, докторантура до 40 лет</td></tr>
+    <tr><td>Образование</td><td>аттестат для бакалавриата, диплом предыдущей ступени — для остальных</td></tr>
+    <tr><td>Оценки</td><td>средний балл выше среднего; слабые оценки перевешивают планом и рекомендациями</td></tr>
+    <tr><td>Здоровье</td><td>форма медосмотра для иностранцев с результатами анализов</td></tr>
+    <tr><td>Судимость</td><td>справка об отсутствии судимости</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Пакет документов почти всегда одинаковый: паспорт, диплом или аттестат с переводом и нотариальным заверением, выписка с оценками, учебный план, две рекомендации от преподавателей, сертификат HSK, форма медосмотра, справка о несудимости и — отдельным пунктом — письмо о предварительном приёме от университета.</p>
+<p class="note">Про HSK 4 полезно знать заранее: это не «немного китайского», а около 1200 слов и полноценный экзамен с чтением и аудированием. Что именно там требуется, мы разбирали в статье <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">про HSK 4</a>. На подготовку с нуля до этого уровня обычно уходит от полутора до двух лет системных занятий.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Одна из наших студенток два года шла к магистратуре в Китае и в первый год не прошла: подала только на CSC, в один сильный пекинский вуз, без письма о предварительном приёме. Отказ пришёл без объяснений — так бывает почти всегда.</p>
+  <p>На второй год она сделала три вещи. Написала пяти профессорам напрямую, коротко и по делу, приложив свой учебный план, — двое ответили. Получила письмо о предварительном приёме от вуза не из первой десятки, зато с сильной кафедрой по её теме. И подала сразу на три программы: CSC, стипендию провинции и университетскую. Прошла на провинциальную — с полным покрытием. Вывод простой: побеждает не самый громкий вуз в заявке, а совпадение вашей темы с тем, чем занимается кафедра, плюс несколько поданных заявок вместо одной.</p>
+</div>
+
+<h2>Календарь подачи: <span class="italic">когда что делать</span></h2>
+<p>Главная причина провала — не слабое досье, а опоздание. Документы вроде нотариального перевода и медосмотра готовятся неделями, поэтому отсчитывать нужно назад от дедлайна:</p>
+<div class="table-wrap">
+<table>
+  <caption>Примерный цикл подачи на сентябрьский набор.</caption>
+  <thead><tr><th>Период</th><th>Что делать</th></tr></thead>
+  <tbody>
+    <tr><td>Сентябрь — октябрь</td><td>выбрать направление и вузы, начать переписку с профессорами</td></tr>
+    <tr><td>Ноябрь — декабрь</td><td>получить письмо о предварительном приёме, писать учебный план</td></tr>
+    <tr><td>Декабрь — январь</td><td>открывается приём заявок; заказать переводы и заверение</td></tr>
+    <tr><td>Январь — февраль</td><td>медосмотр, справка о несудимости, рекомендации</td></tr>
+    <tr><td>Март — апрель</td><td>дедлайны большинства программ; подача через систему и в вуз</td></tr>
+    <tr><td>Май — июнь</td><td>интервью, если оно предусмотрено</td></tr>
+    <tr><td>Июнь — июль</td><td>результаты, письмо о зачислении и форма JW201/JW202</td></tr>
+    <tr><td>Июль — август</td><td>учебная виза X1, билеты, общежитие</td></tr>
+    <tr><td>Сентябрь</td><td>начало учёбы; на месте — медосмотр и вид на жительство</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Даты сдвигаются каждый год, а канал через посольство закрывается раньше остальных. Правило простое: смотрите дедлайн на сайте конкретной программы и вычитайте из него два месяца — это и будет ваш реальный старт.</p>
+
+<h2>Что решает при отборе <span class="italic">по-настоящему</span></h2>
+<p>Формальные требования — это допуск к конкурсу, а не победа в нём. Дальше комиссия смотрит на другое:</p>
+<div class="table-wrap">
+<table>
+  <caption>От чего зависит решение, в порядке значимости.</caption>
+  <thead><tr><th>Фактор</th><th>Почему это важно</th></tr></thead>
+  <tbody>
+    <tr><td>Письмо о предварительном приёме</td><td>вуз уже готов вас взять — заявка перестаёт быть анонимной</td></tr>
+    <tr><td>Согласие профессора</td><td>для магистратуры и докторантуры решающий пункт: у него есть места</td></tr>
+    <tr><td>Учебный план</td><td>показывает, что вы понимаете тему и она нужна кафедре</td></tr>
+    <tr><td>Совпадение с профилем вуза</td><td>сильная тема не в профиль проигрывает средней в профиль</td></tr>
+    <tr><td>Оценки и рекомендации</td><td>подтверждают, что вы доучитесь до конца</td></tr>
+    <tr><td>Сертификат HSK</td><td>снимает сомнения в языке, но сам места не даёт</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Отсюда практический вывод: время лучше вложить не в шестую рекомендацию, а в переписку с профессорами и в учебный план. Письмо профессору должно быть коротким: кто вы, что хотите исследовать, почему именно у него, файл с планом во вложении. Отвечают далеко не все — это нормально, пишите десяти.</p>
+
+<h2>Честно о шансах <span class="italic">и о плане Б</span></h2>
+<p>Гарантий не даёт никто, и любой, кто их обещает, вводит вас в заблуждение. Конкурс на полные стипендии в известных вузах Пекина и Шанхая высокий, и отказ без объяснения причин — обычное дело. Но есть рабочие способы повысить шансы:</p>
+<div class="table-wrap">
+<table>
+  <caption>Что делать, чтобы шансы были выше.</caption>
+  <thead><tr><th>Ход</th><th>Как это работает</th></tr></thead>
+  <tbody>
+    <tr><td>Подавать в несколько программ</td><td>CSC + провинциальная + университетская вместо одной заявки</td></tr>
+    <tr><td>Смотреть не только Пекин и Шанхай</td><td>в Сиане, Цзинане, Чэнду конкурс ниже, а вузы сильные</td></tr>
+    <tr><td>Выбирать вуз под тему</td><td>совпадение с кафедрой важнее позиции в рейтинге</td></tr>
+    <tr><td>Довести язык до HSK 5</td><td>открывает китайскоязычные программы, где конкурс меньше</td></tr>
+    <tr><td>Первый год за свой счёт</td><td>затем перевод на стипендию по результатам учёбы — это работает</td></tr>
+    <tr><td>Пробовать повторно</td><td>заявку через год усиливают опытом, языком и новыми контактами</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Последний путь недооценивают: во многих вузах есть внутренние стипендии для уже поступивших, и хорошая успеваемость на первом курсе даёт на них реальные шансы. Так что «не прошёл на бюджет» не означает «не поеду» — иногда это означает «поеду годом позже и уже со стипендией».</p>
+<p>И ещё вариант, о котором почти не пишут: если до бакалавриата не хватает языка или оценок, можно начать с языковой стажировки или колледжа, а потом переходить в вуз изнутри системы. О среднем профессиональном образовании мы рассказывали в статье <a href="https://kitai-school.ru/article/est-li-v-kitae-kolledji" target="_blank" rel="noopener">есть ли в Китае колледжи</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Реально ли учиться в Китае бесплатно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, но точнее говорить не «бесплатно», а «за счёт стипендии». Полная государственная стипендия снимает плату за учёбу, даёт общежитие или доплату на жильё, медицинскую страховку и ежемесячные деньги на жизнь. За свой счёт остаются перелёт, визовый сбор, медосмотр и оформление документов дома, а также вид на жительство по прибытии.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие стипендии есть для русских студентов в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Основных путей пять: государственная стипендия CSC, стипендия по китайскому языку от центра CLEC (прежнее название — стипендия Института Конфуция), стипендии провинций и городов, собственные стипендии университетов и программы обмена между вузами. Условия у них разные: одни покрывают всё, другие только плату за обучение.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой уровень HSK нужен для поступления на стипендию?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Зависит от программы. Для обучения на китайском обычно требуется HSK 4, а на гуманитарных направлениях чаще HSK 5. Для англоязычных программ HSK не нужен, но потребуется IELTS или TOEFL. Если вы идёте на языковую стажировку, требования ниже, а иногда сертификат не нужен вовсе. Точный порог всегда смотрите на странице конкретной программы.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Есть ли возрастные ограничения?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, у государственной стипендии они прописаны: бакалавриат — до 25 лет, магистратура — до 35, докторантура — до 40, стажёры-исследователи — до 45–50 лет. У провинциальных и университетских программ рамки бывают мягче, поэтому если по возрасту вы не проходите в CSC, стоит смотреть их.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что сильнее всего влияет на решение комиссии?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Письмо о предварительном приёме от университета, а для магистратуры и докторантуры — согласие конкретного профессора вас взять. Дальше идут учебный план, оценки и рекомендации. Сертификат HSK важен, но сам по себе места не даёт: комиссия смотрит, насколько ваш план совпадает с тем, чем занимается кафедра.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Языковой порог — то, что чаще всего отделяет от заявки. Мы готовим к <a href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener">HSK 4 и HSK 5</a> и помогаем с учебным планом и письмами профессорам: разбираем формулировки, чтобы досье выглядело убедительно. Первый урок бесплатный.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на консультацию →</a></p>
+  <p>Или напишите слово <b>БЮДЖЕТ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подскажем, с чего начать в вашем случае.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/stipendiya-csc-v-kitae-polnyy-gayd-po-polucheniu-dlya-studentov" target="_blank" rel="noopener">полный гайд по стипендии CSC</a>; <a href="https://kitai-school.ru/article/csca-glavnyy-kzamen-dlya-postupleniya-v-vuzy-kitaya" target="_blank" rel="noopener">экзамен CSCA для поступления в вузы Китая</a>; <a href="https://kitai-school.ru/article/est-li-v-kitae-kolledji" target="_blank" rel="noopener">есть ли в Китае колледжи</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://ru.wikipedia.org/wiki/Образование_в_Китае" target="_blank" rel="noopener nofollow">Википедия: Образование в Китае</a> — устройство системы высшего образования.</li>
+    <li>China Scholarship Council — условия государственной стипендии, ступени, возрастные рамки и состав выплат.</li>
+    <li>Центр CLEC (прежде Институт Конфуция) — условия стипендии по китайскому языку.</li>
+    <li>Практика Kitai School — сопровождение студентов при подаче заявок и подготовка к HSK.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть заявка будет сильной! <span class="han">加油！</span></p>
+
+<div class="tags">
+  <span>#обучениевкитае</span> <span>#стипендиивкитае</span> <span>#CSC</span> <span>#поступлениевкитай</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики, учит китайскому с нуля взрослых и детей. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <p class="side-note">Доведём язык до HSK 4–5 и поможем с досье — первый урок бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
