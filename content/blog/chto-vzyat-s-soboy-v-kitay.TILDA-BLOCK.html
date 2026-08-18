@@ -1,0 +1,411 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Что взять с собой в Китай
+</nav>
+
+<article>
+<p class="eyebrow">Жизнь в Китае</p>
+<h1>Что взять с собой в Китай: <span class="italic">список вещей и того, что лучше оставить дома</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-18">18 августа 2026</time>
+  </div>
+</div>
+
+<p class="passport">Чемодан в Китай собирается не так, как в Европу. Дело не в количестве вещей — большинство из них там дешевле, — а в мелочах, которые дома кажутся ерундой, а на месте решают всё: форма вилки у зарядки, приложение, которое надо было поставить заранее, пачка салфеток в кармане. Разберём разумный список: что взять обязательно, что купить уже на месте, чего лучше не везти совсем и что добавить, если едете по работе. И заодно соберём десяток слов, которые пригодятся в первый же день.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Обязательно: документы, <b>переходник</b> для розетки (преобразователь напряжения не нужен — там те же 220 В), немного <b>наличных</b> мелкими купюрами и заранее настроенные <b>приложения</b>: оплата, карты, такси, словарь. Мелочь, о которой все жалеют: <b>салфетки</b> — в общественных туалетах бумаги часто нет. Не везите: гору одежды, продукты животного происхождения и свежие фрукты. Едете зимой южнее Янцзы — берите тёплые <b>домашние</b> вещи: отопления там нет.</p>
+</div>
+
+<h2>Документы и деньги: <span class="italic">то, без чего никак</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Базовый набор, который проверяют перед выходом из дома.</caption>
+  <thead><tr><th>Что</th><th>Зачем и на что обратить внимание</th></tr></thead>
+  <tbody>
+    <tr><td>Паспорт с визой</td><td>носить с собой: его спрашивают в отеле, на вокзале, при покупке симкарты</td></tr>
+    <tr><td>Копии документов</td><td>бумажная и в телефоне; выручает, если паспорт остался в сейфе</td></tr>
+    <tr><td>Медицинская страховка</td><td>оформляется до вылета; распечатка и телефон ассистанса</td></tr>
+    <tr><td>Бронь отеля и билеты</td><td>лучше распечатать: на границе и в отеле просят адрес по-китайски</td></tr>
+    <tr><td>Наличные юани</td><td>небольшая сумма мелкими купюрами — на такси, рынок, случай без связи</td></tr>
+    <tr><td>Банковская карта</td><td>для привязки к платёжному приложению; проверьте её работу заранее</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Адрес отеля стоит сохранить <b>иероглифами</b>, а не латиницей. Таксист прочитает 上海市徐汇区… и всё поймёт, а транслитерацию — скорее всего нет. Просто сделайте скриншот из брони.</p>
+<p>Про наличные: почти всё в Китае оплачивается по QR-коду с телефона, и без приложения вы будете чувствовать себя странно. Но небольшой запас купюр всё равно нужен — на случай, когда платёж не проходит или связь пропала. Сколько всего уходит на поездку, мы считали в статье <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли в Китае</a>.</p>
+
+<h2>Розетки и техника: <span class="italic">одна деталь, на которой все спотыкаются</span></h2>
+<div class="ks-quote">
+  <p>В Китае те же 220 вольт, что и у нас. Преобразователь напряжения не нужен — нужен только переходник под форму вилки.</p>
+  <cite>Именно на этом обычно тратят деньги зря</cite>
+</div>
+<div class="table-wrap">
+<table>
+  <caption>Что происходит с вашей вилкой в китайской розетке.</caption>
+  <thead><tr><th>Вилка</th><th>Подойдёт?</th></tr></thead>
+  <tbody>
+    <tr><td>Тонкая круглая, без заземления</td><td><span class="ok">обычно да</span> — такие розетки распространены</td></tr>
+    <tr><td>Толстая с заземлением</td><td><span class="bad">нет</span> — не входит, нужен переходник</td></tr>
+    <tr><td>Плоские штырьки (местный стандарт)</td><td>основной китайский тип, под него и берут переходник</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Вывод простой: возьмите универсальный переходник, а лучше два — один в отеле обычно занят зарядкой телефона. Что ещё из техники пригодится:</p>
+<div class="table-wrap">
+<table>
+  <caption>Электроника в поездку.</caption>
+  <thead><tr><th>Что</th><th>Комментарий</th></tr></thead>
+  <tbody>
+    <tr><td>Павербанк</td><td>телефон разряжается быстро: по нему вы платите, ездите и переводите</td></tr>
+    <tr><td>Зарядка с несколькими портами</td><td>экономит те самые розетки</td></tr>
+    <tr><td>Наушники</td><td>долгие перелёты и поезда; в метро без них шумно</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Павербанк — только в ручную кладь, в багаж его не сдают. И следите за ёмкостью: у авиакомпаний есть ограничения, а на внутренних китайских рейсах их проверяют строго.</p>
+
+<h2>Связь и приложения: <span class="italic">настроить дома, а не в аэропорту</span></h2>
+<p>Самая частая ошибка — прилететь и начать разбираться на месте. Часть привычных сервисов в Китае недоступна, и ставить местные аналоги удобнее заранее, пока под рукой стабильный интернет.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что поставить и настроить до вылета.</caption>
+  <thead><tr><th>Категория</th><th>Что это даёт</th></tr></thead>
+  <tbody>
+    <tr><td>Платёжное приложение</td><td>оплата по QR-коду где угодно; карту привязать и проверить дома</td></tr>
+    <tr><td>Местные карты</td><td>привычные карты работают плохо: маршруты и метро точнее в местных</td></tr>
+    <tr><td>Вызов такси</td><td>дешевле и понятнее, чем ловить машину на улице</td></tr>
+    <tr><td>Словарь с камерой</td><td>наводите на меню или вывеску — получаете перевод</td></tr>
+    <tr><td>Мессенджер</td><td>в Китае это ещё и оплата, и связь с отелем, и заказы</td></tr>
+    <tr><td>Билеты и отели</td><td>поезда и внутренние рейсы удобнее брать через местный сервис</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Симкарту проще всего купить в аэропорту по прилёте — понадобится паспорт. Есть вариант с электронной картой для туристов: подключается заранее, но тарифы обычно дороже.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>В первую поездку я собрала образцовый чемодан: адаптеры, аптечка, запас всего. И забыла одну вещь — пачку бумажных салфеток. В общественных туалетах бумаги часто просто нет, её приносят с собой. Первый день запомнился надолго.</p>
+  <p>Второе открытие случилось в декабре в Шанхае. Я взяла хорошую зимнюю куртку и была уверена, что готова. Оказалось, что мёрзнуть придётся не на улице, а в помещении: южнее Янцзы центрального отопления нет, и при высокой влажности +8 в комнате переносятся тяжелее, чем −10 в Москве. С тех пор в списке на юг зимой у меня первым пунктом идут тёплая пижама и толстые носки, а курткой я занимаюсь во вторую очередь.</p>
+</div>
+
+<h2>Одежда: <span class="italic">по сезону и по региону</span></h2>
+<p>Китай большой, и «поехать в Китай» зимой может означать три разные погоды. Отталкивайтесь не от страны, а от города:</p>
+<div class="table-wrap">
+<table>
+  <caption>Что учитывать при сборе одежды.</caption>
+  <thead><tr><th>Куда и когда</th><th>Что важно</th></tr></thead>
+  <tbody>
+    <tr><td>Север зимой (Пекин, Харбин)</td><td>настоящая зима с морозом; в помещениях тепло — отопление есть</td></tr>
+    <tr><td>Юг зимой (Шанхай, Гуанчжоу)</td><td>на улице мягко, но <b>отопления нет</b>: тёплые домашние вещи обязательны</td></tr>
+    <tr><td>Лето почти везде</td><td>жара и влажность; лёгкая одежда, зонт и что-то с рукавом от кондиционеров</td></tr>
+    <tr><td>Любой сезон</td><td>удобная разношенная обувь: ходить придётся много</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Большой запас одежды везти не нужно: в Китае она дешёвая, а размеры в крупных городах есть на любой рост. Проще довезти недостающее на месте, чем платить за перевес.</p>
+
+<h2>Мелочи, о которых <span class="italic">жалеют чаще всего</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Занимают мало места, выручают сильно.</caption>
+  <thead><tr><th>Что</th><th>Почему пригодится</th></tr></thead>
+  <tbody>
+    <tr><td>Бумажные салфетки</td><td>в общественных туалетах бумаги часто нет — её носят с собой</td></tr>
+    <tr><td>Термокружка</td><td>кипяток бесплатно есть везде: в отелях, поездах, аэропортах</td></tr>
+    <tr><td>Зонт</td><td>дожди внезапные, а летом он же спасает от солнца</td></tr>
+    <tr><td>Маска</td><td>в самолёте, в метро и в дни с плохим воздухом</td></tr>
+    <tr><td>Свои приправы или чай</td><td>если тяжело переносите незнакомую кухню первые дни</td></tr>
+    <tr><td>Небольшой рюкзак</td><td>для прогулок: чемодан в городе неудобен</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Про термокружку стоит сказать отдельно: горячая вода в Китае — часть быта. Кулеры с кипятком стоят в поездах, на вокзалах, в отелях и офисах, так что 保温杯 (bǎowēnbēi) — вещь, которая пригодится в первый же день.</p>
+
+<h2>Лекарства: <span class="italic">коротко и по делу</span></h2>
+<p>Аптеки в Китае есть везде, но объясняться в них без языка тяжело, а привычные препараты называются иначе. Базовое правило: везти небольшой личный запас в <b>оригинальной упаковке</b>, а сильнодействующее — заранее проверять по спискам ограничений. Отдельные вещества, вполне легальные у нас, в Китае запрещены к ввозу, и незнание тут не помогает.</p>
+<p>Подробный разбор — что положить, как называется в аптеке и что там купить на месте — мы сделали в отдельной статье: <a href="https://kitai-school.ru/article/kakie-lekarstva-vzyat-s-soboy-v-kitay" target="_blank" rel="noopener">какие лекарства взять с собой в Китай</a>.</p>
+
+<h2>Что везти <span class="italic">не стоит</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Лишний вес или прямой запрет.</caption>
+  <thead><tr><th>Что</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td>Гора одежды и обуви</td><td>всё дешевле на месте; перевес обойдётся дороже покупки</td></tr>
+    <tr><td>Продукты животного происхождения</td><td>мясные и молочные — ввоз ограничен</td></tr>
+    <tr><td>Свежие фрукты и овощи, семена</td><td>карантинные ограничения</td></tr>
+    <tr><td>Лекарства без упаковки</td><td>россыпью и без инструкции вызывают вопросы на границе</td></tr>
+    <tr><td>Крупные суммы наличными</td><td>сверх установленного порога требуется декларация</td></tr>
+    <tr><td>Дубли техники</td><td>второй ноутбук «на всякий случай» обычно едет туда и обратно</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Если едете <span class="italic">в командировку</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Что добавить к обычному списку.</caption>
+  <thead><tr><th>Что</th><th>Зачем</th></tr></thead>
+  <tbody>
+    <tr><td>Визитки</td><td>обмен визитками — часть первого знакомства; берите с запасом</td></tr>
+    <tr><td>Небольшие подарки</td><td>сувениры из своей страны; уместны при первой встрече</td></tr>
+    <tr><td>Деловая одежда</td><td>на переговоры и совместный ужин — он тоже часть работы</td></tr>
+    <tr><td>Материалы на китайском</td><td>презентация или прайс на языке партнёра работают лучше</td></tr>
+    <tr><td>Переходник и павербанк</td><td>в двух экземплярах: выставки и переезды съедают заряд</td></tr>
+  </tbody>
+</table>
+</div>
+<p>И перед поездкой стоит освежить правила первой встречи: как вручают визитку, кто садится за стол первым, что говорить на ужине. Мы разобрали это в статье <a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a>.</p>
+
+<h2>Десять слов, <span class="italic">которые пригодятся сразу</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Минимум для аэропорта, отеля и магазина.</caption>
+  <thead><tr><th>Иероглифы</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">护照</td><td>hùzhào</td><td>паспорт</td></tr>
+    <tr><td class="han-cell">行李</td><td>xíngli</td><td>багаж</td></tr>
+    <tr><td class="han-cell">转换插头</td><td>zhuǎnhuàn chātóu</td><td>переходник для розетки</td></tr>
+    <tr><td class="han-cell">充电宝</td><td>chōngdiànbǎo</td><td>павербанк</td></tr>
+    <tr><td class="han-cell">现金</td><td>xiànjīn</td><td>наличные</td></tr>
+    <tr><td class="han-cell">手机卡</td><td>shǒujīkǎ</td><td>сим-карта</td></tr>
+    <tr><td class="han-cell">纸巾</td><td>zhǐjīn</td><td>бумажные салфетки</td></tr>
+    <tr><td class="han-cell">热水</td><td>rèshuǐ</td><td>кипяток, горячая вода</td></tr>
+    <tr><td class="han-cell">药店</td><td>yàodiàn</td><td>аптека</td></tr>
+    <tr><td class="han-cell">多少钱？</td><td>Duōshao qián?</td><td>Сколько стоит?</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Даже этого десятка хватает, чтобы купить симкарту, попросить салфетки и спросить цену. А если хочется понимать ответы, а не только задавать вопросы, — начните с базового курса: как устроен язык страны, мы рассказывали в статье <a href="https://kitai-school.ru/article/kak-razgovarivaut-v-kitae" target="_blank" rel="noopener">как разговаривают в Китае</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужен ли в Китае переходник для розетки?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, переходник нужен, а вот преобразователь напряжения — нет. В Китае, как и у нас, 220 вольт, так что техника работает без всяких дополнительных устройств. Проблема только в форме вилки: тонкая круглая европейская обычно входит, а толстая с заземлением — уже нет. Проще всего взять универсальный переходник, он стоит недорого.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужны ли в Китае наличные?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Небольшую сумму стоит иметь при себе. Почти всё оплачивается через мобильные приложения по QR-коду, но наличные выручают там, где связь плохая или у продавца не проходит платёж. Отказать в приёме наличных не имеют права, однако сдачи с крупной купюры может не найтись, поэтому лучше держать мелкие.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что взять с собой в Шанхай зимой?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Тёплые домашние вещи. В Шанхае и южнее центрального отопления нет, и зимой в квартирах и офисах бывает холоднее, чем на улице, при высокой влажности. Пригодятся тёплая пижама, толстые носки, кофта на каждый день дома и грелка. На улице при этом достаточно демисезонной куртки.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие приложения установить до поездки в Китай?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Заранее поставьте платёжное приложение и привяжите к нему карту, местные карты для навигации, приложение для вызова такси и словарь с распознаванием иероглифов по фото. Часть привычных сервисов в Китае недоступна, поэтому местные аналоги удобнее установить и настроить дома, пока есть стабильный интернет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что не стоит везти в Китай?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Большой запас одежды и бытовых мелочей: всё это дешевле и проще купить на месте. Не стоит везти продукты животного происхождения и свежие фрукты — их ввоз ограничен. Лекарства берите только в оригинальной упаковке и в разумном количестве, а сильнодействующие препараты лучше заранее проверить по списку ограничений.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Самая полезная вещь в чемодане не занимает места — это десяток фраз, которые вы говорите без запинки. На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">курсах Kitai School</a> есть короткая программа для поездки: аэропорт, отель, такси, кафе и магазин — ровно то, что нужно в первую неделю. Первый урок бесплатный.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>ПОЕЗДКА</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём формат под ваши даты.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/kakie-lekarstva-vzyat-s-soboy-v-kitay" target="_blank" rel="noopener">какие лекарства взять с собой</a>; <a href="https://kitai-school.ru/article/skolko-stoit-metro-v-kitae" target="_blank" rel="noopener">сколько стоит метро в Китае</a>; <a href="https://kitai-school.ru/article/kitayskiy-tiket-obscheniya-uvajenie-k-starshim-ierarhiya-i-ponyatie-lica" target="_blank" rel="noopener">китайский этикет общения</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Таможенные правила КНР — ограничения на ввоз продуктов, лекарств и наличных.</li>
+    <li>Технические стандарты электросети КНР — напряжение 220 В и типы розеток.</li>
+    <li><a href="https://ru.wikipedia.org/wiki/Китайская_Народная_Республика" target="_blank" rel="noopener nofollow">Википедия: Китайская Народная Республика</a> — климат и регионы.</li>
+    <li>Практика Kitai School — опыт поездок и наблюдения за тем, чего чаще всего не хватает.</li>
+  </ol>
+</div>
+
+<p class="sign">Лёгкой дороги! <span class="han">一路平安！</span></p>
+
+<div class="tags">
+  <span>#чтовзятьвкитай</span> <span>#поездкавкитай</span> <span>#жизньвкитае</span> <span>#шанхай</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики, учит китайскому с нуля взрослых и детей. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <p class="side-note">Короткая программа для поездки: аэропорт, отель, такси, кафе</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
