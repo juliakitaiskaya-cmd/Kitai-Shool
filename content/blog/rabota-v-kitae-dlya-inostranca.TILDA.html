@@ -1,0 +1,470 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/rabota-v-kitae-dlya-inostranca#article",
+      "headline": "Работа в Китае для иностранца: визы, востребованные сферы и с чего начать",
+      "description": "Обзор легального трудоустройства в Китае: рабочая виза Z и разрешение на работу, требования к кандидату, категории специалистов, востребованные сферы, роль китайского языка и подводные камни трудового договора.",
+      "inLanguage": "ru",
+      "datePublished": "2026-08-18",
+      "dateModified": "2026-08-18",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/rabota-v-kitae-dlya-inostranca",
+      "about": {
+        "@type": "Thing",
+        "name": "Трудоустройство иностранцев в Китае",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Китайская_Народная_Республика"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Можно ли работать в Китае по туристической визе?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Нет. Легально работать можно только по рабочей визе Z, а затем по разрешению на работу и виду на жительство. Работа по туристической визе L или деловой M считается нарушением: последствия — штраф, депортация и запрет на въезд на несколько лет. Отвечает за это не только сотрудник, но и работодатель, поэтому серьёзные компании на такие схемы не идут."}},
+        {"@type": "Question", "name": "Какие требования к иностранному работнику в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Стандартный набор: высшее образование, как правило не меньше двух лет опыта по специальности, возраст обычно от 18 до 60 лет, справка об отсутствии судимости и медицинское заключение. Диплом и справку нужно легализовать. Отдельные профессии добавляют свои требования — например, преподавателям языка нужен профильный сертификат."}},
+        {"@type": "Question", "name": "Какие специалисты востребованы в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Чаще всего иностранцев берут во внешнюю торговлю и логистику, в IT и инженерные направления, в маркетинг для выхода китайских компаний на зарубежные рынки, в преподавание языков и в сферу гостеприимства. Русскоязычным специалистам особенно часто предлагают работу, связанную с поставками в Россию и страны СНГ."}},
+        {"@type": "Question", "name": "Нужен ли китайский язык, чтобы работать в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Формально нет: в международных компаниях рабочим языком часто остаётся английский. Но без китайского выбор вакансий заметно уже, а зарплата обычно ниже. Уровень HSK 4 позволяет вести быт и простую рабочую переписку, HSK 5 открывает работу в китайских компаниях и переговоры без переводчика."}},
+        {"@type": "Question", "name": "С чего начать, если хочется работать в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Начинать нужно не с визы, а с работодателя: без приглашения виза Z не оформляется. Поэтому порядок такой: определить сферу, привести в порядок диплом и опыт, подтянуть язык хотя бы до бытового уровня, искать вакансии на профильных площадках и через знакомых, а дальше документы готовит уже работодатель."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Работа в Китае для иностранца"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Работа в Китае для иностранца
+</nav>
+
+<article>
+<p class="eyebrow">Жизнь в Китае</p>
+<h1>Работа в Китае для иностранца: <span class="italic">визы, востребованные сферы и с чего начать</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-18">18 августа 2026</time>
+  </div>
+</div>
+
+<p class="passport">«Хочу работать в Китае» — запрос понятный, но начинать приходится не с того, о чём обычно думают. Не с визы и не с переезда, а с работодателя: рабочая виза <b class="han-big">Z</b> оформляется только по приглашению конкретной компании, которая заранее получила на вас разрешение. Без этого шага всё остальное не имеет смысла. Разберём по порядку: какие бывают визы и почему работать по туристической нельзя, кого в Китае действительно берут, какие сферы открыты для иностранцев, как выглядит путь от вакансии до разрешения на работу и насколько всё это зависит от знания языка.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Легально работать можно <b>только по визе Z</b> и полученному до неё разрешению на работу. Требования к кандидату стандартные: <b>высшее образование</b>, обычно <b>от двух лет опыта</b>, справка о несудимости и медосмотр. Иностранцев чаще берут во внешнюю торговлю, IT, маркетинг и преподавание. Китайский формально не обязателен, но <b>HSK 4–5</b> резко расширяет выбор вакансий. Работа по туристической визе — нарушение с депортацией и запретом на въезд.</p>
+</div>
+
+<h2>Главное правило: <span class="italic">работать можно только по визе Z</span></h2>
+<p>Виз в Китае много, и путать их дорого. Вот те, с которыми чаще всего сталкиваются:</p>
+<div class="table-wrap">
+<table>
+  <caption>Какие визы бывают и что с ними можно.</caption>
+  <thead><tr><th>Виза</th><th>Для чего</th><th>Работать?</th></tr></thead>
+  <tbody>
+    <tr><td>Z</td><td>трудоустройство по приглашению компании</td><td><span class="ok">да</span> — единственный рабочий вариант</td></tr>
+    <tr><td>R</td><td>высококвалифицированные специалисты, дефицитные профессии</td><td><span class="ok">да</span>, с упрощённым порядком</td></tr>
+    <tr><td>L</td><td>туризм</td><td><span class="bad">нет</span></td></tr>
+    <tr><td>M</td><td>деловые поездки, переговоры, выставки</td><td><span class="bad">нет</span> — работать по ней нельзя</td></tr>
+    <tr><td>X1 / X2</td><td>учёба</td><td>только подработка с разрешения вуза</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="ks-quote">
+  <p>Работа по туристической или деловой визе — не «серая зона», а прямое нарушение: штраф, депортация и запрет на въезд на несколько лет.</p>
+  <cite>Ответственность несёт и работник, и компания — поэтому серьёзные работодатели на такие схемы не идут</cite>
+</div>
+<p>Отдельно про студентов: учебная виза сама по себе права работать не даёт. Подработка возможна, но только с разрешения университета и с соответствующей отметкой — самовольно устроиться на полставки в кафе не получится.</p>
+
+<h2>Кого берут: <span class="italic">требования к кандидату</span></h2>
+<p>Базовый набор требований почти везде одинаковый:</p>
+<div class="table-wrap">
+<table>
+  <caption>Что спрашивают у иностранного специалиста.</caption>
+  <thead><tr><th>Требование</th><th>Подробности</th></tr></thead>
+  <tbody>
+    <tr><td>Высшее образование</td><td>диплом бакалавра и выше; понадобится легализация</td></tr>
+    <tr><td>Опыт работы</td><td>как правило от двух лет по специальности</td></tr>
+    <tr><td>Возраст</td><td>обычно от 18 до 60 лет; для отдельных категорий рамки шире</td></tr>
+    <tr><td>Отсутствие судимости</td><td>справка с легализацией</td></tr>
+    <tr><td>Здоровье</td><td>медицинское заключение по установленной форме</td></tr>
+    <tr><td>Приглашение</td><td>компания получает разрешение до подачи на визу</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Кроме этого, иностранных работников распределяют по категориям — от этого зависит, насколько просто оформить документы:</p>
+<div class="table-wrap">
+<table>
+  <caption>Категории иностранных специалистов.</caption>
+  <thead><tr><th>Категория</th><th>Кто это</th><th>Что это даёт</th></tr></thead>
+  <tbody>
+    <tr><td>A</td><td>высококлассные специалисты, учёные, редкие профессии</td><td>приоритет и упрощённое оформление</td></tr>
+    <tr><td>B</td><td>профессионалы с дипломом и опытом — основная масса</td><td>обычный порядок по общим требованиям</td></tr>
+    <tr><td>C</td><td>прочие работники, в том числе сезонные</td><td>ограничения по квотам</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Конкретные критерии периодически пересматривают, а в разных провинциях к ним добавляют свои. Перед подачей документов их всегда уточняют в местном бюро по делам иностранных специалистов — или это делает за вас работодатель.</p>
+
+<h2>Востребованные сферы <span class="italic">и что светит русскоязычным</span></h2>
+<p>Иностранца берут не «просто так», а под задачу, которую местный сотрудник закроет хуже. Отсюда и список направлений:</p>
+<div class="table-wrap">
+<table>
+  <caption>Где иностранцев берут чаще всего.</caption>
+  <thead><tr><th>Сфера</th><th>Что делают</th><th>Нужен ли китайский</th></tr></thead>
+  <tbody>
+    <tr><td>Внешняя торговля и логистика</td><td>закупки, сопровождение поставок, работа с фабриками</td><td>очень желателен</td></tr>
+    <tr><td>IT и инженерия</td><td>разработка, производство, контроль качества</td><td>часто хватает английского</td></tr>
+    <tr><td>Маркетинг на зарубежные рынки</td><td>вывод китайских брендов в Россию и СНГ</td><td>желателен, но решает родной язык</td></tr>
+    <tr><td>Преподавание языков</td><td>русский как иностранный, языковые школы</td><td>желателен</td></tr>
+    <tr><td>Гостеприимство и туризм</td><td>отели, сопровождение групп, сервис</td><td>обязателен</td></tr>
+    <tr><td>Творческие профессии</td><td>дизайн, съёмки, реклама</td><td>по ситуации</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Русскоязычным специалистам чаще всего предлагают то, где родной язык — рабочий инструмент: сопровождение экспорта в Россию и СНГ, менеджер по внешнеэкономической деятельности в китайской компании, переводчик на выставках. Такие вакансии сосредоточены там, где идёт торговля: Гуанчжоу, Шэньчжэнь, Иу, Ханчжоу.</p>
+<p class="note">Осторожно с одной популярной идеей: преподавать <b>английский</b> в Китае, не будучи носителем, официально почти невозможно — требования к сертификатам и гражданству жёсткие. А вот русский как иностранный преподают, и спрос на него есть.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Наш ученик, логист по образованию, полтора года учил китайский параллельно с работой в Москве. На собеседовании в китайскую компанию его спросили не про сертификат, а про конкретную ситуацию: как он будет объяснять поставщику задержку оплаты. Он ответил на китайском — коряво, но по делу. Взяли.</p>
+  <p>Через полгода он рассказал самое интересное: язык понадобился не на переговорах, где был переводчик, а в мессенджере. Вся рабочая переписка с фабрикой шла в WeChat, быстро и на китайском, и именно там решались все реальные вопросы. Вывод, который мы теперь говорим всем, кто собирается работать в Китае: готовьтесь не к красивым презентациям, а к живой переписке. Она важнее.</p>
+</div>
+
+<h2>Путь от вакансии <span class="italic">до разрешения на работу</span></h2>
+<p>Порядок шагов жёсткий, и перепрыгнуть через них нельзя:</p>
+<div class="table-wrap">
+<table>
+  <caption>Как выглядит процесс целиком.</caption>
+  <thead><tr><th>Шаг</th><th>Что происходит</th><th>Кто делает</th></tr></thead>
+  <tbody>
+    <tr><td>1. Вакансия и оффер</td><td>собеседования, договорённость об условиях</td><td>вы</td></tr>
+    <tr><td>2. Документы</td><td>легализация диплома и справки о несудимости</td><td>вы</td></tr>
+    <tr><td>3. Разрешение на работу</td><td>компания подаёт заявку и получает уведомление</td><td>работодатель</td></tr>
+    <tr><td>4. Виза Z</td><td>подача в консульстве по полученному уведомлению</td><td>вы</td></tr>
+    <tr><td>5. Въезд</td><td>виза Z однократная и действует ограниченный срок</td><td>вы</td></tr>
+    <tr><td>6. Оформление на месте</td><td>медосмотр, карта разрешения на работу, вид на жительство</td><td>вы с компанией</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Ключевой момент, который многие упускают: после въезда по визе Z нужно уложиться в отведённый срок и оформить вид на жительство. Сама виза Z — это только «пропуск на вход», жить и работать по ней постоянно нельзя.</p>
+<p>Сроки на практике растягиваются: легализация документов занимает недели, рассмотрение заявки — тоже. От оффера до выхода на работу обычно проходит от полутора до трёх месяцев, и это при нормальном ходе дел.</p>
+
+<h2>Нужен ли китайский <span class="italic">на самом деле</span></h2>
+<p>Честный ответ: формально нет, практически — очень желателен. Разница видна сразу:</p>
+<div class="table-wrap">
+<table>
+  <caption>Что открывает каждый уровень языка.</caption>
+  <thead><tr><th>Уровень</th><th>Что доступно</th></tr></thead>
+  <tbody>
+    <tr><td>Без китайского</td><td>международные компании, IT, преподавание; выбор узкий, конкуренция выше</td></tr>
+    <tr><td>Бытовой уровень</td><td>комфортная жизнь, но на работе всё ещё нужен посредник</td></tr>
+    <tr><td>HSK 4</td><td>рабочая переписка, простые задачи, самостоятельный быт</td></tr>
+    <tr><td>HSK 5</td><td>китайские компании, переговоры без переводчика, рост внутри компании</td></tr>
+    <tr><td>HSK 6</td><td>документы, юридические тексты, руководящие позиции</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Про <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4</a> стоит сказать отдельно: это тот порог, после которого вы перестаёте быть человеком, которому всё переводят. А что до разговоров о диалектах — на работе везде путунхуа, так что учить нужно именно его. Подробнее об этом мы писали в статье <a href="https://kitai-school.ru/article/kak-razgovarivayut-v-kitae" target="_blank" rel="noopener">как разговаривают в Китае</a>.</p>
+
+<h2>О чём стоит знать <span class="italic">заранее</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Особенности, которые лучше выяснить до подписания.</caption>
+  <thead><tr><th>Что</th><th>На что смотреть</th></tr></thead>
+  <tbody>
+    <tr><td>Трудовой договор</td><td>основной текст на китайском; просите перевод и сверяйте условия</td></tr>
+    <tr><td>Соцпакет 五险一金</td><td>страховки и жилищный фонд — уточните, входите ли вы в систему</td></tr>
+    <tr><td>Испытательный срок</td><td>оплата в этот период обычно ниже; условие фиксируется в договоре</td></tr>
+    <tr><td>Переработки</td><td>практика длинного рабочего дня встречается, хотя закон её не поддерживает</td></tr>
+    <tr><td>Что входит в оффер</td><td>жильё, страховка, перелёт домой раз в год — это часто важнее оклада</td></tr>
+    <tr><td>Смена работодателя</td><td>разрешение привязано к компании: при переходе документы переоформляют</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Последний пункт особенно важен. Разрешение на работу выдано не «вам вообще», а под конкретного работодателя. Уволиться и спокойно искать новое место, оставаясь в стране, не получится — процедуру придётся проходить заново, и на это нужно время и запас денег. Сколько стоит жизнь в разных городах, мы разбирали в статье <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли жить в Китае</a>.</p>
+
+<h2>Лексика <span class="italic">для поиска работы</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Слова, которые встретятся в первых же объявлениях.</caption>
+  <thead><tr><th>Иероглифы</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">招聘</td><td>zhāopìn</td><td>набор персонала, «требуется»</td></tr>
+    <tr><td class="han-cell">简历</td><td>jiǎnlì</td><td>резюме</td></tr>
+    <tr><td class="han-cell">面试</td><td>miànshì</td><td>собеседование</td></tr>
+    <tr><td class="han-cell">工作签证</td><td>gōngzuò qiānzhèng</td><td>рабочая виза</td></tr>
+    <tr><td class="han-cell">工作许可</td><td>gōngzuò xǔkě</td><td>разрешение на работу</td></tr>
+    <tr><td class="han-cell">居留许可</td><td>jūliú xǔkě</td><td>вид на жительство</td></tr>
+    <tr><td class="han-cell">劳动合同</td><td>láodòng hétong</td><td>трудовой договор</td></tr>
+    <tr><td class="han-cell">试用期</td><td>shìyòngqī</td><td>испытательный срок</td></tr>
+    <tr><td class="han-cell">五险一金</td><td>wǔ xiǎn yī jīn</td><td>соцпакет: страховки и жилищный фонд</td></tr>
+    <tr><td class="han-cell">加班</td><td>jiābān</td><td>переработка</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Эти десять слов стоит выучить до того, как открывать вакансии: без них объявление читается наполовину. А про то, как вести себя на самих переговорах, у нас есть отдельный разбор — <a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли работать в Китае по туристической визе?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. Легально работать можно только по рабочей визе Z, а затем по разрешению на работу и виду на жительство. Работа по туристической визе L или деловой M считается нарушением: последствия — штраф, депортация и запрет на въезд на несколько лет. Отвечает за это не только сотрудник, но и работодатель, поэтому серьёзные компании на такие схемы не идут.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие требования к иностранному работнику в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Стандартный набор: высшее образование, как правило не меньше двух лет опыта по специальности, возраст обычно от 18 до 60 лет, справка об отсутствии судимости и медицинское заключение. Диплом и справку нужно легализовать. Отдельные профессии добавляют свои требования — например, преподавателям языка нужен профильный сертификат.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие специалисты востребованы в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Чаще всего иностранцев берут во внешнюю торговлю и логистику, в IT и инженерные направления, в маркетинг для выхода китайских компаний на зарубежные рынки, в преподавание языков и в сферу гостеприимства. Русскоязычным специалистам особенно часто предлагают работу, связанную с поставками в Россию и страны СНГ.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужен ли китайский язык, чтобы работать в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Формально нет: в международных компаниях рабочим языком часто остаётся английский. Но без китайского выбор вакансий заметно уже, а зарплата обычно ниже. Уровень HSK 4 позволяет вести быт и простую рабочую переписку, HSK 5 открывает работу в китайских компаниях и переговоры без переводчика.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С чего начать, если хочется работать в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Начинать нужно не с визы, а с работодателя: без приглашения виза Z не оформляется. Поэтому порядок такой: определить сферу, привести в порядок диплом и опыт, подтянуть язык хотя бы до бытового уровня, искать вакансии на профильных площадках и через знакомых, а дальше документы готовит уже работодатель.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Язык — та часть подготовки, которую можно начать прямо сейчас, не дожидаясь оффера. На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">курсах Kitai School</a> мы доводим до HSK 4–5 и отдельно отрабатываем рабочую переписку — ту самую, в которой в Китае и решаются все вопросы. Первый урок бесплатный.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>РАБОТА</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём программу под вашу сферу.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a>; <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли жить в Китае</a>; <a href="https://kitai-school.ru/article/kitayskiy-tiket-obscheniya-uvajenie-k-starshim-ierarhiya-i-ponyatie-lica" target="_blank" rel="noopener">китайский этикет общения</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Правила въезда и пребывания иностранцев в КНР — типы виз и порядок оформления разрешения на работу.</li>
+    <li>Система классификации иностранных работников (категории A, B, C) — критерии и порядок применения.</li>
+    <li><a href="https://ru.wikipedia.org/wiki/Китайская_Народная_Республика" target="_blank" rel="noopener nofollow">Википедия: Китайская Народная Республика</a> — общие сведения о стране и экономике.</li>
+    <li>Практика Kitai School — опыт учеников, работающих в китайских и международных компаниях.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть всё получится! <span class="han">加油！</span></p>
+
+<div class="tags">
+  <span>#работавкитае</span> <span>#визаZ</span> <span>#жизньвкитае</span> <span>#переездвкитай</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики, учит китайскому с нуля взрослых и детей. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <p class="side-note">Доведём до HSK 4–5 и научим рабочей переписке — первый урок бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
