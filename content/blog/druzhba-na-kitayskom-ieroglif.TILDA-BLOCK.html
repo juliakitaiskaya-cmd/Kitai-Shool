@@ -1,0 +1,412 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Иероглиф «дружба» 友
+</nav>
+
+<article>
+<p class="eyebrow">Иероглифы</p>
+<h1>Иероглиф «дружба»: <span class="italic">как 友 восходит к двум рукам и почему входит в слово 朋友</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-20">20 августа 2026</time>
+  </div>
+</div>
+
+<p class="passport">Знак <b class="han-big">友</b> (yǒu) — один из тех, где древний рисунок виден почти без подготовки. Три с лишним тысячи лет назад его писали как две руки, повёрнутые в одну сторону: не навстречу, как при рукопожатии, а рядом, в одном направлении. Двое делают общее дело — вот и вся картинка, из которой выросло значение «друг, дружеский». Разберём знак по составу, посмотрим порядок черт, найдём ту же руку ещё в двух знакомых иероглифах, а потом соберём из 友 живое слово 朋友 (péngyou) — то самое, которое учат на первом же занятии.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>«Дружба» держится на знаке <b>友</b> (yǒu) — четыре черты, ключ <b>又</b> «рука». В древних надписях это две руки в одну сторону: совместное действие. Само по себе 友 почти не употребляется — «друг» будет <b>朋友</b> (péngyou), где второй слог безударный. Абстрактная «дружба» — <b>友谊</b> (yǒuyì) или <b>友情</b> (yǒuqíng). Та же рука спрятана в 有 «иметь» и 右 «правый» — их полезно учить вместе. И осторожнее со словом «друг»: 男朋友 и 女朋友 — это уже не дружба.</p>
+</div>
+
+<h2>Что за знак <span class="italic">и как он устроен</span></h2>
+<p>Начнём с паспорта. У 友 нет ни сложного состава, ни второго чтения, ни разницы между упрощённым и полным письмом — редкий случай, когда всё сходится.</p>
+<div class="table-wrap">
+<table>
+  <caption>Иероглиф 友: основные сведения.</caption>
+  <thead><tr><th>Параметр</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td>Знак</td><td class="han-cell">友</td></tr>
+    <tr><td>Чтение</td><td>yǒu, третий тон («нырок»)</td></tr>
+    <tr><td>Значение</td><td>друг; дружеский, дружественный</td></tr>
+    <tr><td>Черт</td><td>4</td></tr>
+    <tr><td>Ключ</td><td class="han-cell">又 — «рука»</td></tr>
+    <tr><td>Упрощённое и полное написание</td><td>совпадают — знак не сокращали</td></tr>
+    <tr><td>Где встретится раньше всего</td><td>слово 朋友, лексика самого первого уровня</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Обратите внимание на тон: <b>yǒu</b> — третий, тот самый «нырок» вниз и вверх. Он совпадает с чтением совсем другого иероглифа — 有 «иметь». Для уха разницы нет никакой, различает только смысл фразы и написание. Ниже мы к этой паре ещё вернёмся: они не просто созвучны, а ещё и внешне похожи.</p>
+
+<h2>Две руки: <span class="italic">откуда взялся знак</span></h2>
+<p>Самые ранние формы 友 известны по гадательным надписям на костях и панцирях черепах — это письмо эпохи Шан, ему больше трёх тысяч лет. Там 友 выглядит буквально как две кисти руки, нарисованные рядом.</p>
+<div class="ks-quote">
+  <p>Руки повёрнуты в одну сторону — не друг к другу, а туда же, куда смотрит второй. Это не приветствие. Это совместная работа.</p>
+  <cite>Вот почему из картинки выросло именно «друг», а не «встреча»</cite>
+</div>
+<p>Разница тонкая, но она объясняет всё остальное. Если бы руки тянулись навстречу, знак означал бы контакт, обмен, приветствие. А две руки, направленные одинаково, — это двое, которые тянут одно и то же и в одну сторону. Отсюда и старое толкование: друг — тот, с кем вы делаете общее дело, а не тот, с кем вы просто здороваетесь.</p>
+<p>Верхняя часть современного 友 — <b class="han-big">𠂇</b>, «прижатая» форма руки, а нижняя — <b class="han-big">又</b>, та же рука в полном виде. Изначально 又 рисовало правую кисть с тремя пальцами (в древнем письме пальцы обычно сокращали до трёх — так было быстрее резать по кости). Со временем 又 растеряло значение «рука» в свободном употреблении и стало служебным словом «снова, опять», но внутри других знаков смысл руки сохранился.</p>
+<div class="table-wrap">
+<table>
+  <caption>Как менялся знак.</caption>
+  <thead><tr><th>Этап</th><th>Что видим</th><th>Что это значит</th></tr></thead>
+  <tbody>
+    <tr><td>Надписи на костях (甲骨文)</td><td>две кисти рядом, в одну сторону</td><td>совместное действие</td></tr>
+    <tr><td>Надписи на бронзе (金文)</td><td>то же, линии ровнее и толще</td><td>образ ещё читается</td></tr>
+    <tr><td>Уставное письмо (楷书)</td><td>верхняя рука сплющилась в 𠂇</td><td>рисунок превратился в знак</td></tr>
+    <tr><td>Сегодня</td><td class="han-cell">友</td><td>четыре черты, картинка видна только если знать</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Как писать: <span class="italic">четыре черты по порядку</span></h2>
+<p>Порядок черт в китайском не украшение и не формальность: от него зависит, как знак выглядит в скорописи и как его ищут в словаре. У 友 порядок простой, но в одном месте новички почти всегда ошибаются.</p>
+<div class="table-wrap">
+<table>
+  <caption>Порядок черт в 友.</caption>
+  <thead><tr><th>№</th><th>Черта</th><th>Как ведём руку</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>горизонтальная</td><td>короткая, слева направо, в верхней части</td></tr>
+    <tr><td>2</td><td>откидная влево</td><td>из-под горизонтали вниз-влево, длинная</td></tr>
+    <tr><td>3</td><td>горизонтальная с переломом влево</td><td>начало элемента 又: вправо, потом вниз-влево</td></tr>
+    <tr><td>4</td><td>откидная вправо</td><td>завершает 又, уходит вниз-вправо с нажимом</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Типичная ошибка — начать с откидной влево, а горизонталь дописать сверху. Правило здесь общее для всей письменности: <b>сначала горизонталь, потом откидная</b>. Если писать наоборот, знак получается кривым, а в быстром письме — просто нечитаемым.</p>
+
+<h2>Та же рука ещё в двух знаках: <span class="italic">友, 有 и 右</span></h2>
+<p>Вот место, ради которого стоит разбирать иероглифы по составу, а не запоминать их картинками. Верхний элемент 𠂇 — рука — встречается ещё в двух знаках, которые вы точно выучите в первые же недели. И все три раскладываются по одной и той же схеме: рука плюс что-то ещё.</p>
+<div class="table-wrap">
+<table>
+  <caption>Семья знаков с элементом руки.</caption>
+  <thead><tr><th>Знак</th><th>Чтение</th><th>Состав</th><th>Значение</th><th>Как это читается</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">友</td><td>yǒu</td><td>рука + рука</td><td>друг</td><td>двое делают одно дело</td></tr>
+    <tr><td class="han-cell">有</td><td>yǒu</td><td>рука + мясо</td><td>иметь, есть</td><td>в руке кусок мяса — значит, имеется</td></tr>
+    <tr><td class="han-cell">右</td><td>yòu</td><td>рука + рот</td><td>правый, справа</td><td>рука, которой едят, — правая</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Схема даёт сразу три выгоды. Во-первых, три знака запоминаются как одна группа, а не как три отдельные закорючки. Во-вторых, становится видно, чем они различаются на письме: у 友 внизу 又, у 有 внизу 月, у 右 внизу 口. В-третьих, слышно разницу в тонах: 友 и 有 — третий тон, 右 — четвёртый. Именно так и устроено чтение иероглифов вообще: подробнее об этом — в разборе <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey-kak-ustroen-ieroglif-voda" target="_blank" rel="noopener">логики китайских ключей на примере знака «вода»</a>.</p>
+<p class="note">Толкования древних знаков — это реконструкции, а не документы. У 有 и 右 есть и другие объяснения, и специалисты спорят о деталях. Но как опора для памяти такие разборы работают отлично: важно, чтобы связь была устойчивой, а не чтобы она была единственно возможной.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>На первом курсе я честно зубрила иероглифы столбиками: знак — перевод, знак — перевод. 友 сидело в тетради рядом с 有 и 右, и я их путала неделями. Ровно до того дня, когда преподаватель на доске нарисовал не иероглиф, а руку. Просто кисть с тремя пальцами. Потом дорисовал вторую рядом — и сказал: «Вот это друзья. Они не смотрят друг на друга, они смотрят в одну сторону».</p>
+  <p>Больше я эти три знака не путала ни разу. И с тех пор на своих занятиях всегда начинаю с картинки внутри знака, а не с перевода. Ученики иногда сопротивляются: «зачем нам история, дайте список». Но список забывается за две недели, а рука, которая держит мясо, — нет. Иероглифов, где древний рисунок ещё виден, в базовой лексике сотни. Каждый такой знак — не нагрузка на память, а крючок, за который цепляются ещё пять.</p>
+</div>
+
+<h2>Почему «друг» — это 朋友, <span class="italic">а не просто 友</span></h2>
+<p>Здесь новичков ждёт сюрприз. Выучив 友, хочется сказать 我的友 — «мой друг». Так не говорят. В современном языке 友 почти не живёт отдельно: это часть слова, как в русском часть «друж-» — сама по себе она ничего не значит, а в «дружбе» и «дружеский» работает.</p>
+<p>Живое слово — <b class="han-big">朋友</b> (péngyou). И второй знак здесь тоже с историей.</p>
+<div class="table-wrap">
+<table>
+  <caption>Из чего собрано слово 朋友.</caption>
+  <thead><tr><th>Знак</th><th>Чтение</th><th>Откуда</th><th>Что вносит в слово</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">朋</td><td>péng</td><td>изображение двух связок раковин, скреплённых вместе — в древности они служили деньгами и считались парами</td><td>люди одного круга, свои, «одной связки»</td></tr>
+    <tr><td class="han-cell">友</td><td>yǒu</td><td>две руки в одну сторону</td><td>те, кто помогают друг другу</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Знак 朋 сегодня выглядит как две луны 月月 — и запомнить его так проще всего. Но исторически это не луны: две одинаковые половинки восходят к связкам раковин. Пользоваться «двумя лунами» как подсказкой можно, а вот рассказывать это китайцу как факт не стоит.</p>
+<p>И ещё одна деталь, из-за которой русское произношение слова 朋友 слышно за версту. У знака 友 в этом слове <b>нет своего тона</b>: второй слог безударный, короткий и лёгкий. Читается péngyou, а не «пэн-йоу» с тщательным третьим тоном. Если тянуть второй слог, получается по-книжному, будто вы читаете вслух учебник. То же самое, кстати, происходит в 谢谢 и 妈妈. О таких вещах подробно — в материале про <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировку произношения</a>.</p>
+
+<h2>Слова с 友, <span class="italic">которые пригодятся сразу</span></h2>
+<p>Как только знак разобран, вокруг него собирается целое гнездо слов. Причём почти все прозрачные: зная 友, вы угадаете смысл, даже если видите слово впервые.</p>
+<div class="table-wrap">
+<table>
+  <caption>Самые ходовые слова с 友.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Перевод</th><th>Заметка</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">朋友</td><td>péngyou</td><td>друг, приятель</td><td>основное слово, второй слог безударный</td></tr>
+    <tr><td class="han-cell">友谊</td><td>yǒuyì</td><td>дружба</td><td>дружба как связь; официальнее, чем 朋友</td></tr>
+    <tr><td class="han-cell">友情</td><td>yǒuqíng</td><td>дружеские чувства</td><td>теплее и лиричнее, чем 友谊</td></tr>
+    <tr><td class="han-cell">友好</td><td>yǒuhǎo</td><td>дружественный, доброжелательный</td><td>о странах, отношениях, тоне разговора</td></tr>
+    <tr><td class="han-cell">好友</td><td>hǎoyǒu</td><td>близкий друг</td><td>ещё так называют контакт в мессенджере</td></tr>
+    <tr><td class="han-cell">网友</td><td>wǎngyǒu</td><td>знакомый по интернету</td><td>网 — «сеть»</td></tr>
+    <tr><td class="han-cell">校友</td><td>xiàoyǒu</td><td>выпускник той же школы или вуза</td><td>校 — «учебное заведение»</td></tr>
+    <tr><td class="han-cell">战友</td><td>zhànyǒu</td><td>боевой товарищ</td><td>战 — «бой»; часто и в переносном смысле</td></tr>
+    <tr><td class="han-cell">交朋友</td><td>jiāo péngyou</td><td>заводить друзей</td><td>交 — «завязывать, вступать в связь»</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Обратите внимание на схему: <b>X + 友</b> — «товарищ по X». Сеть — 网友, школа — 校友, бой — 战友. По этой же модели китайцы свободно делают новые слова: 病友 — сосед по палате, 棋友 — партнёр по шахматам, 驴友 — приятель по походам. Отдельно учить их не нужно, достаточно понимать схему.</p>
+
+<h2>Не перепутайте: <span class="italic">友, 有 и 反</span></h2>
+<p>Три знака, которые в тетради у новичка регулярно превращаются друг в друга. Разберём, что именно различается.</p>
+<div class="table-wrap">
+<table>
+  <caption>Похожие знаки и разница между ними.</caption>
+  <thead><tr><th>Знак</th><th><span class="bad">Что путают</span></th><th><span class="ok">Как различить</span></th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">友 yǒu</td><td>пишут вместо 有</td><td>внизу 又 — четыре черты, знак лёгкий и открытый</td></tr>
+    <tr><td class="han-cell">有 yǒu</td><td>пишут вместо 友</td><td>внизу 月 — знак плотный, шесть черт; значение «иметь»</td></tr>
+    <tr><td class="han-cell">反 fǎn</td><td>читают как 友</td><td>сверху 厂 — сплошной «навес» без пересечения; значение «наоборот»</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Проще всего запомнить так: у 友 вверху две черты, которые пересекаются крестиком, а у 反 сверху цельный угол. И тренируйте пару 朋友 — 有 прямо во фразах: 我有朋友 (wǒ yǒu péngyou) — «у меня есть друзья». Здесь оба знака стоят рядом, звучат одинаково и различаются только местом в предложении. Одна фраза — и вопрос закрыт.</p>
+
+<h2>Дружба по-китайски: <span class="italic">слово шире, чем кажется</span></h2>
+<p>Тут есть культурная разница, о которой лучше знать заранее, иначе будут неловкие моменты. Русское «друг» — слово тяжёлое: друзей у человека бывает трое, и это не про знакомых. Китайское 朋友 гораздо легче: им называют и близкого человека, и коллегу, и того, с кем познакомились вчера за ужином.</p>
+<div class="table-wrap">
+<table>
+  <caption>Как это работает в речи.</caption>
+  <thead><tr><th>Фраза</th><th>Чтение</th><th>Смысл</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">这是我朋友</td><td>zhè shì wǒ péngyou</td><td>это мой друг / мой знакомый — нейтрально</td></tr>
+    <tr><td class="han-cell">我们是好朋友</td><td>wǒmen shì hǎo péngyou</td><td>мы близкие друзья — вот это уже про близость</td></tr>
+    <tr><td class="han-cell">老朋友</td><td>lǎo péngyou</td><td>старый друг; 老 здесь про давность, а не про возраст</td></tr>
+    <tr><td class="han-cell">交个朋友吧</td><td>jiāo ge péngyou ba</td><td>давайте дружить — обычное предложение при знакомстве</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И главная ловушка. <b>男朋友</b> (nán péngyou) — это не «друг мужского пола», а молодой человек, партнёр. <b>女朋友</b> (nǚ péngyou) — девушка в том же смысле. Если нужно сказать «мой друг» про мужчину, говорите 我的一个朋友 или просто 我朋友 — без 男. Ошибка безобидная, но объясняться потом приходится долго.</p>
+<p>Ещё одна причина, по которой 朋友 звучит так часто: в китайском общении важно обозначить, кто вам человек. Об этом мы подробно писали в статье про <a href="https://kitai-school.ru/article/kitayskiy-tiket-obscheniya-uvajenie-k-starshim-ierarhiya-i-ponyatie-lica" target="_blank" rel="noopener">китайский этикет общения</a> — там же про обращения к старшим и понятие «лица».</p>
+
+<h2>Как запомнить знак <span class="italic">и не забыть через неделю</span></h2>
+<p>Механическое переписывание строчками работает плохо: рука запоминает, голова нет. Вот приёмы, которые действительно держат знак в памяти.</p>
+<div class="table-wrap">
+<table>
+  <caption>Четыре рабочих способа.</caption>
+  <thead><tr><th>Приём</th><th>Как делать</th></tr></thead>
+  <tbody>
+    <tr><td>Картинка внутри</td><td>Проговорите вслух: «две руки, обе в одну сторону». Одна фраза — и знак больше не абстрактный.</td></tr>
+    <tr><td>Учить группой</td><td>友, 有, 右 — вместе, одним подходом. Общий верх, разный низ: 又 / 月 / 口.</td></tr>
+    <tr><td>Через слово, а не через знак</td><td>Учите не 友, а 朋友 и 好朋友. Знак в одиночку не встретится, а слово — каждый день.</td></tr>
+    <tr><td>Фраза вместо перевода</td><td>Одно предложение с обоими похожими знаками: 我有很多朋友 — «у меня много друзей». Работает лучше десяти строчек прописей.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>И общий совет: не пытайтесь запомнить знак «на всякий случай». Иероглиф закрепляется, когда вы им пользуетесь — читаете, пишете, произносите в предложении. Если интересно, как китайская письменность устроена в целом и почему в ней вообще нет букв, посмотрите разбор <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost" target="_blank" rel="noopener">из чего состоит китайская письменность</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как пишется иероглиф «дружба» на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Основной знак — 友 (yǒu). В нём всего четыре черты, и пишутся они в таком порядке: горизонтальная, откидная влево, а затем две черты элемента 又. Знак относится к ключу 又 («рука»). В упрощённом и полном письме 友 выглядит одинаково — его не сокращали.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Из чего состоит иероглиф 友?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Из двух изображений руки. В древних надписях на костях 友 рисовали как две правые кисти, повёрнутые в одну сторону: не навстречу друг другу, как при рукопожатии, а рядом и в одном направлении — двое делают общее дело. Из этого образа и выросло значение «друг, дружеский».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему «друг» по-китайски — 朋友, а не просто 友?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В современном языке 友 почти не живёт само по себе: это часть слова, а не отдельное слово. «Друг» — это 朋友 (péngyou), где 朋 добавляет смысл «люди одного круга», а 友 — «те, кто помогают друг другу». Одиночное 友 встречается в письменной речи и в составе других слов: 好友, 战友, 网友.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как правильно произносится 朋友?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>péngyou. Первый слог — второй тон, восходящий. А второй слог в этом слове безударный и произносится коротко и легко, без своего третьего тона. Частая ошибка новичков — старательно тянуть «йоу» третьим тоном: звучит по-книжному и сразу выдаёт учебник.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой иероглиф выбрать, если нужна именно «дружба» — для подарка или каллиграфии?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Не одиночное 友, а слово из двух знаков: 友谊 (yǒuyì) — дружба как связь между людьми, или 友情 (yǒuqíng) — дружеские чувства. Одинокое 友 китаец прочитает скорее как «друг» или «дружеский», а не как название чувства.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Иероглифы перестают быть страшными, как только видишь их устройство. На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">курсах Kitai School</a> мы разбираем знаки по составу с самого начала: не список на зубрёжку, а логика, из которой знаки собираются сами. Первый урок бесплатный.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>ИЕРОГЛИФ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём формат под ваш уровень.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey-kak-ustroen-ieroglif-voda" target="_blank" rel="noopener">логика китайских ключей на примере знака «вода»</a>; <a href="https://kitai-school.ru/article/vesna-po-kitayski--ieroglif--i-umenie-chuvstvovat-kontekst" target="_blank" rel="noopener">иероглиф «весна» и умение чувствовать контекст</a>; <a href="https://kitai-school.ru/article/do-svidaniya-po-kitayski-kak-na-samom-dele-chitaetsya" target="_blank" rel="noopener">как на самом деле читается 再见</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://ru.wikipedia.org/wiki/Китайское_письмо" target="_blank" rel="noopener nofollow">Википедия: Китайское письмо</a> — этапы развития знаков от надписей на костях до уставного письма.</li>
+    <li><a href="https://en.wiktionary.org/wiki/%E5%8F%8B" target="_blank" rel="noopener nofollow">Викисловарь: 友</a> — состав знака, ранние формы, значения и производные слова.</li>
+    <li>Официальные словарные списки HSK — 朋友 входит в лексику самого первого уровня.</li>
+    <li>Практика Kitai School — типичные ошибки при письме 友, 有 и 反.</li>
+  </ol>
+</div>
+
+<p class="sign">Дружите и учитесь! <span class="han">加油！</span></p>
+
+<div class="tags">
+  <span>#иероглифдружба</span> <span>#友</span> <span>#朋友</span> <span>#иероглифы</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики, учит китайскому с нуля взрослых и детей. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Разбираем иероглифы через логику, а не через зубрёжку — первый урок бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
