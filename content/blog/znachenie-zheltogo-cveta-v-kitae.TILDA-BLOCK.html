@@ -1,0 +1,375 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .sw{display:inline-block;width:15px;height:15px;border-radius:5px;border:1px solid rgba(44,36,32,.2);vertical-align:-2px;margin-right:8px}
+</style>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Жёлтый цвет в Китае
+</nav>
+
+<article>
+<p class="eyebrow">Культура Китая</p>
+<h1>Жёлтый цвет в Китае: <span class="italic">от императорского запрета до современных смыслов</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-21">21 августа 2026</time>
+  </div>
+</div>
+
+<p class="passport">У жёлтого в Китае биография сложнее, чем у любого другого цвета. Он начинал как цвет земли и середины мира, поднялся до личного цвета императора — настолько личного, что за один его оттенок посторонний человек мог поплатиться головой, — а в XX веке неожиданно приобрёл второе, куда менее почтенное значение. Сегодня <b class="han-big">黄</b> (huáng) держит в себе всё сразу: величие, богатство, землю под ногами и лёгкую двусмысленность, из-за которой носители улыбаются, когда иностранец говорит «мой любимый цвет — жёлтый». Разберём эту историю по слоям и посмотрим, что из неё пригодится на практике.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>В учении о пяти стихиях <b>жёлтый — цвет земли и центра</b>, отсюда значения власти и устойчивости. Из этого выросла императорская монополия: оттенок <b>明黄</b> (míng huáng) был закреплён за правителем, простым людям он был запрещён. Жёлтый связан с истоками китайской цивилизации: <b>黄帝</b> — Жёлтый император, <b>黄河</b> — Хуанхэ, <b>黄土</b> — лёсс. В XX веке у слова <b>黄色</b> появилось второе значение — «непристойное». Золотой <b>金色</b> двусмысленности лишён: это чистое богатство и престиж, лучший цвет для подарка вместе с красным.</p>
+</div>
+
+<h2>Земля и центр: <span class="italic">откуда всё началось</span></h2>
+<p>Китайская символика цвета выросла из учения о пяти стихиях — <b class="han-big">五行</b> (wǔxíng). Каждой стихии там отвечают сторона света, время года и цвет. Жёлтому досталась земля, а земля в этой схеме занимает особое место: она не на краю, а посередине.</p>
+<div class="table-wrap">
+<table>
+  <caption>Место жёлтого в системе пяти стихий.</caption>
+  <thead><tr><th>Стихия</th><th>Цвет</th><th>Сторона света</th><th>Что означает</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">土 земля</td><td><span class="sw" style="background:#E8B923"></span>жёлтый</td><td>центр</td><td>устойчивость, власть, основа</td></tr>
+    <tr><td class="han-cell">火 огонь</td><td><span class="sw" style="background:#C4122F"></span>красный</td><td>юг</td><td>радость, энергия</td></tr>
+    <tr><td class="han-cell">木 дерево</td><td><span class="sw" style="background:#2E9E5B"></span>зелёный</td><td>восток</td><td>рост, весна</td></tr>
+    <tr><td class="han-cell">金 металл</td><td><span class="sw" style="background:#F4F1EA"></span>белый</td><td>запад</td><td>чистота, траур</td></tr>
+    <tr><td class="han-cell">水 вода</td><td><span class="sw" style="background:#2C2822"></span>чёрный</td><td>север</td><td>глубина, тайна</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Вот тут и спрятан ключ ко всему остальному. Центр — это не просто «середина карты», а место, откуда управляют. Государство, которое называет себя <b class="han-big">中国</b> — «срединная страна», — естественно выбирает цвет центра как цвет власти. Дальше вся история жёлтого — развитие этой одной мысли.</p>
+
+<h2>Жёлтая река, жёлтая земля, <span class="italic">Жёлтый император</span></h2>
+<p>Связь цвета с истоками цивилизации в китайском видна прямо в словах.</p>
+<div class="table-wrap">
+<table>
+  <caption>Жёлтый в основаниях китайской культуры.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Что это</th><th>При чём тут цвет</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">黄河</td><td>Huánghé</td><td>река Хуанхэ</td><td>«Жёлтая река» — по цвету воды, мутной от лёсса</td></tr>
+    <tr><td class="han-cell">黄土</td><td>huángtǔ</td><td>лёсс, жёлтая земля</td><td>почва Северного Китая, на которой выросло земледелие</td></tr>
+    <tr><td class="han-cell">黄帝</td><td>Huángdì</td><td>Жёлтый император</td><td>легендарный первопредок китайцев</td></tr>
+    <tr><td class="han-cell">炎黄子孙</td><td>Yán-Huáng zǐsūn</td><td>«потомки Яня и Хуана»</td><td>так китайцы называют себя как народ</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Получается плотный узел: жёлтая почва, жёлтая река, жёлтый первопредок. Цвет оказался вплетён в само представление о том, откуда взялся народ и его земля. Неудивительно, что позже он поднялся так высоко.</p>
+<p class="note">Важная деталь для изучающих язык: <b class="han-big">黄帝</b> (Huángdì) «Жёлтый император» и <b class="han-big">皇帝</b> (huángdì) «император» звучат одинаково, но пишутся разными знаками. Первый — мифический предок, второй — титул правителя. На слух их различает только контекст, на письме — первый знак. Такие пары — обычное дело в китайском, о них мы писали в разборе <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировки произношения</a>.</p>
+
+<h2>Цвет, который нельзя было носить</h2>
+<div class="ks-quote">
+  <p>Запрет касался не жёлтого вообще, а одного конкретного оттенка — того самого, в который красили халат императора.</p>
+  <cite>明黄, míng huáng — «яркий жёлтый»</cite>
+</div>
+<p>Вот здесь популярные пересказы обычно ошибаются, объявляя жёлтый запретным целиком. На деле речь шла об оттенке. Ограничения на использование определённых жёлтых тонов складывались начиная с эпохи Тан, а строгими стали при династиях Мин и Цин: <b class="han-big">明黄</b> закрепили за особой правителя.</p>
+<div class="table-wrap">
+<table>
+  <caption>Где жёлтый принадлежал только императору.</caption>
+  <thead><tr><th>Что</th><th>Как это выглядело</th></tr></thead>
+  <tbody>
+    <tr><td>Одежда</td><td><b class="han-cell">龙袍</b> (lóngpáo) — «драконий халат» яркого жёлтого цвета с вышитыми драконами</td></tr>
+    <tr><td>Крыши</td><td>жёлтая глазурованная черепица дворцов — её и сегодня видно в Запретном городе</td></tr>
+    <tr><td>Обряды</td><td>жёлтые ткани и предметы в церемониях, где император выступал посредником между небом и землёй</td></tr>
+    <tr><td>Указы</td><td>важнейшие документы оформлялись на жёлтом шёлке</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Насколько плотно цвет сросся с властью, видно по устойчивому выражению <b class="han-big">黄袍加身</b> (huángpáo jiā shēn) — дословно «жёлтый халат надет на плечи», а по смыслу «взойти на престол». Оно восходит к истории основателя династии Сун, которого войско провозгласило императором, набросив на него жёлтое одеяние. То есть надеть этот цвет и означало стать правителем — буквально.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Я долго объясняла ученикам символику жёлтого словами — и видела вежливые кивки. А потом стала показывать одну фотографию: вид на крыши Запретного города сверху. Море ярко-жёлтой черепицы, и вокруг — серые крыши обычного города.</p>
+  <p>После этой картинки объяснять уже почти ничего не нужно. Видно, что цвет здесь не украшение, а знак: вот территория власти, а вот всё остальное. Один взгляд — и понятно, почему за самовольный жёлтый халат можно было поплатиться. С тех пор я стараюсь давать культурные темы через что-то, что можно увидеть: карту, крышу, конверт. Слова про «символ величия» забываются за неделю, а жёлтая черепица — нет.</p>
+</div>
+
+<h2>Второе дно: <span class="italic">почему 黄色 звучит двусмысленно</span></h2>
+<p>А теперь то, из-за чего носители иногда улыбаются на этом слове. В современном языке <b class="han-big">黄色</b> (huángsè) — это не только «жёлтый цвет», но и «непристойное содержание», примерно как русское «клубничка».</p>
+<div class="table-wrap">
+<table>
+  <caption>Где встречается это значение.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Что означает</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">黄色电影</td><td>huángsè diànyǐng</td><td>фильмы для взрослых</td></tr>
+    <tr><td class="han-cell">黄色网站</td><td>huángsè wǎngzhàn</td><td>сайты соответствующего содержания</td></tr>
+    <tr><td class="han-cell">扫黄</td><td>sǎohuáng</td><td>государственные кампании против такого содержания</td></tr>
+    <tr><td class="han-cell">黄了</td><td>huáng le</td><td>разговорное «сорвалось, не выгорело»</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Откуда это взялось? Значению чуть больше века, и с императорами оно не связано. Принято объяснять его влиянием западной «жёлтой прессы» рубежа XIX–XX веков: выражение перевели буквально, и за 黄色 постепенно закрепился смысл «непристойное». Это распространённое объяснение, а не доказанный факт — но других убедительных версий нет, а хронология сходится.</p>
+<p>Практический вывод простой. Фраза 我喜欢黄色 («я люблю жёлтый») в разговоре звучит двусмысленно, и собеседник почти наверняка усмехнётся. Скажите лучше <b class="han-big">我喜欢黄颜色</b> (wǒ xǐhuan huáng yánsè) — добавленное слово «цвет» снимает всякую неоднозначность. Как вообще устроены названия цветов в китайском, разбираем в статье про <a href="https://kitai-school.ru/article/cveta-na-kitajskom" target="_blank" rel="noopener">цвета на китайском с транскрипцией</a>.</p>
+
+<h2>Золотой 金色: <span class="italic">жёлтый без двойного дна</span></h2>
+<p>Отдельно стоит золотой — и вот он никакой двусмысленности не несёт. Это чистое богатство, достаток и высокий статус.</p>
+<div class="table-wrap">
+<table>
+  <caption>Золотой и слова вокруг него.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Значение</th><th>Заметка</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">金色</td><td>jīnsè</td><td>золотой цвет</td><td>金 «золото, металл» + 色 «цвет»</td></tr>
+    <tr><td class="han-cell">黄金</td><td>huángjīn</td><td>золото</td><td>дословно «жёлтый металл»</td></tr>
+    <tr><td class="han-cell">黄金周</td><td>huángjīnzhōu</td><td>«золотая неделя»</td><td>длинные государственные каникулы</td></tr>
+    <tr><td class="han-cell">黄金时代</td><td>huángjīn shídài</td><td>золотой век</td><td>лучшая пора чего-либо</td></tr>
+    <tr><td class="han-cell">飞黄腾达</td><td>fēihuáng téngdá</td><td>стремительно пойти в гору</td><td>о карьере и успехе</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Обратите внимание: само слово «золото» — <b class="han-big">黄金</b>, то есть «жёлтый металл». Цвет и драгоценность в языке сцеплены намертво, поэтому золотой наследует всё лучшее из символики жёлтого, не подхватив ничего сомнительного. Отсюда простое правило для подарков и оформления: сочетание <b>красного и золотого</b> — беспроигрышное, это классика праздничного китайского декора.</p>
+
+<h2>Жёлтый в буддизме <span class="italic">и в повседневности</span></h2>
+<p>Есть у цвета и третья линия, идущая мимо власти. В буддизме жёлтый и шафрановый — цвет монашеской одежды: символ отказа от мирского и скромности. Он же покрывает статуи будд, где золочение означает святость и просветление. Так один цвет умудряется одновременно значить высшую власть и полный отказ от неё.</p>
+<div class="table-wrap">
+<table>
+  <caption>Где ещё встречается жёлтый сегодня.</caption>
+  <thead><tr><th>Где</th><th>Что означает</th></tr></thead>
+  <tbody>
+    <tr><td>Храмы и монастыри</td><td>одежда монахов, золочение статуй — святость и отрешённость</td></tr>
+    <tr><td>Праздничный декор</td><td>золотые иероглифы на красном фоне — пожелание богатства</td></tr>
+    <tr><td>Спорт</td><td><b class="han-cell">黄牌</b> (huángpái) — жёлтая карточка, как и везде</td></tr>
+    <tr><td>Быт</td><td>жёлтая одежда и цветы — обычное дело, никаких запретов</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Иногда пишут, что жёлтые цветы в Китае дарить нельзя. Это перенос европейского суеверия: в самом Китае такого правила нет. Осторожность нужна с другим — с белым в подарках и с зелёным головным убором для мужчины. Подробнее об этом — в общем обзоре <a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значения цветов в Китае</a>.</p>
+
+<h2>Что со всем этим делать <span class="italic">на практике</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Короткие правила.</caption>
+  <thead><tr><th>Ситуация</th><th>Как поступить</th></tr></thead>
+  <tbody>
+    <tr><td>Подарок, упаковка</td><td>золотой с красным — верный выбор; чистый жёлтый нейтрален</td></tr>
+    <tr><td>Разговор о любимом цвете</td><td>говорите <b>黄颜色</b>, а не 黄色</td></tr>
+    <tr><td>Оформление для китайской аудитории</td><td>золотые акценты читаются как престиж и достаток</td></tr>
+    <tr><td>Чтение текстов</td><td>увидели 黄 в историческом тексте — думайте про власть; в современном — уточните по контексту</td></tr>
+    <tr><td>Поездка</td><td>жёлтые крыши Запретного города — самая наглядная иллюстрация темы</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что символизирует жёлтый цвет в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Прежде всего власть, центр и устойчивость. В учении о пяти стихиях жёлтый закреплён за землёй, а земля — это середина мира, точка, вокруг которой всё держится. Оттуда цвет перешёл к императору: он правил «из центра». Плюс к этому — богатство и престиж, потому что жёлтый стоит рядом с золотом.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему жёлтый был запрещён простым людям?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Запрет касался не жёлтого вообще, а определённого яркого оттенка — 明黄 (míng huáng). Он был закреплён за особой императора: его халаты, крыши дворцов, ритуальные предметы. Носить такой цвет посторонним значило посягнуть на власть. Ограничения складывались начиная с эпохи Тан и стали строгими при династиях Мин и Цин.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что символизирует золотой цвет в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Богатство, достаток и высокий статус — и никакой двусмысленности, в отличие от жёлтого. Золотой (金色, jīnsè) уместен в подарках, упаковке и оформлении, особенно в паре с красным: это классическое праздничное сочетание. Слово 黄金 (huángjīn) — «золото» — буквально содержит знак «жёлтый».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему 黄色 означает что-то непристойное?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это современное значение, ему чуть больше века. Принято объяснять его влиянием западной «жёлтой прессы» рубежа XIX–XX веков: слово перевели буквально, и за 黄色 закрепился смысл «непристойное содержание». Отсюда 黄色电影 — фильмы для взрослых и 扫黄 — государственные кампании против такого содержания. На уважение к цвету это не влияет, но слово 黄色 в речи звучит двусмысленно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли дарить китайцам что-то жёлтое?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Можно, запрета нет — жёлтые цветы, одежда и упаковка в Китае обычны. Но если хотите наверняка попасть в праздничное настроение, берите золотой и красный: это беспроигрышное сочетание. А вот фразы вроде «я люблю жёлтый цвет» (我喜欢黄色) лучше строить иначе — скажите 我喜欢黄颜色, чтобы не прозвучало двусмысленно.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Культурный слой языка не выучишь по словарю: его или объясняют, или вы годами собираете по неловким ситуациям. На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">курсах Kitai School</a> мы даём язык вместе с контекстом — чтобы вы понимали не только слова, но и то, что за ними стоит. Первый урок бесплатный.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>КУЛЬТУРА</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём формат под ваш уровень.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значение цветов в Китае — общий обзор</a>; <a href="https://kitai-school.ru/article/cveta-na-kitajskom" target="_blank" rel="noopener">цвета на китайском с транскрипцией</a>; <a href="https://kitai-school.ru/article/kitayskiy-tiket-obscheniya-uvajenie-k-starshim-ierarhiya-i-ponyatie-lica" target="_blank" rel="noopener">китайский этикет общения</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://ru.wikipedia.org/wiki/У-син" target="_blank" rel="noopener nofollow">Википедия: У-син</a> — система пяти стихий и соответствия цветов, сторон света и времён года.</li>
+    <li><a href="https://ru.wikipedia.org/wiki/Хуан-ди" target="_blank" rel="noopener nofollow">Википедия: Хуан-ди</a> — Жёлтый император в китайской традиции.</li>
+    <li>Общие работы по истории китайского костюма и придворного церемониала — об ограничениях на использование оттенка 明黄.</li>
+    <li>Практика Kitai School — вопросы учеников о жёлтом цвете и слове 黄色.</li>
+  </ol>
+</div>
+
+<p class="sign">Смотрите на цвет внимательно! <span class="han">加油！</span></p>
+
+<div class="tags">
+  <span>#жёлтыйцвет</span> <span>#символикацвета</span> <span>#культураКитая</span> <span>#黄色</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики, учит китайскому с нуля взрослых и детей. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Даём язык вместе с культурным контекстом — первый урок бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
