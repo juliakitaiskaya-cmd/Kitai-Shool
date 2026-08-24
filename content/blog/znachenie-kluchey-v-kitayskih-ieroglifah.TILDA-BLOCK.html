@@ -1,0 +1,382 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<div id="ks-wrap">
+<div id="ks-art">
+
+<nav class="crumbs">
+  <a href="https://kitai-school.ru/" target="_blank" rel="noopener">Главная</a> → <a href="https://kitai-school.ru/article/" target="_blank" rel="noopener">Статьи</a> → Значение ключей в китайских иероглифах
+</nav>
+
+<article>
+<p class="eyebrow">Иероглифы</p>
+<h1>Значение ключей в китайских иероглифах: <span class="italic">как радикал подсказывает смысл знака</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-21">21 августа 2026</time>
+  </div>
+</div>
+
+<p class="passport">Главный страх новичка звучит так: «их же тысячи, и все разные». На самом деле нет. Подавляющее большинство иероглифов собрано из повторяющихся деталей по одной и той же схеме: одна часть отвечает за смысл, другая подсказывает звучание. Смысловая часть и называется ключом — <b class="han-big">部首</b> (bùshǒu). Выучив три десятка ключей, вы перестаёте видеть в знаках случайный набор палочек и начинаете читать их по составу: вот вода, вот дерево, вот сердце. Разберём, как устроена эта система, соберём таблицу основных ключей и потренируемся угадывать незнакомые знаки.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Иероглиф чаще всего состоит из двух частей: <b>ключ</b> задаёт смысловую область, <b>фонетик</b> подсказывает чтение. 妈 = 女 «женщина» + 马 (mǎ) — отсюда и смысл, и звук. Классический набор — <b>214 ключей</b> (словарь Канси), в современных словарях 201, но на практике хватает <b>тридцати-пятидесяти</b>. Ключ обычно стоит слева или сверху. Он даёт область, а не точное значение: 疒 значит «про болезнь», но не скажет, какую именно. И есть ловушки: 月 бывает и «луной», и «мясом», а 阝 слева и справа — это два разных ключа.</p>
+</div>
+
+<h2>Как устроен знак: <span class="italic">ключ плюс фонетик</span></h2>
+<p>Начнём с главного. Если разложить современный китайский текст, окажется, что подавляющее большинство знаков — это не рисунки, а пары «смысл + звук». Такие знаки называют фоноидеограммами (<b class="han-big">形声字</b>, xíngshēngzì), и по разным подсчётам их около восьмидесяти процентов и больше.</p>
+<div class="table-wrap">
+<table>
+  <caption>Как знак делится на две части.</caption>
+  <thead><tr><th>Знак</th><th>Чтение</th><th>Ключ — смысл</th><th>Фонетик — звук</th><th>Что получается</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">妈</td><td>mā</td><td>女 женщина</td><td>马 mǎ</td><td>мама</td></tr>
+    <tr><td class="han-cell">河</td><td>hé</td><td>氵 вода</td><td>可 kě</td><td>река</td></tr>
+    <tr><td class="han-cell">想</td><td>xiǎng</td><td>心 сердце</td><td>相 xiāng</td><td>думать, хотеть</td></tr>
+    <tr><td class="han-cell">铜</td><td>tóng</td><td>钅 металл</td><td>同 tóng</td><td>медь</td></tr>
+    <tr><td class="han-cell">病</td><td>bìng</td><td>疒 болезнь</td><td>丙 bǐng</td><td>болезнь, болеть</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Обратите внимание на честную деталь: <b>фонетик подсказывает чтение приблизительно</b>. 马 читается mǎ, а 妈 — mā: слог тот же, тон другой. Бывает и сильнее: 每 (měi) в знаке 海 даёт hǎi. Так что фонетик — это подсказка, сужающая круг вариантов, а не точная инструкция.</p>
+
+<h2>Тридцать ключей, <span class="italic">которые встретятся первыми</span></h2>
+<p>Вот рабочий минимум. Эти ключи покрывают большую часть знаков начальных уровней — выучите их, и знаки перестанут быть безликими.</p>
+<div class="table-wrap">
+<table>
+  <caption>Основные ключи китайского письма.</caption>
+  <thead><tr><th>Ключ</th><th>Полная форма</th><th>Значение</th><th>Где стоит</th><th>Примеры</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">氵</td><td>水</td><td>вода, жидкость</td><td>слева</td><td>河 река · 海 море · 洗 мыть</td></tr>
+    <tr><td class="han-cell">亻</td><td>人</td><td>человек</td><td>слева</td><td>你 ты · 他 он · 们 суффикс мн. ч.</td></tr>
+    <tr><td class="han-cell">扌</td><td>手</td><td>рука, действие рукой</td><td>слева</td><td>打 бить · 找 искать · 提 поднимать</td></tr>
+    <tr><td class="han-cell">忄</td><td>心</td><td>сердце, чувство</td><td>слева</td><td>快 быстрый · 忙 занятой · 情 чувство</td></tr>
+    <tr><td class="han-cell">讠</td><td>言</td><td>речь, слово</td><td>слева</td><td>说 говорить · 语 язык · 话 речь</td></tr>
+    <tr><td class="han-cell">木</td><td>木</td><td>дерево, древесина</td><td>слева</td><td>树 дерево · 林 роща · 桌 стол</td></tr>
+    <tr><td class="han-cell">火 · 灬</td><td>火</td><td>огонь, жар</td><td>слева или снизу</td><td>烧 жечь · 热 горячий · 煮 варить</td></tr>
+    <tr><td class="han-cell">艹</td><td>艸</td><td>трава, растения</td><td>сверху</td><td>花 цветок · 草 трава · 茶 чай · 药 лекарство</td></tr>
+    <tr><td class="han-cell">宀</td><td>宀</td><td>крыша, дом</td><td>сверху</td><td>家 дом · 安 спокойный · 室 комната</td></tr>
+    <tr><td class="han-cell">女</td><td>女</td><td>женщина</td><td>слева</td><td>妈 мама · 姐 сестра · 好 хороший</td></tr>
+    <tr><td class="han-cell">口</td><td>口</td><td>рот, звук, отверстие</td><td>слева</td><td>吃 есть · 喝 пить · 唱 петь</td></tr>
+    <tr><td class="han-cell">目</td><td>目</td><td>глаз, зрение</td><td>слева</td><td>看 смотреть · 眼 глаз · 睡 спать</td></tr>
+    <tr><td class="han-cell">钅</td><td>金</td><td>металл</td><td>слева</td><td>银 серебро · 铁 железо · 钱 деньги</td></tr>
+    <tr><td class="han-cell">纟</td><td>糸</td><td>нить, ткань</td><td>слева</td><td>红 красный · 绿 зелёный · 纸 бумага</td></tr>
+    <tr><td class="han-cell">辶</td><td>辵</td><td>движение, дорога</td><td>охватывает слева-снизу</td><td>过 проходить · 进 входить · 远 далёкий</td></tr>
+    <tr><td class="han-cell">犭</td><td>犬</td><td>зверь</td><td>слева</td><td>狗 собака · 猫 кошка · 猪 свинья</td></tr>
+    <tr><td class="han-cell">疒</td><td>疒</td><td>болезнь</td><td>охватывает сверху-слева</td><td>病 болезнь · 疼 болеть · 瘦 худой</td></tr>
+    <tr><td class="han-cell">日</td><td>日</td><td>солнце, время</td><td>слева или сверху</td><td>明 светлый · 时 время · 晚 поздний</td></tr>
+    <tr><td class="han-cell">月</td><td>月 / 肉</td><td>луна ИЛИ мясо, тело</td><td>слева</td><td>朋 друг · 脸 лицо · 胖 полный</td></tr>
+    <tr><td class="han-cell">土</td><td>土</td><td>земля, почва</td><td>слева</td><td>地 земля · 场 площадка · 坐 сидеть</td></tr>
+    <tr><td class="han-cell">竹 · ⺮</td><td>竹</td><td>бамбук</td><td>сверху</td><td>笔 кисть · 筷 палочки · 简 простой</td></tr>
+    <tr><td class="han-cell">雨</td><td>雨</td><td>дождь, осадки</td><td>сверху</td><td>雪 снег · 雷 гром · 雾 туман</td></tr>
+    <tr><td class="han-cell">车</td><td>車</td><td>повозка, транспорт</td><td>слева</td><td>轮 колесо · 转 поворачивать · 输 везти</td></tr>
+    <tr><td class="han-cell">门</td><td>門</td><td>ворота, дверь</td><td>охватывает сверху</td><td>问 спрашивать · 间 промежуток · 闭 закрывать</td></tr>
+    <tr><td class="han-cell">刂</td><td>刀</td><td>нож, резать</td><td>справа</td><td>别 не надо · 剪 стричь · 到 достигать</td></tr>
+    <tr><td class="han-cell">力</td><td>力</td><td>сила</td><td>справа или снизу</td><td>动 двигаться · 助 помогать · 加 прибавлять</td></tr>
+    <tr><td class="han-cell">广</td><td>广</td><td>навес, здание</td><td>охватывает сверху-слева</td><td>店 лавка · 床 кровать · 座 место</td></tr>
+    <tr><td class="han-cell">虫</td><td>虫</td><td>насекомое, мелкая живность</td><td>слева</td><td>蚊 комар · 蛇 змея · 虾 креветка</td></tr>
+    <tr><td class="han-cell">鸟</td><td>鳥</td><td>птица</td><td>справа</td><td>鸡 курица · 鸭 утка · 鹅 гусь</td></tr>
+    <tr><td class="han-cell">页</td><td>頁</td><td>голова, лицо</td><td>справа</td><td>头 голова · 颜 лицо · 领 воротник</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Где искать ключ <span class="italic">в знаке</span></h2>
+<p>Ключ стоит не где попало. Позиций всего пять, и они довольно устойчивы:</p>
+<div class="table-wrap">
+<table>
+  <caption>Пять позиций ключа.</caption>
+  <thead><tr><th>Позиция</th><th>Примеры ключей</th><th>Знаки</th></tr></thead>
+  <tbody>
+    <tr><td>Слева — самая частая</td><td class="han-cell">氵 亻 扌 忄 讠 木</td><td>河, 你, 打, 快, 说, 树</td></tr>
+    <tr><td>Справа</td><td class="han-cell">刂 页 鸟</td><td>别, 颜, 鸡</td></tr>
+    <tr><td>Сверху</td><td class="han-cell">艹 宀 竹 雨</td><td>花, 家, 笔, 雪</td></tr>
+    <tr><td>Снизу</td><td class="han-cell">心 灬 皿</td><td>想, 热, 盘</td></tr>
+    <tr><td>Охватывает знак</td><td class="han-cell">囗 广 疒 门 辶</td><td>国, 店, 病, 问, 过</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Правило-подсказка: <b>если знак делится на левую и правую части, ключ почти всегда слева, а фонетик справа</b>. Это первое, что стоит проверять. Как один такой ключ управляет целым гнездом смыслов, мы подробно разобрали на примере воды — в статье про <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey-kak-ustroen-ieroglif-voda" target="_blank" rel="noopener">логику китайских ключей и иероглиф 水</a>.</p>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>На первом курсе я учила иероглифы карточками: с одной стороны знак, с другой перевод. Знаки не запоминались, путались и вылетали из головы через неделю. Я честно считала, что дело в плохой памяти.</p>
+  <p>Перелом случился, когда преподаватель показал простую вещь. Написал на доске пять незнакомых мне знаков с ключом 疒 и спросил: «Что можете сказать?» Я ответила: «Ничего, не знаю их». — «Неправда. Вы знаете, что все пять — про болезни». И это оказалось правдой. Я не могла перевести ни один, но область смысла назвала верно, а с контекстом угадала бы три из пяти.</p>
+  <p>С того дня я перестала учить иероглифы как картинки и начала разбирать по частям. Скорость выросла в разы — не потому, что память стала лучше, а потому что вместо тысячи отдельных объектов появилось несколько десятков деталей, из которых всё собирается. Именно это я теперь и даю ученикам в первую очередь.</p>
+</div>
+
+<h2>Как угадать незнакомый знак: <span class="italic">алгоритм из четырёх шагов</span></h2>
+<div class="ks-quote">
+  <p>Ключ не переводит знак. Он говорит, в какой области искать перевод — а дальше работает контекст.</p>
+  <cite>Именно так читают тексты те, кто «знает много иероглифов»</cite>
+</div>
+<div class="table-wrap">
+<table>
+  <caption>Что делать, встретив незнакомый иероглиф.</caption>
+  <thead><tr><th>Шаг</th><th>Действие</th><th>Пример на знаке 湖</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Разделите знак на части — обычно левую и правую</td><td>氵 и 胡</td></tr>
+    <tr><td>2</td><td>Найдите ключ и определите область смысла</td><td>氵 — что-то про воду</td></tr>
+    <tr><td>3</td><td>Посмотрите на вторую часть как на подсказку звучания</td><td>胡 читается hú — вероятно, и знак читается похоже</td></tr>
+    <tr><td>4</td><td>Подставьте в контекст и проверьте догадку</td><td>вода + hú = 湖 «озеро». Верно</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Работает не всегда, но достаточно часто, чтобы читать тексты, не заглядывая в словарь на каждом знаке. А если словарь всё же нужен, ключи пригодятся и там: в бумажных словарях знаки ищут именно по ключу, а внутри раздела — по числу оставшихся черт. Электронные словари делают то же самое, просто быстрее.</p>
+
+<h2>Пять ловушек, <span class="italic">о которых обычно не предупреждают</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Где логика ключей даёт сбой.</caption>
+  <thead><tr><th>Ловушка</th><th>В чём дело</th><th>Как не попасться</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">月</td><td>это и «луна», и сокращённое «мясо» 肉</td><td>если знак про тело — это мясо: 脸 лицо, 胖 полный, 肝 печень</td></tr>
+    <tr><td class="han-cell">阝</td><td>слева и справа — два разных ключа</td><td>слева «холм»: 阳, 阴; справа «поселение»: 都, 部</td></tr>
+    <tr><td class="han-cell">衤 / 礻</td><td>отличаются одной чертой</td><td>衤 — одежда (裙 юбка), 礻 — обряд и духи (神 бог, 礼 ритуал)</td></tr>
+    <tr><td class="han-cell">氵 / 冫</td><td>три капли и две</td><td>氵 — вода (河), 冫 — лёд (冷 холодный, 冰 лёд)</td></tr>
+    <tr><td>Фонетик</td><td>подсказывает чтение неточно</td><td>每 měi даёт и 梅 méi, и 海 hǎi — проверяйте по словарю</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И ещё одно, самое важное ограничение. Ключ показывает <b>область смысла, а не значение</b>. Увидев незнакомый знак с 疒, вы уверенно скажете «что-то про болезнь», но не отличите кашель от температуры. Это не недостаток системы — это её честные рамки. Плюс часть знаков сложилась тысячи лет назад, и их ключ сегодня выглядит произвольным: язык менялся, а написание осталось.</p>
+
+<h2>Сколько ключей учить <span class="italic">и в каком порядке</span></h2>
+<p>Классический список — <b>214 ключей</b>, он закреплён словарём Канси, составленным в начале XVIII века. В современных словарях упрощённого письма чаще используют список из 201 ключа. Но зубрить весь набор бессмысленно: частотность у ключей очень разная.</p>
+<div class="table-wrap">
+<table>
+  <caption>Разумный порядок освоения.</caption>
+  <thead><tr><th>Этап</th><th>Сколько</th><th>Что даёт</th></tr></thead>
+  <tbody>
+    <tr><td>Первые недели</td><td>10–15 ключей</td><td>вода, человек, рука, сердце, речь, дерево, рот, женщина — разбираете половину знаков HSK 1</td></tr>
+    <tr><td>Первые месяцы</td><td>30 ключей</td><td>таблица выше — уверенно читаете состав большинства знаков HSK 1–3</td></tr>
+    <tr><td>Дальше</td><td>50–60 ключей</td><td>остальные добираются сами, по мере встречи в текстах</td></tr>
+    <tr><td>Весь список</td><td>214 / 201</td><td>нужен филологам и для работы с бумажными словарями</td></tr>
+  </tbody>
+</table>
+</div>
+<p>И главное — учить ключи отдельным списком тоже не стоит. Гораздо лучше разбирать по составу каждый новый знак, который вам попадается: тогда ключи запоминаются сами, в работе. Сколько всего иероглифов нужно к разным уровням экзамена, мы посчитали в разборе <a href="https://kitai-school.ru/article/ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu" target="_blank" rel="noopener">требований от HSK 1 до HSK 4</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое ключ в китайском иероглифе?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Ключ (по-китайски 部首, bùshǒu) — это часть знака, которая отвечает за смысл и одновременно служит адресом в словаре. Если в иероглифе есть 氵 «вода», знак почти наверняка связан с жидкостью: 河 река, 海 море, 洗 мыть. Ключ не переводит знак целиком, он задаёт смысловую область.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько всего ключей в китайском языке?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Классический набор — 214 ключей, он закреплён словарём Канси начала XVIII века. В современных словарях упрощённого письма чаще используют список из 201 ключа. Но учить весь список наизусть не нужно: около пятидесяти самых частых закрывают подавляющее большинство знаков, которые встретятся на первых уровнях.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем ключ отличается от фонетика?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Ключ отвечает за смысл, фонетик — за звучание. В знаке 妈 (mā, «мама») ключ 女 «женщина» говорит, о ком речь, а часть 马 (mǎ) подсказывает чтение. Так устроено большинство современных иероглифов: смысловая половина плюс звуковая. Подсказка фонетика приблизительная — тон и отдельные звуки часто не совпадают.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли угадать значение незнакомого иероглифа по ключу?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Область значения — да, точное значение — нет. Увидев незнакомый знак с ключом 疒 «болезнь», вы уверенно скажете, что речь о недуге, но не отличите «кашель» от «температуры». Это всё равно очень много: в тексте область смысла плюс контекст обычно дают правильную догадку.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько ключей нужно выучить для начала?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Начните с тридцати-пятидесяти самых частых: вода, человек, рука, сердце, речь, дерево, огонь, трава, крыша, женщина, рот, глаз, металл, нить, движение. Этого хватает, чтобы разбирать по составу большую часть знаков уровней HSK 1–3 и перестать учить иероглифы как случайные картинки.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Разбор по составу — то, что отличает быстрое обучение от бесконечной зубрёжки. На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">курсах Kitai School</a> мы ставим этот навык с первых занятий: не «выучите список», а «посмотрите, из чего собран знак». Первый урок бесплатный.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>КЛЮЧИ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём формат под ваш уровень.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey-kak-ustroen-ieroglif-voda" target="_blank" rel="noopener">логика ключей на примере знака «вода»</a>; <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost" target="_blank" rel="noopener">из чего состоит китайская письменность</a>; <a href="https://kitai-school.ru/article/ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu" target="_blank" rel="noopener">сколько иероглифов нужно к HSK</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://ru.wikipedia.org/wiki/Ключ_(иероглифика)" target="_blank" rel="noopener nofollow">Википедия: Ключ (иероглифика)</a> — устройство системы ключей и её роль в словарях.</li>
+    <li><a href="https://ru.wikipedia.org/wiki/Канси_(словарь)" target="_blank" rel="noopener nofollow">Википедия: Словарь Канси</a> — источник классического набора из 214 ключей.</li>
+    <li>Современные словари упрощённого письма — список из 201 ключа.</li>
+    <li>Практика Kitai School — какие ключи ученики осваивают первыми и где чаще всего ошибаются.</li>
+  </ol>
+</div>
+
+<p class="sign">Разбирайте, а не зубрите! <span class="han">加油！</span></p>
+
+<div class="tags">
+  <span>#ключивкитайском</span> <span>#радикалы</span> <span>#иероглифы</span> <span>#部首</span> <span>#китайскийязык_kitai_school</span>
+</div>
+
+<div class="author-card">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина"></a>
+  <div>
+    <p class="lbl">Автор статьи</p>
+    <h3>Юлия Горяина</h3>
+    <p>Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ. Более 20 лет практики, учит китайскому с нуля взрослых и детей. Основатель международной лицензированной онлайн-школы китайского языка Kitai School.</p>
+    <p><a href="https://telegram.me/kitai_school" target="_blank" rel="noopener">Kitai School в Telegram →</a></p>
+  </div>
+</div>
+
+</article>
+</div>
+
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Учим разбирать знаки по составу с первого занятия — первый урок бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
