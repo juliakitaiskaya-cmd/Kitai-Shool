@@ -1,0 +1,328 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Иероглифы</p>
+<h1>Иероглиф «четыре» (四): простой знак <span class="italic">с непростой репутацией</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-25">25 августа 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/ieroglif-4-po-kitayski.png" alt="Иероглиф 4 по-китайски — 四 (sì): пять черт и созвучие с 死" width="1200" height="630"></figure>
+
+<p class="passport">Четвёрку учат на первом занятии вместе с остальным десятком, и она кажется самой обычной цифрой. Пять черт, четвёртый тон, ничего сложного. А потом вы заходите в лифт китайской гостиницы и видите этажи 1, 2, 3, 5 — и понимаете, что у этого знака есть вторая жизнь, к языку почти не относящаяся. Разберём <b class="han-big">四</b> целиком: как он устроен и пишется, откуда взялась такая форма, почему его путают со «смертью» и где эта путаница заканчивается.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>四</b> (sì) — «четыре», пять черт, ключ 囗 «ограда». Читается <b>«сы»</b> с твёрдым согласным, а не «си»: такого слога в китайском нет. <b>Тон четвёртый</b>, резко падающий. Слово «смерть» — <b>死 (sǐ)</b>, другой знак и <b>другой тон</b>, третий: это не омонимы, а созвучие. Из-за него четвёрку избегают в номерах, этажах и подарках. Но <b>в словах 四 живёт спокойно</b>: 四季, 四大发明, 四合院, да и четверг — 星期四.</p>
+</div>
+
+<h2>Как пишется и читается <span class="italic">四</span></h2>
+<p>Знак состоит из внешней рамки и того, что внутри. Рамка — это ключ <b class="han-big">囗</b> (wéi), «ограда»: тот же элемент стоит в 日, 国, 回. Внутри — <b class="han-big">儿</b>, две расходящиеся черты. Всего получается <b>пять черт</b>, и порядок у них строгий.</p>
+<div class="table-wrap">
+<table>
+  <caption>Порядок черт иероглифа 四.</caption>
+  <thead><tr><th>Шаг</th><th>Черта</th><th>Что делаем</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>вертикальная</td><td>левая сторона рамки, сверху вниз</td></tr>
+    <tr><td>2</td><td>ломаная</td><td>верхняя горизонталь и сразу вниз — правая сторона рамки</td></tr>
+    <tr><td>3</td><td>откидная влево</td><td>первая черта внутри</td></tr>
+    <tr><td>4</td><td>вертикальная с загибом</td><td>вторая черта внутри</td></tr>
+    <tr><td>5</td><td>горизонтальная</td><td>закрываем рамку снизу</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Главное правило здесь общее для всех знаков с рамкой: <b>сначала содержимое, потом дно</b>. Сравните с 日 или 国 — коробку закрывают последней чертой. Если закрыть раньше, писать внутри будет негде, и знак получится кривым.</p>
+<p>С чтением всё решает одна деталь. <b>四 читается sì</b> — согласный твёрдый, гласный близок к русскому «ы». Получается «сы». Русскоговорящие почти поголовно смягчают и говорят «си», но слога «си» в китайском не существует вообще, поэтому ошибка слышна сразу. Тон четвёртый: голос падает резко, будто вы что-то обрубаете.</p>
+
+<h2>Откуда взялась <span class="italic">такая форма</span></h2>
+<p>Логика первых трёх числительных очевидна: <b class="han-big">一</b>, <b class="han-big">二</b>, <b class="han-big">三</b> — одна, две, три горизонтальные черты. Естественно ждать, что четвёрка будет четырьмя чертами. Так и было: в ранних надписях встречается знак <b class="han-big">亖</b> — ровно четыре горизонтали.</p>
+<p>Но ряд оборвался, и по понятной причине: четыре одинаковые черты плохо считываются. Три ещё различаешь взглядом, четыре уже приходится пересчитывать, а на бегущей строке или при быстром письме 亖 легко спутать с 三. Поэтому для слова «четыре» взяли другой, уже существовавший знак — <b class="han-big">四</b>, — который к числам отношения не имел и был заимствован по созвучию.</p>
+<p class="note">Что именно изображал исходный 四, спорят до сих пор. Распространённая версия: рот с выходящим дыханием, то есть предок знака 呬 «отдышаться». Другие реконструкции читают его иначе. Общее у всех одно: <b>к числу четыре картинка отношения не имела</b>, знак пришёл по звуку. Как ключ вообще подсказывает смысл знака и когда эта подсказка не работает, разобрано в статье про <a href="https://kitai-school.ru/article/znachenie-kluchey-v-kitayskih-ieroglifah" target="_blank" rel="noopener">значение ключей в иероглифах</a>.</p>
+
+<h2>四 и 死: <span class="italic">почему это не одно и то же</span></h2>
+<p>Вот главная поправка, которую стоит сделать сразу. В русских текстах часто пишут, что «четыре по-китайски звучит как смерть». Это неточно.</p>
+<div class="table-wrap">
+<table>
+  <caption>Сравнение 四 и 死: совпадает не всё.</caption>
+  <thead><tr><th></th><th class="han-cell">四</th><th class="han-cell">死</th></tr></thead>
+  <tbody>
+    <tr><td>Чтение</td><td>sì</td><td>sǐ</td></tr>
+    <tr><td>Тон</td><td><b class="ok">четвёртый</b> — резко вниз</td><td><b class="bad">третий</b> — вниз и вверх</td></tr>
+    <tr><td>Значение</td><td>четыре</td><td>умереть, смерть</td></tr>
+    <tr><td>Черт</td><td>5</td><td>6</td></tr>
+    <tr><td>Ключ</td><td>囗 «ограда»</td><td>歹 «кости, дурное»</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Совпадают согласный и гласный, различается тон — а тон в китайском не украшение, а часть слова. Для носителя 四 и 死 звучат по-разному, примерно как для нас «зАмок» и «замОк». Но похожести хватило, чтобы возникло устойчивое суеверие: сходство слышно, даже когда слова различают.</p>
+<div class="ks-quote">
+  <p>Четвёрка в Китае — это наше тринадцатое число. Все понимают, что это условность, и всё равно тринадцатый этаж кое-где пропускают.</p>
+  <cite>Так проще всего объяснить отношение к 四 русскому человеку</cite>
+</div>
+
+<figure class="ks-fig"><img src="assets/ieroglif-4-po-kitayski-razbor.png" alt="Разбор иероглифа 四: порядок черт, сравнение с 死 по тону, где четвёрку избегают и где она хорошая" loading="lazy" width="1200" height="900"><figcaption>Пять черт, четвёртый тон и граница между суеверием и языком.</figcaption></figure>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Когда я искала квартиру в Цзинани, риелтор показал два варианта в одном доме: одинаковая планировка, одинаковый ремонт, разница в цене заметная. Тот, что дешевле, был на четвёртом этаже. Я спросила, в чём подвох, — хозяйка пожала плечами и сказала: 四不好, «четыре нехорошо».</p>
+  <p>Я прожила там два года и ни разу об этом не пожалела. Соседи, кстати, тоже не выглядели обречёнными. Но история хорошо показывает, как это работает на самом деле: суеверие настоящее, и оно влияет на цены, номера и этажи — то есть на деньги, а не на язык. Иностранцу оно чаще выходит в плюс.</p>
+  <p>Ученикам я с тех пор говорю так: знать про четвёрку нужно обязательно — чтобы не подарить набор из четырёх чашек и не удивляться лифту. А бояться её не нужно.</p>
+</div>
+
+<h2>Где четвёрку <span class="italic">действительно избегают</span></h2>
+<p>Список конкретный, и с ним сталкиваешься в первые же дни.</p>
+<div class="table-wrap">
+<table>
+  <caption>Где четвёрка вытесняется на практике.</caption>
+  <thead><tr><th>Где</th><th>Что происходит</th></tr></thead>
+  <tbody>
+    <tr><td>Этажи в домах и гостиницах</td><td>4 и 14 могут отсутствовать в лифте: после 3 сразу 5</td></tr>
+    <tr><td>Номера палат и кабинетов</td><td>в больницах четвёрку пропускают особенно часто</td></tr>
+    <tr><td>Автомобильные номера</td><td>с четвёрками стоят дешевле, с восьмёрками дороже</td></tr>
+    <tr><td>Телефонные номера</td><td>красивым считается номер без четвёрок</td></tr>
+    <tr><td>Подарки</td><td>наборы из четырёх предметов не дарят: берут шесть или восемь</td></tr>
+    <tr><td>Числа 14, 74, 94</td><td>считаются хуже простой четвёрки из-за созвучий целиком</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Практический вывод для подарка простой: <b>считайте предметы, а не смотрите на цену</b>. Набор из шести или восьми чашек будет принят с удовольствием, из четырёх — с натянутой улыбкой. Это та же логика, что с цветом и упаковкой: подробно разобрана в статье про <a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значение цвета в китайской культуре</a>.</p>
+
+<h2>Где 四 <span class="italic">наоборот хорошая</span></h2>
+<p>А теперь то, что в подборках про суеверия обычно опускают. Внутри самого языка четвёрка ведёт себя совершенно спокойно: она стоит в десятках слов, и никакого мрачного оттенка там нет.</p>
+<div class="table-wrap">
+<table>
+  <caption>Слова с 四, в которых нет ничего дурного.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Что значит</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">四季</td><td>sìjì</td><td>четыре времени года</td></tr>
+    <tr><td class="han-cell">四大发明</td><td>sìdà fāmíng</td><td>четыре великих изобретения: бумага, компас, порох, книгопечатание</td></tr>
+    <tr><td class="han-cell">四合院</td><td>sìhéyuàn</td><td>традиционный пекинский дом с двором посередине</td></tr>
+    <tr><td class="han-cell">四通八达</td><td>sìtōngbādá</td><td>«дороги во все стороны» — об удобном сообщении</td></tr>
+    <tr><td class="han-cell">四海</td><td>sìhǎi</td><td>«четыре моря», то есть весь мир</td></tr>
+    <tr><td class="han-cell">四川</td><td>Sìchuān</td><td>Сычуань — провинция, «четыре реки»</td></tr>
+    <tr><td class="han-cell">星期四</td><td>xīngqīsì</td><td>четверг</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Последняя строка снимает вопрос лучше всего. Четверг называется <b class="han-big">星期四</b>, он приходит каждую неделю, и никто не пытается его переименовать. Значит, суеверие живёт не в языке, а рядом с ним: в нумерации, в количествах, в ценниках. Слово «четыре» остаётся обычным словом.</p>
+
+<h2>四 в счёте <span class="italic">и главная звуковая ловушка</span></h2>
+<p>В счёте четвёрка ведёт себя как все: <b class="han-big">四十</b> (sìshí) — сорок, <b class="han-big">十四</b> (shísì) — четырнадцать, <b class="han-big">四百</b> (sìbǎi) — четыреста, <b class="han-big">第四</b> (dì-sì) — четвёртый, <b class="han-big">四月</b> (sìyuè) — апрель.</p>
+<p>Но именно на паре <b>四 и 十</b> спотыкаются почти все. Звуки похожи, а последствия ощутимые: перепутанные цены, номера домов и телефоны. Разница в двух вещах сразу. У <b class="han-big">四</b> (sì) язык у зубов, звук передний, тон падает. У <b class="han-big">十</b> (shí) язык загнут назад, тон идёт вверх. Тренировать удобнее всего связкой 四十 — 十四: она ставит оба звука одновременно.</p>
+<p>Как читаются остальные цифры, где ещё прячутся ошибки в произношении и что делать с меняющимся тоном у 一 — разобрано в статье про <a href="https://kitai-school.ru/article/cifry-na-kitayskom-ot-0-do-10" target="_blank" rel="noopener">цифры на китайском от 0 до 10</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как пишется иероглиф «четыре» по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>四 — пять черт: вертикаль слева, ломаная сверху и справа, две черты внутри и горизонталь, закрывающая рамку снизу. Внешняя часть — ключ 囗 «ограда», внутри 儿. Порядок важен: рамку закрывают в самом конце, как в 日 или 国.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как звучит четыре на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>四 читается sì. Согласный твёрдый, гласный ближе к русскому «ы», то есть «сы», а не «си» — слога «си» в китайском нет вообще. Тон четвёртый, резко падающий, будто вы что-то обрубаете.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что 四 означает «смерть»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. «Смерть» — это 死 (sǐ), другой иероглиф и другое слово. Совпадают только согласный и гласный, а тоны разные: у 四 четвёртый, падающий, у 死 третий, ныряющий. Для носителя это два разных слова, но созвучия хватило, чтобы возникло суеверие.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему в Китае избегают цифру 4?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Из-за того же созвучия с 死. На практике это видно в нумерации: в лифте может не быть четвёртого и четырнадцатого этажа, номера машин и телефонов с четвёрками стоят дешевле, а наборы из четырёх предметов не дарят. Отношение примерно как к числу 13 в Европе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Всегда ли четвёрка считается плохой?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и это важная поправка. 四季 — четыре сезона, 四大发明 — четыре великих изобретения, 四合院 — традиционный пекинский дом, 四通八达 — «дороги во все стороны». Четверг тоже 星期四, и его никто не боится. Суеверие касается номеров и количеств, а не языка.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 四 отличается от 十 на слух?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это самая частая путаница в цифрах. У 四 (sì) звук передний, язык у зубов, тон падающий. У 十 (shí) язык загнут назад, тон восходящий. Тренировать удобно парой 四十 (сорок) и 十四 (четырнадцать) — она ставит оба звука сразу.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Пара 四 и 十 — из тех вещей, которые проще поставить сразу, чем переучивать через год. На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсах Kitai School</a> мы занимаемся произношением с первого занятия и разбираем не только звуки, но и культурный контекст вроде этой четвёрки. Диагностический урок — бесплатный.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>ЧЕТЫРЕ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — расскажем о курсах.</p>
+</div>
+
+<p>Дальше по теме: весь десяток с произношением — <a href="https://kitai-school.ru/article/cifry-na-kitayskom-ot-0-do-10" target="_blank" rel="noopener">цифры на китайском от 0 до 10</a>; как ключ подсказывает смысл знака — <a href="https://kitai-school.ru/article/znachenie-kluchey-v-kitayskih-ieroglifah" target="_blank" rel="noopener">значение ключей в иероглифах</a>; из чего вообще состоит письменность — <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost" target="_blank" rel="noopener">буквы или иероглифы</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://ru.wikipedia.org/wiki/Тетрафобия" target="_blank" rel="noopener nofollow">Википедия: Тетрафобия</a> — распространение суеверия и его следы в нумерации.</li>
+    <li><a href="https://ru.wikipedia.org/wiki/Китайские_числительные" target="_blank" rel="noopener nofollow">Википедия: Китайские числительные</a> — система счёта и формы записи.</li>
+    <li>Словари иероглифики — состав знака 四, порядок черт и ключ 囗.</li>
+    <li>Практика Kitai School — типичные ошибки в произношении пары 四 и 十.</li>
+  </ol>
+</div>
+
+<p class="sign">Не бойтесь четвёрки! <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Ставим произношение с первого занятия, включая пару 四 и 十 — первый урок бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
