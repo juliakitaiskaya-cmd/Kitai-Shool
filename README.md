@@ -186,6 +186,12 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 >
 > I would go back, but in spring and with better shoes. Lisbon does not bend over backward to make things easy for you. I think I liked that, even when my legs disagreed.
 
+## Non-English text
+
+The 33 patterns describe English prose. For Russian, [`LANGUAGE-RU.md`](LANGUAGE-RU.md) is an override layer that the skill loads before rewriting: §14 (dashes) is cancelled because Russian punctuation requires the dash, §19 (quotes) is inverted in favour of «ёлочки», §17 and §26 do not apply, and §7 gets its own list of Russian AI vocabulary and bureaucratese. It also records that the `tripl` content methodology outranks the humanizer where the two disagree.
+
+Copy it alongside `SKILL.md` when installing, or the Russian overrides will not be found.
+
 ## References
 
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) - Primary source
@@ -193,6 +199,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 ## Version History
 
+- **2.9.0** - Added `LANGUAGE-RU.md`, a Russian override layer for §7, §14, §17, §19 and §26, plus the tripl precedence rule. Pointers added at each overridden pattern. No change to the 33 patterns themselves.
 - **2.8.2** - Replaced the full before/after example with a first-person Lisbon trip recap. The after now keeps the same topic, perspective, and rough length as the before while removing the AI tells without becoming clipped or slogan-like. No change to the 33 patterns.
 - **2.8.1** - Added cross-agent installation docs, optional Claude Code plugin packaging, and a compact secondhand-text false-positive guard. No change to the 33 patterns.
 - **2.8.0** - Added style/cadence patterns #31-33 for manufactured punchlines, aphorism formulas, and conversational rhetorical openers; expanded #20 to catch offer-to-continue chatbot closers. 33 patterns total.

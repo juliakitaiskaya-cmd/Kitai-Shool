@@ -1,6 +1,6 @@
 ---
 name: humanizer
-version: 2.8.2
+version: 2.9.0
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
@@ -33,6 +33,8 @@ When given text to humanize:
 4. **Match the voice** - Fit the intended tone (formal, casual, technical). Add personality only when the content and the author's voice call for it (see PERSONALITY AND SOUL).
 
 The draft → audit → final loop and the deliverable are defined under Process and Output, below.
+
+**If the text is in Russian, read [`LANGUAGE-RU.md`](LANGUAGE-RU.md) first.** It overrides §7, §14, §17, §19 and §26 for Russian prose — several of them invert, because the punctuation and heading conventions differ. Applying the English rules to Russian text produces errors, not humanized writing.
 
 
 ## Voice Calibration (Optional)
@@ -169,6 +171,8 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ### 7. Overused "AI Vocabulary" Words
 
+> Russian: this list is English-only. Use the Russian one in [`LANGUAGE-RU.md`](LANGUAGE-RU.md) §7 instead.
+
 **High-frequency AI words:** Actually, additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), pivotal, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
 
 **Problem:** These words appear far more frequently in post-2023 text. They often co-occur.
@@ -258,6 +262,8 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ### 14. Em Dashes (and En Dashes): Cut Them
 
+> Russian: this rule is **cancelled** — the dash is required by Russian punctuation. See [`LANGUAGE-RU.md`](LANGUAGE-RU.md) §14 for what survives of it.
+
 **Rule:** The final rewrite contains no em dashes (—) or en dashes (–). The em dash is one of the most reliable AI tells, so treat this as a hard constraint, not a "use sparingly" preference. Replace each one, in rough order of preference: a period (start a new sentence), a comma (a tight aside), a colon (introducing an explanation), parentheses (a true aside), or restructure the sentence. Also catch spaced em dashes (` — `) and double hyphens (` -- `) used the same way.
 
 **Before:**
@@ -301,6 +307,8 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 
 ### 17. Title Case in Headings
 
+> Russian: **not applicable** — Russian headings are sentence-shaped already. Check for CAPS and a trailing period instead. See [`LANGUAGE-RU.md`](LANGUAGE-RU.md) §17.
+
 **Problem:** AI chatbots capitalize all main words in headings.
 
 **Before:**
@@ -324,6 +332,8 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 
 
 ### 19. Curly Quotation Marks
+
+> Russian: **inverted** — «ёлочки» are correct and straight quotes are the error. See [`LANGUAGE-RU.md`](LANGUAGE-RU.md) §19.
 
 **Problem:** ChatGPT uses curly quotes (“...”) instead of straight quotes ("...").
 
@@ -415,6 +425,8 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 
 
 ### 26. Hyphenated Word Pair Overuse
+
+> Russian: **not applicable** — check for bureaucratic verbal-noun constructions instead. See [`LANGUAGE-RU.md`](LANGUAGE-RU.md) §26.
 
 **Words to watch:** third-party, cross-functional, client-facing, data-driven, decision-making, well-known, high-quality, real-time, long-term, end-to-end
 
@@ -563,7 +575,7 @@ When you see these, lean toward leaving the prose alone — they are evidence of
 1. Read the input carefully and identify every instance of the patterns above.
 2. Write a **draft rewrite**. Check that it reads naturally aloud, varies sentence length, prefers specific details and simple constructions (is/are/has), and keeps the appropriate register.
 3. Ask: **"What makes the below so obviously AI generated?"** Answer briefly with any remaining tells.
-4. Revise into a **final rewrite** that addresses them and contains no em or en dashes (see §14).
+4. Revise into a **final rewrite** that addresses them and contains no em or en dashes (see §14; in Russian the dash stays, see [`LANGUAGE-RU.md`](LANGUAGE-RU.md)).
 
 Deliver the draft, the brief "still-AI" bullets, the final rewrite, and (optionally) a short summary of changes.
 
