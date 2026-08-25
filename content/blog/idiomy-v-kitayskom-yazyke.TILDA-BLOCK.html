@@ -1,0 +1,370 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Идиомы китайского языка (成语): четыре иероглифа, <span class="italic">за которыми стоит целая история</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-25">25 августа 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/idiomy-v-kitayskom-yazyke.png" alt="Идиомы китайского языка 成语 — чэнъюй: четыре иероглифа и притча за ними" width="1200" height="630"></figure>
+
+<p class="passport">Есть момент, который проходит каждый, кто добрался до настоящих текстов. Все слова в предложении знакомы, а смысла нет. Обычно виноват <b class="han-big">成语</b> (chéngyǔ) — четыре знака, которые выглядят как обычные слова, а на деле пересказывают притчу двухтысячелетней давности. Словарь тут не помогает: он честно переводит каждый знак и выдаёт бессмыслицу вроде «сторожить пень, ждать зайца». Разберём, как эти выражения устроены, сколько их на самом деле и почему учить их списком бесполезно.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Чэнъюй</b> — устойчивое выражение почти всегда из четырёх иероглифов, пришедшее из классических текстов. <b>Четыре знака</b> потому, что в древнем языке слово занимало один знак, а четвёрка даёт удобный ритм «два плюс два». <b>Сколько их:</b> в словарях от 18 до 50 тысяч, в живом употреблении несколько сотен, для HSK 5–6 хватает полутора сотен. <b>Дословный перевод</b> даёт картинку, но не смысл: нужна история. <b>Чэнъюй — не пословица:</b> пословица народная и длинная, чэнъюй книжный и работает внутри фразы как одно слово.</p>
+</div>
+
+<h2>Что такое чэнъюй <span class="italic">и почему знаков ровно четыре</span></h2>
+<p>Слово <b class="han-big">成语</b> складывается из 成 (chéng, «сложиться, устояться») и 语 (yǔ, «речь, выражение»): буквально «сложившееся выражение». Это точное название. Чэнъюй не сочиняют — он приходит готовым из книги, притчи или исторического случая, и менять в нём ничего нельзя.</p>
+<p>Четыре знака — не случайность, а след старого языка. В классическом вэньяне почти каждое слово занимало ровно один иероглиф, поэтому четыре знака означали фразу из четырёх слов: подлежащее, сказуемое, дополнение — всё помещалось. Сверху накладывается ритм: четвёрка распадается на две пары, получается такт «та-та · та-та», который легко произнести и легко запомнить. Именно поэтому чэнъюй так удобно вставлять в речь: он звучит как одно длинное слово.</p>
+<p class="note">Оговорка сразу: выражения из трёх, пяти, шести и даже восьми знаков тоже существуют и тоже считаются чэнъюями. Просто их мало — подавляющее большинство четырёхзначные, и именно четвёрку имеют в виду, когда говорят «китайская идиома».</p>
+
+<h2>Сколько идиом в китайском языке — <span class="italic">честный ответ</span></h2>
+<p>На этот вопрос часто отвечают одним числом, и это всегда неправда. Цифра зависит от того, что считать, и разброс огромный.</p>
+<div class="table-wrap">
+<table>
+  <caption>Сколько чэнъюев существует и сколько из них нужно на самом деле.</caption>
+  <thead><tr><th>Где считаем</th><th>Порядок числа</th><th>Что это значит на практике</th></tr></thead>
+  <tbody>
+    <tr><td>Большие словари чэнъюй</td><td>18 000 – 50 000</td><td>разброс из-за вариантов: одни составители считают 一模一样 и 一模二样 разными статьями, другие одной</td></tr>
+    <tr><td>Узнаёт образованный носитель</td><td>несколько тысяч</td><td>узнаёт и понимает в тексте, но сам почти не употребляет</td></tr>
+    <tr><td>Использует в речи и письме</td><td>несколько сотен</td><td>тот самый рабочий запас, ради которого всё и делается</td></tr>
+    <tr><td>Нужно для HSK 5</td><td>около 100</td><td>появляются в текстах и в заданиях на выбор слова</td></tr>
+    <tr><td>Нужно для HSK 6</td><td>около 200</td><td>плюс умение различать близкие по смыслу</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Отсюда простой вывод: пугаться пятидесяти тысяч не нужно. Задача не «выучить все», а собрать свои двести — те, что реально встречаются в текстах вашего уровня. Как растут требования от уровня к уровню, разобрано в статье про <a href="https://kitai-school.ru/article/hsk-5-kak-sdat-universitetskiy-kzamen" target="_blank" rel="noopener">HSK 5</a>.</p>
+
+<h2>Четыре схемы, <span class="italic">по которым собран чэнъюй</span></h2>
+<p>Внутри четвёрки знаков есть грамматика, просто старая. Если увидеть схему, выражение перестаёт быть набором значков и становится читаемым. Схем много, но рабочих — четыре.</p>
+<div class="table-wrap">
+<table>
+  <caption>Основные схемы устройства чэнъюй.</caption>
+  <thead><tr><th>Схема</th><th>Как устроена</th><th>Пример</th><th>Разбор</th></tr></thead>
+  <tbody>
+    <tr><td>Две равные половины</td><td>2 + 2, части симметричны и усиливают друг друга</td><td class="han-cell">山清水秀</td><td>«горы чисты, воды прекрасны» — о красивой местности</td></tr>
+    <tr><td>Кто-то что-то делает</td><td>подлежащее + сказуемое</td><td class="han-cell">愚公移山</td><td>«Юй-гун двигает горы» — упорство побеждает</td></tr>
+    <tr><td>Определение + слово</td><td>первая часть описывает вторую</td><td class="han-cell">井底之蛙</td><td>«лягушка со дна колодца» — человек с узким кругозором</td></tr>
+    <tr><td>Действие за действием</td><td>два глагола подряд, второй — следствие первого</td><td class="han-cell">画蛇添足</td><td>«нарисовав змею, добавить ноги» — испортить лишним</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Полезная деталь: знак <b class="han-big">之</b> (zhī) внутри выражения — почти всегда признак вэньяня. В современном языке его роль играет 的, но в чэнъюй сохранилась старая форма. Увидели 之 — перед вами определение: 井底之蛙 читается как «колодезного дна лягушка».</p>
+
+<h2>Почему буквальный перевод <span class="italic">не работает</span></h2>
+<p>Возьмём самый показательный случай — <b class="han-big">守株待兔</b> (shǒu zhū dài tù). Словарь разложит его безупречно: 守 «сторожить», 株 «пень», 待 «ждать», 兔 «заяц». «Сторожить пень, ждать зайца». И что с этим делать?</p>
+<p>А за выражением стоит притча из «Хань Фэй-цзы». Пахарь работал в поле, заяц на бегу врезался в пень и убился насмерть. Крестьянин забрал добычу, бросил соху и с тех пор сидел у пня, ожидая следующего зайца. Поле заросло, зайцы больше не приходили, а над ним смеялось всё царство. Теперь понятно и без словаря: <b>надеяться на случайную удачу вместо работы</b>.</p>
+<div class="ks-quote">
+  <p>Чэнъюй — это сжатый файл. Четыре знака разворачиваются в целую историю, но только у того, кто эту историю знает.</p>
+  <cite>Поэтому список «идиома — перевод» почти не работает</cite>
+</div>
+<p>Отсюда правило, которое стоит завести сразу: записывайте чэнъюй в три строки — <b>знаки, дословно, смысл</b>. Дословный перевод нужен не для понимания, а чтобы зацепиться за картинку: пень и заяц запоминаются намертво, а «надеяться на удачу» — нет.</p>
+
+<figure class="ks-fig"><img src="assets/idiomy-v-kitayskom-yazyke-razbor.png" alt="Как устроен чэнъюй: четыре знака, схемы сборки, разбор 守株待兔 и отличие от пословицы и недоговорки" loading="lazy" width="1200" height="900"><figcaption>Четыре знака, за которыми стоит притча: как читать чэнъюй и не путать его с пословицей.</figcaption></figure>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Я готовилась к HSK 5 и разбирала газетный заголовок. Все четыре знака были знакомы: 亡 «потерять», 羊 «овца», 补 «чинить», 牢 «загон». «Потеряв овцу, чинить загон». Я перечитала статью трижды и не могла понять, при чём тут овцы, если текст был про банковский кризис.</p>
+  <p>Преподаватель выслушал и рассказал притчу: у человека убежала овца через дыру в загоне, соседи сказали чинить, он отмахнулся — и потерял вторую. Тогда починил, и больше не терял ни одной. Смысл: <b>лучше поздно, чем никогда</b>. Заголовок означал «меры приняли с опозданием, но приняли». Четыре знака вместо целого абзаца.</p>
+  <p>С того дня я перестала выписывать чэнъюй в столбик. Только с историей — иначе через неделю в голове остаются четыре случайных знака и ни одного смысла.</p>
+</div>
+
+<h2>Двадцать чэнъюев, <span class="italic">которые встречаются чаще всего</span></h2>
+<p>Здесь собраны выражения, которые реально попадаются: в новостях, в разговоре, в учебниках HSK. Три колонки перевода — тот самый формат, который стоит переносить в свои карточки.</p>
+<div class="table-wrap">
+<table>
+  <caption>Частые китайские идиомы с переводом и пояснениями.</caption>
+  <thead><tr><th>Чэнъюй</th><th>Пиньинь</th><th>Дословно</th><th>Смысл</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">马马虎虎</td><td>mǎmǎhūhū</td><td>«лошадь-лошадь, тигр-тигр»</td><td>так себе, спустя рукава</td></tr>
+    <tr><td class="han-cell">乱七八糟</td><td>luànqībāzāo</td><td>«беспорядок семь, месиво восемь»</td><td>полный бардак</td></tr>
+    <tr><td class="han-cell">一举两得</td><td>yìjǔliǎngdé</td><td>«одним действием два приобретения»</td><td>убить двух зайцев</td></tr>
+    <tr><td class="han-cell">入乡随俗</td><td>rùxiāngsuísú</td><td>«вошёл в село — следуй обычаям»</td><td>в чужой монастырь со своим уставом не ходят</td></tr>
+    <tr><td class="han-cell">画蛇添足</td><td>huàshétiānzú</td><td>«нарисовав змею, добавить ноги»</td><td>испортить лишним, переусердствовать</td></tr>
+    <tr><td class="han-cell">守株待兔</td><td>shǒuzhūdàitù</td><td>«сторожить пень, ждать зайца»</td><td>надеяться на удачу вместо работы</td></tr>
+    <tr><td class="han-cell">亡羊补牢</td><td>wángyángbǔláo</td><td>«потеряв овцу, чинить загон»</td><td>лучше поздно, чем никогда</td></tr>
+    <tr><td class="han-cell">自相矛盾</td><td>zìxiāngmáodùn</td><td>«своё копьё против своего щита»</td><td>противоречить самому себе</td></tr>
+    <tr><td class="han-cell">井底之蛙</td><td>jǐngdǐzhīwā</td><td>«лягушка со дна колодца»</td><td>узкий кругозор</td></tr>
+    <tr><td class="han-cell">对牛弹琴</td><td>duìniútánqín</td><td>«играть на цине корове»</td><td>говорить с тем, кто не поймёт</td></tr>
+    <tr><td class="han-cell">掩耳盗铃</td><td>yǎn'ěrdàolíng</td><td>«заткнув уши, красть колокольчик»</td><td>обманывать самого себя</td></tr>
+    <tr><td class="han-cell">塞翁失马</td><td>sàiwēngshīmǎ</td><td>«старик с заставы потерял коня»</td><td>не было бы счастья, да несчастье помогло</td></tr>
+    <tr><td class="han-cell">半途而废</td><td>bàntú'érfèi</td><td>«на полпути и бросить»</td><td>не довести до конца</td></tr>
+    <tr><td class="han-cell">全力以赴</td><td>quánlìyǐfù</td><td>«всеми силами устремиться»</td><td>выложиться полностью</td></tr>
+    <tr><td class="han-cell">三心二意</td><td>sānxīn'èryì</td><td>«три сердца, два помысла»</td><td>распыляться, не решаться</td></tr>
+    <tr><td class="han-cell">一目了然</td><td>yímùliǎorán</td><td>«одним глазом — и ясно»</td><td>понятно с первого взгляда</td></tr>
+    <tr><td class="han-cell">恍然大悟</td><td>huǎngrándàwù</td><td>«внезапно великое прозрение»</td><td>вдруг всё понять</td></tr>
+    <tr><td class="han-cell">不可思议</td><td>bùkěsīyì</td><td>«невозможно помыслить»</td><td>невероятно, уму непостижимо</td></tr>
+    <tr><td class="han-cell">心血来潮</td><td>xīnxuèláicháo</td><td>«кровь сердца приливом»</td><td>накатило, вдруг захотелось</td></tr>
+    <tr><td class="han-cell">一帆风顺</td><td>yìfānfēngshùn</td><td>«парус под попутным ветром»</td><td>пусть всё идёт гладко — пожелание</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Первые два в списке стоят особняком: <b class="han-big">马马虎虎</b> и <b class="han-big">乱七八糟</b> звучат совсем разговорно, их спокойно говорят друзьям. Остальные ближе к книжной речи — в дружеской болтовне они прозвучат так же, как русское «сие обстоятельство».</p>
+
+<h2>Чэнъюй, пословица и недоговорка — <span class="italic">это разные вещи</span></h2>
+<p>Слово «идиома» в русских подборках накрывает всё подряд, а в китайском это четыре разных класса выражений, и путать их не стоит.</p>
+<div class="table-wrap">
+<table>
+  <caption>Чем чэнъюй отличается от других устойчивых выражений.</caption>
+  <thead><tr><th>Тип</th><th>Что это</th><th>Пример</th><th>Как ведёт себя во фразе</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han-cell">成语</b><br>chéngyǔ</td><td>книжная идиома, почти всегда 4 знака, из классики</td><td class="han-cell">画蛇添足</td><td>работает внутри предложения как одно слово</td></tr>
+    <tr><td><b class="han-cell">谚语</b><br>yànyǔ</td><td>народная пословица, длиннее, житейский опыт</td><td class="han-cell">早起的鸟儿有虫吃</td><td>обычно сама себе целое предложение</td></tr>
+    <tr><td><b class="han-cell">歇后语</b><br>xiēhòuyǔ</td><td>недоговорка из двух частей: образ и разгадка</td><td class="han-cell">泥菩萨过河</td><td>вторую половину («сам себя не спасёт») слушатель договаривает</td></tr>
+    <tr><td><b class="han-cell">俗语</b><br>súyǔ</td><td>просто разговорный устойчивый оборот</td><td class="han-cell">开夜车</td><td>вставляется в речь свободно, «сидеть всю ночь»</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Практическая разница вот в чём. Чэнъюй можно поставить внутрь предложения как определение или сказуемое: 他做事马马虎虎 — «он делает всё спустя рукава». Пословицу так не вставишь, её приводят целиком и обычно с оговоркой «как говорится». А недоговорка вообще рассчитана на то, что собеседник знает продолжение, — это языковая игра, и иностранцу она даётся последней.</p>
+
+<h2>Пять ошибок, <span class="italic">на которых спотыкаются все</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Типичные ошибки в употреблении чэнъюй.</caption>
+  <thead><tr><th>Ошибка</th><th>Что происходит</th><th>Как правильно</th></tr></thead>
+  <tbody>
+    <tr><td>Вставлять в бытовой разговор</td><td>книжное выражение в болтовне звучит как цитата из передовицы</td><td>сначала слушать, где их употребляют носители, и повторять эти контексты</td></tr>
+    <tr><td>Не проверять окраску</td><td>у части чэнъюй значение осуждающее, хотя дословный перевод нейтрален</td><td>помечать в карточке: одобрительное, нейтральное, осуждающее</td></tr>
+    <tr><td>Путать похожие знаки</td><td>一如既往 «как и прежде» пишут через 即 — выражение рассыпается</td><td>заучивать написание целиком, а не по частям</td></tr>
+    <tr><td>Переводить с русского</td><td>«убить двух зайцев» превращается в кальку, которой в китайском нет</td><td>искать китайский аналог: 一举两得</td></tr>
+    <tr><td>Брать выражение без истории</td><td>смысл держится на притче, без неё употребление наугад</td><td>одно выражение — одна история, иначе не берём</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Отдельный случай — <b class="han-big">空穴来风</b> (kōngxuéláifēng). Изначально оно значило «ветер дует не из пустой норы», то есть «слухи возникли не на пустом месте». Сегодня подавляющее большинство говорящих употребляет его ровно наоборот — «выдумки на ровном месте», и словари уже фиксируют оба значения. Если встретите его в тексте, смотрите на контекст, а не на этимологию.</p>
+
+<h2>Как их учить, <span class="italic">чтобы они остались</span></h2>
+<p>Метод, который работает и у меня, и у учеников, укладывается в четыре пункта.</p>
+<div class="table-wrap">
+<table>
+  <caption>Рабочая схема освоения чэнъюй.</caption>
+  <thead><tr><th>Шаг</th><th>Что делаем</th><th>Зачем</th></tr></thead>
+  <tbody>
+    <tr><td>1. Три строки</td><td>знаки, дословный перевод, смысл</td><td>картинка цепляет память, смысл даёт употребление</td></tr>
+    <tr><td>2. История</td><td>две-три фразы про притчу или случай</td><td>без сюжета выражение выветривается за неделю</td></tr>
+    <tr><td>3. Своё предложение</td><td>сразу составить фразу про себя или работу</td><td>переводит из узнавания в активный запас</td></tr>
+    <tr><td>4. Три-пять в неделю</td><td>не больше, зато с возвратом через месяц</td><td>двадцать за вечер не остаются вообще</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Заодно чэнъюй хорошо тренирует разбор знаков: в этих выражениях часто встречаются иероглифы, которые в современном языке почти не используются, и понять их проще всего по ключу. Про то, как ключ подсказывает смысл, есть <a href="https://kitai-school.ru/article/znachenie-kluchey-v-kitayskih-ieroglifah" target="_blank" rel="noopener">отдельный разбор</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое чэнъюй?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Чэнъюй (成语) — устойчивое выражение китайского языка, почти всегда из четырёх иероглифов. Оно пришло из классических текстов, притч и исторических случаев, поэтому за каждым стоит сюжет. Грамматика внутри чэнъюй старая, вэньянная, и по современным правилам она часто не разбирается.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько идиом в китайском языке?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В больших словарях от восемнадцати до пятидесяти тысяч — разброс потому, что одни составители считают варианты одного выражения отдельными статьями, а другие нет. Реально узнаёт носитель несколько тысяч, активно использует несколько сотен. Для HSK 5 и 6 достаточно освоить примерно сто пятьдесят.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему в чэнъюй четыре иероглифа?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Они выросли из классического языка, где почти каждое слово занимало один знак: четыре знака — это фраза из четырёх слов. Плюс ритм: четвёрка распадается на две пары, и получается устойчивый такт, который легко запомнить и вставить в речь. Чэнъюй из трёх, пяти и больше знаков есть, но их немного.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем чэнъюй отличается от пословицы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Чэнъюй книжный, короткий и работает внутри предложения как одно слово. Пословица (谚语) — народная, длиннее и обычно сама себе предложение. Есть ещё недоговорки (歇后语) из двух частей, где вторую половину слушатель договаривает сам.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли переводить чэнъюй дословно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Дословный перевод нужен, чтобы увидеть картинку, но смысла он не даёт. «Сторожить пень и ждать зайца» без притчи звучит как бессмыслица, а значит выражение «надеяться на случайную удачу, ничего не делая». Поэтому чэнъюй записывают в три строки: знаки, дословно, смысл.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько чэнъюев нужно знать для HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>До HSK 4 они почти не встречаются. На HSK 5 появляются регулярно, в текстах и заданиях на выбор слова, и там комфортно чувствуешь себя примерно со ста выражениями. На HSK 6 планка выше: нужно около двухсот и умение различать близкие по смыслу.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Чэнъюй — та точка, где китайский перестаёт быть набором слов и становится языком с историей. На <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсах Kitai School</a> мы разбираем их так, как здесь: с притчей, с контекстом и с собственным примером. Диагностический урок — бесплатный.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>ИДИОМА</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — пришлём подборку с историями.</p>
+</div>
+
+<p>Дальше по теме: как ключ подсказывает смысл знака — <a href="https://kitai-school.ru/article/znachenie-kluchey-v-kitayskih-ieroglifah" target="_blank" rel="noopener">значение ключей в иероглифах</a>; из чего вообще состоит письменность — <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost" target="_blank" rel="noopener">буквы или иероглифы</a>; трезво о сроках — <a href="https://kitai-school.ru/article/slojno-li-uchit-kitayskiy-s-nulya" target="_blank" rel="noopener">сложно ли учить китайский с нуля</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><a href="https://ru.wikipedia.org/wiki/Чэнъюй" target="_blank" rel="noopener nofollow">Википедия: Чэнъюй</a> — определение и структура.</li>
+    <li><a href="https://ru.wikipedia.org/wiki/Вэньянь" target="_blank" rel="noopener nofollow">Википедия: Вэньянь</a> — классический язык, из которого выросли чэнъюй.</li>
+    <li>«Хань Фэй-цзы» — источник притчи 守株待兔.</li>
+    <li>«Хуайнань-цзы» — источник притчи 塞翁失马.</li>
+    <li>Практика Kitai School — какие выражения ученики встречают первыми и где чаще всего ошибаются.</li>
+  </ol>
+</div>
+
+<p class="sign">Не бросайте на полпути! <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Разбираем чэнъюй с притчей и контекстом, а не списком — первый урок бесплатно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
