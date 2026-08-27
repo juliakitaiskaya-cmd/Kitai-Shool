@@ -1,0 +1,414 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kursy-dlya-prepodavateley-kitayskogo-yazyka#article",
+      "headline": "Преподавать китайский как профи: чек-лист по выбору курсов повышения квалификации",
+      "description": "Как преподавателю китайского выбрать программу повышения квалификации: чем язык отличается от методики, пять зон для диагностики, восемь вопросов организатору курса, красные флаги и разбор того, какие документы что дают.",
+      "inLanguage": "ru",
+      "datePublished": "2026-08-27",
+      "dateModified": "2026-08-27",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kursy-dlya-prepodavateley-kitayskogo-yazyka",
+      "about": {
+        "@type": "Thing",
+        "name": "Повышение квалификации преподавателя китайского языка",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Китайский_язык",
+          "https://ru.wikipedia.org/wiki/Повышение_квалификации"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Чем курсы для преподавателей отличаются от обычных курсов китайского?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Обычный курс поднимает ваш уровень языка. Курс для преподавателей должен решать две задачи сразу: язык плюс методика преподавания китайского как иностранного. Это разные вещи, и хорошая программа их разделяет. Если в описании курса нет ни слова про то, как объяснять тоны, иероглифику и грамматику, перед вами просто языковой курс с другим названием."}},
+        {"@type": "Question", "name": "С чего начать, если преподаю давно, но чувствую пробелы?",
+         "acceptedAnswer": {"@type": "Answer", "text": "С диагностики собственной речи. Произношение — единственная зона, где ошибка преподавателя переходит всем ученикам сразу, и заметить её самостоятельно почти невозможно: своё звучание мы слышим не так, как окружающие. Запишите себя на диктофон и дайте послушать носителю или коллеге. Всё остальное — методику, материалы, работу с мотивацией — можно добирать постепенно."}},
+        {"@type": "Question", "name": "Что такое 对外汉语 и нужно ли это преподавателю?",
+         "acceptedAnswer": {"@type": "Answer", "text": "对外汉语 (duìwài hànyǔ) — «китайский как иностранный», отдельная специальность в китайских вузах со своей методикой. Она отвечает на вопросы, которых нет в обычной филологии: в каком порядке давать тоны, как вводить иероглифы, чем объяснять отсутствие времён. Специально получать эту специальность необязательно, но знать её подходы полезно — на них построены современные учебники."}},
+        {"@type": "Question", "name": "Какие документы бывают по итогам курса?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Три разных вещи. Удостоверение о повышении квалификации выдают только организации с образовательной лицензией, оно идёт в трудовую биографию. Международный сертификат преподавателя китайского выдаёт китайская сторона по итогам отдельного экзамена, к курсу он не привязан. Внутренний сертификат школы документом не является — это строчка в портфолио, и подавать его как «международный образец» некорректно."}},
+        {"@type": "Question", "name": "Сколько должен длиться нормальный курс?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Смотрите не на срок, а на объём обратной связи. Программа, где вам разбирают ваши записи и ваши уроки, работает даже за месяц; курс из одних видеозаписей не даст результата и за полгода. Обещание «сделаем из вас методиста за выходные» — повод закрыть страницу: за два дня можно дать обзор подходов, но не поставить навык."}},
+        {"@type": "Question", "name": "Обязательно ли, чтобы вёл носитель языка?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Нужны оба. Носитель слышит в вашей речи то, чего не слышит русскоязычный коллега, и даёт живой язык. Русскоязычный методист понимает, где именно спотыкается русскоговорящий ученик, и умеет объяснить это по-русски. Программа только с носителями рискует не заметить ваших типичных ошибок, программа без них — законсервировать акцент."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Курсы для преподавателей китайского"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Преподавателям</p>
+<h1>Преподавать китайский как профи: чек-лист по выбору <span class="italic">курсов повышения квалификации</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-27">27 августа 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/kursy-dlya-prepodavateley-kitayskogo-yazyka.png" alt="Курсы для преподавателей китайского языка: язык и методика — две разные задачи" width="1200" height="630"></figure>
+
+<p class="passport">Эта статья — для коллег. Преподаватель китайского оказывается в необычном положении: он одновременно должен <b>владеть языком</b>, который сам продолжает учить всю жизнь, и <b>уметь его объяснять</b> — а это отдельная профессия со своей теорией. Курсы повышения квалификации обещают закрыть и то и другое, но чаще закрывают что-то одно, не говоря об этом прямо. Разберём, как понять, чего не хватает именно вам, и по каким признакам выбрать программу, которая это даст.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Язык и методика — два разных курса</b>, и их постоянно продают под одной вывеской. Начинать стоит с <b>диагностики собственного произношения</b>: это единственная зона, где ошибка преподавателя переходит всем ученикам сразу. В хорошей программе есть и <b>носитель, и русскоязычный методист</b>, а главное — <b>обратная связь по вашей речи и вашим урокам</b>, а не одни видеозаписи. <b>Документы</b> бывают трёх видов, и «международный сертификат» школы без указания, кто его выдаёт, документом не является.</p>
+</div>
+
+<h2>Два разных запроса, <span class="italic">которые постоянно путают</span></h2>
+<p>Когда преподаватель говорит «хочу на курсы», за этим стоит один из двух запросов — а иногда оба сразу, но человек этого не разделяет. И курсы, кстати, тоже не всегда разделяют.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что именно вы хотите поднять.</caption>
+  <thead><tr><th>Запрос</th><th>Что нужно</th><th>Как выглядит подходящая программа</th></tr></thead>
+  <tbody>
+    <tr><td><b>Свой язык</b></td><td>произношение, беглость, современная лексика, чтение без словаря</td><td>занятия с носителем, разбор ваших записей, много говорения</td></tr>
+    <tr><td><b>Методика</b></td><td>как объяснять тоны, вводить иероглифы, строить урок, держать мотивацию</td><td>теория преподавания китайского как иностранного, разбор ваших уроков, готовые приёмы</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Проверить программу на это легко. Откройте описание курса и поищите, сказано ли там <b>хоть что-то о том, как объяснять</b>. Если весь план состоит из тем вроде «продвинутая грамматика» и «деловая лексика», перед вами языковой курс — возможно, отличный, но методики в нём нет. И наоборот: если про язык не сказано ни слова, ваше собственное произношение там никто не тронет.</p>
+<p class="note">Честный ответ на вопрос «что важнее» зависит от стажа. Начинающему преподавателю с хорошим языком нужнее методика. Опытному, который двадцать лет ведёт уроки по одним и тем же материалам, чаще нужнее <b>язык</b>: он законсервировался на уровне, до которого дошёл когда-то, и заметить это самостоятельно почти невозможно.</p>
+
+<h2>Чек-лист: чего не хватает <span class="italic">именно вам</span></h2>
+<p>Прежде чем выбирать курс, стоит понять, какую дыру вы закрываете. Пять зон и способ проверить каждую.</p>
+<div class="table-wrap">
+<table>
+  <caption>Диагностика по пяти зонам.</caption>
+  <thead><tr><th>Зона</th><th>Как проверить себя</th><th>Тревожный сигнал</th></tr></thead>
+  <tbody>
+    <tr><td><b>Произношение</b></td><td>записать десять минут своей речи и дать послушать носителю</td><td>носитель дважды переспрашивает или мягко повторяет за вами слово</td></tr>
+    <tr><td><b>Беглость и актуальность языка</b></td><td>посмотреть китайское видео без субтитров, послушать подкаст</td><td>понимаете учебные диалоги, но теряетесь на живой речи</td></tr>
+    <tr><td><b>Методика</b></td><td>объяснить вслух, почему в китайском нет времён и чем они заменяются</td><td>объяснение сводится к «просто запомните»</td></tr>
+    <tr><td><b>Иероглифика</b></td><td>показать ученику, как разобрать незнакомый знак по составу</td><td>сами учили знаки как картинки и так же их даёте</td></tr>
+    <tr><td><b>Удержание учеников</b></td><td>посмотреть, сколько человек доходит до конца вашего курса</td><td>уходят после первых уроков с тонами</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Последняя строка обычно оказывается неожиданной. Отток на тонах — это почти всегда не про сложность языка, а про то, <b>как тоны были поданы</b>: если ученик услышал «просто запомните мелодию», он уходит. Значит, дыра не в языке преподавателя, а в методике.</p>
+
+<h2>Произношение: <span class="italic">почему это первый пункт</span></h2>
+<p>Из всех зон эта одна особенная, и вот почему. Ошибка в методике портит один урок. Ошибка в произношении преподавателя <b>переходит всем ученикам сразу</b> и остаётся с ними на годы.</p>
+<div class="ks-quote">
+  <p>Ученик копирует не то, что вы объясняете, а то, как вы звучите.</p>
+  <cite>Поэтому диагностику стоит начинать с себя, а не с методики</cite>
+</div>
+<p>Отдельная сложность в том, что <b>собственное произношение услышать почти невозможно</b>. Мы слышим себя через кости черепа, а не так, как нас слышат окружающие, и мозг достраивает то, что мы хотели сказать. Единственный работающий способ — запись и внешнее ухо: носитель, коллега или преподаватель-фонетист.</p>
+<p class="note">Типичные места, где спотыкаются даже опытные русскоязычные преподаватели: ретрофлексные <b class="han-big">zh, ch, sh, r</b>, разница между <b class="han-big">四</b> и <b class="han-big">十</b>, третий тон в потоке речи и <b>изменение тона у 一 и 不</b>. Что именно с этим делать, разобрано в статье про <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировку произношения</a>.</p>
+
+<figure class="ks-fig"><img src="assets/kursy-dlya-prepodavateley-kitayskogo-yazyka-checklist.png" alt="Чек-лист выбора курсов для преподавателей китайского: пять зон, восемь вопросов и красные флаги" loading="lazy" width="1200" height="900"><figcaption>Пять зон для диагностики, вопросы организатору курса и красные флаги.</figcaption></figure>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Я преподавала уже несколько лет, когда на конференции разговорилась с китайским коллегой. Он был безупречно вежлив, но дважды за разговор мягко переспросил — и оба раза на одном и том же месте. Я списала на шум в зале.</p>
+  <p>Дома записала себя на диктофон и послушала. Место было одно: мой третий тон в середине фразы. В упражнениях он звучал идеально, а в живой речи я его проглатывала — годами, не замечая. И, разумеется, ученики повторяли за мной ровно это.</p>
+  <p>Переучивалась я дольше, чем учила изначально: сломать привычку сложнее, чем поставить с нуля. Зато с тех пор я знаю две вещи наверняка. Первая: слышать своё произношение нельзя, нужно внешнее ухо. Вторая: то, что мы преподаём, стоит проверять хотя бы раз в несколько лет — не из недоверия к себе, а потому что навык дрейфует незаметно.</p>
+</div>
+
+<h2>Восемь вопросов, <span class="italic">которые стоит задать до оплаты</span></h2>
+<p>Описание курса на сайте почти всегда звучит хорошо. Настоящую картину дают ответы на конкретные вопросы — и то, насколько охотно на них отвечают.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что спросить у организатора курса.</caption>
+  <thead><tr><th>Вопрос</th><th>Какой ответ хороший</th></tr></thead>
+  <tbody>
+    <tr><td>1. Кто ведёт занятия?</td><td class="ok">и носитель, и русскоязычный методист — они видят разное</td></tr>
+    <tr><td>2. Будет ли обратная связь по моей речи?</td><td class="ok">да, с разбором записей, а не «слушайте лекции»</td></tr>
+    <tr><td>3. Разбирают ли мои уроки?</td><td class="ok">да, вы показываете свой урок и получаете разбор</td></tr>
+    <tr><td>4. Есть ли практика с настоящими учениками?</td><td class="ok">да, хотя бы демо-уроки внутри группы</td></tr>
+    <tr><td>5. Дают ли материалы и можно ли их использовать?</td><td class="ok">да, с прямым разрешением применять на своих уроках</td></tr>
+    <tr><td>6. Какой документ на выходе?</td><td class="ok">названо конкретно: удостоверение, сертификат школы или ничего</td></tr>
+    <tr><td>7. Есть ли у организации лицензия?</td><td class="ok">номер лицензии называют сразу, без уточняющих вопросов</td></tr>
+    <tr><td>8. Что делать, если не получается?</td><td class="ok">есть поддержка между занятиями, а не только расписание</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Обратите внимание на вопросы 2 и 3 — они главные. <b>Курс без обратной связи не меняет навык</b>, он только расширяет кругозор. Это не плохо само по себе, просто нужно понимать, за что вы платите: за информацию или за изменения в собственной работе.</p>
+
+<h2>Красные флаги</h2>
+<div class="table-wrap">
+<table>
+  <caption>Что должно насторожить в описании курса.</caption>
+  <thead><tr><th>Формулировка</th><th>Что за ней стоит</th></tr></thead>
+  <tbody>
+    <tr><td class="bad">«Станьте методистом за выходные»</td><td>за два дня можно дать обзор подходов, но не поставить навык</td></tr>
+    <tr><td class="bad">«Сертификат международного образца»</td><td>без указания, кто именно выдаёт, это просто красивая бумага</td></tr>
+    <tr><td class="bad">Только видеозаписи</td><td>нет обратной связи — нет изменений в вашей работе</td></tr>
+    <tr><td class="bad">Программа без единого слова о методике</td><td>это языковой курс под другим названием</td></tr>
+    <tr><td class="bad">Нет ни одного имени преподавателя</td><td>непонятно, чей опыт вы перенимаете</td></tr>
+    <tr><td class="bad">«Гарантируем поток учеников»</td><td>поток зависит от вашей работы и продвижения, а не от курса</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Документы: <span class="italic">какая бумага что даёт</span></h2>
+<p>Здесь три разные вещи, которые в рекламе часто смешивают в одну.</p>
+<div class="table-wrap">
+<table>
+  <caption>Виды документов по итогам обучения.</caption>
+  <thead><tr><th>Документ</th><th>Кто выдаёт</th><th>Что даёт</th></tr></thead>
+  <tbody>
+    <tr><td>Удостоверение о повышении квалификации</td><td>организация с образовательной лицензией</td><td>официальный документ, идёт в трудовую биографию</td></tr>
+    <tr><td>Международный сертификат преподавателя китайского</td><td>китайская сторона, по итогам отдельного экзамена</td><td>признаётся в китайских программах; к курсу не привязан</td></tr>
+    <tr><td>Внутренний сертификат школы</td><td>сама школа</td><td>строчка в портфолио, документом не является</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Оговорка про международный сертификат: он получается <b>сдачей экзамена</b>, а не окончанием курса. Курс может к нему готовить — это нормально и полезно, — но обещание «выдадим по итогам» стоит уточнять предметно. Требования и формат экзамена меняются, поэтому актуальные условия всегда смотрите у самой китайской стороны, а не в описании курса.</p>
+<p>Ещё одно понятие, которое полезно знать: <b class="han-big">对外汉语</b> (duìwài hànyǔ) — «китайский как иностранный». Это отдельная специальность в китайских вузах со своей методикой, и она отвечает на вопросы, которых нет в обычной филологии: в каком порядке давать тоны, как вводить иероглифы, чем заменить объяснение времён. Получать эту специальность необязательно, но её подходы лежат в основе современных учебников, и понимать их логику стоит.</p>
+
+<h2>Что мы даём <span class="italic">в своей программе</span></h2>
+<p>Раз уж мы разбираем чек-лист, честно приложим к нему себя. У Kitai School есть <a href="https://kitai-school.ru/teachers" target="_blank" rel="noopener">программа для преподавателей</a>, и построена она ровно по этим пунктам: работа с собственным языком вместе с носителем, методика от русскоязычных методистов, разбор ваших записей и ваших уроков.</p>
+<p>Отдельно про документ: школа работает по образовательной лицензии, номер указан внизу каждой страницы, поэтому мы говорим о нём прямо, а не прячем за формулировкой «международный образец». Что именно входит в программу и в каком формате идут занятия — на <a href="https://kitai-school.ru/teachers" target="_blank" rel="noopener">странице для педагогов</a>.</p>
+<p class="note">И совет, который стоит дать независимо от того, к кому вы пойдёте: <b>перед оплатой попросите пробное занятие или разбор одной вашей записи</b>. Пятнадцать минут обратной связи скажут о программе больше, чем вся страница с описанием.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем курсы для преподавателей отличаются от обычных курсов китайского?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Обычный курс поднимает ваш уровень языка. Курс для преподавателей должен решать две задачи сразу: язык плюс методика преподавания китайского как иностранного. Это разные вещи, и хорошая программа их разделяет. Если в описании курса нет ни слова про то, как объяснять тоны, иероглифику и грамматику, перед вами просто языковой курс с другим названием.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С чего начать, если преподаю давно, но чувствую пробелы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>С диагностики собственной речи. Произношение — единственная зона, где ошибка преподавателя переходит всем ученикам сразу, и заметить её самостоятельно почти невозможно: своё звучание мы слышим не так, как окружающие. Запишите себя на диктофон и дайте послушать носителю или коллеге. Всё остальное — методику, материалы, работу с мотивацией — можно добирать постепенно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое 对外汉语 и нужно ли это преподавателю?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>对外汉语 (duìwài hànyǔ) — «китайский как иностранный», отдельная специальность в китайских вузах со своей методикой. Она отвечает на вопросы, которых нет в обычной филологии: в каком порядке давать тоны, как вводить иероглифы, чем объяснять отсутствие времён. Специально получать эту специальность необязательно, но знать её подходы полезно — на них построены современные учебники.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие документы бывают по итогам курса?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Три разных вещи. Удостоверение о повышении квалификации выдают только организации с образовательной лицензией, оно идёт в трудовую биографию. Международный сертификат преподавателя китайского выдаёт китайская сторона по итогам отдельного экзамена, к курсу он не привязан. Внутренний сертификат школы документом не является — это строчка в портфолио, и подавать его как «международный образец» некорректно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько должен длиться нормальный курс?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Смотрите не на срок, а на объём обратной связи. Программа, где вам разбирают ваши записи и ваши уроки, работает даже за месяц; курс из одних видеозаписей не даст результата и за полгода. Обещание «сделаем из вас методиста за выходные» — повод закрыть страницу: за два дня можно дать обзор подходов, но не поставить навык.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Обязательно ли, чтобы вёл носитель языка?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нужны оба. Носитель слышит в вашей речи то, чего не слышит русскоязычный коллега, и даёт живой язык. Русскоязычный методист понимает, где именно спотыкается русскоговорящий ученик, и умеет объяснить это по-русски. Программа только с носителями рискует не заметить ваших типичных ошибок, программа без них — законсервировать акцент.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Если хотите начать с диагностики, а не с покупки курса — приходите. Посмотрим на ваш язык и вашу методику, скажем честно, где дыра, и только потом обсудим, нужна ли вам <a href="https://kitai-school.ru/teachers" target="_blank" rel="noopener">программа для преподавателей</a>. Первая встреча — бесплатная.</p>
+  <p><a class="btn" href="https://kitai-school.ru/teachers" target="_blank" rel="noopener">Открыть программу для педагогов →</a></p>
+  <p>Или напишите слово <b>ПРЕПОДАВАТЕЛЬ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — разберём вашу ситуацию.</p>
+</div>
+
+<p>Дальше по теме: что делать с собственным акцентом — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>; как объяснять устройство знака — <a href="https://kitai-school.ru/article/znachenie-kluchey-v-kitayskih-ieroglifah" target="_blank" rel="noopener">значение ключей в иероглифах</a>; что реально трудно ученику — <a href="https://kitai-school.ru/article/slojno-li-uchit-kitayskiy-s-nulya" target="_blank" rel="noopener">сложно ли учить китайский с нуля</a>; обучение команд — <a href="https://kitai-school.ru/article/korporativnyy-kitayskiy-zachem-kompanii-vkladyvautsya-v-obuchenie" target="_blank" rel="noopener">корпоративный китайский</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — работа с преподавателями китайского и разбор их уроков.</li>
+    <li>Методика 对外汉语 — преподавание китайского как иностранного, подходы к порядку подачи материала.</li>
+    <li>Требования к документам о повышении квалификации в организациях с образовательной лицензией.</li>
+  </ol>
+</div>
+
+<p class="sign">Коллеги, удачи в работе! <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/teachers" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h13a2 2 0 0 1 2 2v13"/><path d="M3 5v12a2 2 0 0 0 2 2h11"/><path d="M21 8v11a2 2 0 0 1-2 2H8"/></svg>Преподавателям</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Программа для преподавателей: язык, методика и разбор ваших уроков</p>
+    <a class="side-btn" href="https://kitai-school.ru/teachers" target="_blank" rel="noopener">Программа для педагогов →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
