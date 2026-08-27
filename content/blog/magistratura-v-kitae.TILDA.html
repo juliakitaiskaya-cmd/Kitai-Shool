@@ -1,0 +1,498 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/magistratura-v-kitae#article",
+      "headline": "Магистратура в Китае: лексический навигатор по языку университета",
+      "description": "Какой китайский нужен в магистратуре сверх HSK: люди вокруг вас, учебный процесс, два диплома, путь работы от 开题 до 答辩, университетская бюрократия и двадцать фраз, которые нужны с первого дня.",
+      "inLanguage": "ru",
+      "datePublished": "2026-08-27",
+      "dateModified": "2026-08-27",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/magistratura-v-kitae",
+      "about": {
+        "@type": "Thing",
+        "name": "Магистратура в Китае",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Магистр",
+          "https://ru.wikipedia.org/wiki/Образование_в_Китае"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какой уровень HSK нужен для магистратуры в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Для программ на китайском языке чаще всего просят HSK 4 или HSK 5, но требование зависит от вуза и направления, а для англоязычных программ китайский может не требоваться вовсе — там смотрят на IELTS или TOEFL. Точную планку всегда сверяйте на странице конкретной программы: она меняется. И держите в голове главное: сертификат открывает дверь, а учиться вы будете на языке, который HSK не проверяет."}},
+        {"@type": "Question", "name": "Чем 研究生 отличается от 硕士?",
+         "acceptedAnswer": {"@type": "Answer", "text": "研究生 (yánjiūshēng) — это статус: человек, который учится после бакалавриата, независимо от того, магистрант он или аспирант. 硕士 (shuòshì) — конкретно степень магистра, а магистрант будет 硕士生 (shuòshìshēng). В разговоре вас почти всегда назовут 研究生, а в документах будет стоять 硕士."}},
+        {"@type": "Question", "name": "Правда ли, что в Китае дают два диплома?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Да, и это регулярно застаёт врасплох. 毕业证 (bìyèzhèng) подтверждает, что вы прошли программу, а 学位证 (xuéwèizhèng) — что вам присвоена степень. Это два разных документа, и бывает так, что человек получает первый и не получает второй: например, если диссертация не прошла защиту. Оба вместе называют 双证 (shuāngzhèng) — именно их и стоит спрашивать, когда речь идёт о результате обучения."}},
+        {"@type": "Question", "name": "Что такое 组会 и обязательно ли на него ходить?",
+         "acceptedAnswer": {"@type": "Answer", "text": "组会 (zǔhuì) — регулярная встреча научной группы с руководителем, где по очереди докладывают о ходе работы. В лабораториях и на технических направлениях это еженедельный ритуал, на гуманитарных бывает реже. Ходить обязательно: пропуски читаются не как «занят», а как «не заинтересован», и это заметно влияет на отношение руководителя."}},
+        {"@type": "Question", "name": "Как понимать лекции, если преподаватель говорит быстро?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Первое — просить 课件 (kèjiàn), слайды, заранее: прочитанный термин на слух узнаётся в разы легче. Второе — спрашивать разрешения записывать: 我可以录音吗？ Третье и главное — не пытаться понять всё. Гораздо полезнее уметь переспросить: 不好意思，我没太听懂，能再说一遍吗？ и 我理解得对吗？ Эти две фразы за первый семестр спасают больше, чем лишняя тысяча слов."}},
+        {"@type": "Question", "name": "Сколько стоит магистратура в Китае и есть ли бесплатные варианты?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Стоимость сильно зависит от вуза, города и направления, а бесплатные места существуют: это стипендии CSC, вузовские и провинциальные программы. Здесь мы этот вопрос подробно не разбираем, чтобы не повторяться: он разобран в отдельных статьях про поступление на бюджет и про гранты на обучение в Китае. Суммы и правила пересматриваются, поэтому актуальные цифры смотрите на сайте вуза и китайской стороны."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Магистратура в Китае"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Учёба в Китае</p>
+<h1>Магистратура в Китае: <span class="italic">лексический навигатор по языку университета</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-08-27">27 августа 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/magistratura-v-kitae.png" alt="Магистратура в Китае: слой языка, который начинается после HSK" width="1200" height="630"></figure>
+
+<p class="passport">Сертификат HSK получен, документы поданы, виза в паспорте. А в первую же неделю выясняется, что в деканате говорят не теми словами, что были в учебнике, соученики зовут друг друга <b class="han-big">师兄</b> и <b class="han-big">师姐</b>, а от вас на встрече научной группы ждут какого-то <b class="han-big">汇报</b>. <b>HSK проверяет язык вообще — университет требует язык конкретный.</b> Эта статья про тот слой лексики, который начинается там, где заканчивается экзамен: люди, процедуры, научная работа и фразы, без которых первый месяц превращается в беготню по кабинетам.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Между HSK и учёбой три разрыва: <b>процедурный</b> язык (报到, 盖章, 注册), <b>социальный</b> (师兄, 师姐, 同门) и <b>академический</b> (开题, 查重, 答辩). Ни один из них экзамен не проверяет. Ключевая фигура — <b class="han-big">导师</b>, научный руководитель, и ритм задаёт <b class="han-big">组会</b>. На выходе вы получаете <b>два разных документа</b>, а не один. И главный навык первого семестра — не понимать всё подряд, а <b>уметь вовремя переспросить</b>.</p>
+</div>
+
+<h2>Сразу о поступлении: <span class="italic">где искать ответы</span></h2>
+<p>Чтобы не пересказывать то, что уже подробно разобрано, соберём навигацию. Вопросы про документы, деньги и сроки закрыты в отдельных статьях — эта про язык.</p>
+<div class="table-wrap">
+<table>
+  <caption>Куда идти с вопросами о поступлении.</caption>
+  <thead><tr><th>Вопрос</th><th>Где ответ</th></tr></thead>
+  <tbody>
+    <tr><td>Как учиться бесплатно, какие бывают пути</td><td><a href="https://kitai-school.ru/article/kak-postupit-v-kitay-na-budjet" target="_blank" rel="noopener">Как поступить в Китай на бюджет</a></td></tr>
+    <tr><td>Стипендия CSC: каналы, документы, интервью</td><td><a href="https://kitai-school.ru/article/stipendiya-csc-v-kitae-polnyy-gayd-po-polucheniu-dlya-studentov" target="_blank" rel="noopener">Стипендия CSC в Китае</a></td></tr>
+    <tr><td>Какие бывают гранты и как повысить шансы</td><td><a href="https://kitai-school.ru/article/kak-vyigrat-grant-na-obuchenie-v-kitae" target="_blank" rel="noopener">Гранты на обучение в Китае</a></td></tr>
+    <tr><td>Засчитывается ли диплом колледжа</td><td><a href="https://kitai-school.ru/article/kak-postupit-v-kitay-posle-kolledzha" target="_blank" rel="noopener">Поступление в Китай после колледжа</a></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Одну вещь про поступление всё же скажем здесь, потому что она про язык. Для программ на китайском обычно просят <b>HSK 4 или 5</b>, но планка зависит от вуза и направления и время от времени меняется — сверяйте её на странице конкретной программы. А для англоязычных программ китайский может не требоваться вообще: там смотрят на IELTS или TOEFL. Только учтите, что жить и учиться вы будете всё равно в китайской среде.</p>
+
+<h2>Три разрыва, <span class="italic">которых не видно за баллом HSK</span></h2>
+<p>Экзамен устроен как проверка общего владения языком: бытовые темы, тексты средней сложности, диалоги с паузами. Университет устроен иначе, и разрывов ровно три.</p>
+<div class="table-wrap">
+<table>
+  <caption>Чего не проверяет HSK.</caption>
+  <thead><tr><th>Разрыв</th><th>Что это</th><th>Где вы на нём споткнётесь</th></tr></thead>
+  <tbody>
+    <tr><td><b>Процедурный</b></td><td>язык кабинетов и бумаг: 报到, 注册, 盖章, 手续</td><td>первая же неделя, учебная часть и общежитие</td></tr>
+    <tr><td><b>Социальный</b></td><td>кто кому кто: 导师, 师兄, 师姐, 同门, 辅导员</td><td>первое знакомство с группой, первое обращение к старшему</td></tr>
+    <tr><td><b>Академический</b></td><td>язык работы: 论文, 开题, 文献综述, 查重, 答辩</td><td>первый семестр, когда речь заходит о теме</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Обратите внимание: ни один из трёх не про сложность языка. Все слова простые, многие состоят из знаков, которые вы уже знаете. Проблема в том, что <b>в учебниках их нет</b> — они живут в конкретной среде, и встретить их заранее просто негде.</p>
+
+<h2>Люди вокруг вас: <span class="italic">кто есть кто</span></h2>
+<p>Начнём с социального разрыва, потому что он проявляется первым и стоит дороже всего: ошибка в обращении к человеку читается сразу.</p>
+<div class="table-wrap">
+<table>
+  <caption>Кто есть кто в китайском вузе.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Кто это</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">导师</td><td>dǎoshī</td><td><b>научный руководитель</b> — главная фигура вашей учёбы: тема, допуск к защите, рекомендации</td></tr>
+    <tr><td class="han-cell">研究生</td><td>yánjiūshēng</td><td>учащийся после бакалавриата: и магистрант, и аспирант</td></tr>
+    <tr><td class="han-cell">硕士生</td><td>shuòshìshēng</td><td>именно магистрант; 硕士 (shuòshì) — сама степень</td></tr>
+    <tr><td class="han-cell">博士生</td><td>bóshìshēng</td><td>аспирант, будущий 博士</td></tr>
+    <tr><td class="han-cell">师兄 · 师姐</td><td>shīxiōng · shījiě</td><td>старшие соученики, мужчина и женщина: к ним идут с бытовыми вопросами</td></tr>
+    <tr><td class="han-cell">师弟 · 师妹</td><td>shīdì · shīmèi</td><td>младшие соученики, мужчина и женщина</td></tr>
+    <tr><td class="han-cell">同门</td><td>tóngmén</td><td>«одной школы» — все ученики вашего научного руководителя</td></tr>
+    <tr><td class="han-cell">辅导员</td><td>fǔdǎoyuán</td><td>куратор курса, отвечает за административные вопросы, а не за науку</td></tr>
+    <tr><td class="han-cell">留学生</td><td>liúxuéshēng</td><td>иностранный студент — слово, которым вас будут называть постоянно</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Про <b class="han-big">师兄</b> и <b class="han-big">师姐</b> стоит сказать отдельно: это не формальность и не вежливый оборот, а работающая система. Старшие соученики знают, в каком кабинете ставят печать, как оформить пропуск и что на самом деле имеет в виду руководитель. Первое обращение — уже половина адаптации. Обратиться к старшему по имени, без 师兄 или 师姐, не смертельно, но выглядит как незнание правил.</p>
+
+<figure class="ks-fig"><img src="assets/magistratura-v-kitae-leksika.png" alt="Лексика магистратуры в Китае: четыре пласта слов, два диплома, путь работы и первая неделя" loading="lazy" width="1200" height="900"><figcaption>Четыре пласта лексики, два диплома, путь работы от замысла до защиты и первая неделя по шагам.</figcaption></figure>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Мой первый месяц в китайском вузе был чередой мелких унижений, и ни одно из них не было про уровень языка. Я пришла в учебную часть с заполненной анкетой — меня отправили обратно: нужна печать. Поставила печать в одном кабинете — оказалось, нужна ещё одна, в другом. Слово <b class="han-big">盖章</b> (gàizhāng) я выучила намертво за три дня, и до сих пор считаю его самым практичным словом из всего вузовского словаря.</p>
+  <p>Второй эпизод был обиднее. На первой встрече научной группы руководитель посмотрел на меня и сказал что-то короткое. Я поняла каждое слово по отдельности и не поняла ситуацию целиком: от меня ждали <b class="han-big">汇报</b> — короткого доклада о том, что я успела прочитать. Я молчала. Выручила <b class="han-big">师姐</b>: после встречи объяснила, что на 组会 говорят все по очереди, даже если читать пока нечего — тогда просто рассказывают, что планируют.</p>
+  <p>Вывод, который я с тех пор повторяю всем, кто едет учиться: <b>сложность не в языке, а в контексте</b>. Слова простые, ситуации незнакомые. И если заранее знать три десятка нужных слов и пару фраз для переспрашивания, первый месяц проходит совсем иначе.</p>
+</div>
+
+<h2>Учебный процесс: <span class="italic">слова первой недели</span></h2>
+<p>Дальше — процедурный слой. Эти слова встретятся ещё до первой лекции.</p>
+<div class="table-wrap">
+<table>
+  <caption>Лексика учебного процесса.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Что означает</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">报到</td><td>bàodào</td><td>отметиться о приезде — самая первая процедура в вузе</td></tr>
+    <tr><td class="han-cell">注册</td><td>zhùcè</td><td>зарегистрироваться на семестр, повторяется каждый раз</td></tr>
+    <tr><td class="han-cell">选课</td><td>xuǎnkè</td><td>записаться на предметы, обычно через систему и в узкое окно</td></tr>
+    <tr><td class="han-cell">必修课 · 选修课</td><td>bìxiūkè · xuǎnxiūkè</td><td>обязательный предмет и предмет по выбору</td></tr>
+    <tr><td class="han-cell">学分</td><td>xuéfēn</td><td>зачётная единица: их набирают до нужного количества</td></tr>
+    <tr><td class="han-cell">课件</td><td>kèjiàn</td><td>слайды лекции — то, что стоит просить заранее</td></tr>
+    <tr><td class="han-cell">期中 · 期末</td><td>qīzhōng · qīmò</td><td>середина и конец семестра, обычно про экзамены</td></tr>
+    <tr><td class="han-cell">闭卷 · 开卷</td><td>bìjuàn · kāijuàn</td><td>экзамен без материалов и с материалами</td></tr>
+    <tr><td class="han-cell">挂科</td><td>guàkē</td><td>завалить предмет — разговорное, в учебниках не встретится</td></tr>
+    <tr><td class="han-cell">补考</td><td>bǔkǎo</td><td>пересдача</td></tr>
+    <tr><td class="han-cell">请假</td><td>qǐngjià</td><td>отпроситься, официально оформить пропуск</td></tr>
+    <tr><td class="han-cell">一卡通</td><td>yīkǎtōng</td><td>карта кампуса: пропуск, столовая, библиотека в одном</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Два диплома <span class="italic">вместо одного</span></h2>
+<p>Это место стабильно застаёт врасплох, поэтому вынесем его отдельно. В Китае по итогам обучения выдают <b>два разных документа</b>.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что вы получаете на выходе.</caption>
+  <thead><tr><th>Документ</th><th>Чтение</th><th>Что подтверждает</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">毕业证</td><td>bìyèzhèng</td><td>что вы прошли программу и окончили обучение</td></tr>
+    <tr><td class="han-cell">学位证</td><td>xuéwèizhèng</td><td>что вам присвоена степень магистра</td></tr>
+    <tr><td class="han-cell">双证</td><td>shuāngzhèng</td><td>оба документа вместе — то, ради чего всё затевалось</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Зачем это знать заранее. Первый документ можно получить без второго: например, если программа пройдена, а диссертация защиту не прошла. Поэтому в разговорах о результате обучения спрашивают именно про <b class="han-big">双证</b>, а не про «диплом» вообще. Русское слово «диплом» тут склеивает две разные вещи, и из-за этой склейки возникает половина недопониманий.</p>
+
+<h2>Научная работа: <span class="italic">от 开题 до 答辩</span></h2>
+<p>Академический слой появляется в конце первого семестра, когда речь заходит о теме. Дальше — вехи, по которым идёт работа.</p>
+<div class="table-wrap">
+<table>
+  <caption>Путь диссертации.</caption>
+  <thead><tr><th>Этап</th><th>Чтение</th><th>Что происходит</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">课题</td><td>kètí</td><td>научная тема, направление работы</td></tr>
+    <tr><td class="han-cell">开题</td><td>kāití</td><td>защита замысла: вы обосновываете тему перед комиссией</td></tr>
+    <tr><td class="han-cell">开题报告</td><td>kāití bàogào</td><td>письменный текст этого обоснования</td></tr>
+    <tr><td class="han-cell">文献综述</td><td>wénxiàn zōngshù</td><td>обзор литературы — отдельный жанр со своими требованиями</td></tr>
+    <tr><td class="han-cell">组会</td><td>zǔhuì</td><td>встреча научной группы, где по очереди докладывают</td></tr>
+    <tr><td class="han-cell">汇报</td><td>huìbào</td><td>доклад руководителю о том, что сделано</td></tr>
+    <tr><td class="han-cell">中期考核</td><td>zhōngqī kǎohé</td><td>промежуточная аттестация по ходу работы</td></tr>
+    <tr><td class="han-cell">查重</td><td>cháchóng</td><td>проверка текста на совпадения, порог задаёт вуз</td></tr>
+    <tr><td class="han-cell">盲审</td><td>mángshěn</td><td>анонимное рецензирование внешними экспертами</td></tr>
+    <tr><td class="han-cell">答辩</td><td>dábiàn</td><td>защита: доклад и ответы на вопросы комиссии</td></tr>
+  </tbody>
+</table>
+</div>
+<p><b class="han-big">组会</b> заслуживает пояснения, потому что это не собрание, а ритм жизни. В лабораториях и на технических направлениях встреча проходит еженедельно, на гуманитарных бывает реже. Пропуск читается не как «был занят», а как «не заинтересован» — и это заметно влияет на отношение руководителя к вам.</p>
+<p class="note">Про <b class="han-big">查重</b> и <b class="han-big">盲审</b>: конкретные пороги и правила у каждого вуза свои и время от времени меняются, поэтому спрашивайте их у своего 导师 или в учебной части, а не ориентируйтесь на чужой опыт. Общая логика везде одна: сначала совпадения, потом внешние рецензенты, потом защита.</p>
+
+<h2>盖章 <span class="italic">и другая бюрократия</span></h2>
+<p>Отдельный жанр, к которому невозможно подготовиться теоретически, но можно подготовиться лексически. Китайская вузовская бумага живёт по одному закону: <b>документ без печати документом не считается</b>.</p>
+<div class="table-wrap">
+<table>
+  <caption>Бюрократический минимум.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Что означает</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">盖章</td><td>gàizhāng</td><td>поставить печать — самое практичное слово из всего списка</td></tr>
+    <tr><td class="han-cell">手续</td><td>shǒuxù</td><td>формальности, порядок оформления</td></tr>
+    <tr><td class="han-cell">材料</td><td>cáiliào</td><td>пакет документов, «бумаги»</td></tr>
+    <tr><td class="han-cell">教务处</td><td>jiàowùchù</td><td>учебная часть</td></tr>
+    <tr><td class="han-cell">留学生办公室</td><td>liúxuéshēng bàngōngshì</td><td>офис по работе с иностранными студентами</td></tr>
+    <tr><td class="han-cell">学生证</td><td>xuéshēngzhèng</td><td>студенческий билет</td></tr>
+    <tr><td class="han-cell">体检</td><td>tǐjiǎn</td><td>медосмотр, обычно требуется после приезда</td></tr>
+    <tr><td class="han-cell">居留许可</td><td>jūliú xǔkě</td><td>вид на жительство студента, оформляется по приезде</td></tr>
+    <tr><td class="han-cell">宿舍 · 食堂</td><td>sùshè · shítáng</td><td>общежитие и столовая</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Сроки оформления <b class="han-big">居留许可</b> и состав <b class="han-big">材料</b> у разных вузов и провинций отличаются и периодически меняются, поэтому актуальный порядок узнавайте в 留学生办公室 сразу по приезде, а не по чужим рассказам. Полезная привычка: к каждой бумаге сразу спрашивать <b>«需要盖章吗？»</b> — нужна ли печать. Один вопрос экономит поход.</p>
+
+<h2>Двадцать фраз, <span class="italic">которые нужны с первого дня</span></h2>
+<p>Не словарь, а рабочий набор. Их стоит не понимать, а уметь произнести — разница принципиальная.</p>
+<div class="table-wrap">
+<table>
+  <caption>Фразы для первого семестра.</caption>
+  <thead><tr><th>Ситуация</th><th>Фраза</th><th>Перевод</th></tr></thead>
+  <tbody>
+    <tr><td rowspan="3">Знакомство</td><td class="han-cell">老师，您好！我是……专业的留学生。</td><td>Здравствуйте! Я иностранный студент направления…</td></tr>
+    <tr><td class="han-cell">师姐，能问你一个问题吗？</td><td>Можно задать вам вопрос? <i>(к старшей соученице)</i></td></tr>
+    <tr><td class="han-cell">请问，留学生办公室在哪儿？</td><td>Подскажите, где офис для иностранных студентов?</td></tr>
+    <tr><td rowspan="4">На лекции</td><td class="han-cell ok">不好意思，我没太听懂，能再说一遍吗？</td><td>Извините, я не совсем понял, можно ещё раз?</td></tr>
+    <tr><td class="han-cell ok">我理解得对吗？</td><td>Я правильно понял?</td></tr>
+    <tr><td class="han-cell">老师，我可以录音吗？</td><td>Можно записывать на диктофон?</td></tr>
+    <tr><td class="han-cell">能把课件发给我吗？</td><td>Можете прислать мне слайды?</td></tr>
+    <tr><td rowspan="4">Учебная часть</td><td class="han-cell ok">这个需要盖章吗？</td><td>На этом нужна печать?</td></tr>
+    <tr><td class="han-cell">请问在哪儿盖章？</td><td>Подскажите, где поставить печать?</td></tr>
+    <tr><td class="han-cell">还需要什么材料？</td><td>Какие документы ещё нужны?</td></tr>
+    <tr><td class="han-cell">这个手续什么时候办？</td><td>Когда оформляется эта процедура?</td></tr>
+    <tr><td rowspan="4">Учёба</td><td class="han-cell">这门课有几个学分？</td><td>Сколько зачётных единиц за этот курс?</td></tr>
+    <tr><td class="han-cell">我想选这门课，还来得及吗？</td><td>Хочу записаться на курс, ещё не поздно?</td></tr>
+    <tr><td class="han-cell">期末考试是闭卷还是开卷？</td><td>Итоговый экзамен без материалов или с ними?</td></tr>
+    <tr><td class="han-cell">我想请一天假，需要什么手续？</td><td>Хочу отпроситься на день, что для этого нужно?</td></tr>
+    <tr><td rowspan="5">Научная работа</td><td class="han-cell">老师，这周组会我来汇报，可以吗？</td><td>Можно я доложу на встрече группы на этой неделе?</td></tr>
+    <tr><td class="han-cell">我的开题报告需要改哪里？</td><td>Что нужно поправить в обосновании темы?</td></tr>
+    <tr><td class="han-cell">查重率多少算合格？</td><td>Какой процент совпадений считается допустимым?</td></tr>
+    <tr><td class="han-cell">这部分我还没完全明白，能约个时间吗？</td><td>Эту часть я понял не до конца, можно назначить встречу?</td></tr>
+    <tr><td class="han-cell">下一步我应该做什么？</td><td>Что мне делать дальше?</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Три фразы, отмеченные в таблице, стоят всех остальных. <b>Главный навык первого семестра — не понять всё, а вовремя переспросить.</b> Студент, который спокойно говорит «я не понял, повторите» и «я правильно понял?», догоняет группу за месяц. Студент, который кивает, чтобы не выглядеть глупо, теряет семестр.</p>
+
+<h2>Как подтянуть этот пласт <span class="italic">заранее</span></h2>
+<p>Хорошая новость: всё перечисленное учится быстро, потому что слов немного и они привязаны к ситуациям. Плохая — сами по себе они не выучатся, в учебниках HSK их нет.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что сделать до отъезда.</caption>
+  <thead><tr><th>Шаг</th><th>Зачем</th></tr></thead>
+  <tbody>
+    <tr><td class="ok">Выучить три десятка слов из таблиц выше</td><td>покрывают почти все ситуации первого месяца</td></tr>
+    <tr><td class="ok">Отработать четыре фразы для переспрашивания вслух</td><td>они должны выговариваться без запинки, а не узнаваться</td></tr>
+    <tr><td class="ok">Послушать лекции на своём направлении</td><td>речь без пауз и с терминами — совсем не то, что аудирование HSK</td></tr>
+    <tr><td class="ok">Прочитать пару статей по теме на китайском</td><td>академический стиль отличается от текстов экзамена</td></tr>
+    <tr><td class="ok">Разыграть визит в учебную часть</td><td>процедурный разговор проще один раз отрепетировать</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Про лекции стоит сказать честно: первые недели вы будете понимать заметно меньше, чем ожидали, и это нормально даже с хорошим HSK. Разница между экзаменационным аудированием и живой лекцией — в скорости, отсутствии пауз, терминах и акценте преподавателя. Проходит это не «само», а через привыкание: слайды заранее, запись, разбор после.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой уровень HSK нужен для магистратуры в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Для программ на китайском языке чаще всего просят HSK 4 или HSK 5, но требование зависит от вуза и направления, а для англоязычных программ китайский может не требоваться вовсе — там смотрят на IELTS или TOEFL. Точную планку всегда сверяйте на странице конкретной программы: она меняется. И держите в голове главное: сертификат открывает дверь, а учиться вы будете на языке, который HSK не проверяет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 研究生 отличается от 硕士?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>研究生 (yánjiūshēng) — это статус: человек, который учится после бакалавриата, независимо от того, магистрант он или аспирант. 硕士 (shuòshì) — конкретно степень магистра, а магистрант будет 硕士生 (shuòshìshēng). В разговоре вас почти всегда назовут 研究生, а в документах будет стоять 硕士.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что в Китае дают два диплома?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, и это регулярно застаёт врасплох. 毕业证 (bìyèzhèng) подтверждает, что вы прошли программу, а 学位证 (xuéwèizhèng) — что вам присвоена степень. Это два разных документа, и бывает так, что человек получает первый и не получает второй: например, если диссертация не прошла защиту. Оба вместе называют 双证 (shuāngzhèng) — именно их и стоит спрашивать, когда речь идёт о результате обучения.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое 组会 и обязательно ли на него ходить?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>组会 (zǔhuì) — регулярная встреча научной группы с руководителем, где по очереди докладывают о ходе работы. В лабораториях и на технических направлениях это еженедельный ритуал, на гуманитарных бывает реже. Ходить обязательно: пропуски читаются не как «занят», а как «не заинтересован», и это заметно влияет на отношение руководителя.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как понимать лекции, если преподаватель говорит быстро?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Первое — просить 课件 (kèjiàn), слайды, заранее: прочитанный термин на слух узнаётся в разы легче. Второе — спрашивать разрешения записывать: 我可以录音吗？ Третье и главное — не пытаться понять всё. Гораздо полезнее уметь переспросить: 不好意思，我没太听懂，能再说一遍吗？ и 我理解得对吗？ Эти две фразы за первый семестр спасают больше, чем лишняя тысяча слов.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько стоит магистратура в Китае и есть ли бесплатные варианты?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Стоимость сильно зависит от вуза, города и направления, а бесплатные места существуют: это стипендии CSC, вузовские и провинциальные программы. Здесь мы этот вопрос подробно не разбираем, чтобы не повторяться: он разобран в отдельных статьях про поступление на бюджет и про гранты на обучение в Китае. Суммы и правила пересматриваются, поэтому актуальные цифры смотрите на сайте вуза и китайской стороны.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Если впереди магистратура, язык стоит готовить не «вообще», а под задачу: лекции, научный руководитель, кабинеты и защита. Приходите на бесплатный урок — посмотрим на ваш уровень и соберём программу под ваше направление.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>МАГИСТРАТУРА</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — разберём вашу ситуацию.</p>
+</div>
+
+<p>Дальше по теме: как учиться бесплатно — <a href="https://kitai-school.ru/article/kak-postupit-v-kitay-na-budjet" target="_blank" rel="noopener">поступление в Китай на бюджет</a>; главная стипендия — <a href="https://kitai-school.ru/article/stipendiya-csc-v-kitae-polnyy-gayd-po-polucheniu-dlya-studentov" target="_blank" rel="noopener">стипендия CSC</a>; сколько всего стоит жизнь — <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли в Китае</a>; что делать после диплома — <a href="https://kitai-school.ru/article/rabota-v-kitae-dlya-inostranca" target="_blank" rel="noopener">работа в Китае для иностранца</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Личный опыт автора — учёба в Шаньдунском университете (山东大学) и сопровождение студентов Kitai School.</li>
+    <li>Внутренние регламенты китайских вузов по 开题, 中期考核, 查重 и 答辩 — состав требований смотрите у своего вуза.</li>
+    <li>Практика Kitai School — подготовка студентов к учёбе в китайских университетах.</li>
+  </ol>
+</div>
+
+<p class="sign">Лёгкой вам учёбы! <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <p class="side-note">Готовим язык под учёбу: лексика вуза, лекции и научный руководитель</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
