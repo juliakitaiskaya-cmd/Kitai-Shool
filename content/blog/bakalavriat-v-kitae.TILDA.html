@@ -1,0 +1,434 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/bakalavriat-v-kitae#article",
+      "headline": "Бакалавриат в Китае: как устроена ступень 本科 и что нужно, чтобы поступить",
+      "description": "Как устроена китайская ступень бакалавриата 本科: сколько длится обучение, чем программы на китайском отличаются от англоязычных, что такое подготовительный год 预科 и чем он отличается от языковых курсов, какие документы и какой уровень языка нужны и из чего складывается стоимость.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-02",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/bakalavriat-v-kitae",
+      "about": {
+        "@type": "Thing",
+        "name": "本科 — ступень бакалавриата в системе высшего образования Китая",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Образование_в_Китайской_Народной_Республике",
+          "https://ru.wikipedia.org/wiki/Бакалавр"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Сколько учиться на бакалавриате в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Стандартная программа 本科 длится четыре года. Дольше учатся на направлениях, где это принято во всём мире: на медицине и архитектуре срок больше, конкретный смотрите на странице программы. К этим годам может добавиться подготовительный год 预科 или период языковой подготовки, если вы поступаете без нужного уровня китайского. То есть реальный горизонт часто не четыре года, а пять — и это стоит закладывать в планы сразу."}},
+        {"@type": "Question", "name": "Обязательно ли знать китайский, чтобы поступить на бакалавриат в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Нет. В китайских вузах есть программы бакалавриата на английском языке, и на них вместо HSK просят международный языковой сертификат. Выбор направлений там уже, а стоимость обучения обычно выше. Если же вы идёте на программу на китайском, язык обязателен, и подтверждается он сертификатом HSK. Промежуточный вариант — поступить на подготовительный год и начать основную программу уже с нужным уровнем."}},
+        {"@type": "Question", "name": "Что такое 预科 и нужен ли он мне?",
+         "acceptedAnswer": {"@type": "Answer", "text": "预科 (yùkē) — подготовительный год при университете: язык плюс базовые предметы под будущее направление. Он нужен тем, у кого уровня китайского пока не хватает для основной программы, но поступать хочется в конкретный вуз. Важно не путать его с языковыми курсами 语言班: те дают только язык и сами по себе никуда не переводят. Условия перехода с подготовительного года на основную программу у каждого вуза свои, и выяснять их нужно до оплаты, а не после."}},
+        {"@type": "Question", "name": "Какой HSK нужен для поступления на бакалавриат?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Для программ на китайском чаще всего просят HSK 4 как минимум, а сильные вузы и востребованные направления — HSK 5. Точную планку устанавливает сам вуз, и она отличается не только между университетами, но и между факультетами одного университета. Смотрите требования на странице конкретной программы: они меняются, и общего правила здесь нет."}},
+        {"@type": "Question", "name": "Сколько стоит бакалавриат в Китае?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Разброс очень большой: он зависит от города, статуса вуза, направления и языка программы. Поэтому вместо суммы полезнее держать в голове структуру расходов: обучение, проживание, обязательная медицинская страховка, виза и вид на жительство, медосмотр и регистрация по приезде, учебники и собственно жизнь. Актуальные цифры по обучению и общежитию есть только на сайте выбранной программы, и вузы пересматривают их регулярно."}},
+        {"@type": "Question", "name": "Что нужно из документов для поступления?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Базовый набор такой: аттестат о полном среднем образовании с приложением оценок, подтверждение языка (HSK или международный сертификат для англоязычных программ), загранпаспорт, медицинская справка по установленной форме, справка о несудимости, подтверждение финансовой состоятельности и мотивационное письмо. На стипендиальные программы список длиннее и сроки жёстче. Дольше всего обычно собираются переводы и легализация, поэтому начинать стоит с них."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Бакалавриат в Китае"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Учёба в Китае</p>
+<h1>Бакалавриат в Китае: <span class="italic">как устроена ступень 本科 и что нужно, чтобы поступить</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-02">2 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/bakalavriat-v-kitae.png" alt="Бакалавриат в Китае: ступень 本科, две дорожки и подготовительный год" width="1200" height="630"></figure>
+
+<p class="passport">Разговор про <b>обучение в Китае на бакалавриате</b> почти всегда начинается не с того конца — с денег и рейтингов. А спотыкаются люди раньше: на устройстве самой ступени. Что вообще такое 本科, сколько он длится на самом деле, чем программа на английском отличается от программы на китайском, что за подготовительный год все вокруг советуют и почему его постоянно путают с языковыми курсами. Разберём именно это: вход в бакалавриат и его внутреннюю логику. Про деньги — тоже, но честно: со структурой расходов вместо выдуманных сумм.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Бакалавриат по-китайски — <b>本科</b> (běnkē), обычно <b>четыре года</b>, на медицине и архитектуре дольше. На выходе выдают <b>два документа</b>, а не один. Дорожек две: программа <b>на китайском</b> (нужен HSK, чаще 4–5) и <b>на английском</b> (нужен международный сертификат, обычно дороже). Если языка пока не хватает, есть <b>подготовительный год 预科</b> — и это <b>не то же самое</b>, что языковые курсы 语言班. Дольше всего собираются не деньги, а <b>документы</b>.</p>
+</div>
+
+<h2>Что такое 本科 <span class="italic">и сколько это на самом деле длится</span></h2>
+<p>Ступень бакалавриата в Китае называется <b class="han-big">本科</b> (běnkē). Это полноценное университетское образование в противоположность 专科 — колледжу, который короче и практичнее; как устроена вся лестница ступеней, разобрано в статье про <a href="https://kitai-school.ru/article/est-li-v-kitae-kolledji" target="_blank" rel="noopener">колледжи в Китае</a>.</p>
+<p>Стандартный срок — <b>четыре года</b>. Дольше учатся там же, где и во всём мире: на медицине и архитектуре. А вот к этим годам почти всегда прибавляется то, о чём забывают на этапе мечты: <b>время на язык</b>. Если вы поступаете на программу на китайском без нужного уровня, впереди подготовительный год. Реальный горизонт тогда не четыре года, а пять.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что вы получаете на выходе.</caption>
+  <thead><tr><th>Документ</th><th>По-китайски</th><th>Что подтверждает</th></tr></thead>
+  <tbody>
+    <tr><td>Свидетельство об окончании</td><td class="han-cell">毕业证书<br>bìyè zhèngshū</td><td>что вы прошли программу и окончили вуз</td></tr>
+    <tr><td>Свидетельство о степени</td><td class="han-cell">学位证书<br>xuéwèi zhèngshū</td><td>что вам присвоена степень бакалавра 学士学位</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Это не формальность и не перевод одного и того же на два лада. В китайской системе <b>окончить программу и получить степень — разные события</b>: теоретически можно закрыть курс и не получить степень, если не выполнены условия по итоговой работе или успеваемости. Поэтому в требованиях к поступлению в <a href="https://kitai-school.ru/article/magistratura-v-kitae" target="_blank" rel="noopener">магистратуру</a> и в вакансиях спрашивают именно оба документа.</p>
+
+<h2>Две дорожки: <span class="italic">программа на китайском и программа на английском</span></h2>
+<p>Первое реальное решение, которое придётся принять. Обе дорожки ведут к одной и той же ступени 本科, но вход, стоимость и выбор направлений у них разные.</p>
+<div class="table-wrap">
+<table>
+  <caption>Чем отличаются две дорожки.</caption>
+  <thead><tr><th></th><th>Программа на китайском</th><th>Программа на английском</th></tr></thead>
+  <tbody>
+    <tr><td><b>Что подтверждает язык</b></td><td>сертификат <a href="https://kitai-school.ru/article/sertifikat-hsk" target="_blank" rel="noopener">HSK</a>, чаще <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4</a>, у сильных вузов <a href="https://kitai-school.ru/article/hsk-5-kak-sdat-universitetskiy-kzamen" target="_blank" rel="noopener">HSK 5</a></td><td>международный языковой сертификат</td></tr>
+    <tr><td><b>Выбор направлений</b></td><td class="ok">шире: доступна почти вся линейка</td><td>уже: англоязычных программ заметно меньше</td></tr>
+    <tr><td><b>Стоимость обучения</b></td><td class="ok">обычно ниже</td><td>обычно выше</td></tr>
+    <tr><td><b>Жизнь и среда</b></td><td class="ok">вы внутри языка с первого дня</td><td>язык придётся добирать отдельно, иначе останетесь в пузыре</td></tr>
+    <tr><td><b>Что на выходе</b></td><td colspan="2">одна и та же ступень 本科 и та же степень 学士学位</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Англоязычная программа выглядит коротким путём, и иногда это правда так. Но у неё есть цена, о которой не пишут в брошюрах: без китайского вы четыре года живёте в стране, языка которой не знаете, — и <a href="https://kitai-school.ru/article/rabota-v-kitae-dlya-inostranca" target="_blank" rel="noopener">работа в Китае</a> после выпуска для вас будет заметно уже. Поэтому язык всё равно придётся учить, вопрос только в том, до поступления или параллельно с учёбой.</p>
+
+<h2>预科 и 语言班: <span class="italic">подготовительный год, который постоянно путают</span></h2>
+<p>Самая частая и самая дорогая путаница. Названия похожие, оба варианта «про язык перед учёбой», но задачи у них разные.</p>
+<div class="table-wrap">
+<table>
+  <caption>Две вещи, которые называют «подготовкой».</caption>
+  <thead><tr><th></th><th class="han-cell">预科 (yùkē)</th><th class="han-cell">语言班 (yǔyánbān)</th></tr></thead>
+  <tbody>
+    <tr><td><b>Что это</b></td><td>подготовительное отделение при вузе</td><td>языковые курсы при вузе</td></tr>
+    <tr><td><b>Чему учат</b></td><td>язык плюс базовые предметы под будущее направление</td><td>только язык</td></tr>
+    <tr><td><b>Зачем идут</b></td><td class="ok">чтобы войти в основную программу этого вуза</td><td>чтобы подтянуть язык, без привязки к программе</td></tr>
+    <tr><td><b>Что дальше</b></td><td>переход на 本科 по правилам вуза</td><td class="bad">автоматического перехода нет</td></tr>
+    <tr><td><b>Что уточнять заранее</b></td><td colspan="2">условия перехода, требования по итоговым баллам и на какие именно направления открыт вход</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Правило простое и стоит оно дорого: <b>условия перехода выясняют до оплаты</b>, а не после. Формулировка «после подготовки поступите к нам» в переписке — не то же самое, что перечень требований в положении о приёме. Просите документ.</p>
+
+<figure class="ks-fig"><img src="assets/bakalavriat-v-kitae-vhod.png" alt="Бакалавриат в Китае: ступень 本科, две дорожки, 预科 против 语言班, документы и структура расходов" loading="lazy" width="1200" height="900"><figcaption>Как устроена ступень, чем различаются две дорожки, чем 预科 отличается от языковых курсов и из чего складывается стоимость.</figcaption></figure>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Ко мне пришла семья, которая уже год оплачивала сыну «подготовку к университету» в Китае. Мальчик честно учился, язык рос, все были довольны. К весне выяснилось, что он всё это время был на 语言班 — обычных языковых курсах, — и к поступлению на выбранное направление это не имело никакого отношения. Ни одного зачёта по профильным предметам, ни одной строчки в правилах приёма.</p>
+  <p>Самое обидное: год не пропал, язык действительно вырос. Но <b>потерян был именно тот год</b>, который семья считала годом поступления. Поступать пришлось на общих основаниях, и ещё раз ждать набора.</p>
+  <p>С тех пор я задаю всем один и тот же вопрос до подписания любого договора: <b>покажите, где написано, что будет после</b>. Не письмо менеджера, а документ вуза. Если такого документа нет — вы покупаете курсы языка, и это нормально, но называйте вещи своими именами.</p>
+</div>
+
+<h2>Что нужно для поступления: <span class="italic">требования и документы</span></h2>
+<p>Набор у большинства вузов похожий, отличия — в деталях и в сроках.</p>
+<div class="table-wrap">
+<table>
+  <caption>Базовый комплект абитуриента.</caption>
+  <thead><tr><th>Что</th><th>Нюанс, о котором забывают</th></tr></thead>
+  <tbody>
+    <tr><td><b>Аттестат о среднем образовании с оценками</b></td><td>нужен перевод и легализация; это самая долгая часть</td></tr>
+    <tr><td><b>Подтверждение языка</b></td><td>HSK для программ на китайском, международный сертификат для англоязычных</td></tr>
+    <tr><td><b>Загранпаспорт</b></td><td>срок действия должен покрывать весь период учёбы с запасом</td></tr>
+    <tr><td><b>Медицинская справка</b></td><td>по установленной форме; по приезде проходят ещё один медосмотр на месте</td></tr>
+    <tr><td><b>Справка о несудимости</b></td><td>у неё есть срок годности — не заказывайте слишком рано</td></tr>
+    <tr><td><b>Подтверждение финансов</b></td><td>нужно и для вуза, и для визы</td></tr>
+    <tr><td><b>Мотивационное письмо</b></td><td>на стипендиальных программах читают внимательно, а не для галочки</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Отдельно про экзамен: часть вузов принимает по вступительным испытаниям, и для иностранных абитуриентов это нередко <a href="https://kitai-school.ru/article/csca-glavnyy-kzamen-dlya-postupleniya-v-vuzy-kitaya" target="_blank" rel="noopener">CSCA</a> — там разобраны предметы, формат и подготовка. Требование это не всеобщее: где-то смотрят только документы и язык. Уточняйте на странице программы. Если у вас за плечами колледж, а не школа, логика другая — она разобрана в статье про <a href="https://kitai-school.ru/article/kak-postupit-v-kitay-posle-kolledzha" target="_blank" rel="noopener">поступление после колледжа</a>.</p>
+
+<h2>Как выбирают вуз <span class="italic">и что на самом деле значат 985 и 211</span></h2>
+<p>В обсуждениях китайских университетов постоянно мелькают эти цифры, и мало кто объясняет, что за ними стоит. 985 и 211 — это <b>названия государственных программ поддержки</b>: в первую входило около четырёх десятков вузов, во вторую — около сотни. Официально их сменила программа <b class="han-big">双一流</b> (shuāng yīliú), но старые ярлыки живут в разговорах, в требованиях работодателей и в родительских чатах до сих пор.</p>
+<p>Знать это полезно, а вот выбирать по этому — нет. Сильный вуз из списка может оказаться слабым именно в вашем направлении, а неприметный университет — держать отличную профильную кафедру.</p>
+<div class="table-wrap">
+<table>
+  <caption>На что смотреть при выборе.</caption>
+  <thead><tr><th>Смотреть стоит</th><th>Само по себе мало что значит</th></tr></thead>
+  <tbody>
+    <tr><td class="ok">Есть ли ваше направление и на каком языке оно идёт</td><td class="bad">Место вуза в общем рейтинге</td></tr>
+    <tr><td class="ok">Требования по языку — реальные, а не «желательно»</td><td class="bad">Принадлежность к 985 или 211</td></tr>
+    <tr><td class="ok">Стоимость обучения и общежития на странице программы</td><td class="bad">Размер и красота кампуса</td></tr>
+    <tr><td class="ok">Даты подачи и набора, включая весенний</td><td class="bad">Советы в чатах без ссылки на документ</td></tr>
+    <tr><td class="ok">Город: климат, цены и диалект вокруг</td><td class="bad">Известность города за пределами Китая</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Из чего складывается стоимость <span class="italic">и почему точных цифр здесь не будет</span></h2>
+<p>Честно: суммы, которые ходят по интернету, устаревают быстрее, чем публикуются. Обучение и общежитие вузы пересматривают, а разброс между городом-миллионником и провинциальным центром огромный. Поэтому полезнее держать в голове не цифру, а <b>структуру расходов</b>, чтобы ничего не всплыло неожиданно.</p>
+<div class="table-wrap">
+<table>
+  <caption>Из чего складывается год учёбы.</caption>
+  <thead><tr><th>Статья</th><th>Что учесть</th></tr></thead>
+  <tbody>
+    <tr><td><b>Обучение</b></td><td>зависит от вуза, направления и языка программы; англоязычные обычно дороже</td></tr>
+    <tr><td><b>Проживание</b></td><td>общежитие обычно дешевле съёмного жилья, но мест не всегда хватает</td></tr>
+    <tr><td><b>Медицинская страховка</b></td><td>обязательна для студенческой визы, оформляется на месте</td></tr>
+    <tr><td><b>Виза и вид на жительство</b></td><td>для учёбы дольше полугода это виза категории X1 и последующее оформление вида на жительство</td></tr>
+    <tr><td><b>Приезд и оформление</b></td><td>медосмотр на месте, регистрация, банковская карта, симкарта</td></tr>
+    <tr><td><b>Жизнь</b></td><td>еда, транспорт, бытовые расходы — по ним есть <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">отдельный разбор цен</a></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Единственный надёжный источник по обучению и общежитию — <b>страница вашей программы на сайте вуза</b>. Всё остальное, включая эту статью, годится только для того, чтобы понять состав расходов и не забыть строчку.</p>
+
+<h2>Куда идти за бесплатным местом <span class="italic">и с чего начать</span></h2>
+<p>Тема большая, и она уже разобрана подробно — здесь только маршрут, чтобы не пересказывать по второму разу.</p>
+<div class="table-wrap">
+<table>
+  <caption>Ваша ситуация и куда смотреть.</caption>
+  <thead><tr><th>Что вам нужно</th><th>Куда идти</th></tr></thead>
+  <tbody>
+    <tr><td>Понять, какие стипендии вообще бывают и что они покрывают</td><td><a href="https://kitai-school.ru/article/stipendiya-v-kitae" target="_blank" rel="noopener">Стипендии в Китае для иностранцев</a></td></tr>
+    <tr><td>Разобрать главную правительственную программу по шагам</td><td><a href="https://kitai-school.ru/article/stipendiya-csc-v-kitae-polnyy-gayd-po-polucheniu-dlya-studentov" target="_blank" rel="noopener">Стипендия CSC: полный гайд</a></td></tr>
+    <tr><td>Увидеть все пути к оплаченному месту и календарь подачи</td><td><a href="https://kitai-school.ru/article/kak-postupit-v-kitay-na-budjet" target="_blank" rel="noopener">Как поступить в Китай на бюджет</a></td></tr>
+    <tr><td>Понять, как распределяются места и что усиливает заявку</td><td><a href="https://kitai-school.ru/article/kak-vyigrat-grant-na-obuchenie-v-kitae" target="_blank" rel="noopener">Гранты на обучение в Китае</a></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Общая логика по срокам одна: <b>язык — самая длинная часть подготовки</b>. Документы собираются месяцами, а HSK нужного уровня — годами. Поэтому отсчитывать назад стоит не от даты подачи, а от того, сколько вам ещё учить китайский; и <a href="https://kitai-school.ru/article/sertifikat-hsk" target="_blank" rel="noopener">сертификат</a> при этом должен быть свежим на момент подачи.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько учиться на бакалавриате в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Стандартная программа 本科 длится четыре года. Дольше учатся на направлениях, где это принято во всём мире: на медицине и архитектуре срок больше, конкретный смотрите на странице программы. К этим годам может добавиться подготовительный год 预科 или период языковой подготовки, если вы поступаете без нужного уровня китайского. То есть реальный горизонт часто не четыре года, а пять — и это стоит закладывать в планы сразу.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Обязательно ли знать китайский, чтобы поступить на бакалавриат в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. В китайских вузах есть программы бакалавриата на английском языке, и на них вместо HSK просят международный языковой сертификат. Выбор направлений там уже, а стоимость обучения обычно выше. Если же вы идёте на программу на китайском, язык обязателен, и подтверждается он сертификатом HSK. Промежуточный вариант — поступить на подготовительный год и начать основную программу уже с нужным уровнем.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое 预科 и нужен ли он мне?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>预科 (yùkē) — подготовительный год при университете: язык плюс базовые предметы под будущее направление. Он нужен тем, у кого уровня китайского пока не хватает для основной программы, но поступать хочется в конкретный вуз. Важно не путать его с языковыми курсами 语言班: те дают только язык и сами по себе никуда не переводят. Условия перехода с подготовительного года на основную программу у каждого вуза свои, и выяснять их нужно до оплаты, а не после.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой HSK нужен для поступления на бакалавриат?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Для программ на китайском чаще всего просят HSK 4 как минимум, а сильные вузы и востребованные направления — HSK 5. Точную планку устанавливает сам вуз, и она отличается не только между университетами, но и между факультетами одного университета. Смотрите требования на странице конкретной программы: они меняются, и общего правила здесь нет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько стоит бакалавриат в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Разброс очень большой: он зависит от города, статуса вуза, направления и языка программы. Поэтому вместо суммы полезнее держать в голове структуру расходов: обучение, проживание, обязательная медицинская страховка, виза и вид на жительство, медосмотр и регистрация по приезде, учебники и собственно жизнь. Актуальные цифры по обучению и общежитию есть только на сайте выбранной программы, и вузы пересматривают их регулярно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что нужно из документов для поступления?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Базовый набор такой: аттестат о полном среднем образовании с приложением оценок, подтверждение языка (HSK или международный сертификат для англоязычных программ), загранпаспорт, медицинская справка по установленной форме, справка о несудимости, подтверждение финансовой состоятельности и мотивационное письмо. На стипендиальные программы список длиннее и сроки жёстче. Дольше всего обычно собираются переводы и легализация, поэтому начинать стоит с них.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Если непонятно, какой уровень китайского нужен вашей программе и успеете ли вы к набору, — приходите на бесплатный урок. Посмотрим ваш реальный уровень, прикинем, до какого HSK можно дотянуть к подаче, и соберём план подготовки под конкретный вуз.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>БАКАЛАВРИАТ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — разберём вашу ситуацию.</p>
+</div>
+
+<p>Дальше по теме: пути к оплаченному месту — <a href="https://kitai-school.ru/article/kak-postupit-v-kitay-na-budjet" target="_blank" rel="noopener">поступление в Китай на бюджет</a>; какие бывают <a href="https://kitai-school.ru/article/stipendiya-v-kitae" target="_blank" rel="noopener">стипендии</a>; вступительный экзамен — <a href="https://kitai-school.ru/article/csca-glavnyy-kzamen-dlya-postupleniya-v-vuzy-kitaya" target="_blank" rel="noopener">CSCA</a>; следующая ступень — <a href="https://kitai-school.ru/article/magistratura-v-kitae" target="_blank" rel="noopener">магистратура в Китае</a>; и сколько стоит жизнь — <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли в Китае</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Официальные материалы Министерства образования КНР об устройстве ступеней высшего образования и приёме иностранных студентов.</li>
+    <li>Правила приёма конкретных университетов — единственный источник актуальных требований, сроков и стоимости.</li>
+    <li>Практика Kitai School — подготовка студентов к поступлению в китайские вузы.</li>
+  </ol>
+</div>
+
+<p class="sign">Удачи с поступлением! <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+        <p class="side-note">Ведём к поступлению: китайский с нуля до HSK 4–5 и подготовка к вступительным</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
