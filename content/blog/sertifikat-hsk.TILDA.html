@@ -1,0 +1,420 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/sertifikat-hsk#article",
+      "headline": "Сертификат HSK: что это за экзамен, кому он нужен и что подтверждает",
+      "description": "Что такое сертификат HSK и что он подтверждает, чем HSK 3.0 с девятью уровнями отличается от нынешних шести, почему результат действителен два года, для чего сертификат нужен на практике и чего он не даёт.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-02",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/sertifikat-hsk",
+      "about": {
+        "@type": "Thing",
+        "name": "HSK — экзамен на уровень владения китайским языком",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/HSK",
+          "https://ru.wikipedia.org/wiki/Китайский_язык"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что такое сертификат HSK простыми словами?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Это официальный документ о том, что вы сдали 汉语水平考试 (Hànyǔ Shuǐpíng Kǎoshì) — государственный китайский экзамен на уровень владения языком для иностранцев. По сути это отчёт о результатах: в нём стоят баллы по разделам, общая сумма и уровень, который вы подтвердили. Для вузов, стипендиальных программ и работодателей это единственное общепринятое доказательство того, что ваш китайский измерен, а не заявлен."}},
+        {"@type": "Question", "name": "Сколько действует сертификат HSK?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Результат считается действительным два года с даты экзамена — именно в этот срок его принимают вузы и стипендиальные программы. Сам документ при этом никуда не исчезает и остаётся в вашем портфолио, но подавать его в приёмную комиссию позже обычно нельзя. Практический вывод: сдавать экзамен «заранее, чтобы был» — плохая идея, лучше подгадать под подачу документов."}},
+        {"@type": "Question", "name": "Что такое HSK 3.0 и меня это касается?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Это новый стандарт, где вместо шести уровней девять, объединённых в три ступени, а устная часть и иероглифика встроены в сам экзамен, а не сдаются отдельно. Экзамены верхней ступени уже проводятся, а переход остальных уровней идёт постепенно и в разных центрах по-разному. Поэтому правило одно: до регистрации уточните и в своём экзаменационном центре, и у вуза или работодателя, какой именно формат им нужен."}},
+        {"@type": "Question", "name": "Какой уровень HSK нужен для поступления в китайский вуз?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Зависит от программы. Для обучения на китайском чаще всего просят HSK 4 или HSK 5, для англоязычных программ китайский может не требоваться вовсе. Точную планку всегда смотрите на странице конкретной программы: она отличается у разных вузов и направлений и время от времени меняется. И держите в голове, что сертификат — одно из условий, а не пропуск сам по себе."}},
+        {"@type": "Question", "name": "Подтверждает ли HSK, что я умею говорить?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Нет, и это самое частое разочарование. Письменный HSK проверяет аудирование, чтение и — начиная со средних уровней — письмо. Речь он не проверяет вообще. Для устной части существует отдельный экзамен HSKK со своим сертификатом. Человек с высоким HSK вполне может теряться в разговоре: это не парадокс, а прямое следствие того, что именно измерялось."}},
+        {"@type": "Question", "name": "Что нужно набрать, чтобы сдать?",
+         "acceptedAnswer": {"@type": "Answer", "text": "На HSK 1 и 2 экзамен состоит из двух разделов, максимум 200 баллов, порог обычно 120. На уровнях с третьего по шестой разделов три, максимум 300 баллов, порог обычно 180. Отдельного минимума по каждому разделу нет, но сильно провалить один и вытянуть остальными почти невозможно. Как именно считается результат, подробно разобрано в отдельной статье про систему оценки."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Сертификат HSK"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамены · HSK</p>
+<h1>Сертификат HSK: <span class="italic">что это за экзамен, кому он нужен и что подтверждает</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-02">2 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/sertifikat-hsk.png" alt="Сертификат HSK: что подтверждает, сколько действует и чего не даёт" width="1200" height="630"></figure>
+
+<p class="passport">Про HSK обычно знают три вещи: он есть, уровней шесть и без него никуда. Все три при ближайшем рассмотрении требуют уточнения. Сертификат — это <b>отчёт о результатах измерения</b>, а не диплом; уровней <b>скоро будет девять</b>, потому что система переходит на новый стандарт; и «без него никуда» верно только для части задач. Разберём спокойно: что именно подтверждает эта бумага, сколько она живёт, зачем нужна на практике и — не менее важно — чего она не даёт.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>HSK — <b>汉语水平考试</b>, государственный экзамен на уровень китайского для иностранцев. Сертификат — это отчёт с баллами по разделам и подтверждённым уровнем. <b>Результат действителен два года</b>, и это чаще всего решает, когда сдавать. Сейчас уровней шесть, но принят новый стандарт <b>HSK 3.0 с девятью уровнями</b>, где устная часть и иероглифика встроены в экзамен. И главное ограничение: письменный HSK <b>не проверяет речь</b> — для неё есть отдельный экзамен HSKK.</p>
+</div>
+
+<h2>Что подтверждает сертификат <span class="italic">и что в нём написано</span></h2>
+<p>Полное название экзамена — <b class="han-big">汉语水平考试</b> (Hànyǔ Shuǐpíng Kǎoshì), «экзамен на уровень китайского языка». Он государственный, международный и рассчитан именно на иностранцев: носителям его не сдают.</p>
+<p>То, что обычно называют «сертификатом», по сути <b>отчёт о результатах</b>: в нём стоят баллы отдельно по каждому разделу, общая сумма и уровень, который вы подтвердили. Именно поэтому он и ценится: это не самооценка и не запись в резюме, а измеренная величина с понятной шкалой.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что проверяет письменный HSK.</caption>
+  <thead><tr><th>Раздел</th><th>Что измеряется</th><th>На каких уровнях</th></tr></thead>
+  <tbody>
+    <tr><td class="han-cell">听力<br>аудирование</td><td>понимание речи на слух</td><td>на всех</td></tr>
+    <tr><td class="han-cell">阅读<br>чтение</td><td>понимание письменного текста</td><td>на всех</td></tr>
+    <tr><td class="han-cell">书写<br>письмо</td><td>умение построить фразу и текст</td><td>начиная со средних уровней</td></tr>
+    <tr><td class="bad">Устная речь</td><td>не проверяется</td><td>для неё есть отдельный экзамен <a href="https://kitai-school.ru/article/hskk" target="_blank" rel="noopener">HSKK</a></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>HSK 3.0: <span class="italic">девять уровней вместо шести</span></h2>
+<p>Самая важная часть для тех, кто планирует сдавать. Принят новый стандарт, по которому уровней становится <b>девять</b>, объединённых в три ступени, а сам экзамен устроен иначе.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что меняет новый стандарт.</caption>
+  <thead><tr><th></th><th>Нынешняя система</th><th>HSK 3.0</th></tr></thead>
+  <tbody>
+    <tr><td><b>Уровней</b></td><td>шесть</td><td>девять, собранных в три ступени: начальную, среднюю и высшую</td></tr>
+    <tr><td><b>Устная часть</b></td><td>отдельный экзамен HSKK со своим сертификатом</td><td>встроена в сам экзамен</td></tr>
+    <tr><td><b>Иероглифика</b></td><td>отдельно не выделена</td><td>выделена как самостоятельный компонент</td></tr>
+    <tr><td><b>Верхняя планка</b></td><td>HSK 6</td><td>уровни седьмой–девятый, заметно выше прежнего потолка</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Переход идёт <b>постепенно и неравномерно</b>: экзамены верхней ступени уже проводятся, а по остальным уровням разные центры работают по-разному. Отсюда единственное надёжное правило: <b>до регистрации уточните формат дважды</b> — в своём экзаменационном центре и у того, кому вы понесёте результат, будь то вуз или работодатель. Требование «HSK 4» и требование «уровень 4 по новому стандарту» — не обязательно одно и то же.</p>
+
+<h2>Уровни сегодня: <span class="italic">что на каждом и куда идти дальше</span></h2>
+<p>Пока в ходу шестиуровневая система, и по ней стоит ориентироваться. Ниже — карта: что примерно означает каждый уровень и где про него подробно.</p>
+<div class="table-wrap">
+<table>
+  <caption>Шесть уровней и подробные разборы.</caption>
+  <thead><tr><th>Уровень</th><th>Что примерно значит</th><th>Подробно</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>простые фразы о себе, весь текст с пиньинем</td><td><a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1 с первого раза</a></td></tr>
+    <tr><td><b>HSK 2</b></td><td>бытовые темы, короткие диалоги</td><td><a href="https://kitai-school.ru/article/hsk-2-sdaem-vtoroy-uroven-bez-stressa" target="_blank" rel="noopener">HSK 2 без стресса</a></td></tr>
+    <tr><td><b>HSK 3</b></td><td>первый уровень без пиньиня, появляется письмо</td><td><a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">HSK 3 без пиньиня</a></td></tr>
+    <tr><td class="ok"><b>HSK 4</b></td><td>рабочий минимум: длинные тексты, свободная бытовая речь</td><td><a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4: разбор экзамена</a></td></tr>
+    <tr><td class="ok"><b>HSK 5</b></td><td>«университетский»: пресса, абстрактные темы, синонимы</td><td><a href="https://kitai-school.ru/article/hsk-5-kak-sdat-universitetskiy-kzamen" target="_blank" rel="noopener">HSK 5: как сдать</a></td></tr>
+    <tr><td><b>HSK 6</b></td><td>верхняя ступень нынешней системы</td><td>—</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Сколько слов и знаков стоит за каждым уровнем и почему «слово» и «иероглиф» — разные единицы счёта, разобрано в статье про <a href="https://kitai-school.ru/article/ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu" target="_blank" rel="noopener">требования HSK к количеству</a>. Отмеченные уровни — те, которые спрашивают чаще всего.</p>
+
+<figure class="ks-fig"><img src="assets/sertifikat-hsk-karta.png" alt="Сертификат HSK: что проверяет, сколько действует, для чего нужен и чего не даёт" loading="lazy" width="1200" height="900"><figcaption>Что проверяет экзамен, зачем нужен сертификат, чего он не даёт и что меняет переход на HSK 3.0.</figcaption></figure>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Одна наша студентка приехала в Китай с HSK 5 и совершенно заслуженно им гордилась: сдавала долго, готовилась честно. В первый же вечер она пошла в комендатуру общежития сказать, что в душе нет горячей воды, — и не смогла.</p>
+  <p>Не потому, что не знала слов. Она прекрасно понимала, что ей отвечают, читала объявления на стенде без словаря и разобрала бы этот диалог на бумаге за минуту. Просто <b>произнести вслух и вовремя</b> — отдельный навык, который её сертификат не измерял и не мог измерить.</p>
+  <p>С тех пор я говорю всем, кто планирует сдавать: сертификат честно показывает то, что в нём написано, — и ровно это, ни строчкой больше. Если вам нужно ещё и говорить, это <b>вторая, отдельная задача</b>, и решается она не подготовкой к письменному экзамену.</p>
+</div>
+
+<h2>Срок действия: <span class="italic">два года, и это важнее, чем кажется</span></h2>
+<p>Пункт, который стабильно узнают слишком поздно. Результат HSK считается действительным <b>два года с даты экзамена</b> — именно в этот срок его принимают вузы и стипендиальные программы.</p>
+<p>Сам документ никуда не исчезает: он остаётся у вас и вполне уместен в резюме и портфолио. Но в приёмную комиссию просроченный результат обычно не берут, и это меняет всю логику планирования.</p>
+<p class="note">Практический вывод: сдавать «заранее, чтобы просто был» — <b>плохая идея</b>. Гораздо разумнее подгадать экзамен под подачу документов: посмотреть дедлайны программы, отсчитать назад и выбрать дату так, чтобы результат был свежим и успел прийти. Календарь подачи на стипендии и бюджетные места разобран в статье про <a href="https://kitai-school.ru/article/kak-postupit-v-kitay-na-budjet" target="_blank" rel="noopener">поступление в Китай на бюджет</a>.</p>
+
+<h2>Для чего сертификат <span class="italic">нужен на практике</span></h2>
+<p>Задачи у него разные, и уровень под каждую тоже разный.</p>
+<div class="table-wrap">
+<table>
+  <caption>Пять сценариев, где сертификат работает.</caption>
+  <thead><tr><th>Зачем</th><th>Что даёт</th><th>Ориентир по уровню</th></tr></thead>
+  <tbody>
+    <tr><td><b>Поступление в китайский вуз</b></td><td>одно из условий допуска на программы на китайском языке</td><td>чаще HSK 4–5, зависит от программы</td></tr>
+    <tr><td><b><a href="https://kitai-school.ru/article/stipendiya-csc-v-kitae-polnyy-gayd-po-polucheniu-dlya-studentov" target="_blank" rel="noopener">Стипендия</a> и гранты</b></td><td>подтверждает языковую готовность в пакете документов</td><td>смотрите условия конкретной программы</td></tr>
+    <tr><td><b><a href="https://kitai-school.ru/article/rabota-v-kitae-dlya-inostranca" target="_blank" rel="noopener">Работа</a> с китайским</b></td><td>объективный аргумент в резюме вместо «владею на разговорном»</td><td>обычно от HSK 4, для языковых позиций выше</td></tr>
+    <tr><td><b>Подтверждение уровня внутри учёбы</b></td><td>допуск к профильным курсам, перевод на другую программу</td><td>устанавливает сам вуз</td></tr>
+    <tr><td><b>Проверка себя</b></td><td>внешняя точка отсчёта вместо ощущения «вроде получается»</td><td>любой, на полступени выше текущего</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Последний пункт недооценивают. Экзамен — <b>единственный способ измерить язык не изнутри</b>, а по общей шкале, и часто он показывает не то, что человек о себе думал: где-то лучше, где-то заметно хуже.</p>
+
+<h2>Чего сертификат <span class="italic">не даёт</span></h2>
+<p>Честная часть, без которой картина будет ложной.</p>
+<div class="table-wrap">
+<table>
+  <caption>Границы сертификата.</caption>
+  <thead><tr><th>Не даёт</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td class="bad">Не подтверждает, что вы говорите</td><td>речь письменным HSK не измеряется вообще; для неё есть <a href="https://kitai-school.ru/article/hskk" target="_blank" rel="noopener">HSKK</a> со своим сертификатом</td></tr>
+    <tr><td class="bad">Не гарантирует поступление</td><td>это одно из условий: смотрят ещё оценки, документы и мотивацию</td></tr>
+    <tr><td class="bad">Не заменяет диплом</td><td>он про язык, а не про образование или специальность</td></tr>
+    <tr><td class="bad">Не даёт визу сам по себе</td><td>виза оформляется по приглашению вуза или работодателя</td></tr>
+    <tr><td class="bad">Не бессрочен для подачи</td><td>два года — и в приёмную комиссию его уже не понесёшь</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Ни один из пунктов не означает, что сертификат бесполезен. Он означает ровно то, что означает: <b>язык измерен по общей шкале в такой-то день</b>. Проблемы начинаются там, где от бумаги ждут большего, — и почти всегда это ожидание «раз есть HSK 5, значит я свободно говорю».</p>
+
+<h2>Как проходит экзамен <span class="italic">и когда приходит результат</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Практическая сторона.</caption>
+  <thead><tr><th>Вопрос</th><th>Как обычно устроено</th></tr></thead>
+  <tbody>
+    <tr><td>Форматы</td><td>бумажный и компьютерный; на компьютерном письменную часть набирают, а не пишут от руки</td></tr>
+    <tr><td>Где сдавать</td><td>в аккредитованных экзаменационных центрах; регистрация заранее, места ограничены</td></tr>
+    <tr><td>Сколько разделов</td><td>два на HSK 1–2, три начиная с HSK 3</td></tr>
+    <tr><td>Проходной балл</td><td>обычно 120 из 200 на первых двух уровнях и 180 из 300 начиная с третьего</td></tr>
+    <tr><td>Когда результат</td><td>сначала появляется в личном кабинете, бумажный документ идёт дольше; сроки уточняйте в своём центре</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Отдельного минимума по каждому разделу нет, но провалить один и вытянуть остальными почти невозможно — арифметика не сходится. Как именно складывается итог, разобрано в статье про <a href="https://kitai-school.ru/article/sistema-ocenki-hsk-4" target="_blank" rel="noopener">систему оценки HSK</a>. И общее правило по всем цифрам этой статьи: пороги, форматы и сроки пересматриваются, поэтому актуальные всегда сверяйте на официальном сайте экзамена.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое сертификат HSK простыми словами?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это официальный документ о том, что вы сдали 汉语水平考试 (Hànyǔ Shuǐpíng Kǎoshì) — государственный китайский экзамен на уровень владения языком для иностранцев. По сути это отчёт о результатах: в нём стоят баллы по разделам, общая сумма и уровень, который вы подтвердили. Для вузов, стипендиальных программ и работодателей это единственное общепринятое доказательство того, что ваш китайский измерен, а не заявлен.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько действует сертификат HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Результат считается действительным два года с даты экзамена — именно в этот срок его принимают вузы и стипендиальные программы. Сам документ при этом никуда не исчезает и остаётся в вашем портфолио, но подавать его в приёмную комиссию позже обычно нельзя. Практический вывод: сдавать экзамен «заранее, чтобы был» — плохая идея, лучше подгадать под подачу документов.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое HSK 3.0 и меня это касается?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это новый стандарт, где вместо шести уровней девять, объединённых в три ступени, а устная часть и иероглифика встроены в сам экзамен, а не сдаются отдельно. Экзамены верхней ступени уже проводятся, а переход остальных уровней идёт постепенно и в разных центрах по-разному. Поэтому правило одно: до регистрации уточните и в своём экзаменационном центре, и у вуза или работодателя, какой именно формат им нужен.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой уровень HSK нужен для поступления в китайский вуз?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Зависит от программы. Для обучения на китайском чаще всего просят HSK 4 или HSK 5, для англоязычных программ китайский может не требоваться вовсе. Точную планку всегда смотрите на странице конкретной программы: она отличается у разных вузов и направлений и время от времени меняется. И держите в голове, что сертификат — одно из условий, а не пропуск сам по себе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Подтверждает ли HSK, что я умею говорить?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и это самое частое разочарование. Письменный HSK проверяет аудирование, чтение и — начиная со средних уровней — письмо. Речь он не проверяет вообще. Для устной части существует отдельный экзамен HSKK со своим сертификатом. Человек с высоким HSK вполне может теряться в разговоре: это не парадокс, а прямое следствие того, что именно измерялось.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что нужно набрать, чтобы сдать?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На HSK 1 и 2 экзамен состоит из двух разделов, максимум 200 баллов, порог обычно 120. На уровнях с третьего по шестой разделов три, максимум 300 баллов, порог обычно 180. Отдельного минимума по каждому разделу нет, но сильно провалить один и вытянуть остальными почти невозможно. Как именно считается результат, подробно разобрано в отдельной статье про систему оценки.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Если непонятно, какой уровень сдавать и успеете ли к нужной дате, — приходите на бесплатный урок. Посмотрим ваш реальный уровень, прикинем, до какого HSK можно дотянуть к вашему дедлайну, и соберём план подготовки.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>СЕРТИФИКАТ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — разберём вашу ситуацию.</p>
+</div>
+
+<p>Дальше по теме: устный экзамен — <a href="https://kitai-school.ru/article/hskk" target="_blank" rel="noopener">HSKK</a>; сколько слов на каждом уровне — <a href="https://kitai-school.ru/article/ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu" target="_blank" rel="noopener">требования HSK к количеству</a>; как считается результат — <a href="https://kitai-school.ru/article/sistema-ocenki-hsk-4" target="_blank" rel="noopener">система оценки</a>; учёба без своих денег — <a href="https://kitai-school.ru/article/kak-postupit-v-kitay-na-budjet" target="_blank" rel="noopener">поступление в Китай на бюджет</a>; и общая картина пути — <a href="https://kitai-school.ru/article/etapy-izucheniya-kitayskogo-yazyka" target="_blank" rel="noopener">этапы изучения китайского</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Официальные материалы HSK — уровни, структура разделов и порядок регистрации; актуальную версию смотрите на официальном сайте экзамена.</li>
+    <li>Стандарт международного образования по китайскому языку — основа новой девятиуровневой системы HSK 3.0.</li>
+    <li>Практика Kitai School — подготовка студентов к HSK всех уровней.</li>
+  </ol>
+</div>
+
+<p class="sign">Удачи на экзамене! <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим к HSK с любого уровня: от первого экзамена до сертификата для вуза</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
