@@ -1,0 +1,450 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku#article",
+      "headline": "Групповые занятия по китайскому языку: как устроен урок, где говорит каждый",
+      "description": "Почему в одних группах говорят все, а в других двое: арифметика времени говорения при фронтальном опросе и при работе в парах, что группа даёт лучше индивидуальных занятий и что хуже, размер группы, постановка произношения и разбор иероглифики в группе.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-03",
+      "dateModified": "2026-09-03",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku",
+      "about": {
+        "@type": "Thing",
+        "name": "Групповые занятия по китайскому языку — устройство урока и формат работы",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Китайский_язык",
+          "https://ru.wikipedia.org/wiki/Методика_преподавания_иностранных_языков"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что лучше: групповые занятия или индивидуальные?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Это разные инструменты, а не «лучше и хуже». Группа сильна там, где нужна речь с разными собеседниками, слух к чужим ошибкам и регулярность: расписание и одногруппники держат вас лучше любой мотивации. Индивидуальные занятия выигрывают в скорости, гибкости расписания и точечной работе над вашим произношением. Довольно часто разумнее их сочетать: база в группе, а произношение и слабые места — отдельно."}},
+        {"@type": "Question", "name": "Сколько человек должно быть в группе?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Ориентир — небольшая группа, где преподаватель успевает услышать каждого хотя бы раз за занятие. Практически это четыре-восемь человек: меньше четырёх — теряется смысл группы, потому что не с кем работать в парах и почти нет разных голосов; больше десяти — урок неизбежно превращается в лекцию, а говорить успевают самые смелые. Точную цифру всегда спрашивайте до оплаты, а не после."}},
+        {"@type": "Question", "name": "Почему в группе говорят только самые активные?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Дело не в учениках, а в устройстве урока. Если преподаватель спрашивает по очереди, время говорения делится на всех: в группе из восьми человек ваша доля — примерно одна восьмая. При работе в парах говорят все одновременно, и доля каждого — около половины. Одна и та же группа с одним и тем же преподавателем даёт совершенно разный результат в зависимости от того, какой формат выбран."}},
+        {"@type": "Question", "name": "Можно ли поставить произношение в группе?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Можно, и у группы здесь даже есть преимущество: хоровое повторение снимает страх ошибиться, а слушая чужие ошибки в тонах, вы начинаете замечать свои. Но одного хора мало. Нужно, чтобы преподаватель хотя бы раз за занятие услышал каждого отдельно и поправил именно его. Если этого нет, произношение в группе действительно просядет, и тогда его добирают индивидуально."}},
+        {"@type": "Question", "name": "Что делать, если я пропустил занятие?",
+         "acceptedAnswer": {"@type": "Answer", "text": "В группе пропуск дороже, чем при индивидуальных занятиях: перенести урок нельзя, группа идёт дальше. Поэтому до оплаты стоит выяснить, как школа закрывает пропуски: есть ли запись, материалы, отработка или возможность прийти в параллельную группу. Ответ «просто посмотрите у одногруппников» — плохой знак, потому что догонять придётся вам одному и без объяснений."}},
+        {"@type": "Question", "name": "Подойдёт ли группа, если я стесняюсь говорить?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Часто именно группа помогает лучше всего, но при одном условии: занятие должно строиться на парной работе, а не на публичных ответах у доски. В паре вас слышит один человек, который сам ошибается, — это совсем не то же самое, что говорить перед всеми. Спросите на пробном занятии, сколько времени отводится на работу в парах: если больше половины, стеснительным там обычно комфортно."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Групповые занятия по китайскому языку"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Изучение китайского</p>
+<h1>Групповые занятия по китайскому языку: <span class="italic">как устроен урок, где говорит каждый</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-03">3 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/gruppovye-zanyatiya-po-kitayskomu-yazyku.png" alt="Групповые занятия по китайскому: опрос по очереди против работы в парах" width="1200" height="630"></figure>
+
+<p class="passport">Про <b>занятия в группе китайский язык</b> обычно спорят одинаково: «в группе дешевле, но говорить будешь мало». Это верно ровно наполовину — и та половина, которая верна, зависит не от группы, а от того, как построен урок. В одной группе через месяц говорят все восемь человек, в другой — те же восемь молчат, кроме двоих. Преподаватель, программа и учебник при этом могут быть одинаковыми. Разберём, где именно проходит эта граница и что спросить, чтобы попасть в первую группу, а не во вторую.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>«Говорят только отличники» — это не про учеников, а про <b>формат урока</b>. При опросе по очереди ваша доля времени — <b>одна восьмая</b>, при работе в парах — <b>около половины</b>. Рабочий размер группы — <b>четыре-восемь человек</b>: столько преподаватель успевает услышать. Произношение в группе ставится хорошо, но только если вас слышат <b>отдельно</b> хотя бы раз за урок. И честно: группа проигрывает в скорости и в том, как тяжело даётся пропуск.</p>
+</div>
+
+<h2>Почему в одних группах говорят все, <span class="italic">а в других — двое</span></h2>
+<p>Самое частое объяснение — «просто там собрались смелые» — почти всегда неверное. Разница в одном: как преподаватель организует говорение.</p>
+<div class="table-wrap">
+<table>
+  <caption>Два способа провести одно и то же упражнение.</caption>
+  <thead><tr><th></th><th>Опрос по очереди</th><th>Работа в парах и тройках</th></tr></thead>
+  <tbody>
+    <tr><td><b>Кто говорит</b></td><td>один, остальные слушают</td><td class="ok">все одновременно</td></tr>
+    <tr><td><b>Кто исправляет</b></td><td>преподаватель, сразу</td><td>преподаватель обходит пары и слушает выборочно</td></tr>
+    <tr><td><b>Что происходит со стеснительными</b></td><td class="bad">молчат и ждут, пока пройдёт их очередь</td><td class="ok">говорят: их слышит один человек, а не вся группа</td></tr>
+    <tr><td><b>Чему учатся остальные</b></td><td>слушают чужой ответ, часто отключаясь</td><td class="ok">говорят сами, а потом слушают разбор общих ошибок</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Ни один из способов не плохой: опрос нужен, когда важно, чтобы все услышали образец. Плохо, когда <b>весь урок построен только на нём</b>. Признак хорошей группы — не «мало людей», а <b>чередование</b>: показали образец всем, дальше отработали в парах, потом снова собрались и разобрали, что не получилось.</p>
+
+<h2>Арифметика урока: <span class="italic">сколько минут говорите лично вы</span></h2>
+<p>Считать полезно самому — это отрезвляет и сразу объясняет, почему после трёх месяцев курса язык понимается, а рот не открывается.</p>
+<div class="table-wrap">
+<table>
+  <caption>Простой подсчёт для группы из восьми человек.</caption>
+  <thead><tr><th>Формат</th><th>Ваша доля времени говорения</th><th>За полтора часа это примерно</th></tr></thead>
+  <tbody>
+    <tr><td class="bad">Только опрос по очереди</td><td>одна восьмая от времени, отведённого на речь</td><td>несколько минут за занятие</td></tr>
+    <tr><td class="ok">Работа в парах</td><td>около половины от времени упражнения</td><td>в разы больше при том же расписании</td></tr>
+    <tr><td>Хоровое повторение</td><td>говорят все, но по образцу, а не своё</td><td>отлично для тонов, не заменяет речь</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Здесь нет никакой магии, только деление. Именно поэтому вопрос «сколько человек в группе» без второго вопроса — «а в каком формате мы говорим» — почти ничего не даёт. Восьмёрка с парной работой обгоняет четвёрку, где весь урок идёт фронтальный опрос.</p>
+
+<h2>Что группа даёт лучше, <span class="italic">чем один на один</span></h2>
+<p>Обычно перечисляют только цену. Она действительно ниже, но есть вещи, которых индивидуальные занятия не дают в принципе.</p>
+<div class="table-wrap">
+<table>
+  <caption>Преимущества, за которые группу и выбирают.</caption>
+  <thead><tr><th>Что даёт группа</th><th>Почему это важно именно в китайском</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Разные голоса</b></td><td>вы привыкаете понимать не только преподавателя; на слух это самая трудная часть языка</td></tr>
+    <tr><td class="ok"><b>Чужие ошибки</b></td><td>слыша чужой неверный тон, вы начинаете слышать свой — своё ухо к себе глухое</td></tr>
+    <tr><td class="ok"><b>Собеседник, который тоже ошибается</b></td><td>говорить с равным не страшно, и барьер снимается быстрее</td></tr>
+    <tr><td class="ok"><b>Регулярность</b></td><td>расписание и одногруппники держат лучше личной дисциплины</td></tr>
+    <tr><td class="ok"><b>Цена</b></td><td>при том же количестве часов выходит заметно дешевле</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Второй пункт недооценивают сильнее всего. Тон в собственной речи почти не слышен: вы произносите так, как задумали, а не так, как получилось. А в чужой речи ошибка слышна сразу — и именно с этого начинает настраиваться слух. Отдельно про звуки и тоны — в статье про <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировку произношения</a>.</p>
+
+<figure class="ks-fig"><img src="assets/gruppovye-zanyatiya-po-kitayskomu-yazyku-urok.png" alt="Разбор занятия по минутам: сколько говорит каждый студент при разных форматах" loading="lazy" width="1200" height="900"><figcaption>Разбор одного занятия по минутам: где вы слушаете, где говорите хором, а где говорите своё.</figcaption></figure>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>У меня была студентка, которая полгода занималась индивидуально и очень боялась группы: «я медленная, буду всех тормозить». Уговорили попробовать один месяц. На третьем занятии она впервые сама заговорила в паре — с такой же новенькой, которая путалась ровно там же.</p>
+  <p>Через месяц она сказала фразу, которую я запомнила: «Оказывается, я не медленная. Просто раньше я говорила <b>только с человеком, который знает язык идеально</b>, и всё время слышала, насколько я хуже».</p>
+  <p>С тех пор я не отговариваю от группы даже самых стеснительных, но задаю один вопрос школе: <b>сколько времени на занятии отводится на парную работу</b>. Если больше половины — тревожность обычно уходит за месяц. Если урок построен на ответах у доски, стеснительному там и правда будет тяжело.</p>
+</div>
+
+<h2>Что группа отнимает: <span class="italic">честная часть</span></h2>
+<p>Без этого выбор будет вслепую. У группы есть цена, и она не денежная.</p>
+<div class="table-wrap">
+<table>
+  <caption>Минусы, о которых стоит знать заранее.</caption>
+  <thead><tr><th>Минус</th><th>Что с этим делать</th></tr></thead>
+  <tbody>
+    <tr><td class="bad">Общий темп: кому-то быстро, кому-то медленно</td><td>выбирать группу по уровню, а не по удобному времени</td></tr>
+    <tr><td class="bad">Пропуск догоняете сами</td><td>заранее выяснить, есть ли запись, материалы и отработка</td></tr>
+    <tr><td class="bad">Произношение правят реже</td><td>добирать индивидуально, если тоны не идут</td></tr>
+    <tr><td class="bad">Расписание не подвинуть</td><td>честно оценить свой график до оплаты, а не после второго пропуска</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Отсюда частое разумное решение: <b>сочетать форматы</b>. База, лексика и разговорная практика — в группе, а произношение и личные слабые места — <a href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener">индивидуально</a>, коротким курсом. Это дешевле, чем всё время заниматься один на один, и быстрее, чем только в группе. Общий разбор форматов есть в статье про <a href="https://kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh" target="_blank" rel="noopener">курсы китайского для взрослых</a>.</p>
+
+<h2>Размер группы: <span class="italic">почему после десяти начинается лекция</span></h2>
+<p>Цифра сама по себе мало что значит, но границы всё же есть, и они выводятся из простого вопроса: успевает ли преподаватель услышать каждого.</p>
+<div class="table-wrap">
+<table>
+  <caption>Как размер меняет занятие.</caption>
+  <thead><tr><th>Сколько человек</th><th>Что происходит</th></tr></thead>
+  <tbody>
+    <tr><td><b>Два-три</b></td><td>почти индивидуальные занятия: мало разных голосов, пары складываются с трудом</td></tr>
+    <tr><td class="ok"><b>Четыре-восемь</b></td><td>рабочий диапазон: пары меняются, преподаватель успевает услышать каждого</td></tr>
+    <tr><td><b>Девять-десять</b></td><td>ещё работает, но требует жёсткой организации и опытного преподавателя</td></tr>
+    <tr><td class="bad"><b>Больше десяти</b></td><td>урок сползает в лекцию: говорят самые смелые, остальные слушают</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И главное уточнение: спрашивать нужно не «сколько мест в группе», а <b>сколько человек реально приходит</b>. Набор в двенадцать при постоянной явке в шесть — это одна ситуация, а набор в восемь, где ходят все, — совсем другая.</p>
+
+<h2>Произношение в группе: <span class="italic">хор, пары и одна проверка</span></h2>
+<p>Распространённое опасение — «в группе тоны не поставят». На самом деле у группы здесь есть козырь, но он работает только вместе с одним обязательным условием.</p>
+<div class="table-wrap">
+<table>
+  <caption>Как ставят произношение в группе.</caption>
+  <thead><tr><th>Приём</th><th>Что даёт</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Хоровое повторение</b></td><td>снимает страх ошибиться: в общем голосе не страшно; отлично заходит на первых неделях</td></tr>
+    <tr><td class="ok"><b>Слушать соседа</b></td><td>чужая ошибка в тоне слышна, своя — почти нет; так настраивается ухо</td></tr>
+    <tr><td class="ok"><b>Пары с записью</b></td><td>записали друг друга на телефон, послушали и сравнили с образцом</td></tr>
+    <tr><td class="bad"><b>Только хор, без личной проверки</b></td><td>ошибка прячется в общем голосе и закрепляется незамеченной</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Обязательное условие простое: <b>преподаватель должен услышать вас отдельно хотя бы раз за занятие</b> и поправить именно вас. Если этого не происходит, произношение в группе действительно просядет. Так что вопрос при выборе звучит не «ставите ли вы тоны», а «как часто вы слышите каждого по отдельности».</p>
+
+<h2>Иероглифика в группе: <span class="italic">чужие ассоциации работают лучше своих</span></h2>
+<p>Тут группа неожиданно выигрывает. Иероглиф разбирается по составным частям, и придумать зацепку в одиночку труднее, чем услышать пять чужих вариантов и выбрать свой.</p>
+<p>На занятии это выглядит так: знак разбирают на составляющие у доски, а дальше каждый предлагает, как ему проще запомнить. Один вариант оказывается смешным, другой точным, третий работает лично для вас — и именно он остаётся в памяти. В одиночку такого перебора не бывает.</p>
+<p class="note">Что при этом должно быть в программе: <b>разбор по составным частям</b>, а не заучивание знаков целиком. Как устроена эта логика, разобрано в статьях про <a href="https://kitai-school.ru/article/znachenie-kluchey-v-kitayskih-ieroglifah" target="_blank" rel="noopener">значение ключей</a> и <a href="https://kitai-school.ru/article/kursy-po-ieroglifike" target="_blank" rel="noopener">курсы по иероглифике</a>. Если на курсе иероглифы просто дают списком на неделю — это та самая «потоковая зубрёжка», и группа тут ни при чём.</p>
+
+<h2>Пять вопросов <span class="italic">про формат урока</span></h2>
+<p>Не про программу и не про преподавателя — про то, как именно пройдёт занятие. Эти ответы предсказывают результат лучше, чем описание курса на сайте.</p>
+<div class="table-wrap">
+<table>
+  <caption>О чём спросить до оплаты.</caption>
+  <thead><tr><th>Вопрос</th><th>Что хотите услышать</th></tr></thead>
+  <tbody>
+    <tr><td>Сколько времени на занятии я буду говорить сам?</td><td class="ok">конкретно, с упоминанием парной работы</td></tr>
+    <tr><td>Сколько человек реально приходит?</td><td class="ok">четыре-восемь, а не «набор до двенадцати»</td></tr>
+    <tr><td>Как часто вы слышите каждого отдельно?</td><td class="ok">хотя бы раз за занятие</td></tr>
+    <tr><td>Как догонять, если я пропустил?</td><td class="ok">запись, материалы, отработка или параллельная группа</td></tr>
+    <tr><td>Как формируются группы по уровню?</td><td class="ok">по входному тесту и устной проверке, а не по времени в расписании</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Последний пункт стоит отдельного внимания: группа, собранная по удобному времени, а не по уровню, разваливается через месяц. Кому-то скучно, кому-то не догнать — и уходят обычно обе стороны. Как устроены наши <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">групповые занятия по китайскому языку</a>, можно посмотреть на странице курсов.</p>
+
+<figure class="ks-fig"><img src="assets/gruppovye-zanyatiya-po-kitayskomu-yazyku-shpargalka.png" alt="Шпаргалка: пять вопросов о формате урока и что хотите услышать в ответ" loading="lazy" width="1200" height="678"><figcaption>Шпаргалка для разговора со школой: пять вопросов и ответы, после которых можно платить.</figcaption></figure>
+
+<h2>Что зависит <span class="italic">от вас</span></h2>
+<p>Половина результата в группе — не про школу. Три вещи, которые меняют дело сильнее выбора курса.</p>
+<div class="table-wrap">
+<table>
+  <caption>Как получить от группы максимум.</caption>
+  <thead><tr><th>Что делать</th><th>Почему это работает</th></tr></thead>
+  <tbody>
+    <tr><td class="ok">Приходить с выполненным домашним</td><td>иначе занятие уйдёт на то, что можно было сделать дома, — и не только у вас</td></tr>
+    <tr><td class="ok">Говорить первым хотя бы раз за урок</td><td>первый ответ всегда самый страшный и всегда снимает напряжение на весь урок</td></tr>
+    <tr><td class="ok">Работать в паре всерьёз</td><td>пара — это ваше личное время говорения; переходить на русский значит его выбрасывать</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И про сроки, чтобы не было завышенных ожиданий: язык в группе идёт не быстрее и не медленнее, чем везде, — он идёт ровно настолько, насколько регулярно вы говорите. Реалистичные сроки разобраны в статье про то, <a href="https://kitai-school.ru/article/za-kakoe-vremya-realno-vyuchit-kitayskiy" target="_blank" rel="noopener">за какое время реально выучить китайский</a>, а общая картина пути — в <a href="https://kitai-school.ru/article/etapy-izucheniya-kitayskogo-yazyka" target="_blank" rel="noopener">этапах изучения</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что лучше: групповые занятия или индивидуальные?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это разные инструменты, а не «лучше и хуже». Группа сильна там, где нужна речь с разными собеседниками, слух к чужим ошибкам и регулярность: расписание и одногруппники держат вас лучше любой мотивации. Индивидуальные занятия выигрывают в скорости, гибкости расписания и точечной работе над вашим произношением. Довольно часто разумнее их сочетать: база в группе, а произношение и слабые места — отдельно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько человек должно быть в группе?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Ориентир — небольшая группа, где преподаватель успевает услышать каждого хотя бы раз за занятие. Практически это четыре-восемь человек: меньше четырёх — теряется смысл группы, потому что не с кем работать в парах и почти нет разных голосов; больше десяти — урок неизбежно превращается в лекцию, а говорить успевают самые смелые. Точную цифру всегда спрашивайте до оплаты, а не после.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему в группе говорят только самые активные?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Дело не в учениках, а в устройстве урока. Если преподаватель спрашивает по очереди, время говорения делится на всех: в группе из восьми человек ваша доля — примерно одна восьмая. При работе в парах говорят все одновременно, и доля каждого — около половины. Одна и та же группа с одним и тем же преподавателем даёт совершенно разный результат в зависимости от того, какой формат выбран.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли поставить произношение в группе?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Можно, и у группы здесь даже есть преимущество: хоровое повторение снимает страх ошибиться, а слушая чужие ошибки в тонах, вы начинаете замечать свои. Но одного хора мало. Нужно, чтобы преподаватель хотя бы раз за занятие услышал каждого отдельно и поправил именно его. Если этого нет, произношение в группе действительно просядет, и тогда его добирают индивидуально.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что делать, если я пропустил занятие?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В группе пропуск дороже, чем при индивидуальных занятиях: перенести урок нельзя, группа идёт дальше. Поэтому до оплаты стоит выяснить, как школа закрывает пропуски: есть ли запись, материалы, отработка или возможность прийти в параллельную группу. Ответ «просто посмотрите у одногруппников» — плохой знак, потому что догонять придётся вам одному и без объяснений.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Подойдёт ли группа, если я стесняюсь говорить?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Часто именно группа помогает лучше всего, но при одном условии: занятие должно строиться на парной работе, а не на публичных ответах у доски. В паре вас слышит один человек, который сам ошибается, — это совсем не то же самое, что говорить перед всеми. Спросите на пробном занятии, сколько времени отводится на работу в парах: если больше половины, стеснительным там обычно комфортно.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Лучший способ понять, ваш это формат или нет, — прийти и посмотреть изнутри. Запишитесь на бесплатное пробное занятие: увидите, как устроен урок, сколько на нём говорят и в какой группе по уровню вам будет комфортно.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>ГРУППА</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём группу по уровню и расписанию.</p>
+</div>
+
+<p>Дальше по теме: форматы и цены — <a href="https://kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh" target="_blank" rel="noopener">курсы китайского для взрослых</a>; звуки и тоны — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>; знаки по частям — <a href="https://kitai-school.ru/article/kursy-po-ieroglifike" target="_blank" rel="noopener">курсы по иероглифике</a>; трудно ли начинать — <a href="https://kitai-school.ru/article/slojno-li-uchit-kitayskiy-s-nulya" target="_blank" rel="noopener">китайский с нуля</a>; первый экзамен — <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1</a>; и обучение сотрудников — <a href="https://kitai-school.ru/article/korporativnyy-kitayskiy-zachem-kompanii-vkladyvautsya-v-obuchenie" target="_blank" rel="noopener">корпоративный китайский</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — групповые занятия китайским языком для взрослых и подростков.</li>
+    <li>Материалы по методике преподавания иностранных языков: организация парной и групповой работы на уроке.</li>
+    <li>Наблюдения преподавателей за постановкой тонов в группе и индивидуально.</li>
+  </ol>
+</div>
+
+<p class="sign">Говорите смелее! <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+        <p class="side-note">Группы, где говорит каждый: четыре-восемь человек и работа в парах на каждом уроке</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
