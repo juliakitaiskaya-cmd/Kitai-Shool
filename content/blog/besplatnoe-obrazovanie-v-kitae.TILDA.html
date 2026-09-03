@@ -1,0 +1,430 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/besplatnoe-obrazovanie-v-kitae#article",
+      "headline": "Бесплатное образование в Китае: сколько своих денег всё равно понадобится",
+      "description": "Денежная сторона учёбы по стипендии: три степени бесплатного обучения, расходы до подачи и до вылета, кассовый разрыв между приездом и первой выплатой, текущие траты сверх стипендии и цена неудачной попытки.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-03",
+      "dateModified": "2026-09-03",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/besplatnoe-obrazovanie-v-kitae",
+      "about": {
+        "@type": "Thing",
+        "name": "Бесплатное обучение в Китае по стипендии и сопутствующие расходы студента",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Стипендия",
+          "https://ru.wikipedia.org/wiki/Образование_в_Китайской_Народной_Республике"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Можно ли учиться в Китае действительно бесплатно?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Учиться — да: плату за обучение и место в общежитии закрывает стипендия, а на полных программах приходят ещё и ежемесячные выплаты. Но «бесплатно» относится к учёбе, а не к переезду: перелёт, визовый сбор, медосмотр дома и в Китае, легализация и переводы документов, оформление вида на жительство и первые недели до первой выплаты остаются на вас. Своих денег понадобится ощутимо меньше, чем при платном обучении, но не ноль."}},
+        {"@type": "Question", "name": "Сколько своих денег нужно на старте?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Конкретную сумму назвать честно нельзя: она зависит от города вылета, программы, курса валют и того, сколько документов придётся переводить и легализовать. Полезнее держать в голове структуру и сроки: расходы до подачи, расходы до вылета, запас на первый месяц и текущие траты сверх стипендии. Считать бюджет стоит именно по этим четырём моментам, а не одной цифрой."}},
+        {"@type": "Question", "name": "Что такое кассовый разрыв в первый месяц?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Ежемесячные выплаты начинают приходить не в день приезда: сначала нужно доехать, заселиться, пройти медосмотр, открыть счёт в местном банке и оформить документы, и только потом начисления доходят до вас. Между приездом и первой выплатой проходит время, и всё это время вы живёте на свои. Это самая частая финансовая неожиданность у стипендиатов, и закладывать запас на этот период нужно заранее."}},
+        {"@type": "Question", "name": "Бывает ли обучение бесплатным без стипендии?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Бывает частично. Кроме полных стипендий существуют программы, которые освобождают только от платы за обучение: общежитие, страховка и жизнь тогда полностью ваши. В объявлениях и то и другое нередко называют одним словом «бесплатно», поэтому в условиях программы всегда смотрите, что именно покрывается: обучение, проживание, страховка и есть ли ежемесячные выплаты."}},
+        {"@type": "Question", "name": "Что делать, если грант не дали?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Считать это нормальным сценарием и держать план Б заранее. Отказ по правительственной программе не закрывает провинциальные и вузовские: конкурс там заметно меньше, а условия часто вполне приличные. Второй путь — поступить за свои на недорогую программу и подаваться на стипендию для продолжающих уже изнутри вуза. Третий — подтянуть язык за год и подать снова более сильную заявку."}},
+        {"@type": "Question", "name": "На что уходят деньги ещё до результата?",
+         "acceptedAnswer": {"@type": "Answer", "text": "На то, что делается до подачи и не возвращается независимо от исхода: переводы и легализация документов, справки с ограниченным сроком годности, медосмотр, сдача языкового экзамена, иногда нотариальные копии. Отсюда практический вывод: собирать документы разумно в порядке от дешёвых к дорогим и не заказывать заранее то, у чего есть срок годности."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Бесплатное образование в Китае"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Учёба в Китае</p>
+<h1>Бесплатное образование в Китае: <span class="italic">сколько своих денег всё равно понадобится</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-03">3 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/besplatnoe-obrazovanie-v-kitae.png" alt="Бесплатное образование в Китае: три степени бесплатности и четыре момента, когда нужны свои деньги" width="1200" height="630"></figure>
+
+<p class="passport">Про <b>бесплатное обучение в Китае</b> в блоге уже есть подробные разборы: какие бывают стипендии, как подаваться на правительственную программу и что писать в документах. Эта статья про другое и написана потому, что именно здесь чаще всего рушатся планы: <b>сколько своих денег понадобится и в какие моменты</b>. Потому что учёба действительно бывает бесплатной, а переезд — нет, и обнаруживается это обычно в самое неподходящее время: за месяц до вылета или в первую неделю в общежитии.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>«Бесплатно» бывает <b>трёх разных степеней</b>, и в объявлениях их называют одним словом. Свои деньги нужны в <b>четыре момента</b>: до подачи, до вылета, в первый месяц и понемногу весь год. Самая частая неожиданность — <b>кассовый разрыв</b>: выплаты приходят не в день приезда. И отдельная строка расходов — <b>попытка</b>: переводы, легализация и справки оплачиваются до того, как вы узнаете результат, и не возвращаются.</p>
+</div>
+
+<h2>Три степени «бесплатности» <span class="italic">и почему их путают</span></h2>
+<p>Первое, что стоит выяснить в любом объявлении, — что именно там называют бесплатным. Вариантов три, и разница между ними в деньгах огромная.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что может стоять за словом «бесплатно».</caption>
+  <thead><tr><th>Что предлагают</th><th>Что закрыто</th><th>Что остаётся вам</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Полная стипендия</b></td><td>обучение, место в общежитии, базовая страховка, ежемесячные выплаты</td><td>переезд, оформление и траты сверх выплат</td></tr>
+    <tr><td><b>Освобождение от платы за обучение</b></td><td>только обучение</td><td>общежитие, страховка, жизнь — целиком</td></tr>
+    <tr><td class="bad"><b>«Дёшево» без стипендии</b></td><td>ничего: просто недорогая программа</td><td>всё, но суммы меньше, чем в топовых вузах</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Первую и вторую строку в объявлениях нередко называют одинаково. Проверять нужно по четырём пунктам: <b>обучение, проживание, страховка, ежемесячные выплаты</b> — и по каждому смотреть, стоит ли он в условиях программы. Полный разбор того, какие вообще бывают стипендии и кто их даёт, собран в статье про <a href="https://kitai-school.ru/article/stipendiya-v-kitae" target="_blank" rel="noopener">стипендии в Китае</a>; здесь мы говорим только про деньги.</p>
+
+<h2>Четыре момента, <span class="italic">когда нужны свои деньги</span></h2>
+<p>Полезнее считать не одну общую сумму, а четыре отдельные — они нужны в разное время, и путать их не стоит.</p>
+<div class="table-wrap">
+<table>
+  <caption>Когда и на что понадобятся собственные средства.</caption>
+  <thead><tr><th>Момент</th><th>На что</th><th>Особенность</th></tr></thead>
+  <tbody>
+    <tr><td class="bad"><b>1. До подачи</b></td><td>переводы, легализация, справки, языковой экзамен</td><td>не возвращается независимо от результата</td></tr>
+    <tr><td><b>2. До вылета</b></td><td>перелёт, виза, медосмотр дома, страховка на дорогу</td><td>расходы фиксированы датой начала учёбы</td></tr>
+    <tr><td class="bad"><b>3. Первый месяц</b></td><td>жизнь до первой выплаты, медосмотр на месте, вид на жительство, симкарта, банковская карта</td><td>кассовый разрыв: выплаты приходят не сразу</td></tr>
+    <tr><td><b>4. Весь год</b></td><td>учебники, поездки, всё сверх ежемесячных выплат</td><td>зависит от города, а не от программы</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Конкретных сумм здесь нет намеренно: они зависят от города вылета, курса, программы и количества документов, а любые цифры из интернета устаревают за сезон. Что реально помогает — <b>считать по этим четырём строкам отдельно</b> и уточнять каждую у своего вуза и в консульстве. Сколько уходит на жизнь в разных городах, разобрано в статье <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли в Китае</a>.</p>
+
+<h2>Расходы до подачи: <span class="italic">их не вернут</span></h2>
+<p>Самая недооценённая часть бюджета. Всё, что делается до отправки заявки, оплачивается независимо от того, дадут вам стипендию или нет.</p>
+<div class="table-wrap">
+<table>
+  <caption>За что платят до результата.</caption>
+  <thead><tr><th>Статья</th><th>Что учесть</th></tr></thead>
+  <tbody>
+    <tr><td><b>Переводы документов</b></td><td>объём зависит от программы: аттестат или диплом с приложением, справки, иногда рекомендации</td></tr>
+    <tr><td><b>Легализация</b></td><td>самая долгая и самая дорогая часть пакета; порядок уточняйте под конкретную страну и вуз</td></tr>
+    <tr><td><b>Языковой экзамен</b></td><td>оплачивается при регистрации; результат <a href="https://kitai-school.ru/article/sertifikat-hsk" target="_blank" rel="noopener">действителен два года</a>, поэтому сдавать заранее «про запас» невыгодно вдвойне</td></tr>
+    <tr><td><b>Справки с ограниченным сроком</b></td><td>заказанные слишком рано, просто протухнут, и платить придётся снова</td></tr>
+    <tr><td><b>Медосмотр</b></td><td>у результатов тоже есть срок годности</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Отсюда простое правило порядка: <b>сначала дешёвое и бессрочное, потом дорогое и срочное</b>. Сначала собрать то, что не портится и стоит недорого, а легализацию, справки и медосмотр запускать, когда календарь подачи уже понятен. Календарь по программам разобран в статье про <a href="https://kitai-school.ru/article/kak-postupit-v-kitay-na-budjet" target="_blank" rel="noopener">поступление в Китай на бюджет</a>.</p>
+
+<figure class="ks-fig"><img src="assets/besplatnoe-obrazovanie-v-kitae-dengi.png" alt="Бесплатное образование в Китае: степени бесплатности, четыре момента расходов, кассовый разрыв и план Б" loading="lazy" width="1200" height="900"><figcaption>Три степени «бесплатности», четыре момента, когда нужны свои деньги, кассовый разрыв и план Б.</figcaption></figure>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Один наш студент выиграл полную стипендию и прилетел почти без денег — вполне логично рассуждая, что всё оплачено. Оплачено и было: общежитие ждало, обучение закрыто. А дальше выяснилось, что до первой выплаты нужно пройти медосмотр, подать документы на вид на жительство и открыть счёт в местном банке, и всё это — за свой счёт и не за один день.</p>
+  <p>Первые недели он занимал у соседей по этажу. Ничего страшного не случилось, все живы, но настроение первого месяца в чужой стране было испорчено ровно на пустом месте.</p>
+  <p>С тех пор я говорю всем стипендиатам одно и то же: <b>привезите запас на первый месяц</b>, даже если по бумагам вам ничего не нужно платить. Это не про недоверие к программе, а про то, что деньги идут по своему графику, а жить надо с первого дня.</p>
+</div>
+
+<h2>Кассовый разрыв: <span class="italic">почему первые недели живёшь на свои</span></h2>
+<p>Пункт, из-за которого чаще всего занимают деньги у новых знакомых. Логика простая: <b>стипендия начисляется студенту, а студентом вы становитесь не в момент приземления</b>.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что происходит между приездом и первой выплатой.</caption>
+  <thead><tr><th>Шаг</th><th>Почему он задерживает деньги</th></tr></thead>
+  <tbody>
+    <tr><td>Заселение и регистрация</td><td>без них не двигаются остальные документы</td></tr>
+    <tr><td>Медосмотр на месте</td><td>обязателен и оплачивается вами; запись бывает не на завтра</td></tr>
+    <tr><td>Оформление вида на жительство</td><td>занимает время и требует пошлины</td></tr>
+    <tr><td>Открытие счёта в местном банке</td><td>выплаты приходят на него, а не на карту из дома</td></tr>
+    <tr><td>Первое начисление</td><td>идёт по расписанию вуза, а не по дате вашего приезда</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Практический вывод один и он простой: <b>запас на первый месяц привозят с собой</b>. И заранее выясняют у вуза, каким числом обычно приходит первая выплата и какой банк открывают студентам, — это два вопроса, которые снимают почти всю неопределённость.</p>
+
+<h2>Что покрывает стипендия: <span class="italic">коротко, чтобы не повторяться</span></h2>
+<p>Полный состав покрытия, разница между 奖学金, 助学金 и 学费减免 и правила ежегодной переаттестации подробно разобраны в статье про <a href="https://kitai-school.ru/article/stipendiya-v-kitae" target="_blank" rel="noopener">стипендии в Китае для иностранцев</a>. Здесь только то, что важно для расчёта денег.</p>
+<div class="table-wrap">
+<table>
+  <caption>Границы покрытия в деньгах.</caption>
+  <thead><tr><th>Закрывает стипендия</th><th>Остаётся вашим</th></tr></thead>
+  <tbody>
+    <tr><td class="ok">Плата за обучение — идёт напрямую вузу</td><td class="bad">Перелёт, кроме отдельных двусторонних программ</td></tr>
+    <tr><td class="ok">Общежитие или доплата на жильё</td><td class="bad">Визовые сборы и оформление документов</td></tr>
+    <tr><td class="ok">Базовая медицинская страховка</td><td class="bad">Медосмотры дома и в Китае</td></tr>
+    <tr><td class="ok">Ежемесячные выплаты на жизнь</td><td class="bad">Всё, что не помещается в эти выплаты</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И отдельная вещь, о которой узнают поздно: стипендию можно <b>потерять</b>. Практически везде есть ежегодная переаттестация, и по её итогам финансирование продлевают, продлевают с предупреждением или снимают. Это тоже финансовый риск, и он разобран в той же статье про стипендии.</p>
+
+<h2>Во что обходится попытка <span class="italic">и что делать, если не дали</span></h2>
+<p>Отказ по правительственной программе — не редкость, а обычный сценарий: заявок много, мест мало. План Б стоит держать с самого начала, а не придумывать в мае.</p>
+<div class="table-wrap">
+<table>
+  <caption>Куда идти после отказа.</caption>
+  <thead><tr><th>Вариант</th><th>Что это значит</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Провинциальные и вузовские программы</b></td><td>конкурс заметно меньше, условия часто вполне приличные; пакет документов у вас уже собран</td></tr>
+    <tr><td class="ok"><b>Поступить за свои и подаваться изнутри</b></td><td>стипендии для продолжающих существуют, и конкурс там ниже</td></tr>
+    <tr><td class="ok"><b>Взять год на язык и подать снова</b></td><td>уровень <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK</a> — то, что двигается за год сильнее всего остального в заявке</td></tr>
+    <tr><td class="bad">Считать, что всё пропало</td><td>документы уже собраны и часть из них ещё действует — это не ноль, а задел</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Как усилить заявку и как вообще распределяются места, разобрано в статье про <a href="https://kitai-school.ru/article/kak-vyigrat-grant-na-obuchenie-v-kitae" target="_blank" rel="noopener">гранты на обучение в Китае</a>.</p>
+
+<h2>Куда идти дальше: <span class="italic">разбор вашей программы</span></h2>
+<p>Эта статья — про деньги. Всё остальное про поступление у нас разложено по отдельным разборам.</p>
+<div class="table-wrap">
+<table>
+  <caption>Ваш вопрос и где на него ответ.</caption>
+  <thead><tr><th>Что вам нужно</th><th>Куда идти</th></tr></thead>
+  <tbody>
+    <tr><td>Какие вообще бывают стипендии и кто их даёт</td><td><a href="https://kitai-school.ru/article/stipendiya-v-kitae" target="_blank" rel="noopener">Стипендии в Китае для иностранцев</a></td></tr>
+    <tr><td>Правительственная программа по шагам: каналы, документы, интервью</td><td><a href="https://kitai-school.ru/article/stipendiya-csc-v-kitae-polnyy-gayd-po-polucheniu-dlya-studentov" target="_blank" rel="noopener">Стипендия CSC: полный гайд</a></td></tr>
+    <tr><td>Пять путей к оплаченному месту и календарь подачи</td><td><a href="https://kitai-school.ru/article/kak-postupit-v-kitay-na-budjet" target="_blank" rel="noopener">Как поступить в Китай на бюджет</a></td></tr>
+    <tr><td>Как распределяются места и что усиливает заявку</td><td><a href="https://kitai-school.ru/article/kak-vyigrat-grant-na-obuchenie-v-kitae" target="_blank" rel="noopener">Гранты на обучение в Китае</a></td></tr>
+    <tr><td>Иду на первое высшее</td><td><a href="https://kitai-school.ru/article/bakalavriat-v-kitae" target="_blank" rel="noopener">Бакалавриат в Китае</a></td></tr>
+    <tr><td>Иду в магистратуру</td><td><a href="https://kitai-school.ru/article/magistratura-v-kitae" target="_blank" rel="noopener">Магистратура в Китае</a></td></tr>
+    <tr><td>У меня диплом колледжа</td><td><a href="https://kitai-school.ru/article/kak-postupit-v-kitay-posle-kolledzha" target="_blank" rel="noopener">Поступление в Китай после колледжа</a></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли учиться в Китае действительно бесплатно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Учиться — да: плату за обучение и место в общежитии закрывает стипендия, а на полных программах приходят ещё и ежемесячные выплаты. Но «бесплатно» относится к учёбе, а не к переезду: перелёт, визовый сбор, медосмотр дома и в Китае, легализация и переводы документов, оформление вида на жительство и первые недели до первой выплаты остаются на вас. Своих денег понадобится ощутимо меньше, чем при платном обучении, но не ноль.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько своих денег нужно на старте?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Конкретную сумму назвать честно нельзя: она зависит от города вылета, программы, курса валют и того, сколько документов придётся переводить и легализовать. Полезнее держать в голове структуру и сроки: расходы до подачи, расходы до вылета, запас на первый месяц и текущие траты сверх стипендии. Считать бюджет стоит именно по этим четырём моментам, а не одной цифрой.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое кассовый разрыв в первый месяц?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Ежемесячные выплаты начинают приходить не в день приезда: сначала нужно доехать, заселиться, пройти медосмотр, открыть счёт в местном банке и оформить документы, и только потом начисления доходят до вас. Между приездом и первой выплатой проходит время, и всё это время вы живёте на свои. Это самая частая финансовая неожиданность у стипендиатов, и закладывать запас на этот период нужно заранее.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Бывает ли обучение бесплатным без стипендии?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Бывает частично. Кроме полных стипендий существуют программы, которые освобождают только от платы за обучение: общежитие, страховка и жизнь тогда полностью ваши. В объявлениях и то и другое нередко называют одним словом «бесплатно», поэтому в условиях программы всегда смотрите, что именно покрывается: обучение, проживание, страховка и есть ли ежемесячные выплаты.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что делать, если грант не дали?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Считать это нормальным сценарием и держать план Б заранее. Отказ по правительственной программе не закрывает провинциальные и вузовские: конкурс там заметно меньше, а условия часто вполне приличные. Второй путь — поступить за свои на недорогую программу и подаваться на стипендию для продолжающих уже изнутри вуза. Третий — подтянуть язык за год и подать снова более сильную заявку.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>На что уходят деньги ещё до результата?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На то, что делается до подачи и не возвращается независимо от исхода: переводы и легализация документов, справки с ограниченным сроком годности, медосмотр, сдача языкового экзамена, иногда нотариальные копии. Отсюда практический вывод: собирать документы разумно в порядке от дешёвых к дорогим и не заказывать заранее то, у чего есть срок годности.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Язык — то, что двигается медленнее всего и решает в заявке больше всего. Приходите на бесплатный урок: посмотрим ваш реальный уровень, прикинем, до какого HSK можно дотянуть к подаче, и соберём план подготовки под сроки вашей программы.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>БЕСПЛАТНО</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — разберём вашу ситуацию.</p>
+</div>
+
+<p>Дальше по теме: какие бывают стипендии — <a href="https://kitai-school.ru/article/stipendiya-v-kitae" target="_blank" rel="noopener">разбор системы</a>; правительственная программа — <a href="https://kitai-school.ru/article/stipendiya-csc-v-kitae-polnyy-gayd-po-polucheniu-dlya-studentov" target="_blank" rel="noopener">стипендия CSC</a>; пути и календарь — <a href="https://kitai-school.ru/article/kak-postupit-v-kitay-na-budjet" target="_blank" rel="noopener">поступление на бюджет</a>; цены на жизнь — <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли в Китае</a>; и устройство ступени — <a href="https://kitai-school.ru/article/bakalavriat-v-kitae" target="_blank" rel="noopener">бакалавриат в Китае</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Условия стипендиальных программ для иностранных студентов — состав покрытия и порядок выплат; актуальные версии смотрите на сайтах программ и вузов.</li>
+    <li>Требования к документам и легализации — уточняются в консульстве и в приёмной комиссии конкретного вуза.</li>
+    <li>Практика Kitai School — сопровождение студентов при поступлении в китайские вузы.</li>
+  </ol>
+</div>
+
+<p class="sign">Удачи с подачей! <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+        <p class="side-note">Доводим язык до уровня, который просят вузы и стипендиальные программы</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
