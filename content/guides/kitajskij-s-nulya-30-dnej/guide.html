@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Китайский с нуля: план на первые 30 дней</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --brick:#A41E3A; --brick-deep:#841630; --brick-soft:#F7E6EB;
+    --ink:#2C2420; --ink-2:#5A4F45; --taupe:#8B7D6B; --taupe-soft:#B8AC9C;
+    --cream:#FAF7F2; --cream-2:#F3EDE3; --surface:#FFFFFF;
+    --highlight:#FCF6E2; --hairline:#EAE3D8; --hairline-2:#DED5C6;
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-sans:'Inter',Arial,sans-serif;
+    --font-han:'Noto Serif SC','Songti SC',serif;
+  }
+  @page{ size:A4; margin:0 }
+  *{margin:0; padding:0; box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  body{font-family:var(--font-sans); color:var(--ink-2); background:#8B7D6B}
+
+  .page{
+    position:relative; width:210mm; height:297mm; overflow:hidden;
+    background:var(--cream); padding:20mm 18mm 16mm;
+    display:flex; flex-direction:column;
+    font-size:10.5pt; line-height:1.55;
+  }
+  .page + .page{margin-top:8mm}
+  @media print{ .page + .page{margin-top:0} .page{break-after:page} }
+
+  /* ---------- служебные строки страницы ---------- */
+  .runhead{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:7.5pt; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe);
+    padding-bottom:3mm; border-bottom:1px solid var(--hairline); margin-bottom:7mm;
+  }
+  .runfoot{
+    position:absolute; left:18mm; right:18mm; bottom:10mm;
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:8pt; color:var(--taupe-soft);
+    padding-top:3mm; border-top:1px solid var(--hairline);
+  }
+  .runfoot b{color:var(--taupe); font-weight:500}
+
+  /* ---------- типографика ---------- */
+  h1{font-family:var(--font-display); font-weight:600; font-size:34pt; line-height:1.04;
+     color:var(--ink); letter-spacing:-.01em}
+  h1 i{font-weight:500}
+  h2{font-family:var(--font-display); font-weight:600; font-size:21pt; line-height:1.12;
+     color:var(--ink); margin-bottom:2mm}
+  h3{font-family:var(--font-sans); font-weight:600; font-size:10.5pt; color:var(--ink);
+     margin-bottom:1.5mm}
+  p{margin-bottom:3mm}
+  p:last-child{margin-bottom:0}
+  b, strong{color:var(--ink); font-weight:600}
+  .han{font-family:var(--font-han); font-weight:500; color:var(--ink)}
+  .py{font-family:var(--font-display); font-style:italic; font-weight:600; color:var(--brick)}
+  .lead{font-size:12pt; line-height:1.5; color:var(--ink-2)}
+  .eyebrow{font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--taupe); font-weight:500}
+
+  ul, ol{margin:0 0 3mm 5mm}
+  li{margin-bottom:1.6mm}
+  li::marker{color:var(--brick)}
+
+  /* ---------- шапка шага ---------- */
+  .stephead{display:flex; align-items:baseline; gap:5mm; margin-bottom:4mm}
+  .stepnum{font-family:var(--font-display); font-style:italic; font-weight:600;
+           font-size:40pt; line-height:.8; color:var(--brick)}
+  .stepdays{font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--taupe); margin-top:1.5mm}
+
+  /* ---------- блоки ---------- */
+  .box{background:var(--surface); border:1px solid var(--hairline); border-radius:5mm;
+       padding:5mm 6mm; margin-bottom:4mm}
+  .box.task{background:var(--highlight); border-color:#EFE3C2}
+  .box.warn{background:var(--brick-soft); border-color:#EFD3DB}
+  .box .eyebrow{display:block; margin-bottom:2mm}
+
+  table{width:100%; border-collapse:collapse; margin-bottom:4mm; font-size:10pt}
+  th{font-size:7.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--taupe);
+     text-align:left; font-weight:500; padding:0 3mm 2mm 0; border-bottom:1px solid var(--hairline-2)}
+  td{padding:2.1mm 3mm 2.1mm 0; border-bottom:1px solid var(--hairline); vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.hz{font-family:var(--font-han); font-weight:500; font-size:13pt; color:var(--ink); white-space:nowrap; width:22mm}
+  td.pin{font-family:var(--font-display); font-style:italic; font-weight:600; font-size:12pt;
+         color:var(--brick); white-space:nowrap; width:28mm}
+  .two-col{display:flex; gap:8mm}
+  .two-col > *{flex:1; min-width:0}
+
+  /* ---------- обложка ---------- */
+  .cover{justify-content:space-between; background:var(--cream)}
+  .cover .ghost{position:absolute; right:-22mm; bottom:-30mm; font-family:var(--font-han);
+    font-weight:700; font-size:200mm; line-height:.8; color:var(--ink); opacity:.04}
+  .cover-top{display:flex; justify-content:space-between; align-items:center}
+  .cover-top img{height:13mm}
+  .cover h1{margin-bottom:6mm}
+  .cover .sub{font-size:13pt; line-height:1.45; color:var(--ink-2); max-width:135mm}
+  .cover .hanzi-row{font-family:var(--font-han); font-weight:500; font-size:22pt;
+    color:var(--taupe-soft); letter-spacing:.2em; margin-bottom:10mm}
+  .author{display:flex; gap:4mm; align-items:flex-start; padding-top:5mm; border-top:1px solid var(--hairline-2)}
+  .author .name{font-family:var(--font-display); font-size:14pt; font-weight:600; color:var(--ink)}
+  .author .role{font-size:9pt; color:var(--taupe); max-width:95mm}
+  .cover-bottom{display:flex; justify-content:space-between; align-items:flex-end}
+  .cover-bottom .links{font-size:10pt; color:var(--brick); font-weight:500; letter-spacing:.04em}
+  .cover-bottom .links span{display:block; color:var(--taupe); font-weight:400; letter-spacing:0}
+
+  /* ---------- чек-лист ---------- */
+  .week{margin-bottom:6mm}
+  .week h3{margin-bottom:2.5mm}
+  .days{display:flex; flex-wrap:wrap; gap:3mm}
+  .day{width:19mm; height:19mm; border:1px solid var(--hairline-2); border-radius:2.5mm;
+       background:var(--surface); display:flex; align-items:flex-start; justify-content:flex-start;
+       padding:1.5mm 2mm; font-size:8pt; color:var(--taupe)}
+  .can{display:flex; gap:3mm; margin-bottom:2.5mm; align-items:flex-start}
+  .can .sq{flex:none; width:4.5mm; height:4.5mm; border:1.2px solid var(--brick);
+           border-radius:1mm; margin-top:.8mm}
+
+  .final{justify-content:center; text-align:left}
+  .final .cta{margin-top:8mm; padding:7mm; background:var(--surface);
+              border:1px solid var(--hairline); border-radius:5mm}
+  .final .cta a{color:var(--brick); text-decoration:none; font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. ОБЛОЖКА ============ -->
+<section class="page cover">
+  <div class="ghost">汉</div>
+  <div class="cover-top">
+    <img src="../../../design-system/assets/kitai-logo.svg" alt="Kitai School">
+    <div class="eyebrow">Гайд для начинающих</div>
+  </div>
+
+  <div>
+    <div class="hanzi-row">你好 · 汉语 · 加油</div>
+    <h1>Китайский с нуля:<br>план на первые <i>30 дней</i></h1>
+    <p class="sub">Что делать в первую неделю, что во вторую и как не бросить на третьей. Семь шагов, задания на каждый день и чек-лист, который видно на холодильнике.</p>
+    <div class="author" style="margin-top:10mm">
+      <div>
+        <div class="name">Юлия Горяина</div>
+        <div class="role">Китаист, докторант Шаньдунского университета (<span class="han">山大</span>), преподаватель, основатель Kitai School</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="links">kitai-school.ru<span>Телеграм-канал @kitai_school</span></div>
+    <div class="eyebrow">30 минут в день · 12 страниц</div>
+  </div>
+</section>
+
+<!-- ============ 2. КАК ПОЛЬЗОВАТЬСЯ ============ -->
+<section class="page">
+  <div class="runhead"><span>Китайский с нуля · план на 30 дней</span><span>Kitai School</span></div>
+
+  <h2>Как пользоваться этим планом</h2>
+  <p class="lead" style="margin-bottom:6mm">Тридцать дней — это не срок «выучить китайский». Это срок собрать фундамент: научиться читать пиньинь, слышать тоны, писать первые иероглифы и говорить о себе. Дальше язык растёт уже на этом.</p>
+
+  <div class="two-col">
+    <div class="box">
+      <span class="eyebrow">Режим</span>
+      <p><b>30 минут в день, шесть дней в неделю.</b> Седьмой день — только повторение, без нового материала.</p>
+      <p style="margin-bottom:0">Двадцать минут каждый день работают лучше, чем три часа в воскресенье: язык держится на повторении, а не на подвиге.</p>
+    </div>
+    <div class="box">
+      <span class="eyebrow">Что понадобится</span>
+      <ul style="margin-bottom:0">
+        <li>тетрадь в клетку и карандаш;</li>
+        <li>словарь в телефоне (Pleco или БКРС);</li>
+        <li>наушники и диктофон — он уже есть в телефоне;</li>
+        <li>стопка карточек — подойдут обычные стикеры.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:2mm">Маршрут на месяц</h3>
+  <table>
+    <tr><th style="width:26mm">Дни</th><th>Шаг</th><th>Что появляется в итоге</th></tr>
+    <tr><td><b>1–3</b></td><td>Пиньинь</td><td>читаете вслух любой слог</td></tr>
+    <tr><td><b>4–6</b></td><td>Четыре тона</td><td>слышите разницу между <span class="py">mā</span> и <span class="py">mà</span></td></tr>
+    <tr><td><b>7–10</b></td><td>Первые 20 слов</td><td>первый живой словарь</td></tr>
+    <tr><td><b>11–15</b></td><td>Устройство иероглифа</td><td>пишете 10 иероглифов по правилам</td></tr>
+    <tr><td><b>16–20</b></td><td>Первые фразы</td><td>строите простое предложение и вопрос</td></tr>
+    <tr><td><b>21–25</b></td><td>Ухо и рот</td><td>понимаете короткий диалог на слух</td></tr>
+    <tr><td><b>26–30</b></td><td>Сборка</td><td>рассказ о себе на шесть предложений</td></tr>
+  </table>
+
+  <div class="box warn">
+    <span class="eyebrow">Честно о результате</span>
+    <p style="margin-bottom:0">Через месяц вы не заговорите свободно — и это нормально. Вы получите базу, с которой дальше идут к HSK 1: 150 слов, аудирование и чтение, проходной балл 120 из 200. Обычно на это уходит ещё несколько месяцев спокойных занятий.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>2</span></div>
+</section>
+
+<!-- ============ 3. ШАГ 1 ============ -->
+<section class="page">
+  <div class="runhead"><span>Шаг 1 · пиньинь</span><span>Дни 1–3</span></div>
+
+  <div class="stephead">
+    <div class="stepnum">1</div>
+    <div>
+      <div class="stepdays">Дни 1–3</div>
+      <h2>Пиньинь: сначала читать, потом писать</h2>
+    </div>
+  </div>
+
+  <p>Пиньинь — официальная запись китайских звуков латиницей, принята в 1958 году. Это не английский и не транскрипция «как слышится по-русски»: у букв здесь свои правила, и выучить их нужно один раз, зато сразу.</p>
+  <p>Любой слог собирается по одной схеме: <b>инициаль</b> (согласный в начале) + <b>финаль</b> (гласная часть) + <b>тон</b>. Слогов в языке чуть больше четырёхсот, поэтому таблица пиньиня — конечная и обозримая вещь.</p>
+  <p>День 1 — инициали, день 2 — финали (особенно <span class="py">-e</span>, <span class="py">-ü</span>, <span class="py">-ian</span>, <span class="py">-iu</span>, <span class="py">-ui</span>), день 3 — целые слоги: <span class="py">bā, mī, tā, shū, qī, xū, zhōng, rén</span>. Каждую строку читайте вслух за диктором, дважды.</p>
+
+  <h3>Пять ловушек, на которых спотыкаются все</h3>
+  <table>
+    <tr><th style="width:26mm">Пиньинь</th><th style="width:44mm">Читается примерно</th><th>Не читается</th></tr>
+    <tr><td class="pin">qi</td><td>ци, мягко, кончик языка внизу</td><td>«ки», «кви»</td></tr>
+    <tr><td class="pin">xie</td><td>сье</td><td>«ксие»</td></tr>
+    <tr><td class="pin">zhi</td><td>чжи, язык загнут назад</td><td>«зи», «жи»</td></tr>
+    <tr><td class="pin">ri</td><td>жи с загнутым языком</td><td>русское «ри»</td></tr>
+    <tr><td class="pin">nü</td><td>нюй, губы трубочкой</td><td>«ну»</td></tr>
+  </table>
+
+  <div class="box task">
+    <span class="eyebrow">Задание</span>
+    <p style="margin-bottom:0">Прочитайте вслух 20 слогов и запишите себя на диктофон. Послушайте запись через день: то, что вчера казалось одинаковым, сегодня будет слышно.</p>
+  </div>
+
+  <div class="box warn">
+    <span class="eyebrow">Частая ошибка</span>
+    <p style="margin-bottom:0">Читать пиньинь по-английски. <span class="py">c</span> — это «ц», <span class="py">q</span> — «ць», <span class="py">x</span> — «сь». Один раз запомнить дешевле, чем потом переучивать произношение.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>3</span></div>
+</section>
+
+<!-- ============ 4. ШАГ 2 ============ -->
+<section class="page">
+  <div class="runhead"><span>Шаг 2 · тоны</span><span>Дни 4–6</span></div>
+
+  <div class="stephead">
+    <div class="stepnum">2</div>
+    <div>
+      <div class="stepdays">Дни 4–6</div>
+      <h2>Четыре тона: высота — часть слова</h2>
+    </div>
+  </div>
+
+  <p>Одна и та же цепочка звуков в разных тонах означает разные вещи. Классический пример учат все и не зря:</p>
+
+  <table>
+    <tr><th style="width:20mm">Иероглиф</th><th style="width:26mm">Пиньинь</th><th style="width:46mm">Тон</th><th>Значение</th></tr>
+    <tr><td class="hz">妈</td><td class="pin">mā</td><td style="white-space:nowrap">первый, ровный высокий</td><td>мама</td></tr>
+    <tr><td class="hz">麻</td><td class="pin">má</td><td style="white-space:nowrap">второй, восходящий</td><td>конопля</td></tr>
+    <tr><td class="hz">马</td><td class="pin">mǎ</td><td style="white-space:nowrap">третий, низкий с провалом</td><td>лошадь</td></tr>
+    <tr><td class="hz">骂</td><td class="pin">mà</td><td style="white-space:nowrap">четвёртый, резко вниз</td><td>ругать</td></tr>
+  </table>
+
+  <div class="two-col">
+    <div class="box">
+      <span class="eyebrow">На что похоже</span>
+      <ul style="margin-bottom:0">
+        <li>1-й — ровное «а-а-а» на приёме у врача;</li>
+        <li>2-й — русское переспрашивание: «да?»;</li>
+        <li>3-й — «н-ну-у…», голос падает и возвращается;</li>
+        <li>4-й — короткое «стой!».</li>
+      </ul>
+    </div>
+    <div class="box">
+      <span class="eyebrow">Как тренировать</span>
+      <ul style="margin-bottom:0">
+        <li>повторяйте сразу за диктором;</li>
+        <li>дирижируйте рукой — она помогает голосу;</li>
+        <li>записывайте себя и сравнивайте с оригиналом.</li>
+      </ul>
+      <p style="margin:2.5mm 0 0">Есть и пятый, нейтральный тон — короткий и безударный: он звучит в словах вроде <span class="han">妈妈</span> <span class="py">māma</span> и в служебных частицах.</p>
+    </div>
+  </div>
+
+  <div class="box task">
+    <span class="eyebrow">Задание</span>
+    <p style="margin-bottom:0">Попросите включить вам вразнобой пять слогов и угадайте тон на слух. Пять из пяти — идите дальше, три из пяти — повторите день.</p>
+  </div>
+
+  <div class="box warn">
+    <span class="eyebrow">Частая ошибка</span>
+    <p style="margin-bottom:0">Отложить тоны «на потом». Тон — часть слова: без него собеседник не поймёт, а переучиваться потом дольше и труднее.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>4</span></div>
+</section>
+
+<!-- ============ 5. ШАГ 3 ============ -->
+<section class="page">
+  <div class="runhead"><span>Шаг 3 · первые слова</span><span>Дни 7–10</span></div>
+
+  <div class="stephead">
+    <div class="stepnum">3</div>
+    <div>
+      <div class="stepdays">Дни 7–10</div>
+      <h2>Первые 20 слов</h2>
+    </div>
+  </div>
+
+  <p>Берите по пять слов в день. Каждое — вслух, с тоном и сразу в короткую фразу: слово, которое ни разу не произнесли, забывается за сутки.</p>
+
+  <div class="two-col">
+    <table>
+      <tr><th style="width:20mm">Слово</th><th style="width:26mm">Пиньинь</th><th>Перевод</th></tr>
+      <tr><td class="hz">你好</td><td class="pin">nǐ hǎo</td><td>здравствуйте</td></tr>
+      <tr><td class="hz">谢谢</td><td class="pin">xièxie</td><td>спасибо</td></tr>
+      <tr><td class="hz">对不起</td><td class="pin">duìbuqǐ</td><td>извините</td></tr>
+      <tr><td class="hz">我</td><td class="pin">wǒ</td><td>я</td></tr>
+      <tr><td class="hz">你</td><td class="pin">nǐ</td><td>ты</td></tr>
+      <tr><td class="hz">他</td><td class="pin">tā</td><td>он</td></tr>
+      <tr><td class="hz">是</td><td class="pin">shì</td><td>быть, являться</td></tr>
+      <tr><td class="hz">不</td><td class="pin">bù</td><td>не</td></tr>
+      <tr><td class="hz">有</td><td class="pin">yǒu</td><td>иметь, есть</td></tr>
+      <tr><td class="hz">好</td><td class="pin">hǎo</td><td>хороший</td></tr>
+    </table>
+    <table>
+      <tr><th style="width:20mm">Слово</th><th style="width:26mm">Пиньинь</th><th>Перевод</th></tr>
+      <tr><td class="hz">什么</td><td class="pin">shénme</td><td>что</td></tr>
+      <tr><td class="hz">名字</td><td class="pin">míngzi</td><td>имя</td></tr>
+      <tr><td class="hz">中国</td><td class="pin">Zhōngguó</td><td>Китай</td></tr>
+      <tr><td class="hz">人</td><td class="pin">rén</td><td>человек</td></tr>
+      <tr><td class="hz">老师</td><td class="pin">lǎoshī</td><td>учитель</td></tr>
+      <tr><td class="hz">学生</td><td class="pin">xuésheng</td><td>ученик</td></tr>
+      <tr><td class="hz">吃</td><td class="pin">chī</td><td>есть, кушать</td></tr>
+      <tr><td class="hz">喝</td><td class="pin">hē</td><td>пить</td></tr>
+      <tr><td class="hz">水</td><td class="pin">shuǐ</td><td>вода</td></tr>
+      <tr><td class="hz">茶</td><td class="pin">chá</td><td>чай</td></tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <span class="eyebrow">Как учить, чтобы осталось</span>
+    <p style="margin-bottom:0">Сделайте карточки: с одной стороны иероглиф, с другой — пиньинь с тоном и перевод. Повторяйте по схеме <b>1 – 3 – 7</b>: сегодня, через три дня, через неделю. Карточку, на которой ошиблись, не откладывайте в «выученные» — она возвращается в начало стопки.</p>
+  </div>
+
+  <div class="box task">
+    <span class="eyebrow">Задание</span>
+    <p style="margin-bottom:0">Соберите 20 карточек и составьте пять фраз из тех слов, что уже знаете: <span class="han">我喝茶</span>, <span class="han">他是老师</span>, <span class="han">你好</span>.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>5</span></div>
+</section>
+
+<!-- ============ 6. ШАГ 4 ============ -->
+<section class="page">
+  <div class="runhead"><span>Шаг 4 · иероглифы</span><span>Дни 11–15</span></div>
+
+  <div class="stephead">
+    <div class="stepnum">4</div>
+    <div>
+      <div class="stepdays">Дни 11–15</div>
+      <h2>Иероглиф — это конструктор</h2>
+    </div>
+  </div>
+
+  <p>Иероглиф не рисуют по контуру, его собирают. Уровней сборки три: <b>черты</b> складываются в <b>графемы</b> (их же называют ключами), графемы — в целый знак. Традиционный список ключей — 214 штук, но учить все сразу не нужно: первые три-четыре десятка закрывают большую часть того, что встретится в начале.</p>
+
+  <div class="two-col">
+    <div class="box">
+      <span class="eyebrow">Смысл собирается из частей</span>
+      <p><span class="han" style="font-size:15pt">木</span> дерево → <span class="han" style="font-size:15pt">林</span> роща → <span class="han" style="font-size:15pt">森</span> лес.</p>
+      <p style="margin-bottom:0"><span class="han" style="font-size:15pt">女</span> женщина + <span class="han" style="font-size:15pt">子</span> ребёнок = <span class="han" style="font-size:15pt">好</span> <span class="py">hǎo</span>, «хорошо».</p>
+    </div>
+    <div class="box">
+      <span class="eyebrow">Порядок черт</span>
+      <ul style="margin-bottom:0">
+        <li>сверху вниз;</li>
+        <li>слева направо;</li>
+        <li>горизонтальная раньше вертикальной;</li>
+        <li>сначала откидные влево, потом вправо;</li>
+        <li>рамка сначала, содержимое внутри, нижняя черта — последней.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>Порядок черт — не формальность. Написанный правильно иероглиф выглядит ровно, а рукописный ввод в телефоне узнаёт его с первого раза. Начните с простого: <span class="han">一 二 三 十 人 大 天 木 水 好</span>.</p>
+
+  <div class="box task">
+    <span class="eyebrow">Задание на пять дней</span>
+    <p style="margin-bottom:0">Каждый день — два новых иероглифа, по пять строк каждый, в клетке. Пишете и одновременно проговариваете вслух чтение с тоном. К пятнадцатому дню в тетради будет десять знаков, написанных рукой, а не «узнанных на картинке».</p>
+  </div>
+
+  <div class="box warn">
+    <span class="eyebrow">Частая ошибка</span>
+    <p style="margin-bottom:0">Срисовывать иероглиф как картинку, в произвольном порядке. Внешне выходит похоже, но рука не запоминает знак, и через неделю он не воспроизводится по памяти.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>6</span></div>
+</section>
+
+<!-- ============ 7. ШАГ 5 ============ -->
+<section class="page">
+  <div class="runhead"><span>Шаг 5 · первые фразы</span><span>Дни 16–20</span></div>
+
+  <div class="stephead">
+    <div class="stepnum">5</div>
+    <div>
+      <div class="stepdays">Дни 16–20</div>
+      <h2>Первые фразы</h2>
+    </div>
+  </div>
+
+  <p>Хорошая новость про китайскую грамматику: нет падежей, родов, спряжений и времён в привычном виде. Слово не меняется — меняется его место в предложении. Базовый порядок такой же, как в русском: <b>кто — что делает — что</b>.</p>
+
+  <table>
+    <tr><th style="width:38mm">Фраза</th><th style="width:34mm">Пиньинь</th><th>Перевод и что запомнить</th></tr>
+    <tr><td class="hz">我喝茶</td><td class="pin">wǒ hē chá</td><td>Я пью чай. Базовый порядок слов</td></tr>
+    <tr><td class="hz">我不喝茶</td><td class="pin">wǒ bù hē chá</td><td>Я не пью чай. Отрицание <span class="han">不</span> стоит перед глаголом</td></tr>
+    <tr><td class="hz">你好吗？</td><td class="pin">nǐ hǎo ma</td><td>Как дела? Частица <span class="han">吗</span> превращает фразу в вопрос</td></tr>
+    <tr><td class="hz">他是老师吗？</td><td class="pin">tā shì lǎoshī ma</td><td>Он учитель?</td></tr>
+    <tr><td class="hz">这是什么？</td><td class="pin">zhè shì shénme</td><td>Что это? Вопросительное слово стоит там же, где ответ</td></tr>
+    <tr><td class="hz">我很好</td><td class="pin">wǒ hěn hǎo</td><td>У меня всё хорошо. С прилагательным <span class="han">是</span> не нужно</td></tr>
+  </table>
+
+  <div class="box">
+    <span class="eyebrow">Две вещи, которые экономят месяцы</span>
+    <p><b>Первая.</b> <span class="han">是</span> <span class="py">shì</span> — это «являться кем-то или чем-то»: <span class="han">我是学生</span>. Перед прилагательным она не ставится: правильно <span class="han">我很好</span>, а не «我是好».</p>
+    <p style="margin-bottom:0"><b>Вторая.</b> Вопрос в китайском не требует перестановки слов. Берёте утверждение и добавляете в конец <span class="han">吗</span> — вопрос готов.</p>
+  </div>
+
+  <div class="box task">
+    <span class="eyebrow">Задание</span>
+    <p style="margin-bottom:0">Составьте шесть своих фраз по этим шаблонам — про себя, а не про абстрактного человека. Что вы пьёте, кем работаете, что у вас есть. Свои фразы запоминаются в разы лучше учебных.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>7</span></div>
+</section>
+
+<!-- ============ 8. ШАГ 6 ============ -->
+<section class="page">
+  <div class="runhead"><span>Шаг 6 · ухо и рот</span><span>Дни 21–25</span></div>
+
+  <div class="stephead">
+    <div class="stepnum">6</div>
+    <div>
+      <div class="stepdays">Дни 21–25</div>
+      <h2>Ухо и рот</h2>
+    </div>
+  </div>
+
+  <p>К третьей неделе у многих накапливается разрыв: глазами слово узнаётся, а на слух — нет. Лечится это одним способом — слушать каждый день и обязательно повторять вслух. Десяти минут в день достаточно, если они честные.</p>
+
+  <div class="box">
+    <span class="eyebrow">Метод трёх прослушиваний</span>
+    <ol style="margin-bottom:0">
+      <li><b>Первый раз</b> — просто слушаете диалог на 20–30 секунд, ничего не читая. Ловите знакомые слова.</li>
+      <li><b>Второй раз</b> — слушаете и следите по тексту. Отмечаете места, где на слух не узнали то, что глазами понимаете.</li>
+      <li><b>Третий раз</b> — повторяете за диктором вслух, стараясь попадать в его темп и интонацию.</li>
+    </ol>
+  </div>
+
+  <p>Раз в пару дней записывайте своё чтение на диктофон и сравнивайте с оригиналом. Слушать себя первое время неприятно, зато ошибки в тонах становятся слышны сразу — без этого их не поймать.</p>
+
+  <div class="two-col">
+    <div class="box">
+      <span class="eyebrow">Что слушать в начале</span>
+      <ul style="margin-bottom:0">
+        <li>аудио к вашему учебнику — оно ровно вашего уровня;</li>
+        <li>учебные подкасты для начинающих;</li>
+        <li>детские песни и считалки: медленный темп, чёткие тоны.</li>
+      </ul>
+    </div>
+    <div class="box warn">
+      <span class="eyebrow">Частая ошибка</span>
+      <p style="margin-bottom:0">Включать китайский фоном во время дел. Такое слушание не тренирует ухо: без внимания и повторения вслух звук проходит мимо.</p>
+    </div>
+  </div>
+
+  <div class="box task">
+    <span class="eyebrow">Задание</span>
+    <p style="margin-bottom:0">Возьмите один диалог на полминуты и доведите его до состояния «говорю вместе с диктором, не спотыкаясь». Один диалог, доведённый до конца, полезнее десяти прослушанных по разу.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>8</span></div>
+</section>
+
+<!-- ============ 9. ШАГ 7 ============ -->
+<section class="page">
+  <div class="runhead"><span>Шаг 7 · сборка</span><span>Дни 26–30</span></div>
+
+  <div class="stephead">
+    <div class="stepnum">7</div>
+    <div>
+      <div class="stepdays">Дни 26–30</div>
+      <h2>Собираем всё вместе</h2>
+    </div>
+  </div>
+
+  <p>Последние пять дней — без нового материала. Задача одна: собрать из выученного связный рассказ о себе и довести его до автоматизма. Это тот минимум, который выручает при первом знакомстве.</p>
+
+  <table>
+    <tr><th style="width:52mm">Шаблон</th><th style="width:36mm">Пиньинь</th><th>Перевод</th></tr>
+    <tr><td class="hz">你好！</td><td class="pin">nǐ hǎo</td><td>Здравствуйте!</td></tr>
+    <tr><td class="hz">我叫 ___。</td><td class="pin">wǒ jiào ___</td><td>Меня зовут ___.</td></tr>
+    <tr><td class="hz">我是学生。</td><td class="pin">wǒ shì xuésheng</td><td>Я студент. (или <span class="han">老师</span> — учитель)</td></tr>
+    <tr><td class="hz">我学习汉语。</td><td class="pin">wǒ xuéxí Hànyǔ</td><td>Я учу китайский.</td></tr>
+    <tr><td class="hz">我喜欢喝茶。</td><td class="pin">wǒ xǐhuan hē chá</td><td>Я люблю пить чай.</td></tr>
+    <tr><td class="hz">认识你很高兴。</td><td class="pin">rènshi nǐ hěn gāoxìng</td><td>Приятно познакомиться.</td></tr>
+  </table>
+
+  <div class="box">
+    <span class="eyebrow">Самопроверка на 30-й день</span>
+    <div class="can"><span class="sq"></span><span>Читаю вслух незнакомый слог в пиньине и не задумываюсь.</span></div>
+    <div class="can"><span class="sq"></span><span>Различаю четыре тона на слух хотя бы в четырёх случаях из пяти.</span></div>
+    <div class="can"><span class="sq"></span><span>Пишу по памяти десять иероглифов с правильным порядком черт.</span></div>
+    <div class="can"><span class="sq"></span><span>Строю утверждение, отрицание и вопрос с <span class="han">吗</span>.</span></div>
+    <div class="can" style="margin-bottom:0"><span class="sq"></span><span>Рассказываю о себе шестью фразами, не подглядывая.</span></div>
+  </div>
+
+  <div class="box task">
+    <span class="eyebrow">Что дальше</span>
+    <p style="margin-bottom:0">Следующая понятная цель — <b>HSK 1</b>: 150 слов, два раздела (аудирование и чтение), проходной балл 120 из 200. Над иероглифами в заданиях напечатан пиньинь, так что читать «вслепую» не придётся. Обычно к этому уровню приходят за несколько месяцев спокойных занятий.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>9</span></div>
+</section>
+
+<!-- ============ 10. ЧЕК-ЛИСТ ============ -->
+<section class="page">
+  <div class="runhead"><span>Чек-лист</span><span>30 дней</span></div>
+
+  <h2>Тридцать дней: отмечайте по одному</h2>
+  <p style="margin-bottom:7mm">Распечатайте страницу и повесьте на видное место. Пропущенный день не отменяет план: закрашивайте следующий и идите дальше.</p>
+
+  <div class="week">
+    <h3>Неделя 1 · пиньинь и тоны</h3>
+    <div class="days">
+      <div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div>
+      <div class="day">5</div><div class="day">6</div><div class="day">7</div>
+    </div>
+  </div>
+
+  <div class="week">
+    <h3>Неделя 2 · первые слова и иероглифы</h3>
+    <div class="days">
+      <div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div>
+      <div class="day">12</div><div class="day">13</div><div class="day">14</div>
+    </div>
+  </div>
+
+  <div class="week">
+    <h3>Неделя 3 · иероглифы и фразы</h3>
+    <div class="days">
+      <div class="day">15</div><div class="day">16</div><div class="day">17</div><div class="day">18</div>
+      <div class="day">19</div><div class="day">20</div><div class="day">21</div>
+    </div>
+  </div>
+
+  <div class="week">
+    <h3>Неделя 4 · слух и речь</h3>
+    <div class="days">
+      <div class="day">22</div><div class="day">23</div><div class="day">24</div><div class="day">25</div>
+      <div class="day">26</div><div class="day">27</div><div class="day">28</div>
+    </div>
+  </div>
+
+  <div class="week">
+    <h3>Финиш · рассказ о себе</h3>
+    <div class="days">
+      <div class="day">29</div><div class="day">30</div>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:2mm">
+    <span class="eyebrow">Правило седьмого дня</span>
+    <p style="margin-bottom:0">Каждый седьмой день — без нового материала. Достаёте карточки за неделю, перечитываете свои фразы вслух, переписываете два иероглифа, которые хуже всего держатся в памяти. Этот день кажется потерянным, а на деле именно он и удерживает выученное.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>10</span></div>
+</section>
+
+<!-- ============ 11. ОШИБКИ ============ -->
+<section class="page">
+  <div class="runhead"><span>Ошибки новичка</span><span>Что мешает чаще всего</span></div>
+
+  <h2>Пять ошибок, из-за которых бросают</h2>
+  <p style="margin-bottom:6mm">За двадцать лет преподавания список почти не меняется. Ни одна из этих ошибок не про способности — все про режим и подход.</p>
+
+  <div class="box">
+    <h3>1. Учить слова без тонов</h3>
+    <p style="margin-bottom:0">«Потом поставлю» не работает: тон — часть слова, и переучивать его сложнее, чем выучить сразу. Слово всегда записывается и произносится с тоном.</p>
+  </div>
+
+  <div class="box">
+    <h3>2. Заниматься редко и помногу</h3>
+    <p style="margin-bottom:0">Три часа в воскресенье проигрывают двадцати минутам ежедневно. Память держится на повторениях с интервалом, а не на объёме за один заход.</p>
+  </div>
+
+  <div class="box">
+    <h3>3. Зубрить списки слов без фраз</h3>
+    <p style="margin-bottom:0">Слово, которое ни разу не стояло в предложении, не всплывает в речи. Каждое новое слово — сразу в свою фразу, вслух.</p>
+  </div>
+
+  <div class="box">
+    <h3>4. Срисовывать иероглифы</h3>
+    <p style="margin-bottom:0">Без порядка черт рука не запоминает знак, а телефон не распознаёт рукописный ввод. Пять минут на правила экономят месяцы.</p>
+  </div>
+
+  <div class="box" style="margin-bottom:0">
+    <h3>5. Молчать</h3>
+    <p style="margin-bottom:0">Можно понимать текст и при этом не сказать ни слова. Произношение ставится только вслух и только с обратной связью — от преподавателя, носителя или хотя бы от собственной записи на диктофоне.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>11</span></div>
+</section>
+
+<!-- ============ 12. ФИНАЛ ============ -->
+<section class="page final">
+  <div class="runhead"><span>Что дальше</span><span>Kitai School</span></div>
+
+  <div style="margin:auto 0">
+    <div class="hanzi-row" style="font-family:var(--font-han); font-size:20pt; color:var(--taupe-soft); letter-spacing:.2em; margin-bottom:8mm">加油！</div>
+    <h1 style="font-size:28pt; margin-bottom:6mm">Тридцать дней позади.<br>Дальше — <i>интереснее</i></h1>
+    <p class="lead" style="max-width:140mm">Самое трудное в китайском — первый месяц, когда всё чужое: и звуки, и знаки, и логика. Дальше язык начинает складываться: знакомые ключи всплывают в новых иероглифах, а фразы собираются из уже известных кубиков.</p>
+
+    <div class="cta">
+      <h3 style="font-size:12pt; margin-bottom:3mm">Если хотите идти дальше не в одиночку</h3>
+      <p>В Kitai School занимаются с преподавателем — русским или китайским, индивидуально и в мини-группах, от нуля до подготовки к HSK. Кто хотел бы присоединиться к занятиям, пишите: подберём формат и составим план под вашу цель.</p>
+      <p style="margin-bottom:0">Сайт и запись: <a href="https://kitai-school.ru">kitai-school.ru</a><br>
+      Телеграм-канал с ежедневными разборами: <a href="https://t.me/kitai_school">@kitai_school</a></p>
+    </div>
+
+    <p style="margin-top:8mm; font-size:9pt; color:var(--taupe)">Гайд можно свободно распечатать и переслать друзьям. Автор — Юлия Горяина, китаист, докторант Шаньдунского университета, основатель Kitai School.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>12</span></div>
+</section>
+
+</body>
+</html>
