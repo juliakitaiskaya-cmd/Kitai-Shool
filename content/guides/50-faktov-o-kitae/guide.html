@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Китай без культурного шока: 50 фактов</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --brick:#A41E3A; --brick-deep:#841630; --brick-soft:#F7E6EB;
+    --ink:#2C2420; --ink-2:#5A4F45; --taupe:#8B7D6B; --taupe-soft:#B8AC9C;
+    --cream:#FAF7F2; --cream-2:#F3EDE3; --surface:#FFFFFF;
+    --highlight:#FCF6E2; --hairline:#EAE3D8; --hairline-2:#DED5C6;
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-sans:'Inter',Arial,sans-serif;
+    --font-han:'Noto Serif SC','Songti SC',serif;
+  }
+  @page{ size:A4; margin:0 }
+  *{margin:0; padding:0; box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  body{font-family:var(--font-sans); color:var(--ink-2); background:#8B7D6B}
+
+  .page{
+    position:relative; width:210mm; height:297mm; overflow:hidden;
+    background:var(--cream); padding:18mm 18mm 16mm;
+    display:flex; flex-direction:column;
+    font-size:10.5pt; line-height:1.55;
+  }
+  .page + .page{margin-top:8mm}
+  @media print{ .page + .page{margin-top:0} .page{break-after:page} }
+
+  .runhead{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:7.5pt; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe);
+    padding-bottom:3mm; border-bottom:1px solid var(--hairline); margin-bottom:6mm;
+  }
+  .runfoot{
+    position:absolute; left:18mm; right:18mm; bottom:10mm;
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:8pt; color:var(--taupe-soft);
+    padding-top:3mm; border-top:1px solid var(--hairline);
+  }
+  .runfoot b{color:var(--taupe); font-weight:500}
+
+  h1{font-family:var(--font-display); font-weight:600; font-size:34pt; line-height:1.05;
+     color:var(--ink); letter-spacing:-.01em}
+  h1 i{font-weight:500}
+  h2{font-family:var(--font-display); font-weight:600; font-size:20pt; line-height:1.12; color:var(--ink)}
+  h3{font-family:var(--font-sans); font-weight:600; font-size:10pt; color:var(--ink); line-height:1.3}
+  p{margin-bottom:3mm}
+  p:last-child{margin-bottom:0}
+  b, strong{color:var(--ink); font-weight:600}
+  .han{font-family:var(--font-han); font-weight:500; color:var(--ink)}
+  .py{font-family:var(--font-display); font-style:italic; font-weight:600; color:var(--brick)}
+  .lead{font-size:12pt; line-height:1.5; color:var(--ink-2)}
+  .eyebrow{font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--taupe); font-weight:500}
+  ul{margin:0 0 3mm 5mm}
+  li{margin-bottom:1.6mm}
+  li::marker{color:var(--brick)}
+
+  /* ---------- шапка раздела ---------- */
+  .sechead{display:flex; align-items:baseline; gap:5mm; margin-bottom:5mm}
+  .secnum{font-family:var(--font-display); font-style:italic; font-weight:600;
+          font-size:34pt; line-height:.8; color:var(--brick)}
+  .sechead .sub{font-size:9.5pt; color:var(--taupe); margin-top:1mm}
+
+  /* ---------- карточки фактов ---------- */
+  .facts{flex:1; display:grid; grid-template-columns:1fr 1fr; grid-auto-rows:1fr; gap:5mm; align-content:start; margin-bottom:5mm}
+  .fact{
+    background:var(--surface); border:1px solid var(--hairline); border-radius:4mm;
+    padding:4.5mm 5mm; box-shadow:0 2px 10px rgba(44,36,32,.04);
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .fact .fh{display:flex; gap:3mm; align-items:baseline; margin-bottom:2mm}
+  .fact .n{
+    font-family:var(--font-display); font-style:italic; font-weight:600; font-size:15pt;
+    color:var(--brick); line-height:1; flex:none; min-width:7mm;
+  }
+  .fact p{font-size:9.5pt; line-height:1.42; margin-bottom:2.5mm}
+  .fact .cn{
+    font-size:9pt; color:var(--taupe); margin-bottom:0;
+    padding-top:2mm; border-top:1px solid var(--hairline);
+  }
+  .fact .cn .han{font-size:11.5pt; margin-right:1mm}
+
+  /* ---------- обложка ---------- */
+  .cover{justify-content:space-between; padding:20mm 18mm 16mm}
+  .cover .ghost{position:absolute; right:-20mm; bottom:-28mm; font-family:var(--font-han);
+    font-weight:700; font-size:190mm; line-height:.8; color:var(--ink); opacity:.04}
+  .cover-top{display:flex; justify-content:space-between; align-items:center}
+  .cover-top img{height:13mm}
+  .cover h1{margin-bottom:6mm}
+  .cover .sub{font-size:13pt; line-height:1.45; color:var(--ink-2); max-width:140mm}
+  .cover .hanzi-row{font-family:var(--font-han); font-weight:500; font-size:22pt;
+    color:var(--taupe-soft); letter-spacing:.2em; margin-bottom:10mm}
+  .author{padding-top:5mm; border-top:1px solid var(--hairline-2); margin-top:10mm}
+  .author .name{font-family:var(--font-display); font-size:14pt; font-weight:600; color:var(--ink)}
+  .author .role{font-size:9pt; color:var(--taupe); max-width:95mm}
+  .cover-bottom{display:flex; justify-content:space-between; align-items:flex-end}
+  .cover-bottom .links{font-size:10pt; color:var(--brick); font-weight:500; letter-spacing:.04em}
+  .cover-bottom .links span{display:block; color:var(--taupe); font-weight:400; letter-spacing:0}
+
+  /* ---------- вступление ---------- */
+  .box{background:var(--surface); border:1px solid var(--hairline); border-radius:5mm;
+       padding:5mm 6mm; margin-bottom:4mm}
+  .box.warn{background:var(--brick-soft); border-color:#EFD3DB}
+  .box.task{background:var(--highlight); border-color:#EFE3C2}
+  .box .eyebrow{display:block; margin-bottom:2mm}
+  .toc{display:grid; grid-template-columns:1fr 1fr; gap:4mm 8mm; margin-top:2mm}
+  .toc div{display:flex; gap:3mm; align-items:baseline; font-size:10pt; color:var(--ink)}
+  .toc .num{font-family:var(--font-display); font-style:italic; font-weight:600; color:var(--brick)}
+  .toc .cnt{margin-left:auto; color:var(--taupe-soft); font-size:9pt}
+
+  .final{justify-content:center}
+  .final .cta{margin-top:8mm; padding:7mm; background:var(--surface);
+              border:1px solid var(--hairline); border-radius:5mm}
+  .final .cta a{color:var(--brick); text-decoration:none; font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. ОБЛОЖКА ============ -->
+<section class="page cover">
+  <div class="ghost">礼</div>
+  <div class="cover-top">
+    <img src="../../../design-system/assets/kitai-logo.svg" alt="Kitai School">
+    <div class="eyebrow">Гайд для тех, кто едет в Китай</div>
+  </div>
+
+  <div>
+    <div class="hanzi-row">你好 · 中国 · 加油</div>
+    <h1>Китай без<br><i>культурного шока</i></h1>
+    <p class="sub" style="margin-top:5mm">50 вещей, о которых лучше знать заранее: как здороваются, почему не делят счёт, что нельзя дарить и зачем всем горячая вода. К каждой — китайское слово, чтобы не только понять, но и суметь сказать.</p>
+    <div class="author">
+      <div class="name">Юлия Горяина</div>
+      <div class="role">Китаист, докторант Шаньдунского университета (<span class="han">山大</span>), преподаватель, основатель Kitai School</div>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="links">kitai-school.ru<span>Телеграм-канал @kitai_school</span></div>
+    <div class="eyebrow">50 фактов · 7 разделов</div>
+  </div>
+</section>
+
+<!-- ============ 2. ВСТУПЛЕНИЕ ============ -->
+<section class="page">
+  <div class="runhead"><span>Китай без культурного шока</span><span>Kitai School</span></div>
+
+  <h2>Что это за гайд</h2>
+  <p class="lead" style="margin:3mm 0 6mm">Культурный шок случается не от больших различий, а от мелочей: вы протягиваете руку, а вам кивают; берёте счёт, а платить уже нельзя; просите холодной воды, а приносят кипяток. Здесь собраны те самые мелочи — пятьдесят штук, по разделам, с китайским словом к каждой.</p>
+
+  <div class="box">
+    <span class="eyebrow">Как пользоваться</span>
+    <p>Читайте разделами, а не подряд: перед поездкой хватит первых трёх, остальное пригодится уже на месте.</p>
+    <p style="margin-bottom:0">В каждой карточке есть слово или фраза на китайском с чтением латиницей. Их не нужно учить наизусть — достаточно узнать в чужой речи или показать на экране телефона.</p>
+  </div>
+
+  <div class="box warn">
+    <span class="eyebrow">Важная оговорка</span>
+    <p style="margin-bottom:0">Всё, что здесь написано, — типичная картина, а не закон. Китай большой: в Шанхае и в деревне под Куньмином одни и те же вещи выглядят по-разному, а молодёжь ведёт себя не так, как старшее поколение. Считайте это картой, по которой удобно ориентироваться, пока не появятся свои наблюдения.</p>
+  </div>
+
+  <h3 style="margin:5mm 0 1mm">Разделы</h3>
+  <div class="toc">
+    <div><span class="num">I</span><span>Люди и общение</span><span class="cnt">1–8</span></div>
+    <div><span class="num">II</span><span>Семья и старшие</span><span class="cnt">9–14</span></div>
+    <div><span class="num">III</span><span>За столом</span><span class="cnt">15–22</span></div>
+    <div><span class="num">IV</span><span>Город и быт</span><span class="cnt">23–30</span></div>
+    <div><span class="num">V</span><span>Телефон решает всё</span><span class="cnt">31–36</span></div>
+    <div><span class="num">VI</span><span>Праздники, цвета и приметы</span><span class="cnt">37–42</span></div>
+    <div><span class="num">VII</span><span>Язык, здоровье и вся страна</span><span class="cnt">43–50</span></div>
+  </div>
+
+  <div class="box task" style="margin-top:6mm">
+    <span class="eyebrow">Одна мысль, которая снимает половину неловкости</span>
+    <p style="margin-bottom:0">Почти всё непривычное в Китае объясняется не отношением к вам лично, а другим устройством вежливости. На вас смотрят не потому, что вы сделали что-то не так, а потому что интересно. Вам не отказывают прямо не из хитрости, а чтобы не поставить вас в неудобное положение.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>2</span></div>
+</section>
+
+<!-- ============ 3. РАЗДЕЛ I ============ -->
+<section class="page">
+  <div class="runhead"><span>Раздел I · люди и общение</span><span>Факты 1–8</span></div>
+  <div class="sechead">
+    <div class="secnum">I</div>
+    <div>
+      <h2>Люди и общение</h2>
+      <div class="sub">Как здороваются, о чём спрашивают и что означает пауза в разговоре</div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="fact">
+      <div class="fh"><span class="n">1</span><h3>Здороваются кивком</h3></div>
+      <p>Рукопожатие уместно на деловой встрече, объятия при знакомстве — почти никогда. Обычное приветствие — короткий кивок и улыбка.</p>
+      <p class="cn"><span class="han">点头</span><span class="py">diǎntóu</span> — кивок</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">2</span><h3>Про возраст спрашивают спокойно</h3></div>
+      <p>Вопросы о возрасте, семье и зарплате — не бестактность, а обычный способ проявить участие. Отвечать честно необязательно, можно отшутиться.</p>
+      <p class="cn"><span class="han">你多大？</span><span class="py">nǐ duō dà</span> — сколько вам лет?</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">3</span><h3>На вас будут смотреть</h3></div>
+      <p>В небольших городах иностранец до сих пор редкость. Взгляды, а иногда и просьба сфотографироваться — это любопытство, а не претензия.</p>
+      <p class="cn"><span class="han">好奇</span><span class="py">hàoqí</span> — любопытство</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">4</span><h3>Громкий голос — не ссора</h3></div>
+      <p>За соседним столом могут говорить так, что кажется, вот-вот подерутся. Обычно это обсуждение меню. Громкость в китайском не связана со злостью.</p>
+      <p class="cn"><span class="han">声音大</span><span class="py">shēngyīn dà</span> — громкий голос</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">5</span><h3>Личного пространства меньше</h3></div>
+      <p>В очереди к вам подойдут вплотную, в метро прижмут — и никто не сочтёт это грубостью. Отодвигаться демонстративно не стоит.</p>
+      <p class="cn"><span class="han">挤</span><span class="py">jǐ</span> — тесно, толкаться</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">6</span><h3>Молчание не значит недовольство</h3></div>
+      <p>Пауза в разговоре — это раздумье или вежливость, а не знак, что вы сказали лишнее. Заполнять её словами не нужно.</p>
+      <p class="cn"><span class="han">沉默</span><span class="py">chénmò</span> — молчание</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">7</span><h3>«Посмотрим» — это отказ</h3></div>
+      <p>Прямое «нет» звучит резко, поэтому его почти не говорят. «Давайте потом», «сейчас не очень удобно», «я подумаю» — обычно и есть вежливый отказ.</p>
+      <p class="cn"><span class="han">再看看吧</span><span class="py">zài kànkan ba</span> — посмотрим позже</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">8</span><h3>Сначала фамилия, потом имя</h3></div>
+      <p>Ван Мин — это фамилия Ван и имя Мин. К незнакомым обращаются по фамилии с должностью: господин Ван, учитель Ван.</p>
+      <p class="cn"><span class="han">姓</span><span class="py">xìng</span> — фамилия · <span class="han">名</span><span class="py">míng</span> — имя</p>
+    </div>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>3</span></div>
+</section>
+
+<!-- ============ 4. РАЗДЕЛ II ============ -->
+<section class="page">
+  <div class="runhead"><span>Раздел II · семья и старшие</span><span>Факты 9–14</span></div>
+  <div class="sechead">
+    <div class="secnum">II</div>
+    <div>
+      <h2>Семья и старшие</h2>
+      <div class="sub">Почему решения принимают вместе и кого в Китае слушают беспрекословно</div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="fact">
+      <div class="fh"><span class="n">9</span><h3>Семья — главная опора</h3></div>
+      <p>Забота о родителях считается прямой обязанностью, а не жестом доброй воли. Дети часто живут с родителями до свадьбы, а позже родители переезжают к ним.</p>
+      <p class="cn"><span class="han">孝顺</span><span class="py">xiàoshùn</span> — почтение к родителям</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">10</span><h3>Родители участвуют в решениях</h3></div>
+      <p>Университет, работа, иногда и выбор спутника обсуждаются всей семьёй. Взрослому человеку спросить мнение родителей — нормально, а не признак несамостоятельности.</p>
+      <p class="cn"><span class="han">父母的意见</span><span class="py">fùmǔ de yìjiàn</span> — мнение родителей</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">11</span><h3>Учитель — фигура уважаемая</h3></div>
+      <p>К преподавателю обращаются по фамилии со словом «учитель», спорить с ним при других не принято. То же с любым старшим по возрасту.</p>
+      <p class="cn"><span class="han">老师</span><span class="py">lǎoshī</span> — учитель · <span class="han">长辈</span><span class="py">zhǎngbèi</span> — старшие</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">12</span><h3>«Мы» весит больше, чем «я»</h3></div>
+      <p>Быть частью группы важнее, чем выделяться. Отсюда командные поездки, общие обеды и осторожное отношение к тому, кто слишком заметно тянет одеяло на себя.</p>
+      <p class="cn"><span class="han">团队</span><span class="py">tuánduì</span> — команда, коллектив</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">13</span><h3>Свадьбы шумные и многолюдные</h3></div>
+      <p>Гостей могут быть сотни, музыка громкая, застолье длинное. Подарок — деньги в красном конверте, сумму часто выбирают с цифрой 8.</p>
+      <p class="cn"><span class="han">红包</span><span class="py">hóngbāo</span> — красный конверт с деньгами</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">14</span><h3>«Лаовай» — не обидное слово</h3></div>
+      <p>Дословно «старый иностранец», но звучит скорее по-дружески. Обижаться не на что: чаще всего это просто способ вас назвать.</p>
+      <p class="cn"><span class="han">老外</span><span class="py">lǎowài</span> — иностранец</p>
+    </div>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>4</span></div>
+</section>
+
+<!-- ============ 5. РАЗДЕЛ III ============ -->
+<section class="page">
+  <div class="runhead"><span>Раздел III · за столом</span><span>Факты 15–22</span></div>
+  <div class="sechead">
+    <div class="secnum">III</div>
+    <div>
+      <h2>За столом</h2>
+      <div class="sub">Кто платит, почему всё стоит в центре и что делать с горячей водой</div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="fact">
+      <div class="fh"><span class="n">15</span><h3>Обед — дело серьёзное</h3></div>
+      <p>В небольших городах перерыв тянется до двух часов: магазины и учреждения закрываются примерно с 12 до 14. Планируйте дела на утро или вечер.</p>
+      <p class="cn"><span class="han">午休</span><span class="py">wǔxiū</span> — дневной перерыв</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">16</span><h3>Едят по часам</h3></div>
+      <p>Завтрак с 6 до 8, обед с 11:30, ужин около 18. Прийти в кафе в четыре часа дня и рассчитывать на горячее — идея так себе.</p>
+      <p class="cn"><span class="han">准时</span><span class="py">zhǔnshí</span> — вовремя, точно по времени</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">17</span><h3>Блюда ставят в центр</h3></div>
+      <p>Своей тарелки с «моим» заказом нет: всё общее, каждый берёт понемногу. Заказать одному себе и есть в одиночку — странно.</p>
+      <p class="cn"><span class="han">一起吃</span><span class="py">yīqǐ chī</span> — есть вместе</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">18</span><h3>Счёт не делят</h3></div>
+      <p>Платит кто-то один, обычно тот, кто пригласил. В следующий раз платит другой — так это и работает. Настаивать на своей доле неловко.</p>
+      <p class="cn"><span class="han">今天我请客</span><span class="py">jīntiān wǒ qǐngkè</span> — сегодня угощаю я</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">19</span><h3>Чаевых нет</h3></div>
+      <p>Оставленные на столе деньги догонят вас у выхода: официант решит, что вы забыли сдачу. Обслуживание уже включено в счёт.</p>
+      <p class="cn"><span class="han">小费</span><span class="py">xiǎofèi</span> — чаевые</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">20</span><h3>Воду пьют горячей</h3></div>
+      <p>Кипяток подают и летом, кулеры с горячей водой стоят на вокзалах и в поездах. Холодная вода считается вредной для желудка.</p>
+      <p class="cn"><span class="han">热水</span><span class="py">rèshuǐ</span> — горячая вода</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">21</span><h3>Рис не везде главный</h3></div>
+      <p>На севере основа стола — лапша, пампушки и пельмени, на юге — рис. Меню в Сиане и в Гуанчжоу похожи примерно как русская и грузинская кухня.</p>
+      <p class="cn"><span class="han">面条</span><span class="py">miàntiáo</span> — лапша · <span class="han">米饭</span><span class="py">mǐfàn</span> — варёный рис</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">22</span><h3>В меню бывают сюрпризы</h3></div>
+      <p>Куриные лапки, утиные шейки, жареные насекомые на рынке — обычная еда, а не аттракцион для туристов. Отказаться можно спокойно, никто не обидится.</p>
+      <p class="cn"><span class="han">鸡爪</span><span class="py">jī zhuǎ</span> — куриные лапки</p>
+    </div>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>5</span></div>
+</section>
+
+<!-- ============ 6. РАЗДЕЛ IV ============ -->
+<section class="page">
+  <div class="runhead"><span>Раздел IV · город и быт</span><span>Факты 23–30</span></div>
+  <div class="sechead">
+    <div class="secnum">IV</div>
+    <div>
+      <h2>Город и быт</h2>
+      <div class="sub">Метро, очереди, туалеты, мусор и дневной сон посреди рабочего дня</div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="fact">
+      <div class="fh"><span class="n">23</span><h3>В транспорте тихо</h3></div>
+      <p>Громкий разговор по телефону в вагоне метро — то, за что посмотрят с укором. Видео и музыку слушают в наушниках.</p>
+      <p class="cn"><span class="han">请保持安静</span><span class="py">qǐng bǎochí ānjìng</span> — соблюдайте тишину</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">24</span><h3>Очередь уважают</h3></div>
+      <p>В метро стоят по разметке, в магазине не лезут вперёд. Попытка пройти без очереди — быстрый способ испортить о себе впечатление.</p>
+      <p class="cn"><span class="han">排队</span><span class="py">páiduì</span> — стоять в очереди</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">25</span><h3>Бумагу носите с собой</h3></div>
+      <p>В общественных туалетах её часто нет. И будьте готовы к напольным кабинкам — они всё ещё встречаются на вокзалах и в парках.</p>
+      <p class="cn"><span class="han">带纸</span><span class="py">dài zhǐ</span> — взять с собой бумагу</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">26</span><h3>Днём спят все</h3></div>
+      <p>Сон после обеда — обычная часть дня: в офисе на столе, в кафе, в автобусе. Разбудить человека вопросом в это время не лучшая идея.</p>
+      <p class="cn"><span class="han">午觉</span><span class="py">wǔjiào</span> — дневной сон</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">27</span><h3>Мусор сортируют строго</h3></div>
+      <p>В крупных городах баков четыре: перерабатываемое, пищевые отходы, сухой мусор и опасный. За ошибку в жилых комплексах могут сделать замечание.</p>
+      <p class="cn"><span class="han">垃圾分类</span><span class="py">lājī fēnlèi</span> — сортировка мусора</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">28</span><h3>На рынке торгуются</h3></div>
+      <p>На вещевых рынках цена стартовая, и снизить её вдвое — обычное дело. В магазинах и супермаркетах торг неуместен.</p>
+      <p class="cn"><span class="han">便宜点吧</span><span class="py">piányi diǎn ba</span> — сделайте подешевле</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">29</span><h3>Общежития общие</h3></div>
+      <p>У студентов в комнате обычно четверо-шестеро, душ и туалет нередко на этаже. Комната на одного — редкость и стоит отдельных денег.</p>
+      <p class="cn"><span class="han">宿舍</span><span class="py">sùshè</span> — общежитие</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">30</span><h3>Дорогу переходите внимательно</h3></div>
+      <p>Даже на зелёный: во многих местах машинам разрешён поворот направо, и они поедут через пешеходный переход. Смотрите не на сигнал, а на машины.</p>
+      <p class="cn"><span class="han">小心车</span><span class="py">xiǎoxīn chē</span> — осторожно, машины</p>
+    </div>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>6</span></div>
+</section>
+
+<!-- ============ 7. РАЗДЕЛ V ============ -->
+<section class="page">
+  <div class="runhead"><span>Раздел V · телефон решает всё</span><span>Факты 31–36</span></div>
+  <div class="sechead">
+    <div class="secnum">V</div>
+    <div>
+      <h2>Телефон решает всё</h2>
+      <div class="sub">Без смартфона в Китае сложно даже пообедать</div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="fact">
+      <div class="fh"><span class="n">31</span><h3>Всё через код на экране</h3></div>
+      <p>Оплата, меню в кафе, вход в музей, знакомство — везде квадратный код. Сканируют его камерой прямо из приложения.</p>
+      <p class="cn"><span class="han">扫码</span><span class="py">sǎomǎ</span> — отсканировать код</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">32</span><h3>Вичат заменяет полжизни</h3></div>
+      <p>Переписка, оплата, такси, доставка, рабочие чаты и госуслуги — в одном приложении. Обменяться контактами значит добавить друг друга там.</p>
+      <p class="cn"><span class="han">微信</span><span class="py">Wēixìn</span> — вичат</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">33</span><h3>Наличные почти не нужны</h3></div>
+      <p>Платят телефоном даже на рынке. Небольшой запас купюр всё же держите: в глубинке и в старых лавках карта иностранного банка может не пройти.</p>
+      <p class="cn"><span class="han">现金</span><span class="py">xiànjīn</span> — наличные</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">34</span><h3>Камер много</h3></div>
+      <p>Видеонаблюдение на улицах, в метро, в подъездах. Местные относятся к этому спокойно и чаще говорят о безопасности, чем о слежке.</p>
+      <p class="cn"><span class="han">摄像头</span><span class="py">shèxiàngtóu</span> — камера наблюдения</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">35</span><h3>Вся страна в одном времени</h3></div>
+      <p>От Харбина до Кашгара часы показывают одно и то же — пекинское время. На западе из-за этого солнце встаёт ближе к десяти утра.</p>
+      <p class="cn"><span class="han">北京时间</span><span class="py">Běijīng shíjiān</span> — пекинское время</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">36</span><h3>Адреса меняются</h3></div>
+      <p>Кварталы перестраивают быстро, улицы иногда переименовывают. Скачанная год назад карта может привести не туда — сверяйтесь с местными приложениями.</p>
+      <p class="cn"><span class="han">路名</span><span class="py">lùmíng</span> — название улицы</p>
+    </div>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>7</span></div>
+</section>
+
+<!-- ============ 8. РАЗДЕЛ VI ============ -->
+<section class="page">
+  <div class="runhead"><span>Раздел VI · праздники, цвета и приметы</span><span>Факты 37–42</span></div>
+  <div class="sechead">
+    <div class="secnum">VI</div>
+    <div>
+      <h2>Праздники, цвета и приметы</h2>
+      <div class="sub">Почему красное дарят, а часы — нет</div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="fact">
+      <div class="fh"><span class="n">37</span><h3>Главный праздник — Новый год по лунному календарю</h3></div>
+      <p>На Праздник весны страна едет домой: билеты разбирают заранее, магазины закрываются, города пустеют. Ещё два больших праздника — Праздник фонарей и Праздник середины осени.</p>
+      <p class="cn"><span class="han">春节</span><span class="py">Chūnjié</span> — Праздник весны</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">38</span><h3>Даты праздников плавают</h3></div>
+      <p>Традиционные праздники считают по лунному календарю, поэтому каждый год они выпадают на разные числа. Проверяйте даты перед покупкой билетов.</p>
+      <p class="cn"><span class="han">农历</span><span class="py">nónglì</span> — лунный календарь</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">39</span><h3>Красный — цвет удачи</h3></div>
+      <p>Красные конверты, украшения, одежда на Новый год. Белый, наоборот, связан с трауром, поэтому белые цветы и белая упаковка — плохая идея для подарка.</p>
+      <p class="cn"><span class="han">红色</span><span class="py">hóngsè</span> — красный цвет</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">40</span><h3>Восьмёрка хорошая, четвёрка нет</h3></div>
+      <p>Восемь созвучно слову «богатеть», четыре — слову «смерть». Поэтому за красивые номера с восьмёрками доплачивают, а четвёртый этаж в доме иногда пропускают.</p>
+      <p class="cn"><span class="han">八</span><span class="py">bā</span> — восемь · <span class="han">四</span><span class="py">sì</span> — четыре</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">41</span><h3>Часы в подарок не годятся</h3></div>
+      <p>«Дарить часы» звучит почти как «провожать в последний путь». Из подарков лучше выбрать чай, сладости или что-то из своей страны — и завернуть в красное.</p>
+      <p class="cn"><span class="han">不能送钟</span><span class="py">bù néng sòng zhōng</span> — часы дарить нельзя</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">42</span><h3>Подарок сначала отклоняют</h3></div>
+      <p>Отказ один-два раза — часть вежливости, а не настоящее «нет». Предложите ещё раз, и подарок примут. Разворачивать его при вас, скорее всего, не станут.</p>
+      <p class="cn"><span class="han">礼物</span><span class="py">lǐwù</span> — подарок</p>
+    </div>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>8</span></div>
+</section>
+
+<!-- ============ 9. РАЗДЕЛ VII ============ -->
+<section class="page">
+  <div class="runhead"><span>Раздел VII · язык, здоровье и вся страна</span><span>Факты 43–50</span></div>
+  <div class="sechead">
+    <div class="secnum">VII</div>
+    <div>
+      <h2>Язык, здоровье и вся страна</h2>
+      <div class="sub">Диалекты, банки на спине, рабочий ритм и главный вывод гайда</div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="fact">
+      <div class="fh"><span class="n">43</span><h3>Маска — обычная вежливость</h3></div>
+      <p>Её надевают при простуде, чтобы не заразить других, и в дни плохого воздуха. Это привычка задолго до пандемии.</p>
+      <p class="cn"><span class="han">口罩</span><span class="py">kǒuzhào</span> — маска</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">44</span><h3>За воздухом следят по приложению</h3></div>
+      <p>Индекс качества воздуха смотрят так же буднично, как погоду, и по нему решают, открывать ли окна и брать ли маску.</p>
+      <p class="cn"><span class="han">空气不好</span><span class="py">kōngqì bù hǎo</span> — воздух плохой</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">45</span><h3>Традиционная медицина рядом с обычной</h3></div>
+      <p>Травяные отвары, банки, иглы — не экзотика, а то, что назначают в обычной больнице наравне с таблетками. Следы от банок на спине летом видны у многих.</p>
+      <p class="cn"><span class="han">中医</span><span class="py">zhōngyī</span> — китайская медицина</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">46</span><h3>От солнца прячутся</h3></div>
+      <p>Загар не в моде: летом в ходу зонтики, длинные рукава и крем с высокой защитой. Предложение позагорать вместе поймут с удивлением.</p>
+      <p class="cn"><span class="han">防晒</span><span class="py">fángshài</span> — защита от солнца</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">47</span><h3>Десерты почти не сладкие</h3></div>
+      <p>Привычной приторности не ждите: в ходу паста из красной фасоли и клейкие рисовые шарики. Торт из пекарни тоже окажется заметно менее сладким.</p>
+      <p class="cn"><span class="han">红豆沙</span><span class="py">hóngdòu shā</span> — паста из красной фасоли</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">48</span><h3>Диалекты — почти отдельные языки</h3></div>
+      <p>Кантонский, шанхайский, южнофуцзяньский на слух не похожи на путунхуа. Литературный китайский понимают везде, но дома часто говорят по-своему.</p>
+      <p class="cn"><span class="han">方言</span><span class="py">fāngyán</span> — диалект</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">49</span><h3>Работают допоздна</h3></div>
+      <p>Задержаться до восьми-девяти вечера во многих компаниях в порядке вещей. Отсюда и дневной сон, и поздние ужины в рабочих кварталах.</p>
+      <p class="cn"><span class="han">加班</span><span class="py">jiābān</span> — сверхурочная работа</p>
+    </div>
+    <div class="fact">
+      <div class="fh"><span class="n">50</span><h3>Единого Китая не существует</h3></div>
+      <p>Харбин, Шанхай, Чэнду и Урумчи различаются едой, климатом, темпом и даже манерой общения. Любое правило из этого гайда где-нибудь работает иначе — и это нормально.</p>
+      <p class="cn"><span class="han">中国很大</span><span class="py">Zhōngguó hěn dà</span> — Китай большой</p>
+    </div>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>9</span></div>
+</section>
+
+<!-- ============ 10. ФИНАЛ ============ -->
+<section class="page final">
+  <div class="runhead"><span>Что дальше</span><span>Kitai School</span></div>
+
+  <div style="margin:auto 0">
+    <div style="font-family:var(--font-han); font-size:20pt; color:var(--taupe-soft); letter-spacing:.2em; margin-bottom:8mm">一路平安</div>
+    <h1 style="font-size:28pt; margin-bottom:6mm">Пятьдесят мелочей,<br>которые снимают <i>напряжение</i></h1>
+    <p class="lead" style="max-width:140mm">Культурный шок проходит быстрее всего у тех, кто может спросить и понять ответ. Даже десяток фраз меняет поездку: вас начинают воспринимать не как растерянного туриста, а как гостя, который старается.</p>
+
+    <div class="cta">
+      <h3 style="font-size:12pt; margin-bottom:3mm">Если собираетесь в Китай</h3>
+      <p>В Kitai School занимаются с преподавателем — русским или китайским, по одному и в маленьких группах. Есть разговорный курс для поездок: бытовые фразы, еда, транспорт, покупки. Кто хотел бы присоединиться к занятиям, пишите: подберём удобное время и составим план под вашу цель.</p>
+      <p style="margin-bottom:0">Сайт и запись: <a href="https://kitai-school.ru">kitai-school.ru</a><br>
+      Телеграм-канал с разборами: <a href="https://t.me/kitai_school">@kitai_school</a></p>
+    </div>
+
+    <p style="margin-top:8mm; font-size:9pt; color:var(--taupe)">Гайд можно свободно распечатать и переслать друзьям. Автор — Юлия Горяина, китаист, докторант Шаньдунского университета, основатель Kitai School.</p>
+  </div>
+
+  <div class="runfoot"><span><b>Kitai School</b> · kitai-school.ru</span><span>10</span></div>
+</section>
+
+</body>
+</html>
