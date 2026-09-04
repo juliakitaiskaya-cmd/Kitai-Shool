@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>5 китайских слов, которые вы уже знаете — видео</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --brick:#A41E3A; --brick-deep:#841630; --brick-soft:#F7E6EB;
+    --ink:#2C2420; --ink-2:#5A4F45; --taupe:#8B7D6B; --taupe-soft:#B8AC9C;
+    --cream:#FAF7F2; --cream-2:#F3EDE3; --surface:#FFFFFF; --hairline:#EAE3D8;
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-sans:'Inter',-apple-system,Arial,sans-serif;
+    --font-han:'Noto Serif SC','Songti SC',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#000}
+  #stage{
+    position:relative; width:1080px; height:1920px; overflow:hidden;
+    background:var(--cream); color:var(--ink);
+    font-family:var(--font-sans); -webkit-font-smoothing:antialiased;
+  }
+  /* тёплая подложка: мягкое пятно света сверху и лёгкая виньетка снизу */
+  #stage::before{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:
+      radial-gradient(1200px 900px at 50% -8%, #FFFFFF 0%, rgba(255,255,255,0) 62%),
+      radial-gradient(900px 700px at 50% 112%, rgba(164,30,58,.06) 0%, rgba(164,30,58,0) 60%);
+  }
+
+  .scene{
+    position:absolute; inset:0; display:none;
+    flex-direction:column; padding:132px 92px 116px;
+  }
+  .scene.on{display:flex}
+
+  /* ---------- верхняя строка ---------- */
+  .top{flex:none}
+  .eyebrow{
+    font-size:28px; font-weight:500; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--taupe);
+  }
+  .bar{display:flex; gap:12px; margin-top:26px}
+  .bar span{
+    flex:1; height:6px; border-radius:999px; background:#E7DED1; overflow:hidden;
+  }
+  .bar span i{display:block; height:100%; width:0; background:var(--brick); border-radius:999px}
+
+  /* ---------- середина ---------- */
+  .mid{flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center}
+
+  .hanzi{
+    font-family:var(--font-han); font-weight:700; font-size:296px; line-height:1;
+    color:var(--ink); letter-spacing:.02em;
+  }
+  .hanzi.two{font-size:252px}
+  .rule{width:200px; height:5px; background:var(--brick); border-radius:999px; margin:46px 0 0; transform-origin:center}
+  .pinyin{
+    font-family:var(--font-display); font-style:italic; font-weight:600;
+    font-size:104px; line-height:1.1; color:var(--brick); margin-top:38px;
+  }
+  .ru{
+    font-family:var(--font-sans); font-weight:600; font-size:62px; line-height:1.2;
+    color:var(--ink); margin-top:14px; letter-spacing:-.01em;
+  }
+  .card{
+    margin-top:62px; width:100%; background:var(--surface); border:1px solid var(--hairline);
+    border-radius:24px; box-shadow:0 10px 34px rgba(44,36,32,.07);
+    padding:46px 48px; text-align:left;
+  }
+  .card p{font-size:38px; line-height:1.5; color:var(--ink-2)}
+  .card b{color:var(--ink); font-weight:600}
+  .card .han{font-family:var(--font-han); font-weight:500}
+
+  /* фоновый иероглиф-водяной знак */
+  .ghost{
+    position:absolute; right:-150px; bottom:-90px; font-family:var(--font-han); font-weight:700;
+    font-size:720px; line-height:.82; color:var(--ink); opacity:.038; pointer-events:none;
+    white-space:nowrap;
+  }
+
+  /* ---------- нижняя строка ---------- */
+  .bottom{flex:none; display:flex; align-items:center; justify-content:space-between}
+  .bottom img{height:44px; opacity:.9}
+  .bottom .site{font-size:28px; letter-spacing:.06em; color:var(--taupe)}
+
+  /* ---------- титры ---------- */
+  .title{
+    font-family:var(--font-display); font-weight:600; font-size:100px; line-height:1.06;
+    letter-spacing:-.01em; color:var(--ink); text-align:left;
+  }
+  .title i{font-style:italic; font-weight:500}
+  .lead{font-size:39px; line-height:1.5; color:var(--ink-2); text-align:left; margin-top:44px; max-width:900px}
+  .hanzi-row{
+    font-family:var(--font-han); font-weight:500; font-size:96px; color:var(--taupe-soft);
+    letter-spacing:.14em; margin-bottom:56px; text-align:left;
+  }
+  .mid.left{align-items:flex-start; text-align:left}
+  .logo-out{height:76px; margin-bottom:52px}
+  .site-out{font-size:36px; letter-spacing:.08em; color:var(--brick); margin-top:52px; font-weight:500}
+  .tg{font-size:30px; color:var(--taupe); margin-top:14px; letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+
+<script>
+const WORDS = [
+  {
+    hz:'茶', py:'chá', ru:'чай',
+    text:'То самое слово. В Европу оно уехало морем и стало <b>tea</b>, а к нам пришло по суше, через тюркские языки, — и осталось <b>чаем</b>.'
+  },
+  {
+    hz:'台风', py:'táifēng', ru:'тайфун',
+    text:'Буквально «сильный ветер». Слово ушло из китайского в европейские языки и вернулось к нам уже как <b>тайфун</b>.'
+  },
+  {
+    hz:'关系', py:'guānxi', ru:'гуаньси',
+    text:'Дословно «связи, отношения». В деловом мире это слово говорят без перевода: на <b>гуаньси</b> держится бизнес в Китае.'
+  },
+  {
+    hz:'功夫', py:'gōngfu', ru:'кунг-фу',
+    text:'Не только про боевые искусства. Это мастерство, добытое трудом и временем. Любое дело, доведённое до совершенства, — тоже <span class="han">功夫</span>.'
+  },
+  {
+    hz:'麻将', py:'májiàng', ru:'маджонг',
+    text:'Та самая настольная игра, которую вы наверняка видели. Пришла к нам вместе с названием — прямо из китайского.'
+  }
+];
+
+const LOGO = '../../../design-system/assets/kitai-logo.svg';
+
+const T_INTRO = 4.6, T_WORD = 6.0, T_OUTRO = 5.0;
+const DUR = T_INTRO + WORDS.length * T_WORD + T_OUTRO;   // 39.6 c
+
+const stage = document.getElementById('stage');
+
+function el(html){
+  const d = document.createElement('div');
+  d.innerHTML = html.trim();
+  return d.firstElementChild;
+}
+
+/* ---------- сцена-заставка ---------- */
+const intro = el(`
+  <div class="scene">
+    <div class="ghost" data-ghost>茶</div>
+    <div class="top">
+      <div class="eyebrow anim" data-d="0" data-y="18">Kitai School · китайский язык</div>
+    </div>
+    <div class="mid left">
+      <div class="hanzi-row anim" data-d="0.15" data-y="24">茶 · 台风 · 关系</div>
+      <div class="title anim" data-d="0.35" data-y="34">5 китайских слов,<br>которые вы <i>уже</i><br>знаете</div>
+      <div class="lead anim" data-d="0.75" data-y="26">Кажется, что китайский — чужой язык с нуля.<br>На самом деле несколько слов вы уже носите в голове.</div>
+    </div>
+    <div class="bottom">
+      <img class="anim" data-d="1.0" data-y="14" src="${LOGO}" alt="">
+      <div class="site anim" data-d="1.0" data-y="14">kitai-school.ru</div>
+    </div>
+  </div>
+`);
+stage.appendChild(intro);
+
+/* ---------- сцены слов ---------- */
+const wordScenes = WORDS.map((w, i) => {
+  const n = i + 1;
+  const segs = WORDS.map((_, j) =>
+    `<span><i data-fill="${j < i ? 'done' : (j === i ? 'grow' : 'empty')}"></i></span>`).join('');
+  const s = el(`
+    <div class="scene">
+      <div class="ghost" data-ghost>${w.hz[0]}</div>
+      <div class="top">
+        <div class="eyebrow anim" data-d="0" data-y="14">Слово ${n} из ${WORDS.length}</div>
+        <div class="bar">${segs}</div>
+      </div>
+      <div class="mid">
+        <div class="hanzi ${w.hz.length > 1 ? 'two' : ''} anim" data-d="0.12" data-y="30" data-sc="0.93">${w.hz}</div>
+        <div class="rule" data-rule></div>
+        <div class="pinyin anim" data-d="0.62" data-y="22">${w.py}</div>
+        <div class="ru anim" data-d="0.78" data-y="20">${w.ru}</div>
+        <div class="card anim" data-d="0.98" data-y="34"><p>${w.text}</p></div>
+      </div>
+      <div class="bottom">
+        <img class="anim" data-d="1.15" data-y="12" src="${LOGO}" alt="">
+        <div class="site anim" data-d="1.15" data-y="12">kitai-school.ru</div>
+      </div>
+    </div>
+  `);
+  stage.appendChild(s);
+  return s;
+});
+
+/* ---------- финальная сцена ---------- */
+const outro = el(`
+  <div class="scene">
+    <div class="ghost" data-ghost>加</div>
+    <div class="top">
+      <div class="eyebrow anim" data-d="0" data-y="14">Kitai School</div>
+    </div>
+    <div class="mid left">
+      <div class="title anim" data-d="0.2" data-y="32">Пять слов вы<br><i>уже</i> знаете.</div>
+      <div class="lead anim" data-d="0.6" data-y="26">Осталось научиться складывать из них фразы. С преподавателем это быстрее, чем кажется.</div>
+      <div class="site-out anim" data-d="0.95" data-y="20">kitai-school.ru</div>
+      <div class="tg anim" data-d="1.1" data-y="18">Телеграм-канал @chinese_everyday</div>
+    </div>
+    <div class="bottom">
+      <img class="anim" data-d="1.25" data-y="12" src="${LOGO}" alt="">
+      <div class="site anim" data-d="1.25" data-y="12">加油！</div>
+    </div>
+  </div>
+`);
+stage.appendChild(outro);
+
+/* ---------- расписание ---------- */
+const scenes = [];
+let cursor = 0;
+scenes.push({node: intro, start: 0, end: T_INTRO});
+cursor = T_INTRO;
+wordScenes.forEach(node => {
+  scenes.push({node, start: cursor, end: cursor + T_WORD});
+  cursor += T_WORD;
+});
+scenes.push({node: outro, start: cursor, end: cursor + T_OUTRO});
+
+const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const seg = (t, start, dur) => clamp((t - start) / dur, 0, 1);
+
+const FADE = 0.5;   // длительность перехода между сценами
+
+function drawScene(sc, t){
+  const local = t - sc.start;
+  const inP  = easeInOut(seg(t, sc.start - FADE * 0.6, FADE));
+  const outP = easeInOut(seg(t, sc.end - FADE * 0.6, FADE));
+  const vis = inP > 0 && outP < 1;
+  sc.node.classList.toggle('on', vis);
+  if (!vis) return;
+
+  sc.node.style.opacity = inP * (1 - outP);
+  sc.node.style.transform = `translateY(${-26 * outP}px)`;
+
+  sc.node.querySelectorAll('.anim').forEach(node => {
+    const d = parseFloat(node.dataset.d || 0);
+    const dur = parseFloat(node.dataset.dur || 0.8);
+    const p = easeOut(seg(local, d, dur));
+    const y = (parseFloat(node.dataset.y || 24)) * (1 - p);
+    const from = node.dataset.sc ? parseFloat(node.dataset.sc) : 1;
+    const s = from + (1 - from) * p;
+    node.style.opacity = p;
+    node.style.transform = `translateY(${y.toFixed(2)}px) scale(${s.toFixed(4)})`;
+  });
+
+  // подчёркивание под иероглифом — раскрывается из центра
+  const rule = sc.node.querySelector('[data-rule]');
+  if (rule){
+    const p = easeOut(seg(local, 0.48, 0.6));
+    rule.style.transform = `scaleX(${p.toFixed(4)})`;
+    rule.style.opacity = p;
+  }
+
+  // полоса прогресса
+  sc.node.querySelectorAll('[data-fill]').forEach(fill => {
+    const mode = fill.dataset.fill;
+    if (mode === 'done') fill.style.width = '100%';
+    else if (mode === 'empty') fill.style.width = '0%';
+    else fill.style.width = (easeInOut(seg(local, 0.25, 0.8)) * 100).toFixed(2) + '%';
+  });
+
+  // фоновый иероглиф: медленный наплыв за всю сцену
+  const ghost = sc.node.querySelector('[data-ghost]');
+  if (ghost){
+    const life = clamp(local / (sc.end - sc.start), 0, 1);
+    const p = easeOut(seg(local, 0.1, 1.2));
+    ghost.style.opacity = (0.038 * p).toFixed(4);
+    ghost.style.transform = `translate(${(-18 * life).toFixed(2)}px, ${(-26 * life).toFixed(2)}px) scale(${(1 + 0.05 * life).toFixed(4)})`;
+  }
+}
+
+window.VIDEO_DURATION = DUR;
+window.setTime = function(t){
+  scenes.forEach(sc => drawScene(sc, t));
+};
+window.setTime(0);
+</script>
+</body>
+</html>
