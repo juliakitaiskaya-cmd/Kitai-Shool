@@ -1,0 +1,435 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/yct#article",
+      "headline": "YCT: экзамен по китайскому для детей — как выбрать уровень и сдать с первого раза",
+      "description": "Детский экзамен по китайскому YCT: чем он отличается от HSK, четыре уровня и объём лексики на каждом, где заканчивается пиньинь, правило первой победы при выборе уровня, как устроены задания с картинками и что YCT на самом деле даёт ребёнку.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-05",
+      "dateModified": "2026-09-05",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/yct",
+      "about": {
+        "@type": "Thing",
+        "name": "YCT — экзамен по китайскому языку для школьников",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/HSK",
+          "https://ru.wikipedia.org/wiki/Китайский_язык"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что такое YCT и чем он отличается от HSK?",
+         "acceptedAnswer": {"@type": "Answer", "text": "YCT — экзамен по китайскому для школьников, официально 中小学生汉语考试. От взрослого HSK он отличается не сложностью как таковой, а тем, из чего собран: темы взяты из детской жизни (семья, школа, животные, еда, игры), задания идут с картинками, а сам тест короткий, потому что рассчитан на детское внимание. Уровней четыре вместо шести, и охватывают они примерно тот же диапазон, что первые три уровня HSK."}},
+        {"@type": "Question", "name": "С какого возраста можно сдавать YCT?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Формального нижнего порога нет: экзамен адресован школьникам, которые изучают китайский. На практике ориентируются не на возраст, а на две вещи. Первая — ребёнок должен уметь работать с бланком: слушать инструкцию, отмечать ответ, не терять строку. Вторая — он должен понимать на слух то, что будет звучать. Если хотя бы одно не выполняется, экзамен лучше отложить: ничего не потеряете, а первое впечатление сохраните."}},
+        {"@type": "Question", "name": "Нужно ли ребёнку читать иероглифы, чтобы сдать YCT?",
+         "acceptedAnswer": {"@type": "Answer", "text": "На первых уровнях — нет. В заданиях начальных ступеней над иероглифами напечатан пиньинь, и ребёнок может опираться на него. Иероглифы становятся обязательными выше, и это как раз тот момент, к которому имеет смысл готовиться заранее — не зубрёжкой, а постепенным узнаванием знакомых слов в тексте. Точный формат для своей даты сверяйте в официальном описании экзамена."}},
+        {"@type": "Question", "name": "Как выбрать уровень YCT?",
+         "acceptedAnswer": {"@type": "Answer", "text": "По правилу первой победы: берите тот уровень, который ребёнок сдаст уверенно, а не тот, который «примерно по силам». Первый экзамен решает, захочет ли ребёнок второй, поэтому запас важнее амбиции. Практическая проверка — прогнать дома задания уровня под таймер: если получается спокойно и без слёз, уровень ваш. Если на грани — берите предыдущий, ничего страшного не случится."}},
+        {"@type": "Question", "name": "Зачем вообще сдавать YCT, если сертификат никуда не подаётся?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Главная ценность YCT не в бумаге, а в том, что он превращает расплывчатое «учим китайский» в измеримую цель с датой. У ребёнка появляется финиш, у занятий — структура, а у родителя — понятная точка отсчёта: было столько, стало столько. Если сертификат нужен для конкретной программы или школы, требования уточняйте прямо у неё — они разные."}},
+        {"@type": "Question", "name": "Что делать, если ребёнок сдал хуже, чем ожидали?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Не обсуждать баллы в тот же день и точно не сравнивать с другими детьми. Через неделю вместе посмотреть, где именно потерялись ответы: почти всегда это не язык, а формат — не расслышал инструкцию, потерял строку, поторопился. Такие вещи чинятся одним-двумя пробными прогонами, а не удвоенной зубрёжкой слов."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Экзамен YCT"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамены HSK</p>
+<h1>YCT: экзамен по китайскому для детей — <span class="italic">как выбрать уровень и сдать с первого раза</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-05">5 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/yct.png" alt="YCT: четыре уровня детского экзамена по китайскому" width="1200" height="630"></figure>
+
+<p class="passport">Про <b>экзамен YCT</b> родители обычно спрашивают одно и то же: «а не рано?» и «а зачем он вообще нужен, если ребёнку в школу его не понесёшь?». Оба вопроса правильные, и ответы на них не такие, как пишут в рекламных описаниях. Разберём честно: что это за экзамен, как выбрать уровень так, чтобы первый опыт закончился радостью, а не слезами, и в чём его настоящая польза.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>YCT — экзамен по китайскому <b>для школьников</b>, четыре уровня вместо шести. Темы детские, задания с картинками, тест короткий. На первых уровнях над иероглифами стоит <b>пиньинь</b>, так что читать знаки необязательно. Уровень выбирают <b>не по возрасту</b>, а по правилу первой победы: берите тот, который ребёнок сдаст уверенно. И главное: ценность YCT не в сертификате, а в том, что он превращает «мы учим китайский» в цель с датой.</p>
+</div>
+
+<h2>Что такое YCT <span class="italic">и чем он отличается от HSK</span></h2>
+<p>Полное название — <b>Youth Chinese Test</b>, по-китайски <span class="han">中小学生汉语考试</span>. Это тот же экзаменационный «дом», что и <a href="https://kitai-school.ru/article/sertifikat-hsk" target="_blank" rel="noopener">HSK</a>, но собранный под школьника.</p>
+<div class="table-wrap">
+<table>
+  <caption>Два экзамена рядом.</caption>
+  <thead><tr><th></th><th>YCT</th><th>HSK</th></tr></thead>
+  <tbody>
+    <tr><td><b>Для кого</b></td><td class="ok">школьники, изучающие китайский</td><td>подростки и взрослые</td></tr>
+    <tr><td><b>Уровней</b></td><td>четыре</td><td>шесть</td></tr>
+    <tr><td><b>Темы заданий</b></td><td class="ok">семья, школа, животные, еда, игры, цвета</td><td>учёба, работа, город, быт, общие вопросы</td></tr>
+    <tr><td><b>Как выглядят задания</b></td><td class="ok">много картинок: выбрать нужную, соотнести с фразой</td><td>текстовые варианты ответа</td></tr>
+    <tr><td><b>Длительность</b></td><td class="ok">короткий: рассчитан на детское внимание</td><td>длиннее, растёт с уровнем</td></tr>
+    <tr><td><b>Зачем сдают</b></td><td>мотивация и понятная цель</td><td>учёба, работа, документы</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Важно не путать «детский» с «лёгким». YCT — <b>не упрощённый HSK</b>, а экзамен с другим содержанием: слова там те, которыми ребёнок реально пользуется, а не те, что пригодятся студенту. Поэтому взрослому, который учит язык для работы, YCT не нужен, даже если по объёму слов он совпадает с младшим HSK.</p>
+
+<h2>Четыре уровня: <span class="italic">что ребёнок умеет на каждом</span></h2>
+<p>Уровни идут по нарастающей и примерно повторяют шаг первых трёх ступеней HSK по объёму словаря.</p>
+<div class="table-wrap">
+<table>
+  <caption>Ориентиры по уровням.</caption>
+  <thead><tr><th>Уровень</th><th>Слов, ориентировочно</th><th>Что ребёнок может</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>YCT 1</b></td><td>около 80</td><td>здоровается, называет себя, считает, показывает предметы вокруг</td></tr>
+    <tr><td><b>YCT 2</b></td><td>около 150</td><td>рассказывает про семью и школу простыми фразами, понимает короткие вопросы</td></tr>
+    <tr><td><b>YCT 3</b></td><td>около 300</td><td>говорит о своём дне, о том, что любит и что умеет, понимает диалог из нескольких реплик</td></tr>
+    <tr><td><b>YCT 4</b></td><td>около 600</td><td>читает короткие тексты и связно рассказывает о привычных вещах</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Соотношение с взрослым экзаменом удобно держать в голове так: по словарю <b>YCT 2 примерно равен <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1</a></b>, <b>YCT 3 — <a href="https://kitai-school.ru/article/hsk-2-sdaem-vtoroy-uroven-bez-stressa" target="_blank" rel="noopener">HSK 2</a></b>, а <b>YCT 4 — <a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">HSK 3</a></b>. Это ориентир по объёму лексики, а не официальное приравнивание: содержание всё равно разное. И отдельно: <b>цифры по уровням и формат заданий для вашей даты сверяйте в официальном описании экзамена</b> — требования пересматриваются.</p>
+
+<h2>Иероглифы: <span class="italic">почему на первых уровнях их можно не читать</span></h2>
+<p>Это то, что снимает главный родительский страх. На начальных ступенях <b>над иероглифами в заданиях напечатан пиньинь</b> — латинская запись чтения. Ребёнок, который знает звучание слова, но не помнит знак, всё равно поймёт, что написано.</p>
+<p>Устроено это ровно так же, как на младших уровнях взрослого экзамена: на <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1</a> и <a href="https://kitai-school.ru/article/hsk-2-sdaem-vtoroy-uroven-bez-stressa" target="_blank" rel="noopener">HSK 2</a> пиньинь тоже есть, а на <a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">HSK 3</a> его уже нет. Момент, когда подпорка убирается, — самый заметный порог в изучении китайского, и к нему готовятся заранее.</p>
+<p class="note">Что это значит на практике: <b>заучивать иероглифы к первому экзамену не нужно</b>. Нужно, чтобы ребёнок много слушал и узнавал слова на слух. Знаки подтянутся сами — сначала как узнавание знакомых слов в тексте, потом как письмо. Именно в таком порядке, а не наоборот: если начать с прописей, язык быстро становится «уроками», а не языком. Подробнее про порядок освоения — в статье про <a href="https://kitai-school.ru/article/etapy-izucheniya-kitayskogo-yazyka" target="_blank" rel="noopener">этапы изучения китайского</a>.</p>
+
+<figure class="ks-fig"><img src="assets/yct-zadanie.png" alt="Как выглядит задание YCT: фраза с пиньинем и выбор картинки" loading="lazy" width="1200" height="800"><figcaption>Как устроено типичное задание и почему картинка снимает страх перед иероглифами.</figcaption></figure>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Мама девятилетней ученицы очень хотела, чтобы дочка сдавала сразу третий уровень: «она у нас способная, что мы будем размениваться». Мы прогнали дома задания третьего уровня — девочка справилась, но с напряжением, к концу устала и один раз сказала: «а можно я больше не буду».</p>
+  <p>Сдавали второй. Она вышла с экзамена сияющая, с ощущением, что это было легко и весело. Через полгода спокойно сдала третий — и уже сама спросила, когда следующий.</p>
+  <p>Я с тех пор говорю родителям одну вещь: <b>первый экзамен решает не уровень, а отношение</b>. Уровень догонится за полгода, а испорченное впечатление — за годы.</p>
+</div>
+
+<h2>Как выбрать уровень: <span class="italic">правило первой победы</span></h2>
+<p>Самая частая ошибка — выбирать уровень «на вырост», по возрасту или по количеству лет занятий. Правильный ориентир один: <b>первый экзамен должен закончиться победой</b>.</p>
+<div class="table-wrap">
+<table>
+  <caption>Как принять решение.</caption>
+  <thead><tr><th>Ситуация</th><th>Что делать</th></tr></thead>
+  <tbody>
+    <tr><td>Ребёнок прогоняет задания уровня спокойно и с запасом</td><td class="ok">это ваш уровень, идите</td></tr>
+    <tr><td>Справляется, но устаёт и нервничает</td><td class="bad">берите предыдущий уровень</td></tr>
+    <tr><td>Понимает на слух, но теряется в бланке</td><td>уровень ни при чём: нужны один-два пробных прогона</td></tr>
+    <tr><td>«Мы за год прошли учебник, значит, готовы»</td><td class="bad">учебник и экзамен — разные вещи, проверяйте заданиями</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Проверка занимает один вечер: садитесь вместе, включаете таймер и прогоняете задания выбранного уровня как настоящий экзамен. Если получилось <b>без слёз и без подсказок</b> — можно записываться. Если на грани, берите ступень ниже: ничего не потеряете, а ребёнок выйдет с экзамена с ощущением «я могу». Как устроен пробный прогон, разобрано на примере взрослого экзамена в статье про <a href="https://kitai-school.ru/article/hsk-1-probnyy-test-kak-ispolzovat-onlayn-trenajer" target="_blank" rel="noopener">пробный тест HSK 1</a> — механика та же.</p>
+
+<h2>Задания с картинками: <span class="italic">почему это работает</span></h2>
+<p>Картинок в YCT много, и это не украшение. У них две вполне рабочие функции.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что дают картинки в заданиях.</caption>
+  <thead><tr><th>Функция</th><th>Что происходит с ребёнком</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Снимают барьер письменности</b></td><td>ответ выбирается по смыслу, а не по умению прочитать длинную строку</td></tr>
+    <tr><td class="ok"><b>Держат внимание</b></td><td>лист с картинками не выглядит как контрольная — а значит, не запускает тревогу</td></tr>
+    <tr><td><b>Но требуют внимательности</b></td><td>картинки часто похожи, и ошибка бывает не в языке, а в спешке</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Отсюда неочевидный совет: тренируйте не только слова, но и <b>привычку дослушивать до конца</b>. Дети часто выбирают картинку по первому услышанному слову — услышал «собака», ткнул в собаку, а во фразе было «у меня нет собаки». Это самая частая потеря баллов на начальных уровнях, и лечится она не словарём, а десятком тренировочных заданий.</p>
+
+<h2>Что YCT реально даёт ребёнку <span class="italic">и чего не даёт</span></h2>
+<p>Здесь честно, потому что от этого зависит, стоит ли вообще затевать.</p>
+<div class="table-wrap">
+<table>
+  <caption>Польза и её границы.</caption>
+  <thead><tr><th>Даёт</th><th>Не даёт</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Цель с датой</b> — расплывчатое «учим китайский» превращается в понятный финиш</td><td class="bad">Формального преимущества при поступлении: это не вступительный экзамен</td></tr>
+    <tr><td class="ok"><b>Ощущение победы</b> — ребёнок видит, что усилия дали измеримый результат</td><td class="bad">Замены систематических занятий: сертификат не учит</td></tr>
+    <tr><td class="ok"><b>Структуру занятиям</b> — появляется понятный список того, что нужно освоить</td><td class="bad">Гарантии, что ребёнок полюбит язык, если дома давят</td></tr>
+    <tr><td class="ok"><b>Точку отсчёта для родителя</b> — видно, что изменилось за год</td><td class="bad">Международного статуса уровня взрослого HSK</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И прямо: <b>сертификат YCT в большинстве случаев никуда не подаётся</b>. Его ценность — внутренняя, для ребёнка и для процесса. Если он нужен вам для конкретной программы, олимпиады или школы, требования уточняйте прямо у них: они бывают разными и меняются. А если цель — документ на будущее, ориентироваться стоит сразу на <a href="https://kitai-school.ru/article/sertifikat-hsk" target="_blank" rel="noopener">сертификат HSK</a>.</p>
+
+<figure class="ks-fig"><img src="assets/yct-put.png" alt="Маршрут от YCT к HSK: где заканчивается детский экзамен и начинается взрослый" loading="lazy" width="1200" height="500"><figcaption>Куда ведёт YCT: маршрут от первого детского уровня до взрослого экзамена.</figcaption></figure>
+
+<h2>Как готовиться: <span class="italic">три вещи, которые работают</span></h2>
+<p>Подготовка к детскому экзамену устроена не так, как ко взрослому: главное здесь — не объём, а формат и настроение.</p>
+<div class="table-wrap">
+<table>
+  <caption>План подготовки к YCT.</caption>
+  <thead><tr><th>Что делать</th><th>Почему это работает</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Слушать больше, чем читать</b></td><td>аудирование — половина экзамена и вся основа языка в этом возрасте</td></tr>
+    <tr><td class="ok"><b>Тренировать формат, а не только слова</b></td><td>дети теряют баллы на инструкции и бланке чаще, чем на незнакомых словах</td></tr>
+    <tr><td class="ok"><b>Сделать два-три полных прогона по таймеру</b></td><td>снимает главный стресс: на настоящем экзамене всё уже знакомо</td></tr>
+    <tr><td><b>Держать занятия короткими</b></td><td>двадцать минут каждый день работают лучше, чем полтора часа по субботам</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Хорошая новость про лексику: слова YCT — это ровно то, что и так проходят на занятиях с детьми. Числа, цвета, животные, еда, семья. Отдельные списки почти не нужны — нужен повтор в другом виде: <a href="https://kitai-school.ru/article/cifry-na-kitayskom-ot-0-do-10" target="_blank" rel="noopener">счёт от нуля до десяти</a>, <a href="https://kitai-school.ru/article/zvuki-zhivotnyh-na-kitayskom" target="_blank" rel="noopener">звуки животных</a>, песни и мультфильмы, про которые есть отдельный разбор в статье про <a href="https://kitai-school.ru/article/kitayskiy-dlya-malyshey" target="_blank" rel="noopener">китайский для малышей</a>.</p>
+
+<h2>Чего родителям <span class="italic">делать не надо</span></h2>
+<p>Короткий список, собранный из того, что чаще всего портит первый экзамен.</p>
+<div class="table-wrap">
+<table>
+  <caption>Четыре вещи, которые мешают.</caption>
+  <thead><tr><th>Не надо</th><th>Что вместо этого</th></tr></thead>
+  <tbody>
+    <tr><td class="bad">Брать уровень «на вырост»</td><td class="ok">брать тот, который сдаётся уверенно</td></tr>
+    <tr><td class="bad">Устраивать марафон за неделю до даты</td><td class="ok">снизить нагрузку и сделать один спокойный прогон</td></tr>
+    <tr><td class="bad">Обсуждать баллы в день экзамена</td><td class="ok">похвалить за то, что дошёл и сделал, а разбор отложить</td></tr>
+    <tr><td class="bad">Сравнивать с другими детьми</td><td class="ok">сравнивать ребёнка только с ним самим полгода назад</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И последнее, самое важное. Экзамен для ребёнка — это <b>событие, а не проверка</b>. Как вы к нему отнесётесь, так к нему отнесётся и он. Если для вас это «наконец-то посмотрим, чему научили», ребёнок услышит именно это. Если «идём попробовать, интересно же» — услышит другое. Разница в результате будет заметнее, чем от лишних тридцати выученных слов.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое YCT и чем он отличается от HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>YCT — экзамен по китайскому для школьников, официально 中小学生汉语考试. От взрослого HSK он отличается не сложностью как таковой, а тем, из чего собран: темы взяты из детской жизни (семья, школа, животные, еда, игры), задания идут с картинками, а сам тест короткий, потому что рассчитан на детское внимание. Уровней четыре вместо шести, и охватывают они примерно тот же диапазон, что первые три уровня HSK.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С какого возраста можно сдавать YCT?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Формального нижнего порога нет: экзамен адресован школьникам, которые изучают китайский. На практике ориентируются не на возраст, а на две вещи. Первая — ребёнок должен уметь работать с бланком: слушать инструкцию, отмечать ответ, не терять строку. Вторая — он должен понимать на слух то, что будет звучать. Если хотя бы одно не выполняется, экзамен лучше отложить: ничего не потеряете, а первое впечатление сохраните.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли ребёнку читать иероглифы, чтобы сдать YCT?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На первых уровнях — нет. В заданиях начальных ступеней над иероглифами напечатан пиньинь, и ребёнок может опираться на него. Иероглифы становятся обязательными выше, и это как раз тот момент, к которому имеет смысл готовиться заранее — не зубрёжкой, а постепенным узнаванием знакомых слов в тексте. Точный формат для своей даты сверяйте в официальном описании экзамена.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как выбрать уровень YCT?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По правилу первой победы: берите тот уровень, который ребёнок сдаст уверенно, а не тот, который «примерно по силам». Первый экзамен решает, захочет ли ребёнок второй, поэтому запас важнее амбиции. Практическая проверка — прогнать дома задания уровня под таймер: если получается спокойно и без слёз, уровень ваш. Если на грани — берите предыдущий, ничего страшного не случится.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Зачем вообще сдавать YCT, если сертификат никуда не подаётся?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Главная ценность YCT не в бумаге, а в том, что он превращает расплывчатое «учим китайский» в измеримую цель с датой. У ребёнка появляется финиш, у занятий — структура, а у родителя — понятная точка отсчёта: было столько, стало столько. Если сертификат нужен для конкретной программы или школы, требования уточняйте прямо у неё — они разные.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что делать, если ребёнок сдал хуже, чем ожидали?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Не обсуждать баллы в тот же день и точно не сравнивать с другими детьми. Через неделю вместе посмотреть, где именно потерялись ответы: почти всегда это не язык, а формат — не расслышал инструкцию, потерял строку, поторопился. Такие вещи чинятся одним-двумя пробными прогонами, а не удвоенной зубрёжкой слов.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Самое трудное в детском экзамене — попасть в уровень. Приходите на бесплатное пробное занятие: посмотрим, что ребёнок понимает на слух прямо сейчас, прогоним пару заданий и честно скажем, какой уровень YCT берётся уверенно, а какой пока рано.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>ПОБЕДА</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём формат занятий под возраст и уровень.</p>
+</div>
+
+<p>Дальше по теме: что подтверждает взрослый экзамен — <a href="https://kitai-school.ru/article/sertifikat-hsk" target="_blank" rel="noopener">сертификат HSK</a>; первые ступени — <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1</a>, <a href="https://kitai-school.ru/article/hsk-2-sdaem-vtoroy-uroven-bez-stressa" target="_blank" rel="noopener">HSK 2</a> и <a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">HSK 3</a>; устная часть — <a href="https://kitai-school.ru/article/hskk" target="_blank" rel="noopener">HSKK</a>; с чего начинать в дошкольном возрасте — <a href="https://kitai-school.ru/article/kitayskiy-dlya-malyshey" target="_blank" rel="noopener">китайский для малышей</a>; тоны и звуки — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>; трудно ли начинать — <a href="https://kitai-school.ru/article/slojno-li-uchit-kitayskiy-s-nulya" target="_blank" rel="noopener">китайский с нуля</a>; занятия для детей — <a href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener">детское направление</a> и <a href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener">индивидуальные уроки</a>. Все экзамены — в разделе <a href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener">«Экзамены HSK»</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Официальное описание экзамена YCT: уровни, состав частей и порядок проведения.</li>
+    <li>Практика Kitai School — подготовка детей к YCT и наблюдения за первым экзаменом.</li>
+    <li>Материалы блога Kitai School по уровням HSK: объёмы лексики и наличие пиньиня в заданиях.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть первый экзамен будет праздником! <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим детей к YCT: подбираем уровень по силам и тренируем формат заданий</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
