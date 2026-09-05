@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Марафон «Китайский на раз-два-три» — видео</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --brick:#A41E3A; --brick-deep:#841630; --brick-light:#C42B45; --brick-soft:#F7E6EB;
+    --ink:#2C2420; --ink-2:#5A4F45; --taupe:#8B7D6B; --taupe-soft:#B8AC9C;
+    --cream:#FAF7F2; --cream-2:#F3EDE3; --surface:#FFFFFF; --hairline:#EAE3D8;
+    --gold:#D9A441;
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-sans:'Inter',Arial,sans-serif;
+    --font-han:'Noto Serif SC',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#000}
+  #stage{
+    position:relative; width:1080px; height:1920px; overflow:hidden;
+    background:var(--cream); color:var(--ink);
+    font-family:var(--font-sans); -webkit-font-smoothing:antialiased;
+  }
+  /* тёплый свет сверху и красноватое свечение снизу */
+  #stage::before{
+    content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+    background:
+      radial-gradient(1300px 900px at 50% -10%, #FFFFFF 0%, rgba(255,255,255,0) 60%),
+      radial-gradient(1000px 800px at 50% 108%, rgba(164,30,58,.10) 0%, rgba(164,30,58,0) 62%);
+  }
+
+  /* ---------- сквозные элементы ---------- */
+  .brandbar{
+    position:absolute; left:80px; right:80px; top:70px; z-index:6;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brandbar img{height:64px}
+  .brandbar .site{font-size:26px; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe); font-weight:600}
+
+  .footbar{
+    position:absolute; left:80px; right:80px; bottom:70px; z-index:6;
+    display:flex; align-items:baseline; justify-content:space-between;
+    font-size:28px; color:var(--taupe); letter-spacing:.04em;
+  }
+  .footbar b{color:var(--brick); font-weight:700}
+
+  /* фонарики */
+  .lantern{position:absolute; z-index:1; transform-origin:50% -40px}
+  .lantern .cord{position:absolute; left:50%; top:-120px; width:4px; height:120px;
+    background:linear-gradient(#D9C7A8,#B99C6B); transform:translateX(-50%)}
+  .lantern .cap{position:absolute; left:50%; width:70px; height:20px; border-radius:5px;
+    background:linear-gradient(#E0B458,#B98A2C); transform:translateX(-50%)}
+  .lantern .cap.top{top:-14px}
+  .lantern .cap.bot{bottom:-14px}
+  .lantern .body{
+    width:100%; height:100%; border-radius:50%/44%;
+    background:radial-gradient(circle at 34% 32%, #E0576B 0%, #C42B45 42%, #8E1226 100%);
+    box-shadow:0 18px 50px rgba(142,18,38,.28), inset 0 -18px 40px rgba(0,0,0,.18);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .lantern .body span{
+    font-family:var(--font-han); font-weight:700; color:#FCE9C8;
+    text-shadow:0 2px 6px rgba(0,0,0,.25);
+  }
+  .lantern .tassel{position:absolute; left:50%; bottom:-70px; width:6px; height:60px;
+    background:linear-gradient(#D14A2E,#8E1226); transform:translateX(-50%); border-radius:3px}
+
+  /* ---------- сцены ---------- */
+  .scene{
+    position:absolute; inset:0; display:none; z-index:4;
+    flex-direction:column; justify-content:center; align-items:flex-start;
+    padding:300px 80px 240px;
+  }
+  .scene > *{max-width:920px}
+  .scene.on{display:flex}
+
+  .kicker{
+    font-size:30px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--brick); margin-bottom:34px;
+  }
+  .h-big{
+    font-size:96px; max-width:800px; font-weight:900; line-height:1.02; letter-spacing:-.02em;
+    color:var(--ink); text-transform:uppercase;
+  }
+  .h-big .red{color:var(--brick)}
+  .lead{font-size:38px; line-height:1.42; color:var(--ink-2); margin-top:40px; max-width:840px}
+
+  /* карточка */
+  .card{
+    width:920px; background:var(--surface); border-radius:44px; padding:56px 60px;
+    box-shadow:0 26px 70px rgba(44,36,32,.10); border:1px solid var(--hairline);
+  }
+  .card .label{font-size:30px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--taupe)}
+  .card .hsk{font-size:96px; font-weight:800; color:var(--ink); line-height:1.05; margin-top:8px}
+  .hours{display:flex; align-items:baseline; gap:18px; margin-top:18px}
+  .hours .num{font-size:128px; font-weight:900; color:var(--brick); line-height:1; letter-spacing:-.02em}
+  .hours .unit{font-size:46px; font-weight:700; color:var(--ink-2)}
+
+  /* красная плашка */
+  .red-plate{
+    width:920px; background:linear-gradient(135deg,#B32340,#8E1226); border-radius:44px;
+    padding:52px 58px; color:#fff; display:flex; gap:36px; align-items:center;
+    box-shadow:0 26px 70px rgba(142,18,38,.28);
+  }
+  .red-plate .txt{font-size:52px; font-weight:800; line-height:1.22}
+  .tick{flex:none; width:110px; height:110px; border-radius:50%; background:#fff;
+    display:flex; align-items:center; justify-content:center}
+  .tick svg{width:64px; height:64px}
+  .tick path{stroke:var(--brick); stroke-width:9; fill:none; stroke-linecap:round; stroke-linejoin:round}
+
+  /* марафон */
+  .badge{
+    display:inline-block; background:var(--brick); color:#fff; border-radius:999px;
+    padding:20px 54px; font-size:38px; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
+    box-shadow:0 18px 40px rgba(164,30,58,.32);
+  }
+  .m-title{
+    font-family:var(--font-display); font-weight:700; font-size:96px; line-height:1.08; max-width:860px;
+    color:var(--brick); margin-top:44px; text-transform:uppercase; letter-spacing:.01em;
+  }
+  .counts{display:flex; gap:40px; margin-top:56px; width:920px}
+  .count{
+    flex:1; background:var(--surface); border:1px solid var(--hairline); border-radius:36px;
+    padding:34px 28px; text-align:center; box-shadow:0 18px 44px rgba(44,36,32,.08);
+  }
+  .count .cn{font-family:var(--font-han); font-size:76px; font-weight:700; color:var(--brick); line-height:1}
+  .count .ru{font-size:32px; font-weight:700; color:var(--ink); margin-top:14px; text-transform:uppercase; letter-spacing:.08em}
+
+  /* финал */
+  .days{display:flex; align-items:baseline; gap:26px}
+  .days .n{font-size:200px; font-weight:900; color:var(--brick); line-height:.9; letter-spacing:-.03em}
+  .days .w{font-size:58px; font-weight:800; color:var(--ink); line-height:1.14; max-width:640px}
+  .cta{
+    width:920px; margin-top:56px; background:var(--surface); border:1px solid var(--hairline);
+    border-radius:44px; padding:48px 56px; box-shadow:0 26px 70px rgba(44,36,32,.10);
+  }
+  .cta .row{font-size:40px; font-weight:700; color:var(--ink); line-height:1.35}
+  .cta .row + .row{margin-top:16px}
+  .cta .row span{color:var(--brick)}
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- фонарики -->
+  <div class="lantern" id="lan1" style="left:790px; top:190px; width:196px; height:236px">
+    <div class="cord"></div><div class="cap top"></div>
+    <div class="body"><span style="font-size:96px">中文</span></div>
+    <div class="cap bot"></div><div class="tassel"></div>
+  </div>
+  <div class="lantern" id="lan2" style="left:952px; top:452px; width:140px; height:168px">
+    <div class="cord"></div><div class="cap top" style="width:52px"></div>
+    <div class="body"><span style="font-size:74px">学</span></div>
+    <div class="cap bot" style="width:52px"></div><div class="tassel"></div>
+  </div>
+
+  <div class="brandbar">
+    <img src="../../../design-system/assets/kitai-logo.svg" alt="Kitai School">
+    <div class="site">kitai-school.ru</div>
+  </div>
+
+  <div class="footbar">
+    <div>Онлайн-школа китайского языка</div>
+    <div><b>@kitai_school</b></div>
+  </div>
+</div>
+
+<script>
+const stage = document.getElementById('stage');
+const el = html => { const d = document.createElement('div'); d.innerHTML = html.trim(); return d.firstElementChild; };
+
+/* ---------- сцены ---------- */
+const scenes = [];
+function addScene(dur, html){
+  const node = el(html);
+  stage.appendChild(node);
+  const start = scenes.length ? scenes[scenes.length - 1].end : 0;
+  scenes.push({ node, start, end: start + dur });
+  return node;
+}
+
+/* 1. Хук */
+addScene(4.4, `
+  <div class="scene">
+    <div class="kicker anim" data-d="0" data-y="20">Kitai School · марафон</div>
+    <div class="h-big">
+      <div class="anim" data-d="0.15" data-y="46">Китайский&nbsp;—</div>
+      <div class="anim" data-d="0.35" data-y="46">это <span class="red">проще</span>,</div>
+      <div class="anim" data-d="0.55" data-y="46">чем кажется</div>
+    </div>
+    <div class="lead anim" data-d="0.95" data-y="30">Главный страх новичка — «это невозможно выучить».<br>Давайте посмотрим на цифры.</div>
+  </div>
+`);
+
+/* 2. Часы на HSK 5–6 */
+addScene(4.8, `
+  <div class="scene">
+    <div class="kicker anim" data-d="0" data-y="20">Сколько часов нужно</div>
+    <div class="card anim" data-d="0.15" data-y="46" data-sc="0.95">
+      <div class="label">Верхние уровни экзамена</div>
+      <div class="hsk">HSK 5–6</div>
+      <div class="hours">
+        <div class="num" data-counter data-from="600" data-to="2200" data-cd="0.6" data-cdur="1.5">600</div>
+        <div class="unit">часов занятий</div>
+      </div>
+    </div>
+    <div class="lead anim" data-d="1.6" data-y="30">Столько уходит на свободный китайский — с чтением газет и деловой перепиской.</div>
+  </div>
+`);
+
+/* 3. Для жизни нужно меньше */
+addScene(4.2, `
+  <div class="scene">
+    <div class="kicker anim" data-d="0" data-y="20">А теперь хорошая новость</div>
+    <div class="red-plate anim" data-d="0.15" data-y="46" data-sc="0.95">
+      <div class="tick"><svg viewBox="0 0 64 64"><path d="M12 34 L26 48 L52 18" data-tick></path></svg></div>
+      <div class="txt">Для жизни и путешествий<br>нужно гораздо меньше</div>
+    </div>
+    <div class="lead anim" data-d="0.9" data-y="30">Заказать еду, снять жильё, договориться о цене и поддержать разговор можно с несколькими сотнями слов.</div>
+  </div>
+`);
+
+/* 4. Марафон */
+addScene(5.4, `
+  <div class="scene">
+    <div class="anim" data-d="0" data-y="30" data-sc="0.9"><div class="badge">Марафон</div></div>
+    <div class="m-title anim" data-d="0.2" data-y="40">Китайский<br>на раз-два-три</div>
+    <div class="counts">
+      <div class="count anim" data-d="0.7" data-y="34" data-sc="0.9"><div class="cn">一</div><div class="ru">Раз</div></div>
+      <div class="count anim" data-d="0.9" data-y="34" data-sc="0.9"><div class="cn">二</div><div class="ru">Два</div></div>
+      <div class="count anim" data-d="1.1" data-y="34" data-sc="0.9"><div class="cn">三</div><div class="ru">Три</div></div>
+    </div>
+  </div>
+`);
+
+/* 5. Три дня и запись */
+addScene(5.6, `
+  <div class="scene">
+    <div class="days">
+      <div class="n anim" data-d="0" data-y="40" data-sc="0.85">3</div>
+      <div class="w anim" data-d="0.2" data-y="34">дня, чтобы сделать<br>первый уверенный шаг</div>
+    </div>
+    <div class="lead anim" data-d="0.5" data-y="30" style="margin-top:34px">Три коротких занятия: звуки, первые фразы и разговор о себе. К концу вы скажете по-китайски то, что не могли сказать в понедельник.</div>
+    <div class="cta anim" data-d="0.9" data-y="40" data-sc="0.96">
+      <div class="row">Старт — в ближайший понедельник</div>
+      <div class="row">Запись: <span>kitai-school.ru</span></div>
+      <div class="row">Вопросы — в директ или <span>@kitai_school</span></div>
+    </div>
+  </div>
+`);
+
+const DUR = scenes[scenes.length - 1].end;
+window.VIDEO_DURATION = DUR;
+
+/* ---------- вспомогательное ---------- */
+const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const back = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const seg = (t, start, dur) => clamp((t - start) / dur, 0, 1);
+const FADE = 0.5;
+
+const lan1 = document.getElementById('lan1');
+const lan2 = document.getElementById('lan2');
+
+function drawScene(sc, t){
+  const local = t - sc.start;
+  const inP = easeInOut(seg(t, sc.start - FADE * 0.6, FADE));
+  const outP = easeInOut(seg(t, sc.end - FADE * 0.6, FADE));
+  const vis = inP > 0 && outP < 1;
+  sc.node.classList.toggle('on', vis);
+  if (!vis) return;
+
+  sc.node.style.opacity = inP * (1 - outP);
+  sc.node.style.transform = `translateY(${-30 * outP}px)`;
+
+  sc.node.querySelectorAll('.anim').forEach(node => {
+    const d = parseFloat(node.dataset.d || 0);
+    const dur = parseFloat(node.dataset.dur || 0.8);
+    const raw = seg(local, d, dur);
+    const p = node.dataset.sc ? back(raw) : easeOut(raw);
+    const y = (parseFloat(node.dataset.y || 24)) * (1 - easeOut(raw));
+    const from = node.dataset.sc ? parseFloat(node.dataset.sc) : 1;
+    const s = from + (1 - from) * p;
+    node.style.opacity = easeOut(raw);
+    node.style.transform = `translateY(${y.toFixed(2)}px) scale(${s.toFixed(4)})`;
+  });
+
+  // счётчик часов
+  const cnt = sc.node.querySelector('[data-counter]');
+  if (cnt){
+    const from = +cnt.dataset.from, to = +cnt.dataset.to;
+    const p = easeInOut(seg(local, +cnt.dataset.cd, +cnt.dataset.cdur));
+    const v = Math.round((from + (to - from) * p) / 10) * 10;
+    cnt.textContent = p < 1 ? v : to;
+    cnt.style.transform = `scale(${(1 + 0.05 * Math.sin(Math.PI * p)).toFixed(4)})`;
+  }
+
+  // галочка прорисовывается
+  const tick = sc.node.querySelector('[data-tick]');
+  if (tick){
+    const len = 100;
+    const p = easeOut(seg(local, 0.5, 0.55));
+    tick.style.strokeDasharray = len;
+    tick.style.strokeDashoffset = (len * (1 - p)).toFixed(2);
+  }
+}
+
+window.setTime = function(t){
+  scenes.forEach(sc => drawScene(sc, t));
+
+  // фонарики покачиваются всё время
+  const a1 = 3.2 * Math.sin(t * 0.9), a2 = 2.4 * Math.sin(t * 1.15 + 1.2);
+  lan1.style.transform = `rotate(${a1.toFixed(3)}deg)`;
+  lan2.style.transform = `rotate(${a2.toFixed(3)}deg)`;
+};
+window.setTime(0);
+</script>
+</body>
+</html>
