@@ -1,0 +1,433 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/hskk-3#article",
+      "headline": "HSKK 3: как сдать высший уровень и говорить об абстрактном без сложных слов",
+      "description": "Высший уровень устного экзамена HSKK: что меняется после среднего, как устроено чтение вслух и что в нём оценивают, три опоры для пересказа услышанного, приём спуска с абстрактного на конкретное, структура ответа с уступкой и почему на HSKK нет ни дискуссии, ни экзаменатора.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-04",
+      "dateModified": "2026-09-04",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/hskk-3",
+      "about": {
+        "@type": "Thing",
+        "name": "HSKK 高级 — высший уровень экзамена на устный китайский",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/HSK",
+          "https://ru.wikipedia.org/wiki/Китайский_язык"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "telephone": "+7 958 538-70-80",
+      "email": "info@kitai-school.ru",
+      "address": {"@type": "PostalAddress", "streetAddress": "Ярославское шоссе, д. 122, корп. 1, кв. 133", "postalCode": "129337", "addressLocality": "Москва", "addressCountry": "RU"},
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Лицензия № Л035-01298-77/02285772 (Департамент образования г. Москвы)"},
+      "sameAs": ["https://vk.com/kitai_school", "https://telegram.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Чем HSKK 3 отличается от HSKK 2?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Меняются два задания из трёх. Вместо рассказа по картинке появляются чтение вслух и пересказ услышанного своими словами. Опора уходит: на среднем уровне перед вами была картинка, на высшем — чужой текст, который надо либо озвучить, либо переработать. И темы становятся общими: не «что происходит на фото», а «что вы думаете про то, как люди сегодня учатся»."}},
+        {"@type": "Question", "name": "Что оценивают в задании 朗读?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Не скорость и не громкость. Оценивают тоны, чёткость слогов и то, где вы делаете паузы: они должны падать между смысловыми частями, а не там, где кончился воздух. Отдельно слышно, читаете вы механически или понимаете, что читаете, — это заметно по интонации в конце предложений. Незнакомый иероглиф лучше произнести неуверенно и идти дальше, чем остановиться и молчать."}},
+        {"@type": "Question", "name": "Как готовиться к пересказу 听后复述?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Слушать не слова, а каркас: кто участвует, что произошло, чем закончилось. Эти три опоры удерживаются в памяти гораздо надёжнее, чем формулировки. Пересказ по определению короче оригинала, и это нормально: от вас ждут не дословности, а понятного изложения. Если середина выпала — соединяйте начало и конец фразой вроде 后来发生了一些事情 и продолжайте, а не начинайте заново."}},
+        {"@type": "Question", "name": "Как говорить на сложные темы, если не хватает слов?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Спускаться с абстрактного на конкретное. Не знаете, как сказать «охрана окружающей среды», — говорите про воздух, мусор и машины в своём городе. Абстрактное слово почти всегда можно заменить примером, и это не выглядит упрощением: на устном экзамене конкретный пример ценится выше красивого термина, потому что показывает, что вы владеете речью, а не заученным списком."}},
+        {"@type": "Question", "name": "Нужно ли спорить с экзаменатором и кого-то убеждать?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Нет, и это важно понимать заранее. Дискуссии на HSKK нет ни на одном уровне: вы говорите в микрофон, запись слушают позже. Убеждать некого. Оценивают связность, полноту, произношение и беглость, а не силу вашей позиции. Поэтому «правильного» мнения здесь не существует — существует внятно изложенное."}},
+        {"@type": "Question", "name": "Достаточно ли HSK 5, чтобы сдать HSKK 3?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Соответствие HSK 5–6 — ориентир, а не гарантия. Письменные уровни проверяют чтение и слух, а высший устный требует ещё двух отдельных навыков: озвучить незнакомый текст и переработать услышанное. Оба тренируются только вслух и только на записи. Проверка простая: возьмите незнакомый абзац, прочитайте его вслух под запись и переслушайте."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "HSKK 3"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамены HSK</p>
+<h1>HSKK 3: <span class="italic">как сдать высший уровень и говорить об абстрактном без сложных слов</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-04">4 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/hskk-3.png" alt="HSKK 3: как говорить о сложном простыми словами" width="1200" height="630"></figure>
+
+<p class="passport">Высший уровень пугают заранее: «там абстрактные темы, там нужен огромный словарь». Словарь действительно больше, но проваливаются обычно не на нём. Проваливаются на двух заданиях, которых раньше не было, — <b>чтении вслух</b> и <b>пересказе услышанного</b>, — и на привычке искать сложное слово там, где хватило бы простого примера. Разберём, что здесь на самом деле меняется и как готовиться.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>HSKK 3 — это <b>高级</b>. Опора исчезает: вместо картинки перед вами <b>чужой текст</b>, который надо либо озвучить, либо пересказать своими словами. В чтении вслух оценивают тоны и <b>места пауз</b>, а не скорость. В пересказе держатся за три опоры: кто, что произошло, чем закончилось. На общих темах работает <b>спуск с абстрактного на конкретное</b>. И главное: дискуссии на HSKK нет — вы говорите в микрофон, убеждать некого.</p>
+</div>
+
+<h2>HSKK 3 — это <span class="italic">高级</span>: что за уровень и кому он нужен</h2>
+<p>Высший из трёх уровней устного экзамена. То, что в объявлениях называют <b>HSKK 3</b>, в официальном описании называется 高级.</p>
+<div class="table-wrap">
+<table>
+  <caption>Место высшего уровня в системе.</caption>
+  <thead><tr><th>Параметр</th><th>Что это значит</th></tr></thead>
+  <tbody>
+    <tr><td><b>Китайское название</b></td><td><span class="han">高级</span> — высший уровень</td></tr>
+    <tr><td><b>Пара с письменным HSK</b></td><td>HSK 5–6, но это ориентир, а не требование</td></tr>
+    <tr><td><b>Лексика</b></td><td>около 3000 слов</td></tr>
+    <tr><td><b>Части экзамена</b></td><td><span class="han">听后复述</span> · <span class="han">朗读</span> · <span class="han">回答问题</span></td></tr>
+    <tr><td><b>Подготовка перед говорением</b></td><td>около десяти минут на все задания сразу</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Кому он нужен: чаще всего это <b>магистратура и аспирантура</b>, куда просят подтвердить устную речь отдельно, преподавательские программы и работа, где язык — рабочий инструмент, а не строчка в резюме. Общее устройство экзамена, оценивание и речевые клише разобраны в статье про <a href="https://kitai-school.ru/article/hskk" target="_blank" rel="noopener">HSKK</a>; предыдущие ступени — в разборах <a href="https://kitai-school.ru/article/hskk-1" target="_blank" rel="noopener">HSKK 1</a> и <a href="https://kitai-school.ru/article/hskk-2" target="_blank" rel="noopener">HSKK 2</a>. Здесь — только то, что специфично для высшего.</p>
+
+<h2>Что меняется после HSKK 2: <span class="italic">опора исчезает</span></h2>
+<p>Два задания из трёх — новые. Но дело не в количестве, а в том, на что вы опираетесь, пока говорите.</p>
+<div class="table-wrap">
+<table>
+  <caption>Средний и высший уровень рядом.</caption>
+  <thead><tr><th></th><th>HSKK 2 (中级)</th><th>HSKK 3 (高级)</th></tr></thead>
+  <tbody>
+    <tr><td><b>Лексика</b></td><td>около 900 слов</td><td>около 3000 слов</td></tr>
+    <tr><td><b>Первое задание</b></td><td><span class="han">听后重复</span> — повторить дословно</td><td class="bad"><span class="han">听后复述</span> — пересказать своими словами</td></tr>
+    <tr><td><b>Второе задание</b></td><td><span class="han">看图说话</span> — рассказ по картинке</td><td class="bad"><span class="han">朗读</span> — чтение вслух незнакомого текста</td></tr>
+    <tr><td><b>На что опираетесь</b></td><td>на картинку перед глазами</td><td class="bad">на чужой текст, который надо переработать</td></tr>
+    <tr><td><b>Темы в <span class="han">回答问题</span></b></td><td>бытовые и близкие</td><td>общие: учёба, работа, город, привычки людей</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Ключевое отличие в предпоследней строке. Картинка — <b>щедрая опора</b>: она стоит перед глазами всё время и подсказывает слова. Текст ведёт себя иначе: в чтении вслух он вас ограничивает, в пересказе — исчезает после первого прослушивания. Именно поэтому люди с хорошим письменным HSK 5 неожиданно буксуют: <a href="https://kitai-school.ru/article/hsk-5-kak-sdat-universitetskiy-kzamen" target="_blank" rel="noopener">письменный экзамен</a> этих двух навыков не тренирует вообще.</p>
+
+<h2><span class="italic">朗读</span>: чтение вслух, где слышно всё</h2>
+<p>Задание выглядит самым простым: текст перед вами, придумывать ничего не надо. На деле именно здесь теряют баллы те, кто много читал глазами и мало — вслух.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что оценивают и чего не оценивают.</caption>
+  <thead><tr><th>Оценивают</th><th>Не оценивают</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Тоны и чёткость слогов</b> — читая, легко «съесть» тон, потому что внимание уходит на глаза</td><td class="bad">Скорость: быстрое чтение не добавляет баллов</td></tr>
+    <tr><td class="ok"><b>Места пауз</b> — они должны падать между смысловыми частями</td><td class="bad">Громкость и «выразительность» как в театре</td></tr>
+    <tr><td class="ok"><b>Понимание</b> — оно слышно по интонации в конце предложений</td><td class="bad">Знание всех иероглифов до одного</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Про паузы отдельно, потому что это главная поправимая ошибка. Пауза должна стоять там, где кончается смысловая часть, а не там, где кончился воздух. Разметить текст глазами за время подготовки — самое полезное, что можно успеть: две-три косые черты в длинном предложении меняют впечатление сильнее, чем выученные слова. А <b>незнакомый иероглиф</b> произносите неуверенно и идите дальше: остановка слышна гораздо сильнее, чем неточный слог. Про сами тоны и звуки — в статье про <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировку произношения</a>.</p>
+
+<figure class="ks-fig"><img src="assets/hskk-3-chtenie.png" alt="Разметка предложения для чтения вслух: паузы, тоны и три опоры пересказа" loading="lazy" width="1200" height="734"><figcaption>Как разметить предложение за минуты подготовки и на что опираться в пересказе.</figcaption></figure>
+
+<div class="story">
+  <p class="lbl">Из личного опыта</p>
+  <p>Ко мне пришёл готовиться человек с очень сильным письменным китайским: читал новости в оригинале, сдал HSK 5 почти на максимум. На первом же пробном чтении вслух выяснилось, что он читает <b>ровно и без пауз</b>, как будто проговаривает список слов. Смысл он понимал полностью — а на записи этого было не слышно.</p>
+  <p>Мы не учили новых слов ни одного. Три недели он просто читал вслух по одному абзацу в день, предварительно ставя карандашом косые черты в местах пауз. К концу месяца запись изменилась до неузнаваемости.</p>
+  <p>С тех пор я говорю всем, кто идёт на высший уровень: если вы много читаете глазами и мало вслух, <b>начните именно с этого</b>. Это самая быстрая часть подготовки и самая заметная на слух.</p>
+</div>
+
+<h2><span class="italic">听后复述</span>: пересказ, а не повтор</h2>
+<p>Здесь ловушка в названии. На младших уровнях было 听后重复 — повторить дословно. На высшем стоит <b>复述</b>: пересказать своими словами. Это противоположный навык, и готовятся к нему по-другому.</p>
+<div class="table-wrap">
+<table>
+  <caption>Три опоры, за которые держатся при слушании.</caption>
+  <thead><tr><th>Опора</th><th>Что ловить</th><th>Зачем</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Кто</b></td><td>участники: сколько их и кто главный</td><td>без этого пересказ рассыпается на первой фразе</td></tr>
+    <tr><td class="ok"><b>Что произошло</b></td><td>одно-два ключевых действия</td><td>это скелет, всё остальное — детали</td></tr>
+    <tr><td class="ok"><b>Чем закончилось</b></td><td>итог или вывод рассказчика</td><td>даёт финал, а значит, ощущение цельного ответа</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Два правила, которые снимают панику. Первое: <b>пересказ короче оригинала</b> — это норма, а не потеря баллов; от вас ждут понятного изложения, а не диктофонной точности. Второе: если середина выпала, не начинайте заново — соедините начало и конец нейтральной фразой вроде <span class="han">后来发生了一些事情</span> («потом произошло кое-что») и продолжайте. Обрыв слышен гораздо сильнее, чем пропущенная деталь. Чем 重复 отличается от 复述 по сути — разобрано в статье про <a href="https://kitai-school.ru/article/hskk" target="_blank" rel="noopener">HSKK</a>.</p>
+
+<h2>Абстрактные темы: <span class="italic">как говорить, не зная всех слов</span></h2>
+<p>Вопросы на высшем уровне звучат солидно: про образование, про технологии, про то, как меняются привычки людей. И первый порыв — искать соответствующий солидный термин. Порыв ошибочный.</p>
+<div class="table-wrap">
+<table>
+  <caption>Спуск с абстрактного на конкретное.</caption>
+  <thead><tr><th>Абстрактное</th><th>О чём это на самом деле</th><th>Что вы скажете</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">环境保护</span> охрана природы</td><td>воздух, мусор, машины</td><td class="ok"><span class="han">我住的城市空气不太好，很多人开始少开车。</span></td></tr>
+    <tr><td><span class="han">教育方式</span> подходы в образовании</td><td>как учат в школе и дома</td><td class="ok"><span class="han">现在的孩子作业很多，可是玩儿的时间很少。</span></td></tr>
+    <tr><td><span class="han">生活节奏</span> ритм жизни</td><td>сколько люди работают и спят</td><td class="ok"><span class="han">大城市的人上班时间长，睡得也很晚。</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Это не упрощение и не хитрость. <b>Конкретный пример на устном экзамене ценится выше красивого термина</b>, потому что термин можно выучить, а пример показывает, что вы владеете речью. И работает приём в обе стороны: не знаете слова — спускайтесь к примеру; знаете — всё равно приведите пример, иначе ответ выйдет пустым.</p>
+
+<h2>Уступка: <span class="italic">структура, которая делает ответ взрослым</span></h2>
+<p>Ответ «я считаю так, потому что вот так» на высшем уровне звучит по-школьному. Взрослый ответ признаёт, что есть и другая сторона, — и это не про вежливость, а про связность.</p>
+<div class="table-wrap">
+<table>
+  <caption>Четыре хода вместо одного.</caption>
+  <thead><tr><th>Ход</th><th>Что говорите</th><th>Чем начать</th></tr></thead>
+  <tbody>
+    <tr><td><b>1. Чужая позиция</b></td><td>как думают многие</td><td><span class="han">很多人觉得……</span></td></tr>
+    <tr><td><b>2. Признание</b></td><td>почему в этом есть смысл</td><td><span class="han">这种看法有道理，因为……</span></td></tr>
+    <tr><td><b>3. Своя позиция</b></td><td>с чем вы всё-таки не согласны</td><td><span class="han">不过我认为……</span></td></tr>
+    <tr><td class="ok"><b>4. Вывод</b></td><td>что из этого следует</td><td><span class="han">所以我觉得，关键不是……而是……</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Обратите внимание, что делает второй ход: он <b>даёт вам целый абзац бесплатно</b>. Пересказать чужое мнение и объяснить, почему оно небезосновательно, легче, чем сформулировать своё, — а время идёт, и речь звучит связно. Плюс третий ход после признания получается сам собой: язык уже настроен на 不过.</p>
+
+<figure class="ks-fig"><img src="assets/hskk-3-otvet.png" alt="Разбор ответа по частям: чужая позиция, признание, своя позиция, вывод" loading="lazy" width="1200" height="546"><figcaption>Один ответ, разобранный по ролям: видно, из чего он собран и сколько занимает каждая часть.</figcaption></figure>
+
+<h2>Ни дискуссии, ни экзаменатора: <span class="italic">что здесь на самом деле оценивают</span></h2>
+<p>Распространённое заблуждение, которое портит подготовку: будто на высшем уровне вас ждёт спор с преподавателем и надо научиться его переспорить. Спорить не с кем.</p>
+<p>HSKK на всех уровнях — <b>запись в микрофон</b>. Живого собеседника нет, реакции нет, дискуссии как части экзамена не существует. Слушают вашу запись позже и смотрят на речь: беглость, произношение, полноту и связность. Подробно про то, чем запись отличается от разговора с человеком, — в статье про <a href="https://kitai-school.ru/article/hskk" target="_blank" rel="noopener">HSKK</a>.</p>
+<p class="note">Отсюда практический вывод, который снимает половину тревоги: <b>«правильного» мнения на экзамене не существует</b>. Никто не проверяет, согласны ли вы с общепринятой точкой зрения. Проверяют, можете ли вы разложить мысль по полочкам и договорить её до конца. Слабая позиция, изложенная связно, набирает больше, чем блестящая, оборванная на середине.</p>
+
+<h2>Как готовиться <span class="italic">именно к высшему уровню</span></h2>
+<p>Общий план подготовки к устному экзамену есть в <a href="https://kitai-school.ru/article/hskk" target="_blank" rel="noopener">статье про HSKK</a>. Здесь — четыре вещи, которые касаются только 高级.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что добавить к обычной подготовке.</caption>
+  <thead><tr><th>Что делать</th><th>Почему это работает</th></tr></thead>
+  <tbody>
+    <tr><td class="ok">Читать вслух по абзацу в день, размечая паузы</td><td>самая быстрая часть подготовки и самая заметная на записи</td></tr>
+    <tr><td class="ok">Пересказывать короткие подкасты по трём опорам</td><td>тренирует не память на слова, а умение схватывать каркас</td></tr>
+    <tr><td class="ok">Собрать двадцать бытовых примеров под общие темы</td><td>именно примеры спасают, когда термин не вспоминается</td></tr>
+    <tr><td class="ok">Отработать четыре хода уступки на любом вопросе</td><td>схема должна включаться сама, тогда думать можно о содержании</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И честная оговорка про уровень: HSK 5–6 — ориентир, а не пропуск. Письменные экзамены не тренируют ни чтение вслух, ни пересказ, поэтому проверять готовность нужно записью, а не сертификатом. Что подтверждает письменный экзамен — в статье про <a href="https://kitai-school.ru/article/sertifikat-hsk" target="_blank" rel="noopener">сертификат HSK</a>. И отдельно: <b>состав частей и тайминги для вашей даты сверяйте в официальном описании экзамена</b> — формат пересматривается.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем HSKK 3 отличается от HSKK 2?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Меняются два задания из трёх. Вместо рассказа по картинке появляются чтение вслух и пересказ услышанного своими словами. Опора уходит: на среднем уровне перед вами была картинка, на высшем — чужой текст, который надо либо озвучить, либо переработать. И темы становятся общими: не «что происходит на фото», а «что вы думаете про то, как люди сегодня учатся».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что оценивают в задании 朗读?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Не скорость и не громкость. Оценивают тоны, чёткость слогов и то, где вы делаете паузы: они должны падать между смысловыми частями, а не там, где кончился воздух. Отдельно слышно, читаете вы механически или понимаете, что читаете, — это заметно по интонации в конце предложений. Незнакомый иероглиф лучше произнести неуверенно и идти дальше, чем остановиться и молчать.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как готовиться к пересказу 听后复述?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Слушать не слова, а каркас: кто участвует, что произошло, чем закончилось. Эти три опоры удерживаются в памяти гораздо надёжнее, чем формулировки. Пересказ по определению короче оригинала, и это нормально: от вас ждут не дословности, а понятного изложения. Если середина выпала — соединяйте начало и конец фразой вроде 后来发生了一些事情 и продолжайте, а не начинайте заново.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как говорить на сложные темы, если не хватает слов?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Спускаться с абстрактного на конкретное. Не знаете, как сказать «охрана окружающей среды», — говорите про воздух, мусор и машины в своём городе. Абстрактное слово почти всегда можно заменить примером, и это не выглядит упрощением: на устном экзамене конкретный пример ценится выше красивого термина, потому что показывает, что вы владеете речью, а не заученным списком.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли спорить с экзаменатором и кого-то убеждать?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и это важно понимать заранее. Дискуссии на HSKK нет ни на одном уровне: вы говорите в микрофон, запись слушают позже. Убеждать некого. Оценивают связность, полноту, произношение и беглость, а не силу вашей позиции. Поэтому «правильного» мнения здесь не существует — существует внятно изложенное.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Достаточно ли HSK 5, чтобы сдать HSKK 3?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Соответствие HSK 5–6 — ориентир, а не гарантия. Письменные уровни проверяют чтение и слух, а высший устный требует ещё двух отдельных навыков: озвучить незнакомый текст и переработать услышанное. Оба тренируются только вслух и только на записи. Проверка простая: возьмите незнакомый абзац, прочитайте его вслух под запись и переслушайте.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Высший уровень отличается от остальных тем, что его нельзя добрать чтением: и чтение вслух, и пересказ ставятся только голосом и только на записи. Приходите на бесплатное пробное занятие: прочитаем вместе один абзац, разберём вашу запись по паузам и тонам и соберём план подготовки под дату экзамена.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>ВСЛУХ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём формат подготовки к устному экзамену.</p>
+</div>
+
+<p>Дальше по теме: общее устройство экзамена — <a href="https://kitai-school.ru/article/hskk" target="_blank" rel="noopener">HSKK</a>; предыдущие ступени — <a href="https://kitai-school.ru/article/hskk-1" target="_blank" rel="noopener">HSKK 1</a> и <a href="https://kitai-school.ru/article/hskk-2" target="_blank" rel="noopener">HSKK 2</a>; звуки и тоны — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>; живая речь и диалекты — <a href="https://kitai-school.ru/article/kak-razgovarivaut-v-kitae" target="_blank" rel="noopener">как разговаривают в Китае</a>; письменные уровни — <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4</a> и <a href="https://kitai-school.ru/article/hsk-5-kak-sdat-universitetskiy-kzamen" target="_blank" rel="noopener">HSK 5</a>; язык университета — <a href="https://kitai-school.ru/article/magistratura-v-kitae" target="_blank" rel="noopener">магистратура в Китае</a>; язык на работе — <a href="https://kitai-school.ru/article/rabota-v-kitae-dlya-inostranca" target="_blank" rel="noopener">работа в Китае для иностранца</a>; практика речи — <a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku" target="_blank" rel="noopener">групповые занятия</a> и <a href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener">индивидуальные</a>. Все экзамены — в разделе <a href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener">«Экзамены HSK»</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Официальное описание экзамена HSKK: уровни, состав частей и порядок проведения.</li>
+    <li>Практика Kitai School — подготовка к устному экзамену HSKK на высшем уровне.</li>
+    <li>Наблюдения преподавателей за типичными ошибками в заданиях <span class="han">朗读</span> и <span class="han">听后复述</span>.</li>
+  </ol>
+</div>
+
+<p class="sign">Читайте вслух каждый день! <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим к высшему уровню: чтение вслух, пересказ и рассуждение на общие темы</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
