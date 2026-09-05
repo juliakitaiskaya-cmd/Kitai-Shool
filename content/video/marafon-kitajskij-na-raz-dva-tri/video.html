@@ -37,6 +37,13 @@
   .brandbar img{height:64px}
   .brandbar .site{font-size:26px; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe); font-weight:600}
 
+  /* низ кадра растворяется в фоне: подпись читается поверх фигуры */
+  .fade-bottom{
+    position:absolute; left:0; right:0; bottom:0; height:330px; z-index:5; display:none;
+    background:linear-gradient(rgba(250,247,242,0) 0%, rgba(250,247,242,.86) 55%, #FAF7F2 100%);
+  }
+  #stage.with-hero .fade-bottom{display:block}
+
   .footbar{
     position:absolute; left:80px; right:80px; bottom:70px; z-index:6;
     display:flex; align-items:baseline; justify-content:space-between;
@@ -46,20 +53,28 @@
 
   /* персонаж */
   #hero{
-    position:absolute; right:-70px; bottom:0; height:1180px; z-index:3;
+    position:absolute; right:-40px; bottom:0; height:1000px; z-index:3;
     display:none; transform-origin:50% 100%;
     filter:drop-shadow(0 30px 60px rgba(44,36,32,.16));
   }
   #stage.with-hero #hero{display:block}
-  #stage.with-hero .scene > *{max-width:700px}
+  #stage.with-hero .scene{justify-content:flex-start; padding:210px 80px 240px}
+  #stage.with-hero .scene > *{max-width:660px}
   #stage.with-hero .card,
   #stage.with-hero .red-plate,
   #stage.with-hero .cta,
-  #stage.with-hero .counts{width:700px}
-  #stage.with-hero .h-big{font-size:88px; max-width:700px}
-  #stage.with-hero .m-title{font-size:78px}
-  #stage.with-hero .days .n{font-size:170px}
-  #stage.with-hero .lantern{opacity:.9}
+  #stage.with-hero .counts{width:660px}
+  #stage.with-hero .h-q{font-size:70px; max-width:660px}
+  #stage.with-hero .h-big{font-size:82px; max-width:660px}
+  #stage.with-hero .m-title{font-size:72px}
+  #stage.with-hero .days .n{font-size:150px}
+  #stage.with-hero .days .w{font-size:48px; max-width:430px}
+  #stage.with-hero .card .hsk{font-size:80px}
+  #stage.with-hero .hours .num{font-size:104px}
+  #stage.with-hero .red-plate .txt{font-size:44px}
+  #stage.with-hero .count .cn{font-size:64px}
+  #stage.with-hero .cta .row.big{font-size:46px}
+  #stage.with-hero .lead{font-size:34px}
 
   /* фонарики */
   .lantern{position:absolute; z-index:1; transform-origin:50% -40px}
@@ -100,6 +115,11 @@
     color:var(--ink); text-transform:uppercase;
   }
   .h-big .red{color:var(--brick)}
+  .h-q{
+    font-size:78px; max-width:760px; font-weight:800; line-height:1.14; letter-spacing:-.02em;
+    color:var(--ink);
+  }
+  .h-q .red{color:var(--brick)}
   .lead{font-size:38px; line-height:1.42; color:var(--ink-2); margin-top:40px; max-width:840px}
 
   /* карточка */
@@ -181,6 +201,8 @@
     <div class="site">kitai-school.ru</div>
   </div>
 
+  <div class="fade-bottom"></div>
+
   <div class="footbar">
     <div>Онлайн-школа китайского языка</div>
     <div><b>@akadem_kitai_school</b></div>
@@ -205,12 +227,13 @@ function addScene(dur, html){
 addScene(4.4, `
   <div class="scene">
     <div class="kicker anim" data-d="0" data-y="20">Kitai School · марафон</div>
-    <div class="h-big">
-      <div class="anim" data-d="0.15" data-y="46">Китайский&nbsp;—</div>
-      <div class="anim" data-d="0.35" data-y="46">это <span class="red">проще</span>,</div>
-      <div class="anim" data-d="0.55" data-y="46">чем кажется</div>
+    <div class="h-q">
+      <div class="anim" data-d="0.15" data-y="44">Сколько <span class="red">реально</span></div>
+      <div class="anim" data-d="0.32" data-y="44">нужно времени,</div>
+      <div class="anim" data-d="0.49" data-y="44">чтобы заговорить</div>
+      <div class="anim" data-d="0.66" data-y="44">на китайском?</div>
     </div>
-    <div class="lead anim" data-d="0.95" data-y="30">Главный страх новичка — «это невозможно выучить».<br>Давайте посмотрим на цифры.</div>
+    <div class="lead anim" data-d="1.05" data-y="30">Главный страх новичка — «это невозможно выучить».<br>Давайте посмотрим на цифры.</div>
   </div>
 `);
 
