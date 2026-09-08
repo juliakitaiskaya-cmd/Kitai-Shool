@@ -1,0 +1,426 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/daty-sdachi-hsk#article",
+      "headline": "Даты сдачи HSK: расписание сессий, сроки регистрации и как выбрать свою дату",
+      "description": "Как устроено расписание HSK, почему окно записи у каждого центра своё, что делать, если опоздали, и как выбрать дату под свою подготовку. С расписанием на осень 2026 года.",
+      "datePublished": "2026-09-08",
+      "dateModified": "2026-09-08",
+      "inLanguage": "ru",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kitai-school.ru/article/daty-sdachi-hsk"},
+      "author": {"@id": "https://kitai-school.ru/#yulia"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "about": ["Экзамен HSK", "Расписание экзаменов", "Регистрация на HSK"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia",
+      "name": "Юлия Горяина",
+      "jobTitle": "Китаист, основатель Kitai School",
+      "url": "https://kitai-school.ru/about",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"}
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Лицензированная онлайн-школа китайского языка"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/daty-sdachi-hsk#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как часто можно сдавать HSK?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Несколько раз в год. В расписании на осень 2026 года у российских центров стоят сессии в сентябре, октябре, ноябре и декабре — но не каждый центр проводит каждую из них. Один центр может брать одну сессию за осень, другой — четыре. Поэтому вопрос «как часто проходит экзамен» правильнее задавать не про HSK вообще, а про конкретный центр: именно его расписание определяет, сколько у вас попыток в этом полугодии."}
+        },
+        {
+          "@type": "Question",
+          "name": "За сколько дней до экзамена закрывается регистрация?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Единого срока нет, и это главное, что стоит запомнить. По расписанию на осень 2026 года разброс идёт от десяти дней до двух месяцев до даты экзамена. На одну и ту же сессию 13 декабря в Ростове-на-Дону запись закрывается за десять дней, а в Петербургском центре СПбГУ — за шестьдесят один. Ориентироваться на «обычно за месяц» опасно: в половине случаев это неверно. Смотрите срок своего центра."}
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли записаться заранее, за полгода?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Нет. У регистрации есть не только дата закрытия, но и дата открытия, и до неё запись просто не работает. Часто окно открывается ровно за два месяца до экзамена, а у отдельных центров держится всего восемь дней. Так что «запишусь заранее и забуду» не выйдет: нужно знать, когда окно откроется, и не пропустить его."}
+        },
+        {
+          "@type": "Question",
+          "name": "Я опоздал с регистрацией. Что можно сделать?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Договориться и записаться после закрытия нельзя — это не вопрос доброй воли центра. Реально работают три вещи. Посмотреть другой центр: даты экзамена у центров совпадают, а окна записи разные, и где-то запись ещё открыта. Посмотреть следующую сессию: до конца полугодия обычно есть ещё одна. И третье, самое полезное: занять освободившееся время подготовкой, а не досадой — лишний месяц перед экзаменом почти всегда идёт на пользу баллу."}
+        },
+        {
+          "@type": "Question",
+          "name": "Чем бумажный экзамен отличается от компьютерного?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Главное отличие не в экране, а в иероглифах. На бумаге вы пишете их рукой, на компьютере набираете через пиньинь — а это разные навыки. Узнать знак на экране и написать его по памяти на бумаге — совсем не одно и то же, и на письменной части HSK 3 и выше разница чувствуется сразу. Выбирать формат стоит до начала подготовки, а не за неделю до экзамена. Уточните у центра, какой формат он проводит: не все площадки дают оба."}
+        },
+        {
+          "@type": "Question",
+          "name": "Как выбрать дату под свою подготовку?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Отсчётом назад, а не вперёд. Сначала решите, к какому сроку вам нужен результат: подача документов в вуз, дедлайн стипендии, требование работодателя. Отнимите время на обработку результатов и печать сертификата, отнимите срок закрытия записи в вашем центре — и получите крайнюю сессию. Дальше выбирайте из более ранних дат ту, к которой уровень будет взят уверенно. Правило простое: идти, когда готов, а не когда ближайшая дата."}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/daty-sdachi-hsk#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Даты сдачи HSK: расписание сессий, сроки регистрации и как выбрать свою дату", "item": "https://kitai-school.ru/article/daty-sdachi-hsk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамены HSK</p>
+<h1>Даты сдачи HSK: <span class="italic">расписание сессий, сроки регистрации и как выбрать свою дату</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-08">8 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/daty-sdachi-hsk.png" alt="Окно регистрации и дата экзамена на календарной сетке" width="1200" height="630"></figure>
+
+<p class="passport">Вопрос «<b>когда можно сдать HSK</b>» кажется простым, пока не начинаешь записываться. Оказывается, что дата экзамена — это полдела, а вторая половина спрятана в сроках регистрации: они у каждого центра свои, открываются и закрываются в разные дни, и пропустить окно куда легче, чем провалить аудирование. Разберём, как устроено <b>расписание HSK</b> на самом деле.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Даты экзамена назначают централизованно — поэтому одни и те же числа повторяются у центров в разных городах. А <b>окно регистрации каждый центр держит своё</b>: по осеннему расписанию 2026 года запись закрывается где за десять дней до экзамена, а где за два месяца. У окна есть не только закрытие, но и открытие — раньше него записаться нельзя, и у некоторых центров оно длится всего <b>восемь дней</b>. Отсюда правило: сначала смотрим сроки своего центра, потом планируем подготовку.</p>
+</div>
+
+<h2>Как устроено расписание: <span class="italic">даты общие, сроки записи местные</span></h2>
+<p>Если посмотреть расписание нескольких центров рядом, видно закономерность: числа повторяются. По осени 2026 года это 13 сентября, 17 и 18 октября, 7 ноября, 13 декабря — и эти же даты стоят у центров в разных городах, от Петербурга до Владивостока. Совпадение неслучайное: календарь сессий общий, центры выбирают из него те даты, которые готовы провести.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что назначено сверху, а что решает центр.</caption>
+  <thead><tr><th>Что</th><th>Кто определяет</th><th>Что из этого следует для вас</th></tr></thead>
+  <tbody>
+    <tr><td><b>Дата экзамена</b></td><td>общий календарь сессий</td><td>в один день экзамен идёт сразу в нескольких городах</td></tr>
+    <tr><td class="bad"><b>Окно регистрации</b></td><td class="bad">каждый центр сам</td><td class="bad">сроки у соседних центров расходятся в разы</td></tr>
+    <tr><td><b>Формат</b></td><td>центр</td><td>бумажный и компьютерный есть не везде</td></tr>
+    <tr><td><b>Какие экзамены в этот день</b></td><td>центр</td><td>HSKK обычно идёт с HSK, а YCT — далеко не в каждую сессию</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Практический вывод простой. Дату экзамена можно узнать откуда угодно — она везде одна. А вот <b>срок регистрации нужно смотреть только у своего центра</b>: чужая статья, соседний город и прошлогодний опыт здесь не помогут.</p>
+
+<h2>Расписание на осень 2026 года <span class="italic">и почему у этой таблицы есть срок годности</span></h2>
+<p>Ниже — сессии, объявленные российскими центрами на осень 2026 года, по состоянию на 8 сентября. Часть окон регистрации к этому моменту уже закрыта: сравнивайте вторую колонку с сегодняшним числом.</p>
+<div class="table-wrap">
+<table>
+  <caption>Осень 2026: даты HSK и HSKK и окна регистрации. Проверено 8 сентября 2026 года.</caption>
+  <thead><tr><th>Город и центр</th><th>Экзамен</th><th>Регистрация</th></tr></thead>
+  <tbody>
+    <tr><td><b>Москва</b>, Институт Конфуция при МГЛУ</td><td>17 октября</td><td>17.08 – 17.09</td></tr>
+    <tr><td><b>Москва</b>, Институт Конфуция при МГЛУ</td><td>13 декабря</td><td>13.10 – 13.11</td></tr>
+    <tr><td><b>Москва</b>, центр «Хуамин»</td><td>13 сентября</td><td>13.07 – 13.08</td></tr>
+    <tr><td><b>Москва</b>, центр «Хуамин»</td><td>18 октября, с YCT</td><td>18.08 – 18.09</td></tr>
+    <tr><td><b>Москва</b>, центр «Хуамин»</td><td>7 ноября</td><td>07.09 – 07.10</td></tr>
+    <tr><td><b>Москва</b>, центр «Хуамин»</td><td>13 декабря</td><td>13.10 – 13.11</td></tr>
+    <tr><td><b>Петербург</b>, центр тестирования СПбГУ</td><td>13 сентября</td><td>17.06 – 14.07</td></tr>
+    <tr><td class="bad"><b>Петербург</b>, центр тестирования СПбГУ</td><td class="bad">13 декабря</td><td class="bad">16.09 – 13.10</td></tr>
+    <tr><td><b>Петербург</b>, центр тестирования СПбГУ</td><td>22 ноября, YCT</td><td>24.08 – 30.09</td></tr>
+    <tr><td><b>Петербург</b>, ПРОМТЕХДИЗАЙН</td><td>17 октября, с YCT</td><td>17.08 – 07.09</td></tr>
+    <tr><td><b>Петербург</b>, ПРОМТЕХДИЗАЙН</td><td>13 декабря</td><td>13.10 – 06.11</td></tr>
+    <tr><td><b>Новосибирск</b>, Институт Конфуция НГТУ</td><td>18 октября</td><td>18.09 – 26.09</td></tr>
+    <tr><td><b>Новосибирск</b>, Институт Конфуция НГТУ</td><td>7 декабря</td><td>07.10 – 07.11</td></tr>
+    <tr><td><b>Красноярск</b>, КГПУ</td><td>18 октября</td><td>17.08 – 17.09</td></tr>
+    <tr><td><b>Красноярск</b>, КГПУ</td><td>7 ноября</td><td>с 07.09, срок закрытия уточняйте в центре</td></tr>
+    <tr><td><b>Красноярск</b>, КГПУ</td><td>13 декабря</td><td>13.10 – 13.11</td></tr>
+    <tr><td><b>Улан-Удэ</b>, БГУ</td><td>8 декабря</td><td>08.10 – 08.11</td></tr>
+    <tr><td><b>Владивосток</b>, ДВФУ</td><td>12–13 декабря</td><td>06.10 – 04.11</td></tr>
+    <tr><td><b>Благовещенск</b>, БГПУ</td><td>17 октября</td><td>17.08 – 30.08</td></tr>
+    <tr><td><b>Благовещенск</b>, БГПУ</td><td>13 декабря</td><td>13.10 – 25.10</td></tr>
+    <tr><td><b>Сочи</b>, гимназия «Сириус»</td><td>13 декабря</td><td>13.10 – 13.11</td></tr>
+    <tr><td class="ok"><b>Ростов-на-Дону</b>, ДГТУ</td><td class="ok">13 сентября, 17 октября, 7 ноября, 13 декабря</td><td class="ok">по каждой дате своё окно, закрывается за 10 дней</td></tr>
+    <tr><td>Екатеринбург, Иркутск, Уфа, Петербург (Академия «Конфуций»)</td><td>даты уточняются</td><td>следите за объявлениями центров</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Теперь честно про эту таблицу. <b>Она устареет</b> — самое позднее после 13 декабря 2026 года, а отдельные строки могут поменяться и раньше: сессии переносят, центры добавляют даты. Поэтому у неё написана дата проверки, и поэтому она здесь не вместо официального источника, а рядом с ним. Перед подачей документов расписание всегда сверяют на сайте экзамена <b>chinesetest.cn</b> и в самом центре. Мы сознательно не публикуем телефоны и адреса: они меняются чаще дат, а устаревший контакт хуже, чем его отсутствие. Так же мы поступили в разборе <a href="https://kitai-school.ru/article/sdat-yct-v-moskve-kak-zapisatsya" target="_blank" rel="noopener">записи на YCT в Москве</a>.</p>
+<p class="note">И ещё одна деталь из объявлений центров, о которой легко забыть: <b>регистрацию могут закрыть досрочно</b>, когда набралось нужное число участников. То есть срок из таблицы — это крайняя дата, а не гарантия, что до неё будут места.</p>
+
+<h2>Главная ловушка: <span class="italic">один экзамен, девять разных дедлайнов</span></h2>
+<p>Самое неожиданное в расписании видно, если взять одну дату и посмотреть, как к ней записывают разные центры. Возьмём 13 декабря — самую массовую сессию осени: её проводят сразу в нескольких городах.</p>
+<figure class="ks-fig"><img src="assets/daty-sdachi-hsk-okno.png" alt="Окна регистрации разных центров на один экзамен 13 декабря" loading="lazy" width="1200" height="690"><figcaption>Одна дата экзамена — и совершенно разные окна записи: в Петербурге запись закроется в тот день, когда в Москве она только откроется.</figcaption></figure>
+<p>Разброс получается шестикратный: в Ростове-на-Дону запись на 13 декабря закрывается за <b>десять дней</b> до экзамена, в петербургском центре СПбГУ — за <b>шестьдесят один</b>. Причём петербургское окно закрывается 13 октября — ровно в тот день, когда московское только открывается. Человек, который в середине октября спокойно записывается в Москве, в Петербурге на эту сессию уже опоздал.</p>
+<p class="note">Отсюда единственное надёжное правило: <b>«обычно за месяц» — не работает</b>. Это средняя температура, и в половине случаев она врёт в опасную сторону. Свой срок нужно узнать один раз и поставить напоминание на день открытия записи, а не на день закрытия.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Двое наших студентов осенью собирались на одну и ту же сессию. Один в Москве, вторая в Петербурге, уровень примерно одинаковый, готовились почти одинаково. Москвич записался в конце октября, спокойно, без спешки — у него окно было открыто. Петербурженка пришла записываться в те же дни и обнаружила, что в её центре запись закрылась две недели назад.</p>
+  <p>Дальше было хуже всего то, что она отлично знала про дедлайны и даже проверяла их — но проверяла в июле, когда окно ещё не открылось, увидела «регистрация не начата» и решила вернуться к этому позже. Вернулась после закрытия. В итоге сдавала в следующем полугодии, и это была не проблема подготовки, а проблема календаря.</p>
+  <p>С тех пор мы просим студентов делать одну скучную вещь: как только выбрали центр и дату, сразу поставить <b>два напоминания</b> — на день открытия записи и за три дня до закрытия. Занимает минуту, а спасает полгода.</p>
+</div>
+
+<h2>Бумажный или компьютерный: <span class="italic">что меняется, кроме экрана</span></h2>
+<p>Выбор формата выглядит как мелочь при записи, а на деле влияет на всю подготовку. Разница не в удобстве, а в том, что именно с вас спрашивают.</p>
+<div class="table-wrap">
+<table>
+  <caption>Два формата одного экзамена.</caption>
+  <thead><tr><th>Что сравниваем</th><th>Бумажный</th><th>Компьютерный</th></tr></thead>
+  <tbody>
+    <tr><td><b>Иероглифы в письменной части</b></td><td>пишете рукой по памяти</td><td>набираете через пиньинь и выбираете нужный</td></tr>
+    <tr><td><b>Что тренировать</b></td><td>активное написание знака</td><td>узнавание знака и точный пиньинь</td></tr>
+    <tr><td><b>Аудирование</b></td><td>общий звук в аудитории</td><td>чаще в наушниках</td></tr>
+    <tr><td><b>Ответы</b></td><td>бланк, карандаш, поля для отметок</td><td>клик и клавиатура, черновика нет</td></tr>
+    <tr><td class="ok"><b>Где узнать формат</b></td><td class="ok" colspan="2">только в своём центре: не каждая площадка проводит оба</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Ключевая строка здесь — первая. Узнать иероглиф на экране и написать его рукой на бумаге — <b>два разных навыка</b>, и второй тренируется дольше. На уровнях, где появляется письмо, это чувствуется сразу: подробно про письменную часть — в разборе <a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">HSK 3</a> и <a href="https://kitai-school.ru/article/podgotovka-k-hsk-4" target="_blank" rel="noopener">подготовки к HSK 4</a>. Формат выбирают до начала подготовки, а не за неделю до экзамена.</p>
+
+<h2>Опоздали с регистрацией: <span class="italic">что можно, а что нельзя</span></h2>
+<p>Сначала неприятное: договориться и записаться после закрытия нельзя. Это не жёсткость конкретного центра, а порядок регистрации, и звонки с просьбами тут не работают. Зато работает другое.</p>
+<div class="table-wrap">
+<table>
+  <caption>Три рабочих варианта и один нерабочий.</caption>
+  <thead><tr><th>Вариант</th><th>Как это выглядит</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Другой центр</b></td><td>дата экзамена та же, а окно записи другое — где-то ещё открыто</td></tr>
+    <tr><td class="ok"><b>Следующая сессия</b></td><td>до конца полугодия обычно есть ещё одна дата</td></tr>
+    <tr><td class="ok"><b>Использовать паузу</b></td><td>лишний месяц подготовки почти всегда поднимает балл</td></tr>
+    <tr><td class="bad">Уговорить центр</td><td class="bad">не получится: регистрация закрывается не по желанию площадки</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Первый вариант недооценивают чаще всего. Раз даты экзамена общие, а окна записи местные, <b>опоздание в одном центре не означает опоздания вообще</b>. Иногда достаточно посмотреть расписание соседнего города.</p>
+
+<h2>Как выбрать дату <span class="italic">под свою подготовку</span></h2>
+<p>Правильный порядок — отсчёт назад от того момента, когда результат реально нужен, а не вперёд от сегодняшнего дня.</p>
+<div class="table-wrap">
+<table>
+  <caption>Считаем назад.</caption>
+  <thead><tr><th>Шаг</th><th>Что берём</th></tr></thead>
+  <tbody>
+    <tr><td><b>1. Когда нужен результат</b></td><td>подача в вуз, дедлайн стипендии, срок от работодателя</td></tr>
+    <tr><td><b>2. Минус обработка</b></td><td>баллы приходят не сразу, а бумажный сертификат — ещё позже</td></tr>
+    <tr><td><b>3. Минус срок записи</b></td><td>тот самый дедлайн вашего центра, от 10 дней до двух месяцев</td></tr>
+    <tr><td class="ok"><b>4. Получили крайнюю сессию</b></td><td class="ok">дальше выбираем из более ранних ту, к которой уровень взят</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И главное правило, которое мы повторяем всем: <b>идти, когда готов, а не когда ближайшая дата</b>. Сессий в году несколько, пропущенная не стоит почти ничего, а неудачная попытка стоит и денег, и уверенности. Сколько времени занимает уровень — считали в статье <a href="https://kitai-school.ru/article/za-kakoe-vremya-realno-vyuchit-kitayskiy" target="_blank" rel="noopener">за какое время реально выучить китайский</a>. Проверить готовность до записи помогает <a href="https://kitai-school.ru/article/hsk-4-probnyy-test-kak-ponyat-chto-ty-realno-gotov" target="_blank" rel="noopener">пробный тест</a>. И помните про срок действия результата: он ограничен, поэтому сдавать «заранее, чтобы просто был» — плохая идея, об этом подробно в разборе <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификата HSK</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как часто можно сдавать HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Несколько раз в год. В расписании на осень 2026 года у российских центров стоят сессии в сентябре, октябре, ноябре и декабре — но не каждый центр проводит каждую из них. Один центр может брать одну сессию за осень, другой — четыре. Поэтому вопрос «как часто проходит экзамен» правильнее задавать не про HSK вообще, а про конкретный центр: именно его расписание определяет, сколько у вас попыток в этом полугодии.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>За сколько дней до экзамена закрывается регистрация?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Единого срока нет, и это главное, что стоит запомнить. По расписанию на осень 2026 года разброс идёт от десяти дней до двух месяцев до даты экзамена. На одну и ту же сессию 13 декабря в Ростове-на-Дону запись закрывается за десять дней, а в Петербургском центре СПбГУ — за шестьдесят один. Ориентироваться на «обычно за месяц» опасно: в половине случаев это неверно. Смотрите срок своего центра.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли записаться заранее, за полгода?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. У регистрации есть не только дата закрытия, но и дата открытия, и до неё запись просто не работает. Часто окно открывается ровно за два месяца до экзамена, а у отдельных центров держится всего восемь дней. Так что «запишусь заранее и забуду» не выйдет: нужно знать, когда окно откроется, и не пропустить его.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Я опоздал с регистрацией. Что можно сделать?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Договориться и записаться после закрытия нельзя — это не вопрос доброй воли центра. Реально работают три вещи. Посмотреть другой центр: даты экзамена у центров совпадают, а окна записи разные, и где-то запись ещё открыта. Посмотреть следующую сессию: до конца полугодия обычно есть ещё одна. И третье, самое полезное: занять освободившееся время подготовкой, а не досадой — лишний месяц перед экзаменом почти всегда идёт на пользу баллу.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем бумажный экзамен отличается от компьютерного?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Главное отличие не в экране, а в иероглифах. На бумаге вы пишете их рукой, на компьютере набираете через пиньинь — а это разные навыки. Узнать знак на экране и написать его по памяти на бумаге — совсем не одно и то же, и на письменной части HSK 3 и выше разница чувствуется сразу. Выбирать формат стоит до начала подготовки, а не за неделю до экзамена. Уточните у центра, какой формат он проводит: не все площадки дают оба.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как выбрать дату под свою подготовку?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Отсчётом назад, а не вперёд. Сначала решите, к какому сроку вам нужен результат: подача документов в вуз, дедлайн стипендии, требование работодателя. Отнимите время на обработку результатов и печать сертификата, отнимите срок закрытия записи в вашем центре — и получите крайнюю сессию. Дальше выбирайте из более ранних дат ту, к которой уровень будет взят уверенно. Правило простое: идти, когда готов, а не когда ближайшая дата.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Мы ведём студентов не только по учебнику, но и по календарю: подбираем сессию под ваш уровень, следим за окном регистрации и прогоняем формат до экзамена. Приходите на бесплатное пробное занятие — посмотрим, где вы сейчас, и наметим реальную дату сдачи.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>ДАТЫ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — поможем выбрать сессию и не пропустить запись.</p>
+</div>
+
+<p>Дальше по теме: что подтверждает результат и сколько он действует — <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK</a>; с чего начать — <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1</a>; как растёт объём от уровня к уровню — <a href="https://kitai-school.ru/article/ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu" target="_blank" rel="noopener">от HSK 1 до HSK 4</a>; как считают баллы — <a href="https://kitai-school.ru/article/sistema-ocenki-hsk-4" target="_blank" rel="noopener">система оценки HSK 4</a>; устная часть — <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK</a>; детский экзамен — <a href="https://kitai-school.ru/article/yct-kzamen-po-kitayskomu-dlya-detey" target="_blank" rel="noopener">YCT</a> и <a href="https://kitai-school.ru/article/sdat-yct-v-moskve-kak-zapisatsya" target="_blank" rel="noopener">запись на YCT в Москве</a>; занятия — <a href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener">индивидуальные уроки</a>. Все экзамены — в разделе <a href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener">«Экзамены HSK»</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Официальный сайт экзамена chinesetest.cn — расписание сессий, список аккредитованных центров и порядок регистрации.</li>
+    <li>Объявления российских экзаменационных центров о датах HSK, HSKK и YCT на осень 2026 года и сроках регистрации. Проверено 8 сентября 2026 года.</li>
+    <li>Практика Kitai School — сопровождение студентов при записи на экзамен и планировании подготовки под сессию.</li>
+  </ol>
+</div>
+
+<p class="sign">Выберите свою дату — и спокойной подготовки! <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим к HSK и держим сроки: подбираем сессию под ваш уровень и следим за окном регистрации</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
