@@ -113,7 +113,7 @@ h2 i{font-style:italic;color:var(--brick)}
 <div class="wrap">
   <div class="top">
     <div>
-      <div class="eyebrow">Почему одно берётся самому, а другое нет</div>
+      <div class="eyebrow">Почему одно учится самому, а другое нет</div>
       <h2>Замкнутая петля <i>и разорванная</i></h2>
     </div>
     <div class="hint">Навык растёт там, где круг замыкается: <b>сделал — проверил — исправил</b>. Если проверить нечем, повторяется ошибка.</div>
@@ -122,7 +122,7 @@ h2 i{font-style:italic;color:var(--brick)}
   <div class="pair">
     <div class="side ok">
       <div class="cap">Круг замыкается</div>
-      <h3>Берётся самостоятельно</h3>
+      <h3>Можно выучить самому</h3>
       <div class="loop">
         <svg viewBox="0 0 470 214">
           <path d="M330 40 C 400 52, 410 120, 372 150" fill="none" stroke="#1E7A46" stroke-width="2.4"/>
@@ -145,7 +145,7 @@ h2 i{font-style:italic;color:var(--brick)}
 
     <div class="side no">
       <div class="cap">Круг разорван</div>
-      <h3>Само не получится</h3>
+      <h3>Самому не выучить</h3>
       <div class="loop">
         <svg viewBox="0 0 470 214">
           <path d="M330 40 C 400 52, 410 120, 372 150" fill="none" stroke="#A41E3A" stroke-width="2.4" stroke-dasharray="7 7" opacity=".5"/>
