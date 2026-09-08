@@ -1,0 +1,404 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya#article",
+      "headline": "Изучение китайского языка с нуля: с чего начать, что берётся самому и где нужен преподаватель",
+      "description": "Три дела первой недели, граница между тем, что берётся самому и что нет, минимальный набор для старта и честный разбор обещаний «150 слов» и «за три месяца».",
+      "datePublished": "2026-09-08",
+      "dateModified": "2026-09-08",
+      "inLanguage": "ru",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya"},
+      "author": {"@id": "https://kitai-school.ru/#yulia"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "about": ["Китайский язык для начинающих", "Самостоятельное изучение языка", "Пиньинь и тоны"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia",
+      "name": "Юлия Горяина",
+      "jobTitle": "Китаист, основатель Kitai School",
+      "url": "https://kitai-school.ru/about",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"}
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Лицензированная онлайн-школа китайского языка"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "С чего начать изучение китайского языка с нуля?",
+          "acceptedAnswer": {"@type": "Answer", "text": "С трёх дел, и ни одно из них не про иероглифы. Первое: научиться слышать разницу между четырьмя тонами на одном слоге — не заучивать, а именно различать на слух. Второе: разобрать пиньинь как правила чтения, потому что читается он не так, как выглядит по-латински. Третье: собрать вслух десяток бытовых фраз. Через неделю у вас будет не запас слов, а работающий слух и способность произнести что-то узнаваемое. Иероглифы подключают следующим шагом, когда несколько десятков слов уже звучат уверенно."}
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли выучить китайский с нуля самостоятельно?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Частично — и важно понимать, где проходит граница. Всё, что можно проверить самому, берётся самостоятельно прекрасно: лексика по карточкам, чтение с переводом, порядок слов по упражнениям с ответами, написание знаков по прописи. А вот тоны и собственная речь — нет: у них нет способа самопроверки, потому что вы слышите то, что хотели сказать, а не то, что сказали. Ошибка в тоне закрепляется за пару недель, а переучивается месяцами. Разумный вариант — самостоятельная работа плюс несколько занятий с преподавателем именно на постановку звука."}
+        },
+        {
+          "@type": "Question",
+          "name": "Какие приложения и учебники нужны для старта?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Набор небольшой: словарь, учебник и карточки для повторения. Словарь нужен такой, где можно нарисовать незнакомый знак пальцем и найти его по написанию — такую возможность даёт, например, Pleco. Учебник лучше брать привязанный к уровням HSK, чтобы был понятный порядок и аудио носителя: этому отвечают «Стандартный курс HSK» и «Новый практический курс китайского языка». Карточки удобно вести в программе с интервальным повторением вроде Anki. Главное помнить: приложение — это инструмент повторения, а не программа обучения."}
+        },
+        {
+          "@type": "Question",
+          "name": "Правда ли, что достаточно выучить первые 150 слов?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Это объём словаря HSK 1, и как первый шаг он выглядит логично, а работает плохо. Слово, выученное без тона, произносится неузнаваемо, а выученное без разбора знака не удерживается в памяти дольше нескольких дней. Поэтому продуктивнее не гнаться за списком, а брать слова небольшими порциями вместе со звуком и разбором иероглифа. Тогда те же 150 слов остаются с вами, а не осыпаются через месяц."}
+        },
+        {
+          "@type": "Question",
+          "name": "Реально ли заговорить по-китайски за три месяца?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Смотря что называть «заговорить». Дойти за три месяца до уровня HSK 1–2 и объясняться простыми фразами — вполне реально при регулярных занятиях. А вот «выучить китайский» за три месяца нельзя, и обещания обратного — повод насторожиться. Полезнее ставить срок не по календарю, а по нагрузке: одна и та же цель растягивается от полугода до двух лет только за счёт того, сколько часов в неделю вы занимаетесь."}
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько заниматься в неделю, чтобы был результат?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Важнее не количество часов, а их распределение. Короткие занятия каждый день работают заметно лучше, чем одно длинное в выходные: язык держится на регулярности повторений, а не на объёме за раз. Практический ориентир для начала — заниматься понемногу, но ежедневно, и отдельно выделять время на слушание. Если выбирать между «час раз в неделю» и «пятнадцать минут каждый день», второе даст больше."}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Изучение китайского языка с нуля: с чего начать, что берётся самому и где нужен преподаватель", "item": "https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">О языке и обучении</p>
+<h1>Изучение китайского языка с нуля: <span class="italic">с чего начать, что берётся самому и где нужен преподаватель</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-08">8 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/izuchenie-kitayskogo-yazyka-s-nulya.png" alt="Три дорожки от нуля: звук, знак и фраза" width="1200" height="630"></figure>
+
+<p class="passport">Почти все, кто начинает <b>учить китайский с нуля</b>, спотыкаются об один и тот же вопрос: с чего вообще браться. Иероглифы выглядят непреодолимо, списки слов лежат мёртвым грузом, а приложений столько, что выбор превращается в отдельное занятие. Разберём старт по делу: что делают в первую неделю, что в китайском спокойно берётся самому, а что без живого человека закрепляется с ошибкой.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Первая неделя — это <b>не иероглифы и не список слов</b>, а три вещи: услышать четыре тона, разобрать пиньинь как правила чтения и произнести вслух десяток фраз. Дальше работает простое правило: <b>самому берётся всё, что можно проверить</b> — лексика, чтение, порядок слов, написание знаков. Не берётся то, где проверить нечем: тоны и собственная речь. Набор для старта маленький: словарь, учебник с аудио и карточки. Обещания «150 слов» и «заговорить за три месяца» не врут, но означают не то, что кажется.</p>
+</div>
+
+<h2>Первая неделя: <span class="italic">три дела вместо тридцати</span></h2>
+<p>Главная ошибка старта — начать со всего сразу. На самом деле в первую неделю делают всего три вещи, и ни одна из них не про иероглифы.</p>
+<div class="table-wrap">
+<table>
+  <caption>С чего начинают на самом деле.</caption>
+  <thead><tr><th>Что делаем</th><th>Зачем именно это</th><th>Как понять, что получилось</th></tr></thead>
+  <tbody>
+    <tr><td><b>1. Услышать четыре тона</b></td><td>тон в китайском меняет смысл слова, а не интонацию фразы</td><td>различаете на слух четыре варианта одного слога</td></tr>
+    <tr><td><b>2. Разобрать пиньинь</b></td><td>это правила чтения, а не латиница: буквы читаются не так, как выглядят</td><td>читаете незнакомый слог вслух и не гадаете</td></tr>
+    <tr><td><b>3. Произнести десяток фраз</b></td><td>речь начинается сразу, иначе накапливается страх открыть рот</td><td>говорите приветствие и своё имя без пауз</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И столь же важно, чего в первую неделю <b>не делают</b>: не учат список слов, не садятся прописывать иероглифы и не покупают три учебника разом. Знаки подключают следующим шагом, когда несколько десятков слов уже звучат уверенно — весь маршрут по шагам разобран отдельно, по <a href="https://kitai-school.ru/article/tapy-izucheniya-kitayskogo" target="_blank" rel="noopener">этапам изучения китайского</a>.</p>
+
+<h2>Что берётся самому, <span class="italic">а что нет</span></h2>
+<p>Здесь обычно и ломается самостоятельное обучение — но не там, где ждут. Дело не в силе воли и не в способностях, а в устройстве обратной связи.</p>
+<p>Любой навык растёт по кругу: сделал — проверил — исправил. Если проверить себя нечем, круг разрывается: вы продолжаете повторять, но повторяете <b>ошибку</b>, и с каждым разом она садится прочнее.</p>
+<div class="table-wrap">
+<table>
+  <caption>Где проверка есть, а где её нет.</caption>
+  <thead><tr><th>Что осваиваем</th><th>Чем проверить себя</th><th>Вывод</th></tr></thead>
+  <tbody>
+    <tr><td><b>Лексика</b></td><td>обратная сторона карточки</td><td class="ok">берётся самому</td></tr>
+    <tr><td><b>Чтение</b></td><td>текст с переводом и разбором</td><td class="ok">берётся самому</td></tr>
+    <tr><td><b>Порядок слов</b></td><td>ответы к упражнениям</td><td class="ok">берётся самому</td></tr>
+    <tr><td><b>Написание знаков</b></td><td>пропись с порядком черт</td><td class="ok">берётся самому, если сразу с прописью</td></tr>
+    <tr><td><b>Понимание на слух</b></td><td>расшифровка записи</td><td class="ok">берётся самому</td></tr>
+    <tr><td class="bad"><b>Тоны</b></td><td class="bad">нечем: свою ошибку не слышно</td><td class="bad">нужен живой человек</td></tr>
+    <tr><td class="bad"><b>Собственная речь</b></td><td class="bad">нечем: некому переспросить</td><td class="bad">нужен живой человек</td></tr>
+  </tbody>
+</table>
+</div>
+<figure class="ks-fig"><img src="assets/izuchenie-kitayskogo-yazyka-s-nulya-petlya.png" alt="Замкнутая и разорванная петля обратной связи в изучении языка" loading="lazy" width="1200" height="700"><figcaption>Всё, что можно проверить самому, берётся самостоятельно. Там, где проверить нечем, повторение закрепляет ошибку.</figcaption></figure>
+<p class="note">Причина у двух последних строк одна и совсем не очевидная: <b>вы слышите то, что хотели сказать, а не то, что сказали</b>. Диктофон помогает наполовину, потому что и запись вы слушаете тем же ухом. Ошибка в тоне садится за пару недель, а переучивается месяцами — поэтому разумная схема выглядит так: работаем сами, а на постановку звука берём несколько занятий с преподавателем. Что именно там ставят, разобрано в статье о <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировке произношения</a>.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ко мне пришёл человек, который восемь месяцев занимался сам и делал это на редкость добросовестно: карточки, учебник, ежедневные подходы. Словарный запас у него был как у второго уровня, тексты он читал спокойно. А на первом же занятии выяснилось, что почти все слова он произносит третьим тоном — просто потому, что когда-то так услышал и с тех пор ни разу не получил обратной связи.</p>
+  <p>Разбирать пришлось не язык, а привычку: восемь месяцев ежедневных повторений сделали ошибку автоматической. На переучивание ушло больше времени, чем ушло бы на постановку тонов в самом начале.</p>
+  <p>С тех пор всем, кто начинает сам, я говорю одно и то же: <b>занимайтесь самостоятельно сколько угодно, но звук покажите живому человеку в первый же месяц</b>. Не курс, не абонемент — просто пусть кто-то послушает и скажет, что не так. Это самая дешёвая страховка в изучении китайского.</p>
+</div>
+
+<h2>Минимальный набор: <span class="italic">словарь, учебник, карточки</span></h2>
+<p>Набор для старта маленький, и это хорошая новость. Три инструмента закрывают почти всё, а четвёртый — аудио — обычно идёт в комплекте с учебником.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что нужно и на что смотреть при выборе.</caption>
+  <thead><tr><th>Что</th><th>Зачем</th><th>На что смотреть</th></tr></thead>
+  <tbody>
+    <tr><td><b>Словарь</b></td><td>найти незнакомый знак, который негде набрать</td><td>рукописный ввод пальцем и распознавание камерой. Такое умеет, например, Pleco</td></tr>
+    <tr><td><b>Учебник</b></td><td>задать порядок: что за чем и в каком объёме</td><td>привязка к уровням HSK, аудио носителя, ответы для самопроверки. Этому отвечают «Стандартный курс HSK» и «Новый практический курс китайского языка»</td></tr>
+    <tr><td><b>Карточки</b></td><td>удерживать выученное, а не проходить заново</td><td>интервальное повторение — например, в Anki</td></tr>
+    <tr><td class="ok"><b>Аудио</b></td><td class="ok">приучить ухо к темпу живой речи</td><td class="ok">запись носителя к каждому уроку учебника</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И одна оговорка, которая экономит месяцы. <b>Приложение — это инструмент повторения, а не программа обучения.</b> Игра с очками и сериями отлично удерживает лексику, но не задаёт порядка и не ставит звук: можно отыграть длинную серию и не суметь произнести ни одной фразы так, чтобы вас поняли. Поэтому приложение ставят рядом с учебником, а не вместо него.</p>
+
+<h2>Про «150 слов» и «три месяца»: <span class="italic">что за этими обещаниями стоит</span></h2>
+<p>Две формулировки, которые встречаются в каждой второй статье для начинающих. Обе не врут — но означают не то, что читается на первый взгляд.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что обещают и что получается.</caption>
+  <thead><tr><th>Обещание</th><th>Что за ним на самом деле</th></tr></thead>
+  <tbody>
+    <tr><td><b>«Выучите первые 150 слов»</b></td><td>это объём словаря первого уровня. Но как список он не работает: слово без тона звучит неузнаваемо, а слово без разбора знака не держится в памяти дольше нескольких дней</td></tr>
+    <tr><td><b>«Заговорите через три месяца»</b></td><td>дойти за три месяца до простых фраз действительно реально. А «выучить китайский» за три месяца — нет, и такие обещания стоит обходить стороной</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Про объём словаря первого уровня и что в него входит — в разборе <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1</a>. А сроки честнее считать не по календарю, а по нагрузке: одна и та же цель растягивается от полугода до двух с лишним лет только за счёт числа часов в неделю. Расчёты — в статьях <a href="https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya" target="_blank" rel="noopener">за сколько можно выучить китайский с нуля</a> и <a href="https://kitai-school.ru/article/za-kakoe-vremya-realno-vyuchit-kitayskiy" target="_blank" rel="noopener">статистика часов по уровням</a>.</p>
+
+<h2>Куда идти дальше: <span class="italic">карта для начинающего</span></h2>
+<p>Эта статья отвечает на вопрос «как начать». На остальные вопросы старта у нас есть отдельные разборы — чтобы не искать, собрали их в одном месте.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что где искать.</caption>
+  <thead><tr><th>Вопрос</th><th>Где ответ</th></tr></thead>
+  <tbody>
+    <tr><td>В каком порядке идут этапы</td><td><a href="https://kitai-school.ru/article/tapy-izucheniya-kitayskogo" target="_blank" rel="noopener">этапам изучения китайского</a></td></tr>
+    <tr><td>Сколько это займёт времени</td><td><a href="https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya" target="_blank" rel="noopener">за сколько можно выучить китайский с нуля</a> и <a href="https://kitai-school.ru/article/za-kakoe-vremya-realno-vyuchit-kitayskiy" target="_blank" rel="noopener">статистика часов по уровням</a></td></tr>
+    <tr><td>Что реально трудно, а что проще, чем кажется</td><td><a href="https://kitai-school.ru/article/slojno-li-uchit-kitayskiy-s-nulya" target="_blank" rel="noopener">сложно ли учить китайский с нуля</a></td></tr>
+    <tr><td>Как ставят тоны и трудные звуки</td><td><a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировке произношения</a></td></tr>
+    <tr><td>Как вообще устроены иероглифы</td><td><a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost" target="_blank" rel="noopener">из чего состоит китайская письменность</a> и <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey" target="_blank" rel="noopener">значение ключей в иероглифах</a></td></tr>
+    <tr><td>Каким будет первый экзамен</td><td><a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1</a></td></tr>
+    <tr><td>Зачем всё это</td><td><a href="https://kitai-school.ru/article/zachem-uchit-kitayskiy-yazyk" target="_blank" rel="noopener">зачем учить китайский</a></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Если коротко сложить всё вместе: <b>начните со звука, подключите знаки вторым шагом и покажите своё произношение живому человеку в первый же месяц</b>. Остальное действительно можно делать самому.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С чего начать изучение китайского языка с нуля?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>С трёх дел, и ни одно из них не про иероглифы. Первое: научиться слышать разницу между четырьмя тонами на одном слоге — не заучивать, а именно различать на слух. Второе: разобрать пиньинь как правила чтения, потому что читается он не так, как выглядит по-латински. Третье: собрать вслух десяток бытовых фраз. Через неделю у вас будет не запас слов, а работающий слух и способность произнести что-то узнаваемое. Иероглифы подключают следующим шагом, когда несколько десятков слов уже звучат уверенно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли выучить китайский с нуля самостоятельно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Частично — и важно понимать, где проходит граница. Всё, что можно проверить самому, берётся самостоятельно прекрасно: лексика по карточкам, чтение с переводом, порядок слов по упражнениям с ответами, написание знаков по прописи. А вот тоны и собственная речь — нет: у них нет способа самопроверки, потому что вы слышите то, что хотели сказать, а не то, что сказали. Ошибка в тоне закрепляется за пару недель, а переучивается месяцами. Разумный вариант — самостоятельная работа плюс несколько занятий с преподавателем именно на постановку звука.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие приложения и учебники нужны для старта?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Набор небольшой: словарь, учебник и карточки для повторения. Словарь нужен такой, где можно нарисовать незнакомый знак пальцем и найти его по написанию — такую возможность даёт, например, Pleco. Учебник лучше брать привязанный к уровням HSK, чтобы был понятный порядок и аудио носителя: этому отвечают «Стандартный курс HSK» и «Новый практический курс китайского языка». Карточки удобно вести в программе с интервальным повторением вроде Anki. Главное помнить: приложение — это инструмент повторения, а не программа обучения.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что достаточно выучить первые 150 слов?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это объём словаря HSK 1, и как первый шаг он выглядит логично, а работает плохо. Слово, выученное без тона, произносится неузнаваемо, а выученное без разбора знака не удерживается в памяти дольше нескольких дней. Поэтому продуктивнее не гнаться за списком, а брать слова небольшими порциями вместе со звуком и разбором иероглифа. Тогда те же 150 слов остаются с вами, а не осыпаются через месяц.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Реально ли заговорить по-китайски за три месяца?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Смотря что называть «заговорить». Дойти за три месяца до уровня HSK 1–2 и объясняться простыми фразами — вполне реально при регулярных занятиях. А вот «выучить китайский» за три месяца нельзя, и обещания обратного — повод насторожиться. Полезнее ставить срок не по календарю, а по нагрузке: одна и та же цель растягивается от полугода до двух лет только за счёт того, сколько часов в неделю вы занимаетесь.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько заниматься в неделю, чтобы был результат?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Важнее не количество часов, а их распределение. Короткие занятия каждый день работают заметно лучше, чем одно длинное в выходные: язык держится на регулярности повторений, а не на объёме за раз. Практический ориентир для начала — заниматься понемногу, но ежедневно, и отдельно выделять время на слушание. Если выбирать между «час раз в неделю» и «пятнадцать минут каждый день», второе даст больше.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Если хотите начать сразу правильно, приходите на бесплатное пробное занятие. За урок мы послушаем ваше произношение, покажем, что уже звучит, а что нет, и наметим порядок на первые месяцы — дальше вы сможете идти самостоятельно, зная, что именно проверять.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>СТАРТ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подскажем, с чего начать именно вам.</p>
+</div>
+
+<p>Дальше по теме: <a href="https://kitai-school.ru/article/tapy-izucheniya-kitayskogo" target="_blank" rel="noopener">этапам изучения китайского</a>; <a href="https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya" target="_blank" rel="noopener">за сколько можно выучить китайский с нуля</a>; <a href="https://kitai-school.ru/article/slojno-li-uchit-kitayskiy-s-nulya" target="_blank" rel="noopener">сложно ли учить китайский с нуля</a>; <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировке произношения</a>; <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1</a>; <a href="https://kitai-school.ru/article/zachem-uchit-kitayskiy-yazyk" target="_blank" rel="noopener">зачем учить китайский</a>; как проходит урок в группе — <a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku-kak-ustroen-urok" target="_blank" rel="noopener">групповые занятия</a>; занятия — <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы</a> и <a href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener">индивидуальные уроки</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Официальный сайт экзамена chinesetest.cn — состав словаря и требования уровней HSK.</li>
+    <li>Практика Kitai School — работа с начинающими и разбор типичных ошибок самостоятельного старта.</li>
+    <li>Учебные материалы, привязанные к уровням HSK: «Стандартный курс HSK», «Новый практический курс китайского языка».</li>
+  </ol>
+</div>
+
+<p class="sign">Начните со звука — остальное приложится. <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Начинаем с нуля: ставим тоны, задаём порядок и доводим до первых живых фраз</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
