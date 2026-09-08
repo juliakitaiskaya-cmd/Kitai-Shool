@@ -1,0 +1,472 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kitayskiy-dlya-delovogo-obshcheniya#article",
+      "headline": "Китайский язык для делового общения: 50 фраз для встречи, переговоров и переписки",
+      "description": "50 готовых реплик для встречи, переговоров и переписки: с пиньинем, переводом и подсказкой, когда каждую уместно сказать. Отдельно — как отказать самому и не испортить отношения.",
+      "datePublished": "2026-09-08",
+      "dateModified": "2026-09-08",
+      "inLanguage": "ru",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kitai-school.ru/article/kitayskiy-dlya-delovogo-obshcheniya"},
+      "author": {"@id": "https://kitai-school.ru/#yulia"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "about": ["Деловой китайский", "Переговоры с китайскими партнёрами", "Деловая переписка"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia",
+      "name": "Юлия Горяина",
+      "jobTitle": "Китаист, основатель Kitai School",
+      "url": "https://kitai-school.ru/about",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"}
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Лицензированная онлайн-школа китайского языка"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kitayskiy-dlya-delovogo-obshcheniya#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Чем деловое общение на китайском отличается от обычного?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Не грамматикой, а тремя вещами: отраслевыми словами, обращением по фамилии и должности вместо имени и осторожными формулировками вместо прямых. Прямое «нет» в переговорах звучит как давление, поэтому отказ упаковывают в вежливую формулу. Отдельной «деловой грамматики» не существует, и учить язык заново не придётся — меняется регистр, а не система."}
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько фраз нужно знать, чтобы провести встречу?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Меньше, чем кажется. Реальная встреча держится на нескольких десятках повторяющихся реплик: поздороваться, представить, переспросить, уточнить условие, возразить, зафиксировать итог. Набор из этой статьи закрывает типовую встречу целиком. Важнее не число фраз, а то, чтобы они произносились не задумываясь: выученная, но не отработанная вслух реплика в нужный момент не всплывает."}
+        },
+        {
+          "@type": "Question",
+          "name": "Как вежливо отказать по-китайски?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Есть шкала, и стоит понимать, где вы на ней стоите. Мягче всего звучит «мы обсудим это внутри»: отказ есть, но дверь открыта. Дальше идут «так, боюсь, будет неудобно» и «мне нужно доложить руководству». Твёрдое «сейчас мы этого не можем» уже понимают однозначно, а «это условие мы принять не можем» — это прямой отказ, после которого обсуждают другое условие. Резкое «нет» без формулы в переговорах почти не используют."}
+        },
+        {
+          "@type": "Question",
+          "name": "Нужно ли учить китайский, если есть переводчик?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Да, хотя бы на уровне понимания. Переводчик передаст слова точно, но не передаст, что за вежливой формулой стоит отказ, и не заметит, если вы пропустили важную оговорку. Плюс несколько реплик, сказанных самим, заметно меняют отношение к вам на встрече: это читается как уважение к стороне, а не как знание языка."}
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли выучить эти фразы за неделю?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Прочитать — да, начать пользоваться — нет. Реплика работает, когда она отрепетирована вслух и произносится автоматически, а на это уходит не неделя, а несколько недель регулярной отработки. Практический совет: возьмите пять-шесть фраз под ближайшую встречу, отработайте их до автоматизма и добавляйте остальные порциями, а не все разом."}
+        },
+        {
+          "@type": "Question",
+          "name": "С какого уровня можно вести переговоры самому?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Понимать переписку и следить за ходом встречи получается примерно с HSK 4. Вести встречу самому — задавать вопросы, уточнять условия, торговаться — ближе к HSK 5, причём с отдельно поставленной устной речью: письменный экзамен её не проверяет вообще. Для устной части существует свой экзамен, HSKK, и готовиться к ней нужно отдельно."}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kitayskiy-dlya-delovogo-obshcheniya#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Китайский язык для делового общения: 50 фраз для встречи, переговоров и переписки", "item": "https://kitai-school.ru/article/kitayskiy-dlya-delovogo-obshcheniya"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Китайский для работы и бизнеса</p>
+<h1>Китайский язык для делового общения: <span class="italic">50 фраз для встречи, переговоров и переписки</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-08">8 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/kitayskiy-dlya-delovogo-obshcheniya.png" alt="Карточка с деловой фразой на китайском и стопка других карточек" width="1200" height="630"></figure>
+
+<p class="passport">Словарь не спасает на встрече. В нужный момент вспоминается не слово, а <b>готовая реплика</b> — та, которую произносишь не задумываясь. Собрали пятьдесят таких: их говорите вы сами, а не расшифровываете за партнёром. У каждой пиньинь, перевод и подсказка, когда её уместно сказать.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Пятьдесят реплик по шести моментам: знакомство, переспросить и выиграть время, <b>отказать самому</b>, условия сделки, зафиксировать итог, переписка. Главный раздел — отказ: у него есть <b>шкала мягкости</b>, и важно понимать, где вы на ней стоите. Резкое «нет» без формулы в переговорах почти не используют. И правило, без которого набор не работает: фразу нужно <b>отрепетировать вслух</b>, иначе в нужный момент она не всплывёт.</p>
+</div>
+
+<h2>Как пользоваться набором <span class="italic">и чем он отличается от разбора делового китайского</span></h2>
+<p>У нас уже есть большой разбор темы — <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>. Он отвечает на вопрос «что учить»: какие блоки лексики нужны, какого уровня хватает под разные задачи и как <b>понимать</b> вежливые формулы партнёра. Эта статья про другое: что <b>сказать самому</b>.</p>
+<div class="table-wrap">
+<table>
+  <caption>Две статьи и разные вопросы.</caption>
+  <thead><tr><th>Вопрос</th><th>Где ответ</th></tr></thead>
+  <tbody>
+    <tr><td>Что вообще учить и какого уровня хватит</td><td><a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a></td></tr>
+    <tr><td>Как обратиться и оформить письмо целиком</td><td><a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">обращение в деловом письме</a></td></tr>
+    <tr><td>Как себя вести: визитки, подарки, банкет</td><td><a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a></td></tr>
+    <tr><td class="ok"><b>Что произнести вслух в конкретный момент</b></td><td class="ok"><b>эта статья</b></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И сразу главное про пользование. <b>Не учите все пятьдесят разом</b> — так не работает. Возьмите пять-шесть штук под ближайшую встречу, проговорите их вслух до автоматизма и добавляйте остальные порциями. Реплика, прочитанная глазами, в нужный момент не всплывает; отрепетированная — всплывает сама.</p>
+
+<h2>Знакомство и первые минуты <span class="italic">встречи</span></h2>
+<p>Первые минуты решают больше, чем кажется: здесь считывается, уважаете ли вы сторону. Ни одна из этих фраз не требует свободного языка.</p>
+<div class="table-wrap">
+<table>
+  <caption>Знакомство и начало встречи.</caption>
+  <thead><tr><th>№</th><th>Фраза</th><th>Пиньинь</th><th>Перевод</th><th>Когда говорят</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><b class="han">您好，很高兴见到您</b></td><td>nín hǎo, hěn gāoxìng jiàndào nín</td><td>Здравствуйте, очень рад вас видеть</td><td>базовое приветствие на встрече</td></tr>
+    <tr><td>2</td><td><b class="han">久仰久仰</b></td><td>jiǔyǎng jiǔyǎng</td><td>Наслышан о вас</td><td>при первом знакомстве, сильный комплимент</td></tr>
+    <tr><td>3</td><td><b class="han">请多关照</b></td><td>qǐng duō guānzhào</td><td>Прошу вашего расположения</td><td>говорят о себе после представления</td></tr>
+    <tr><td>4</td><td><b class="han">我来介绍一下</b></td><td>wǒ lái jièshào yíxià</td><td>Позвольте представить</td><td>перед тем как назвать коллег</td></tr>
+    <tr><td>5</td><td><b class="han">这位是我们的负责人</b></td><td>zhè wèi shì wǒmen de fùzérén</td><td>Это наш руководитель направления</td><td>представляя человека, а не себя</td></tr>
+    <tr><td>6</td><td><b class="han">这是我的名片，请收下</b></td><td>zhè shì wǒ de míngpiàn, qǐng shōuxià</td><td>Вот моя визитка, пожалуйста</td><td>передавая визитку двумя руками</td></tr>
+    <tr><td>7</td><td><b class="han">一路辛苦了</b></td><td>yílù xīnkǔ le</td><td>Устали с дороги</td><td>гостю, который приехал к вам</td></tr>
+    <tr><td>8</td><td><b class="han">感谢您抽时间见我们</b></td><td>gǎnxiè nín chōu shíjiān jiàn wǒmen</td><td>Спасибо, что нашли для нас время</td><td>в начале встречи, к которой вы просились</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Про <b class="han">久仰久仰</b> стоит сказать отдельно: это сильный комплимент, уместный при первом знакомстве с человеком, о котором вы действительно слышали. Сказанное дежурно и всем подряд, оно звучит натянуто. А <b class="han">请多关照</b> говорят про себя, а не про собеседника — это просьба о снисхождении к себе, и она всегда к месту.</p>
+
+<h2>Когда не поняли <span class="italic">или нужно выиграть время</span></h2>
+<p>Самый недооценённый блок. Кивать наугад дороже, чем переспросить: непонятая цифра или срок всплывают потом, уже в договоре.</p>
+<div class="table-wrap">
+<table>
+  <caption>Переспросить и выиграть время.</caption>
+  <thead><tr><th>№</th><th>Фраза</th><th>Пиньинь</th><th>Перевод</th><th>Когда говорят</th></tr></thead>
+  <tbody>
+    <tr><td>9</td><td><b class="han">不好意思，我没太听清</b></td><td>bù hǎoyìsi, wǒ méi tài tīngqīng</td><td>Извините, я не расслышал</td><td>честнее, чем кивать наугад</td></tr>
+    <tr><td>10</td><td><b class="han">麻烦您再说一遍</b></td><td>máfan nín zài shuō yí biàn</td><td>Повторите, пожалуйста</td><td>спокойная просьба, не признание слабости</td></tr>
+    <tr><td>11</td><td><b class="han">您能说得慢一点儿吗</b></td><td>nín néng shuō de màn yìdiǎnr ma</td><td>Можно чуть медленнее?</td><td>в самом начале встречи, а не на двадцатой минуте</td></tr>
+    <tr><td>12</td><td><b class="han">这个词是什么意思</b></td><td>zhège cí shì shénme yìsi</td><td>Что значит это слово?</td><td>когда споткнулись об отраслевой термин</td></tr>
+    <tr><td>13</td><td><b class="han">我确认一下，您的意思是…</b></td><td>wǒ quèrèn yíxià, nín de yìsi shì…</td><td>Уточню: вы имеете в виду…</td><td>лучшая фраза переговоров, снимает половину недопониманий</td></tr>
+    <tr><td>14</td><td><b class="han">我记一下</b></td><td>wǒ jì yíxià</td><td>Я запишу</td><td>даёт паузу и выглядит уважительно</td></tr>
+    <tr><td>15</td><td><b class="han">稍等一下</b></td><td>shāo děng yíxià</td><td>Одну минуту</td><td>когда нужно собраться с мыслями</td></tr>
+    <tr><td>16</td><td><b class="han">这个我需要回去核实</b></td><td>zhège wǒ xūyào huíqù héshí</td><td>Это мне нужно проверить у себя</td><td>честный способ не отвечать наугад</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Из всех пятидесяти фраз самая ценная — <b class="han">我确认一下，您的意思是…</b>. Она снимает половину недопониманий и при этом никого не задевает: вы не спорите, а проверяете, правильно ли поняли. Пользуйтесь ей чаще, чем кажется нужным.</p>
+
+<h2>Как отказать самому <span class="italic">и не испортить отношения</span></h2>
+<p>Здесь чаще всего ломаются переговоры. Прямое «нет» в китайском деловом разговоре воспринимается как давление, поэтому отказ упаковывают в формулу. Но формулы разной силы, и партнёр слышит именно силу.</p>
+<figure class="ks-fig"><img src="assets/kitayskiy-dlya-delovogo-obshcheniya-otkaz.png" alt="Шкала мягкости отказа: пять реплик от мягкой до прямой" loading="lazy" width="1200" height="640"><figcaption>Одно и то же «нет» звучит по-разному. Важно понимать, насколько твёрдо вас услышат.</figcaption></figure>
+<div class="table-wrap">
+<table>
+  <caption>Как отказать самому — от мягкого к прямому.</caption>
+  <thead><tr><th>№</th><th>Фраза</th><th>Пиньинь</th><th>Перевод</th><th>Когда говорят</th></tr></thead>
+  <tbody>
+    <tr><td>17</td><td><b class="han">我们内部再商量一下</b></td><td>wǒmen nèibù zài shāngliang yíxià</td><td>Мы обсудим это внутри</td><td>самое мягкое «пока нет», дверь остаётся открытой</td></tr>
+    <tr><td>18</td><td><b class="han">这样恐怕不太方便</b></td><td>zhèyàng kǒngpà bú tài fāngbiàn</td><td>Так, боюсь, будет неудобно</td><td>мягкий отказ, который читается как «скорее нет»</td></tr>
+    <tr><td>19</td><td><b class="han">我需要跟领导汇报</b></td><td>wǒ xūyào gēn lǐngdǎo huìbào</td><td>Мне нужно доложить руководству</td><td>снимает личную ответственность и даёт время</td></tr>
+    <tr><td>20</td><td><b class="han">目前我们做不到</b></td><td>mùqián wǒmen zuò bu dào</td><td>Сейчас мы этого не можем</td><td>твёрдо, но с оговоркой «сейчас»</td></tr>
+    <tr><td>21</td><td><b class="han">这个条件我们接受不了</b></td><td>zhège tiáojiàn wǒmen jiēshòu bu liǎo</td><td>Это условие мы принять не можем</td><td>прямо, когда мягкие формулы уже не работают</td></tr>
+    <tr><td>22</td><td><b class="han">我理解您的难处，不过…</b></td><td>wǒ lǐjiě nín de nánchù, búguò…</td><td>Понимаю ваши трудности, однако…</td><td>возражение, которое не отнимает лицо</td></tr>
+    <tr><td>23</td><td><b class="han">我们能不能换个思路</b></td><td>wǒmen néng bu néng huàn ge sīlù</td><td>Может, зайдём с другой стороны?</td><td>вместо спора по кругу</td></tr>
+    <tr><td>24</td><td><b class="han">这样对双方都好</b></td><td>zhèyàng duì shuāngfāng dōu hǎo</td><td>Так будет лучше для обеих сторон</td><td>закрывает возражение общей выгодой</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Обратная сторона этого умения — <b>распознавать чужой отказ</b>. Вежливые формулы партнёра и то, что за ними стоит, разобраны в статье про <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>. Проверка одна и та же в обе стороны: попросите назвать срок. Нет конкретной даты — было «нет». Почему так устроено, объясняет <a href="https://kitai-school.ru/article/kitayskiy-tiket-obscheniya-uvajenie-k-starshim-ierarhiya-i-ponyatie-lica" target="_blank" rel="noopener">китайский этикет общения</a>.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Один наш студент готовился к встрече полгода: словарь по своей отрасли, переписка, презентация. На встрече он всё понимал — и почти ничего не сказал. Не потому, что не знал слов: просто ни одна фраза не была отрепетирована вслух, и в живом темпе он не успевал собрать предложение.</p>
+  <p>Мы поменяли подход. Перед следующей поездкой взяли не словарь, а <b>двенадцать реплик</b> и месяц проговаривали их до состояния «отскакивает». Ничего сложного: поздороваться, представить коллегу, переспросить, уточнить срок, мягко отказать, зафиксировать итог.</p>
+  <p>Со второй встречи он вернулся с подписанным протоколом. Не потому, что выучил больше слов — он выучил <b>меньше</b>, но так, что смог этим пользоваться.</p>
+</div>
+
+<h2>Цена, сроки, качество: <span class="italic">что спросить про условия</span></h2>
+<p>Эти вопросы задают в определённом порядке. Сначала объём и срок, потом цена: иначе цену называют под непонятно какие условия, и разговор приходится начинать заново.</p>
+<div class="table-wrap">
+<table>
+  <caption>Условия сделки: объём, срок, цена, качество.</caption>
+  <thead><tr><th>№</th><th>Фраза</th><th>Пиньинь</th><th>Перевод</th><th>Когда говорят</th></tr></thead>
+  <tbody>
+    <tr><td>25</td><td><b class="han">请问最小起订量是多少</b></td><td>qǐngwèn zuìxiǎo qǐdìngliàng shì duōshao</td><td>Какой минимальный объём заказа?</td><td>первый вопрос при закупке</td></tr>
+    <tr><td>26</td><td><b class="han">交货期大概多久</b></td><td>jiāohuòqī dàgài duōjiǔ</td><td>Какой примерно срок поставки?</td><td>спрашивать до цены, а не после</td></tr>
+    <tr><td>27</td><td><b class="han">这个价格包含运费吗</b></td><td>zhège jiàgé bāohán yùnfèi ma</td><td>Цена включает доставку?</td><td>место, где чаще всего расходятся ожидания</td></tr>
+    <tr><td>28</td><td><b class="han">付款方式是怎样的</b></td><td>fùkuǎn fāngshì shì zěnyàng de</td><td>Какой порядок оплаты?</td><td>аванс, остаток, сроки</td></tr>
+    <tr><td>29</td><td><b class="han">能不能再优惠一点儿</b></td><td>néng bu néng zài yōuhuì yìdiǎnr</td><td>Можно ли ещё немного уступить?</td><td>торг ожидается, отказ от него удивляет</td></tr>
+    <tr><td>30</td><td><b class="han">如果量大，价格能降吗</b></td><td>rúguǒ liàng dà, jiàgé néng jiàng ma</td><td>Если объём больше, цена снизится?</td><td>конкретнее, чем просто просить скидку</td></tr>
+    <tr><td>31</td><td><b class="han">可以先寄样品吗</b></td><td>kěyǐ xiān jì yàngpǐn ma</td><td>Можно сначала прислать образец?</td><td>до предоплаты, а не после</td></tr>
+    <tr><td>32</td><td><b class="han">质量出问题怎么办</b></td><td>zhìliàng chū wèntí zěnme bàn</td><td>Что делать, если возникнет брак?</td><td>вопрос, который экономит больше всего денег</td></tr>
+    <tr><td>33</td><td><b class="han">我们希望写进合同</b></td><td>wǒmen xīwàng xiě jìn hétong</td><td>Мы хотели бы внести это в договор</td><td>переводит устную договорённость в письменную</td></tr>
+    <tr><td>34</td><td><b class="han">这个时间点对我们很关键</b></td><td>zhège shíjiān diǎn duì wǒmen hěn guānjiàn</td><td>Этот срок для нас критичен</td><td>объясняет, почему вы настаиваете</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Отдельно про <b class="han">质量出问题怎么办</b>. Вопрос кажется невежливым, а на деле экономит больше всего денег и воспринимается спокойно: вы обсуждаете процесс, а не подозреваете собеседника. Ответ на него полезно сразу перевести в письменную форму — для этого и нужна фраза <b class="han">我们希望写进合同</b>.</p>
+
+<h2>Договориться <span class="italic">и закрыть встречу</span></h2>
+<p>Устная договорённость, которую не зафиксировали вслух и письменно, часто оказывается не договорённостью.</p>
+<div class="table-wrap">
+<table>
+  <caption>Зафиксировать итог и закрыть встречу.</caption>
+  <thead><tr><th>№</th><th>Фраза</th><th>Пиньинь</th><th>Перевод</th><th>Когда говорят</th></tr></thead>
+  <tbody>
+    <tr><td>35</td><td><b class="han">什么时候能给我们答复</b></td><td>shénme shíhou néng gěi wǒmen dáfù</td><td>Когда сможете дать нам ответ?</td><td>главная проверка: нет даты — был отказ</td></tr>
+    <tr><td>36</td><td><b class="han">那我们就这么定了</b></td><td>nà wǒmen jiù zhème dìng le</td><td>На этом и договоримся</td><td>фиксирует итог вслух</td></tr>
+    <tr><td>37</td><td><b class="han">我们同意这个方案</b></td><td>wǒmen tóngyì zhège fāng'àn</td><td>Мы согласны с этим вариантом</td><td>прямое согласие, без него его не считают данным</td></tr>
+    <tr><td>38</td><td><b class="han">我把会议纪要发给您</b></td><td>wǒ bǎ huìyì jìyào fā gěi nín</td><td>Пришлю вам итоги встречи</td><td>письменная фиксация сразу после разговора</td></tr>
+    <tr><td>39</td><td><b class="han">今天先到这里</b></td><td>jīntiān xiān dào zhèlǐ</td><td>На сегодня остановимся</td><td>мягко закрывает встречу</td></tr>
+    <tr><td>40</td><td><b class="han">期待与您合作</b></td><td>qīdài yǔ nín hézuò</td><td>Рассчитываем на сотрудничество</td><td>на прощание, без обязательств</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Первая строка здесь — рабочая проверка на весь разговор. <b class="han">什么时候能给我们答复</b> звучит вежливо и при этом ставит вопрос ребром. Если в ответ нет конкретной даты, дальше можно не строить планов: согласия не было.</p>
+
+<h2>Переписка: <span class="italic">фразы по делу</span></h2>
+<p>Про обращение и оформление письма целиком — в отдельном разборе, <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">обращение в деловом письме</a>. Здесь то, из чего состоит тело сообщения.</p>
+<div class="table-wrap">
+<table>
+  <caption>Тело делового письма и сообщения.</caption>
+  <thead><tr><th>№</th><th>Фраза</th><th>Пиньинь</th><th>Перевод</th><th>Когда говорят</th></tr></thead>
+  <tbody>
+    <tr><td>41</td><td><b class="han">附件是报价单，请查收</b></td><td>fùjiàn shì bàojiàdān, qǐng cháshōu</td><td>Во вложении прайс, посмотрите, пожалуйста</td><td>стандартная формула про вложение</td></tr>
+    <tr><td>42</td><td><b class="han">收到，谢谢</b></td><td>shōudào, xièxie</td><td>Получил, спасибо</td><td>короткое подтверждение, его ждут</td></tr>
+    <tr><td>43</td><td><b class="han">麻烦您确认一下</b></td><td>máfan nín quèrèn yíxià</td><td>Просьба подтвердить</td><td>мягче, чем «подтвердите»</td></tr>
+    <tr><td>44</td><td><b class="han">请问进展如何</b></td><td>qǐngwèn jìnzhǎn rúhé</td><td>Как продвигается вопрос?</td><td>вежливое напоминание о себе</td></tr>
+    <tr><td>45</td><td><b class="han">上次的报价还有效吗</b></td><td>shàng cì de bàojià hái yǒuxiào ma</td><td>Прежняя цена ещё в силе?</td><td>перед возвращением к паузе в переговорах</td></tr>
+    <tr><td>46</td><td><b class="han">我们这边已经安排好了</b></td><td>wǒmen zhèbiān yǐjīng ānpái hǎo le</td><td>С нашей стороны всё готово</td><td>снимает вопрос, кто кого ждёт</td></tr>
+    <tr><td>47</td><td><b class="han">请在本周内回复</b></td><td>qǐng zài běn zhōu nèi huífù</td><td>Просьба ответить в течение недели</td><td>срок лучше называть, чем подразумевать</td></tr>
+    <tr><td>48</td><td><b class="han">抱歉回复晚了</b></td><td>bàoqiàn huífù wǎn le</td><td>Извините за поздний ответ</td><td>короче и уместнее длинных оправданий</td></tr>
+    <tr><td>49</td><td><b class="han">有问题请随时联系我</b></td><td>yǒu wèntí qǐng suíshí liánxì wǒ</td><td>По вопросам пишите в любое время</td><td>закрывает письмо</td></tr>
+    <tr><td>50</td><td><b class="han">稍后我把细节发给您</b></td><td>shāohòu wǒ bǎ xìjié fā gěi nín</td><td>Детали пришлю чуть позже</td><td>когда нужно ответить сразу, но нечем</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Короткое <b class="han">收到，谢谢</b> недооценивают. В переписке с китайскими партнёрами подтверждение получения ждут, и его отсутствие читается как молчание, а не как «всё в порядке». Две секунды работы снимают лишний звонок.</p>
+
+<h2>Три вещи, <span class="italic">которых лучше не делать</span></h2>
+<div class="table-wrap">
+<table>
+  <caption>Частые промахи с готовыми фразами.</caption>
+  <thead><tr><th>Что не надо</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td class="bad"><b>Учить все пятьдесят разом</b></td><td class="bad">не отработанная вслух реплика в нужный момент не всплывает</td></tr>
+    <tr><td class="bad"><b>Переводить свои фразы дословно с русского</b></td><td class="bad">прямота, нормальная для русского, читается как давление</td></tr>
+    <tr><td class="bad"><b>Ставить фразы без произношения</b></td><td class="bad">с плохими тонами вас переспрашивают, и эффект обратный</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Последнее стоит проверить до первой встречи: акцент в переговорах мешает не эстетически, а буквально. Как ставят тоны и трудные звуки — в статье про <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>, а устная речь проверяется отдельным экзаменом <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK</a>, письменный <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4</a> её не проверяет вообще.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем деловое общение на китайском отличается от обычного?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Не грамматикой, а тремя вещами: отраслевыми словами, обращением по фамилии и должности вместо имени и осторожными формулировками вместо прямых. Прямое «нет» в переговорах звучит как давление, поэтому отказ упаковывают в вежливую формулу. Отдельной «деловой грамматики» не существует, и учить язык заново не придётся — меняется регистр, а не система.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько фраз нужно знать, чтобы провести встречу?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Меньше, чем кажется. Реальная встреча держится на нескольких десятках повторяющихся реплик: поздороваться, представить, переспросить, уточнить условие, возразить, зафиксировать итог. Набор из этой статьи закрывает типовую встречу целиком. Важнее не число фраз, а то, чтобы они произносились не задумываясь: выученная, но не отработанная вслух реплика в нужный момент не всплывает.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как вежливо отказать по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Есть шкала, и стоит понимать, где вы на ней стоите. Мягче всего звучит «мы обсудим это внутри»: отказ есть, но дверь открыта. Дальше идут «так, боюсь, будет неудобно» и «мне нужно доложить руководству». Твёрдое «сейчас мы этого не можем» уже понимают однозначно, а «это условие мы принять не можем» — это прямой отказ, после которого обсуждают другое условие. Резкое «нет» без формулы в переговорах почти не используют.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли учить китайский, если есть переводчик?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, хотя бы на уровне понимания. Переводчик передаст слова точно, но не передаст, что за вежливой формулой стоит отказ, и не заметит, если вы пропустили важную оговорку. Плюс несколько реплик, сказанных самим, заметно меняют отношение к вам на встрече: это читается как уважение к стороне, а не как знание языка.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли выучить эти фразы за неделю?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Прочитать — да, начать пользоваться — нет. Реплика работает, когда она отрепетирована вслух и произносится автоматически, а на это уходит не неделя, а несколько недель регулярной отработки. Практический совет: возьмите пять-шесть фраз под ближайшую встречу, отработайте их до автоматизма и добавляйте остальные порциями, а не все разом.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С какого уровня можно вести переговоры самому?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Понимать переписку и следить за ходом встречи получается примерно с HSK 4. Вести встречу самому — задавать вопросы, уточнять условия, торговаться — ближе к HSK 5, причём с отдельно поставленной устной речью: письменный экзамен её не проверяет вообще. Для устной части существует свой экзамен, HSKK, и готовиться к ней нужно отдельно.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Фразы из списка начинают работать, когда их проговаривают вслух с обратной связью: слышно, где тон уводит смысл и где формула звучит резче, чем вы хотели. Приходите на бесплатное пробное занятие — разберём ваши рабочие ситуации и соберём набор реплик под конкретные переговоры.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>ПЕРЕГОВОРЫ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём формат под задачи вашей команды.</p>
+</div>
+
+<p>Дальше по теме: что учить и какого уровня хватит — <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>; как обратиться в письме — <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">обращение в деловом письме</a>; как себя вести на встрече и банкете — <a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a>; почему отказ звучит именно так — <a href="https://kitai-school.ru/article/kitayskiy-tiket-obscheniya-uvajenie-k-starshim-ierarhiya-i-ponyatie-lica" target="_blank" rel="noopener">китайский этикет общения</a>; обучение команды — <a href="https://kitai-school.ru/article/korporativnyy-kitayskiy-zachem-kompanii-vkladyvautsya-v-obuchenie" target="_blank" rel="noopener">корпоративный китайский</a>; устная речь — <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK</a> и <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>; занятия — <a href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener">индивидуальные уроки</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — подготовка студентов к переговорам с китайскими партнёрами и разбор рабочих ситуаций.</li>
+    <li>Учебные материалы делового китайского, привязанные к уровням HSK.</li>
+    <li>Официальный сайт экзамена chinesetest.cn — требования уровней HSK и устного экзамена HSKK.</li>
+  </ol>
+</div>
+
+<p class="sign">Отрепетируйте пять фраз — и следующая встреча пойдёт иначе. <span class="han">加油！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим к переговорам: отрабатываем реплики вслух, чтобы они звучали, а не читались</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
