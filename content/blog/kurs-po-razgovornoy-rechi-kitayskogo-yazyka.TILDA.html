@@ -1,0 +1,398 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka#article",
+      "headline": "Курс по разговорной речи китайского языка: почему барьер не про уровень и что должно быть в программе",
+      "description": "Почему барьер не про уровень языка, чем тон отличается от акцента, какие фразы нужны в живом разговоре и что должно быть в программе курса по разговорной речи китайского языка.",
+      "datePublished": "2026-09-10",
+      "dateModified": "2026-09-10",
+      "inLanguage": "ru",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka"},
+      "author": {"@id": "https://kitai-school.ru/#yulia"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "about": ["Разговорный китайский", "Языковой барьер", "Тоны и акцент"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia",
+      "name": "Юлия Горяина",
+      "jobTitle": "Китаист, основатель Kitai School",
+      "url": "https://kitai-school.ru/about",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"}
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Лицензированная онлайн-школа китайского языка"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Почему я всё понимаю, но не могу говорить?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Потому что это два разных навыка. Когда вы читаете или слушаете, слово нужно только узнать — оно уже перед вами. В разговоре его нужно достать из памяти самому, и достать за секунду, пока собеседник ждёт. Узнавание растёт от чтения и аудирования, а извлечение — только от говорения. Если вы много читали и мало говорили, разрыв между этими двумя навыками и есть тот самый барьер."}
+        },
+        {
+          "@type": "Question",
+          "name": "Нужно ли стесняться своего акцента?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Акцента — нет, тонов — да, и это разные вещи. Тон в китайском входит в само слово: сказали другим тоном — получилось другое слово, и собеседник честно не понял. Всё остальное — мягкость звуков, ритм, лёгкий русский призвук — акцент, и он никому не мешает. Носители спокойно слушают иностранную речь с акцентом, если тоны на месте. Поэтому силы имеет смысл тратить на тоны, а стесняться акцента не стоит."}
+        },
+        {
+          "@type": "Question",
+          "name": "С какого уровня можно начинать говорить?",
+          "acceptedAnswer": {"@type": "Answer", "text": "С самого первого занятия, и это не фигура речи. Говорить можно на том, что уже знаете: три фразы — значит, разговор из трёх фраз. Ждать «пока накопится словарь» бессмысленно, потому что от накопления словаря навык говорения не появляется. Наоборот: чем позже начать, тем выше становится собственная планка и тем страшнее открыть рот."}
+        },
+        {
+          "@type": "Question",
+          "name": "Помогает ли разговорный клуб без преподавателя?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Помогает, но не заменяет занятия. В клубе вы получаете главное — время говорения и привычку не молчать. Чего там нет: никто не поправит тон и не покажет, что фраза построена не по-китайски, а звучит как русская калька. Разумно сочетать: клуб даёт объём, преподаватель — правку. Клуб вместо занятий закрепляет собственные ошибки, потому что повторять их вы будете уверенно."}
+        },
+        {
+          "@type": "Question",
+          "name": "Что делать, если слово вылетело из головы?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Не искать его. Пока вы вспоминаете, разговор идёт дальше, и пауза давит сильнее, чем неточное слово. Правильная привычка — обойти: сказать «примерно так», описать другими словами, спросить «как это по-китайски». Именно поэтому заготовки учат до автоматизма — они срабатывают в ту секунду, когда думать некогда. Для устного экзамена такие фразы мы собрали отдельно, в разборе HSKK."}
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько нужно времени, чтобы барьер ушёл?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Честный ответ: дело не в сроке, а в том, сколько вы говорите сами и как часто. Барьер уходит не от количества месяцев, а от количества раз, когда вы начали фразу и довели её до конца. Поэтому куда полезнее считать не недели обучения, а свою долю говорения на занятии — и добавлять её любыми способами: парная работа, пересказ одной темы несколько раз, разговор с самим собой вслух."}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Курс по разговорной речи китайского языка: почему барьер не про уровень и что должно быть в программе", "item": "https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Речь и произношение</p>
+<h1>Курс по разговорной речи китайского языка: <span class="italic">почему барьер не про уровень и что должно быть в программе</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-10">10 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/kurs-po-razgovornoy-rechi-kitayskogo-yazyka.png" alt="Пустая реплика в разговоре: слово знакомо, но не достаётся вовремя" width="1200" height="630"></figure>
+
+<p class="passport">Самая частая формулировка на первом занятии звучит так: «Я всё понимаю, а сказать не могу». Обычно человек делает из этого вывод, что <b>не хватает уровня</b>, и идёт учить ещё слов. А дело не в уровне: узнавать слово и доставать его в разговоре — <b>два разных навыка</b>, и растут они от разных занятий.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Барьер — это <b>разрыв между узнаванием и извлечением</b>. Чтение и аудирование растят первое, говорение — второе, и одно другое не заменяет. Второе важное: <b>тон и акцент — разные вещи</b>. Тон входит в слово, и ошибка в нём даёт другое слово; акцент не мешает никому. Поэтому силы тратят на тоны, а акцента не стесняются. В живом разговоре выручают не редкие слова, а <b>десяток заготовок</b>: переспросить, попросить помедленнее, показать, что слушаешь. Говорить можно с первого занятия — на том, что уже знаете.</p>
+</div>
+
+<h2>Почему барьер <span class="italic">не про уровень языка</span></h2>
+<p>Самое обидное в барьере то, что он не связан с объёмом знаний. Человек с HSK 4 может молчать, а человек с тремя сотнями слов — спокойно разговаривать. Разница вот в чём.</p>
+<div class="table-wrap">
+<table>
+  <caption>Два навыка, которые часто путают.</caption>
+  <thead><tr><th>Узнавание</th><th>Извлечение</th></tr></thead>
+  <tbody>
+    <tr><td>слово уже перед вами, нужно его опознать</td><td class="ok">слово нужно достать из памяти самому</td></tr>
+    <tr><td>времени столько, сколько нужно</td><td class="bad">время — секунда, пока собеседник ждёт</td></tr>
+    <tr><td>растёт от чтения и аудирования</td><td class="ok">растёт только от говорения</td></tr>
+    <tr><td>легко проверить тестом</td><td>проверяется только в разговоре</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Отсюда простой вывод: <b>сколько ни добавляй слов, извлечение от этого не вырастет</b>. Оно растёт от количества раз, когда вы начали фразу и довели её до конца. Сколько минут за урок говорите лично вы и как это зависит от формата — посчитано в разборе про <a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku" target="_blank" rel="noopener">групповые занятия</a>; здесь речь о том, что именно тренируется в эти минуты.</p>
+
+<h2>Что говорить, <span class="italic">когда напротив живой человек</span></h2>
+<p>В разговоре выручают не редкие слова, а короткие заготовки — те, что произносятся не думая. Вот двенадцать, которые нужны именно в диалоге.</p>
+<div class="table-wrap">
+<table>
+  <caption>Заготовки для живого диалога.</caption>
+  <thead><tr><th>Фраза</th><th>Пиньинь</th><th>Перевод</th><th>Когда нужна</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">你能再说一遍吗？</b></td><td>nǐ néng zài shuō yí biàn ma</td><td><b>Повторите, пожалуйста</b></td><td>просить повторить — нормально, а не стыдно</td></tr>
+    <tr><td><b class="han">说慢一点儿，好吗？</b></td><td>shuō màn yìdiǎnr, hǎo ma</td><td><b>Помедленнее, пожалуйста</b></td><td>чаще всего дело не в словах, а в скорости</td></tr>
+    <tr><td><b class="han">我不太明白</b></td><td>wǒ bú tài míngbai</td><td><b>Я не совсем понял</b></td><td>честнее, чем кивать и терять нить</td></tr>
+    <tr><td><b class="han">你是说……吗？</b></td><td>nǐ shì shuō… ma</td><td><b>Вы имеете в виду…?</b></td><td>проверить, что поняли правильно</td></tr>
+    <tr><td><b class="han">对对对</b></td><td>duì duì duì</td><td><b>Да-да, точно</b></td><td>показать, что слушаете, не перебивая</td></tr>
+    <tr><td><b class="han">是这样</b></td><td>shì zhèyàng</td><td><b>Вот как</b></td><td>короткая реакция вместо молчания</td></tr>
+    <tr><td><b class="han">真的假的？</b></td><td>zhēn de jiǎ de</td><td><b>Серьёзно?</b></td><td>живая реакция, которую ждут в ответ</td></tr>
+    <tr><td><b class="han">差不多</b></td><td>chàbuduō</td><td><b>Примерно так</b></td><td>когда точное слово не нужно</td></tr>
+    <tr><td><b class="han">反正</b></td><td>fǎnzhèng</td><td><b>В общем</b></td><td>подвести черту, если фраза запуталась</td></tr>
+    <tr><td><b class="han">没事儿</b></td><td>méishìr</td><td><b>Ничего страшного</b></td><td>ответ на извинение и способ снять неловкость</td></tr>
+    <tr><td><b class="han">我先说到这儿</b></td><td>wǒ xiān shuō dào zhèr</td><td><b>На этом пока остановлюсь</b></td><td>закончить мысль, а не оборвать её</td></tr>
+    <tr><td><b class="han">那我们下次聊</b></td><td>nà wǒmen xiàcì liáo</td><td><b>Тогда договорим в другой раз</b></td><td>закрыть разговор спокойно</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Обратите внимание на первые четыре строки. <b>Попросить повторить или сказать медленнее — это нормальная часть разговора</b>, а не признание поражения. Носители делают это между собой постоянно. А вот отдельный набор фраз для устного экзамена — там, где вы говорите один в микрофон и переспрашивать некого, — мы собрали в разборе <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK</a>.</p>
+
+<h2>Тон и акцент — <span class="italic">это разные вещи</span></h2>
+<p>Второй источник страха — «у меня ужасное произношение». Здесь важно разделить две вещи, которые обычно валят в одну кучу.</p>
+<p><b>Тон входит в слово.</b> Скажете другим тоном — получится другое слово, и собеседник честно не поймёт, о чём вы: 妈 mā «мама» и 马 mǎ «лошадь» — это не оттенок, это разные слова. <b>Акцент — всё остальное</b>: мягкость звуков, ритм, лёгкий русский призвук. Он не меняет ни одного слова и не мешает вас понимать.</p>
+<figure class="ks-fig"><img src="assets/kurs-po-razgovornoy-rechi-kitayskogo-yazyka-triazh.png" alt="Что в произношении меняет смысл, что мешает слушать, а что не важно" loading="lazy" width="1200" height="490"><figcaption>Не всё в произношении одинаково важно: смысл меняет только первая колонка.</figcaption></figure>
+<p class="note">Практический вывод: <b>силы имеет смысл тратить на тоны, а акцента стесняться не нужно</b>. Носители спокойно слушают иностранную речь с акцентом — если тоны на месте. Как ставят тоны и звуки, разобрано отдельно в статье про <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>. А почему в самом Китае люди говорят по-разному и что такое путунхуа — в разборе <a href="https://kitai-school.ru/article/kak-razgovarivayut-v-kitae" target="_blank" rel="noopener">как разговаривают в Китае</a>.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ко мне пришёл студент, который два года учил китайский самостоятельно. Читал новости, смотрел сериалы, знал больше слов, чем половина группы. На первом занятии я задала простой вопрос про выходные — и он молчал секунд двадцать.</p>
+  <p>Мы попробовали иначе: я попросила рассказать про эти же выходные, но пользуясь только теми словами, которые придут сразу. Получилось коротко и с ошибками. На следующем занятии он рассказал ту же историю ещё раз, потом ещё. К четвёртому разу она шла без пауз.</p>
+  <p>Ничего нового он за это время не выучил. Просто <b>та часть словаря, которая лежала мёртвым грузом, стала доставаться</b>. Именно поэтому мы просим пересказывать одно и то же по нескольку раз — это выглядит скучно и работает лучше всего.</p>
+</div>
+
+<h2>Что должно быть <span class="italic">в программе разговорного курса</span></h2>
+<p>Пять вещей, которые видно на первом же занятии.</p>
+<div class="table-wrap">
+<table>
+  <caption>Чем отличается рабочая программа.</caption>
+  <thead><tr><th>Пункт</th><th>Как проверить</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Говорите вы, а не преподаватель</b></td><td>объяснения короткие, большую часть урока звучит ваша речь</td></tr>
+    <tr><td><b>Дают заготовки, а не только слова</b></td><td>готовые фразы для переспроса, реакции и паузы отрабатывают до автоматизма</td></tr>
+    <tr><td><b>Тоны правят отдельно</b></td><td>есть время, когда разбирают именно тоны, а не всё сразу вперемешку</td></tr>
+    <tr><td><b>Не перебивают на каждой ошибке</b></td><td>сначала вы договариваете, потом идёт разбор — иначе речь не разгоняется</td></tr>
+    <tr><td><b>Одну тему проходят по нескольку раз</b></td><td>тот же рассказ повторяют, пока он не пойдёт без пауз</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И признак, по которому программа отсеивается сразу: <b>если весь урок вы слушаете объяснения на русском</b>. Разговорный курс, где говорит преподаватель, — это лекция о языке. Полезная, но барьер она не снимет. Про форматы и про то, где ваша доля речи больше, — в разборе <a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku" target="_blank" rel="noopener">групповые занятия</a>; общая картина обучения взрослых — в статье про <a href="https://kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh" target="_blank" rel="noopener">курсы китайского для взрослых</a>.</p>
+
+<h2>Что можно делать <span class="italic">самому между занятиями</span></h2>
+<p>Всё перечисленное не требует собеседника и делается по дороге.</p>
+<div class="table-wrap">
+<table>
+  <caption>Четыре привычки, которые работают без преподавателя.</caption>
+  <thead><tr><th>Что делать</th><th>Зачем это работает</th></tr></thead>
+  <tbody>
+    <tr><td><b>Рассказывать вслух то, что уже умеете</b></td><td>тренируется извлечение, а не запоминание нового</td></tr>
+    <tr><td><b>Повторять одну историю несколько раз</b></td><td>с каждым разом пауз меньше, а фраза собирается быстрее</td></tr>
+    <tr><td><b>Записывать себя и слушать</b></td><td>со стороны слышно и тоны, и лишние паузы — то, что изнутри не заметно</td></tr>
+    <tr><td><b>Не искать забытое слово, а обходить его</b></td><td>это и есть главный разговорный навык, и он тренируется отдельно</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Отдельно про разговорные клубы: они дают то, чего часто не хватает, — <b>объём говорения</b>. Но там некому поправить тон и показать, что фраза построена как русская калька. Разумно сочетать: клуб для объёма, занятия для правки. Клуб вместо занятий закрепляет собственные ошибки, потому что повторяете вы их уверенно.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему я всё понимаю, но не могу говорить?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что это два разных навыка. Когда вы читаете или слушаете, слово нужно только узнать — оно уже перед вами. В разговоре его нужно достать из памяти самому, и достать за секунду, пока собеседник ждёт. Узнавание растёт от чтения и аудирования, а извлечение — только от говорения. Если вы много читали и мало говорили, разрыв между этими двумя навыками и есть тот самый барьер.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли стесняться своего акцента?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Акцента — нет, тонов — да, и это разные вещи. Тон в китайском входит в само слово: сказали другим тоном — получилось другое слово, и собеседник честно не понял. Всё остальное — мягкость звуков, ритм, лёгкий русский призвук — акцент, и он никому не мешает. Носители спокойно слушают иностранную речь с акцентом, если тоны на месте. Поэтому силы имеет смысл тратить на тоны, а стесняться акцента не стоит.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С какого уровня можно начинать говорить?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>С самого первого занятия, и это не фигура речи. Говорить можно на том, что уже знаете: три фразы — значит, разговор из трёх фраз. Ждать «пока накопится словарь» бессмысленно, потому что от накопления словаря навык говорения не появляется. Наоборот: чем позже начать, тем выше становится собственная планка и тем страшнее открыть рот.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Помогает ли разговорный клуб без преподавателя?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Помогает, но не заменяет занятия. В клубе вы получаете главное — время говорения и привычку не молчать. Чего там нет: никто не поправит тон и не покажет, что фраза построена не по-китайски, а звучит как русская калька. Разумно сочетать: клуб даёт объём, преподаватель — правку. Клуб вместо занятий закрепляет собственные ошибки, потому что повторять их вы будете уверенно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что делать, если слово вылетело из головы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Не искать его. Пока вы вспоминаете, разговор идёт дальше, и пауза давит сильнее, чем неточное слово. Правильная привычка — обойти: сказать «примерно так», описать другими словами, спросить «как это по-китайски». Именно поэтому заготовки учат до автоматизма — они срабатывают в ту секунду, когда думать некогда. Для устного экзамена такие фразы мы собрали отдельно, в разборе HSKK.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько нужно времени, чтобы барьер ушёл?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Честный ответ: дело не в сроке, а в том, сколько вы говорите сами и как часто. Барьер уходит не от количества месяцев, а от количества раз, когда вы начали фразу и довели её до конца. Поэтому куда полезнее считать не недели обучения, а свою долю говорения на занятии — и добавлять её любыми способами: парная работа, пересказ одной темы несколько раз, разговор с самим собой вслух.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>На пробном занятии мы не проверяем ваш уровень тестом — мы просто разговариваем и смотрим, где именно останавливается речь. Приходите: покажем, с чего начать, и дадим первые заготовки, которые работают сразу.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>РАЗГОВОР</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём формат под вашу задачу.</p>
+</div>
+
+<p>Дальше по теме: как ставят тоны и звуки — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>; сколько вы говорите на уроке — <a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku" target="_blank" rel="noopener">групповые занятия</a>; устный экзамен — <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK</a>; в каком порядке идут этапы — <a href="https://kitai-school.ru/article/etapy-izucheniya-kitayskogo-yazyka" target="_blank" rel="noopener">этапы изучения китайского</a>; с чего начинают взрослые — <a href="https://kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh" target="_blank" rel="noopener">курсы китайского для взрослых</a>; старт с нуля — <a href="https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya" target="_blank" rel="noopener">изучение китайского с нуля</a>; что действительно трудно — <a href="https://kitai-school.ru/article/slozhno-li-uchit-kitajskij-s-nulya" target="_blank" rel="noopener">сложно ли учить с нуля</a>; порядок слов — <a href="https://kitai-school.ru/article/kurs-po-grammatike-kitayskogo-yazyka" target="_blank" rel="noopener">курс по грамматике</a>; занятия — <a href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener">индивидуальные уроки</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — работа с языковым барьером у взрослых студентов, разговорные занятия и правка тонов.</li>
+    <li>Официальный сайт экзамена chinesetest.cn — требования устного экзамена HSKK и уровней HSK.</li>
+    <li>Учебные материалы по путунхуа — система тонов и их роль в различении слов.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть фраза доходит до конца! <span class="han">大胆说！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Даём говорить самим: заготовки, повторы одной темы и правка тонов отдельно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
