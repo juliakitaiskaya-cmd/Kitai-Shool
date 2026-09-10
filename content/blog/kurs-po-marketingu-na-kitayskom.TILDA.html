@@ -1,0 +1,442 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kurs-po-marketingu-na-kitayskom#article",
+      "headline": "Курс по маркетингу на китайском языке: площадки, термины и что должно быть в программе",
+      "description": "Как распределены роли между китайскими площадками, какие маркетинговые слова не переводятся на русский, что смотрят в отчёте по рекламе и что должно быть в программе курса для маркетолога.",
+      "datePublished": "2026-09-10",
+      "dateModified": "2026-09-10",
+      "inLanguage": "ru",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kitai-school.ru/article/kurs-po-marketingu-na-kitayskom"},
+      "author": {"@id": "https://kitai-school.ru/#yulia"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "about": ["Китайский для маркетинга", "Китайские интернет-площадки", "Лексика продвижения"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia",
+      "name": "Юлия Горяина",
+      "jobTitle": "Китаист, основатель Kitai School",
+      "url": "https://kitai-school.ru/about",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"}
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Лицензированная онлайн-школа китайского языка"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kurs-po-marketingu-na-kitayskom#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Чем курс по маркетингу на китайском отличается от делового китайского?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Задачей. Деловой курс готовит к разговору: познакомиться, обсудить условия, договориться. Маркетологу разговор нужен реже, чем чтение: посты на площадке, карточка товара, отчёт подрядчика, комментарии под публикацией. Поэтому программа строится вокруг чтения живых материалов и вокруг словаря площадок, а не вокруг диалогов. Устная часть при этом остаётся, но обслуживает работу с текстами, а не наоборот."}
+        },
+        {
+          "@type": "Question",
+          "name": "Научит ли такой курс продвижению в китайских соцсетях?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Нет, и это стоит сказать прямо. Курс языка даёт словарь рынка и умение читать площадку: что написано в посте, что спрашивают в комментариях, что стоит в строке отчёта. Стратегия продвижения — отдельная профессия, и учат ей не на языковых курсах. Если курс китайского обещает научить маркетингу, это повод задать уточняющие вопросы: скорее всего, ни того ни другого там не будет в нужном объёме."}
+        },
+        {
+          "@type": "Question",
+          "name": "Почему нельзя просто перевести китайские маркетинговые термины?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Потому что переводить в них нечего: это названия явлений, а не слова с русским соответствием. 种草 дословно значит «посадить траву», но обозначает ситуацию, когда чужая рекомендация вызвала желание купить. 私域 — «частная территория», а на деле это аудитория, с которой бренд связывается сам, без посредника. Машинный перевод даёт буквальный смысл, и получается совсем другое. Такие слова учат через явление: сначала разбирают, что происходит на рынке, потом дают термин."}
+        },
+        {
+          "@type": "Question",
+          "name": "Какой уровень китайского нужен маркетологу?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Для чтения площадок и отчётов хватает уверенного среднего уровня плюс отраслевого словаря: тексты повторяются, и словарь у них узкий. Сложность не в грамматике, а в сленге и сокращениях, которых нет в учебниках. Чтобы вести встречи и обсуждать работу голосом, нужен уровень выше и отдельно поставленная речь. Разумный порядок такой: сначала чтение и словарь, потом устная часть."}
+        },
+        {
+          "@type": "Question",
+          "name": "Нужно ли учить иероглифы, если браузер переводит страницу?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Нужно, но не в том объёме, о котором обычно думают. Писать от руки маркетологу не приходится, а вот узнавать знаки в интерфейсе, в названии раздела и в строке отчёта — приходится постоянно. Автоперевод при этом искажает как раз то, что важнее всего: подписи кнопок, сокращения и термины площадок. Так что задача не «выучить тысячи знаков», а уверенно узнавать рабочий набор."}
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько терминов нужно, чтобы начать читать площадки?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Меньше, чем кажется. Основа держится на нескольких десятках слов: названия площадок, словарь рекламного кабинета и десяток понятий вроде тех, что разобраны выше. Их проходят за несколько занятий. Дольше нарабатывается не словарь, а скорость чтения и привычка смотреть в комментарии, а не только в официальный текст бренда."}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kurs-po-marketingu-na-kitayskom#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Курс по маркетингу на китайском языке: площадки, термины и что должно быть в программе", "item": "https://kitai-school.ru/article/kurs-po-marketingu-na-kitayskom"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Китайский для работы и бизнеса</p>
+<h1>Курс по маркетингу на китайском языке: <span class="italic">площадки, термины и что должно быть в программе</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-10">10 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/kurs-po-marketingu-na-kitayskom.png" alt="Термин 种草: дословный перевод и то, что он значит на самом деле" width="1200" height="630"></figure>
+
+<p class="passport">Курсы делового китайского готовят к переговорам. Маркетологу переговоры нужны реже, чем другое — <b>читать рынок самому</b>: посты на площадке, карточку товара, отчёт подрядчика и комментарии под публикацией. И здесь выясняется неприятное: заметная часть смысла держится на словах, у которых нет русского перевода, а машинный перевод передаёт их буквально, и получается другой смысл.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Маркетологу китайский нужен, <b>чтобы читать рынок, а не только говорить с подрядчиком</b>. Роли между площадками распределены не так, как привычно: на одной ищут чужой опыт перед покупкой, на другой смотрят эфиры, третья нужна для прямого общения с покупателем. Часть терминов не переводится вообще: это <b>названия явлений</b>, и учить их надо через явление. А про сам курс честно: он даёт язык рынка, <b>а не стратегию продвижения</b> — это разные предметы, и обещать оба сразу нечестно.</p>
+</div>
+
+<h2>Чем язык маркетолога <span class="italic">отличается от делового китайского</span></h2>
+<p>Разница не в словах, а в том, что вы с языком делаете. Отсюда и разные программы.</p>
+<div class="table-wrap">
+<table>
+  <caption>Две разные задачи.</caption>
+  <thead><tr><th>Деловой курс</th><th>Курс для маркетолога</th></tr></thead>
+  <tbody>
+    <tr><td>вести переговоры, знакомиться, договариваться</td><td class="ok">читать площадки: посты, карточки товара, комментарии</td></tr>
+    <tr><td>ключевой навык — устная речь</td><td class="ok">ключевой навык — быстрое чтение и понимание сокращений</td></tr>
+    <tr><td>лексика широкая</td><td>лексика узкая, но своя: у площадок и у рекламы отдельный словарь</td></tr>
+    <tr><td>ошибка стоит неловкости</td><td class="bad">ошибка стоит неверного вывода о рынке</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Это не значит, что говорить не придётся: встречи с подрядчиком и блогерами никуда не деваются. Но там вам поможет и переводчик, а вот прочитать за вас все комментарии под публикацией он не сможет. Общая картина делового китайского — какие блоки лексики и какого уровня хватает под разные задачи — разобрана в статье про <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>, готовые реплики для встреч собраны в разборе <a href="https://kitai-school.ru/article/kitayskiy-dlya-delovogo-obshcheniya" target="_blank" rel="noopener">китайский для делового общения</a>.</p>
+
+<h2>Слова, у которых <span class="italic">нет русского перевода</span></h2>
+<p>Это главная особенность темы. В деловом китайском слова переводятся точно, а расходится <em>смысл</em> сказанного. Здесь иначе: переводить попросту нечего — перед вами <b>названия явлений</b>, которых в русском маркетинге не сложилось.</p>
+<div class="table-wrap">
+<table>
+  <caption>Термины, которые не переводятся словарём.</caption>
+  <thead><tr><th>Термин</th><th>Пиньинь</th><th>Дословно</th><th>Что это на рынке</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">种草</b></td><td>zhòngcǎo</td><td><b>посадить траву</b></td><td>вызвать желание купить через чужую рекомендацию</td></tr>
+    <tr><td><b class="han">拔草</b></td><td>bácǎo</td><td><b>выполоть траву</b></td><td>закрыть это желание: либо купить, либо передумать</td></tr>
+    <tr><td><b class="han">私域</b></td><td>sīyù</td><td><b>частная территория</b></td><td>аудитория, с которой бренд связывается напрямую, без площадки</td></tr>
+    <tr><td><b class="han">公域</b></td><td>gōngyù</td><td><b>общая территория</b></td><td>аудитория самой площадки: доступ к ней покупают</td></tr>
+    <tr><td><b class="han">爆款</b></td><td>bàokuǎn</td><td><b>взрывной товар</b></td><td>товар, который вдруг стал массово популярным</td></tr>
+    <tr><td><b class="han">带货</b></td><td>dàihuò</td><td><b>нести товар</b></td><td>продажа через блогера, чаще всего в прямом эфире</td></tr>
+    <tr><td><b class="han">达人</b></td><td>dárén</td><td><b>мастер</b></td><td>блогер, которого слушают как знатока своей темы</td></tr>
+    <tr><td><b class="han">口碑</b></td><td>kǒubēi</td><td><b>молва</b></td><td>что о товаре говорят сами покупатели</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Посмотрите на первую строку. <b class="han">种草</b> дословно — «посадить траву», и машинный перевод именно так и напишет. А обозначает это ситуацию, знакомую каждому: вы увидели чужой отзыв, и вам захотелось это купить. Пока термин переводят словарём, читать рынок невозможно — поэтому такие слова разбирают <b>через явление, а не через перевод</b>: сначала что происходит, потом как это называется.</p>
+
+<h2>Площадки: <span class="italic">у каждой своя роль</span></h2>
+<p>Вторая вещь, которая расходится с привычными ожиданиями. Китайские площадки — не «их версии» знакомых сервисов: люди приходят на них с разными задачами, и текст на каждой устроен по-своему.</p>
+<div class="table-wrap">
+<table>
+  <caption>Площадки и задачи, с которыми на них приходят.</caption>
+  <thead><tr><th>Площадка</th><th>Пиньинь</th><th>Как называют</th><th>Зачем туда идут</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">小红书</b></td><td>xiǎohóngshū</td><td><b>Сяохуншу</b></td><td>идут за чужим опытом перед покупкой: отзывы, разборы, находки</td></tr>
+    <tr><td><b class="han">抖音</b></td><td>dǒuyīn</td><td><b>Доуинь</b></td><td>короткие видео и прямые эфиры, где товар показывают и тут же продают</td></tr>
+    <tr><td><b class="han">淘宝 / 天猫</b></td><td>táobǎo / tiānmāo</td><td><b>Таобао и Тмолл</b></td><td>торговые площадки: карточка товара, цена, отзывы, сама покупка</td></tr>
+    <tr><td><b class="han">微信</b></td><td>wēixìn</td><td><b>Вичат</b></td><td>мессенджер и целая среда вокруг него: аккаунт бренда, мини-приложение, рассылка</td></tr>
+    <tr><td><b class="han">微博</b></td><td>wēibó</td><td><b>Вэйбо</b></td><td>открытая лента: новости, инфоповоды, публичное обсуждение брендов</td></tr>
+    <tr><td><b class="han">哔哩哔哩</b></td><td>bìlībìlī</td><td><b>Бильбили</b></td><td>длинные видео и подробные обзоры, аудитория заметно моложе</td></tr>
+  </tbody>
+</table>
+</div>
+<figure class="ks-fig"><img src="assets/kurs-po-marketingu-na-kitayskom-ploshchadki.png" alt="Роли китайских площадок: где узнают о товаре, где смотрят эфир, где покупают и куда возвращаются" loading="lazy" width="1200" height="560"><figcaption>Типичный путь покупателя проходит через несколько площадок, и на каждой у него своя задача.</figcaption></figure>
+<p class="note">Оговорка, без которой схема выше будет неточной: <b>роли пересекаются и меняются</b>. Купить можно прямо в эфире, отзывы есть везде, а площадки регулярно добавляют себе чужие функции. Схема показывает не закон, а частый порядок — и именно поэтому названия и роли стоит перепроверять на текущий год, а не заучивать однажды.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>К нам пришла команда бренда, который уже год работал с китайским подрядчиком по продвижению. Отчёты приходили на английском, встречи шли через переводчика, всё выглядело понятно. Учить язык они собирались «когда-нибудь потом».</p>
+  <p>Разбирать начали с простого: открыли комментарии под их собственными публикациями. Там обсуждали не то, что было в отчёте. Людей волновал один повторяющийся вопрос о товаре — и в отчёт он не попадал, потому что в отчёте были другие строки.</p>
+  <p>Программу мы им собрали узкую: <b>словарь площадок, строки отчёта и чтение комментариев</b>. Через несколько месяцев маркетолог читал обсуждение сам и приходил к подрядчику с конкретными вопросами. Работу подрядчика это не заменило — но разговор с ним стал предметным.</p>
+</div>
+
+<h2>Что смотрят в отчёте: <span class="italic">язык рекламного кабинета</span></h2>
+<p>Второй рабочий словарь — тот, на котором написан отчёт. Слов немного, и они повторяются от площадки к площадке.</p>
+<div class="table-wrap">
+<table>
+  <caption>Слова, из которых состоит отчёт.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Перевод</th><th>Что за ним стоит</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">曝光</b></td><td>pùguāng</td><td><b>Показы</b></td><td>сколько раз объявление или пост показали</td></tr>
+    <tr><td><b class="han">点击率</b></td><td>diǎnjīlǜ</td><td><b>Доля кликов</b></td><td>сколько человек из увидевших нажали</td></tr>
+    <tr><td><b class="han">转化率</b></td><td>zhuǎnhuàlǜ</td><td><b>Конверсия</b></td><td>сколько из пришедших сделали то, ради чего всё затевалось</td></tr>
+    <tr><td><b class="han">客单价</b></td><td>kèdānjià</td><td><b>Средний чек</b></td><td>сколько в среднем оставляет один покупатель</td></tr>
+    <tr><td><b class="han">复购</b></td><td>fùgòu</td><td><b>Повторная покупка</b></td><td>вернулся ли покупатель за вторым заказом</td></tr>
+    <tr><td><b class="han">粉丝</b></td><td>fěnsī</td><td><b>Подписчики</b></td><td>те, кто подписан на аккаунт бренда или блогера</td></tr>
+    <tr><td><b class="han">投放</b></td><td>tóufàng</td><td><b>Размещение</b></td><td>запуск рекламы на площадке за деньги</td></tr>
+    <tr><td><b class="han">引流</b></td><td>yǐnliú</td><td><b>Перевод аудитории</b></td><td>увести людей с площадки туда, где бренд общается с ними сам</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Отдельно стоит пара <b class="han">公域</b> и <b class="han">私域</b> из таблицы выше: за доступ к аудитории площадки платят каждый раз, а с собственной аудиторией бренд связывается сам. Термин <b class="han">引流</b> как раз про переход между ними — увести человека из общей ленты туда, где с ним можно говорить напрямую. Разобравшись в этих трёх словах, вы понимаете, как устроена логика китайского отчёта.</p>
+
+<h2>Где чаще всего <span class="italic">ошибаются</span></h2>
+<p>Три места, и ни одно из них не про плохое знание грамматики.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что проверять в своей работе.</caption>
+  <thead><tr><th>Где</th><th>Что происходит</th><th>Что делать</th></tr></thead>
+  <tbody>
+    <tr><td class="bad"><b>Машинный перевод терминов</b></td><td>слово переводится буквально, и получается другой смысл</td><td>разбирать термин как явление рынка, а не искать русское соответствие</td></tr>
+    <tr><td class="bad"><b>Перенос привычек</b></td><td>китайскую площадку считают аналогом знакомой и ждут того же поведения</td><td>смотреть, <b>зачем</b> на неё приходят люди, а не на что она похожа</td></tr>
+    <tr><td class="bad"><b>Чтение только своих текстов</b></td><td>официальные посты бренда читают, обсуждение под ними — нет</td><td>включить комментарии в работу: там прямая реакция, сленг и сокращения</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Общее у всех трёх одно: <b>рынок читают через посредника и получают его картину, а не свою</b>. Посредник при этом может быть отличным — но он отвечает на те вопросы, которые ему задали. Вопросы задаёте вы, и для этого нужно видеть исходный текст.</p>
+
+<h2>Произношение и иероглифика: <span class="italic">сколько их нужно маркетологу</span></h2>
+<p>Обещание «поставим произношение и иероглифику» звучит в описании почти любого курса, поэтому стоит сказать, что из этого действительно нужно в работе.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что нужно в работе, а что — в меньшей степени.</caption>
+  <thead><tr><th>Навык</th><th>Зачем он маркетологу</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Узнавать знаки в интерфейсе</b></td><td>названия разделов, подписи кнопок, строки отчёта — их автоперевод искажает чаще всего</td></tr>
+    <tr><td class="ok"><b>Читать быстро</b></td><td>комментарии и посты читают десятками, здесь важнее скорость, а не глубина разбора</td></tr>
+    <tr><td><b>Произносить названия верно</b></td><td>площадки и бренды приходится называть вслух на встречах, а тон меняет слово</td></tr>
+    <tr><td><b>Писать знаки от руки</b></td><td>в этой работе почти не встречается: набирают с клавиатуры по звучанию</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Если нужен именно этот навык отдельно, у нас есть два подробных разбора: как устроен знак и на что смотреть в программе — <a href="https://kitai-school.ru/article/kursy-po-ieroglifike-kak-vybrat-programmu" target="_blank" rel="noopener">курсы по иероглифике</a>; как ставят тоны и звуки — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>. Здесь повторять их не будем.</p>
+
+<h2>Что должно быть в программе: <span class="italic">пять пунктов</span></h2>
+<p>Всё это спрашивается до оплаты и проверяется на первом занятии.</p>
+<div class="table-wrap">
+<table>
+  <caption>Чем отличается рабочая программа.</caption>
+  <thead><tr><th>Пункт</th><th>Как проверить</th></tr></thead>
+  <tbody>
+    <tr><td><b>Занимаются на живых материалах</b></td><td>посты, карточки товара, комментарии — а не учебные тексты про абстрактную фирму</td></tr>
+    <tr><td class="ok"><b>Термины дают через явление</b></td><td>сначала разбирают, что происходит на рынке, потом называют слово</td></tr>
+    <tr><td><b>Учат читать интерфейс и отчёт</b></td><td>разделы кабинета, подписи кнопок, строки отчёта — то, что машинный перевод передаёт хуже всего</td></tr>
+    <tr><td><b>Отдельно берут комментарии</b></td><td>там сокращения и сленг, которых нет ни в одном учебнике</td></tr>
+    <tr><td><b>Дают шаблоны переписки под задачи</b></td><td>бриф блогеру, правки, сроки, согласование материала</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И признак, по которому программа отсеивается сразу: <b>если курс языка обещает научить продвижению</b> — в китайских соцсетях, у блогеров, где угодно. Это разные предметы. Честная формулировка звучит скучнее: даём язык рынка, а стратегию берите у маркетологов. Про уровни: чтение площадок и отчётов тянут примерно с <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4</a>, а на встречи нужна отдельно поставленная речь и <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK</a>. Если учится команда, форматы разобраны в статье про <a href="https://kitai-school.ru/article/korporativnyy-kitayskiy-zachem-kompanii-vkladyvautsya-v-obuchenie" target="_blank" rel="noopener">корпоративный китайский</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем курс по маркетингу на китайском отличается от делового китайского?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Задачей. Деловой курс готовит к разговору: познакомиться, обсудить условия, договориться. Маркетологу разговор нужен реже, чем чтение: посты на площадке, карточка товара, отчёт подрядчика, комментарии под публикацией. Поэтому программа строится вокруг чтения живых материалов и вокруг словаря площадок, а не вокруг диалогов. Устная часть при этом остаётся, но обслуживает работу с текстами, а не наоборот.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Научит ли такой курс продвижению в китайских соцсетях?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и это стоит сказать прямо. Курс языка даёт словарь рынка и умение читать площадку: что написано в посте, что спрашивают в комментариях, что стоит в строке отчёта. Стратегия продвижения — отдельная профессия, и учат ей не на языковых курсах. Если курс китайского обещает научить маркетингу, это повод задать уточняющие вопросы: скорее всего, ни того ни другого там не будет в нужном объёме.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему нельзя просто перевести китайские маркетинговые термины?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что переводить в них нечего: это названия явлений, а не слова с русским соответствием. 种草 дословно значит «посадить траву», но обозначает ситуацию, когда чужая рекомендация вызвала желание купить. 私域 — «частная территория», а на деле это аудитория, с которой бренд связывается сам, без посредника. Машинный перевод даёт буквальный смысл, и получается совсем другое. Такие слова учат через явление: сначала разбирают, что происходит на рынке, потом дают термин.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой уровень китайского нужен маркетологу?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Для чтения площадок и отчётов хватает уверенного среднего уровня плюс отраслевого словаря: тексты повторяются, и словарь у них узкий. Сложность не в грамматике, а в сленге и сокращениях, которых нет в учебниках. Чтобы вести встречи и обсуждать работу голосом, нужен уровень выше и отдельно поставленная речь. Разумный порядок такой: сначала чтение и словарь, потом устная часть.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли учить иероглифы, если браузер переводит страницу?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нужно, но не в том объёме, о котором обычно думают. Писать от руки маркетологу не приходится, а вот узнавать знаки в интерфейсе, в названии раздела и в строке отчёта — приходится постоянно. Автоперевод при этом искажает как раз то, что важнее всего: подписи кнопок, сокращения и термины площадок. Так что задача не «выучить тысячи знаков», а уверенно узнавать рабочий набор.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько терминов нужно, чтобы начать читать площадки?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Меньше, чем кажется. Основа держится на нескольких десятках слов: названия площадок, словарь рекламного кабинета и десяток понятий вроде тех, что разобраны выше. Их проходят за несколько занятий. Дольше нарабатывается не словарь, а скорость чтения и привычка смотреть в комментарии, а не только в официальный текст бренда.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Мы собираем такие программы под конкретную задачу: берём ваши площадки, ваши посты и ваши отчёты и разбираем словарь на них. Приходите на бесплатное пробное занятие — посмотрим, с какими материалами вы работаете, и покажем, с чего начать.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>МАРКЕТИНГ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — рассчитаем формат под вашу команду.</p>
+</div>
+
+<p>Дальше по теме: что учить и какого уровня хватит — <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>; готовые реплики для встреч и переписки — <a href="https://kitai-school.ru/article/kitayskiy-dlya-delovogo-obshcheniya" target="_blank" rel="noopener">китайский для делового общения</a>; обращение в письме — <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">деловое письмо китайскому партнёру</a>; поведение на переговорах — <a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a>; обучение команды — <a href="https://kitai-school.ru/article/korporativnyy-kitayskiy-zachem-kompanii-vkladyvautsya-v-obuchenie" target="_blank" rel="noopener">корпоративный китайский</a>; язык поставки и документов — <a href="https://kitai-school.ru/article/kurs-po-logistike-na-kitayskom" target="_blank" rel="noopener">курс по логистике</a>; работа с китайскими компаниями — <a href="https://kitai-school.ru/article/rabota-v-kitae-dlya-inostranca" target="_blank" rel="noopener">работа в Китае для иностранца</a>; знаки — <a href="https://kitai-school.ru/article/kursy-po-ieroglifike-kak-vybrat-programmu" target="_blank" rel="noopener">курсы по иероглифике</a>; тоны и звуки — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>; занятия — <a href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener">индивидуальные уроки</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — обучение маркетологов и отделов продвижения, разбор материалов китайских площадок.</li>
+    <li>Официальные справочные разделы самих площадок — названия разделов и показателей рекламного кабинета; проверяются по действующей версии интерфейса.</li>
+    <li>Официальный сайт экзамена chinesetest.cn — требования уровней HSK и устного экзамена HSKK.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть рынок читается без переводчика! <span class="han">祝推广顺利！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Учим читать китайские площадки: посты, карточки товара, отчёты и комментарии</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
