@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Технический китайский язык: что читать и как писать ТЗ, чтобы завод не додумал</title>
+<meta name="description" content="Технический китайский язык нужен там, где документацию писали не для вас: инструкция, чертёж и спецификация составляются для китайского наладчика. Разбираем три типа документов, слова, в которых «примерно» не работает, что означают пометки GB и GB/T и как составить техническое задание, чтобы завод не решил за вас то, что вы не указали.">
+<link rel="canonical" href="https://kitai-school.ru/article/tehnicheskiy-kitayskiy-yazyk">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Технический китайский язык: что читать и как писать ТЗ, чтобы завод не додумал">
+<meta property="og:description" content="Три типа технических документов, слова, в которых «примерно» не работает, что означают GB и GB/T и как составить техническое задание для китайского завода.">
+<meta property="og:url" content="https://kitai-school.ru/article/tehnicheskiy-kitayskiy-yazyk">
+<meta property="og:site_name" content="Kitai School">
+<meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2026-09-11">
+<meta property="article:author" content="Юлия Горяина">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Технический китайский язык: что читать и как писать ТЗ, чтобы завод не додумал">
+<meta name="twitter:description" content="Три типа технических документов, слова, в которых «примерно» не работает, что означают GB и GB/T и как составить техническое задание для китайского завода.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/tehnicheskiy-kitayskiy-yazyk#article",
+      "headline": "Технический китайский язык: что читать и как писать ТЗ, чтобы завод не додумал",
+      "description": "Три типа технических документов, слова, в которых «примерно» не работает, что означают GB и GB/T и как составить техническое задание для китайского завода.",
+      "datePublished": "2026-09-11",
+      "dateModified": "2026-09-11",
+      "inLanguage": "ru",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kitai-school.ru/article/tehnicheskiy-kitayskiy-yazyk"},
+      "author": {"@id": "https://kitai-school.ru/#yulia"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "about": ["Технический китайский язык", "Техническая документация", "Стандарты GB"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia",
+      "name": "Юлия Горяина",
+      "jobTitle": "Китаист, основатель Kitai School",
+      "url": "https://kitai-school.ru/about",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"}
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Лицензированная онлайн-школа китайского языка"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/tehnicheskiy-kitayskiy-yazyk#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Разве инженеру не хватает английского?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Внутри китайской компании — часто хватает, и мы про это писали в статье о работе в Китае. Но здесь ситуация другая: вы находитесь по эту сторону и получаете документы, которые завод писал для себя. Инструкцию к станку, чертёж и спецификацию на английский переводят выборочно, а то и машинно, и именно в переведённой части чаще всего теряются допуски, материал и условия гарантии. Английский помогает договориться, а читать приходится оригинал."}
+        },
+        {
+          "@type": "Question",
+          "name": "Что означают пометки GB и GB/T?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Это китайские национальные стандарты, 国标. Разница в одной букве и она принципиальная: GB — обязательный стандарт, GB/T — рекомендательный. Кроме национальных есть отраслевые и стандарты самого предприятия. Практический вывод простой: если в задании не назван конкретный стандарт, завод вправе применить собственный, и он может оказаться мягче того, что вы имели в виду."}
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли просто потребовать «по ГОСТу»?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Само по себе — нет. ГОСТ и GB это разные системы, и автоматического соответствия между ними не существует. Требование «по ГОСТу» китайский завод либо проигнорирует, либо поймёт по-своему. Работает другое: перевести требование в конкретные параметры — материал, допуск, класс точности, обработку поверхности — и записать их числами в задании."}
+        },
+        {
+          "@type": "Question",
+          "name": "Какой уровень языка нужен для технической документации?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Для чтения — уверенный средний плюс отраслевой словарь, и это выполнимее, чем кажется: техническая документация написана короткими шаблонными формулировками, а словарь у неё узкий и повторяется. Сложность не в грамматике, а в том, что одно слово в разных отраслях значит разное. Для устного общения с наладчиком и на приёмке нужен уровень выше и отдельно поставленная речь."}
+        },
+        {
+          "@type": "Question",
+          "name": "Что будет, если не указать что-то в задании?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Завод примет решение сам, и обычно в свою пользу: поставит материал попроще, применит собственный допуск, выберет более дешёвую обработку поверхности. Это не обман — так устроено производство: непроставленное считается несущественным. Поэтому техническое задание проверяют не по тому, что в нём написано, а по тому, чего в нём не хватает."}
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько терминов нужно, чтобы начать читать документацию?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Основа умещается в несколько десятков слов: названия документов, параметры, стадии производства и приёмка. Они повторяются в каждом заказе, поэтому набираются за несколько занятий. Дальше растёт скорость чтения, а самое долгое — привычка искать в документе не то, что написано, а то, чего в нём нет."}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/tehnicheskiy-kitayskiy-yazyk#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Технический китайский язык: что читать и как писать ТЗ, чтобы завод не додумал", "item": "https://kitai-school.ru/article/tehnicheskiy-kitayskiy-yazyk"}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+</head>
+<body>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Китайский для работы и бизнеса</p>
+<h1>Технический китайский язык: <span class="italic">что читать и как писать ТЗ, чтобы завод не додумал</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-11">11 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/tehnicheskiy-kitayskiy-yazyk.png" alt="Строка допуска в китайской таблице параметров: место, где «примерно» не работает" width="1200" height="630"></figure>
+
+<p class="passport">Главная особенность технической документации в том, что <b>её писали не для вас</b>. Инструкция к станку составлена для наладчика, который и так знает изделие; чертёж рассчитан на инженера, читающего по-китайски. Отсюда и требование к языку: нужно не объясняться, а <b>читать документ, который никто не собирался упрощать</b>.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Читать придётся <b>три типа документов</b>: инструкцию, чертёж и спецификацию — причём в чертеже смысла не меньше, чем в тексте. Второе: в технике <b>«примерно» не работает</b>, и дороже всего обходится строка с допуском. Третье: пометки <b>GB и GB/T</b> различаются принципиально — первая обязательная, вторая рекомендательная. И главное: <b>завод делает ровно то, что записано</b>. Всё, что вы не указали в задании, он решит сам — обычно проще и дешевле.</p>
+</div>
+
+<h2>Чем технический китайский <span class="italic">отличается от делового</span></h2>
+<p>Разница не в сложности слов, а в том, с чем вы имеете дело. Отсюда и разные программы.</p>
+<div class="table-wrap">
+<table>
+  <caption>Две разные задачи.</caption>
+  <thead><tr><th>Деловой курс</th><th>Технический курс</th></tr></thead>
+  <tbody>
+    <tr><td>переговоры, условия, договорённости</td><td class="ok">документация, параметры, приёмка</td></tr>
+    <tr><td>тексты пишутся для вас как для партнёра</td><td class="bad">тексты написаны для внутреннего пользования</td></tr>
+    <tr><td>лексика широкая</td><td>лексика узкая, но точная до числа</td></tr>
+    <tr><td>ошибка стоит неловкости</td><td class="bad">ошибка приезжает в виде партии, которую нельзя принять</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Сразу честная оговорка, чтобы не противоречить самим себе. В статье про <a href="https://kitai-school.ru/article/rabota-v-kitae-dlya-inostranca" target="_blank" rel="noopener">работа в Китае для иностранца</a> мы писали, что инженеру внутри китайской компании часто хватает английского, — и это так: там есть корпоративный английский и коллеги рядом. <b>Здесь ситуация обратная</b>: вы по эту сторону, документы приходят к вам, и на английский их переводят выборочно. Именно в непереведённой части обычно и лежат допуски, материал и условия гарантии.</p>
+
+<h2>Три документа, <span class="italic">которые придётся читать</span></h2>
+<p>Их немного, и они повторяются от заказа к заказу. Это тот словарь, с которого начинается работа.</p>
+<div class="table-wrap">
+<table>
+  <caption>Документы, которые приходят от завода.</caption>
+  <thead><tr><th>Документ</th><th>Пиньинь</th><th>Что это</th><th>Что в нём лежит</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">说明书</b></td><td>shuōmíngshū</td><td><b>Инструкция</b></td><td>как пользоваться и обслуживать; пишется для того, кто и так знает изделие</td></tr>
+    <tr><td><b class="han">图纸</b></td><td>túzhǐ</td><td><b>Чертёж</b></td><td>размеры, допуски и материал указаны здесь, а текстом обычно не дублируются</td></tr>
+    <tr><td><b class="han">规格书</b></td><td>guīgéshū</td><td><b>Спецификация</b></td><td>перечень параметров изделия целиком</td></tr>
+    <tr><td><b class="han">参数表</b></td><td>cānshùbiǎo</td><td><b>Таблица параметров</b></td><td>то, по чему сверяют при приёмке</td></tr>
+    <tr><td><b class="han">检验报告</b></td><td>jiǎnyàn bàogào</td><td><b>Протокол испытаний</b></td><td>результаты проверки конкретной партии</td></tr>
+    <tr><td><b class="han">合格证</b></td><td>hégézhèng</td><td><b>Свидетельство о соответствии</b></td><td>подтверждение, что изделие прошло контроль</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Обратите внимание на вторую строку. <b>Чертёж — не иллюстрация к тексту</b>, а самостоятельный документ: размеры, допуски и материал указаны именно там, и текстом они чаще всего не дублируются. Если чертёж читать не умеют, часть требований так и остаётся непрочитанной. Документы поставки — инвойс, упаковочный лист, декларация — это отдельная история, она разобрана в статье про <a href="https://kitai-school.ru/article/kurs-po-logistike-na-kitayskom" target="_blank" rel="noopener">курс по логистике на китайском</a>.</p>
+
+<h2>Слова, в которых <span class="italic">«примерно» не работает</span></h2>
+<p>В деловом разговоре неточность стоит неловкости. Здесь она стоит партии.</p>
+<div class="table-wrap">
+<table>
+  <caption>Слова, которые всегда идут с числом.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Перевод</th><th>Что за ним стоит</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">公差</b></td><td>gōngchā</td><td><b>Допуск</b></td><td>насколько размер может отличаться от заданного — <b>самая дорогая строка</b></td></tr>
+    <tr><td><b class="han">规格</b></td><td>guīgé</td><td><b>Типоразмер</b></td><td>не «качество», а набор конкретных параметров</td></tr>
+    <tr><td><b class="han">参数</b></td><td>cānshù</td><td><b>Параметр</b></td><td>числовое значение, а не общее свойство</td></tr>
+    <tr><td><b class="han">材质</b></td><td>cáizhì</td><td><b>Материал</b></td><td>из чего сделано; в задании это отдельная строка</td></tr>
+    <tr><td><b class="han">表面处理</b></td><td>biǎomiàn chǔlǐ</td><td><b>Обработка поверхности</b></td><td>покрытие, полировка, анодирование</td></tr>
+    <tr><td><b class="han">额定</b></td><td>édìng</td><td><b>Номинальный</b></td><td>额定功率 — номинальная мощность, а не предельная</td></tr>
+    <tr><td><b class="han">精度</b></td><td>jīngdù</td><td><b>Точность</b></td><td>класс точности, который тоже указывают числом</td></tr>
+    <tr><td><b class="han">工艺</b></td><td>gōngyì</td><td><b>Технология изготовления</b></td><td>каким способом делают — от этого зависит результат</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Первая строка — самая дорогая в любом задании. <b class="han">公差</b> определяет, насколько готовая деталь может отличаться от заданного размера, и если допуск не проставлен, завод возьмёт свой. Вторая частая ловушка — <b class="han">规格</b>: это не «качество» и не «сорт», а конкретный набор параметров. Общая деловая лексика, на которую всё это ложится, разобрана в статье про <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>.</p>
+
+<figure class="ks-fig"><img src="assets/tehnicheskiy-kitayskiy-yazyk-tz.png" alt="Задание с пропущенными строками и то, что завод подставит вместо них" loading="lazy" width="1200" height="590"><figcaption>Пустая строка в задании — это не «на усмотрение», а решение, принятое без вас.</figcaption></figure>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Небольшая производственная компания заказала в Китае партию корпусов. Переписка шла на английском, образец приехал, всё устроило, запустили серию.</p>
+  <p>Партия пришла с другой обработкой поверхности. Разбирались долго и обнаружили простую вещь: в задании обработка вообще не была указана. На образце её сделали по умолчанию получше, в серии — подешевле. Формально завод ничего не нарушил.</p>
+  <p>Мы собрали для их инженеров узкую программу: <b>чтение спецификации, чертёжные обозначения и разбор собственного задания</b>. Самым полезным оказалось не новое слово, а привычка: <b>проверять задание по тому, чего в нём нет</b>.</p>
+</div>
+
+<h2>Как написать задание, <span class="italic">чтобы завод не додумал</span></h2>
+<p>Правило простое: непроставленное считается несущественным. Вот строки, отсутствие которых завод закроет на своё усмотрение.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что обязательно проставить числом или названием.</caption>
+  <thead><tr><th>Строка</th><th>Что будет, если не указать</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">材质</b> — материал</td><td class="bad">поставят тот, что дешевле и есть на складе</td></tr>
+    <tr><td><b class="han">公差</b> — допуск</td><td class="bad">применят собственный, обычно более мягкий</td></tr>
+    <tr><td><b class="han">表面处理</b> — обработка поверхности</td><td class="bad">выберут вариант попроще: на образце одно, в серии другое</td></tr>
+    <tr><td><b class="han">标准</b> — по какому стандарту</td><td class="bad">возьмут стандарт предприятия, а он может быть мягче</td></tr>
+    <tr><td><b class="han">验收</b> — как принимается</td><td class="bad">спорить о браке придётся уже после отгрузки</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И отдельная строка, о которой забывают чаще всего: <b>что считается пробной партией, а что серией</b>. Словарь производственного цикла короткий, но именно он определяет, на каком этапе ещё можно что-то поменять без денег.</p>
+<div class="table-wrap">
+<table>
+  <caption>Стадии производства: словарь для задания.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Перевод</th><th>Зачем знать</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">打样</b></td><td>dǎyàng</td><td><b>Изготовить образец</b></td><td>первый предмет, по которому смотрят, поняли ли вас</td></tr>
+    <tr><td><b class="han">样机</b></td><td>yàngjī</td><td><b>Опытный образец</b></td><td>рабочий экземпляр до серии</td></tr>
+    <tr><td><b class="han">试产</b></td><td>shìchǎn</td><td><b>Пробная партия</b></td><td>малый тираж, чтобы поймать ошибки до серии</td></tr>
+    <tr><td><b class="han">量产</b></td><td>liàngchǎn</td><td><b>Серийное производство</b></td><td>после него менять что-либо дорого</td></tr>
+    <tr><td><b class="han">调试</b></td><td>tiáoshì</td><td><b>Наладка</b></td><td>запуск и настройка на месте</td></tr>
+    <tr><td><b class="han">质检</b></td><td>zhìjiǎn</td><td><b>Контроль качества</b></td><td>кто проверяет и по какому документу</td></tr>
+    <tr><td><b class="han">保修</b></td><td>bǎoxiū</td><td><b>Гарантийное обслуживание</b></td><td>срок и что именно в него входит</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Стандарты: <span class="italic">что значат GB и GB/T</span></h2>
+<p>Пометка у номера стандарта — это не оформление, а разница в обязательности.</p>
+<div class="table-wrap">
+<table>
+  <caption>Как читать обозначение стандарта.</caption>
+  <thead><tr><th>Обозначение</th><th>Что это</th><th>Насколько обязателен</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">GB</b></td><td>национальный стандарт, <b class="han">国标</b> guóbiāo</td><td class="bad">обязательный</td></tr>
+    <tr><td><b class="han">GB/T</b></td><td>национальный стандарт с пометкой «рекомендуемый»</td><td>рекомендательный</td></tr>
+    <tr><td>отраслевой</td><td>стандарт отрасли</td><td>зависит от отрасли</td></tr>
+    <tr><td>стандарт предприятия</td><td>собственный стандарт завода</td><td class="bad">применяется, если вы не назвали другой</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И про ГОСТ честно: <b>ГОСТ и GB — разные системы, автоматического соответствия между ними нет</b>. Требование «сделать по ГОСТу» китайский завод либо не поймёт, либо поймёт по-своему. Рабочий путь один: перевести требование в конкретные параметры — материал, допуск, класс точности, обработку — и записать их числами.</p>
+
+<h2>Что должно быть <span class="italic">в программе</span></h2>
+<p>Всё это спрашивается до оплаты и проверяется на первом занятии.</p>
+<div class="table-wrap">
+<table>
+  <caption>Чем отличается рабочая программа.</caption>
+  <thead><tr><th>Пункт</th><th>Как проверить</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Занимаются на вашей документации</b></td><td>ваши спецификации и инструкции, а не учебные тексты про абстрактный завод</td></tr>
+    <tr><td><b>Учат читать чертёж</b></td><td>обозначения на чертеже разбирают отдельно от текста</td></tr>
+    <tr><td><b>Разбирают цифры и единицы</b></td><td>допуски, классы точности, номинальные значения</td></tr>
+    <tr><td><b>Дают шаблоны для задания</b></td><td>готовые формулировки строк, которые нельзя пропустить</td></tr>
+    <tr><td><b>Объясняют стандарты</b></td><td>как читать обозначение и почему «по ГОСТу» не работает</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Признак, по которому программа отсеивается сразу: <b>если «технический курс» — это общий деловой курс со списком терминов в конце</b>. Терминология без документов не работает: читать нужно уметь не слова, а страницу. Про уровни: документацию тянут примерно с <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4</a>, а на приёмку и наладку нужна отдельно поставленная речь и <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK</a>. Если учится отдел, форматы разобраны в статье про <a href="https://kitai-school.ru/article/korporativnyy-kitayskiy-zachem-kompanii-vkladyvautsya-v-obuchenie" target="_blank" rel="noopener">корпоративный китайский</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Разве инженеру не хватает английского?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Внутри китайской компании — часто хватает, и мы про это писали в статье о работе в Китае. Но здесь ситуация другая: вы находитесь по эту сторону и получаете документы, которые завод писал для себя. Инструкцию к станку, чертёж и спецификацию на английский переводят выборочно, а то и машинно, и именно в переведённой части чаще всего теряются допуски, материал и условия гарантии. Английский помогает договориться, а читать приходится оригинал.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что означают пометки GB и GB/T?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это китайские национальные стандарты, 国标. Разница в одной букве и она принципиальная: GB — обязательный стандарт, GB/T — рекомендательный. Кроме национальных есть отраслевые и стандарты самого предприятия. Практический вывод простой: если в задании не назван конкретный стандарт, завод вправе применить собственный, и он может оказаться мягче того, что вы имели в виду.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли просто потребовать «по ГОСТу»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Само по себе — нет. ГОСТ и GB это разные системы, и автоматического соответствия между ними не существует. Требование «по ГОСТу» китайский завод либо проигнорирует, либо поймёт по-своему. Работает другое: перевести требование в конкретные параметры — материал, допуск, класс точности, обработку поверхности — и записать их числами в задании.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой уровень языка нужен для технической документации?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Для чтения — уверенный средний плюс отраслевой словарь, и это выполнимее, чем кажется: техническая документация написана короткими шаблонными формулировками, а словарь у неё узкий и повторяется. Сложность не в грамматике, а в том, что одно слово в разных отраслях значит разное. Для устного общения с наладчиком и на приёмке нужен уровень выше и отдельно поставленная речь.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что будет, если не указать что-то в задании?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Завод примет решение сам, и обычно в свою пользу: поставит материал попроще, применит собственный допуск, выберет более дешёвую обработку поверхности. Это не обман — так устроено производство: непроставленное считается несущественным. Поэтому техническое задание проверяют не по тому, что в нём написано, а по тому, чего в нём не хватает.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько терминов нужно, чтобы начать читать документацию?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Основа умещается в несколько десятков слов: названия документов, параметры, стадии производства и приёмка. Они повторяются в каждом заказе, поэтому набираются за несколько занятий. Дальше растёт скорость чтения, а самое долгое — привычка искать в документе не то, что написано, а то, чего в нём нет.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Мы собираем такие программы под конкретное производство: берём вашу документацию, разбираем термины на ней и учим проверять задание по тому, чего в нём нет. Приходите на бесплатное пробное занятие — посмотрим ваши бумаги и покажем, с чего начать.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>ТЕХНИКА</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — рассчитаем формат под вашу команду.</p>
+</div>
+
+<p>Дальше по теме: язык поставки и документов — <a href="https://kitai-school.ru/article/kurs-po-logistike-na-kitayskom" target="_blank" rel="noopener">курс по логистике на китайском</a>; лексика переговоров — <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>; реплики для встреч — <a href="https://kitai-school.ru/article/kitayskiy-dlya-delovogo-obshcheniya" target="_blank" rel="noopener">китайский для делового общения</a>; письмо партнёру — <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">деловое письмо китайскому партнёру</a>; обучение отдела — <a href="https://kitai-school.ru/article/korporativnyy-kitayskiy-zachem-kompanii-vkladyvautsya-v-obuchenie" target="_blank" rel="noopener">корпоративный китайский</a>; работа с китайскими компаниями — <a href="https://kitai-school.ru/article/rabota-v-kitae-dlya-inostranca" target="_blank" rel="noopener">работа в Китае для иностранца</a>; знаки и чтение — <a href="https://kitai-school.ru/article/kursy-po-ieroglifike-kak-vybrat-programmu" target="_blank" rel="noopener">курсы по иероглифике</a>; устная часть — <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK</a>; занятия — <a href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener">индивидуальные уроки</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — обучение инженеров и отделов закупок работе с документацией китайских поставщиков.</li>
+    <li>Система китайских стандартов: национальные, отраслевые и стандарты предприятий; обозначения GB и GB/T проверяются по действующей редакции документа.</li>
+    <li>Официальный сайт экзамена chinesetest.cn — требования уровней HSK и устного экзамена HSKK.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть партия приедет такой, как в задании! <span class="han">一次做对！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Читаем вашу документацию: инструкции, чертежи и спецификации ваших поставщиков</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+</div>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</body>
+</html>
