@@ -1,0 +1,426 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kitayskiy-internet-sleng#article",
+      "headline": "Китайский интернет-сленг: три механизма, по которым расшифровывается почти всё",
+      "description": "Три механизма китайского интернет-сленга — цифры, буквы из пиньиня и слова из мемов, — а также то, что в переписке важнее сленга: частицы и длина ответа.",
+      "datePublished": "2026-09-11",
+      "dateModified": "2026-09-11",
+      "inLanguage": "ru",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kitai-school.ru/article/kitayskiy-internet-sleng"},
+      "author": {"@id": "https://kitai-school.ru/#yulia"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "about": ["Китайский интернет-сленг", "Переписка на китайском", "Живой китайский язык"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia",
+      "name": "Юлия Горяина",
+      "jobTitle": "Китаист, основатель Kitai School",
+      "url": "https://kitai-school.ru/about",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"}
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Лицензированная онлайн-школа китайского языка"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kitayskiy-internet-sleng#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Зачем учить сленг, если он всё равно устаревает?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Учить списком — незачем, и в этом главная мысль. Полезно другое: понимать три механизма, по которым такие слова устроены. Цифры читаются как созвучные слова, буквы собираются из первых букв пиньиня, а новые слова приходят из мемов. Зная механизм, вы расшифруете и то, чего ни в одном списке не было, — а это и есть навык, который не устаревает."}
+        },
+        {
+          "@type": "Question",
+          "name": "Что значит yyds?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Это сокращение от 永远的神 yǒngyuǎn de shén, дословно «вечный бог». Так хвалят что угодно: артиста, блюдо, фильм, удачную покупку. По-русски ближе всего «лучший, вне конкуренции» или «это просто топ». Сокращение собрано по первым буквам пиньиня каждого слога — ровно тот же механизм, что у xswl и dbq."}
+        },
+        {
+          "@type": "Question",
+          "name": "Почему 666 — это похвала, а не что-то плохое?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Потому что в китайском это не число, а созвучие. Слог liù звучит близко к 溜 liū — «ловко, гладко, мастерски». Так пишут в комментариях, когда кто-то что-то хорошо сделал: удачно сыграл, ловко приготовил, точно пошутил. Никакого отношения к европейским ассоциациям с тремя шестёрками здесь нет."}
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли писать сленгом преподавателю или деловому партнёру?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Нет. Сленг живёт в переписке между своими и в комментариях, а в письме преподавателю, руководителю или партнёру он читается как неуважение. Здесь работает то же правило, что и в русском: со знакомым можно «ржу», в письме — нельзя. Формулы деловой переписки мы разбирали отдельно, и они устроены совсем иначе."}
+        },
+        {
+          "@type": "Question",
+          "name": "Почему короткое «好» звучит холодно?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Потому что в переписке длина ответа и частица в конце работают как интонация. Одно 好 — это сухое «ладно», и его легко прочитать как раздражение. 好的 — нейтральное деловое согласие. 好的呀 или 好嘞 звучат тепло и бодро. Ничего из этого не является сленгом, это обычный язык — но именно он задаёт тон сообщения, и на него стоит смотреть раньше, чем на модные слова."}
+        },
+        {
+          "@type": "Question",
+          "name": "Где смотреть актуальный сленг?",
+          "acceptedAnswer": {"@type": "Answer", "text": "В самих соцсетях и у живых собеседников, а не в списках. Подборки в интернете почти всегда отстают: часть слов оттуда уже никто не пишет, а новые появиться не успели. Разумный порядок такой: разобраться в механизмах, читать комментарии под тем, что вам интересно, и спрашивать значение у носителей — вопрос «это ещё говорят?» экономит много неловкости."}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kitayskiy-internet-sleng#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Китайский интернет-сленг: три механизма, по которым расшифровывается почти всё", "item": "https://kitai-school.ru/article/kitayskiy-internet-sleng"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Живой язык</p>
+<h1>Китайский интернет-сленг: <span class="italic">три механизма, по которым расшифровывается почти всё</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-11">11 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/kitayskiy-internet-sleng.png" alt="Разбор сокращения yyds: от четырёх букв к фразе 永远的神 и её значению" width="1200" height="630"></figure>
+
+<p class="passport">Учебник готовит к разговору, но не к тому, что пишут в комментариях. Открываете ленту и видите <b class="han">yyds</b>, <b class="han">666</b>, <b class="han">绝绝子</b> — и словарь не помогает. Списки таких слов в интернете есть, но у них общая беда: <b>они устаревают быстрее, чем вы их выучите</b>. Зато механизмы, по которым эти слова собираются, держатся годами — и их всего три.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p>Китайский сетевой язык собирается <b>тремя способами</b>: цифры читаются как созвучные слова (<b class="han">666</b> — «красава»), буквы берутся из первых букв пиньиня (<b class="han">yyds</b> — <b class="han">永远的神</b>, «лучший»), а новые слова приходят из мемов (<b class="han">躺平</b>, <b class="han">内卷</b>). Учить списком бесполезно, разбираться в механизме — полезно. И самое важное: <b>тон сообщения задаёт не сленг, а частицы и длина ответа</b>. Сухое <b class="han">好</b> обижает чаще, чем незнание модного слова.</p>
+</div>
+
+<h2>Почему список устаревает, <span class="italic">а механизм нет</span></h2>
+<p>Сетевой язык меняется быстро: слово живёт сезон, расходится по всей стране, а через год звучит как «превед». Поэтому заучивать подборки — работа впустую. Разумнее разобраться, <b>как такие слова вообще делаются</b>.</p>
+<div class="table-wrap">
+<table>
+  <caption>Три механизма и что в них происходит.</caption>
+  <thead><tr><th>Механизм</th><th>Что берут</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td><b>Цифры</b></td><td>созвучие числа со словом</td><td><b class="han">666</b> — «мастерски»</td></tr>
+    <tr><td><b>Буквы</b></td><td>первые буквы пиньиня каждого слога</td><td><b class="han">xswl</b> — «умер со смеху»</td></tr>
+    <tr><td><b>Слова из мемов</b></td><td>обычные слова в новом значении</td><td><b class="han">躺平</b> — «выйти из гонки»</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Дальше разберём каждый механизм. И сразу оговорка, без которой статья была бы нечестной: <b>любой такой список — срез на сегодня</b>. Мы намеренно взяли слова, которые держатся не первый год, но проверять всё равно стоит: спросить у собеседника «это ещё говорят?» совершенно нормально.</p>
+
+<h2>Механизм первый: <span class="italic">цифры, которые читаются как слова</span></h2>
+<p>Слогов в путунхуа немного, созвучий много — на этом и держится вся игра. Число набирается быстрее иероглифов, поэтому в переписке его и пишут.</p>
+<div class="table-wrap">
+<table>
+  <caption>Цифры, которые читаются как слова.</caption>
+  <thead><tr><th>Что пишут</th><th>Как читается</th><th>Что значит</th><th>Откуда взялось</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">666</b></td><td>liù liù liù</td><td><b>Красава, мастерски</b></td><td>созвучно 溜 liū «ловко»; так хвалят за умение, а не за шесть чего-либо</td></tr>
+    <tr><td><b class="han">233</b></td><td>èr sān sān</td><td><b>Ха-ха-ха</b></td><td>номер картинки с хохочущим человечком на старом форуме</td></tr>
+    <tr><td><b class="han">555</b></td><td>wǔ wǔ wǔ</td><td><b>Ы-ы-ы</b></td><td>подражание плачу: 呜呜呜 wūwūwū</td></tr>
+    <tr><td><b class="han">995</b></td><td>jiǔ jiǔ wǔ</td><td><b>Спасите</b></td><td>созвучно 救救我 jiùjiù wǒ; чаще в шутку</td></tr>
+    <tr><td><b class="han">748</b></td><td>qī sì bā</td><td><b>Отвали</b></td><td>созвучно 去死吧; <b>грубое</b> — знать полезно, писать не стоит</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Два самых известных примера сюда не вошли, потому что мы разбирали их раньше: <b class="han">520</b> созвучно «я тебя люблю», а <b class="han">88</b> значит «пока» — оба в подборке <a href="https://kitai-school.ru/article/interesnye-fakty-o-kitayskom-yazyke" target="_blank" rel="noopener">интересные факты о китайском</a>. И обратите внимание на последнюю строку таблицы: <b>знать грубое полезно, писать его не нужно</b>.</p>
+
+
+<h2>Механизм второй: <span class="italic">буквы из пиньиня</span></h2>
+<p>Здесь берут первую букву каждого слога и склеивают. Получается что-то вроде нашего «спс» или «имхо» — только собранное из китайской фразы.</p>
+<div class="table-wrap">
+<table>
+  <caption>Сокращения из первых букв пиньиня.</caption>
+  <thead><tr><th>Сокращение</th><th>Полная фраза</th><th>Что значит</th><th>Пояснение</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">yyds</b></td><td>永远的神</td><td><b>Лучший, вне конкуренции</b></td><td>дословно «вечный бог» — высшая похвала чему угодно</td></tr>
+    <tr><td><b class="han">xswl</b></td><td>笑死我了</td><td><b>Умер со смеху</b></td><td>наше «ржу»</td></tr>
+    <tr><td><b class="han">dbq</b></td><td>对不起</td><td><b>Извини</b></td><td>короткое извинение между своими</td></tr>
+    <tr><td><b class="han">nsdd</b></td><td>你说得对</td><td><b>Ты прав</b></td><td>согласие, иногда с иронией — «ну да, конечно»</td></tr>
+    <tr><td><b class="han">awsl</b></td><td>啊我死了</td><td><b>Умираю от умиления</b></td><td>не про злость: так пишут про что-то милое</td></tr>
+    <tr><td><b class="han">u1s1</b></td><td>有一说一</td><td><b>Честно говоря</b></td><td>цифра 1 здесь читается как yī — цифры и буквы смешивают</td></tr>
+    <tr><td><b class="han">srds</b></td><td>虽然但是</td><td><b>Хотя и так, но</b></td><td>вводит возражение</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Приём работает в обе стороны: увидели незнакомые четыре буквы — попробуйте подставить знакомую фразу из четырёх слогов. И заметьте <b class="han">u1s1</b>: цифры и буквы спокойно смешивают в одном сокращении, потому что <b class="han">1</b> читается как yī.</p>
+
+<figure class="ks-fig"><img src="assets/kitayskiy-internet-sleng-srok.png" alt="Сколько живут разные слои сетевого языка: от частиц до слов сезона" loading="lazy" width="1200" height="425"><figcaption>Ориентир, а не измерение: чем левее, тем надёжнее вложение времени.</figcaption></figure>
+
+<h2>Механизм третий: <span class="italic">слова из мемов</span></h2>
+<p>Самая живая часть и самая быстро меняющаяся. Обычные слова получают новое значение, и понять их по словарю не выйдет — нужен контекст, из которого они выросли.</p>
+<div class="table-wrap">
+<table>
+  <caption>Обычные слова в новом значении.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Что значит</th><th>Пояснение</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">内卷</b></td><td>nèijuǎn</td><td><b>Бессмысленная гонка</b></td><td>все стараются больше, а выигрывает никто</td></tr>
+    <tr><td><b class="han">躺平</b></td><td>tǎngpíng</td><td><b>Лечь плашмя</b></td><td>выйти из гонки и снизить запросы</td></tr>
+    <tr><td><b class="han">摆烂</b></td><td>bǎilàn</td><td><b>Махнуть рукой</b></td><td>перестать стараться совсем</td></tr>
+    <tr><td><b class="han">破防</b></td><td>pòfáng</td><td><b>Задело за живое</b></td><td>дословно «пробило защиту»</td></tr>
+    <tr><td><b class="han">绝绝子</b></td><td>juéjuézi</td><td><b>Нечто невероятное</b></td><td>восторг, но часто с насмешкой — смотрите по контексту</td></tr>
+    <tr><td><b class="han">社恐</b></td><td>shèkǒng</td><td><b>Боится общения</b></td><td>рядом живёт 社牛 shèniú — тот, кто заговорит с кем угодно</td></tr>
+    <tr><td><b class="han">打工人</b></td><td>dǎgōngrén</td><td><b>Работяга</b></td><td>ироничное самоназвание наёмного сотрудника</td></tr>
+    <tr><td><b class="han">吃瓜</b></td><td>chīguā</td><td><b>Наблюдать со стороны</b></td><td>дословно «есть арбуз»: следить за чужим скандалом</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Три первых слова связаны между собой и описывают одну историю: <b class="han">内卷</b> — про гонку, из которой не выйти, <b class="han">躺平</b> — про решение из неё выйти, <b class="han">摆烂</b> — про то, чтобы бросить совсем. Их понимают по всей стране, и в разговоре они встречаются постоянно.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Студентка переписывалась с китайской подругой и переживала, что не знает модных слов. Я посмотрела их переписку и увидела совсем другое: на каждое сообщение подруги она отвечала одним иероглифом — <b class="han">好</b>.</p>
+  <p>Для неё это было вежливое «хорошо». Подруга же читала это как сухое «ладно» и в какой-то момент прямо спросила, не обидела ли она её чем-то.</p>
+  <p>Мы ничего не стали учить из сленга. Просто разобрали, как <b class="han">好的</b>, <b class="han">好呀</b> и <b class="han">好嘞</b> отличаются по тону. Переписка выправилась за неделю. <b>Тон сообщения задаёт не модное слово, а частица и длина ответа</b> — об этом и следующий раздел.</p>
+</div>
+
+<h2>Что в переписке <span class="italic">важнее сленга</span></h2>
+<p>Это та часть, которую почти никто не объясняет, а работает она в каждом сообщении. В переписке нет голоса, поэтому его роль берут на себя длина ответа и частица в конце.</p>
+<div class="table-wrap">
+<table>
+  <caption>Одно и то же согласие с разным тоном.</caption>
+  <thead><tr><th>Ответ</th><th>Как читается</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">好</b></td><td class="bad">сухо; легко принять за раздражение</td></tr>
+    <tr><td><b class="han">好的</b></td><td>нейтрально, обычное деловое согласие</td></tr>
+    <tr><td><b class="han">好呀</b></td><td class="ok">тепло и дружелюбно</td></tr>
+    <tr><td><b class="han">好嘞</b></td><td class="ok">бодро, «сделаю»</td></tr>
+    <tr><td><b class="han">嗯</b></td><td>совсем коротко, ближе к «угу»</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Тот же принцип и со смехом: <b class="han">哈哈</b> — скорее вежливость, а длинное <b class="han">哈哈哈哈</b> читается как настоящий смех. Ничего из этого не сленг — это обычные частицы, которые вы и так учите. Про то, как частица меняет предложение, у нас есть отдельный разбор — <a href="https://kitai-school.ru/article/voprositelnaya-chastica-ma" target="_blank" rel="noopener">частица 吗</a>. Ещё две полезные вещи из переписки: <b class="han">秒回</b> miǎohuí — «ответил мгновенно», и <b class="han">已读不回</b> — «прочитал и не ответил».</p>
+
+<h2>Где сленг <span class="italic">не к месту</span></h2>
+<p>Правило то же, что и в русском, но цена ошибки выше: вы иностранец, и собеседник не всегда поймёт, пошутили вы или не разобрались.</p>
+<div class="table-wrap">
+<table>
+  <caption>Когда лучше писать обычным языком.</caption>
+  <thead><tr><th>Ситуация</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td class="bad"><b>Письмо преподавателю или руководителю</b></td><td>читается как неуважение, даже если слово безобидное</td></tr>
+    <tr><td class="bad"><b>Деловая переписка</b></td><td>там свои формулы, и они устроены совсем иначе</td></tr>
+    <tr><td class="bad"><b>Первое сообщение незнакомому</b></td><td>тон ещё не установлен, и шутка может не прочитаться</td></tr>
+    <tr><td><b>Любое слово, в котором не уверены</b></td><td>часть сетевых слов звучит с насмешкой, и со стороны это не видно</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Отдельно про <b class="han">绝绝子</b>: слово выглядит как чистый восторг, но нередко используется с иронией. Это общая черта сетевого языка — <b>у модного слова часто есть второй, насмешливый слой</b>, и новичок его не слышит. Формулы обращения для письма разобраны в статье про <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">деловое письмо китайскому партнёру</a>, а поведение в разговоре — в разборе <a href="https://kitai-school.ru/article/kitajskij-etiket-obshcheniya" target="_blank" rel="noopener">китайский этикет общения</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Зачем учить сленг, если он всё равно устаревает?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Учить списком — незачем, и в этом главная мысль. Полезно другое: понимать три механизма, по которым такие слова устроены. Цифры читаются как созвучные слова, буквы собираются из первых букв пиньиня, а новые слова приходят из мемов. Зная механизм, вы расшифруете и то, чего ни в одном списке не было, — а это и есть навык, который не устаревает.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что значит yyds?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это сокращение от 永远的神 yǒngyuǎn de shén, дословно «вечный бог». Так хвалят что угодно: артиста, блюдо, фильм, удачную покупку. По-русски ближе всего «лучший, вне конкуренции» или «это просто топ». Сокращение собрано по первым буквам пиньиня каждого слога — ровно тот же механизм, что у xswl и dbq.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему 666 — это похвала, а не что-то плохое?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что в китайском это не число, а созвучие. Слог liù звучит близко к 溜 liū — «ловко, гладко, мастерски». Так пишут в комментариях, когда кто-то что-то хорошо сделал: удачно сыграл, ловко приготовил, точно пошутил. Никакого отношения к европейским ассоциациям с тремя шестёрками здесь нет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли писать сленгом преподавателю или деловому партнёру?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. Сленг живёт в переписке между своими и в комментариях, а в письме преподавателю, руководителю или партнёру он читается как неуважение. Здесь работает то же правило, что и в русском: со знакомым можно «ржу», в письме — нельзя. Формулы деловой переписки мы разбирали отдельно, и они устроены совсем иначе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему короткое «好» звучит холодно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что в переписке длина ответа и частица в конце работают как интонация. Одно 好 — это сухое «ладно», и его легко прочитать как раздражение. 好的 — нейтральное деловое согласие. 好的呀 или 好嘞 звучат тепло и бодро. Ничего из этого не является сленгом, это обычный язык — но именно он задаёт тон сообщения, и на него стоит смотреть раньше, чем на модные слова.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где смотреть актуальный сленг?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В самих соцсетях и у живых собеседников, а не в списках. Подборки в интернете почти всегда отстают: часть слов оттуда уже никто не пишет, а новые появиться не успели. Разумный порядок такой: разобраться в механизмах, читать комментарии под тем, что вам интересно, и спрашивать значение у носителей — вопрос «это ещё говорят?» экономит много неловкости.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>На занятиях мы разбираем живую переписку студентов наравне с учебными текстами: и что написал собеседник, и как прозвучит ваш ответ. Приходите на бесплатное пробное — принесите свою переписку, посмотрим её вместе.</p>
+  <p><a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a></p>
+  <p>Или напишите слово <b>СЛЕНГ</b> нашему менеджеру в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём формат под вашу задачу.</p>
+</div>
+
+<p>Дальше по теме: почему понимаешь, но не говоришь — <a href="https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>; проверенные факты о языке — <a href="https://kitai-school.ru/article/interesnye-fakty-o-kitayskom-yazyke" target="_blank" rel="noopener">интересные факты о китайском</a>; словарь китайских площадок — <a href="https://kitai-school.ru/article/kurs-po-marketingu-na-kitayskom" target="_blank" rel="noopener">курс по маркетингу на китайском</a>; обращение в письме — <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">деловое письмо китайскому партнёру</a>; поведение в общении — <a href="https://kitai-school.ru/article/kitajskij-etiket-obshcheniya" target="_blank" rel="noopener">китайский этикет общения</a>; как частица меняет фразу — <a href="https://kitai-school.ru/article/voprositelnaya-chastica-ma" target="_blank" rel="noopener">частица 吗</a>; как прощаются в жизни — <a href="https://kitai-school.ru/article/do-svidaniya-po-kitajski-sposoby" target="_blank" rel="noopener">способы попрощаться</a>; устойчивые выражения — <a href="https://kitai-school.ru/article/idiomy-v-kitayskom-yazyke" target="_blank" rel="noopener">идиомы китайского языка</a>; тоны и звуки — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>; занятия — <a href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener">индивидуальные уроки</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — разбор переписки студентов с носителями и живых комментариев из соцсетей.</li>
+    <li>Ежегодные подборки модных слов, которые публикуют китайские языковые издания, — состав таких списков меняется каждый год.</li>
+    <li>Официальный сайт экзамена chinesetest.cn — требования уровней HSK: сетевой лексики в них нет.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть лента наконец читается! <span class="han">冲鸭！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Разбираем живой язык соцсетей наравне с учебным — чтобы вы понимали и то и другое</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
