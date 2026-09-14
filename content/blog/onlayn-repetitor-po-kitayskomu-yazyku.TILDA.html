@@ -1,0 +1,437 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/onlayn-repetitor-po-kitayskomu-yazyku#article",
+      "headline": "Онлайн-репетитор по китайскому языку: чем он отличается от школы и что проверить до первого занятия",
+      "description": "«Репетитор» отвечает на вопрос, кто ведёт занятие, а формат — на вопрос, как оно устроено: это два независимых решения. Разбор того, что меняется при одном преподавателе, что проверяется на экране, когда полезен носитель и какие вопросы задать до оплаты.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/onlayn-repetitor-po-kitayskomu-yazyku",
+      "about": {
+        "@type": "Thing",
+        "name": "Онлайн-репетитор по китайскому языку — выбор преподавателя и формата занятий",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Китайский_язык",
+          "https://ru.wikipedia.org/wiki/Репетитор",
+          "https://ru.wikipedia.org/wiki/Методика_преподавания_иностранных_языков"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "areaServed": "RU",
+      "sameAs": ["https://t.me/kitaischool"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/onlayn-repetitor-po-kitayskomu-yazyku#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Чем онлайн-репетитор отличается от языковой школы?", "acceptedAnswer": {"@type": "Answer", "text": "Различие не в качестве занятий, а в том, кто отвечает за процесс. У частного репетитора вы договариваетесь с конкретным человеком: он же ведёт занятия, он же составляет программу, он же решает все вопросы. В школе между вами и преподавателем есть организация: программа, замена на время болезни, договор, методист, к которому можно обратиться, если занятия не идут. Частный репетитор при этом обычно дешевле и гибче по расписанию. Ни один вариант не лучше другого сам по себе — они по-разному распределяют риск."}},
+        {"@type": "Question", "name": "Репетитор — это обязательно занятия один на один?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, и это самая частая путаница. «Репетитор» отвечает на вопрос, кто ведёт занятие, а «один на один» — на вопрос, как оно устроено. Частный репетитор может собрать мини-группу из двух-трёх человек, а школа — дать вам индивидуальные уроки. Это два независимых решения, и принимать их удобнее по очереди: сначала формат под вашу цель и бюджет, потом исполнителя."}},
+        {"@type": "Question", "name": "Нужен ли новичку репетитор-носитель китайского языка?", "acceptedAnswer": {"@type": "Answer", "text": "На старте важнее не носитель, а грамотная постановка произношения: русскоязычный преподаватель объяснит логику тонов на понятном вам языке и покажет, чем ваш звук отличается от нужного. Носитель полезнее примерно с уровня A2, когда нужна живая разговорная практика и привычка к разным голосам. И отдельно: носитель языка и преподаватель языка — не одно и то же. Носитель слышит, что вы сказали неправильно, но объяснить, почему так вышло и что сделать, умеет не каждый — это отдельная профессия."}},
+        {"@type": "Question", "name": "Как онлайн-репетитор проверяет иероглифику, если не видит тетрадь?", "acceptedAnswer": {"@type": "Answer", "text": "Способы есть, и о них стоит спросить заранее. Рабочие варианты: писать на разлинованном листе и присылать фото после занятия, писать прямо на занятии под камеру, которая смотрит на стол, или писать в общем документе с проверкой на месте. Ненадёжный вариант — набирать иероглифы с клавиатуры: так проверяется узнавание, а не написание, и порядок черт при этом не виден совсем. Если про проверку письма вам не отвечают внятно, это стоит уточнить до оплаты."}},
+        {"@type": "Question", "name": "Почему индивидуальные занятия чаще бросают, чем групповые?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что их легче перенести. В группе расписание общее: пропуск заметен, и догонять приходится самому. С репетитором занятие переносится одним сообщением — и это удобство работает против вас. Один перенос превращается в два, потом в паузу на месяц. Лечится это заранее: фиксированный день и час, оплата вперёд за блок занятий и договорённость, что перенос возможен не чаще оговорённого. Не потому что так строже, а потому что регулярность в языке даёт больше, чем интенсивность."}},
+        {"@type": "Question", "name": "Что означает «репетитор китайского в Москве», если занятия идут онлайн?", "acceptedAnswer": {"@type": "Answer", "text": "Обычно за этой формулировкой стоит одна из трёх настоящих потребностей. Первая — часовой пояс: чтобы занятие попадало в ваш вечер, а не в ночь. Вторая — возможность иногда встретиться очно. Третья — знание российской школьной программы и экзаменов, если речь про ребёнка. Стоит назвать вслух, что именно из этого вам нужно: от ответа зависит, подойдёт вам преподаватель из другого города или нет."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/onlayn-repetitor-po-kitayskomu-yazyku#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Онлайн-репетитор по китайскому языку: чем он отличается от школы и что проверить до первого занятия", "item": "https://kitai-school.ru/article/onlayn-repetitor-po-kitayskomu-yazyku"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Как выбрать обучение</p>
+<h1>Онлайн-репетитор по китайскому языку: <span class="italic">чем он отличается от школы и что проверить до первого занятия</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-14">14 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/onlayn-repetitor-po-kitayskomu-yazyku.png" alt="Формула выбора: кто ведёт занятие, умноженное на формат занятий, даёт ваш выбор" width="1200" height="630"></figure>
+
+<p class="passport">Когда человек ищет онлайн-репетитора по китайскому языку, он обычно решает сразу два вопроса и не замечает этого. Первый: <b>кто будет вести занятия</b> — частный преподаватель или школа. Второй: <b>как эти занятия устроены</b> — один на один или в небольшой группе. Слово «репетитор» отвечает только на первый вопрос. Второй при этом тоже решается, но молча — и обычно не в вашу пользу.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>«Репетитор или курсы» — развилка, которой нет.</b> Частный преподаватель может собрать мини-группу, а школа — дать индивидуальные уроки. Разводите два решения: сначала формат под цель и бюджет, потом исполнителя. Когда преподаватель один, вы получаете гибкость и полное внимание, но теряете подстраховку: <b>заболел или уехал — занятия встали</b>. На расстоянии отдельно проверяйте <b>две вещи: как смотрят ваше письмо от руки и как правят произношение</b> — именно они чаще всего выпадают. А ещё индивидуальные занятия бросают чаще групповых, и причина не в лени: <b>их слишком легко перенести</b>.</p>
+</div>
+
+<h2>Два вопроса, <span class="italic">которые склеили в один</span></h2>
+<p>В поисковой строке это выглядит как один запрос, а на деле там два независимых решения. Их можно принимать в любом сочетании — и все четыре сочетания рабочие.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Четыре сочетания, которые реально встречаются.</caption>
+  <thead><tr><th>Кто ведёт</th><th>В каком формате</th><th>Когда это разумный выбор</th></tr></thead>
+  <tbody>
+    <tr><td><b>Частный преподаватель</b></td><td>один на один</td><td>узкая задача и жёсткий срок: подтянуть один раздел, разобрать конкретный экзамен</td></tr>
+    <tr><td><b>Частный преподаватель</b></td><td>мини-группа из знакомых</td><td>двое-трое с похожим уровнем, которые хотят разделить стоимость и говорить друг с другом</td></tr>
+    <tr><td><b>Школа</b></td><td>один на один</td><td>нужен свой темп, но хочется программы и подстраховки на случай, если преподаватель заболел</td></tr>
+    <tr><td><b>Школа</b></td><td>группа</td><td>долгий путь с нуля: разные голоса, чужие ошибки и расписание, которое держит</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Полезное упражнение перед тем, как писать кому-либо: <b>сформулируйте отдельно цель и отдельно бюджет на месяц</b>. Формат почти всегда вытекает из этих двух цифр, а не из того, кто первым ответил на сообщение. Подробный разбор форматов и того, что даёт каждый, — в статьях про <a href="https://kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh" target="_blank" rel="noopener">курсы китайского для взрослых</a> и <a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku" target="_blank" rel="noopener">групповые занятия по китайскому</a>.</p>
+
+<h2>Что меняется, <span class="italic">когда преподаватель один</span></h2>
+<p>Здесь важно сказать обе половины, потому что обычно говорят только одну. У частного репетитора есть настоящие преимущества, и есть настоящая цена — и то и другое стоит знать заранее.</p>
+<div class="table-wrap">
+<table>
+  <caption>Один преподаватель против организации: что вы получаете и чем платите.</caption>
+  <thead><tr><th>Вопрос</th><th>Частный преподаватель</th><th>Школа</th></tr></thead>
+  <tbody>
+    <tr><td><b>Программа</b></td><td>его собственная; хорошая или нет — узнаете по ходу</td><td>общая для всех, её можно посмотреть до оплаты</td></tr>
+    <tr><td><b>Если преподаватель заболел</b></td><td class="bad">занятия останавливаются до его возвращения</td><td class="ok">выходит замена, программа не прерывается</td></tr>
+    <tr><td><b>Если не сложилось</b></td><td>договариваетесь напрямую или расходитесь</td><td>можно перейти к другому преподавателю, не начиная с нуля</td></tr>
+    <tr><td><b>Цена часа</b></td><td class="ok">обычно ниже</td><td>выше: в неё входит и то, что вокруг занятия</td></tr>
+    <tr><td><b>Расписание</b></td><td class="ok">гибкое, подстраивается под вас</td><td>жёстче, зато держит</td></tr>
+    <tr><td><b>Знание вас</b></td><td class="ok">один человек видит всю картину целиком</td><td>историю ведут в записях, а не в одной голове</td></tr>
+    <tr><td><b>Документы об обучении</b></td><td>как правило, нет</td><td>договор, а у лицензированной школы — и справка об обучении</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Строку про болезнь недооценивают сильнее всего. Речь не о драме: обычная простуда, командировка, переезд с разницей во времени. С одним преподавателем это пауза на неделю-две, и после такой паузы возвращаться всегда тяжелее, чем казалось. Особенно на старте, где иероглифы забываются быстрее, чем набираются.</p>
+<p class="note">Справедливости ради, обратная строка тоже весомая: <b>один человек, который ведёт вас год, помнит ваши слабые места без всяких записей</b>. Он знает, что вы путаете третий тон с четвёртым и что у вас не идёт порядок черт в знаках с ключом «рука». Это даёт скорость, которой не бывает при смене преподавателя каждые полгода.</p>
+
+<h2>Что видно на экране, <span class="italic">а что нет</span></h2>
+<p>Онлайн-формат сам по себе ничего не ухудшает — при условии, что две вещи специально вынесены в занятие. Обе легко выпадают, и обе относятся к тому, чем китайский отличается от других языков.</p>
+
+<h3>Письмо от руки</h3>
+<p>На занятии удобно набирать иероглифы с клавиатуры: написал пиньинь, выбрал знак из списка. Проблема в том, что так проверяется узнавание, а не написание. Вы можете уверенно выбирать 建 из списка и не суметь написать его на бумаге. И <b class="han">笔顺</b> (порядок черт) при наборе не виден совсем, а именно он потом отвечает за скорость и за то, будет ли знак читаемым.</p>
+<div class="table-wrap">
+<table>
+  <caption>Как проверяют письмо на расстоянии.</caption>
+  <thead><tr><th>Способ</th><th>Что проверяется</th><th>Оценка</th></tr></thead>
+  <tbody>
+    <tr><td><b>Вторая камера на стол</b></td><td>написание и порядок черт прямо во время занятия</td><td class="ok">лучший вариант: ошибку видно сразу</td></tr>
+    <tr><td><b>Фото тетради после занятия</b></td><td>написание и пропорции знака</td><td class="ok">рабочий вариант, если преподаватель действительно смотрит и отвечает</td></tr>
+    <tr><td><b>Письмо в общем документе мышью</b></td><td>примерная форма знака</td><td>годится для разбора структуры, но не заменяет бумагу</td></tr>
+    <tr><td><b>Набор с клавиатуры</b></td><td>только узнавание</td><td class="bad">письмо при этом не проверяется никак</td></tr>
+  </tbody>
+</table>
+</div>
+<figure class="ks-fig"><img src="assets/onlayn-repetitor-po-kitayskomu-yazyku-ekran.png" alt="Экран онлайн-занятия: что преподаватель видит и правит на расстоянии, а что выпадает, если это специально не вынести в занятие" width="1200" height="437"><figcaption>Экран не мешает учиться. Мешает то, что часть работы в него не попадает сама — её нужно вносить туда нарочно.</figcaption></figure>
+
+
+<p>Про сам разбор знаков — черта, графема, знак — подробно написано в разборе про <a href="https://kitai-school.ru/article/kursy-po-ieroglifike" target="_blank" rel="noopener">курсы по иероглифике</a>. Здесь важно другое: спросите заранее, <b>как именно будет устроена проверка письма</b>. Внятный ответ на этот вопрос говорит о методике больше, чем любое описание курса.</p>
+
+<h3>Произношение</h3>
+<p>Вторая вещь, которая выпадает молча. Тон в собственной речи почти не слышен: вы произносите так, как задумали, а не так, как получилось. Значит, кто-то должен слушать и поправлять — и делать это регулярно, а не один раз на вводном занятии. Спросите, сколько минут занятия отводится на <b class="han">纠音</b> (исправление произношения) и как часто вас просят записать себя. Что именно ставят и в каком порядке — в статье про <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>.</p>
+<p class="note">Отдельный вопрос — техника. <b>Плохой микрофон и шумоподавление приглушают тоны</b>: программа считает ровный высокий звук фоном и приглушает его. Если преподаватель ни разу не сказал вам, что вас плохо слышно, а вы занимаетесь через ноутбук в кафе, — скорее всего, ваше произношение просто не разбирают. Простые наушники с микрофоном здесь решают больше, чем кажется.</p>
+
+<h2>Почему индивидуальные занятия <span class="italic">бросают чаще</span></h2>
+<p>Это главный подводный камень формата, и он не про лень. Индивидуальное занятие переносится одним сообщением: «давайте на следующей неделе». Никто не пострадал, никто не заметил, группа не ушла вперёд. Именно поэтому оно и переносится.</p>
+<p>Дальше знакомая цепочка: один перенос, потом второй, потом «давайте пока поставим на паузу, у меня завал». Через месяц возвращаться уже неловко, а часть иероглифов уже забылась — и пауза становится окончанием. В группе этот сценарий встречается реже не потому, что там люди дисциплинированнее, а потому, что <b>расписание там держит вместо вас</b>.</p>
+<p>Вывод из этого не «идите в группу», а другой: при индивидуальном формате расписание надо защищать нарочно, потому что само оно не защищается.</p>
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ко мне приходила студентка, которая за полтора года сменила трёх репетиторов и была уверена, что дело в ней: «видимо, я не способна к языкам». Стали разбирать, и картина оказалась одинаковой все три раза. Первый месяц — по два занятия в неделю, дальше один перенос, потом второй, потом пауза «до конца квартала». С каждым новым преподавателем она начинала заново: пиньинь, тоны, первые полсотни знаков. Три раза подряд.</p>
+  <p>Дело было не в способностях и даже не в преподавателях. Дело было в том, что её занятие каждый раз оказывалось единственным делом в расписании, которое можно подвинуть без последствий. Мы поставили фиксированный вторник и договорились о правиле: перенос возможен, но не два раза подряд. Первые полгода за всё время дошли до конца. И самое показательное — она потом сама сказала, что уровень рос не тогда, когда занятия были длинными, а когда они просто были каждую неделю.</p>
+</div>
+
+<div class="table-wrap">
+<table>
+  <caption>Чем держать регулярность на индивидуальных занятиях.</caption>
+  <thead><tr><th>Мера</th><th>Как это выглядит на практике</th></tr></thead>
+  <tbody>
+    <tr><td><b>Постоянный день и час</b></td><td>вторник, 19:00 — и это не обсуждается заново каждую неделю</td></tr>
+    <tr><td><b>Оплата блоком</b></td><td>восемь занятий вперёд: пропуск становится заметным и для вас тоже</td></tr>
+    <tr><td><b>Договорённость о переносах</b></td><td>договориться заранее: сколько переносов в месяц считается нормой</td></tr>
+    <tr><td><b>Домашнее задание с датой</b></td><td>не «посмотрите к следующему разу», а конкретный объём к конкретному дню</td></tr>
+    <tr><td><b>Точка проверки раз в месяц</b></td><td>короткий срез: что закрепилось, что нет, куда идём дальше</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Ориентир, который помогает не переоценить себя на старте: <b>два занятия в неделю по часу лучше, чем одно трёхчасовое</b>. Язык набирается частотой обращения, а не длиной сессии. Сколько времени занимает путь до разных уровней — в разборе <a href="https://kitai-school.ru/article/za-kakoe-vremya-realno-vyuchit-kitayskiy" target="_blank" rel="noopener">за какое время реально выучить китайский</a>.</p>
+
+<h2>Репетитор-носитель: <span class="italic">когда он полезен, а когда рано</span></h2>
+<p>Запрос «репетитор китайского — носитель» обычно означает «хочу, чтобы было по-настоящему». Желание понятное, но на старте оно чаще мешает.</p>
+<p>Носитель языка и преподаватель языка — разные вещи. Носитель слышит, что вы сказали не так: для него ваше слово просто прозвучало как другое слово. А вот объяснить, <i>почему</i> так вышло и что сделать с языком и голосом, — это отдельная работа, которой учатся. Русскоязычный преподаватель объяснит логику тонов на понятном вам языке и покажет разницу через знакомые звуки. Поэтому наша позиция простая и давно записана: <b>на старте важнее постановка произношения, а носитель полезнее примерно с уровня A2</b>, когда нужна живая речь и привычка к разным голосам.</p>
+<div class="table-wrap">
+<table>
+  <caption>Когда носитель уместен.</caption>
+  <thead><tr><th>Этап</th><th>Кто нужнее</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td><b>С нуля до первых фраз</b></td><td>русскоязычный преподаватель</td><td>тоны и звуки объясняются через сравнение с русским; без объяснения ошибка закрепляется</td></tr>
+    <tr><td><b>Примерно с A2</b></td><td>полезен носитель</td><td>появляется, о чём говорить, и нужна привычка к чужому темпу речи</td></tr>
+    <tr><td><b>Подготовка к устному экзамену</b></td><td>оба, но по-разному</td><td>носитель даёт скорость и живость, преподаватель — структуру ответа и разбор ошибок</td></tr>
+    <tr><td><b>Специальная лексика</b></td><td>смотрите не на паспорт, а на опыт</td><td>носитель без опыта в вашей области знает эти слова не лучше вас</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>«Репетитор в Москве», <span class="italic">когда занятия онлайн</span></h2>
+<p>Формулировка выглядит противоречивой, но за ней почти всегда стоит настоящая потребность. Обычно одна из трёх — и её полезно назвать вслух, потому что от ответа зависит выбор.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что на самом деле означает «в Москве» в онлайн-запросе.</caption>
+  <thead><tr><th>Что имеют в виду</th><th>Что с этим делать</th></tr></thead>
+  <tbody>
+    <tr><td><b>Удобное время</b></td><td>спросить про часовой пояс преподавателя: занятие должно попадать в ваш вечер, а не в его ночь</td></tr>
+    <tr><td><b>Возможность встретиться очно</b></td><td>честно решить, будете ли вы ездить на самом деле; чаще оказывается, что нет</td></tr>
+    <tr><td><b>Знание российской школы</b></td><td>это про ребёнка: нужен опыт с экзаменами и школьной программой, а не адрес</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Третий пункт стоит отдельного внимания. Если речь про школьника, город преподавателя значения не имеет, а вот понимание того, как устроены школьные экзамены и олимпиады по китайскому, — имеет. Про это отдельно написано в разборе <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-detey" target="_blank" rel="noopener">китайский язык для детей</a>.</p>
+
+<h2>Что спросить <span class="italic">до первого занятия</span></h2>
+<p>Короткий список. Вопросы простые, но ответы на них расходятся сильно — и по ответам обычно всё понятно.</p>
+<div class="table-wrap">
+<table>
+  <caption>Вопросы до оплаты и что означают ответы.</caption>
+  <thead><tr><th>Вопрос</th><th>Что показывает ответ</th></tr></thead>
+  <tbody>
+    <tr><td><b>Как вы проверяете письмо от руки?</b></td><td>есть ли вообще работа с написанием или только с узнаванием знаков</td></tr>
+    <tr><td><b>Сколько минут занятия уходит на произношение?</b></td><td>правят ли тоны системно или вспоминают о них, когда уже поздно</td></tr>
+    <tr><td><b>Что будет, если вы заболеете?</b></td><td>есть ли замена или занятия просто встанут</td></tr>
+    <tr><td><b>По какому учебнику и что за ним дальше?</b></td><td>есть ли план на полгода вперёд или занятия строятся от урока к уроку</td></tr>
+    <tr><td><b>Сколько я буду говорить сам?</b></td><td>кто на занятии главный говорящий — вы или преподаватель</td></tr>
+    <tr><td><b>Как мы поймём, что есть прогресс?</b></td><td>есть ли точки проверки или «вам виднее»</td></tr>
+    <tr><td><b>Что входит в стоимость, кроме часа занятия?</b></td><td>материалы, проверка домашнего задания, ответы между занятиями</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Один вопрос из этого списка работает лучше остальных: <b>«сколько я буду говорить сам?»</b>. Занятие, где преподаватель объясняет сорок минут из шестидесяти, ощущается насыщенным и почти не двигает речь. Почему это так и что с этим делать — в разборе про <a href="https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем онлайн-репетитор отличается от языковой школы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Различие не в качестве занятий, а в том, кто отвечает за процесс. У частного репетитора вы договариваетесь с конкретным человеком: он же ведёт занятия, он же составляет программу, он же решает все вопросы. В школе между вами и преподавателем есть организация: программа, замена на время болезни, договор, методист, к которому можно обратиться, если занятия не идут. Частный репетитор при этом обычно дешевле и гибче по расписанию. Ни один вариант не лучше другого сам по себе — они по-разному распределяют риск.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Репетитор — это обязательно занятия один на один?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и это самая частая путаница. «Репетитор» отвечает на вопрос, кто ведёт занятие, а «один на один» — на вопрос, как оно устроено. Частный репетитор может собрать мини-группу из двух-трёх человек, а школа — дать вам индивидуальные уроки. Это два независимых решения, и принимать их удобнее по очереди: сначала формат под вашу цель и бюджет, потом исполнителя.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужен ли новичку репетитор-носитель китайского языка?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На старте важнее не носитель, а грамотная постановка произношения: русскоязычный преподаватель объяснит логику тонов на понятном вам языке и покажет, чем ваш звук отличается от нужного. Носитель полезнее примерно с уровня A2, когда нужна живая разговорная практика и привычка к разным голосам. И отдельно: носитель языка и преподаватель языка — не одно и то же. Носитель слышит, что вы сказали неправильно, но объяснить, почему так вышло и что сделать, умеет не каждый — это отдельная профессия.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как онлайн-репетитор проверяет иероглифику, если не видит тетрадь?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Способы есть, и о них стоит спросить заранее. Рабочие варианты: писать на разлинованном листе и присылать фото после занятия, писать прямо на занятии под камеру, которая смотрит на стол, или писать в общем документе с проверкой на месте. Ненадёжный вариант — набирать иероглифы с клавиатуры: так проверяется узнавание, а не написание, и порядок черт при этом не виден совсем. Если про проверку письма вам не отвечают внятно, это стоит уточнить до оплаты.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему индивидуальные занятия чаще бросают, чем групповые?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что их легче перенести. В группе расписание общее: пропуск заметен, и догонять приходится самому. С репетитором занятие переносится одним сообщением — и это удобство работает против вас. Один перенос превращается в два, потом в паузу на месяц. Лечится это заранее: фиксированный день и час, оплата вперёд за блок занятий и договорённость, что перенос возможен не чаще оговорённого. Не потому что так строже, а потому что регулярность в языке даёт больше, чем интенсивность.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что означает «репетитор китайского в Москве», если занятия идут онлайн?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Обычно за этой формулировкой стоит одна из трёх настоящих потребностей. Первая — часовой пояс: чтобы занятие попадало в ваш вечер, а не в ночь. Вторая — возможность иногда встретиться очно. Третья — знание российской школьной программы и экзаменов, если речь про ребёнка. Стоит назвать вслух, что именно из этого вам нужно: от ответа зависит, подойдёт вам преподаватель из другого города или нет.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Не знаете, что вам подходит — индивидуальные занятия или группа? Приходите на диагностическое занятие: определим уровень, посмотрим произношение и письмо и честно скажем, какой формат даст вам результат быстрее. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a> — подберём формат под вашу цель.</p>
+</div>
+
+<p>Дальше по теме: разбор всех форматов и цен — <a href="https://kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh" target="_blank" rel="noopener">курсы китайского для взрослых</a>; как устроен групповой урок — <a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku" target="_blank" rel="noopener">групповые занятия по китайскому</a>; с чего начинать самому — <a href="https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya" target="_blank" rel="noopener">изучение китайского с нуля</a>; порядок освоения языка — <a href="https://kitai-school.ru/article/etapy-izucheniya-kitayskogo-yazyka" target="_blank" rel="noopener">этапы изучения китайского языка</a>; тоны и звуки — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>; работа со знаками — <a href="https://kitai-school.ru/article/kursy-po-ieroglifike" target="_blank" rel="noopener">курсы по иероглифике</a>; речь и барьер — <a href="https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>; занятия для ребёнка — <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-detey" target="_blank" rel="noopener">китайский язык для детей</a>; ориентиры по срокам — <a href="https://kitai-school.ru/article/za-kakoe-vremya-realno-vyuchit-kitayskiy" target="_blank" rel="noopener">за какое время реально выучить китайский</a>; уровень для работы и учёбы — <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — индивидуальные и групповые занятия, диагностика уровня и подбор формата.</li>
+    <li>Внутренняя методика школы по постановке произношения и работе с иероглификой на онлайн-занятиях.</li>
+    <li>Наблюдения за учебными группами и индивидуальными учащимися: регулярность занятий и причины перерывов.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть занятия идут ровно и без пауз! <span class="han">贵在坚持！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим язык к поступлению: HSK под требования вуза и собеседование на китайском</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
