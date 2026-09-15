@@ -1,0 +1,414 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/yazykovye-kursy-v-kitae#article",
+      "headline": "Языковые курсы в Китае: какие бывают, что решает граница в полгода и с каким уровнем ехать",
+      "description": "Три формата языковых курсов в Китае и чем от них отличается подготовительное отделение; рубеж в сто восемьдесят дней, от которого зависят виза и вид на жительство; с каким уровнем ехать; главный критерий выбора школы и структура расходов.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-15",
+      "dateModified": "2026-09-15",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/yazykovye-kursy-v-kitae",
+      "about": {
+        "@type": "Thing",
+        "name": "Языковые курсы китайского в Китае — форматы, виза и выбор программы",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Китайский_язык",
+          "https://ru.wikipedia.org/wiki/Образование_в_Китае"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "areaServed": "RU",
+      "sameAs": ["https://t.me/kitaischool"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/yazykovye-kursy-v-kitae#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Чем языковые курсы при вузе отличаются от подготовительного отделения?", "acceptedAnswer": {"@type": "Answer", "text": "Это разные вещи, и путаница здесь стоит года. Языковые курсы (语言班) учат только языку и никуда автоматически не ведут: закончили — и всё, дальше поступаете на общих основаниях. Подготовительное отделение (预科) — это вход в основную программу конкретного вуза, там кроме языка есть базовые предметы под будущее направление, а условия перехода прописаны в правилах приёма. Если вам обещают «после курсов поступите к нам», просите документ вуза, а не письмо менеджера. Подробно эта развилка разобрана в разборе про бакалавриат в Китае."}},
+        {"@type": "Question", "name": "Что меняется на границе в сто восемьдесят дней?", "acceptedAnswer": {"@type": "Answer", "text": "Почти всё, что касается вашего статуса. Для программ длиннее этого срока оформляют учебную визу категории X1, и уже в Китае по ней получают вид на жительство — то есть вы становитесь полноценным студентом с документом, который позволяет жить в стране. Для коротких программ выдают визу X2, вид на жительство по ней не оформляют, и продление или смена статуса — отдельный вопрос, который решается не всегда. Поэтому длительность программы выбирают не только по деньгам и желанию: она определяет, в каком качестве вы находитесь в стране."}},
+        {"@type": "Question", "name": "С каким уровнем китайского разумно ехать на курсы в Китай?", "acceptedAnswer": {"@type": "Answer", "text": "С каким-то уже имеющимся. Ехать с полного нуля можно, но дорого: первые месяцы уйдут на пиньинь, четыре тона и первые сотни знаков, а это ровно та часть, которую одинаково хорошо ставят где угодно, включая занятия из дома. В Китае дорого стоит не обучение само по себе, а месяц жизни там. Разумный подход такой: базу и произношение набрать заранее, а поездку потратить на то, ради чего туда и едут — на речь, скорость и среду."}},
+        {"@type": "Question", "name": "Правда ли, что в Китае заговоришь автоматически?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, и это главное разочарование тех, кто съездил. Заговорить заставляет не страна, а необходимость: если в группе и общежитии вокруг вас говорят по-русски, вы будете говорить по-русски, а китайский останется на четыре часа занятий в день. Люди годами живут в Китае с бытовым уровнем именно поэтому. Поэтому состав группы и то, чем вы заняты после занятий, для результата важнее рекламного описания программы."}},
+        {"@type": "Question", "name": "Сколько стоят языковые курсы в Китае?", "acceptedAnswer": {"@type": "Answer", "text": "Конкретных сумм мы здесь намеренно не приводим: они зависят от вуза, города и года, а цифры из интернета устаревают быстрее, чем публикуются. Полезнее держать в голове структуру расходов: обучение, проживание, обязательная медицинская страховка, консульский сбор и оформление визы, перелёт, медосмотр и оформление на месте, плюс жизнь — еда, транспорт, быт. Единственный надёжный источник по обучению и общежитию — страница вашей программы на сайте самого вуза."}},
+        {"@type": "Question", "name": "Можно ли учить китайский в Китае без знания английского?", "acceptedAnswer": {"@type": "Answer", "text": "Да, на языковых программах обучение обычно идёт на китайском с самого начала, через наглядность и постепенное усложнение, а не через язык-посредник. Английский пригодится в быту и в общении с другими иностранными студентами, но требованием программы он, как правило, не является. Требования конкретной программы всё равно проверяйте на сайте вуза: они различаются."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/yazykovye-kursy-v-kitae#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Языковые курсы в Китае: какие бывают, что решает граница в полгода и с каким уровнем ехать", "item": "https://kitai-school.ru/article/yazykovye-kursy-v-kitae"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Учёба в Китае</p>
+<h1>Языковые курсы в Китае: <span class="italic">какие бывают, что решает граница в полгода и с каким уровнем ехать</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-15">15 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/yazykovye-kursy-v-kitae.png" alt="Три двери с табличками: языковые курсы при вузе, частная школа и короткая программа — всё это называют одинаково" width="1200" height="630"></figure>
+
+<p class="passport">Под словами «языковые курсы в Китае» лежат <b>три разные вещи</b>, и цена ошибки здесь измеряется не деньгами, а годом жизни. А ещё есть четвёртая, которую в эту кучу кладут чаще всего, — подготовительное отделение вуза, и вот оно языковыми курсами как раз не является. Начнём с того, что есть что, потом разберём рубеж, от которого зависит ваш статус в стране, и закончим тем, на что смотреть при выборе. Без обещания, что Китай научит языку сам.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Подготовительное отделение <span class="han">预科</span> и языковые курсы <span class="han">语言班</span> — не одно и то же</b>: первое ведёт в программу конкретного вуза, второе не ведёт никуда, и это нормально, если знать заранее. <b>Сто восемьдесят дней — рубеж</b>: до него виза X2 без вида на жительство, дольше — X1 и полноценный студенческий статус. <b>Ехать с нуля дорого</b>: первые месяцы уйдут на пиньинь и тоны, а они одинаково ставятся где угодно. И главное: <b>заговорить заставляет не страна, а необходимость</b> — если вокруг говорят по-русски, вы будете говорить по-русски.</p>
+</div>
+
+<h2>Три разные вещи <span class="italic">под одним названием</span></h2>
+<p>Первое, что стоит сделать, — понять, о чём именно идёт речь в конкретном предложении. Форматы отличаются не качеством, а тем, что вы получаете на выходе.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что называют языковыми курсами в Китае.</caption>
+  <thead><tr><th>Формат</th><th>Как устроено</th><th>Что на выходе</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Языковая программа при вузе</b><br><span class="han">语言班</span></td>
+      <td>семестр или год на кампусе, группы по уровням, общежитие вуза</td>
+      <td>сертификат об окончании; в основную программу вуза он автоматически не ведёт</td>
+    </tr>
+    <tr>
+      <td><b>Частная языковая школа</b></td>
+      <td>своё расписание и свои группы, жильё обычно ищете сами</td>
+      <td>сертификат школы; гибче по датам, но статус студента вуза не даёт</td>
+    </tr>
+    <tr>
+      <td><b>Короткая программа</b></td>
+      <td>несколько недель, часто летом, с культурной частью</td>
+      <td>опыт и среда; для заметного роста уровня срок мал</td>
+    </tr>
+    <tr>
+      <td><b>Подготовительное отделение</b><br><span class="han">预科</span></td>
+      <td>язык плюс базовые предметы под будущее направление</td>
+      <td class="ok">вход в основную программу этого вуза по правилам приёма</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Последняя строка — не языковые курсы, и путают её чаще всего. Разница в одном: <b>у подготовительного отделения есть прописанный переход в программу вуза, а у языковых курсов его нет</b>. Формулировка «после курсов поступите к нам» в переписке ничего не значит — значит только положение о приёме. Эта развилка со всеми подробностями разобрана в статье про <a href="https://kitai-school.ru/article/bakalavriat-v-kitae" target="_blank" rel="noopener">бакалавриат в Китае</a>, там же личная история о том, как семья потеряла на этой путанице год.</p>
+
+<h2>Сто восемьдесят дней: <span class="italic">рубеж, который решает больше всего</span></h2>
+<p>Это самая важная цифра во всей теме, и на неё почти не смотрят при выборе программы. От длительности зависит не только цена — от неё зависит, в каком качестве вы находитесь в стране.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Что меняется по обе стороны рубежа.</caption>
+  <thead><tr><th>Что</th><th>Программа до полугода</th><th>Программа дольше полугода</th></tr></thead>
+  <tbody>
+    <tr><td><b>Учебная виза</b></td><td>X2</td><td>X1</td></tr>
+    <tr><td><b>Вид на жительство</b></td><td class="bad">не оформляется</td><td class="ok">оформляется в Китае после приезда</td></tr>
+    <tr><td><b>Приглашение от вуза</b></td><td>письмо о зачислении</td><td>письмо о зачислении и форма JW</td></tr>
+    <tr><td><b>Медосмотр</b></td><td>требования зависят от программы</td><td>проходится на месте, нужен для вида на жительство</td></tr>
+    <tr><td><b>Продление и смена статуса</b></td><td class="bad">отдельный вопрос, решается не всегда</td><td>предусмотрено правилами для студентов</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Практический вывод из этой таблицы такой: <b>если вы едете пробовать — короткая программа подходит, если вы едете учиться — считайте от года</b>. Промежуточный вариант «на пять месяцев, а там продлю» выглядит экономным, а на деле упирается в то, что продление по короткой визе предусмотрено не всегда и зависит от конкретного случая.</p>
+<p class="note">Сроки, формы и порядок оформления меняются, и проверять их нужно <b>на своём году и для своей программы</b> — на сайте вуза и на сайте консульского учреждения. Общая картина этапов поступления и документов есть в разборе <a href="https://kitai-school.ru/article/kak-postupit-v-kitaj-na-byudzhet" target="_blank" rel="noopener">как поступить в Китай на бюджет</a>, а из чего вообще состоит статус иностранного студента — в статье про <a href="https://kitai-school.ru/article/distancionnoe-obuchenie-v-kitae" target="_blank" rel="noopener">дистанционное обучение в Китае</a>.</p>
+
+<figure class="ks-fig"><img src="assets/yazykovye-kursy-v-kitae-rubezh.png" alt="Рубеж в сто восемьдесят дней: слева короткая программа с визой X2, справа длинная с визой X1 и видом на жительство" width="1200" height="400"><figcaption>Длительность программы выбирают не только по деньгам: она определяет вашу визу и то, будет ли у вас вид на жительство.</figcaption></figure>
+
+<h2>Критерий, о котором <span class="italic">не пишут в описаниях</span></h2>
+<p>В рекламе программ сравнивают часы, преподавателей и кампус. А решает чаще всего другое — <b>кто вокруг вас говорит</b>.</p>
+<p>Если группа собрана из носителей одного языка, между собой вы будете общаться на нём. Это не слабость характера, а нормальное поведение: люди выбирают тот язык, на котором понимают друг друга быстрее. И тогда китайский остаётся внутри занятий, а всё остальное время идёт мимо.</p>
+<div class="table-wrap">
+<table>
+  <caption>О чём спросить школу до оплаты.</caption>
+  <thead><tr><th>Вопрос</th><th>Что показывает ответ</th></tr></thead>
+  <tbody>
+    <tr><td><b>Какой состав групп по странам?</b></td><td>будете ли вы вынуждены говорить по-китайски вне занятий</td></tr>
+    <tr><td><b>Сколько человек в группе?</b></td><td>сколько минут на занятии говорите лично вы</td></tr>
+    <tr><td><b>Есть ли устная речь отдельным предметом?</b></td><td>или она растворена в общих занятиях и до неё не доходит</td></tr>
+    <tr><td><b>Как распределены часы по навыкам?</b></td><td>не уйдёт ли большая часть на письмо и чтение</td></tr>
+    <tr><td><b>Есть ли занятия вне кампуса?</b></td><td>выходит ли программа в город или всё происходит в аудитории</td></tr>
+    <tr><td><b>Кто соседи в общежитии?</b></td><td>вечер — это половина вашего дня, и он решает не меньше занятий</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Про «пассивное переписывание иероглифов» отдельно, потому что этого боятся заранее. <b>Прописывать знаки нужно, но это домашняя работа</b>, а не то, за чем едут в Китай. Если в расписании программы значительная часть аудиторных часов уходит на переписывание, вы платите за самое дешёвое занятие по самой дорогой цене. Как устроен разбор речи и почему барьер не про уровень — в статье про <a href="https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>; что даёт группа и чего не даёт — в разборе <a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku" target="_blank" rel="noopener">групповые занятия по китайскому</a>.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ко мне обратилась девушка, которая отучилась в Китае год на языковой программе и вернулась расстроенной. Она рассчитывала, что за год заговорит свободно, а вышло, что понимает много, а говорит с трудом и по заученному.</p>
+  <p>Стали разбирать, как проходил её день. Занятия с утра, дальше обед с однокурсницами — обе из России. Вечером общежитие, соседка тоже русскоязычная. Магазин и доставка — через приложение, там говорить не нужно вообще. Получалось, что за пределами четырёх часов занятий китайский в её дне почти не встречался. Год в Китае — и разговорной практики меньше, чем у моих студентов, которые занимаются из дома дважды в неделю.</p>
+  <p>Мы не стали переучивать заново, взяли только речь. Но с тех пор я всем, кто собирается, задаю один вопрос заранее: <b>что в вашем дне будет заставлять вас говорить по-китайски</b>? Если ответа нет, его нужно придумать до поездки, а не надеяться, что он появится сам.</p>
+</div>
+
+<h2>С каким уровнем ехать <span class="italic">и почему с нуля дорого</span></h2>
+<p>Здесь стоит посчитать, а не решать на ощущении. Дорого в этой поездке стоит не обучение — дорого стоит месяц жизни в Китае. И вопрос не «сколько стоит курс», а <b>на что уйдут эти оплаченные месяцы</b>.</p>
+<p>С полного нуля первые месяцы уйдут на пиньинь, четыре тона и первые сотни знаков. Это ровно та часть пути, которую одинаково хорошо проходят где угодно: тоны ставятся по записи и обратной связи, знаки разбираются по составу, и ни для того, ни для другого не нужно находиться в Китае. Получается, что самые дорогие месяцы тратятся на самое переносимое.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что разумно сделать до поездки, а что только на месте.</caption>
+  <thead><tr><th>Что</th><th>Где это делается лучше</th></tr></thead>
+  <tbody>
+    <tr><td><b>Пиньинь и четыре тона</b></td><td>до поездки: нужны запись, разбор и повторение, а не среда</td></tr>
+    <tr><td><b>Первые сотни знаков</b></td><td>до поездки: это работа с составом знака и регулярность</td></tr>
+    <tr><td><b>Базовая грамматика</b></td><td>до поездки: объяснение на понятном языке экономит недели</td></tr>
+    <tr><td><b>Скорость реакции в разговоре</b></td><td class="ok">на месте: нужен живой собеседник, который не ждёт</td></tr>
+    <tr><td><b>Понимание на слух в шуме</b></td><td class="ok">на месте: улица, магазин, объявления, чужие акценты</td></tr>
+    <tr><td><b>Бытовой язык и уверенность</b></td><td class="ok">на месте: его негде взять из учебника</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Ориентир, который экономит больше всего: <b>ехать имеет смысл тогда, когда вам уже есть чем пользоваться</b>. Не «когда выучу», а когда набрана база, на которую в среде наращивается речь. Сколько времени занимает эта база — в разборе <a href="https://kitai-school.ru/article/za-kakoe-vremya-realno-vyuchit-kitayskiy" target="_blank" rel="noopener">за какое время реально выучить китайский</a>; с чего она начинается — в статье про <a href="https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya" target="_blank" rel="noopener">изучение китайского с нуля</a>; тоны и звуки — в разборе <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>.</p>
+
+<h2>Из чего складывается <span class="italic">стоимость</span></h2>
+<p>Точных сумм здесь не будет, и это осознанно: они зависят от вуза, города и года, а цифры из интернета устаревают быстрее, чем публикуются. Полезнее держать в голове <b>структуру расходов</b>, чтобы ни одна строчка не оказалась сюрпризом.</p>
+<div class="table-wrap">
+<table>
+  <caption>Статьи расходов на языковую программу.</caption>
+  <thead><tr><th>Статья</th><th>Что учесть</th></tr></thead>
+  <tbody>
+    <tr><td><b>Обучение</b></td><td>зависит от вуза и города; смотрите страницу своей программы, а не сводные таблицы</td></tr>
+    <tr><td><b>Проживание</b></td><td>общежитие обычно дешевле съёмного жилья, но мест не всегда хватает</td></tr>
+    <tr><td><b>Медицинская страховка</b></td><td>для учебной визы обязательна, оформляется по правилам принимающей стороны</td></tr>
+    <tr><td><b>Виза и оформление</b></td><td>консульский сбор, подача, а для длинных программ — ещё и вид на жительство на месте</td></tr>
+    <tr><td><b>Приезд и первые недели</b></td><td>перелёт, медосмотр, регистрация, банковская карта, симкарта</td></tr>
+    <tr><td><b>Жизнь</b></td><td>еда, транспорт, быт — по ним есть отдельный разбор цен</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Две вещи, которые стоит помнить про деньги. Первая: <b>расходы до подачи не возвращаются</b> — переводы, справки, сборы тратятся независимо от результата. Вторая: <b>первые недели на месте идут на свои</b>, даже если программа оплачена. Обе разобраны в статье про <a href="https://kitai-school.ru/article/besplatnoe-obrazovanie-v-kitae" target="_blank" rel="noopener">бесплатное образование в Китае</a>, а реальные цены на еду, транспорт и жильё — в разборе <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли в Китае</a>. Стипендии на языковые программы бывают, но реже и на других условиях, чем на степени, — это в статье про <a href="https://kitai-school.ru/article/stipendiya-v-kitae" target="_blank" rel="noopener">стипендии в Китае</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем языковые курсы при вузе отличаются от подготовительного отделения?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это разные вещи, и путаница здесь стоит года. Языковые курсы (语言班) учат только языку и никуда автоматически не ведут: закончили — и всё, дальше поступаете на общих основаниях. Подготовительное отделение (预科) — это вход в основную программу конкретного вуза, там кроме языка есть базовые предметы под будущее направление, а условия перехода прописаны в правилах приёма. Если вам обещают «после курсов поступите к нам», просите документ вуза, а не письмо менеджера. Подробно эта развилка разобрана в разборе про бакалавриат в Китае.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что меняется на границе в сто восемьдесят дней?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Почти всё, что касается вашего статуса. Для программ длиннее этого срока оформляют учебную визу категории X1, и уже в Китае по ней получают вид на жительство — то есть вы становитесь полноценным студентом с документом, который позволяет жить в стране. Для коротких программ выдают визу X2, вид на жительство по ней не оформляют, и продление или смена статуса — отдельный вопрос, который решается не всегда. Поэтому длительность программы выбирают не только по деньгам и желанию: она определяет, в каком качестве вы находитесь в стране.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С каким уровнем китайского разумно ехать на курсы в Китай?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>С каким-то уже имеющимся. Ехать с полного нуля можно, но дорого: первые месяцы уйдут на пиньинь, четыре тона и первые сотни знаков, а это ровно та часть, которую одинаково хорошо ставят где угодно, включая занятия из дома. В Китае дорого стоит не обучение само по себе, а месяц жизни там. Разумный подход такой: базу и произношение набрать заранее, а поездку потратить на то, ради чего туда и едут — на речь, скорость и среду.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что в Китае заговоришь автоматически?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и это главное разочарование тех, кто съездил. Заговорить заставляет не страна, а необходимость: если в группе и общежитии вокруг вас говорят по-русски, вы будете говорить по-русски, а китайский останется на четыре часа занятий в день. Люди годами живут в Китае с бытовым уровнем именно поэтому. Поэтому состав группы и то, чем вы заняты после занятий, для результата важнее рекламного описания программы.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько стоят языковые курсы в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Конкретных сумм мы здесь намеренно не приводим: они зависят от вуза, города и года, а цифры из интернета устаревают быстрее, чем публикуются. Полезнее держать в голове структуру расходов: обучение, проживание, обязательная медицинская страховка, консульский сбор и оформление визы, перелёт, медосмотр и оформление на месте, плюс жизнь — еда, транспорт, быт. Единственный надёжный источник по обучению и общежитию — страница вашей программы на сайте самого вуза.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли учить китайский в Китае без знания английского?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, на языковых программах обучение обычно идёт на китайском с самого начала, через наглядность и постепенное усложнение, а не через язык-посредник. Английский пригодится в быту и в общении с другими иностранными студентами, но требованием программы он, как правило, не является. Требования конкретной программы всё равно проверяйте на сайте вуза: они различаются.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Собираетесь на языковую программу и не знаете, с каким уровнем ехать? На диагностическом занятии посмотрим, где вы сейчас, и посчитаем, что разумно закрыть до поездки, чтобы месяцы в Китае ушли на речь, а не на пиньинь. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<p>Дальше по теме: подготовительное отделение и ступень бакалавриата — <a href="https://kitai-school.ru/article/bakalavriat-v-kitae" target="_blank" rel="noopener">бакалавриат в Китае</a>; статус студента и что доступно удалённо — <a href="https://kitai-school.ru/article/distancionnoe-obuchenie-v-kitae" target="_blank" rel="noopener">дистанционное обучение в Китае</a>; этапы поступления и документы — <a href="https://kitai-school.ru/article/kak-postupit-v-kitaj-na-byudzhet" target="_blank" rel="noopener">как поступить в Китай на бюджет</a>; стипендии — <a href="https://kitai-school.ru/article/stipendiya-v-kitae" target="_blank" rel="noopener">стипендии в Китае</a>; сколько своих денег понадобится — <a href="https://kitai-school.ru/article/besplatnoe-obrazovanie-v-kitae" target="_blank" rel="noopener">бесплатное образование в Китае</a>; цены на месте — <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли в Китае</a>; с чего начать язык — <a href="https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya" target="_blank" rel="noopener">изучение китайского с нуля</a>; сроки до уровня — <a href="https://kitai-school.ru/article/za-kakoe-vremya-realno-vyuchit-kitayskiy" target="_blank" rel="noopener">за какое время реально выучить китайский</a>; речь и барьер — <a href="https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>; ступень языка — <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — подготовка студентов к языковым программам в Китае и работа с теми, кто вернулся.</li>
+    <li>Правила приёма и страницы языковых программ китайских вузов — состав программы, сроки и стоимость публикуются на каждый учебный год.</li>
+    <li>Порядок оформления учебных виз и вида на жительство — категории и требования уточняются на своём году в консульском учреждении.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть поездка даст именно то, ради чего вы едете! <span class="han">读万卷书，行万里路！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим язык к поступлению: HSK под требования вуза и собеседование на китайском</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
