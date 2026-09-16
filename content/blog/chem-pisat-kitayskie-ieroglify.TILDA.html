@@ -1,0 +1,366 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/chem-pisat-kitayskie-ieroglify#article",
+      "headline": "Чем писать китайские иероглифы: ручка, кисть и тетрадь, которая важнее инструмента",
+      "description": "Чем пишут китайские иероглифы сегодня и чем писали раньше: гелевая ручка против кисти, четыре сокровища кабинета учёного, клетка 田字格 и то, почему тетрадь важнее инструмента.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-16",
+      "dateModified": "2026-09-16",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/chem-pisat-kitayskie-ieroglify",
+      "about": {
+        "@type": "Thing",
+        "name": "Инструменты письма для китайских иероглифов: ручка, кисть, тетрадь",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Китайская_каллиграфия",
+          "https://ru.wikipedia.org/wiki/Китайское_письмо"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "areaServed": "RU",
+      "sameAs": ["https://t.me/kitaischool"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/chem-pisat-kitayskie-ieroglify#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Чем китайцы пишут иероглифы в обычной жизни?", "acceptedAnswer": {"@type": "Answer", "text": "Обычной ручкой, чаще всего гелевой: она даёт ровную линию и не требует нажима. Кисть и тушь в повседневной жизни никто не достаёт — это инструмент каллиграфии, отдельного занятия со своими правилами. Примерно как у нас перьевая ручка и красивый почерк: уметь приятно, но счета и списки покупок пишут не этим."}},
+        {"@type": "Question", "name": "Можно ли учить иероглифы кистью?", "acceptedAnswer": {"@type": "Answer", "text": "Можно, но это будут два разных дела одновременно, и оба пойдут медленнее. Кисть требует своей техники: нажим, наклон, количество туши. Пока вы с ней разбираетесь, вы занимаетесь каллиграфией, а не запоминанием знаков. Если цель — выучить язык, берите ручку. Если хочется каллиграфии, занимайтесь ею отдельно и в удовольствие."}},
+        {"@type": "Question", "name": "Что такое «четыре сокровища кабинета учёного»?", "acceptedAnswer": {"@type": "Answer", "text": "Так называют набор из четырёх вещей для письма кистью: 笔 кисть, 墨 тушь, 纸 бумага и 砚 тушечница, в которой тушь растирают с водой. По-китайски это 文房四宝. Выражение старое и книжное, и сегодня оно живёт скорее в разговорах о культуре и в названиях сувенирных наборов, чем в быту."}},
+        {"@type": "Question", "name": "Почему китайские тетради расчерчены квадратами?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что иероглиф пишется в квадрате: все его части должны уместиться внутри и не вылезти за края. Клетка 田字格 — это квадрат, разделённый крестиком на четыре части, и крестик показывает середину. По нему видно, стоит знак ровно или заваливается набок. В обычной тетради в клетку такой опоры нет, и знаки быстро начинают разъезжаться."}},
+        {"@type": "Question", "name": "Нужно ли вообще писать от руки, если всё набирают на телефоне?", "acceptedAnswer": {"@type": "Answer", "text": "Набирать вы и правда будете чаще, чем писать. Но рука помогает запоминать: когда вы выводите знак сами, вы замечаете, из чего он собран, и перестаёте путать похожие. Это не значит, что надо исписывать тетради строчками одного знака — достаточно писать новые знаки по нескольку раз и возвращаться к ним. Зачем нужен правильный порядок черт, разобрано отдельно в статье про курсы по иероглифике."}},
+        {"@type": "Question", "name": "Что купить, чтобы начать писать иероглифы?", "acceptedAnswer": {"@type": "Answer", "text": "Гелевую ручку, тетрадь с квадратами 田字格 и, если хочется, прописи 字帖 — тетрадь с бледными образцами, которые обводят. Этого достаточно надолго. Отдельно стоит упомянуть 水写布 — ткань, на которой пишут водой: линия проступает и через несколько минут исчезает, ткань можно использовать снова. Для кисти нужен свой набор, но он нужен не для изучения языка."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/chem-pisat-kitayskie-ieroglify#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Чем писать китайские иероглифы: ручка, кисть и тетрадь, которая важнее инструмента", "item": "https://kitai-school.ru/article/chem-pisat-kitayskie-ieroglify"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Письменность</p>
+<h1>Чем писать китайские иероглифы: <span class="italic">ручка, кисть и тетрадь, которая важнее инструмента</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-16">16 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/chem-pisat-kitayskie-ieroglify.png" alt="Подставка с инструментами для письма: кисть, перьевая ручка, гелевая ручка и карандаш" width="1200" height="630"></figure>
+
+<p class="passport">Вопрос «чем писать иероглифы» обычно задают, представляя кисть и тушь. Ответ проще и скучнее: <b>каждый день в Китае пишут обычной ручкой</b>, чаще всего гелевой. А кисть достают для другого — это отдельное занятие. И есть вещь, которая на самом деле важнее любого инструмента: <b>тетрадь, в которой вы пишете</b>.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Для учёбы нужна гелевая ручка</b> — ровная линия, никакого нажима. <b>Кисть — это каллиграфия</b>, отдельное дело со своей техникой, и учить знаки ею медленнее. <b>«Четыре сокровища»</b> — кисть, тушь, бумага и тушечница — красивая старая формула, но в быту её не используют. И главное: <b>иероглиф пишется в квадрате</b>, поэтому китайская тетрадь расчерчена квадратами с крестиком внутри. В обычной клетке знаки разъезжаются.</p>
+</div>
+
+<h2>Чем пишут <span class="italic">каждый день</span></h2>
+<p>Если зайти в китайский магазин канцтоваров, полки будут заняты гелевыми ручками. Ими пишут школьники, студенты и взрослые. Кисть там тоже есть, но лежит в другом отделе — рядом с тушью и бумагой для каллиграфии.</p>
+<div class="table-wrap">
+<table>
+  <caption>Какой инструмент для чего.</caption>
+  <thead><tr><th>Чем</th><th>Для чего годится</th></tr></thead>
+  <tbody>
+    <tr><td><b>Гелевая ручка</b> <span class="han">中性笔</span></td><td class="ok">учёба и повседневное письмо: ровная линия, нажим не нужен</td></tr>
+    <tr><td><b>Перьевая ручка</b> <span class="han">钢笔</span></td><td>тоже подходит, но линия зависит от нажима — новичку сложнее</td></tr>
+    <tr><td><b>Карандаш</b> <span class="han">铅笔</span></td><td>первые недели и дети: можно стереть и переписать</td></tr>
+    <tr><td><b>Шариковая ручка</b> <span class="han">圆珠笔</span></td><td>пишет, но линия неровная, и тонкие черты сливаются</td></tr>
+    <tr><td><b>Кисть</b> <span class="han">毛笔</span></td><td class="bad">каллиграфия, а не изучение языка</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Разница между гелевой и шариковой ручкой кажется мелочью, но она видна на деле. <b>В иероглифе много коротких черт, и они стоят близко друг к другу.</b> Шариковая ручка кладёт линию неровно, и там, где черты сходятся, получается пятно — вы потом сами не разберёте, что написали. Особенно это мешает в знаках, которые отличаются одной чертой: такие пары разобраны в статье про <a href="https://kitai-school.ru/article/kursy-po-ieroglifike" target="_blank" rel="noopener">курсы по иероглифике</a>.</p>
+
+<h2>Тетрадь важнее <span class="italic">ручки</span></h2>
+<p>Вот то, о чём почти не говорят, а зря. <b>Иероглиф пишется в квадрате.</b> Сколько бы частей в нём ни было — две, три, пять, — все они должны уместиться внутри одного квадрата, и знак из двух черт занимает столько же места, сколько знак из двадцати.</p>
+<p>Отсюда и китайская тетрадь. Она расчерчена не в линейку и не в обычную клетку, а на квадраты, и внутри каждого квадрата стоит бледный крестик. Называется такая клетка <b class="han">田字格</b> — по знаку 田 «поле», который выглядит ровно так же.</p>
+<p>Крестик показывает середину. По нему сразу видно, стоит знак ровно или заваливается набок, одинаковые ли у него половинки, не вылезла ли черта за край. Без этой опоры знаки начинают разъезжаться, и человек этого не замечает, пока не сравнит с образцом.</p>
+
+<figure class="ks-fig"><img src="assets/chem-pisat-kitayskie-ieroglify-kletki.png" alt="Три тетрадные клетки: в обычной клетке иероглиф разъезжается, в клетке с крестиком стоит ровно, в клетке с диагоналями видно наклон черт" width="1200" height="457"><figcaption>Один и тот же знак в трёх тетрадях. Инструмент везде одинаковый — разница только в разлиновке.</figcaption></figure>
+
+<p class="note">Есть и второй вид клетки — <b class="han">米字格</b>, квадрат с крестиком и двумя диагоналями, как знак 米 «рис». Диагонали помогают поставить наклонные черты. Такая разлиновка нужна не всем: с ней удобно ставить руку в первые месяцы, дальше хватает обычной 田字格. Кстати, у знаков препинания в китайском своя клетка, и правило там похожее — об этом отдельно в статье про <a href="https://kitai-school.ru/article/kurs-po-punktuacii-kitayskogo-yazyka" target="_blank" rel="noopener">курс по пунктуации китайского языка</a>.</p>
+
+<h2>Кисть, тушь <span class="italic">и четыре сокровища</span></h2>
+<p>Теперь про то, ради чего этот вопрос обычно и задают. Набор для письма кистью называют <b class="han">文房四宝</b> — «четыре сокровища кабинета учёного». Их правда четыре.</p>
+<div class="table-wrap">
+<table>
+  <caption>Четыре сокровища.</caption>
+  <thead><tr><th>Что</th><th>Чтение</th><th>Что это</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">笔</b></td><td>bǐ</td><td>кисть: пучок волоса на бамбуковой ручке</td></tr>
+    <tr><td><b class="han">墨</b></td><td>mò</td><td>тушь; раньше это была твёрдая палочка, её растирали</td></tr>
+    <tr><td><b class="han">纸</b></td><td>zhǐ</td><td>бумага; для каллиграфии — тонкая <span class="han">宣纸</span></td></tr>
+    <tr><td><b class="han">砚</b></td><td>yàn</td><td>тушечница: камень с углублением, где тушь разводят водой</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Слово «сокровища» тут не для красоты: хорошая тушечница или старая кисть действительно стоили дорого, и их держали как ценность. Но выражение книжное, и сегодня оно живёт в разговорах о культуре и на коробках сувенирных наборов, а не в школьном пенале.</p>
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Первый набор для каллиграфии мне подарили на втором курсе: кисть, тушечница, палочка туши. Я решила, что теперь буду учить знаки как надо — по-настоящему, кистью.</p>
+  <p>Хватило меня на неделю. Я растирала тушь, пристраивалась к нажиму, следила, чтобы кисть не набрала лишнего, — и за вечер успевала написать знаков пять. Ручкой я за то же время проходила весь новый список.</p>
+  <p>Набор я не выбросила. Просто развела эти два занятия: знаки учу ручкой, а кисть достаю, когда хочется именно писать красиво и никуда не спешить. С тех пор оба дела идут лучше.</p>
+</div>
+
+<p class="note">И то, о чём редко говорят прямо. <b>Кисть требует своей техники: нажима, наклона, количества туши на волосе.</b> Пока вы с этим разбираетесь, вы занимаетесь каллиграфией — хорошим и красивым делом, но не запоминанием знаков. Если цель — выучить язык, берите ручку. Если хочется кисти, занимайтесь ею отдельно и без задачи «заодно выучить».</p>
+
+
+<h2>Что купить, <span class="italic">чтобы начать</span></h2>
+<p>Список короткий, и дорогого в нём ничего нет.</p>
+<div class="table-wrap">
+<table>
+  <caption>Набор для практики.</caption>
+  <thead><tr><th>Что</th><th>Зачем</th></tr></thead>
+  <tbody>
+    <tr><td><b>Гелевая ручка</b></td><td>основной инструмент, ничего другого для учёбы не нужно</td></tr>
+    <tr><td><b>Тетрадь с клеткой</b> <span class="han">田字格</span></td><td>держит пропорции знака; заменить обычной клеткой не выйдет</td></tr>
+    <tr><td><b>Прописи</b> <span class="han">字帖</span></td><td>бледные образцы, которые обводят; полезны в начале</td></tr>
+    <tr><td><b>Ткань для письма водой</b> <span class="han">水写布</span></td><td>линия проступает и через несколько минут исчезает — можно писать снова</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Про <b class="han">水写布</b> стоит сказать отдельно, потому что штука неочевидная. Это плотная ткань, по которой пишут кистью, смоченной обычной водой: линия темнеет, держится пару минут и пропадает, когда вода испарится. Ни туши, ни бумаги не нужно, и ошибаться не жалко. Для знакомства с кистью это самый спокойный способ.</p>
+<p>И последнее, одной строкой. <b>Порядок, в котором вы ведёте черты, важен не меньше инструмента</b>, и он не про красоту: от него зависят пропорции и то, узнает ли знак рукописный ввод на телефоне. Мы разобрали это подробно в статье про <a href="https://kitai-school.ru/article/kursy-po-ieroglifike" target="_blank" rel="noopener">курсы по иероглифике</a> и не повторяем здесь.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем китайцы пишут иероглифы в обычной жизни?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Обычной ручкой, чаще всего гелевой: она даёт ровную линию и не требует нажима. Кисть и тушь в повседневной жизни никто не достаёт — это инструмент каллиграфии, отдельного занятия со своими правилами. Примерно как у нас перьевая ручка и красивый почерк: уметь приятно, но счета и списки покупок пишут не этим.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли учить иероглифы кистью?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Можно, но это будут два разных дела одновременно, и оба пойдут медленнее. Кисть требует своей техники: нажим, наклон, количество туши. Пока вы с ней разбираетесь, вы занимаетесь каллиграфией, а не запоминанием знаков. Если цель — выучить язык, берите ручку. Если хочется каллиграфии, занимайтесь ею отдельно и в удовольствие.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое «четыре сокровища кабинета учёного»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Так называют набор из четырёх вещей для письма кистью: 笔 кисть, 墨 тушь, 纸 бумага и 砚 тушечница, в которой тушь растирают с водой. По-китайски это 文房四宝. Выражение старое и книжное, и сегодня оно живёт скорее в разговорах о культуре и в названиях сувенирных наборов, чем в быту.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему китайские тетради расчерчены квадратами?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что иероглиф пишется в квадрате: все его части должны уместиться внутри и не вылезти за края. Клетка 田字格 — это квадрат, разделённый крестиком на четыре части, и крестик показывает середину. По нему видно, стоит знак ровно или заваливается набок. В обычной тетради в клетку такой опоры нет, и знаки быстро начинают разъезжаться.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли вообще писать от руки, если всё набирают на телефоне?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Набирать вы и правда будете чаще, чем писать. Но рука помогает запоминать: когда вы выводите знак сами, вы замечаете, из чего он собран, и перестаёте путать похожие. Это не значит, что надо исписывать тетради строчками одного знака — достаточно писать новые знаки по нескольку раз и возвращаться к ним. Зачем нужен правильный порядок черт, разобрано отдельно в статье про курсы по иероглифике.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что купить, чтобы начать писать иероглифы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Гелевую ручку, тетрадь с квадратами 田字格 и, если хочется, прописи 字帖 — тетрадь с бледными образцами, которые обводят. Этого достаточно надолго. Отдельно стоит упомянуть 水写布 — ткань, на которой пишут водой: линия проступает и через несколько минут исчезает, ткань можно использовать снова. Для кисти нужен свой набор, но он нужен не для изучения языка.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Хотите писать знаки так, чтобы они не разъезжались, и понимать, из чего они собраны? На диагностическом занятии посмотрим, как вы пишете сейчас, и покажем, с чего начать. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<p>Дальше по теме: как устроен знак и как его разбирать — <a href="https://kitai-school.ru/article/kursy-po-ieroglifike" target="_blank" rel="noopener">курсы по иероглифике</a>; ключи и что они подсказывают — <a href="https://kitai-school.ru/article/znachenie-kluchey-v-kitayskih-ieroglifah" target="_blank" rel="noopener">значение ключей в китайских иероглифах</a>; откуда взялись формы знаков — <a href="https://kitai-school.ru/article/kurs-po-etimologii-kitayskogo-yazyka" target="_blank" rel="noopener">курс по этимологии китайского языка</a>; есть ли в китайском алфавит — <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify" target="_blank" rel="noopener">в Китае буквы или иероглифы</a>; с чего начать — <a href="https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya" target="_blank" rel="noopener">изучение китайского языка с нуля</a>; знаки препинания и их клетка — <a href="https://kitai-school.ru/article/kurs-po-punktuacii-kitayskogo-yazyka" target="_blank" rel="noopener">курс по пунктуации китайского языка</a>; сколько знаков нужно — <a href="https://kitai-school.ru/article/hsk-4-skolko-ieroglifov" target="_blank" rel="noopener">сколько иероглифов нужно знать</a>; ребёнку — <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-detey" target="_blank" rel="noopener">китайский язык для детей</a> и <a href="https://kitai-school.ru/article/kitayskiy-dlya-malyshey" target="_blank" rel="noopener">китайский для малышей</a>; удивительное про письменность — <a href="https://kitai-school.ru/article/interesnye-fakty-o-kitayskom-yazyke" target="_blank" rel="noopener">интересные факты о китайском языке</a>; разборы отдельных знаков — <a href="https://kitai-school.ru/article/ieroglif-ryba" target="_blank" rel="noopener">иероглиф «рыба»</a> и <a href="https://kitai-school.ru/article/voda-na-kitajskom-ieroglif" target="_blank" rel="noopener">вода по-китайски</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — постановка руки у взрослых и детей, работа с прописями и разбор типичных ошибок в начертании.</li>
+    <li>Китайская школьная традиция письма: тетради с разлиновкой 田字格 и 米字格, прописи 字帖.</li>
+    <li>Набор для письма кистью 文房四宝 — кисть, тушь, бумага и тушечница; состав набора и назначение каждого предмета.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть рука слушается! <span class="han">笔下生花！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим язык к поступлению: HSK под требования вуза и собеседование на китайском</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
