@@ -1,0 +1,381 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/chto-otvechat-na-nihao#article",
+      "headline": "Что отвечать на «нихао»: короткий ответ и почему между своими так не здороваются",
+      "description": "Что отвечать на 你好 и почему приветствие в китайском возвращают тем же словом, чем 你好 отличается от 您好 и 早上好, как здороваются между своими, что значит 吃了吗 и по каким ошибкам сразу слышно новичка.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-17",
+      "dateModified": "2026-09-17",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/chto-otvechat-na-nihao",
+      "about": {
+        "@type": "Thing",
+        "name": "Приветствия в китайском языке и ответ на 你好",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Китайский_язык",
+          "https://ru.wikipedia.org/wiki/Приветствие"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "areaServed": "RU",
+      "sameAs": ["https://t.me/kitaischool"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/chto-otvechat-na-nihao#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что отвечать на «нихао»?", "acceptedAnswer": {"@type": "Answer", "text": "Тем же самым: 你好 (nǐ hǎo). Приветствие в китайском принято возвращать, и симметричный ответ здесь не бедность языка, а норма. Если к вам обратились вежливее — 您好 (nín hǎo), — уместно ответить так же на 您好. Никаких обязательных добавок вроде «как дела» не нужно: после обмена приветствиями сразу переходят к делу или к обычному разговору."}},
+        {"@type": "Question", "name": "Можно ли ответить 你好吗?", "acceptedAnswer": {"@type": "Answer", "text": "Лучше не стоит, хотя ошибки в этом нет. 你好吗 (nǐ hǎo ma) — грамматически безупречная фраза, и её разбирают во всех учебниках как образец вопроса с частицей 吗. Но в ответ на приветствие китайцы её почти не говорят: она звучит как реплика из учебного диалога. На 你好 отвечают 你好, а спросить «как жизнь» можно потом и другими словами."}},
+        {"@type": "Question", "name": "Чем 你好 отличается от 您好?", "acceptedAnswer": {"@type": "Answer", "text": "Уровнем вежливости. 你 — обычное «ты», 您 — вежливое обращение, и 您好 говорят человеку старше, выше по положению или незнакомому в формальной обстановке: в банке, на встрече, клиенту. В обратную сторону это тоже работает: сказать 您好 близкому другу — значит поставить между вами дистанцию, и он это заметит. Если сомневаетесь, с незнакомым взрослым человеком 您好 всегда безопасно."}},
+        {"@type": "Question", "name": "Как на самом деле произносится 你好?", "acceptedAnswer": {"@type": "Answer", "text": "Записывается nǐ hǎo, а звучит ní hǎo: когда подряд идут два третьих тона, первый читается вторым. Это общее правило китайского, а не исключение для приветствия. И ещё: русская запись «ни хао» сбивает произношение, потому что китайские звуки не совпадают с русскими буквами. Лучше сразу опираться на пиньинь."}},
+        {"@type": "Question", "name": "Что отвечать на 吃了吗 «поел?»", "acceptedAnswer": {"@type": "Answer", "text": "Это не вопрос о еде, а приветствие — примерно как русское «как дела», на которое не ждут отчёта. Отвечают коротко: 吃了 (chī le) «поел» или 还没呢 (hái méi ne) «ещё нет», и разговор идёт дальше. Рассказывать, что именно вы ели, не нужно. Сегодня так здороваются реже, чем раньше, и чаще это можно услышать от людей постарше или в небольших городах."}},
+        {"@type": "Question", "name": "Как здороваются со знакомыми, если не через 你好?", "acceptedAnswer": {"@type": "Answer", "text": "Чаще всего по имени или по обращению: «Ван-лаоши», «сяо Ли» — само называние человека уже работает как приветствие. Ещё говорят по времени суток: 早上好 утром, 晚上好 вечером. Если давно не виделись — 好久不见 (hǎojiǔ bú jiàn). В переписке молодёжь пишет 嗨 или 哈喽. А 你好 между близкими звучит суховато, будто вы вдруг перешли на «вы»."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/chto-otvechat-na-nihao#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Что отвечать на «нихао»: короткий ответ и почему между своими так не здороваются", "item": "https://kitai-school.ru/article/chto-otvechat-na-nihao"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Разговорный китайский</p>
+<h1>Что отвечать на «нихао»: <span class="italic">короткий ответ и почему между своими так не здороваются</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-17">17 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/chto-otvechat-na-nihao.png" alt="Две реплики навстречу друг другу: вам говорят 你好 — и вы отвечаете тем же 你好" width="1200" height="630"></figure>
+
+<p class="passport">Если нужен только ответ, он в одну строку: <b>на 你好 отвечают тем же 你好</b>. Приветствие в китайском возвращают, и это норма, а не бедность языка. Но дальше начинается то, из-за чего вопрос вообще возникает: <b>你好 — это вежливая дистанция, а не тёплое «привет»</b>. Между своими его почти не говорят.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Отвечайте тем же словом</b>: сказали 你好 — отвечаете 你好, сказали 您好 — отвечаете 您好. <b>Отвечать 你好吗 не надо</b>: фраза правильная, но из учебника, в жизни так не говорят. <b>你好 звучит вежливо-отстранённо</b>, поэтому со знакомыми здороваются иначе — по имени, по времени суток или бытовым вопросом. И <b>«поел?» — это не вопрос о еде</b>, а приветствие вроде нашего «как дела».</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">тем же самым</span></h2>
+<p>Приветствие в китайском парное. Вам сказали слово — вы возвращаете то же слово, и на этом обмен закончен. Дальше идёт разговор или дело.</p>
+<div class="table-wrap">
+<table>
+  <caption>Готовые пары реплик.</caption>
+  <thead><tr><th>Вам говорят</th><th>Вы отвечаете</th><th>Когда</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">你好</b> nǐ hǎo</td><td class="ok"><b class="han">你好</b></td><td>обычная вежливая встреча с незнакомым</td></tr>
+    <tr><td><b class="han">您好</b> nín hǎo</td><td class="ok"><b class="han">您好</b></td><td>к вам обратились вежливо — отвечайте так же</td></tr>
+    <tr><td><b class="han">大家好</b> dàjiā hǎo</td><td class="ok"><b class="han">你好</b> или кивок</td><td>поздоровались со всей группой сразу</td></tr>
+    <tr><td><b class="han">早上好</b> zǎoshang hǎo</td><td class="ok"><b class="han">早上好</b></td><td>утро; вечером так же работает 晚上好</td></tr>
+    <tr><td><b class="han">好久不见</b> hǎojiǔ bú jiàn</td><td class="ok"><b class="han">好久不见</b></td><td>давно не виделись</td></tr>
+    <tr><td><b class="han">喂</b> wéi</td><td class="ok"><b class="han">喂</b> или <b class="han">你好</b></td><td>только по телефону, при встрече так не говорят</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Одно замечание про звучание, и оно важнее, чем кажется. <b>Записывается nǐ hǎo, а звучит ní hǎo</b>: два третьих тона подряд не выговариваются, и первый читается вторым. Это общее правило, а не особенность приветствия — подробнее в статье про <a href="https://kitai-school.ru/article/etapy-izucheniya-kitayskogo-yazyka" target="_blank" rel="noopener">этапы изучения китайского языка</a>. И не учите приветствие по русской записи «ни хао»: почему так делать не стоит, разобрано в статье про <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-kitajskogo" target="_blank" rel="noopener">корректировку произношения</a>.</p>
+
+<h2>你好 — это вежливая дистанция, <span class="italic">а не тёплое «привет»</span></h2>
+<p>Вот причина, по которой этот вопрос вообще задают. В учебнике 你好 стоит первым словом, и кажется, что это универсальное «привет». А в жизни у него другая роль.</p>
+<p><b>你好 говорят людям, с которыми вы не близки</b>: незнакомому на улице, посетителю, человеку в магазине, коллеге из другого отдела. Оно вежливое и ровное — и именно поэтому между друзьями звучит странно, будто вы вдруг перешли на «вы».</p>
+<p>Отсюда и простой способ не ошибиться: посмотрите, кто перед вами.</p>
+
+<p class="note">То же правило действует и на прощание: там приветствие тоже возвращают тем же словом, и исключений немного. Мы разобрали их отдельно: <a href="https://kitai-school.ru/article/do-svidaniya-po-kitajski-sposoby" target="_blank" rel="noopener">как попрощаться по-китайски</a>. А как устроена в китайском вежливость вообще, с «вы», обращениями и «старина Ван», — в статье про <a href="https://kitai-school.ru/article/kitajskij-etiket-obshcheniya" target="_blank" rel="noopener">китайский этикет общения</a>.</p>
+
+<figure class="ks-fig"><img src="assets/chto-otvechat-na-nihao-krug.png" alt="Три собеседника и приветствия к ним: незнакомому 你好, знакомому по имени или по времени суток, близкому — бытовой вопрос вроде «поел?»" width="1200" height="420"><figcaption>Чем ближе человек, тем меньше в приветствии формулы и больше обычного разговора.</figcaption></figure>
+
+<h2>Как здороваются <span class="italic">со своими</span></h2>
+<p>Если 你好 для своих суховато, то чем его заменяют? Четырьмя вещами, и ни одна из них не выглядит как формула.</p>
+<div class="table-wrap">
+<table>
+  <caption>Приветствия для знакомых.</caption>
+  <thead><tr><th>Как</th><th>Пример</th><th>Кому</th></tr></thead>
+  <tbody>
+    <tr><td><b>Назвать человека</b></td><td>«Ван-лаоши», «сяо Ли»</td><td>само обращение уже работает как приветствие</td></tr>
+    <tr><td><b>По времени суток</b></td><td><span class="han">早上好</span> · <span class="han">晚上好</span></td><td>коллегам, соседям, в начале дня</td></tr>
+    <tr><td><b>Если давно не виделись</b></td><td><span class="han">好久不见</span></td><td>знакомым, с которыми была пауза</td></tr>
+    <tr><td><b>В переписке</b></td><td><span class="han">嗨</span> · <span class="han">哈喽</span></td><td>ровесникам в чате, не в деловом письме</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Про обращение по имени стоит сказать отдельно, потому что для нас это непривычно. <b>В китайском назвать человека — уже поздороваться.</b> Учителю говорят «фамилия плюс 老师», руководителю — «фамилия плюс должность», и отдельное «здравствуйте» к этому не добавляют. Как это устроено в письме, разобрано в статье про <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">деловое письмо китайскому партнёру</a>, а 嗨 и 哈喽 в чате — часть того слоя, который разобран в статье про <a href="https://kitai-school.ru/article/kitayskiy-internet-sleng" target="_blank" rel="noopener">китайский интернет-сленг</a>.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Первые месяцы в Китае я жила в общежитии, и вахтёр каждое утро спрашивал меня: 吃了吗？ Я честно отвечала. Говорила, что съела кашу. Что сегодня не успела. Что купила булочку внизу и она была так себе.</p>
+  <p>Он вежливо кивал и каждый раз чуть задерживался — видимо, не понимал, зачем я всё это рассказываю. А я думала, что мы подружились и он интересуется моей жизнью.</p>
+  <p>Через месяц соседка объяснила: это не вопрос. Это «доброе утро». С тех пор я отвечаю 吃了 и иду дальше, а вахтёр, кажется, вздохнул с облегчением.</p>
+</div>
+
+<h2>«Поел?» и другие приветствия, <span class="italic">которые не вопросы</span></h2>
+<p>А вот здесь новички попадают впросак. Некоторые фразы выглядят как вопрос, но вопросом не являются.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что это на самом деле значит.</caption>
+  <thead><tr><th>Фраза</th><th>Дословно</th><th>Что ответить</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">吃了吗？</b> chī le ma</td><td>поел?</td><td><span class="han">吃了</span> «поел» или <span class="han">还没呢</span> «ещё нет»</td></tr>
+    <tr><td><b class="han">去哪儿啊？</b> qù nǎr a</td><td>куда идёшь?</td><td>коротко и неопределённо: <span class="han">出去一下</span> «выйду ненадолго»</td></tr>
+    <tr><td><b class="han">忙吗？</b> máng ma</td><td>занят?</td><td><span class="han">还行</span> «нормально» — и дальше по делу</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Главное тут — не принимать это за интерес к вашим планам. <b>Отвечать надо коротко и без подробностей</b>, как мы отвечаем «нормально» на «как дела». Подробный отчёт о том, что вы ели и куда идёте, собеседника поставит в неловкое положение: он не спрашивал. Кстати, слова про еду, если они всё-таки понадобятся, собраны в статье про <a href="https://kitai-school.ru/article/eda-na-kitayskom-yazyke" target="_blank" rel="noopener">еду на китайском</a>.</p>
+<p class="note">И честная оговорка про 吃了吗. <b>Так здороваются реже, чем раньше</b>, и услышите вы это скорее от людей постарше или в небольшом городе. В большом городе среди молодых чаще просто назовут по имени или напишут 嗨. Но знать её стоит: если вам так скажут, а вы растеряетесь, это будет заметно.</p>
+
+
+<h2>По чему сразу <span class="italic">слышно новичка</span></h2>
+<p>Четыре вещи, которые выдают человека быстрее акцента.</p>
+<div class="table-wrap">
+<table>
+  <caption>Частые промахи в приветствии.</caption>
+  <thead><tr><th>Что делают</th><th>Как лучше</th></tr></thead>
+  <tbody>
+    <tr><td><b>Отвечают на 你好 фразой 你好吗</b></td><td class="bad">это реплика из учебного диалога; отвечайте 你好</td></tr>
+    <tr><td><b>Говорят «ни хао» русскими буквами</b></td><td class="bad">звуки не совпадают; учите по пиньиню</td></tr>
+    <tr><td><b>Говорят 晚安 при встрече вечером</b></td><td class="bad">это «спокойной ночи», её говорят на прощание</td></tr>
+    <tr><td><b>Говорят 您好 близкому другу</b></td><td class="bad">это ставит дистанцию, и человек её заметит</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И ещё про 你好吗, чтобы было честно. <b>Фраза не ошибочная</b>: она построена безупречно, и её разбирают как образец вопроса с частицей — это разобрано в статье про <a href="https://kitai-school.ru/article/voprositelnaya-chastica-ma" target="_blank" rel="noopener">вопросительную частицу 吗</a>. Просто в ответ на приветствие её не говорят, как мы не отвечаем на «здравствуйте» фразой «как поживаете». Если хочется спросить, как дела, это делают позже и другими словами — такие связки отрабатывают на <a href="https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka" target="_blank" rel="noopener">курсе по разговорной речи</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что отвечать на «нихао»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Тем же самым: 你好 (nǐ hǎo). Приветствие в китайском принято возвращать, и симметричный ответ здесь не бедность языка, а норма. Если к вам обратились вежливее — 您好 (nín hǎo), — уместно ответить так же на 您好. Никаких обязательных добавок вроде «как дела» не нужно: после обмена приветствиями сразу переходят к делу или к обычному разговору.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли ответить 你好吗?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Лучше не стоит, хотя ошибки в этом нет. 你好吗 (nǐ hǎo ma) — грамматически безупречная фраза, и её разбирают во всех учебниках как образец вопроса с частицей 吗. Но в ответ на приветствие китайцы её почти не говорят: она звучит как реплика из учебного диалога. На 你好 отвечают 你好, а спросить «как жизнь» можно потом и другими словами.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 你好 отличается от 您好?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Уровнем вежливости. 你 — обычное «ты», 您 — вежливое обращение, и 您好 говорят человеку старше, выше по положению или незнакомому в формальной обстановке: в банке, на встрече, клиенту. В обратную сторону это тоже работает: сказать 您好 близкому другу — значит поставить между вами дистанцию, и он это заметит. Если сомневаетесь, с незнакомым взрослым человеком 您好 всегда безопасно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как на самом деле произносится 你好?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Записывается nǐ hǎo, а звучит ní hǎo: когда подряд идут два третьих тона, первый читается вторым. Это общее правило китайского, а не исключение для приветствия. И ещё: русская запись «ни хао» сбивает произношение, потому что китайские звуки не совпадают с русскими буквами. Лучше сразу опираться на пиньинь.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что отвечать на 吃了吗 «поел?»</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это не вопрос о еде, а приветствие — примерно как русское «как дела», на которое не ждут отчёта. Отвечают коротко: 吃了 (chī le) «поел» или 还没呢 (hái méi ne) «ещё нет», и разговор идёт дальше. Рассказывать, что именно вы ели, не нужно. Сегодня так здороваются реже, чем раньше, и чаще это можно услышать от людей постарше или в небольших городах.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как здороваются со знакомыми, если не через 你好?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Чаще всего по имени или по обращению: «Ван-лаоши», «сяо Ли» — само называние человека уже работает как приветствие. Ещё говорят по времени суток: 早上好 утром, 晚上好 вечером. Если давно не виделись — 好久不见 (hǎojiǔ bú jiàn). В переписке молодёжь пишет 嗨 или 哈喽. А 你好 между близкими звучит суховато, будто вы вдруг перешли на «вы».</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Хотите, чтобы первые фразы звучали по-живому, а не как из учебника? На диагностическом занятии послушаем ваше произношение и покажем, что говорить в первые минуты разговора. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<p>Дальше по теме: прощание — <a href="https://kitai-school.ru/article/do-svidaniya-po-kitajski-sposoby" target="_blank" rel="noopener">как попрощаться по-китайски</a> и <a href="https://kitai-school.ru/article/do-svidaniya-po-kitayski-kak-na-samom-dele-chitaetsya" target="_blank" rel="noopener">как на самом деле читается 再见</a>; вежливость, «вы» и обращения — <a href="https://kitai-school.ru/article/kitajskij-etiket-obshcheniya" target="_blank" rel="noopener">китайский этикет общения</a>; обращение в письме — <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">деловое письмо китайскому партнёру</a>; частица 吗 — <a href="https://kitai-school.ru/article/voprositelnaya-chastica-ma" target="_blank" rel="noopener">вопросительная частица 吗</a>; с чего начинают — <a href="https://kitai-school.ru/article/etapy-izucheniya-kitayskogo-yazyka" target="_blank" rel="noopener">этапы изучения китайского языка</a> и <a href="https://kitai-school.ru/article/hsk-1" target="_blank" rel="noopener">HSK 1</a>; произношение — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-kitajskogo" target="_blank" rel="noopener">корректировка произношения</a> и <a href="https://kitai-school.ru/article/bukvy-v-kitajskom-yazyke" target="_blank" rel="noopener">буквы в китайском языке</a>; фразы в поездке — <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-puteshestviy" target="_blank" rel="noopener">китайский язык для путешествий</a>; деловые встречи — <a href="https://kitai-school.ru/article/kitayskiy-dlya-delovogo-obshcheniya" target="_blank" rel="noopener">китайский для делового общения</a>; чат и сленг — <a href="https://kitai-school.ru/article/kitayskiy-internet-sleng" target="_blank" rel="noopener">китайский интернет-сленг</a>; еда — <a href="https://kitai-school.ru/article/eda-na-kitayskom-yazyke" target="_blank" rel="noopener">еда на китайском</a>; устная речь — <a href="https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — постановка первых реплик у начинающих и разбор того, что мешает в первые минуты разговора.</li>
+    <li>Наблюдения в Китае: как здороваются в быту, на работе и в переписке, и чем это отличается от учебных диалогов.</li>
+    <li>Правило изменения тонов: два третьих тона подряд, первый читается вторым.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть разговор начнётся легко! <span class="han">见面三分情！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим язык к поступлению: HSK под требования вуза и собеседование на китайском</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
