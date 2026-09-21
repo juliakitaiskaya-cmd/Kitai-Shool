@@ -1,0 +1,381 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kak-poproshchatsya-na-kitayskom#article",
+      "headline": "Как попрощаться на китайском: от формального 再见 до дружеского 拜拜",
+      "description": "Как попрощаться на китайском: четыре основные формы прощания с чтением и оттенком, что говорить начальнику, другу и продавцу, кто кому говорит 慢走 и как заканчивают переписку и звонок.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-21",
+      "dateModified": "2026-09-21",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kak-poproshchatsya-na-kitayskom",
+      "about": {
+        "@type": "Thing",
+        "name": "Прощание в китайском языке",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Китайский_язык",
+          "https://ru.wikipedia.org/wiki/Речевой_этикет"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "areaServed": "RU",
+      "sameAs": ["https://t.me/kitaischool"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kak-poproshchatsya-na-kitayskom#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как попрощаться на китайском?", "acceptedAnswer": {"@type": "Answer", "text": "Самое надёжное — 再见 (zàijiàn). Оно нейтральное и подходит почти всем: преподавателю, соседу, коллеге, незнакомому человеку. Но живых форм больше, и выбирают их по собеседнику. С другом говорят 拜拜 (bàibai). Тому, с кем увидитесь сегодня же, — 回头见 (huítóujiàn). А 慢走 (mànzǒu) говорит не уходящий, а тот, кто остаётся."}},
+        {"@type": "Question", "name": "Чем 拜拜 отличается от 再见?", "acceptedAnswer": {"@type": "Answer", "text": "Оттенком, а не смыслом. 再见 подходит в любой обстановке, в том числе в официальной. 拜拜 пришло из английского bye-bye и звучит по-дружески: так прощаются со знакомыми, по телефону и в переписке. Начальнику или человеку заметно старше 拜拜 обычно не говорят — не потому, что это грубо, а потому, что звучит слишком запросто."}},
+        {"@type": "Question", "name": "Что говорят при прощании в магазине?", "acceptedAnswer": {"@type": "Answer", "text": "Продавец скажет вам 慢走 (mànzǒu) — дословно «идите не спеша». Это не «до свидания», а пожелание того, кто остаётся, тому, кто уходит. Отвечать тем же словом не нужно: достаточно 好的，谢谢 (hǎo de, xièxie) — «хорошо, спасибо». Подробно эту пару реплик мы разобрали в отдельной статье."}},
+        {"@type": "Question", "name": "Как попрощаться с начальником по-китайски?", "acceptedAnswer": {"@type": "Answer", "text": "Лучше всего показать, что уходите вы, а не он вас отпускает: 我先走了 (wǒ xiān zǒu le) — «я пойду первым». Если уходите с встречи, которая продолжается, подойдёт 失陪了 (shīpéi le). А если провожаете старшего сами — 您慢走 (nín mànzǒu). Про вежливость к старшим у нас есть отдельный разбор."}},
+        {"@type": "Question", "name": "Как закончить переписку или звонок по-китайски?", "acceptedAnswer": {"@type": "Answer", "text": "В переписке часто пишут 先这样吧 (xiān zhèyàng ba) — «давай пока на этом», а потом 拜拜 или 晚安 (wǎn'ān), если дело к ночи. По телефону прощаются тем же 拜拜: оно звучит естественнее, чем 再见, которое в трубке кажется слишком церемонным. А если разговор откладывается — 改天聊 (gǎitiān liáo), «поговорим на днях»."}},
+        {"@type": "Question", "name": "Что значит 保重?", "acceptedAnswer": {"@type": "Answer", "text": "保重 (bǎozhòng) — «берегите себя». Это прощание не на сегодня, а на долгий срок: его говорят перед отъездом, при расставании надолго или человеку, который болеет. В обычном «пока, до завтра» оно прозвучит слишком весомо, и собеседник заметит несоответствие."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kak-poproshchatsya-na-kitayskom#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Как попрощаться на китайском: от формального 再见 до дружеского 拜拜", "item": "https://kitai-school.ru/article/kak-poproshchatsya-na-kitayskom"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Речевой этикет</p>
+<h1>Как попрощаться на китайском: <span class="italic">от формального 再见 до дружеского 拜拜</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-21">21 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/kak-poproshchatsya-na-kitayskom.png" alt="Порог: слева тот, кто уходит, справа тот, кто остаётся, и у каждого своя фраза для прощания" width="1200" height="630"></figure>
+
+<p class="passport">В учебнике прощание одно — <span class="han">再见</span>. В жизни их несколько, и выбирают их <b>не по вежливости вообще, а по собеседнику</b>. С начальником, с другом и с продавцом прощаются разными словами. Разберём четыре основные формы, посмотрим, что говорить в каждой из трёх ситуаций, и добавим три фразы, которых обычно нет в списках. Чтение 再见 по слогам и разбор пары <span class="han">慢走 — 留步</span> у нас есть отдельно, здесь дадим их коротко и со ссылками.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b><span class="han">再见</span> подходит всем и всегда</b> — с него можно начинать. <b><span class="han">拜拜</span> — дружеское</b>, для своих, для телефона и переписки. <b><span class="han">回头见</span></b> говорят, если увидитесь сегодня же. <b><span class="han">慢走</span> говорит не уходящий, а тот, кто остаётся</b>, — продавец, хозяин дома, официант. А начальнику лучше сказать <span class="han">我先走了</span>: так видно, что уходите вы сами.</p>
+</div>
+
+<h2>Четыре формы: <span class="italic">от формальной к дружеской</span></h2>
+<p>Все четыре значат примерно «до свидания». Разница в том, кому их говорят.</p>
+<div class="table-wrap">
+<table>
+  <caption>Основные прощания и их оттенок.</caption>
+  <thead><tr><th>Фраза</th><th>Чтение</th><th>Оттенок и кому</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">再见</span></td><td>zàijiàn</td><td>нейтральное. Подходит всем: преподавателю, коллеге, соседу, незнакомому человеку</td></tr>
+    <tr><td><span class="han">慢走</span></td><td>mànzǒu</td><td>вежливое, но его говорит тот, кто остаётся: продавец, хозяин дома, официант</td></tr>
+    <tr><td><span class="han">回头见</span></td><td>huítóujiàn</td><td>для своих, если увидитесь сегодня же — через час, после обеда, вечером</td></tr>
+    <tr><td><span class="han">拜拜</span></td><td>bàibai</td><td>дружеское, из английского bye-bye. С друзьями, по телефону, в переписке</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Порядок в таблице не случайный. Сверху то, что подходит в любой обстановке, снизу — то, что годится только для своих. <b>Если не уверены, кому что сказать, берите <span class="han">再见</span></b>: с ним нельзя промахнуться ни в одну сторону. Оно не звучит ни слишком сухо, ни слишком запросто.</p>
+<p>Отдельно про <span class="han">拜拜</span>. Это не сленг и не подростковое слово: так говорят и взрослые, и дети. Просто не в официальной обстановке. И читается оно ближе к «бáй-бáй», с подражанием английскому, — а не по словарной записи буква в букву. Как ставятся звуки и тоны вообще, разобрано в статье про <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-kitajskogo" target="_blank" rel="noopener">корректировку произношения</a>.</p>
+<p>Про <span class="han">回头见</span> тоже есть деталь, которую редко объясняют. Эта фраза значит не «когда-нибудь увидимся», а <b>«увидимся сегодня же»</b>. Вы выходите на обед и вернётесь через час; расходитесь по делам, а вечером встретитесь снова. Если вы прощаетесь до завтра, <span class="han">回头见</span> прозвучит странно — для этого есть <span class="han">明天见</span>. А если вы не знаете, когда увидитесь, берите обычное <span class="han">再见</span>: оно ничего не обещает и ни к чему не обязывает.</p>
+<p class="note">Схема с <span class="han">见</span> продолжается дальше сама: поставьте перед ним время — и получится новое прощание. <span class="han">明天见</span> (míngtiān jiàn) — «до завтра», <span class="han">下次见</span> (xiàcì jiàn) — «до следующего раза», <span class="han">周一见</span> (zhōu yī jiàn) — «до понедельника». Названия дней недели для таких фраз собраны в разборе <a href="https://kitai-school.ru/article/dni-nedeli-v-kitae" target="_blank" rel="noopener">дни недели в Китае</a>. Это удобно: одну схему выучили — и получили десяток прощаний вместо одного.</p>
+<p>И ещё одно наблюдение, которое экономит нервы новичкам. <b>Прощание в китайском часто короче, чем ждут.</b> Длинных формул вроде «был рад вас видеть, до скорой встречи» в обычном разговоре почти нет: говорят одно слово и расходятся. Если вам ответили коротким <span class="han">拜拜</span> и сразу отвернулись, это не холодность, а норма.</p>
+
+<figure class="ks-fig"><img src="assets/kak-poproshchatsya-na-kitayskom-shkala.png" alt="Шкала прощаний от формального к дружескому: 再见, 慢走, 回头见 и 拜拜 с подписью, кому что говорят" width="1200" height="380"><figcaption>Четыре формы от формальной к дружеской. Выбирают не по степени вежливости, а по собеседнику.</figcaption></figure>
+
+<h2>С начальником, с другом <span class="italic">и с продавцом</span></h2>
+<p>Одно и то же «до свидания» в этих трёх случаях звучит по-разному. Разберём по порядку.</p>
+
+<p><b>С начальником и со старшими.</b> Здесь важно показать, что уходите вы, а не вас отпускают. Поэтому вместо простого <span class="han">再见</span> говорят <span class="han">我先走了</span> (wǒ xiān zǒu le) — «я пойду первым». Если встреча продолжается без вас, подойдёт <span class="han">失陪了</span> (shīpéi le) — «простите, что оставляю вас». А если вы сами провожаете старшего, скажите <span class="han">您慢走</span> (nín mànzǒu): <span class="han">您</span> — вежливое «вы».</p>
+<p><b>С другом.</b> Тут всё проще: <span class="han">拜拜</span> или <span class="han">回头见</span>, если встретитесь ещё сегодня. С друзьями прощание часто вообще короткое — одно слово и всё. Долгие формулы между своими звучат странно, примерно как если бы вы сказали приятелю «позвольте откланяться».</p>
+<p><b>С продавцом.</b> Скорее всего, первым заговорит он — и скажет <span class="han">慢走</span>. Это не «до свидания», а пожелание того, кто остаётся: «идите не спеша». Отвечать тем же словом не нужно, ведь продавец никуда не идёт. Достаточно <span class="han">好的，谢谢</span> (hǎo de, xièxie) — «хорошо, спасибо». Эту пару реплик и ответ <span class="han">留步</span> мы подробно разобрали в статье про <a href="https://kitai-school.ru/article/do-svidaniya-po-kitajski-sposoby" target="_blank" rel="noopener">шесть способов попрощаться</a>.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Студент второго года проходил практику в китайской компании. Прощаться он привык коротко и по-дружески: в конце дня махал рукой и говорил всем 拜拜, включая руководителя отдела.</p>
+  <p>Никто его не поправил. Но через пару недель коллега сказал между делом: «Ты с ним как с однокурсником». Без упрёка, просто наблюдение.</p>
+  <p>Мы поменяли одну фразу: вместо 拜拜 он стал говорить 我先走了. Через неделю он написал, что руководитель впервые в ответ кивнул и сказал 好的，路上小心. Ничего больше не менялось — ни работа, ни язык. Изменилось только то, с кем он говорит какими словами.</p>
+</div>
+
+<div class="table-wrap">
+<table>
+  <caption>Что сказать в трёх обычных ситуациях.</caption>
+  <thead><tr><th>Кому</th><th>Что говорите вы</th><th>Что услышите в ответ</th></tr></thead>
+  <tbody>
+    <tr><td><b>Начальнику, старшему</b></td><td><span class="han">我先走了</span> / <span class="han">失陪了</span></td><td><span class="han">好的，再见</span> или <span class="han">慢走</span></td></tr>
+    <tr><td><b>Другу, однокурснику</b></td><td class="ok"><span class="han">拜拜</span> / <span class="han">回头见</span></td><td>то же самое в ответ</td></tr>
+    <tr><td><b>Продавцу, официанту</b></td><td><span class="han">谢谢，再见</span></td><td><span class="han">慢走</span> — отвечать тем же не нужно</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Обратите внимание на правую колонку. <b>В двух случаях из трёх прощание просто повторяют за собеседником</b>, и это нормально. Не повторяют только <span class="han">慢走</span>: его говорит тот, кто остаётся. То же самое правило работает и при встрече — про него мы писали в статье о том, <a href="https://kitai-school.ru/article/chto-otvechat-na-nihao" target="_blank" rel="noopener">что отвечать на «нихао»</a>.</p>
+
+<h2>Три фразы, <span class="italic">которых обычно нет в списках</span></h2>
+<p>Эти три пригодятся почти сразу, но в учебных списках прощаний они попадаются редко.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что ещё говорят при прощании.</caption>
+  <thead><tr><th>Фраза</th><th>Чтение</th><th>Когда говорят</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">保重</span></td><td>bǎozhòng</td><td>«берегите себя». Прощание надолго: перед отъездом или тому, кто болеет</td></tr>
+    <tr><td><span class="han">先这样吧</span></td><td>xiān zhèyàng ba</td><td>«давай пока на этом». Так заканчивают переписку и телефонный разговор</td></tr>
+    <tr><td><span class="han">改天聊</span></td><td>gǎitiān liáo</td><td>«поговорим на днях». Если разговор откладывается, а не заканчивается</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Про <span class="han">保重</span> стоит сказать точнее. Это не «пока» и не «до завтра». Оно звучит серьёзнее и годится там, где расстаются надолго. Если сказать <span class="han">保重</span> приятелю, с которым увидитесь завтра, он это заметит — примерно как русское «береги себя» в ответ на «ну, я побежал».</p>
+<p class="note">Про переписку отдельно. <b>Разговор в мессенджере обычно не обрывают, а закрывают одной фразой.</b> Сначала <span class="han">先这样吧</span>, потом <span class="han">拜拜</span> — или <span class="han">晚安</span> (wǎn'ān), «спокойной ночи», если дело к ночи. По телефону тоже чаще говорят <span class="han">拜拜</span>: <span class="han">再见</span> в трубке звучит слишком церемонно. Что ещё принято писать в китайских чатах, собрано в разборе <a href="https://kitai-school.ru/article/kitayskiy-internet-sleng" target="_blank" rel="noopener">китайский интернет-сленг</a>.</p>
+
+<h2>Что мы здесь <span class="italic">не пересказываем</span></h2>
+<p>Про прощание у нас есть ещё две статьи, и они отвечают на другие вопросы. Короткий маршрут.</p>
+<div class="table-wrap">
+<table>
+  <caption>Куда идти за подробностями.</caption>
+  <thead><tr><th>Вопрос</th><th>Где разобрано</th></tr></thead>
+  <tbody>
+    <tr><td><b>Как 再见 читается по слогам и почему не «цзайцзянь»</b></td><td><a href="https://kitai-school.ru/article/do-svidaniya-po-kitayski-kak-na-samom-dele-chitaetsya" target="_blank" rel="noopener">как на самом деле читается 再见</a></td></tr>
+    <tr><td><b>Пара <span class="han">慢走 — 留步</span> целиком, кто кому что говорит</b></td><td><a href="https://kitai-school.ru/article/do-svidaniya-po-kitajski-sposoby" target="_blank" rel="noopener">шесть способов попрощаться</a></td></tr>
+    <tr><td><b>Фразы, которые легко сказать не к месту</b></td><td><a href="https://kitai-school.ru/article/do-svidaniya-po-kitajski-sposoby" target="_blank" rel="noopener">шесть способов попрощаться</a></td></tr>
+    <tr><td><b>Как здороваются и что отвечать на приветствие</b></td><td><a href="https://kitai-school.ru/article/chto-otvechat-na-nihao" target="_blank" rel="noopener">что отвечать на «нихао»</a></td></tr>
+    <tr><td><b>Вежливость к старшим и «лицо»</b></td><td><a href="https://kitai-school.ru/article/kitajskij-etiket-obshcheniya" target="_blank" rel="noopener">китайский этикет общения</a></td></tr>
+    <tr><td><b>Прощание на деловой встрече</b></td><td><a href="https://kitai-school.ru/article/biznes-etiket-v-kitae" target="_blank" rel="noopener">бизнес-этикет в Китае</a> и <a href="https://kitai-school.ru/article/kitayskiy-dlya-delovogo-obshcheniya" target="_blank" rel="noopener">китайский язык для делового общения</a></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И главное, ради чего всё это разбиралось. <b>Прощание в китайском — не одно слово, а выбор из нескольких.</b> Выбирают не по тому, насколько вежливым хочется выглядеть, а по тому, кто перед вами и кто из вас уходит. Выучить четыре формы — работа на один вечер. Привыкнуть говорить разные слова разным людям — дело практики, и быстрее всего это выходит в разговоре. Как устроены такие занятия, мы описали в <a href="https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka" target="_blank" rel="noopener">курсе по разговорной речи</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как попрощаться на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Самое надёжное — 再见 (zàijiàn). Оно нейтральное и подходит почти всем: преподавателю, соседу, коллеге, незнакомому человеку. Но живых форм больше, и выбирают их по собеседнику. С другом говорят 拜拜 (bàibai). Тому, с кем увидитесь сегодня же, — 回头见 (huítóujiàn). А 慢走 (mànzǒu) говорит не уходящий, а тот, кто остаётся.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 拜拜 отличается от 再见?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Оттенком, а не смыслом. 再见 подходит в любой обстановке, в том числе в официальной. 拜拜 пришло из английского bye-bye и звучит по-дружески: так прощаются со знакомыми, по телефону и в переписке. Начальнику или человеку заметно старше 拜拜 обычно не говорят — не потому, что это грубо, а потому, что звучит слишком запросто.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что говорят при прощании в магазине?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Продавец скажет вам 慢走 (mànzǒu) — дословно «идите не спеша». Это не «до свидания», а пожелание того, кто остаётся, тому, кто уходит. Отвечать тем же словом не нужно: достаточно 好的，谢谢 (hǎo de, xièxie) — «хорошо, спасибо». Подробно эту пару реплик мы разобрали в отдельной статье.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как попрощаться с начальником по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Лучше всего показать, что уходите вы, а не он вас отпускает: 我先走了 (wǒ xiān zǒu le) — «я пойду первым». Если уходите с встречи, которая продолжается, подойдёт 失陪了 (shīpéi le). А если провожаете старшего сами — 您慢走 (nín mànzǒu). Про вежливость к старшим у нас есть отдельный разбор.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как закончить переписку или звонок по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В переписке часто пишут 先这样吧 (xiān zhèyàng ba) — «давай пока на этом», а потом 拜拜 или 晚安 (wǎn'ān), если дело к ночи. По телефону прощаются тем же 拜拜: оно звучит естественнее, чем 再见, которое в трубке кажется слишком церемонным. А если разговор откладывается — 改天聊 (gǎitiān liáo), «поговорим на днях».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что значит 保重?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>保重 (bǎozhòng) — «берегите себя». Это прощание не на сегодня, а на долгий срок: его говорят перед отъездом, при расставании надолго или человеку, который болеет. В обычном «пока, до завтра» оно прозвучит слишком весомо, и собеседник заметит несоответствие.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Хотите проверить, как у вас звучат эти фразы вслух? На диагностическом занятии послушаем произношение и разберём, что говорить в ваших обычных ситуациях. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<p>Дальше по теме: шесть способов попрощаться — <a href="https://kitai-school.ru/article/do-svidaniya-po-kitajski-sposoby" target="_blank" rel="noopener">«До свидания» по-китайски: 再见 и ещё пять способов попрощаться</a>; чтение 再见 по слогам — <a href="https://kitai-school.ru/article/do-svidaniya-po-kitayski-kak-na-samom-dele-chitaetsya" target="_blank" rel="noopener">как на самом деле читается 再见</a>; приветствие — <a href="https://kitai-school.ru/article/chto-otvechat-na-nihao" target="_blank" rel="noopener">что отвечать на «нихао»</a>; вежливость к старшим — <a href="https://kitai-school.ru/article/kitajskij-etiket-obshcheniya" target="_blank" rel="noopener">китайский этикет общения</a>; переговоры — <a href="https://kitai-school.ru/article/biznes-etiket-v-kitae" target="_blank" rel="noopener">бизнес-этикет в Китае</a>; деловые фразы — <a href="https://kitai-school.ru/article/kitayskiy-dlya-delovogo-obshcheniya" target="_blank" rel="noopener">китайский язык для делового общения</a>; фразы в поездке — <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-puteshestviy" target="_blank" rel="noopener">китайский язык для путешествий</a>; дни недели — <a href="https://kitai-school.ru/article/dni-nedeli-v-kitae" target="_blank" rel="noopener">дни недели в Китае</a>; чаты и сленг — <a href="https://kitai-school.ru/article/kitayskiy-internet-sleng" target="_blank" rel="noopener">китайский интернет-сленг</a>; произношение — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-kitajskogo" target="_blank" rel="noopener">корректировка произношения</a>; устная речь — <a href="https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>; с чего начать — <a href="https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya" target="_blank" rel="noopener">изучение китайского языка с нуля</a>; программа для взрослых — <a href="https://kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh" target="_blank" rel="noopener">курсы китайского для взрослых</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — разбор речевого этикета на занятиях со взрослыми и с теми, кто работает или учится в Китае.</li>
+    <li>Наблюдения за тем, какие прощания звучат в магазинах, офисах и студенческих общежитиях, и чем они отличаются от учебных списков.</li>
+    <li>Типичная картина, а не строгое правило: в разных регионах и возрастных группах набор фраз немного отличается.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть учится легко! <span class="han">后会有期！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим язык к поступлению: HSK под требования вуза и собеседование на китайском</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
