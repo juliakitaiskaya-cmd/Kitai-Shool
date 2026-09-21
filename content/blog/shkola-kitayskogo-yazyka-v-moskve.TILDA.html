@@ -1,0 +1,365 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/shkola-kitayskogo-yazyka-v-moskve#article",
+      "headline": "Школа китайского языка в Москве: что считать перед выбором, кроме цены занятия",
+      "description": "Как выбирать школу китайского языка в Москве: почему полную цену занятия считают вместе с дорогой, кому действительно нужен офлайн, какие вопросы про расписание не попадают в обычные чек-листы и почему регулярность решает больше формата.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-21",
+      "dateModified": "2026-09-21",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/shkola-kitayskogo-yazyka-v-moskve",
+      "about": {
+        "@type": "Thing",
+        "name": "Выбор школы китайского языка: очный и онлайн-формат",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Китайский_язык",
+          "https://ru.wikipedia.org/wiki/Дистанционное_обучение"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "areaServed": "RU",
+      "sameAs": ["https://t.me/kitaischool"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/shkola-kitayskogo-yazyka-v-moskve#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как выбрать школу китайского языка в Москве?", "acceptedAnswer": {"@type": "Answer", "text": "Сначала посчитайте не цену занятия, а время двери-в-дверь: дорога туда, урок, дорога обратно. В Москве эта сумма обычно вдвое больше самого урока, и именно она решает, доходите вы до занятий через два месяца или нет. Дальше смотрите на то, что у всех школ разное: перенос занятий, заморозка на отпуск и кто ведёт урок, если преподаватель заболел. Чем занимаются на самом уроке и как отличить сильную программу — разобрано у нас отдельно, в статье про курсы китайского для взрослых."}},
+        {"@type": "Question", "name": "Онлайн или офлайн: что лучше для китайского?", "acceptedAnswer": {"@type": "Answer", "text": "По результату разницы почти нет — решают регулярность и преподаватель. Разница в том, сколько вы за это платите временем. Офлайн честно нужнее в трёх случаях: если дома совсем нельзя сосредоточиться, если без внешней дисциплины вы не сядете за урок и если это маленький ребёнок, которому нужна живая группа. Во всех остальных случаях дорога съедает больше, чем даёт очный формат."}},
+        {"@type": "Question", "name": "Есть ли у Kitai School офис в Москве?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, и мы говорим об этом прямо: мы онлайн-школа, все занятия идут по видеосвязи. Это значит, что часть запросов мы честно не закрываем — если вам нужно именно прийти в аудиторию, наш формат не подойдёт. Зато не нужно закладывать в неделю дорогу, а преподавателя можно выбирать не по району, а по тому, как он работает."}},
+        {"@type": "Question", "name": "Что спрашивать у школы про расписание?", "acceptedAnswer": {"@type": "Answer", "text": "Три вещи, которых обычно нет в чек-листах. Первое: можно ли перенести занятие и за сколько часов предупредить. Второе: что будет с оплаченными занятиями, если вы уедете на месяц, — замораживают их или они просто сгорают. Третье: кто ведёт урок, если ваш преподаватель заболел, и не превращается ли это в потерянную неделю. Ответы на эти вопросы влияют на результат сильнее, чем красивая программа на сайте."}},
+        {"@type": "Question", "name": "Нужна ли школа с преподавателем-носителем?", "acceptedAnswer": {"@type": "Answer", "text": "На старте важнее не носитель, а тот, кто поставит вам тоны и объяснит логику на понятном языке. Носитель полезнее позже, когда база уже есть и нужна живая речь. Подробно про постановку произношения — в статье про корректировку произношения, а про то, когда носитель уместен, — в статье об онлайн-репетиторе."}},
+        {"@type": "Question", "name": "Сколько занятий в неделю нужно?", "acceptedAnswer": {"@type": "Answer", "text": "Два — рабочий минимум для взрослого: одно занятие в неделю слишком редко, материал успевает выветриться между уроками. Но важнее другое: сколько занятий вы реально не пропустите за месяц. Расписание, до которого вы доходите восемь раз из восьми, полезнее интенсива, до которого вы доходите четыре раза. Про сроки и ожидания — в разборе про то, за какое время реально выучить китайский."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/shkola-kitayskogo-yazyka-v-moskve#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Школа китайского языка в Москве: что считать перед выбором, кроме цены занятия", "item": "https://kitai-school.ru/article/shkola-kitayskogo-yazyka-v-moskve"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Как выбирать</p>
+<h1>Школа китайского языка в Москве: <span class="italic">что считать перед выбором, кроме цены занятия</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-21">21 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/shkola-kitayskogo-yazyka-v-moskve.png" alt="Ценник с оторванным низом: сверху цена занятия, а на оторванной части — «плюс дорога»" width="1200" height="630"></figure>
+
+<p class="passport">Сразу честно: <b>своего офиса в Москве у нас нет, мы онлайн-школа</b>. Поэтому эта статья не про то, куда прийти, а про то, что стоит посчитать до того, как вы куда-то запишетесь. И главное здесь не цена занятия, а <b>время двери-в-дверь</b>: в большом городе дорога забирает больше, чем сам урок, и рушит регулярность чаще, чем сложность языка.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Считайте вечер целиком</b>, а не цену часа: дорога туда, урок, дорога обратно. <b>Офлайн честно нужнее в трёх случаях</b> — дома не сосредоточиться, без внешней дисциплины вы не сядете, и маленький ребёнок. <b>Спрашивайте про расписание, а не только про программу</b>: перенос, заморозка на отпуск, замена заболевшего преподавателя. И <b>регулярность решает больше формата</b>: восемь занятий из восьми полезнее интенсива, до которого доходишь через раз.</p>
+</div>
+
+<h2>Считайте не цену занятия, <span class="italic">а время двери-в-дверь</span></h2>
+<p>Когда сравнивают школы, смотрят на стоимость часа. Но час — это не то, что вы тратите. Вы тратите вечер.</p>
+<p>Посчитайте сами, своими числами: сколько вы добираетесь до этой школы в будний вечер, в час пик, с пересадкой. Умножьте на два. Прибавьте занятие. <b>Получившееся и есть настоящая цена одного урока</b> — в часах, которых у вас не будет ни на что другое.</p>
+<p>Есть и вторая часть счёта, про которую не думают: <b>пропущенные занятия вы тоже оплатили</b>. Если за месяц из восьми занятий вы доехали до шести, то каждый состоявшийся урок обошёлся вам на треть дороже, чем написано в прайсе. В чеке этого не видно, а в результате видно.</p>
+<p>Отсюда и способ сравнивать школы честно: <b>смотрите не в прайс, а в свой календарь</b>. Вопрос не «сколько стоит час», а «сколько вечеров в неделю я готов отдать и сколько из них переживу в феврале, когда темно и не хочется никуда идти».</p>
+
+<p class="note">И вот что происходит дальше, а это главное. <b>Первый месяц вы доезжаете.</b> Второй — доезжаете через раз: то задержали на работе, то дождь, то просто нет сил ехать через весь город. Третий — вы уже не ходите, а деньги заплачены. <b>Бросают не из-за тонов и не из-за иероглифов, а из-за дороги</b>, и никто об этом не предупреждает, потому что это звучит несолидно. А между тем дорога — единственное в этом списке, что можно посчитать заранее.</p>
+<p class="note">Оговорка, без которой было бы нечестно: доли на картинке условные, у каждого своя дорога. У человека, который живёт в двух остановках от школы, вся эта арифметика выглядит иначе — и для него очный формат может оказаться удобнее любого онлайна. То же самое, если школа стоит по пути с работы: тогда дорога почти ничего не стоит и считать нечего. Плохо не очное обучение, плохо — когда дорогу не посчитали заранее.</p>
+
+<figure class="ks-fig"><img src="assets/shkola-kitayskogo-yazyka-v-moskve-vecher.png" alt="Вечер занятия по частям: дорога туда, сам урок и дорога обратно — урок занимает меньшую часть вечера" width="1200" height="308"><figcaption>Урок — меньшая часть вечера. Подставьте свою дорогу и посмотрите, что получится.</figcaption></figure>
+
+<h2>Кому офлайн <span class="italic">правда нужнее</span></h2>
+<p>Мы онлайн-школа, и было бы странно, если бы мы сказали «офлайн не нужен никому». Нужен, и вот честные три случая.</p>
+<div class="table-wrap">
+<table>
+  <caption>Когда очный формат стоит своей дороги.</caption>
+  <thead><tr><th>Ситуация</th><th>Почему очно лучше</th></tr></thead>
+  <tbody>
+    <tr><td><b>Дома невозможно сосредоточиться</b></td><td class="ok">маленькая квартира, дети, соседи — аудитория даёт полтора часа тишины</td></tr>
+    <tr><td><b>Без внешней дисциплины не сядете</b></td><td class="ok">оплаченное занятие, до которого надо доехать, пропустить труднее</td></tr>
+    <tr><td><b>Маленький ребёнок</b></td><td class="ok">до шести-семи лет живая группа и движение работают лучше экрана</td></tr>
+    <tr><td><b>Все остальные случаи</b></td><td>дорога забирает больше, чем даёт очный формат</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Про ребёнка стоит уточнить, потому что тут часто ошибаются в обе стороны. <b>Дело не в возрасте как таковом, а в том, сколько ребёнок выдерживает экран</b> и нужна ли ему группа, чтобы включиться. Как это устроено по возрастам — в статьях про <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-detey" target="_blank" rel="noopener">китайский язык для детей</a> и <a href="https://kitai-school.ru/article/kitayskiy-dlya-malyshey" target="_blank" rel="noopener">китайский для малышей</a>. А что даёт и чего не даёт группа взрослому — в разборе про <a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku" target="_blank" rel="noopener">групповые занятия по китайскому языку</a>.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Женщина записалась на очные курсы в центре: сильный преподаватель, хорошая группа, всё как надо. Работала она на другом конце города.</p>
+  <p>Первый месяц отходила полностью. Второй — половину. На третий написала мне: «Я не бросила китайский. Я бросила дорогу». Она правда хотела учиться, просто выходило, что вторник и четверг уходили целиком, а приезжала она домой к одиннадцати.</p>
+  <p>Мы перевели её в онлайн, оставив то же расписание. За полгода она ни разу не пропустила занятие. Ничего не изменилось, кроме того, что в семь вечера ей больше не надо было никуда ехать.</p>
+</div>
+
+<h2>Три вопроса про расписание, <span class="italic">которых нет в обычных списках</span></h2>
+<p>Про программу и преподавателя спрашивают все. А это спрашивают редко, хотя на результат влияет сильнее.</p>
+<div class="table-wrap">
+<table>
+  <caption>О чём спросить до оплаты.</caption>
+  <thead><tr><th>Вопрос</th><th>Что показывает ответ</th></tr></thead>
+  <tbody>
+    <tr><td><b>Можно ли перенести занятие и за сколько предупредить?</b></td><td>есть ли вообще такая возможность или пропуск просто сгорает</td></tr>
+    <tr><td><b>Что будет, если я уеду на месяц?</b></td><td>замораживают оплаченное или оно пропадает</td></tr>
+    <tr><td><b>Кто ведёт урок, если преподаватель заболел?</b></td><td>есть ли замена или это потерянная неделя</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Почему это важнее, чем кажется. <b>Взрослый человек пропускает занятия не потому, что ленив, а потому, что у него работа, командировки и простуды.</b> Школа, в которой пропуск не сгорает, а переносится, даёт вам за год на несколько занятий больше — при той же цене и том же преподавателе. Про то, что вообще спрашивать у школы и как отличить сильную программу, у нас есть отдельный разбор: <a href="https://kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh" target="_blank" rel="noopener">курсы китайского для взрослых</a>.</p>
+
+<h2>Что мы здесь <span class="italic">не пересказываем</span></h2>
+<p>Чтобы не писать в третий раз то, что уже разобрано, — короткий маршрут по нашим же статьям.</p>
+<div class="table-wrap">
+<table>
+  <caption>Куда идти за подробностями.</caption>
+  <thead><tr><th>Вопрос</th><th>Где разобрано</th></tr></thead>
+  <tbody>
+    <tr><td><b>Из чего состоит программа и сколько стоит</b></td><td><a href="https://kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh" target="_blank" rel="noopener">курсы китайского для взрослых</a></td></tr>
+    <tr><td><b>Как ставят тоны и почему это первое</b></td><td><a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-kitajskogo" target="_blank" rel="noopener">корректировка произношения</a></td></tr>
+    <tr><td><b>Что значит «в Москве» в онлайн-запросе</b></td><td><a href="https://kitai-school.ru/article/onlayn-repetitor-po-kitayskomu-yazyku" target="_blank" rel="noopener">онлайн-репетитор по китайскому языку</a></td></tr>
+    <tr><td><b>Красные флаги и вопросы до оплаты</b></td><td><a href="https://kitai-school.ru/article/kursy-dlya-prepodavateley-kitayskogo-yazyka" target="_blank" rel="noopener">курсы для преподавателей китайского языка</a> и <a href="https://kitai-school.ru/article/kursy-po-ieroglifike" target="_blank" rel="noopener">курсы по иероглифике</a></td></tr>
+    <tr><td><b>Сколько говорит каждый в группе</b></td><td><a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku" target="_blank" rel="noopener">групповые занятия по китайскому языку</a></td></tr>
+    <tr><td><b>С чего начать самому</b></td><td><a href="https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya" target="_blank" rel="noopener">изучение китайского языка с нуля</a></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И одна мысль, ради которой всё это считалось. <b>Формат решает меньше, чем регулярность.</b> Восемь занятий из восьми за месяц дают больше, чем интенсив, до которого вы доходите через раз, — и по-настоящему выбирать надо тот вариант, где вы дойдёте все восемь. Сколько на это уходит времени в принципе — в разборе про <a href="https://kitai-school.ru/article/za-kakoe-vremya-vyuchit-kitajskij" target="_blank" rel="noopener">за какое время реально выучить китайский</a>.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как выбрать школу китайского языка в Москве?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сначала посчитайте не цену занятия, а время двери-в-дверь: дорога туда, урок, дорога обратно. В Москве эта сумма обычно вдвое больше самого урока, и именно она решает, доходите вы до занятий через два месяца или нет. Дальше смотрите на то, что у всех школ разное: перенос занятий, заморозка на отпуск и кто ведёт урок, если преподаватель заболел. Чем занимаются на самом уроке и как отличить сильную программу — разобрано у нас отдельно, в статье про курсы китайского для взрослых.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Онлайн или офлайн: что лучше для китайского?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По результату разницы почти нет — решают регулярность и преподаватель. Разница в том, сколько вы за это платите временем. Офлайн честно нужнее в трёх случаях: если дома совсем нельзя сосредоточиться, если без внешней дисциплины вы не сядете за урок и если это маленький ребёнок, которому нужна живая группа. Во всех остальных случаях дорога съедает больше, чем даёт очный формат.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Есть ли у Kitai School офис в Москве?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и мы говорим об этом прямо: мы онлайн-школа, все занятия идут по видеосвязи. Это значит, что часть запросов мы честно не закрываем — если вам нужно именно прийти в аудиторию, наш формат не подойдёт. Зато не нужно закладывать в неделю дорогу, а преподавателя можно выбирать не по району, а по тому, как он работает.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что спрашивать у школы про расписание?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Три вещи, которых обычно нет в чек-листах. Первое: можно ли перенести занятие и за сколько часов предупредить. Второе: что будет с оплаченными занятиями, если вы уедете на месяц, — замораживают их или они просто сгорают. Третье: кто ведёт урок, если ваш преподаватель заболел, и не превращается ли это в потерянную неделю. Ответы на эти вопросы влияют на результат сильнее, чем красивая программа на сайте.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужна ли школа с преподавателем-носителем?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На старте важнее не носитель, а тот, кто поставит вам тоны и объяснит логику на понятном языке. Носитель полезнее позже, когда база уже есть и нужна живая речь. Подробно про постановку произношения — в статье про корректировку произношения, а про то, когда носитель уместен, — в статье об онлайн-репетиторе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько занятий в неделю нужно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Два — рабочий минимум для взрослого: одно занятие в неделю слишком редко, материал успевает выветриться между уроками. Но важнее другое: сколько занятий вы реально не пропустите за месяц. Расписание, до которого вы доходите восемь раз из восьми, полезнее интенсива, до которого вы доходите четыре раза. Про сроки и ожидания — в разборе про то, за какое время реально выучить китайский.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Хотите проверить, сходится ли у вас арифметика вечера? На диагностическом занятии посмотрим ваш уровень и подберём расписание, до которого вы правда будете доходить. Ехать никуда не нужно. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<p>Дальше по теме: программа, форматы и цены — <a href="https://kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh" target="_blank" rel="noopener">курсы китайского для взрослых</a>; произношение — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-kitajskogo" target="_blank" rel="noopener">корректировка произношения</a>; репетитор и что значит «в Москве» — <a href="https://kitai-school.ru/article/onlayn-repetitor-po-kitayskomu-yazyku" target="_blank" rel="noopener">онлайн-репетитор по китайскому языку</a>; группа изнутри — <a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku" target="_blank" rel="noopener">групповые занятия по китайскому языку</a>; иероглифика — <a href="https://kitai-school.ru/article/kursy-po-ieroglifike" target="_blank" rel="noopener">курсы по иероглифике</a>; преподавателям — <a href="https://kitai-school.ru/article/kursy-dlya-prepodavateley-kitayskogo-yazyka" target="_blank" rel="noopener">курсы для преподавателей китайского языка</a>; детям — <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-detey" target="_blank" rel="noopener">китайский язык для детей</a> и <a href="https://kitai-school.ru/article/kitayskiy-dlya-malyshey" target="_blank" rel="noopener">китайский для малышей</a>; самостоятельный старт — <a href="https://kitai-school.ru/article/izuchenie-kitayskogo-yazyka-s-nulya" target="_blank" rel="noopener">изучение китайского языка с нуля</a>; сроки — <a href="https://kitai-school.ru/article/za-kakoe-vremya-vyuchit-kitajskij" target="_blank" rel="noopener">за какое время реально выучить китайский</a>; устная речь — <a href="https://kitai-school.ru/article/kurs-po-razgovornoy-rechi-kitayskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>; зачем сертификат — <a href="https://kitai-school.ru/article/sertifikat-hsk" target="_blank" rel="noopener">сертификат HSK</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — работа со взрослыми учениками, в том числе с теми, кто перешёл к нам с очных курсов.</li>
+    <li>Наблюдения за тем, на каком месяце обучения чаще всего прекращаются занятия и что этому предшествует.</li>
+    <li>Условия переноса, заморозки и замены преподавателя — то, что различается у школ и редко попадает в описание программы.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть учится легко! <span class="han">水滴石穿！</span></p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим язык к поступлению: HSK под требования вуза и собеседование на китайском</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
