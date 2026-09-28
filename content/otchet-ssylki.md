@@ -1,120 +1,165 @@
-# Отчёт: внутренние ссылки блога приведены к каноническим адресам
+# Отчёт: адреса блога сверены с выгрузкой сайта
 
-Дата: 28 сентября 2026. Ветка `claude/friendly-allen-lc3hz2`, коммит «Ссылки приведены к каноническим адресам».
+Дата: 28 сентября 2026. Ветка `claude/friendly-allen-lc3hz2`.
+
+**Отменяет предыдущую версию этого отчёта.** Ваша выгрузка показала, что расхождение вдвое больше, чем я оценила по репозиторию, и что часть моей первой правки увела ссылки не туда. Всё пересчитано заново по выгрузке.
 
 ---
 
-## 1. Что было не так
+## 1. Что показала выгрузка
 
-В репозитории 119 статей. **У 43 из них адрес публикации не совпадает с именем файла.**
+В файле 118 адресов. В репозитории 119 статей. Сверила построчно: 117 статей сошлись однозначно, дальше — три остатка, о них в разделе 5.
+
+**У 58 статей из 117 тег `canonical` не совпадал с адресом публикации.** То есть больше чем у половины блога страница объявляла поисковику один адрес, а жила по другому.
 
 Примеры:
 
-| Файл в репозитории | Адрес на сайте |
+| Файл объявлял | На сайте живёт |
 |---|---|
-| `hsk-1.html` | `hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza` |
-| `granty-na-obuchenie-v-kitae.html` | `kak-vyigrat-grant-na-obuchenie-v-kitae` |
-| `voda-na-kitajskom-ieroglif.html` | `logika-kitayskih-kluchey-kak-ustroen-ieroglif-voda` |
-| `korrektirovka-proiznosheniya-kitajskogo.html` | `korrektirovka-proiznosheniya-v-kitayskom` |
-| `za-kakoe-vremya-vyuchit-kitajskij.html` | `za-kakoe-vremya-realno-vyuchit-kitayskiy` |
+| `sertifikat-hsk` | `sertifikat-hsk-chto-to-za-kzamen` |
+| `hskk` | `hskk-kak-podgotovitsya-k-ustnomu-kzamenu` |
+| `znachenie-kluchey-v-kitayskih-ieroglifah` | `logika-kitayskih-kluchey` |
+| `etapy-izucheniya-kitayskogo-yazyka` | `tapy-izucheniya-kitayskogo` |
+| `drug-na-kitayskom` | `drug-na-kitajskom` |
+| `ieroglif-semya` | `ieroglif-semya-na-kitajskom` |
 
-Внутренние ссылки в статьях строились **по именам файлов**. В результате 130 ссылок вели на несуществующие адреса — читатель попадал на 404.
+Следствие: **714 внутренних ссылок в 67 статьях вели на несуществующие страницы.**
 
-Из этих 130 **80 поставила я за эту сессию**: я всю дорогу брала слаг из имени файла, не проверив `canonical`. Остальные 50 накопились раньше.
-
----
-
-## 2. Что сделано
-
-Замена выполнена программно, строго по тегу `<link rel="canonical">` из самой статьи — другого источника правды нет, сайт из этой среды не открывается.
-
-Две технические оговорки, чтобы правка не сломала лишнего:
-
-1. **Граница справа.** Короткий слаг не должен подменять длинный: `hsk-1` не трогает `hsk-1-probnyy-test`. В регулярном выражении стоит запрет на буквы, цифры, дефис и подчёркивание после слага.
-2. **Якоря сохранены.** 199 ссылок из 438 заканчивались не кавычкой, а `#faq` и подобным. Замена работает по началу адреса, хвост остаётся на месте.
-
-Проверено после замены: ни одной ссылки на имя файла не осталось; все адреса картинок Tilda на месте, локальных `assets/` ноль; блоки T123 пересобраны, баланс `<div>` сходится, футеров нет.
+Сюда попала и часть моей первой правки. Вчера я чинила ссылки по `canonical` из самих статей — другого источника правды у меня не было, сайт из этой среды не открывается (403 через прокси). Теперь видно, что сам `canonical` был неверен у половины блога, так что часть вчерашних 130 правок увела ссылки с одного несуществующего адреса на другой. Сегодня всё пересчитано от выгрузки.
 
 ---
 
-## 3. Что перевставить в Tilda — 22 страницы
+## 2. Что исправлено
 
-| Адрес страницы | Знаков в блоке |
+В каждом из 67 файлов:
+
+- **собственный адрес страницы** — `canonical`, `og:url`, `url` и `@id` в JSON-LD, последний пункт хлебных крошек;
+- **все ссылки на другие статьи** блога.
+
+Замена шла по таблице из 101 псевдонима, с границей справа, чтобы короткий адрес не подменил длинный. Конфликтов между псевдонимами и реальными адресами не нашлось — проверено программно до записи файлов.
+
+После правки:
+
+| Проверка | Результат |
 |---|---|
-| chem-pisat-kitayskie-ieroglify | 35 767 |
-| chto-otvechat-na-nihao | 37 436 |
-| drug-na-kitayskom | 44 557 |
-| fakty-o-kitayskih-shkolah | 39 894 |
-| ieroglif-semya | 42 014 |
-| kak-bystro-vyuchit-kitayskiy | 41 505 |
-| kak-obshchayutsya-kitaycy | 37 664 |
-| kak-pereehat-v-kitay | 39 337 |
-| kak-poproshchatsya-na-kitayskom | 39 235 |
-| kak-zapominat-ieroglify | 39 273 |
-| kitayskiy-internet-sleng | 38 391 |
-| kurs-po-etimologii-kitayskogo-yazyka | 44 703 |
-| kurs-po-razgovornoy-rechi-kitayskogo-yazyka | 40 983 |
-| lager-v-kitae-s-izucheniem-kitayskogo | 40 310 |
-| obuchenie-v-kitae-dlya-russkih | 39 193 |
-| obuchenie-v-kitae-dlya-russkih-posle-11-klassa | 45 123 |
-| postuplenie-v-kitay-bez-ege | 39 247 |
-| postuplenie-v-vuz-kitaya | 45 448 |
-| shkola-kitayskogo-yazyka-v-moskve | 37 516 |
-| stazhirovka-v-kitae | 39 788 |
-| yazykovye-kursy-v-kitae | 42 327 |
-| yuridicheskiy-kitayskiy-yazyk | 41 966 |
-
-Файлы лежат в `content/blog/<имя файла>.TILDA.html`. Мета-теги не менялись — перевставлять нужно только блок T123.
+| Файлов, где `canonical` ≠ адрес из выгрузки | **0** |
+| Ссылок на адреса вне выгрузки | 33 — все на две страницы из раздела 5 |
+| Объём блоков T123 | максимум 46 048 знаков (лимит 50 000) |
+| Баланс `<div>` | сходится во всех 67 |
+| Футер «Для записи» | 0 |
+| Локальные `assets/` в картинках | 0, адреса Tilda не тронуты |
 
 ---
 
-## 4. Вторая находка: ещё 26 страниц, и тут нужно ваше решение
+## 3. Каталог статей
 
-Осталось 89 ссылок, которые ведут на адреса, каких нет **ни у одного** файла в репозитории. Разбор показал, что это не выдумка: за каждой стоит реальная статья блога, но её файл объявляет **другой, более короткий** адрес.
+Каталог оказался единственным местом, где адреса были верны с самого начала: все 83 ссылки вели на существующие страницы. Не хватало статей — 34 штуки, включая всё написанное за последние недели.
 
-| Адрес в ссылках | Что объявляет файл |
-|---|---|
-| sertifikat-hsk-chto-to-za-kzamen | sertifikat-hsk |
-| hskk-kak-podgotovitsya-k-ustnomu-kzamenu | hskk |
-| hskk-1-kak-sdat | hskk-1 |
-| hskk-2-kak-sdat-sredniy-uroven | hskk-2 |
-| hskk-3-kak-sdat-vysshiy-uroven | hskk-3 |
-| yct-kzamen-po-kitayskomu-dlya-detey | yct |
-| sdat-yct-v-moskve-kak-zapisatsya | yct-v-moskve |
-| eda-na-kitayskom | eda-na-kitayskom-yazyke |
-| cveta-na-kitayskom-s-transkripciey | cveta-na-kitajskom |
-| cifry-ot-0-do-10-na-kitayskom | cifry-na-kitayskom-ot-0-do-10 |
-| kak-govoryat-jivotnye-na-kitayskom | zvuki-zhivotnyh-na-kitayskom |
-| idiomy-kitayskogo-yazyka | idiomy-v-kitayskom-yazyke |
-| logika-kitayskih-kluchey | znachenie-kluchey-v-kitayskih-ieroglifah |
-| ieroglif-drujba | druzhba-na-kitayskom-ieroglif |
-| ieroglif-chetyre | ieroglif-4-po-kitayski |
-| jeltyy-cvet-v-kitae | znachenie-zheltogo-cveta-v-kitae |
-| fioletovyy-cvet-v-kitae | znachenie-fioletovogo-cveta-v-kitae |
-| stipendii-v-kitae-dlya-inostrancev | stipendiya-v-kitae |
-| magistratura-v-kitae-leksicheskiy-navigator | magistratura-v-kitae |
-| distancionnoe-obuchenie-v-kitae-chto-realno-dostupno | distancionnoe-obuchenie-v-kitae |
-| kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna | kitayskiy-yazyk-dlya-biznesa |
-| tapy-izucheniya-kitayskogo | etapy-izucheniya-kitayskogo-yazyka |
-| gruppovye-zanyatiya-po-kitayskomu-yazyku-kak-ustroen-urok | gruppovye-zanyatiya-po-kitayskomu-yazyku |
-| kitayskiy-dlya-malyshey-kak-nachat | kitayskiy-dlya-malyshey |
-| kursy-po-ieroglifike-kak-vybrat-programmu | kursy-po-ieroglifike |
-| kursy-dlya-prepodavateley-kitayskogo-yazyka-chek-list | kursy-dlya-prepodavateley-kitayskogo-yazyka |
+Добавлены. **Теперь в каталоге 117 карточек** — весь блог. Обновлены счётчики разделов и число в лиде. Проверено: дублей нет, ни одна статья не пропущена, все адреса из выгрузки.
 
-**Почему я думаю, что права левая колонка, а не правая.**
+Новые разделы по объёму: О языке и обучении — 19, Лексика и произношение — 17, Учёба и поступление — 16, Экзамены HSK — 15, Иероглифы — 10, Бизнес — 9, Жизнь в Китае — 8, Грамматика — 7, Культура и HSKK/YCT — по 6, CSCA — 4.
 
-Все эти адреса стоят в каталоге статей. В том же каталоге 57 ссылок ведут на адреса, которые статьи объявляют сами, — и среди них все длинные и неочевидные: `hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza`, `hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma`, `hsk-5-kak-sdat-universitetskiy-kzamen`. Десять из десяти совпадений по HSK. Значит, каталог собирали по реальным адресам сайта.
-
-Второй довод — как записаны слова. В левой колонке ровно те особенности транслитерации Tilda, что и в подтверждённых адресах: «экзамен» превращается в `kzamen`, «нужна» в `nujna`, «дружба» в `drujba`, «жёлтый» в `jeltyy`. Так пишет Tilda, а не человек и не я.
-
-**Чего я сделать не могу.** Проверить напрямую: `kitai-school.ru` из этой среды не открывается, прокси отдаёт 403. А правка тут дорогая — менять `canonical` у 26 опубликованных страниц. Ошибусь — уроню их выдачу.
-
-Поэтому решение за вами. Проверяется одной ссылкой: откройте
-`https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen`
-и скажите, открылась статья про сертификат HSK или 404.
+Блок — 43 713 знаков, на 390 px без горизонтальной прокрутки.
 
 ---
 
-## 5. Что ещё осталось в каталоге
+## 4. Что перевставить в Tilda — 67 страниц
 
-Каталог статей (`_katalog-statej.html`) сам по себе неполон: в нём 83 карточки на 119 статей. Не представлены 62 статьи, включая всё, что написано за последние недели. Разбирать его имеет смысл после того, как решится вопрос из раздела 4, — иначе придётся править дважды.
+**Файлы, которые я отдала раньше сегодня, устарели все до одного.** Берите из этого списка.
+
+Файлы лежат в `content/blog/<имя файла>.TILDA.html`. Мета-теги статей не менялись — перевставляется только блок T123.
+
+| Статья | Адрес | Знаков |
+|---|---|---|
+| HSK 5 пробный тест | hsk-5-probnyy-test | 40 236 |
+| HSKK 1 | hskk-1-kak-sdat | 40 456 |
+| HSKK 2 | hskk-2-kak-sdat-sredniy-uroven | 41 357 |
+| HSKK 3 | hskk-3-kak-sdat-vysshiy-uroven | 42 010 |
+| HSKK: устный экзамен | hskk-kak-podgotovitsya-k-ustnomu-kzamenu | 40 583 |
+| YCT для детей | yct-kzamen-po-kitayskomu-dlya-detey | 42 108 |
+| Бакалавриат в Китае | bakalavriat-v-kitae | 42 553 |
+| Бесплатное образование | besplatnoe-obrazovanie-v-kitae | 40 219 |
+| Групповые занятия | gruppovye-zanyatiya-po-kitayskomu-yazyku-kak-ustroen-urok | 42 160 |
+| Даты сдачи HSK | daty-sdachi-hsk-raspisanie-sessiy | 40 951 |
+| Дистанционное обучение | distancionnoe-obuchenie-v-kitae-chto-realno-dostupno | 44 952 |
+| Друг на китайском | drug-na-kitajskom | 44 501 |
+| Дружба по-китайски 友 | ieroglif-drujba | 43 004 |
+| Еда на китайском | eda-na-kitayskom | 43 850 |
+| Жёлтый цвет в Китае | jeltyy-cvet-v-kitae | 39 507 |
+| Значение ключей в иероглифах | logika-kitayskih-kluchey | 43 976 |
+| Значение цветов в Китае | znachenie-cvetov-v-kitae | 45 087 |
+| Идиомы 成语 | idiomy-kitayskogo-yazyka | 41 353 |
+| Иероглиф «рыба» 鱼 | ieroglif-ryba | 37 750 |
+| Иероглиф «четыре» 四 | ieroglif-chetyre | 35 471 |
+| Иероглиф «семья» 家 | ieroglif-semya-na-kitajskom | 42 075 |
+| Изучение с нуля | izuchenie-kitajskogo-yazyka-s-nulya-s-chego-nachat | 39 711 |
+| Интересные факты о языке | interesnye-fakty-o-kitayskom-yazyke | 40 497 |
+| Как «говорят» животные | kak-govoryat-jivotnye-na-kitayskom | 38 279 |
+| Как быстро выучить китайский | kak-bystro-vyuchit-kitajskij | 41 547 |
+| Как запоминать иероглифы | kak-zapominat-ieroglify | 39 343 |
+| Как общаются китайцы | kak-obshchayutsya-kitajcy | 37 738 |
+| Как переехать в Китай | kak-pereekhat-v-kitaj-chetyre-osnovaniya | 39 621 |
+| Как попрощаться | kak-poproshchatsya-na-kitajskom | 39 271 |
+| Китайский для малышей | kitayskiy-dlya-malyshey-kak-nachat | 41 943 |
+| Интернет-сленг | kitajskij-internet-sleng | 38 417 |
+| Китайский для бизнеса | kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna | 41 432 |
+| Деловое общение: 50 фраз | kitayskiy-yazyk-dlya-delovogo-obscheniya | 46 048 |
+| Китайский для детей | kitayskiy-yazyk-dlya-detey-marshrut-po-vozrastam | 40 452 |
+| 50 фраз для поездки | kitajskij-yazyk-dlya-puteshestvij-50-fraz | 43 652 |
+| Курс по грамматике | kurs-po-grammatike-kitajskogo-yazyka-kak-ustroen | 38 356 |
+| Курс по логистике | kurs-po-logistike-na-kitajskom-yazyke | 38 949 |
+| Курс по маркетингу | kurs-po-marketingu-na-kitajskom-yazyke-ploshchadki-terminy | 42 550 |
+| Курс по пунктуации | kurs-po-punktuacii-kitajskogo-yazyka-vse-znaki-glavnye-pravila | 38 145 |
+| Курс по разговорной речи | kurs-po-razgovornoj-rechi-kitajskogo-yazyka | 41 053 |
+| Курс по союзам | kurs-po-soyuzam-kitajskogo-yazyka | 37 931 |
+| Курс по этимологии | kurs-po-ehtimologii-kitajskogo-yazyka-chto-v-istoriyakh | 44 808 |
+| Курсы для преподавателей | kursy-dlya-prepodavateley-kitayskogo-yazyka-chek-list | 39 765 |
+| Курсы по иероглифике | kursy-po-ieroglifike-kak-vybrat-programmu | 42 517 |
+| Лагерь в Китае | lager-v-kitae-s-izucheniem-kitajskogo-chem-on-otlichaetsya | 40 569 |
+| Ключи на примере «воды» | logika-kitayskih-kluchey-kak-ustroen-ieroglif-voda | 37 215 |
+| Магистратура: язык вуза | magistratura-v-kitae-leksicheskiy-navigator | 45 522 |
+| После 11 класса | obuchenie-v-kitae-dlya-russkikh-posle-11-klassa | 45 309 |
+| Обучение для русских | obuchenie-v-kitae-dlya-russkikh | 39 344 |
+| Онлайн-репетитор | onlajn-repetitor-po-kitajskomu-yazyku-chem-on-otlichaetsya | 45 602 |
+| Поступление без ЕГЭ | postuplenie-v-kitaj-bez-egeh-chto-trebuet-vuz | 39 413 |
+| Как выбрать вуз | postuplenie-v-vuz-kitaya | 45 640 |
+| Сдать YCT в Москве | sdat-yct-v-moskve-kak-zapisatsya | 39 593 |
+| Сертификат HSK | sertifikat-hsk-chto-to-za-kzamen | 39 648 |
+| Стажировка в Китае | stazhirovka-v-kitae-chto-vam-predlagayut | 40 037 |
+| Стипендии для иностранцев | stipendii-v-kitae-dlya-inostrancev | 40 405 |
+| Технический китайский | tekhnicheskij-kitajskij-yazyk | 40 060 |
+| Факты о китайских школах | fakty-o-kitajskikh-shkolakh | 40 019 |
+| Фиолетовый цвет | fioletovyy-cvet-v-kitae | 37 903 |
+| Цвета с транскрипцией | cveta-na-kitayskom-s-transkripciey | 34 786 |
+| Цифры от 0 до 10 | cifry-ot-0-do-10-na-kitayskom | 37 875 |
+| Чем писать иероглифы | chem-pisat-kitajskie-ieroglify | 35 933 |
+| Что отвечать на «нихао» | chto-otvechat-na-nikhao | 37 424 |
+| Школа в Москве | shkola-kitajskogo-yazyka-v-moskve-chto-schitat | 37 850 |
+| Этапы изучения | tapy-izucheniya-kitayskogo | 39 088 |
+| Юридический китайский | yuridicheskij-kitajskij-yazyk-chto-chitat | 42 141 |
+| Языковые курсы в Китае | yazykovye-kursy-v-kitae-kakie-byvayut | 42 518 |
+
+Плюс каталог: `_katalog-statej.TILDA.html`, 43 713 знаков.
+
+---
+
+## 5. Три вопроса к вам
+
+**1. «Курсы китайского для взрослых».** В репозитории есть файл `kursy-kitajskogo-dlya-vzroslyh.html`, и на него ведут **22 ссылки** из статей — по адресу `kitai-school.ru/article/kursy-kitajskogo-dlya-vzroslyh`. В выгрузке такого адреса нет. Похоже, это не статья, а страница курса, и живёт она не в `/article/`. Скажите правильный адрес — заменю во всех статьях. Пока эти 22 ссылки битые.
+
+**2. «До свидания по-китайски: 再见 и ещё пять способов попрощаться».** Файл `do-svidaniya-po-kitajski-sposoby.html` в репозитории есть, на него ведут **11 ссылок**, а в выгрузке такой страницы нет. При этом есть близкая — «До свидания по-китайски: как на самом деле читается 再见». Варианта два: либо статья не опубликована и её нужно выложить, либо она лишняя и 11 ссылок надо перевести на вторую. Что из этого?
+
+**3. Дубль HSK 1.** В выгрузке две строки с одним и тем же названием «HSK 1: как сдать первый уровень с первого раза»:
+
+- `hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza` (через «y»)
+- `hsk-1-kak-sdat-pervyj-uroven-s-pervogo-raza` (через «j»)
+
+Все ссылки блога и карточка каталога ведут на первый. Второй, судя по всему, — остаток от пересоздания страницы. Его стоит удалить или поставить на него редирект, иначе две одинаковые страницы конкурируют в выдаче.
+
+---
+
+## 6. Прежние долги
+
+1. Две страницы про сроки конкурируют между собой — «За какое время реально выучить китайский» и «За сколько можно выучить с нуля». Какая главная?
+2. **Предложение:** называть файлы картинок `oblozhka-<слаг>` и `infografika-<слаг>` — Tilda дважды обрезала два разных файла до одинакового имени.
+3. 132 файла `.TILDA-BLOCK.html` и `.TILDA-HEAD.html` — остатки старого формата, предложено удалить.
