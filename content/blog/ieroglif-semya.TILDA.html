@@ -1,0 +1,421 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/ieroglif-semya#article",
+      "headline": "Иероглиф семья на китайском (家): свинья под крышей и что тут правда",
+      "description": "Разбор китайского иероглифа 家 (jiā) «дом, семья»: состав из ключа 宀 и графемы 豕, три версии происхождения и почему согласия между ними нет, чем мнемоника отличается от этимологии, пять ролей знака в языке и слова с 家, которые встречаются с первых уроков.",
+      "inLanguage": "ru",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/ieroglif-semya",
+      "about": {
+        "@type": "Thing",
+        "name": "Китайский иероглиф 家",
+        "sameAs": [
+          "https://ru.wikipedia.org/wiki/Китайское_письмо",
+          "https://ru.wikipedia.org/wiki/Китайский_язык"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "areaServed": "RU",
+      "sameAs": ["https://t.me/kitaischool"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/ieroglif-semya#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как пишется иероглиф «семья» на китайском?", "acceptedAnswer": {"@type": "Answer", "text": "家, читается jiā, первый тон. В знаке десять черт. Сверху — ключ 宀 со значением «крыша, постройка», под ним графема 豕 «свинья». Упрощённое и полное написание у этого знака совпадают: его не сокращали при реформе письма. Значений несколько: дом, семья, а ещё 家 работает счётным словом и суффиксом."}},
+        {"@type": "Question", "name": "Правда ли, что в знаке 家 свинья под крышей?", "acceptedAnswer": {"@type": "Answer", "text": "Правда — но только про состав. Нижняя часть знака действительно 豕, и это «свинья». А вот почему она там оказалась, единого ответа нет: существуют как минимум три объяснения, и исследователи между ними не сошлись. Состав знака — факт, толкование состава — версия."}},
+        {"@type": "Question", "name": "Почему именно свинья, а не человек или огонь?", "acceptedAnswer": {"@type": "Answer", "text": "Объяснений несколько. По бытовой версии свинья в доме указывала на достаток и оседлую жизнь. По фонетической — нижняя часть попала в знак как подсказка о звучании. По обрядовой — знак обозначал помещение, где приносили жертвы предкам, а свинья была жертвенным животным. Красивее всех первая, доказана ни одна."}},
+        {"@type": "Question", "name": "Сколько черт в иероглифе 家?", "acceptedAnswer": {"@type": "Answer", "text": "Десять. Три из них приходятся на ключ 宀 сверху, остальные семь — на 豕 внизу. Порядок обычный для знаков с верхним ключом: сначала пишут крышу целиком, потом заполняют то, что под ней."}},
+        {"@type": "Question", "name": "Чем 家 отличается от 家庭?", "acceptedAnswer": {"@type": "Answer", "text": "家 — слово широкое и бытовое: это и дом как место, и семья как близкие люди, и даже счётное слово для заведений. 家庭 (jiātíng) — только семья как ячейка, слово более формальное: его увидишь в документах, статьях и опросах, а в разговоре про своих обычно скажут просто 家 или 家人."}},
+        {"@type": "Question", "name": "Что значит 大家 и при чём тут «семья»?", "acceptedAnswer": {"@type": "Answer", "text": "大家 (dàjiā) значит «все, ребята, присутствующие» — это обычное обращение к группе. Знак 家 в нём есть, но связь со значением «семья» давно не чувствуется: слово воспринимается как цельное. Похожая история у 国家 (guójiā) «государство» — про него любят говорить, что страна там понимается как большая семья, но это красивое толкование, а не установленное происхождение."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/ieroglif-semya#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Иероглиф семья на китайском (家): свинья под крышей и что тут правда", "item": "https://kitai-school.ru/article/ieroglif-semya"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Китайский язык</p>
+<h1>Иероглиф семья на китайском (家): <span class="italic">свинья под крышей и что тут правда</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-09-28">28 сентября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/ieroglif-semya.png" alt="Знак 家 крупно: верхняя часть — ключ «крыша» 宀, нижняя часть 豕 подсвечена, и к ней задан вопрос" width="1200" height="630"></figure>
+
+<p class="passport">Про этот знак знают все, кто хоть раз смотрел ролики про иероглифы: под крышей стоит свинья, и это будто бы память о временах, когда скот в доме означал достаток. История красивая, и <b>наполовину она верная</b>. Верно то, что под ключом <span class="han">宀</span> «крыша» действительно стоит <span class="han">豕</span> «свинья» — состав знака никто не оспаривает. А вот почему она там оказалась, объясняют по-разному: версий как минимум три, и согласия между ними нет. Разберём знак по частям, посмотрим на все три объяснения честно и перейдём к тому, что с <span class="han">家</span> делать на практике, — потому что ролей у него в языке целых пять.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b><span class="han">家</span> (jiā) — дом и семья</b>, десять черт, ключ <span class="han">宀</span> сверху и <span class="han">豕</span> «свинья» снизу. <b>Состав бесспорен, толкование — нет</b>: бытовая версия про достаток, фонетическая про звучание и обрядовая про жертвы предкам. <b>Картинкой со свиньёй пользоваться можно</b> — как мнемоникой, а не как историческим фактом. <b>В языке у знака пять ролей</b>: дом, семья, счётное слово для заведений, суффикс «специалист» и часть слов вроде <span class="han">大家</span> и <span class="han">国家</span>.</p>
+</div>
+
+<h2>Паспорт знака: <span class="italic">что такое 家 и из чего он собран</span></h2>
+<p>Начнём с того, что не вызывает споров. Здесь всё проверяется по словарю и выглядит одинаково у любого источника.</p>
+<div class="table-wrap">
+<table>
+  <caption>Иероглиф 家: основные сведения.</caption>
+  <thead><tr><th>Параметр</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td><b>Знак</b></td><td><span class="han">家</span></td></tr>
+    <tr><td><b>Чтение</b></td><td>jiā, первый тон — ровный и высокий</td></tr>
+    <tr><td><b>Значения</b></td><td>дом; семья; а ещё счётное слово и суффикс — о них ниже</td></tr>
+    <tr><td><b>Черт</b></td><td>10</td></tr>
+    <tr><td><b>Ключ</b></td><td><span class="han">宀</span> — «крыша, постройка»</td></tr>
+    <tr><td><b>Что под ключом</b></td><td><span class="han">豕</span> (shǐ) — «свинья»</td></tr>
+    <tr><td><b>Упрощённое и полное написание</b></td><td class="ok">совпадают: знак не сокращали</td></tr>
+  </tbody>
+</table>
+</div>
+<p><b>Про ключ стоит сказать отдельно.</b> <span class="han">宀</span> — это не отдельное слово, а графема, которая встречается только наверху других знаков и отвечает за область смысла: постройка, помещение, то, что под кровлей. Тот же ключ стоит в <span class="han">安</span> «спокойный» и <span class="han">室</span> «комната». Как ключи вообще подсказывают смысл, разобрано в статье про <a href="https://kitai-school.ru/article/znachenie-kluchey-v-kitayskih-ieroglifah" target="_blank" rel="noopener">значение ключей в китайских иероглифах</a>.</p>
+<p>Порядок черт обычный для знаков с верхним ключом: <b>сначала пишут крышу целиком, потом заполняют то, что под ней</b>. Рука привыкает быстро, потому что этот порядок повторяется во всех знаках с <span class="han">宀</span>. Чем удобнее писать иероглифы на первых порах, разобрано в статье про <a href="https://kitai-school.ru/article/chem-pisat-kitayskie-ieroglify" target="_blank" rel="noopener">чем писать китайские иероглифы</a>.</p>
+
+<h2>Что под крышей: <span class="italic">три версии и почему согласия нет</span></h2>
+<p>Здесь и начинается интересное. Состав знака не обсуждается, обсуждается другое: как <span class="han">豕</span> туда попал и что он означал изначально. Объяснений несколько, и у каждого своё основание.</p>
+<div class="table-wrap">
+<table>
+  <caption>Три версии происхождения знака.</caption>
+  <thead><tr><th>Версия</th><th>На чём держится</th><th>Что мешает принять окончательно</th></tr></thead>
+  <tbody>
+    <tr><td><b>Бытовая</b><br>свинья в доме — признак достатка</td><td>свинья была главным домашним животным оседлого хозяйства, и держать её мог не каждый</td><td class="bad">объясняет смысл, но не доказывает, что графему поставили именно ради этого смысла</td></tr>
+    <tr><td><b>Фонетическая</b><br>нижняя часть подсказывала звучание</td><td>в китайской письменности это обычный приём: одна часть про смысл, другая про звук</td><td class="bad">чтения менялись тысячелетиями, и прямых свидетельств здесь немного</td></tr>
+    <tr><td><b>Обрядовая</b><br>помещение для жертв предкам</td><td>свинья была жертвенным животным, а родовой храм — важным типом постройки</td><td class="bad">тоже реконструкция: она опирается на общий контекст, а не на прямое указание</td></tr>
+  </tbody>
+</table>
+</div>
+<p><b>Ни одна из трёх не отменяет остальных.</b> Более того, они могут сочетаться: графема могла попасть в знак по одной причине, а закрепиться в сознании говорящих по другой. Так бывает часто, и именно поэтому спор не заканчивается.</p>
+<p class="note">И то, что важнее любой из версий. <b>Знак засвидетельствован очень давно, и уже в ранних надписях у него тот же состав.</b> То есть мы видим результат, но не видим решения, которое к нему привело: человека, который выбрал эту графему, спросить не у кого. Всё остальное — восстановление по косвенным признакам, и честные источники так и пишут: «предполагается».</p>
+
+<figure class="ks-fig"><img src="assets/ieroglif-semya-versii.png" alt="Три версии происхождения знака 家: бытовая, фонетическая и обрядовая — с доводами за каждую и с тем, что мешает принять её окончательно" width="1200" height="532"><figcaption>Три объяснения одного знака. Состав знака бесспорен, толкование состава — нет, и это нормальное состояние дел в этимологии.</figcaption></figure>
+
+<h2>Почему история про свинью так прижилась — <span class="italic">и где её предел</span></h2>
+<p>Из трёх версий широко известна ровно одна, и это не случайность. У неё есть качество, которого нет у двух других: <b>она укладывается в одну картинку</b>. Крыша, под ней свинья, значит достаток — увидел, понял, запомнил. Фонетическую версию в картинку не превратишь, обрядовую тоже.</p>
+<p>И вот здесь надо развести две вещи, которые постоянно путают.</p>
+<div class="table-wrap">
+<table>
+  <caption>Два разных «почему».</caption>
+  <thead><tr><th></th><th>Этимология</th><th>Мнемоника</th></tr></thead>
+  <tbody>
+    <tr><td><b>Отвечает на вопрос</b></td><td>как знак сложился на самом деле</td><td>как мне его запомнить</td></tr>
+    <tr><td><b>Проверяется</b></td><td>по источникам и ранним формам</td><td class="ok">только тем, работает она или нет</td></tr>
+    <tr><td><b>Можно ли придумать свою</b></td><td class="bad">нет</td><td class="ok">да, и это нормально</td></tr>
+    <tr><td><b>Где уместна</b></td><td>в разговоре о происхождении</td><td>у вас в голове и в тетради</td></tr>
+  </tbody>
+</table>
+</div>
+<p><b>Свинья под крышей — прекрасная мнемоника.</b> Пользуйтесь ей, рисуйте её, проговаривайте вслух: знак после этого запоминается за один подход и держится. Никакого вреда в этом нет, пока вы понимаете, что делаете.</p>
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Студентка пришла на занятие довольная: посмотрела ролик и узнала, что 家 — это «свинья под крышей», а значит, в древности богатство мерили скотом. Попросила рассказать похожие истории про другие знаки.</p>
+  <p>Я предложила другое: взять эту же историю и проверить. Открыли словарь, нашли состав — всё сошлось. Стали искать, откуда версия про достаток, — и выяснилось, что это одно из объяснений, а не единственное.</p>
+  <p>Она сначала расстроилась, а потом сказала фразу, которую я теперь повторяю студентам: «Получается, картинку я всё равно оставлю, просто не буду выдавать её за историю». Знак 家 она с тех пор пишет без запинки — картинка работает ровно так же, как работала.</p>
+</div>
+<p>Предел наступает в двух местах. Первое: <b>пересказывать эту историю как факт</b> — например, китайскому собеседнику или на экзамене. Второе, менее заметное: <b>строить на ней другие выводы</b> о древнем быте, о ценностях, о том, «как китайцы относятся к семье». Знак этого не сообщает, и вывод получится не о Китае, а о нашем пересказе. Подробно разница между проверяемой историей и красивой выдумкой разобрана в статье про <a href="https://kitai-school.ru/article/kurs-po-etimologii-kitayskogo-yazyka" target="_blank" rel="noopener">курс по этимологии китайского языка</a>.</p>
+
+<h2>Пять ролей 家 <span class="italic">в языке</span></h2>
+<p>Эта часть полезнее любой этимологии, потому что с ней вы столкнётесь на первых же уроках. Знак работает в пяти разных качествах, и путать их не стоит.</p>
+<div class="table-wrap">
+<table>
+  <caption>Что делает 家 в разных позициях.</caption>
+  <thead><tr><th>Роль</th><th>Пример</th><th>Пояснение</th></tr></thead>
+  <tbody>
+    <tr><td><b>Дом как место</b></td><td><span class="han">回家</span> huí jiā — вернуться домой</td><td>самое частое употребление у начинающих</td></tr>
+    <tr><td><b>Семья как люди</b></td><td><span class="han">家人</span> jiārén — члены семьи</td><td>про своих близких говорят именно так</td></tr>
+    <tr><td><b>Счётное слово</b></td><td><span class="han">一家餐厅</span> yī jiā cāntīng — один ресторан</td><td class="bad">считает заведения и фирмы, а не людей</td></tr>
+    <tr><td><b>Суффикс «специалист»</b></td><td><span class="han">作家</span> zuòjiā — писатель</td><td>присоединяется к области занятий</td></tr>
+    <tr><td><b>Часть готового слова</b></td><td><span class="han">大家</span> dàjiā — все</td><td>значение слова цельное, «семья» в нём не слышится</td></tr>
+  </tbody>
+</table>
+</div>
+<p><b>Третья строка — та, на которой чаще всего ошибаются.</b> Увидев знакомый знак, человек читает <span class="han">一家餐厅</span> как «семейный ресторан». Ничего семейного там нет: <span class="han">家</span> здесь просто счётное слово, такое же служебное, как <span class="han">个</span>. Так же считают компании, магазины, банки и больницы.</p>
+<p><b>Четвёртая роль запоминается легко, потому что работает по схеме.</b> Область занятий плюс <span class="han">家</span> — и получается человек, который этим занимается: <span class="han">画家</span> huàjiā художник, <span class="han">科学家</span> kēxuéjiā учёный, <span class="han">专家</span> zhuānjiā эксперт. Отдельно учить их не нужно, достаточно знать схему и узнавать первую часть.</p>
+<p class="note">Про пятую роль стоит сказать честно. <span class="han">大家</span> значит «все, ребята» и в разговоре встречается постоянно; связь со значением «семья» в нём давно не чувствуется. То же с <span class="han">国家</span> guójiā «государство»: про него любят говорить, что страна там понимается как большая семья, но <b>это красивое толкование, а не установленное происхождение</b> — ровно тот случай, о котором шла речь выше. Где <span class="han">大家</span> уместно и чем отличается от других обращений к группе, разобрано в статье про то, как сказать <a href="https://kitai-school.ru/article/drug-na-kitayskom" target="_blank" rel="noopener">друг на китайском</a>.</p>
+
+<h2>Слова с 家, <span class="italic">которые встретятся с первых уроков</span></h2>
+<p>Все они собраны вокруг знака, и почти все прозрачные: зная роли из предыдущего раздела, вы угадаете смысл, даже если видите слово впервые.</p>
+<div class="table-wrap">
+<table>
+  <caption>Ходовые слова с 家.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Перевод</th><th>Заметка</th></tr></thead>
+  <tbody>
+    <tr><td><b><span class="han">家</span></b></td><td>jiā</td><td>дом, семья</td><td>само по себе употребляется свободно</td></tr>
+    <tr><td><b><span class="han">回家</span></b></td><td>huí jiā</td><td>вернуться домой</td><td>одна из первых фраз в учебнике</td></tr>
+    <tr><td><b><span class="han">家人</span></b></td><td>jiārén</td><td>члены семьи</td><td>о близких говорят так</td></tr>
+    <tr><td><b><span class="han">家庭</span></b></td><td>jiātíng</td><td>семья как ячейка</td><td>слово более формальное, чем <span class="han">家</span></td></tr>
+    <tr><td><b><span class="han">老家</span></b></td><td>lǎojiā</td><td>родные места</td><td><span class="han">老</span> здесь про давность, а не про возраст</td></tr>
+    <tr><td><b><span class="han">大家</span></b></td><td>dàjiā</td><td>все, ребята</td><td>обращение к группе</td></tr>
+    <tr><td><b><span class="han">国家</span></b></td><td>guójiā</td><td>государство</td><td>цельное слово, разбирать по частям не нужно</td></tr>
+    <tr><td><b><span class="han">作家</span></b></td><td>zuòjiā</td><td>писатель</td><td>схема «занятие + <span class="han">家</span>»</td></tr>
+    <tr><td><b><span class="han">画家</span></b></td><td>huàjiā</td><td>художник</td><td>та же схема</td></tr>
+    <tr><td><b><span class="han">专家</span></b></td><td>zhuānjiā</td><td>эксперт</td><td>та же схема</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Если вы только начинаете, из этой таблицы нужны первые три-четыре строки: они входят в самую раннюю лексику. Какие ещё слова в неё входят, видно по разбору про <a href="https://kitai-school.ru/article/hsk-1" target="_blank" rel="noopener">HSK 1</a>. А почему знаки забываются через неделю и что с этим делать, разобрано в статье про то, <a href="https://kitai-school.ru/article/kak-zapominat-ieroglify" target="_blank" rel="noopener">как запоминать иероглифы</a>.</p>
+
+<h2>Что мы здесь <span class="italic">не пересказываем</span></h2>
+<p>Эта статья про один знак. Всё, что касается письменности вообще, разобрано отдельно и подробнее.</p>
+<div class="table-wrap">
+<table>
+  <caption>Куда идти дальше.</caption>
+  <thead><tr><th>Ваш вопрос</th><th>Где разобрано</th></tr></thead>
+  <tbody>
+    <tr><td><b>Что в историях про иероглифы правда, а что придумано</b></td><td><a href="https://kitai-school.ru/article/kurs-po-etimologii-kitayskogo-yazyka" target="_blank" rel="noopener">курс по этимологии китайского языка</a></td></tr>
+    <tr><td><b>Как ключ подсказывает смысл знака</b></td><td><a href="https://kitai-school.ru/article/znachenie-kluchey-v-kitayskih-ieroglifah" target="_blank" rel="noopener">значение ключей в китайских иероглифах</a></td></tr>
+    <tr><td><b>Почему знаки забываются и что делать</b></td><td><a href="https://kitai-school.ru/article/kak-zapominat-ieroglify" target="_blank" rel="noopener">как запоминать иероглифы</a></td></tr>
+    <tr><td><b>Разбор знака «вода»</b></td><td><a href="https://kitai-school.ru/article/voda-na-kitajskom-ieroglif" target="_blank" rel="noopener">иероглиф «вода» 水</a></td></tr>
+    <tr><td><b>Разбор знака «рыба»</b></td><td><a href="https://kitai-school.ru/article/ieroglif-ryba" target="_blank" rel="noopener">иероглиф «рыба» 鱼</a></td></tr>
+    <tr><td><b>Разбор знака «дружба»</b></td><td><a href="https://kitai-school.ru/article/druzhba-na-kitayskom-ieroglif" target="_blank" rel="noopener">иероглиф дружбы 友</a></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">И главное, ради чего всё это собиралось. <b>Хорошая история про знак — та, которую вы можете назвать историей.</b> Разница не в том, красивая она или нет, а в том, знаете ли вы, что именно держите в руках: проверяемый факт или удобную картинку. С <span class="han">家</span> факт — это состав: крыша и свинья. Всё остальное пока версии, и так и надо говорить.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как пишется иероглиф «семья» на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>家, читается jiā, первый тон. В знаке десять черт. Сверху — ключ 宀 со значением «крыша, постройка», под ним графема 豕 «свинья». Упрощённое и полное написание у этого знака совпадают: его не сокращали при реформе письма. Значений несколько: дом, семья, а ещё 家 работает счётным словом и суффиксом.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что в знаке 家 свинья под крышей?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Правда — но только про состав. Нижняя часть знака действительно 豕, и это «свинья». А вот почему она там оказалась, единого ответа нет: существуют как минимум три объяснения, и исследователи между ними не сошлись. Состав знака — факт, толкование состава — версия.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему именно свинья, а не человек или огонь?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Объяснений несколько. По бытовой версии свинья в доме указывала на достаток и оседлую жизнь. По фонетической — нижняя часть попала в знак как подсказка о звучании. По обрядовой — знак обозначал помещение, где приносили жертвы предкам, а свинья была жертвенным животным. Красивее всех первая, доказана ни одна.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько черт в иероглифе 家?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Десять. Три из них приходятся на ключ 宀 сверху, остальные семь — на 豕 внизу. Порядок обычный для знаков с верхним ключом: сначала пишут крышу целиком, потом заполняют то, что под ней.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 家 отличается от 家庭?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>家 — слово широкое и бытовое: это и дом как место, и семья как близкие люди, и даже счётное слово для заведений. 家庭 (jiātíng) — только семья как ячейка, слово более формальное: его увидишь в документах, статьях и опросах, а в разговоре про своих обычно скажут просто 家 или 家人.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что значит 大家 и при чём тут «семья»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>大家 (dàjiā) значит «все, ребята, присутствующие» — это обычное обращение к группе. Знак 家 в нём есть, но связь со значением «семья» давно не чувствуется: слово воспринимается как цельное. Похожая история у 国家 (guójiā) «государство» — про него любят говорить, что страна там понимается как большая семья, но это красивое толкование, а не установленное происхождение.</p></div>
+  </details>
+</div>
+
+<div class="cta">
+  <p>Хотите разбирать знаки по составу, а не заучивать их списком? На диагностическом занятии посмотрим ваш уровень и покажем, как это работает на практике. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<p>Дальше по теме: правда и выдумка в историях о знаках — <a href="https://kitai-school.ru/article/kurs-po-etimologii-kitayskogo-yazyka" target="_blank" rel="noopener">курс по этимологии китайского языка</a>; как работают ключи — <a href="https://kitai-school.ru/article/znachenie-kluchey-v-kitayskih-ieroglifah" target="_blank" rel="noopener">значение ключей в китайских иероглифах</a>; почему знаки забываются — <a href="https://kitai-school.ru/article/kak-zapominat-ieroglify" target="_blank" rel="noopener">как запоминать иероглифы</a>; соседние разборы серии — <a href="https://kitai-school.ru/article/voda-na-kitajskom-ieroglif" target="_blank" rel="noopener">иероглиф «вода» 水</a>, <a href="https://kitai-school.ru/article/ieroglif-ryba" target="_blank" rel="noopener">иероглиф «рыба» 鱼</a>, <a href="https://kitai-school.ru/article/ieroglif-4-po-kitayski" target="_blank" rel="noopener">иероглиф «четыре» 四</a> и <a href="https://kitai-school.ru/article/druzhba-na-kitayskom-ieroglif" target="_blank" rel="noopener">иероглиф дружбы 友</a>; слова со значением «друг» — <a href="https://kitai-school.ru/article/drug-na-kitayskom" target="_blank" rel="noopener">друг на китайском</a>; чем писать — <a href="https://kitai-school.ru/article/chem-pisat-kitayskie-ieroglify" target="_blank" rel="noopener">чем писать китайские иероглифы</a>; базовая лексика — <a href="https://kitai-school.ru/article/hsk-1" target="_blank" rel="noopener">HSK 1</a>; системные занятия по знакам — <a href="https://kitai-school.ru/article/kursy-po-ieroglifike" target="_blank" rel="noopener">курсы по иероглифике</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Состав знака, чтение и число черт — по современным словарям китайского языка.</li>
+    <li>Версии происхождения приведены как существующие объяснения; ни одна из них не выбрана как верная, потому что согласия между исследователями нет.</li>
+    <li>Практика Kitai School — что помогает студентам запомнить знак и где мнемоника начинает мешать.</li>
+    <li>Типичная картина, а не строгое правило: толкования древних знаков восстанавливаются по косвенным признакам и пересматриваются.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть знаки запоминаются! <span class="han">家和万事兴</span>！</p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Готовим язык к поступлению: HSK под требования вуза и собеседование на китайском</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
