@@ -1,2 +1,5 @@
 # Generated self-contained previews (base64 images inlined) — regenerable, large
 *.SFOTO.html
+
+# Архивы статей — собираются из содержимого репозитория, хранить копию незачем
+content/*.zip
