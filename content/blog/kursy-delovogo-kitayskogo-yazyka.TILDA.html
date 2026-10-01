@@ -1,0 +1,409 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kursy-delovogo-kitayskogo-yazyka#article",
+      "headline": "Курсы делового китайского языка: как выбрать программу под свою задачу и не бросить на полпути",
+      "description": "Как выбрать курсы делового китайского языка: почему это зонтичное название для шести разных программ, что нужно закупщику, логисту, маркетологу, финансисту, юристу и руководителю, семь пунктов рабочей программы, четыре признака курса, который не стоит брать, честные сроки по неделям и месяцам и четыре причины, по которым бросают обучение.",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-01",
+      "dateModified": "2026-10-01",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kursy-delovogo-kitayskogo-yazyka",
+      "about": {
+        "@type": "Thing",
+        "name": "Деловой китайский язык: выбор программы обучения"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "areaServed": "RU",
+      "sameAs": ["https://t.me/kitaischool"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kursy-delovogo-kitayskogo-yazyka#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что входит в курсы делового китайского языка?", "acceptedAnswer": {"@type": "Answer", "text": "Под этим названием продают разные программы, и это главная сложность выбора. Общий деловой курс обычно даёт лексику переговоров, формулы переписки и этикет. Отраслевые курсы добавляют свой словарь: у логиста это документы поставки, у маркетолога — рекламные площадки, у юриста — структура договора. Прежде чем платить, стоит понять, какая из этих программ закрывает вашу задачу."}},
+        {"@type": "Question", "name": "С какого уровня можно начинать деловой китайский?", "acceptedAnswer": {"@type": "Answer", "text": "Нужна база: грамматика и общий словарный запас примерно уровня HSK 3–4. Деловые формулы ложатся сверху на обычный язык, а без грамматической основы они не держатся — человек заучивает фразу и не может её изменить, когда разговор идёт не по сценарию. Начинать деловой курс с нуля означает учить два предмета одновременно."}},
+        {"@type": "Question", "name": "Чем деловой китайский отличается от обычного?", "acceptedAnswer": {"@type": "Answer", "text": "Это не отдельный язык, а другой регистр: те же грамматика и иероглифы, но иной подбор слов и устойчивых оборотов. Главная разница в том, что в деловом общении важен не только смысл сказанного, но и форма: вежливый отказ звучит как согласие, а прямая формулировка может быть воспринята как грубость."}},
+        {"@type": "Question", "name": "Что реально меняется за первые недели занятий?", "acceptedAnswer": {"@type": "Answer", "text": "Вы начинаете узнавать типовые формулы в письмах и понимать, о чём идёт речь на встрече, даже если говорит переводчик. Чего за первые недели не происходит: вы не ведёте встречу сами и не обсуждаете спорные условия. Это приходит через месяцы, а не недели, и зависит от стартового уровня и частоты занятий."}},
+        {"@type": "Question", "name": "Почему бросают курсы делового китайского?", "acceptedAnswer": {"@type": "Answer", "text": "Четыре причины, и все они устранимы. Цель сформулирована размыто — «выучить деловой китайский» вместо «читать переписку с поставщиком». Начали со специализации без базы. Между занятиями язык не применяется нигде. И последняя: ждали заметного результата через месяц, не дождались и решили, что не получается."}},
+        {"@type": "Question", "name": "Что выбрать: группу, индивидуальные занятия или корпоративный формат?", "acceptedAnswer": {"@type": "Answer", "text": "Группа дешевле и хорошо работает для общей деловой лексики. Индивидуально нужно, когда задача узкая: ваши документы, ваша отрасль, ваш график. Корпоративный формат имеет смысл, когда язык нужен сразу нескольким сотрудникам одного отдела: программа собирается под задачи подразделения, а не под абстрактный курс."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kursy-delovogo-kitayskogo-yazyka#crumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Курсы делового китайского языка: как выбрать программу под свою задачу и не бросить на полпути", "item": "https://kitai-school.ru/article/kursy-delovogo-kitayskogo-yazyka"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Выбор программы</p>
+<h1>Курсы делового китайского языка: <span class="italic">как выбрать программу под свою задачу и не бросить на полпути</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-01">1 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/kursy-delovogo-kitayskogo-yazyka.png" alt="Схема: один вход «деловой китайский» и шесть выходов по ролям — закупщик, логист, маркетолог, финансист, юрист и руководитель" width="1200" height="630"></figure>
+
+<p class="passport">Запрос «<b>курсы делового китайского языка</b>» выглядит как название одного продукта, а за ним стоят минимум шесть разных программ. Закупщику, юристу и маркетологу нужен разный словарь, и общий курс даёт всем троим одно и то же — отсюда и ощущение, что занятия идут, а на работе ничего не меняется. Разберём, как понять свою задачу до оплаты, что должно быть в программе, по каким признакам курс лучше не брать и что реально меняется за первые недели.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>«Деловой китайский» — зонтичное название.</b> Выбирать надо не курс, а задачу: под каждую роль свой словарь. <b>Сначала база, потом специализация</b> — деловые формулы ложатся сверху на обычный язык. <b>В программе должно быть семь вещей</b>, и первая из них — ваши собственные материалы. <b>За первые недели меняется одно</b>: вы начинаете узнавать формулы в письмах. <b>Бросают по четырём причинам</b>, и все они устранимы.</p>
+</div>
+
+<h2>Почему «курс делового китайского» — <span class="italic">это не один курс</span></h2>
+<p>Деловой китайский — не отдельный язык, а <b>другой регистр</b>: те же грамматика и иероглифы, но иной подбор слов и устойчивых оборотов. Что именно в этом регистре работает на переговорах и в переписке, мы разбирали отдельно: <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>.</p>
+<p>Трудность в другом. Под одним названием продают программы, которые пересекаются процентов на тридцать. Общая часть — приветствия, формулы вежливости, обсуждение условий. Всё остальное зависит от того, <b>какие документы вы читаете и с кем разговариваете</b>.</p>
+<p>Проверить это легко на своей переписке. Откройте последние двадцать рабочих писем и посмотрите, из чего они состоят. У одного человека там сроки отгрузки и номера позиций, у другого — условия договора, у третьего — обсуждение сроков и вежливые напоминания. Общего в этих трёх наборах меньше трети.</p>
+<p class="note">Практический вывод: вопрос «какой курс делового китайского лучше» не имеет ответа, пока не задан другой — <b>какую задачу он должен закрыть</b>. Иначе курс закроет чужую.</p>
+
+<h2>Сначала база, <span class="italic">потом специализация</span></h2>
+<p>Это правило нарушают чаще всего, а оно простое: <b>деловые формулы ложатся сверху на обычный язык</b>. Без грамматической основы они не держатся — человек заучивает фразу целиком и не может её изменить, когда разговор идёт не по сценарию.</p>
+<p>Разумный порог для старта — грамматика и словарь примерно уровня HSK 3–4. Ниже этого деловой курс превращается в заучивание реплик, которые перестают работать при первом же неожиданном вопросе.</p>
+<p>Есть исключение: если задача узкая и повторяющаяся — например, читать прайсы одного поставщика, — набор конечен, и его осваивают раньше. Но это не «деловой китайский», а конкретный рабочий навык.</p>
+
+<h2>Шесть ролей <span class="italic">и что нужно каждой</span></h2>
+<p>Самый быстрый способ выбрать программу — найти свою строку.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Роль, задача и куда идти дальше.</caption>
+  <thead><tr><th>Кто вы</th><th>Что нужно в первую очередь</th><th>Подробный разбор</th></tr></thead>
+  <tbody>
+    <tr><td><b>Закупщик, менеджер ВЭД</b></td><td>документы поставки, условия, сроки, рекламации</td><td><a href="https://kitai-school.ru/article/kurs-po-logistike-na-kitajskom-yazyke" target="_blank" rel="noopener">курс по логистике</a></td></tr>
+    <tr><td><b>Маркетолог</b></td><td>площадки, рекламный кабинет, отчёты по кампаниям</td><td><a href="https://kitai-school.ru/article/kurs-po-marketingu-na-kitajskom-yazyke-ploshchadki-terminy" target="_blank" rel="noopener">курс по маркетингу</a></td></tr>
+    <tr><td><b>Юрист, контрактник</b></td><td>структура договора, что читать первым</td><td><a href="https://kitai-school.ru/article/yuridicheskij-kitajskij-yazyk-chto-chitat" target="_blank" rel="noopener">юридический китайский</a></td></tr>
+    <tr><td><b>Инженер, технолог</b></td><td>документация, спецификации, техническое задание</td><td><a href="https://kitai-school.ru/article/tekhnicheskij-kitajskij-yazyk" target="_blank" rel="noopener">технический китайский</a></td></tr>
+    <tr><td><b>Руководитель, продажи</b></td><td>переговоры, переписка, этикет</td><td><a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">деловой китайский</a> и <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-delovogo-obscheniya" target="_blank" rel="noopener">50 фраз</a></td></tr>
+    <tr><td><b>Весь отдел сразу</b></td><td>общая часть плюс словарь подразделения</td><td><a href="https://kitai-school.ru/article/korporativnyy-kitayskiy-zachem-kompanii-vkladyvautsya-v-obuchenie" target="_blank" rel="noopener">корпоративный китайский</a></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Строки не исключают друг друга: у закупщика бывают и переговоры, и документы. Но <b>порядок важен</b> — начинать стоит с того, что отнимает больше рабочего времени прямо сейчас.</p>
+
+<figure class="ks-fig"><img src="assets/kursy-delovogo-kitayskogo-yazyka-sroki.png" alt="Шкала сроков обучения: что появляется за первые недели, за первые месяцы и дальше, и чего на каждом отрезке ещё нет" width="1200" height="400"><figcaption>Порядок всегда один: понимание приходит раньше говорения. Сроки зависят от стартового уровня и частоты занятий, поэтому отрезки намеренно без точных цифр.</figcaption></figure>
+
+<h2>Что должно быть в программе: <span class="italic">семь пунктов</span></h2>
+<p>Описания курсов похожи одно на другое, поэтому проверяйте не обещания, а состав.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Чек-лист для оценки программы.</caption>
+  <thead><tr><th>Пункт</th><th>Зачем</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Ваши материалы</b></td><td>переписка и документы вашей компании, а не учебные диалоги про абстрактную фирму</td></tr>
+    <tr><td class="ok"><b>Шаблоны писем</b></td><td>типовые формулы начала и конца, запрос и напоминание; их не сочиняют заново каждый раз</td></tr>
+    <tr><td class="ok"><b>Вежливый отказ и вежливое «нет» в ответ</b></td><td>формулы, которые звучат как согласие, а означают отказ, — на них теряют недели</td></tr>
+    <tr><td class="ok"><b>Цифры и единицы</b></td><td>самая дорогая ошибка в переговорах; разобрано в <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">разборе деловой лексики</a></td></tr>
+    <tr><td class="ok"><b>Работа над произношением</b></td><td>если вас переспрашивают, встреча идёт медленнее: <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a></td></tr>
+    <tr><td class="ok"><b>Этикет вместе с языком</b></td><td>порядок обращений и поведение на встрече: <a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a></td></tr>
+    <tr><td class="ok"><b>Понятный результат</b></td><td>программа говорит, что вы сможете делать к концу, а не обещает снять барьер</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Последний пункт проверяется одним вопросом менеджеру курса: что я смогу делать к концу программы, чего не могу сейчас. Внятный ответ на него — хороший признак.</p>
+<p>Отдельно про обращения: это место, где ошибаются чаще всего и где ошибка заметна сразу. Как устроено обращение по должности, разобрано в статье <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">обращение в деловом письме</a>.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Менеджер по закупкам пришёл ко мне после полугода на общем курсе делового китайского. Занятия он не пропускал, домашние задания делал, но сказал фразу, которую я слышу часто: «Такое чувство, что учу не то».</p>
+  <p>Мы посмотрели, что он проходил. Презентация компании,светская беседа на деловом ужине, тосты, обсуждение корпоративных ценностей. Всё это существует и кому-то нужно. А его рабочий день состоял из другого: переписка с фабрикой, сроки отгрузки, претензии по качеству.</p>
+  <p>Мы поменяли материал: взяли его собственную переписку за последний месяц. Через три занятия он разобрал письмо от фабрики сам — впервые за полгода. Курс был неплохой. Просто не его.</p>
+</div>
+
+<h2>Четыре признака курса, <span class="italic">который не стоит брать</span></h2>
+<ol>
+  <li><b>Обещание снять языковой барьер за несколько недель.</b> За несколько недель появляется узнавание знакомых формул. Почему это не то же самое, что владение языком, разобрано в статье <a href="https://kitai-school.ru/article/kak-bystro-vyuchit-kitajskij" target="_blank" rel="noopener">как быстро выучить китайский</a>.</li>
+  <li><b>Один курс для всех отраслей.</b> Если программа одинакова для логиста, юриста и маркетолога, две трети времени уйдёт на чужой словарь.</li>
+  <li><b>Только заученные диалоги.</b> Выученная наизусть речь перестаёт помогать, как только вопрос идёт не по сценарию.</li>
+  <li><b>Нет говорения вслух.</b> Если на занятиях вы в основном слушаете и читаете, на встрече заговорить не получится. Устная речь ставится отдельно, и для неё есть свой экзамен: <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK</a>.</li>
+</ol>
+
+<h2>Чего ждать: <span class="italic">первые недели, первые месяцы</span></h2>
+<p>Отвечу по срокам, потому что здесь обычно дают обещания, которые потом не сходятся.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Что появляется и чего пока нет.</caption>
+  <thead><tr><th>Срок</th><th>Что меняется</th><th>Чего ещё нет</th></tr></thead>
+  <tbody>
+    <tr><td><b>Первые недели</b></td><td class="ok">узнаёте типовые формулы в письмах, понимаете тему разговора на слух</td><td class="bad">не ведёте встречу сами</td></tr>
+    <tr><td><b>Первые месяцы</b></td><td class="ok">читаете переписку без сплошного перевода, задаёте вопросы по условиям</td><td class="bad">не обсуждаете спорные моменты свободно</td></tr>
+    <tr><td><b>Дальше</b></td><td class="ok">ведёте встречу сами и замечаете, когда переводчик смягчил отказ</td><td>—</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Сроки зависят от стартового уровня и частоты занятий, поэтому точных цифр здесь не будет. Но порядок именно такой: <b>понимание приходит раньше говорения</b>, и это нормально.</p>
+
+<h2>Почему бросают на полпути <span class="italic">— и что с этим делать</span></h2>
+<p>Четыре причины, и ни одна из них не про способности.</p>
+<ol>
+  <li><b>Размытая цель.</b> «Выучить деловой китайский» — это не цель, её нельзя достичь и нельзя проверить. Рабочая формулировка звучит иначе: «читать переписку с поставщиком без переводчика».</li>
+  <li><b>Начали со специализации без базы.</b> Формулы не держатся на пустом месте, человек не видит продвижения и уходит.</li>
+  <li><b>Между занятиями язык не применяется.</b> Если новые обороты не попадают в рабочую переписку в течение недели, они не закрепляются.</li>
+  <li><b>Ждали результата через месяц.</b> Не дождались — решили, что не получается. Хотя по срокам всё шло нормально.</li>
+</ol>
+<p class="note">Противоядие от всех четырёх одно: <b>сформулировать задачу в проверяемом виде</b> и назначить срок проверки честно. Не «буду свободно говорить к лету», а «к декабрю читаю письма поставщика сам».</p>
+
+<h2>Как проверить себя <span class="italic">по дороге</span></h2>
+<p>Чтобы не выяснять через полгода, что учили не то, полезно останавливаться и сверяться. Три проверки, которые занимают по десять минут.</p>
+<ol>
+  <li><b>Раз в месяц — своя переписка.</b> Возьмите рабочее письмо и прочитайте без переводчика. Не всё поняли — нормально, важна динамика: месяц назад было понятнее или нет.</li>
+  <li><b>Раз в два месяца — запись голоса.</b> Скажите вслух то, что сказали бы на встрече, и послушайте. Это единственный способ заметить, что произношение стоит на месте.</li>
+  <li><b>Раз в квартал — формулировка цели.</b> Перечитайте, что вы записали в начале. Если цель по-прежнему звучит как «выучить деловой китайский», её нужно переписать конкретнее.</li>
+</ol>
+<p>Эти проверки заодно защищают от второй беды — ощущения, что прогресса нет. Он обычно есть, просто незаметен изнутри: язык прибавляется небольшими долями, и разницу видно только в сравнении с прошлым месяцем.</p>
+
+<h2>Формат: <span class="italic">группа, индивидуально или для компании</span></h2>
+<p>Коротко, потому что выбор здесь предсказуем.</p>
+<ul>
+  <li><b>Группа</b> дешевле и хорошо работает для общей деловой части: формулы, этикет, переписка.</li>
+  <li><b>Индивидуально</b> нужно, когда задача узкая: ваши документы, ваша отрасль, ваш график.</li>
+  <li><b>Корпоративный формат</b> имеет смысл, когда язык нужен нескольким сотрудникам одного отдела. Как собирают такую программу и как измеряют прогресс, разобрано отдельно: <a href="https://kitai-school.ru/article/korporativnyy-kitayskiy-zachem-kompanii-vkladyvautsya-v-obuchenie" target="_blank" rel="noopener">корпоративный китайский</a>.</li>
+</ul>
+<p>Разумная середина для одного человека выглядит так: общая часть в группе, отраслевая — индивидуально, и не наоборот. Причина в порядке: общее одинаково для всех и дешевле берётся в группе, а отраслевое у каждого своё, и платить за него в группе бессмысленно — половину времени вы будете слушать чужой словарь.</p>
+
+<div class="cta">
+  <p>Не знаете, с какой строки таблицы начать? Принесите на первое занятие свою переписку или документ — посмотрим, что в них трудно, и соберём программу под вашу задачу. Для компаний есть <a href="https://kitai-school.ru/business" target="_blank" rel="noopener">корпоративное обучение</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что входит в курсы делового китайского языка?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Под этим названием продают разные программы, и это главная сложность выбора. Общий деловой курс обычно даёт лексику переговоров, формулы переписки и этикет. Отраслевые курсы добавляют свой словарь: у логиста это документы поставки, у маркетолога — рекламные площадки, у юриста — структура договора. Прежде чем платить, стоит понять, какая из этих программ закрывает вашу задачу.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С какого уровня можно начинать деловой китайский?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нужна база: грамматика и общий словарный запас примерно уровня HSK 3–4. Деловые формулы ложатся сверху на обычный язык, а без грамматической основы они не держатся — человек заучивает фразу и не может её изменить, когда разговор идёт не по сценарию. Начинать деловой курс с нуля означает учить два предмета одновременно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем деловой китайский отличается от обычного?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это не отдельный язык, а другой регистр: те же грамматика и иероглифы, но иной подбор слов и устойчивых оборотов. Главная разница в том, что в деловом общении важен не только смысл сказанного, но и форма: вежливый отказ звучит как согласие, а прямая формулировка может быть воспринята как грубость.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что реально меняется за первые недели занятий?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Вы начинаете узнавать типовые формулы в письмах и понимать, о чём идёт речь на встрече, даже если говорит переводчик. Чего за первые недели не происходит: вы не ведёте встречу сами и не обсуждаете спорные условия. Это приходит через месяцы, а не недели, и зависит от стартового уровня и частоты занятий.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему бросают курсы делового китайского?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Четыре причины, и все они устранимы. Цель сформулирована размыто — «выучить деловой китайский» вместо «читать переписку с поставщиком». Начали со специализации без базы. Между занятиями язык не применяется нигде. И последняя: ждали заметного результата через месяц, не дождались и решили, что не получается.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что выбрать: группу, индивидуальные занятия или корпоративный формат?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Группа дешевле и хорошо работает для общей деловой лексики. Индивидуально нужно, когда задача узкая: ваши документы, ваша отрасль, ваш график. Корпоративный формат имеет смысл, когда язык нужен сразу нескольким сотрудникам одного отдела: программа собирается под задачи подразделения, а не под абстрактный курс.</p></div>
+  </details>
+</div>
+
+<p>Дальше по теме: какая лексика работает на переговорах — <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>; готовые реплики для встречи — <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-delovogo-obscheniya" target="_blank" rel="noopener">50 фраз для делового общения</a>; обучение для компании — <a href="https://kitai-school.ru/article/korporativnyy-kitayskiy-zachem-kompanii-vkladyvautsya-v-obuchenie" target="_blank" rel="noopener">корпоративный китайский</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School — программы делового китайского для частных учащихся и корпоративных групп, разбор рабочих материалов компаний.</li>
+    <li>Оговорка: состав программы и сроки зависят от стартового уровня, отрасли и частоты занятий. Чек-лист из семи пунктов и раскладка по срокам — наш рабочий ориентир, а не отраслевой стандарт. Уровень HSK 3–4 назван как типичная отправная точка, а не как требование.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть переговоры идут по-вашему! <span class="han">一帆风顺</span>！</p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Собираем программу под вашу задачу: переговоры, переписка или документы конкретной отрасли</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
