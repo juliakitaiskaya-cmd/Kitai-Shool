@@ -1,0 +1,394 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kurs-po-fonetike-kitayskogo-yazyka#article",
+      "headline": "Курс по фонетике китайского языка: тоны, пиньинь и как перестать говорить по-русски китайскими словами",
+      "description": "Как выбрать курс по фонетике китайского языка: кому отдельный курс нужен, а кому нет, что в программе отвечает за тоны, почему пиньинь не читается ни по-английски, ни по-русски, чем система Палладия отличается от пиньиня, шесть обязательных пунктов программы и четыре признака слабого курса.",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-01",
+      "dateModified": "2026-10-01",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kurs-po-fonetike-kitayskogo-yazyka",
+      "about": {
+        "@type": "Thing",
+        "name": "Фонетика китайского языка: тоны и пиньинь"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "areaServed": "RU",
+      "sameAs": ["https://t.me/kitaischool"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kurs-po-fonetike-kitayskogo-yazyka#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Нужен ли отдельный курс по фонетике китайского языка?", "acceptedAnswer": {"@type": "Answer", "text": "Не всем. Если носители вас понимают с первого раза и переспрашивают не чаще, чем любого иностранца, отдельный курс не нужен — произношение улучшится по ходу обычных занятий. Отдельная работа нужна в двух случаях: вас регулярно переспрашивают, хотя слова вы знаете, или вы учили язык самостоятельно и ни разу не слышали себя со стороны."}},
+        {"@type": "Question", "name": "Что должно быть в программе курса фонетики?", "acceptedAnswer": {"@type": "Answer", "text": "Шесть вещей. Работа со слухом раньше работы с речью. Минимальные пары — слова, которые отличаются одним признаком. Запись вашего голоса и разбор записи. Тоны не по отдельности, а в связках из двух-трёх слогов. Изменение тонов в потоке речи. И обратная связь на каждом занятии: преподаватель слышит и поправляет сразу, а не в конце курса."}},
+        {"@type": "Question", "name": "Можно ли поставить произношение самостоятельно?", "acceptedAnswer": {"@type": "Answer", "text": "Частично. Самому хорошо получается набирать слуховой опыт: слушать минимальные пары, записывать свой голос и сравнивать с образцом. Не получается другое — услышать собственную ошибку, которую вы не слышите. Человек воспроизводит то, что различает на слух, и если разница между двумя тонами для вас пока одинаковая, своими силами её не поймать."}},
+        {"@type": "Question", "name": "Почему пиньинь нельзя читать по-русски?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что это не транскрипция для русскоязычных, а официальная система записи китайских слогов латиницей, принятая в КНР в 1958 году. Латинские буквы в ней обозначают китайские звуки, а не английские и не русские: q — это не «к», x — не «кс», zh — не «ж», а e без дополнительных знаков — вообще не «э». Читать пиньинь надо по его собственным правилам."}},
+        {"@type": "Question", "name": "Чем система Палладия отличается от пиньиня?", "acceptedAnswer": {"@type": "Answer", "text": "Назначением. Пиньинь — рабочая запись для чтения и ввода текста, ей пользуются в Китае. Система Палладия — русская транскрипция, созданная для того, чтобы единообразно записывать китайские имена и названия кириллицей в русских текстах. Произносить по ней вслух не нужно: «цзайцзянь» и «шэньмэ» — это способ написать слово по-русски, а не инструкция, как его сказать."}},
+        {"@type": "Question", "name": "Сколько времени занимает постановка произношения?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от того, с чего начинаете и как часто занимаетесь, поэтому честный ответ — вилка. Базовую работу над тонами и трудными звуками обычно укладывают в несколько недель регулярных занятий, а привычка держать тон в быстрой речи закрепляется дольше и уже по ходу общих уроков. Обещание поставить произношение за одно занятие — признак того, что курс стоит пропустить."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kurs-po-fonetike-kitayskogo-yazyka#crumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru/"},
+        {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://kitai-school.ru/article/"},
+        {"@type": "ListItem", "position": 3, "name": "Курс по фонетике китайского языка: тоны, пиньинь и как перестать говорить по-русски китайскими словами", "item": "https://kitai-school.ru/article/kurs-po-fonetike-kitayskogo-yazyka"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Выбор программы</p>
+<h1>Курс по фонетике китайского языка: <span class="italic">тоны, пиньинь и как перестать говорить по-русски китайскими словами</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-01">1 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/kurs-po-fonetike-kitayskogo-yazyka.png" alt="Два диалога: на фразу с неверными тонами собеседник отвечает «что?», на ту же фразу с верными тонами — по существу" width="1200" height="630"></figure>
+
+<p class="passport">Ситуация знакомая: слова вы знаете, фразу собрали правильно — а в ответ слышите <span class="han">什么？</span> (shénme) — «что?». <b>Курс по фонетике китайского языка</b> ищут именно после такого. Разберём, кому отдельный курс действительно нужен, а кому нет; что должно быть в программе и по каким признакам программу стоит пропустить; и почему пиньинь нельзя читать ни по-английски, ни по-русски. Как именно ставят тоны и звуки, у нас разобрано отдельно — здесь речь о выборе курса.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Отдельный курс нужен не всем</b>: если вас понимают с первого раза, произношение улучшится по ходу обычных занятий. <b>Тон меняет слово, акцент — нет</b>, и силы стоит тратить на первое. <b>Пиньинь — не транскрипция для русских</b>, а официальная запись, принятая в КНР в 1958 году. <b>«Цзайцзянь» — это система Палладия</b>, способ написать слово по-русски, а не сказать его. <b>В программе должно быть шесть вещей</b>, и первая из них — работа со слухом раньше работы с речью.</p>
+</div>
+
+<h2>Кому нужен отдельный курс, <span class="italic">а кому нет</span></h2>
+<p>Начнём с того, что курс фонетики продают всем подряд, а нужен он не всем. Отдельная работа над произношением оправдана в двух случаях.</p>
+<ul>
+  <li><b>Вас регулярно переспрашивают</b>, хотя слова вы знаете и грамматику собираете верно. Это и есть основной признак: проблема не в словарном запасе.</li>
+  <li><b>Вы учили язык самостоятельно</b> и ни разу не слышали себя со стороны. Тут дело не в способностях: без обратной связи ошибка закрепляется молча, и чем дольше, тем труднее её потом переучивать.</li>
+</ul>
+<p>А вот если носители понимают вас с первого раза и переспрашивают не чаще, чем любого иностранца, <b>отдельный курс не нужен</b>. Произношение станет лучше по ходу обычных занятий, и деньги разумнее потратить на лексику или на разговорную практику — про неё у нас есть <a href="https://kitai-school.ru/article/kurs-po-razgovornoj-rechi-kitajskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>.</p>
+<p class="note">Проверить себя просто: запишите на телефон минуту своей речи и дайте послушать носителю или преподавателю. Если вас поняли без уточнений — вопрос закрыт.</p>
+
+<h2>Тон меняет слово. <span class="italic">Всё остальное — акцент</span></h2>
+<p>Это главное разделение, и от него зависит, за что вы платите на курсе. <b>Тон входит в слово</b>: <span class="han">妈</span> mā — «мама», <span class="han">麻</span> má — «конопля», <span class="han">马</span> mǎ — «лошадь», <span class="han">骂</span> mà — «ругать». Слог один и тот же, слова разные. Ошиблись тоном — сказали другое слово, и собеседник честно не понял.</p>
+<p><b>Акцент — всё остальное</b>: мягкость звуков, ритм, лёгкий русский призвук. Он не меняет ни одного слова и понимать вам не мешает. Подробнее мы разводили эти два понятия в разборе <a href="https://kitai-school.ru/article/kurs-po-razgovornoj-rechi-kitajskogo-yazyka" target="_blank" rel="noopener">курса по разговорной речи</a>.</p>
+<p>Практический вывод для выбора курса: <b>хорошая программа тратит время на тоны и почти не тратит на избавление от акцента</b>. Если в описании курса обещают «speak like a native» и убрать акцент — это продажа невозможного вместо решения вашей задачи.</p>
+
+<h2>Пиньинь — <span class="italic">не транскрипция для русских</span></h2>
+<p>Вторая по частоте причина, по которой человека не понимают, — он читает пиньинь так, как привык читать латиницу.</p>
+<p>Пиньинь — это <b>официальная система записи китайских слогов латиницей, принятая в КНР в 1958 году</b>. Сегодня это международный стандарт: на него перешли ООН, Международная организация по стандартизации и библиотечные каталоги. Но задумывался он не как подсказка для иностранцев, а как рабочая запись для самих китайцев: по нему учат чтению в школе и набирают текст на телефоне.</p>
+<p>Отсюда главное: <b>латинские буквы в пиньине обозначают китайские звуки, а не английские</b>. Что именно обозначают буквы и чем пиньинь отличается от алфавита — в разборах про <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost" target="_blank" rel="noopener">китайскую письменность</a> и <a href="https://kitai-school.ru/article/kakie-bukvy-v-kitayskom-yazyke" target="_blank" rel="noopener">буквы в китайском</a>.</p>
+
+<h2>«Цзайцзянь» <span class="italic">и откуда он взялся</span></h2>
+<p>Есть и третий слой путаницы, чисто русский. Рядом с пиньинем существует <b>система Палладия</b> — русская транскрипция, созданная для того, чтобы единообразно записывать китайские имена и названия кириллицей в русских текстах.</p>
+<p>Она делает ровно одну работу: даёт единый способ написать китайское слово по-русски. <b>Инструкцией по произношению она не является и никогда ею не была.</b> «Цзайцзянь», «шэньмэ», «нихао» — это написание, а не звучание. Если читать их вслух буквально, получится та самая русская речь с китайскими словами. Как 再见 звучит на самом деле, разбирали отдельно: <a href="https://kitai-school.ru/article/do-svidaniya-po-kitayski-kak-na-samom-dele-chitaetsya" target="_blank" rel="noopener">как на самом деле читается 再见</a>.</p>
+
+<figure class="ks-fig"><img src="assets/kurs-po-fonetike-kitayskogo-yazyka-lovushki.png" alt="Таблица ловушек пиньиня: как пишется, как обычно читают по-русски и что при таком чтении слышит китаец" width="1200" height="640"><figcaption>Семь мест, где привычка читать латиницу по-русски или по-английски сбивает сильнее всего. Звучание в третьей колонке описано приблизительно: точное даёт только слух.</figcaption></figure>
+
+<p>В таблице видно, что ловушек немного — их можно пересчитать по пальцам. Но каждая встречается в первых же словах, которые учит начинающий, и потому закрепляется прочно.</p>
+
+<h2>Что должно быть <span class="italic">в программе курса</span></h2>
+<p>Описания курсов похожи одно на другое, поэтому проще смотреть не на обещания, а на шесть конкретных пунктов.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Чек-лист: что ищем в программе.</caption>
+  <thead><tr><th>Пункт</th><th>Зачем он нужен</th></tr></thead>
+  <tbody>
+    <tr><td class="ok"><b>Слух раньше речи</b></td><td>человек воспроизводит то, что различает. Пока разница между тонами не слышна, повторять бесполезно</td></tr>
+    <tr><td class="ok"><b>Минимальные пары</b></td><td>слова, отличающиеся одним признаком: так ухо учится ловить именно его, а не догадываться по смыслу</td></tr>
+    <tr><td class="ok"><b>Запись вашего голоса</b></td><td>в записи слышно то, чего не слышно изнутри. Без этого пункта курс почти бесполезен</td></tr>
+    <tr><td class="ok"><b>Тоны в связках</b></td><td>отдельный слог получается у всех. Трудность начинается, когда слогов два и три подряд</td></tr>
+    <tr><td class="ok"><b>Изменение тонов в потоке речи</b></td><td>два третьих тона подряд читаются не так, как записаны; у <span class="han">一</span> и <span class="han">不</span> тон меняется от соседа. Без этого речь звучит ненатурально даже при верных тонах</td></tr>
+    <tr><td class="ok"><b>Обратная связь на каждом занятии</b></td><td>преподаватель слышит и поправляет сразу. Ошибка, прожившая месяц, переучивается дольше, чем ставилась</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Последний пункт — самый дорогой в производстве и потому первый, который убирают. В записанном курсе без живого преподавателя его нет вовсе, и это стоит понимать до оплаты.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Студент пришёл с запросом «поставьте мне произношение» и с готовым мнением о том, как это делается. Год он занимался по видеокурсу: смотрел схемы положения языка, повторял за диктором, выучил таблицу слогов почти целиком.</p>
+  <p>На первом занятии я попросила его сказать простую фразу и записала её на диктофон. Потом включила запись ему. Он послушал дважды и сказал: «Это не то, что я говорил».</p>
+  <p>Так и было. Год он слышал в своей голове образец, а произносил другое — и поправить это было некому. Мы начали не с артикуляции, а со слуха: пары слов, где отличие ровно в одном признаке. Через три недели он стал слышать разницу, и дальше дело пошло само.</p>
+</div>
+
+<h2>Чего в программе <span class="italic">быть не должно</span></h2>
+<p>Четыре признака, по которым курс можно спокойно пропустить.</p>
+<ol>
+  <li><b>Таблица слогов наизусть.</b> Полная таблица — справочник, а не учебный материал. Заучивать её целиком незачем: нужные слоги приходят вместе со словами.</li>
+  <li><b>Обещание поставить произношение за одно занятие.</b> За одно занятие можно услышать свои ошибки. Переучить привычку — нет.</li>
+  <li><b>Только теория: артикуляция, схемы, положение языка.</b> Описание полезно как подсказка, но звук ставится повторением с обратной связью, а не чтением про него.</li>
+  <li><b>Курс без записи вашего голоса.</b> Если за программу вы ни разу себя не услышали, проверить результат нечем — ни вам, ни преподавателю.</li>
+</ol>
+
+<h2>Группа или один на один: <span class="italic">что работает для фонетики</span></h2>
+<p>Для грамматики и лексики группа чаще выигрывает: разбор правила слушают все сразу, а говорить по очереди даже полезно. С произношением иначе, и причина простая — <b>поправить можно только то, что слышно</b>.</p>
+<p>В группе из восьми человек преподаватель физически не успевает выслушать каждого настолько, чтобы заметить, что у вас третий тон превращается во второй. Он услышит грубые ошибки и пропустит мелкие — а именно мелкие и определяют, переспросят вас или нет.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Чего ждать от каждого формата.</caption>
+  <thead><tr><th>Формат</th><th>Что получится</th><th>Чего не получится</th></tr></thead>
+  <tbody>
+    <tr><td><b>Группа</b></td><td class="ok">разобрать систему тонов, натренировать слух на общих упражнениях, снять страх говорить</td><td class="bad">разбор именно вашей ошибки на каждом занятии</td></tr>
+    <tr><td><b>Индивидуально</b></td><td class="ok">точечная правка, запись и разбор вашей речи, темп под вас</td><td>дороже за час</td></tr>
+    <tr><td><b>Запись без преподавателя</b></td><td class="ok">теория, образцы для повторения, упражнения на слух</td><td class="bad">обратная связь — её нет вовсе</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Разумная середина выглядит так: <b>несколько индивидуальных занятий на постановку</b>, дальше группа или обычный курс, где произношение поддерживают по ходу. Платить за индивидуальный формат весь год ради одной фонетики незачем — задача решается за понятное число встреч и дальше переходит в режим поддержания.</p>
+
+<h2>Сколько это занимает <span class="italic">и когда начинать</span></h2>
+<p>Честный ответ — вилка, потому что всё зависит от стартовой точки и частоты занятий. Базовую работу над тонами и трудными звуками обычно укладывают в несколько недель регулярных занятий. Привычка держать тон в быстрой речи закрепляется дольше и уже по ходу общих уроков.</p>
+<p>Разброс берётся из трёх вещей: сколько вы уже говорили неправильно, как часто занимаетесь и насколько родной язык помогает или мешает. Русскоязычным, например, легче даётся ритм и труднее — различение придыхания, потому что в русском оно не меняет смысла слова.</p>
+<p><b>Начинать лучше раньше.</b> Причина не в мотивации, а в арифметике: поставить звук с нуля быстрее, чем переучить тот, который вы год произносили иначе. Поэтому фонетика стоит первой в последовательности обучения — об этом в разборе <a href="https://kitai-school.ru/article/tapy-izucheniya-kitayskogo" target="_blank" rel="noopener">этапы изучения китайского</a>, а с чего вообще начинать, если вы в самом начале, — в статье <a href="https://kitai-school.ru/article/izuchenie-kitajskogo-yazyka-s-nulya-s-chego-nachat" target="_blank" rel="noopener">изучение китайского с нуля</a>.</p>
+<p>Отдельный случай — подготовка к устному экзамену. Там произношение оценивают прямо, и подтягивать его в последний месяц поздно: <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">устный экзамен HSKK</a>.</p>
+
+<h2>Что можно делать <span class="italic">самому</span></h2>
+<p>Часть работы делается без преподавателя, и ею стоит заниматься параллельно с курсом.</p>
+<ul>
+  <li><b>Слушать минимальные пары</b> и отмечать, где вы угадываете, а где действительно слышите разницу.</li>
+  <li><b>Записывать свой голос</b> и сравнивать с образцом — не по ощущению, а подряд, одну и ту же фразу.</li>
+  <li><b>Повторять за диктором целыми фразами</b>, а не отдельными слогами: так тренируется и ритм.</li>
+  <li><b>Читать вслух знакомый текст</b> — тот, где незнакомые слова вас не отвлекают и можно следить только за звучанием.</li>
+</ul>
+<p>Чего самому не сделать — <b>услышать ошибку, которую вы не слышите</b>. Если два тона звучат для вас одинаково, своими силами эту разницу не поймать: вам нужен человек со стороны, который скажет, что именно вы сказали. Конкретные упражнения и порядок работы над звуками собраны в отдельном разборе: <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>.</p>
+<p>И последнее. Если вас понимают, но говорите вы не так, как вокруг, дело может быть не в вашем произношении: в самом Китае произносят по-разному, и это нормально — <a href="https://kitai-school.ru/article/kak-razgovarivaut-v-kitae" target="_blank" rel="noopener">как разговаривают в Китае</a>.</p>
+
+<div class="cta">
+  <p>Не уверены, нужна ли вам отдельная работа над произношением? На первом занятии послушаем, как вы говорите, и скажем прямо — а если нужна, покажем, с чего начать: <a href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener">подготовка к HSK</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужен ли отдельный курс по фонетике китайского языка?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Не всем. Если носители вас понимают с первого раза и переспрашивают не чаще, чем любого иностранца, отдельный курс не нужен — произношение улучшится по ходу обычных занятий. Отдельная работа нужна в двух случаях: вас регулярно переспрашивают, хотя слова вы знаете, или вы учили язык самостоятельно и ни разу не слышали себя со стороны.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что должно быть в программе курса фонетики?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Шесть вещей. Работа со слухом раньше работы с речью. Минимальные пары — слова, которые отличаются одним признаком. Запись вашего голоса и разбор записи. Тоны не по отдельности, а в связках из двух-трёх слогов. Изменение тонов в потоке речи. И обратная связь на каждом занятии: преподаватель слышит и поправляет сразу, а не в конце курса.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли поставить произношение самостоятельно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Частично. Самому хорошо получается набирать слуховой опыт: слушать минимальные пары, записывать свой голос и сравнивать с образцом. Не получается другое — услышать собственную ошибку, которую вы не слышите. Человек воспроизводит то, что различает на слух, и если разница между двумя тонами для вас пока одинаковая, своими силами её не поймать.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему пиньинь нельзя читать по-русски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что это не транскрипция для русскоязычных, а официальная система записи китайских слогов латиницей, принятая в КНР в 1958 году. Латинские буквы в ней обозначают китайские звуки, а не английские и не русские: q — это не «к», x — не «кс», zh — не «ж», а e без дополнительных знаков — вообще не «э». Читать пиньинь надо по его собственным правилам.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем система Палладия отличается от пиньиня?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Назначением. Пиньинь — рабочая запись для чтения и ввода текста, ей пользуются в Китае. Система Палладия — русская транскрипция, созданная для того, чтобы единообразно записывать китайские имена и названия кириллицей в русских текстах. Произносить по ней вслух не нужно: «цзайцзянь» и «шэньмэ» — это способ написать слово по-русски, а не инструкция, как его сказать.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько времени занимает постановка произношения?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Зависит от того, с чего начинаете и как часто занимаетесь, поэтому честный ответ — вилка. Базовую работу над тонами и трудными звуками обычно укладывают в несколько недель регулярных занятий, а привычка держать тон в быстрой речи закрепляется дольше и уже по ходу общих уроков. Обещание поставить произношение за одно занятие — признак того, что курс стоит пропустить.</p></div>
+  </details>
+</div>
+
+<p>Дальше по теме: как ставят тоны и звуки — <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>; почему барьер не про уровень — <a href="https://kitai-school.ru/article/kurs-po-razgovornoj-rechi-kitajskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>; маршрут по шагам — <a href="https://kitai-school.ru/article/tapy-izucheniya-kitayskogo" target="_blank" rel="noopener">этапы изучения китайского</a>.</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Официальный статус пиньиня как системы записи китайских слогов латиницей, принятой в КНР в 1958 году, и его признание в качестве международного стандарта.</li>
+    <li>Система Палладия — русская транскрипционная система для передачи китайских слов кириллицей.</li>
+    <li>Практика Kitai School — постановка произношения на индивидуальных и групповых занятиях.</li>
+    <li>Оговорка: сроки работы над произношением приводятся вилкой и зависят от стартового уровня, частоты занятий и родного языка. Чек-лист программы — наш рабочий ориентир, а не отраслевой стандарт.</li>
+  </ol>
+</div>
+
+<p class="sign">Пусть вас понимают с первого раза! <span class="han">加油</span>！</p>
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Слышим ваше произношение на первом занятии и говорим прямо, нужна ли вам отдельная работа над тонами</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
