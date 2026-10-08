@@ -1,0 +1,414 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kak-zdorovayutsya-kitaycy-zhesty#article",
+      "headline": "Как здороваются китайцы: жесты, поклоны и почему рукопожатие здесь молодое",
+      "description": "Как здороваются китайцы жестами: что делают руки, голова и корпус при встрече; устройство жеста 拱手 и почему порядок рук в нём нельзя перепутать; чем от него отличается 抱拳 из боевых искусств; что осталось от поклона 鞠躬 и почему кивок заменил его в быту; как рукопожатие попало в Китай и почему оно здесь короче и мягче европейского; где проходит граница прикосновения и личного пространства и четыре жеста, которые стоят рядом с приветствием.",
+      "image": "https://static.tildacdn.com/tild3337-3635-4136-b665-613936646461/kak-zdorovayutsya-ki.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-08",
+      "dateModified": "2026-10-08",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kak-zdorovayutsya-kitaycy-zhesty",
+      "about": {
+        "@type": "Thing",
+        "name": "Жесты приветствия в китайском этикете"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kak-zdorovayutsya-kitaycy-zhesty#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как правильно здороваться с китайцами при встрече?", "acceptedAnswer": {"@type": "Answer", "text": "Самый безопасный вариант — короткий кивок с подбородком вниз и взглядом на собеседника. Он уместен почти везде: на улице, в офисе, в магазине, со старшим и с ровесником. Если вам протянули руку — пожмите, но мягко и коротко, без встряхивания. Жест 拱手 оставьте для праздничных и традиционных ситуаций: он красивый, но требует правильного порядка рук."}},
+        {"@type": "Question", "name": "Что такое 拱手 и как сложить руки?", "acceptedAnswer": {"@type": "Answer", "text": "Это старый китайский жест приветствия: одна рука сжимается в кулак, вторая накрывает его ладонью, руки держат на уровне груди и делают лёгкое движение к собеседнику. У мужчин снаружи оказывается левая рука, правая сжата в кулак внутри. У женщин наоборот: снаружи правая ладонь, в кулаке левая. Голова при этом слегка склоняется."}},
+        {"@type": "Question", "name": "Что будет, если перепутать руки в 拱手?", "acceptedAnswer": {"@type": "Answer", "text": "У мужчины перевёрнутый порядок рук — это 凶拜, жест, которым выражают соболезнование. Проблема в том, что выглядит он ровно как правильное женское приветствие, поэтому ошибку легко сделать, подсмотрев жест у женщины. Если не уверены в руках, не делайте 拱手 вообще: кивок или лёгкий поклон ничего не испортят."}},
+        {"@type": "Question", "name": "Чем 抱拳 отличается от 拱手?", "acceptedAnswer": {"@type": "Answer", "text": "抱拳 — приветствие в боевых искусствах, а не бытовой жест. В нём правый кулак прикрывается левой ладонью, и смысл у этого другой: прикрытый кулак читается как отказ от драки. Правило про мужской и женский порядок рук к 抱拳 не относится — это отдельная традиция со своими правилами."}},
+        {"@type": "Question", "name": "Можно ли обнять китайского друга при встрече?", "acceptedAnswer": {"@type": "Answer", "text": "С близким другом — да, объятия при встрече в городах давно не редкость. С новым знакомым, коллегой или человеком старше вас — нет: приветствие в Китае почти не предполагает прикосновений, кроме рукопожатия. Похлопывание по плечу и поцелуй в щёку в приветствии тоже не приняты."}},
+        {"@type": "Question", "name": "Нужно ли кланяться китайцам, как японцам?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Глубокий поклон — японская норма, в Китае он в повседневном общении не используется и будет выглядеть странно. Китайский 鞠躬 сохранился в формальных ситуациях: на церемониях, у артистов перед залом, при поминовении, в школах боевых искусств. В быту его заменил кивок."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kak-zdorovayutsya-kitaycy-zhesty#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Как здороваются китайцы: жесты, поклоны и почему рукопожатие здесь молодое", "item": "https://kitai-school.ru/article/kak-zdorovayutsya-kitaycy-zhesty"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Этикет</p>
+<h1>Как здороваются китайцы: <span class="italic">жесты, поклоны и почему рукопожатие здесь молодое</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-08">8 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tild3337-3635-4136-b665-613936646461/kak-zdorovayutsya-ki.png" alt="Полоса киноплёнки с тремя кадрами: иероглифы 拱, 鞠 и 握 с подписями эпох — 拱手 до XX века, 鞠躬 в начале Республики и 握手 сегодня" width="1200" height="630"></figure>
+
+<p class="passport">Словами в Китае здороваются примерно так же, как у нас: есть вежливое <span class="han">你好</span>, есть «доброе утро», есть «давно не виделись». А вот руками — совсем иначе. Рукопожатие здесь прижилось позже, чем в Европе, объятий при встрече с новым человеком почти не бывает, зато есть жест, которому больше двух тысяч лет: <span class="han">拱手</span> — кулак, накрытый ладонью. И у него есть особенность, из-за которой его легко испортить. Разбираем телесную сторону приветствия: что делают руки, голова и корпус, на каком расстоянии стоят собеседники и чего лучше не делать.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Главный безопасный жест — кивок</b>: он уместен почти везде. <b>Традиционное приветствие — <span class="han">拱手</span></b>: одна рука в кулаке, вторая его накрывает. <b>Порядок рук решает всё</b>: у мужчин снаружи левая, у женщин правая, а перевёрнутый у мужчины порядок — уже жест соболезнования. <b><span class="han">抱拳</span> — другой жест</b>, из боевых искусств, и правило про руки к нему не относится. <b>Рукопожатие в Китае пришлое</b>: короче, мягче и почти всегда с кивком. <b>Прикосновений в приветствии почти нет</b> — ни объятий, ни похлопываний по плечу.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">что делают руками, а что нет</span></h2>
+<p>Если убрать все тонкости, остаётся три сценария — и они довольно жёстко привязаны к обстановке.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Что делает тело в трёх обычных ситуациях.</caption>
+  <thead><tr><th>Где вы</th><th>Что делают руки</th><th>Что добавляет голова</th></tr></thead>
+  <tbody>
+    <tr><td><b>Улица, магазин, коридор офиса</b></td><td>ничего — руки остаются где были</td><td>короткий кивок, взгляд на собеседника</td></tr>
+    <tr><td><b>Деловая встреча, знакомство</b></td><td>короткое мягкое рукопожатие</td><td>кивок одновременно с рукопожатием</td></tr>
+    <tr><td><b>Праздник, традиционная обстановка, поздравление</b></td><td><span class="han">拱手</span>: кулак, накрытый ладонью</td><td>голова слегка склоняется</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Короткий список того, чего в китайском приветствии нет: <b>объятий с новым знакомым, поцелуя в щёку, похлопывания по плечу и крепкого долгого рукопожатия</b>. Ни один из этих жестов не считается грубым — просто они не входят в набор, и человек на них не отвечает тем же, а чуть напрягается.</p>
+
+<p>Дальше — подробно, начиная с самого старого жеста. Словесная сторона приветствия разобрана отдельно: <a href="https://kitai-school.ru/article/chto-otvechat-na-nikhao" target="_blank" rel="noopener">что отвечать на «нихао» и почему между своими так не здороваются</a>.</p>
+
+<h2><span class="han">拱手</span>: как складывают руки — <span class="italic">и почему порядок важен</span></h2>
+<p>Жест выглядит так. Одна рука сжимается в кулак. Вторая накрывает его ладонью — не прижимается сверху, а именно обхватывает. Сложенные руки держат на уровне груди, чуть ниже подбородка, и делают короткое движение к собеседнику: от себя и слегка вниз. Голова в этот момент тоже слегка опускается. Всё вместе занимает секунду.</p>
+
+<p><b>Теперь главное.</b> У мужчины снаружи оказывается <b>левая</b> рука, а правая сжата в кулак внутри. У женщины — наоборот: снаружи правая ладонь, в кулаке левая. Объяснение традиция даёт через левую сторону: она считается почётной, «янской», и у мужчины наружу идёт именно она.</p>
+
+<p>Если мужчина перепутает руки и выставит наружу правую, получится не приветствие. Получится <span class="han">凶拜</span> — тот же жест в траурном варианте, которым выражают соболезнование. Обычное, «радостное» приветствие называется <span class="han">吉拜</span>, и это деление не современная выдумка: в <span class="han">《周礼》</span>, одном из ритуальных канонов, перечислены девять видов поклонов (<span class="han">九拜</span>), и <span class="han">吉拜</span> с <span class="han">凶拜</span> стоят среди них.</p>
+
+<p>У этой ошибки есть неприятная особенность, из-за которой она случается чаще, чем можно подумать. <b>Правильное женское приветствие и мужской траурный жест — это один и тот же рисунок.</b> Снаружи правая, в кулаке левая. Поэтому подсмотреть 拱手 у стоящей рядом женщины и повторить — прямой путь к ошибке, и наоборот.</p>
+
+<p>Отсюда простое практическое правило: <span class="ok">если не уверены в руках, не делайте 拱手 вообще</span>. Кивок или лёгкий поклон не несут никакого второго смысла и не могут прозвучать невпопад.</p>
+
+<p>Где этот жест живёт сегодня: поздравления на Новый год (<span class="han">拜年</span>), тосты и благодарности за столом, чайная обстановка, сцена, видеопоздравления — и любая ситуация, где до человека далеко или руки заняты. В обычном офисе его не делают.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tild6263-3962-4235-a432-316465353832/kak-zdorovayutsya-ki.png" alt="Три круглых схемы жеста 拱手: красный круг — кулак, синяя дуга — накрывающая его ладонь; мужской вариант с левой рукой снаружи, женский с правой и перечёркнутый перевёрнутый порядок с подписью о жесте соболезнования" width="1200" height="646"><figcaption>Красный круг — кулак, синяя дуга — накрывающая его ладонь. Всё решает то, какая рука оказалась снаружи.</figcaption></figure>
+
+<h2><span class="han">抱拳</span> — <span class="italic">похожий жест с другим смыслом</span></h2>
+<p>Рядом с 拱手 всё время оказывается второй жест, внешне похожий настолько, что их постоянно смешивают. Это <span class="han">抱拳礼</span> — приветствие в боевых искусствах.</p>
+
+<p>Разница в двух вещах. Первая: в 抱拳 правый кулак прикрывается левой ладонью, которая ложится на его тыльную сторону, а не обхватывает его сбоку. Вторая, и она важнее: <b>правило про мужской и женский порядок рук к 抱拳 не относится вовсе</b>. Это отдельная традиция со своей логикой — прикрытый ладонью кулак читается как отказ от драки, обещание не бить первым.</p>
+
+<div class="note">Из этого следует вещь, которую стоит запомнить отдельно: <b>по жесту из фильма про ушу бытовое приветствие не выучить</b>. Герои на экране делают 抱拳, а не 拱手, и порядок рук у них подчиняется другим правилам.</div>
+
+<h2>Поклон и кивок: <span class="italic">что от них осталось</span></h2>
+<p>Поклон корпусом — <span class="han">鞠躬</span> — в повседневном общении китайцы не делают. Он сохранился там, где обстановка подчёркнуто формальная: на церемониях, у артистов перед залом в конце выступления, при поминовении, в школах боевых искусств. Иногда — у школьников и студентов в адрес преподавателя, но и это скорее про торжественный случай, чем про каждый день.</p>
+
+<p>Если он всё-таки нужен, выглядит он так: корпус наклоняется от пояса, руки остаются вдоль тела, угол небольшой. <b>Это не японский поклон</b>, и приравнивать их нельзя: глубина, длительность и степень обязательности у них разные, а японскую норму в Китае скорее заметят как чужую.</p>
+
+<p>Вместо поклона в быту работает кивок — <span class="han">点头</span>. Он короткий: подбородок идёт вниз и возвращается, взгляд при этом остаётся на собеседнике. Кивком здороваются, когда руки заняты, когда человек проходит мимо, когда до него несколько метров, когда вы уже поздоровались утром и встретились снова. <b>Если из всей статьи запоминать одну вещь, запоминайте эту.</b></p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик готовил видеопоздравление китайским партнёрам к Новому году. Решил, что рукопожатие на камеру выглядит глупо, и захотел сделать 拱手 — жест красивый, праздничный, как раз для 拜年. Нашёл картинку, сложил руки, записал дубль.</p>
+  <p>Черновик он показал китайскому коллеге, просто чтобы проверить произношение. Тот посмотрел и сказал одну фразу: так поздравляют не с праздником.</p>
+  <p>Руки на картинке оказались сложены по женскому варианту — правая снаружи. Для мужчины это 凶拜. Ничего непоправимого бы не случилось, поздравление поняли бы и так, но ровно в том жесте, который должен был показать уважение к традиции, традиция была вывернута наизнанку.</p>
+  <p>Переписали дубль, руки поменяли местами, ушло три минуты. С тех пор я говорю всем одно и то же: <b>традиционный жест либо делается правильно, либо не делается</b>. Кивок не подводил ещё никого.</p>
+</div>
+
+<h2>Почему рукопожатие в Китае <span class="italic">молодое</span></h2>
+<p>Жест <span class="han">握手</span> — заимствованный. На Западе рукопожатие как обычное приветствие при встрече оформляется примерно к середине XIX века. В Китае к этому моменту 拱手 существовал уже больше двух тысяч лет: он складывается в чжоуском ритуале, а в <span class="han">《仪礼》</span> входит в <span class="han">相见礼</span> — расписанный порядок встречи двух людей.</p>
+
+<p>Дальше часто пишут коротко: после Синьхайской революции рукопожатие заменило 拱手. <b>Такой даты нет.</b> В начале Республики официально вводили совсем другое — снятие головного убора и поклон. Рукопожатие при этом уже использовалось и к началу 1920-х годов встречалось в обиходе, а по-настоящему повсеместным стало заметно позже, во второй половине XX века. То есть это было долгое вытеснение, а не момент замены.</p>
+
+<p>Для нас отсюда следует вполне практический вывод. Рукопожатие в Китае — гость, и ведёт себя соответственно: <b>оно короче и мягче европейского</b>. Рука почти не сжимается, встряхивания нет, держат недолго. Крепкое «уверенное» пожатие, которому у нас учат на тренингах, здесь читается как напор. Почти всегда рукопожатие идёт вместе с кивком — голова договаривает то, чего не делает рука. А если человек подаёт вторую руку или придерживает ею ваше предплечье, это знак особого уважения, а не фамильярность.</p>
+
+<h2>Как приветствовать китайцев <span class="italic">при встрече</span></h2>
+<p>Собираем всё в порядок действий. Он короткий и работает и в офисе, и в поездке.</p>
+
+<ul>
+  <li><b>Посмотрите, что делает собеседник, и повторите.</b> Протянул руку — пожмите. Кивнул — кивните. Это правило снимает девять вопросов из десяти.</li>
+  <li><b>По умолчанию — кивок.</b> Если инициатива за вами и обстановка обычная, кивка достаточно. Он не бывает ни слишком, ни недостаточно формальным.</li>
+  <li><b>Рукопожатие — мягко и коротко.</b> Без сжатия, без встряхивания, без задержки. Одна-две секунды.</li>
+  <li><b>Голова работает вместе с рукой.</b> Кивок в момент рукопожатия — не лишнее движение, а обычная часть жеста.</li>
+  <li><b>Не добавляйте ничего сверх.</b> Вторая рука на плече, объятие, похлопывание по спине — всё это не усиливает приветствие, а выводит его за рамки.</li>
+</ul>
+
+<p>Отдельная тема — <b>кого приветствовать первым</b> и как при этом обращаться. Старшинство, очерёдность и формула «должность плюс фамилия» разобраны в материале про <a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a>, и перед деловой поездкой его стоит прочитать целиком.</p>
+
+<h2>Прикосновение <span class="italic">и дистанция</span></h2>
+<p>Здесь обычно и возникает путаница: про Китай одновременно говорят, что людям тесно и что к ним нельзя прикасаться. Оба утверждения верны, просто они про разное.</p>
+
+<p><b>В приветствии прикосновений почти нет.</b> Единственное, что допускается с незнакомым человеком, — рукопожатие. Обнять, поцеловать в щёку, хлопнуть по плечу, взять под локоть при знакомстве не принято, и возраст собеседника тут важнее пола: чем человек старше, тем меньше телесного.</p>
+
+<p><b>При этом теснота сама по себе никого не смущает.</b> Расстояние в очереди, в метро, у прилавка здесь заметно меньше привычного нам, и это не воспринимается как вторжение. Человек может стоять вплотную и при этом ни разу вас не коснуться намеренно.</p>
+
+<p>А между близкими друзьями одного пола телесного как раз больше, чем у нас: пойти под руку, положить руку на плечо, идти в обнимку — обычное дело и ничего, кроме дружбы, не означает.</p>
+
+<div class="note">Граница, которую стоит держать в голове, проходит <b>не по расстоянию, а по степени знакомства</b>. Близко стоять можно. Трогать — только если вы друзья, а не если вы просто рядом.</div>
+
+<h2>Четыре жеста <span class="italic">рядом с приветствием</span></h2>
+<p>Эти четыре вещи формально приветствием не являются, но случаются в те же первые секунды встречи — и как раз в них проще всего ошибиться.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Что делает рука в соседних с приветствием ситуациях.</caption>
+  <thead><tr><th>Ситуация</th><th>Как</th><th>Чего не делают</th></tr></thead>
+  <tbody>
+    <tr><td><b>Помахать издалека</b> (<span class="han">招手</span>)</td><td>ладонь развёрнута к собеседнику, качается вся кисть</td><td>не машут одними пальцами</td></tr>
+    <tr><td><b>Подозвать к себе</b></td><td>ладонь вниз, пальцы сгребают воздух к себе</td><td><span class="bad">ладонью вверх и одним пальцем</span> — так человека не зовут</td></tr>
+    <tr><td><b>Показать на человека</b></td><td>открытой ладонью, пальцы вместе</td><td>не показывают указательным пальцем</td></tr>
+    <tr><td><b>Попрощаться рукой</b></td><td>та же помахивающая кисть, что и при встрече</td><td>не тянут руку для второго рукопожатия</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Со вторым пунктом стоит быть внимательнее всего: жест «иди сюда» ладонью вверх, к которому мы привыкли, в Китае выглядит как подзывание животного. Разница в одном развороте кисти, а читается она сразу.</p>
+
+<p>Что при этом говорить, когда расходитесь, — отдельный разговор: <a href="https://kitai-school.ru/article/kak-poproshchatsya-na-kitajskom" target="_blank" rel="noopener">как попрощаться на китайском</a> и <a href="https://kitai-school.ru/article/do-svidaniya-po-kitayski-kak-na-samom-dele-chitaetsya" target="_blank" rel="noopener">как на самом деле читается 再见</a>.</p>
+
+<h2>Чего лучше <span class="italic">не делать</span></h2>
+<ul>
+  <li><b>Не путать 拱手 и 抱拳.</b> Первый — приветствие, второй — жест боевых искусств со своими правилами.</li>
+  <li><b>Не копировать жест у человека другого пола.</b> Порядок рук у мужчин и женщин зеркальный, и повтор даёт ошибку.</li>
+  <li><b>Не жать руку крепко и долго.</b> То, что у нас читается как уверенность, здесь читается как давление.</li>
+  <li><b>Не обнимать и не хлопать по плечу при знакомстве.</b> С близким другом — пожалуйста, с новым человеком — нет.</li>
+  <li><b>Не подзывать ладонью вверх.</b> Разворачивайте кисть вниз.</li>
+  <li><b>Не кланяться глубоко.</b> Это японская норма, и в Китае она не читается как вежливость.</li>
+</ul>
+
+<p>И ещё одно, не про жесты: даже самое правильное приветствие остаётся наполовину немым, если за ним ничего не следует. О том, как устроен разговор дальше — непрямая речь, «лицо», вежливое «нет», — есть отдельный разбор: <a href="https://kitai-school.ru/article/kak-obshchayutsya-kitajcy" target="_blank" rel="noopener">как общаются китайцы</a>.</p>
+
+<div class="cta">
+  <p>Жест — это полдела: вторая половина в том, что вы скажете и каким тоном. Разбираем это на занятиях вместе с живыми ситуациями — знакомство, встреча, визит: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как правильно здороваться с китайцами при встрече?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Самый безопасный вариант — короткий кивок с подбородком вниз и взглядом на собеседника. Он уместен почти везде: на улице, в офисе, в магазине, со старшим и с ровесником. Если вам протянули руку — пожмите, но мягко и коротко, без встряхивания. Жест 拱手 оставьте для праздничных и традиционных ситуаций: он красивый, но требует правильного порядка рук.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое 拱手 и как сложить руки?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это старый китайский жест приветствия: одна рука сжимается в кулак, вторая накрывает его ладонью, руки держат на уровне груди и делают лёгкое движение к собеседнику. У мужчин снаружи оказывается левая рука, правая сжата в кулак внутри. У женщин наоборот: снаружи правая ладонь, в кулаке левая. Голова при этом слегка склоняется.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что будет, если перепутать руки в 拱手?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>У мужчины перевёрнутый порядок рук — это 凶拜, жест, которым выражают соболезнование. Проблема в том, что выглядит он ровно как правильное женское приветствие, поэтому ошибку легко сделать, подсмотрев жест у женщины. Если не уверены в руках, не делайте 拱手 вообще: кивок или лёгкий поклон ничего не испортят.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 抱拳 отличается от 拱手?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>抱拳 — приветствие в боевых искусствах, а не бытовой жест. В нём правый кулак прикрывается левой ладонью, и смысл у этого другой: прикрытый кулак читается как отказ от драки. Правило про мужской и женский порядок рук к 抱拳 не относится — это отдельная традиция со своими правилами.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли обнять китайского друга при встрече?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>С близким другом — да, объятия при встрече в городах давно не редкость. С новым знакомым, коллегой или человеком старше вас — нет: приветствие в Китае почти не предполагает прикосновений, кроме рукопожатия. Похлопывание по плечу и поцелуй в щёку в приветствии тоже не приняты.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли кланяться китайцам, как японцам?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. Глубокий поклон — японская норма, в Китае он в повседневном общении не используется и будет выглядеть странно. Китайский 鞠躬 сохранился в формальных ситуациях: на церемониях, у артистов перед залом, при поминовении, в школах боевых искусств. В быту его заменил кивок.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть первая встреча пройдёт спокойно! <span class="han">久仰</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Деление поклонов на «радостный» и «траурный» — <span class="han">吉拜</span> и <span class="han">凶拜</span> — закреплено в ритуальном каноне <span class="han">《周礼》</span> в перечне девяти поклонов (<span class="han">九拜</span>). Сам жест <span class="han">拱手</span> входит в <span class="han">相见礼</span> — порядок встречи двух людей, расписанный в <span class="han">《仪礼》</span>.</li>
+    <li>Хронология рукопожатия дана как постепенный процесс намеренно. На Западе этот жест закрепляется как приветствие к середине XIX века; в Китае в начале Республики официально вводили снятие головного убора и поклон, рукопожатие встречалось в обиходе уже к началу 1920-х, а повсеместным стало во второй половине XX века. Точной даты, после которой оно «заменило» <span class="han">拱手</span>, не существует — это обобщение, а не документ.</li>
+    <li>Практика Kitai School: разбор ситуаций знакомства и первой встречи со взрослыми учениками, которые ездят в Китай по работе.</li>
+    <li>Жесты различаются по регионам и поколениям: в крупных городах телесного в общении больше, чем в небольших, и у молодых больше, чем у старших. Процентов и опросов в статье нет намеренно — надёжных цифр по бытовым жестам не существует, а правдоподобные встречаются часто.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Жест без слов работает наполовину: приветствие — это ещё и то, что вы говорите</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
