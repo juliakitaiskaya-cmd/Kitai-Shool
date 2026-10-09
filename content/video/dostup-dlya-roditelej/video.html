@@ -42,19 +42,19 @@
   .brandbar .site{font-size:24px; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe); font-weight:600}
 
   /* ---------- подписи над телефоном ---------- */
-  .caption{position:absolute; left:80px; right:80px; top:190px; z-index:7}
+  .caption{position:absolute; left:80px; right:80px; top:170px; z-index:7}
   .cap{position:absolute; left:0; right:0; top:0; opacity:0}
-  .cap .rubric{
-    font-size:26px; font-weight:700; letter-spacing:.26em; text-transform:uppercase;
-    color:var(--brick); margin-bottom:18px;
+  .cap .seal{
+    display:inline-flex; align-items:center; justify-content:center; width:68px; height:68px; border-radius:16px;
+    background:var(--brick); color:#FCE9C8; font-family:var(--font-han); font-weight:700; font-size:40px;
+    margin-bottom:22px; box-shadow:0 12px 26px rgba(164,30,58,.28); transform:rotate(-4deg);
   }
-  .cap .title{font-size:62px; font-weight:800; line-height:1.1; letter-spacing:-.02em; color:var(--ink)}
-  .cap .title em{font-style:normal; color:var(--brick)}
-  .cap .sub{font-size:30px; color:var(--ink-2); margin-top:16px; line-height:1.4}
+  .cap .title{font-family:var(--font-display); font-weight:700; font-style:italic; font-size:78px; line-height:1.02; letter-spacing:-.01em; color:var(--ink)}
+  .cap .sub{font-size:30px; color:var(--brick); margin-top:20px; line-height:1.4; font-weight:700}
 
   /* ---------- телефон ---------- */
   .phone{
-    position:absolute; left:50%; top:470px; width:600px; height:1180px; z-index:6;
+    position:absolute; left:50%; top:600px; width:580px; height:1110px; z-index:6;
     transform:translateX(-50%);
     background:#231C18; border-radius:68px; padding:13px;
     box-shadow:0 50px 110px rgba(44,36,32,.28), 0 0 0 2px #3A2F29 inset;
@@ -184,6 +184,14 @@
   .big-card .bar i.red{background:var(--brick)}
   .big-card .note{font-size:19px; color:var(--ink-2); margin-top:10px}
 
+  .lock-time{font-size:120px; font-weight:300; text-align:center; color:var(--ink); letter-spacing:-.02em; line-height:1}
+  .lock-date{font-size:26px; text-align:center; color:var(--ink-2); margin:8px 0 34px}
+  .notif{background:rgba(255,255,255,.92); border:1px solid var(--hairline); border-radius:26px; padding:18px 22px;
+    font-size:21px; line-height:1.35; color:var(--ink-2); box-shadow:0 14px 34px rgba(44,36,32,.10)}
+  .notif b{display:block; font-size:22px; color:var(--ink); margin:8px 0 3px}
+  .notif .nh{display:flex; align-items:center; gap:10px; font-size:17px; color:var(--taupe); text-transform:uppercase; letter-spacing:.06em; font-weight:700}
+  .notif .nh i{margin-left:auto; font-style:normal; text-transform:none; letter-spacing:0; font-weight:400}
+  .notif .ni{width:30px; height:30px; border-radius:8px; background:var(--brick); color:#fff; font-family:var(--font-han); font-size:17px; display:flex; align-items:center; justify-content:center}
   .tgmsg{opacity:0; margin-top:16px}
   .tgmsg .bubble{margin-top:0}
   .tgmsg .bubble b{display:block; font-size:17px; letter-spacing:.08em; text-transform:uppercase; color:var(--brick); margin-bottom:6px}
@@ -220,35 +228,27 @@
 
   <!-- подписи над телефоном -->
   <div class="caption">
-    <div class="cap" id="cap0">
-      <div class="rubric">Личный кабинет</div>
-      <div class="title">Страница<br><em>для родителей</em></div>
-      <div class="sub">Учёба ребёнка — всегда под рукой</div>
-    </div>
-    <div class="cap" id="cap1">
-      <div class="rubric">01 · Доступ</div>
-      <div class="title">Одна ссылка.<br><em>Без логина и пароля</em></div>
-    </div>
-    <div class="cap" id="cap2">
-      <div class="rubric">02 · Расписание</div>
-      <div class="title">Когда урок<br>и <em>был ли ребёнок</em></div>
-    </div>
-    <div class="cap" id="cap3">
-      <div class="rubric">03 · Оценки</div>
-      <div class="title">Что сказал<br><em>преподаватель</em></div>
-    </div>
-    <div class="cap" id="cap5">
-      <div class="rubric">05 · Прогресс</div>
-      <div class="title">Сколько пройдено<br><em>по программе</em></div>
-    </div>
-    <div class="cap" id="cap6">
-      <div class="rubric">06 · Уведомления</div>
-      <div class="title">Напоминания<br><em>приходят в Телеграм</em></div>
-    </div>
-    <div class="cap" id="cap4">
-      <div class="rubric">04 · Домашнее задание</div>
-      <div class="title">Что задали<br>и <em>до какого числа</em></div>
-    </div>
+    <div class="cap" id="cap0"><div class="seal">家</div>
+      <div class="title">Что хочет знать<br>родитель?</div>
+      <div class="sub">Ответы — на одной странице</div></div>
+    <div class="cap" id="cap1"><div class="seal">链</div>
+      <div class="title">Как посмотреть,<br>что у ребёнка?</div>
+      <div class="sub">→ Преподаватель присылает ссылку</div></div>
+    <div class="cap" id="cap2"><div class="seal">课</div>
+      <div class="title">Был ли ребёнок<br>на уроке?</div>
+      <div class="sub">→ Занятия и отметки по порядку</div></div>
+    <div class="cap" id="cap3"><div class="seal">评</div>
+      <div class="title">Что сказал<br>преподаватель?</div>
+      <div class="sub">→ Оценки и комментарий после урока</div></div>
+    <div class="cap" id="cap4"><div class="seal">作</div>
+      <div class="title">Что задали<br>и к какому числу?</div>
+      <div class="sub">→ Задание и срок, пока всё свежо</div></div>
+    <div class="cap" id="cap5"><div class="seal">进</div>
+      <div class="title">Как идёт<br>учёба в целом?</div>
+      <div class="sub">→ Пройдено, выучено, средняя оценка</div></div>
+    <div class="cap" id="cap6"><div class="seal">醒</div>
+      <div class="title">Не пропущу ли<br>урок?</div>
+      <div class="sub">→ Напоминание придёт заранее</div></div>
   </div>
 
   <!-- телефон -->
@@ -276,8 +276,8 @@
           <div class="bubble" id="msg1"></div>
           <div class="link-card" id="linkcard" style="opacity:0">
             <div class="u">kitai-school.ru/family/aQ7x…</div>
-            <div class="n">Аня · страница для родителей</div>
-            <div class="d">Расписание, оценки и домашние задания</div>
+            <div class="n">Как учится Аня</div>
+            <div class="d">Страница для родителей · Kitai School</div>
           </div>
         </div>
 
@@ -286,68 +286,68 @@
           <div class="p-head">
             <div class="eyebrow">Страница для родителей</div>
             <h2>Аня</h2>
-            <div class="meta">HSK 2 · вторник и четверг, 18:00</div>
+            <div class="meta">HSK 2 · понедельник и среда, 18:00</div>
           </div>
 
           <div class="tile-row">
             <div class="tile">
               <div class="k">Посещаемость</div>
-              <div class="v">6 <small>из 6</small></div>
-              <div class="bar"><i style="width:100%"></i></div>
+              <div class="v">9 <small>из 10</small></div>
+              <div class="bar"><i style="width:90%"></i></div>
             </div>
             <div class="tile">
               <div class="k">Домашние</div>
-              <div class="v">5 <small>из 6</small></div>
-              <div class="bar"><i style="width:83%"></i></div>
+              <div class="v">8 <small>из 9</small></div>
+              <div class="bar"><i style="width:89%"></i></div>
             </div>
           </div>
 
           <div class="lesson">
-            <div class="day"><b>13</b><span>вт</span></div>
+            <div class="day"><b>5</b><span>пн</span></div>
             <div class="body">
-              <div class="t">Урок 5 · Моя семья</div>
+              <div class="t">Урок 5 · Приветствия</div>
               <div class="s">18:00–19:00 · преподаватель Чэнь Юй</div>
-              <div class="chips"><span class="chip ok">был на уроке</span><span class="chip grey">работа на уроке: 5</span></div>
+              <div class="chips"><span class="chip ok">был на уроке</span><span class="chip grey">ДЗ сдано</span></div>
             </div>
           </div>
 
           <div class="lesson">
-            <div class="day"><b>15</b><span>чт</span></div>
+            <div class="day"><b>7</b><span>ср</span></div>
             <div class="body">
-              <div class="t">Урок 6 · Еда и напитки</div>
+              <div class="t">Урок 6 · Счёт и номер телефона</div>
               <div class="s">18:00–19:00 · преподаватель Мария Орлова</div>
-              <div class="chips"><span class="chip ok">был на уроке</span><span class="chip wait">ДЗ ждёт проверки</span></div>
+              <div class="chips"><span class="chip ok">был на уроке</span><span class="chip wait">ДЗ на проверке</span></div>
             </div>
           </div>
 
           <div class="marks">
             <div class="ttl">Оценки за урок 6</div>
-            <div class="mark"><span class="nm">Работа на уроке</span><span class="rt"><span class="word">отлично</span><span class="num">5</span></span></div>
-            <div class="mark"><span class="nm">Устная речь</span><span class="rt"><span class="word">отлично</span><span class="num">5</span></span></div>
-            <div class="mark"><span class="nm">Диктант</span><span class="rt"><span class="word">хорошо</span><span class="num four">4</span></span></div>
+            <div class="mark"><span class="nm">Произношение</span><span class="rt"><span class="word">отлично</span><span class="num">5</span></span></div>
+            <div class="mark"><span class="nm">Аудирование</span><span class="rt"><span class="word">отлично</span><span class="num">5</span></span></div>
+            <div class="mark"><span class="nm">Иероглифы</span><span class="rt"><span class="word">хорошо</span><span class="num four">4</span></span></div>
           </div>
 
           <div class="fb">
             <div class="who">Обратная связь · преподаватель Мария Орлова</div>
-            <div class="txt">Аня уверенно называет блюда и напитки, сама строит вопрос «что ты любишь». В диктанте путает тоны в словах с «ч» — повторим на следующем уроке.</div>
+            <div class="txt">Аня уверенно считает до десяти и без подсказки называет свой номер телефона. В иероглифах пока путает 三 и 王 — на следующем уроке повторим.</div>
           </div>
 
           <div class="hw">
-            <div class="ttl"><b>Домашнее задание</b><span class="chip wait">до 19 октября</span></div>
+            <div class="ttl"><b>Домашнее задание</b><span class="chip wait">до 12 октября</span></div>
             <ul>
-              <li>выучить слова урока 6 и прочитать диалог вслух;</li>
-              <li>прописать иероглифы <span class="han">吃</span>, <span class="han">喝</span>, <span class="han">茶</span> по пять строк;</li>
-              <li>записать голосом три фразы о своей любимой еде.</li>
+              <li>повторить числа от 0 до 100 вслух;</li>
+              <li>прописать иероглифы <span class="han">三</span>, <span class="han">王</span>, <span class="han">八</span> по пять строк;</li>
+              <li>записать голосом, как вы называете номер телефона.</li>
             </ul>
             <div class="due">Проверит преподаватель, результат появится здесь же</div>
           </div>
 
           <div class="lesson" style="border-left:4px solid var(--brick)">
-            <div class="day"><b>20</b><span>вт</span></div>
+            <div class="day"><b>12</b><span>пн</span></div>
             <div class="body">
               <div class="t">Следующий урок · 18:00</div>
               <div class="s">Тема: «Мой день» · преподаватель Чэнь Юй</div>
-              <div class="chips"><span class="chip grey">напомним в Телеграме</span></div>
+              <div class="chips"><span class="chip grey">напомним заранее</span></div>
             </div>
           </div>
         </div>
@@ -378,16 +378,15 @@
           </div>
         </div>
 
-        <!-- экран 4: Телеграм -->
-        <div class="page" id="p-tg">
-          <div class="tg-head">
-            <div class="ava">启</div>
-            <div class="who">Kitai School<small>уведомления</small></div>
-          </div>
-          <div class="tgmsg" id="tg1"><div class="bubble"><b>Урок завтра</b>Занятие в 18:00. Тема: «Мой день». Ссылка на урок внутри.<span class="time">17:00</span></div></div>
-          <div class="tgmsg" id="tg2"><div class="bubble"><b>Домашнее задание</b>Преподаватель проверил работу: оценка 5. Комментарий уже на странице.<span class="time">20:14</span></div></div>
-          <div class="tgmsg" id="tg3"><div class="bubble"><b>Сообщение в чате</b>Мария Орлова: «Аня, молодец! Повторите слова на «ч» — и будет идеально».<span class="time">20:31</span></div></div>
+        <!-- экран 4: уведомления -->
+        <div class="page" id="p-tg" style="top:-70px; background:linear-gradient(180deg,#F4E3DD 0%,#FAF7F2 70%); height:1100px; padding-top:90px">
+          <div class="lock-time">20:14</div>
+          <div class="lock-date">вторник, 6 октября</div>
+          <div class="tgmsg" id="tg1"><div class="notif"><div class="nh"><span class="ni">启</span>Kitai School<i>сейчас</i></div><b>Завтра урок в 18:00</b>Тема: «Мой день». Ссылка на занятие внутри.</div></div>
+          <div class="tgmsg" id="tg2"><div class="notif"><div class="nh"><span class="ni">启</span>Kitai School<i>20:14</i></div><b>Домашнее задание проверено</b>Оценка 5. Комментарий преподавателя уже на странице.</div></div>
+          <div class="tgmsg" id="tg3"><div class="notif"><div class="nh"><span class="ni">启</span>Kitai School<i>20:31</i></div><b>Новое сообщение от преподавателя</b>«Аня, молодец! Повторите числа — и будет идеально».</div></div>
         </div>
+
 
         <!-- уведомление -->
         <div class="push" id="push">
@@ -446,7 +445,7 @@ const final = $('final');
 const caps = [$('cap0'), $('cap1'), $('cap2'), $('cap3'), $('cap4'), $('cap5'), $('cap6')];
 const pProgress = $('p-progress'), pTg = $('p-tg');
 
-const MSG_TEXT = 'Здравствуйте! Это страница Ани: расписание, оценки и домашние задания. Входить никуда не нужно — просто сохраните ссылку.';
+const MSG_TEXT = 'Здравствуйте! Это страница Ани: здесь расписание, оценки и домашние задания. Откройте, когда будет удобно.';
 
 /** показать подпись i и спрятать остальные */
 function caption(i, v){ caps.forEach((c, k) => { if (k !== i) c.style.opacity = 0; }); if (i >= 0) caps[i].style.opacity = v; }
@@ -458,7 +457,7 @@ window.setTime = function(t){
   const float = 6 * Math.sin(t * 0.7);
   phone.style.opacity = (inP * (1 - outP)).toFixed(3);
   phone.style.transform =
-    `translateX(-50%) translateY(${(170 * (1 - inP) + float + 120 * outP).toFixed(1)}px) scale(${(0.97 + 0.03 * inP).toFixed(4)})`;
+    `translateX(-50%) translateY(${(170 * (1 - inP) + float + 120 * outP).toFixed(1)}px) rotate(${(-3 + 0.8 * Math.sin(t * 0.6)).toFixed(2)}deg) scale(${(0.97 + 0.03 * inP).toFixed(4)})`;
 
   /* ---- подписи над телефоном ---- */
   if (t < S.access.start)        caption(0, window01(t, S.intro.start + 0.15, S.intro.end));
@@ -488,7 +487,8 @@ window.setTime = function(t){
   tap.style.transform = `scale(${(0.35 + 0.85 * tapP).toFixed(3)})`;
 
   // адресная строка меняется после нажатия
-  urltext.textContent = t >= S.tg.start + 0.1 ? 'Telegram' : (t > S.access.start + 4.5 ? 'kitai-school.ru/family/aQ7x…' : 'kitai-school.ru');
+  urltext.textContent = t > S.access.start + 4.5 ? 'kitai-school.ru/family/aQ7x…' : 'kitai-school.ru';
+  $('urlbar').style.opacity = (1 - easeInOut(seg(t, S.tg.start, 0.4))).toFixed(3);
 
   /* ---- экран 2: страница родителя со скроллом ---- */
   const parentIn = easeOut(seg(t, S.access.start + 4.85, 0.55));
@@ -515,7 +515,7 @@ window.setTime = function(t){
   $('bar-words').style.width = (62 * easeInOut(seg(t, S.progress.start + 1.3, 1.4))).toFixed(1) + '%';
   $('bar-mark').style.width = (96 * easeInOut(seg(t, S.progress.start + 1.7, 1.4))).toFixed(1) + '%';
 
-  /* ---- экран 4: сообщения в Телеграме приходят по одному ---- */
+  /* ---- экран 4: уведомления приходят по одному ---- */
   const tgIn = easeOut(seg(t, S.tg.start + 0.2, 0.5));
   const tgOut = easeInOut(seg(t, S.final.start - 0.5, 0.5));
   pTg.style.opacity = (tgIn * (1 - tgOut)).toFixed(3);
