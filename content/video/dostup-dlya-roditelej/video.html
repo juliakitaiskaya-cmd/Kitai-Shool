@@ -55,25 +55,25 @@
   
   /* ---------- ноутбук и камера ---------- */
   .viewbox{
-    position:absolute; left:0; right:0; top:560px; height:1330px; z-index:6; overflow:hidden;
+    position:absolute; left:0; right:0; top:500px; height:1420px; z-index:6; overflow:hidden;
     -webkit-mask-image:linear-gradient(transparent 0, #000 60px, #000 calc(100% - 70px), transparent 100%);
             mask-image:linear-gradient(transparent 0, #000 60px, #000 calc(100% - 70px), transparent 100%);
   }
-  #laptop{position:absolute; left:0; top:0; width:1332px; transform-origin:0 0; opacity:0}
+  #laptop{position:absolute; left:0; top:0; width:1052px; transform-origin:0 0; opacity:0}
   .lid{
-    width:1332px; height:852px; background:#1F1915; border-radius:34px 34px 10px 10px; padding:26px;
+    width:1052px; height:1112px; background:#1F1915; border-radius:34px 34px 10px 10px; padding:26px;
     box-shadow:0 0 0 2px #3A2F29 inset, 0 50px 110px rgba(44,36,32,.30);
     position:relative;
   }
   .lid::after{content:''; position:absolute; left:50%; top:9px; width:9px; height:9px; border-radius:50%; background:#3A2F29; transform:translateX(-50%)}
   .deck{
-    width:1480px; height:34px; margin-left:-74px; border-radius:0 0 40px 40px;
+    width:1160px; height:34px; margin-left:-54px; border-radius:0 0 40px 40px;
     background:linear-gradient(#D9D1C6,#B9B0A3); position:relative;
     box-shadow:0 30px 60px rgba(44,36,32,.22);
   }
   .deck::before{content:''; position:absolute; left:50%; top:0; width:220px; height:12px; border-radius:0 0 14px 14px; background:#A59C8F; transform:translateX(-50%)}
 
-  .screen{position:relative; width:1280px; height:800px; border-radius:10px; overflow:hidden; background:var(--cream)}
+  .screen{position:relative; width:1000px; height:1060px; border-radius:10px; overflow:hidden; background:var(--cream)}
 
   .chrome{position:absolute; left:0; right:0; top:0; height:64px; background:#EFE9E0; border-bottom:1px solid var(--hairline); display:flex; align-items:center; gap:14px; padding:0 22px; z-index:5}
   .chrome .dots{display:flex; gap:8px}
@@ -83,7 +83,7 @@
   .chrome .url .lock{width:13px; height:10px; border:2.5px solid var(--taupe); border-radius:3px; position:relative; margin-top:3px}
 
   .app{position:absolute; left:0; right:0; top:64px; bottom:0; display:flex}
-  .side{flex:none; width:230px; background:#FFFFFF; border-right:1px solid var(--hairline); padding:26px 18px}
+  .side{flex:none; width:210px; background:#FFFFFF; border-right:1px solid var(--hairline); padding:26px 18px}
   .side .brand{display:flex; align-items:center; gap:12px; margin-bottom:34px}
   .side .brand .m{width:44px; height:44px; border-radius:50%; border:2px solid var(--ink); display:flex; align-items:center; justify-content:center; font-family:var(--font-han); font-size:24px}
   .side .brand b{font-family:var(--font-display); font-size:28px; letter-spacing:.04em}
@@ -107,13 +107,14 @@
   .bar i{display:block; height:100%; background:var(--success); border-radius:5px}
   .bar i.red{background:var(--brick)}
 
-  .lesson{background:#fff; border:1px solid var(--hairline); border-radius:20px; padding:20px 26px; margin-top:18px; display:flex; gap:24px; align-items:center}
+  .lesson{background:#fff; border:1px solid var(--hairline); border-radius:20px; padding:20px 26px; margin-top:18px; display:flex; flex-wrap:wrap; gap:10px 24px; align-items:center}
+  .lesson > div:nth-child(2){flex:1; min-width:0}
   .lesson .day{flex:none; text-align:center; min-width:70px}
   .lesson .day b{display:block; font-size:44px; font-weight:800; line-height:1}
   .lesson .day span{font-size:19px; color:var(--taupe); text-transform:uppercase; letter-spacing:.08em}
   .lesson .t{font-size:28px; font-weight:700; color:var(--ink)}
   .lesson .s{font-size:21px; color:var(--ink-2); margin-top:4px}
-  .chips{display:flex; gap:10px; margin-left:auto; flex:none}
+  .chips{display:flex; gap:10px; flex:none; width:100%; margin-left:94px}
   .chip{font-size:20px; font-weight:700; padding:8px 16px; border-radius:999px}
   .chip.ok{background:var(--success-soft); color:#1C7A44}
   .chip.wait{background:var(--highlight); color:#9A6B12}
@@ -145,7 +146,7 @@
   /* письмо */
   .mail{position:absolute; inset:0; z-index:8; background:#F4EFE7; opacity:0}
   .mail .top{height:64px; background:#EFE9E0; border-bottom:1px solid var(--hairline); display:flex; align-items:center; padding:0 26px; gap:16px; font-size:21px; color:var(--ink-2); font-weight:600}
-  .mail .win{position:absolute; left:120px; right:120px; top:110px; bottom:70px; background:#fff; border:1px solid var(--hairline); border-radius:22px; padding:36px 46px; box-shadow:0 24px 60px rgba(44,36,32,.10)}
+  .mail .win{position:absolute; left:70px; right:70px; top:110px; bottom:70px; background:#fff; border:1px solid var(--hairline); border-radius:22px; padding:36px 46px; box-shadow:0 24px 60px rgba(44,36,32,.10)}
   .mail .from{display:flex; gap:18px; align-items:center}
   .mail .av{width:62px; height:62px; border-radius:50%; background:var(--brick); color:#fff; font-family:var(--font-han); font-size:32px; display:flex; align-items:center; justify-content:center}
   .mail .from b{font-size:26px; display:block}
@@ -356,17 +357,7 @@ function caption(i, v){ caps.forEach((c, k) => { if (k !== i) c.style.opacity = 
 
 /* ---- камера: ключевые кадры [время, центр x, центр y в координатах ноутбука, масштаб] ---- */
 const OX = 26, OY = 26;                         // рамка вокруг экрана
-const CAM = [
-  [0,                     666, 470, 0.72],
-  [S.access.start + 0.3,  666, 470, 0.72],
-  [S.access.start + 1.4,  666, 450, 0.8],
-  [S.marks.start,         666, 450, 0.8],
-  [S.hw.start,            666, 450, 0.81],
-  [S.progress.start + 1.0,666, 450, 0.8],
-  [S.tg.start + 0.4,      666, 450, 0.8],
-  [S.tg.start + 1.8,      666, 450, 0.8],
-  [S.final.start - 0.3,   666, 450, 0.8]
-];
+const CAM = [[0, 526, 500, 1]];
 function camAt(t){
   if (t <= CAM[0][0]) return CAM[0];
   for (let i = 1; i < CAM.length; i++){
@@ -381,8 +372,8 @@ function camAt(t){
 /* ---- курсор: путь [время, x, y] в координатах экрана ---- */
 const CUR = [
   [S.access.start + 1.8, 980, 700],
-  [S.access.start + 3.4, 380, 520],        // кнопка «Открыть страницу»
-  [S.lessons.start + 0.1, 380, 520],
+  [S.access.start + 3.4, 300, 480],        // кнопка «Открыть страницу»
+  [S.lessons.start + 0.1, 300, 480],
   [S.marks.start - 0.3,  130, 170],
   [S.marks.start + 0.5,  118, 262],        // вкладка «Оценки»
   [S.hw.start - 0.3,     118, 262],
@@ -403,7 +394,7 @@ function curAt(t){
   const l = CUR[CUR.length-1]; return [l[1], l[2]];
 }
 const CLICKS = [
-  [S.access.start + 3.4, 380, 520],
+  [S.access.start + 3.4, 300, 480],
   [S.marks.start + 0.55, 118, 262],
   [S.hw.start + 0.55,    118, 322],
   [S.progress.start + 0.55, 118, 382]
@@ -414,9 +405,9 @@ window.setTime = function(t){
   const inP = easeOut(seg(t, 0.2, 1.1));
   const outP = easeInOut(seg(t, S.final.start - 0.35, 0.6));
   const [_, cx, cy, sc] = camAt(t);
-  const tx = 540 - sc * cx, ty = 665 - sc * cy + 180 * (1 - inP) + 140 * outP + 5 * Math.sin(t * 0.7);
+  const tx = 14, ty = Math.round(60 + 180 * (1 - inP) + 140 * outP);
   laptop.style.opacity = (inP * (1 - outP)).toFixed(3);
-  laptop.style.transform = `translate(${tx.toFixed(1)}px, ${ty.toFixed(1)}px) scale(${sc.toFixed(4)})`;
+  laptop.style.transform = `translate(${tx}px, ${ty}px)`;
 
   /* подписи */
   if (t < S.access.start)        caption(0, window01(t, 0.15, S.intro.end));
