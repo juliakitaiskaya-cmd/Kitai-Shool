@@ -176,6 +176,18 @@
   .push .tx{font-size:19px; line-height:1.35; color:var(--ink)}
   .push .tx b{display:block; margin-bottom:3px}
 
+  .big-card{background:var(--surface); border:1px solid var(--hairline); border-radius:22px; padding:22px 24px; margin-top:16px}
+  .big-card .k{font-size:17px; letter-spacing:.12em; text-transform:uppercase; color:var(--taupe); font-weight:600}
+  .big-card .v{font-size:46px; font-weight:800; color:var(--ink); margin-top:6px; letter-spacing:-.01em}
+  .big-card .v small{font-size:22px; color:var(--taupe); font-weight:600}
+  .big-card .bar{height:10px; margin-top:14px}
+  .big-card .bar i.red{background:var(--brick)}
+  .big-card .note{font-size:19px; color:var(--ink-2); margin-top:10px}
+
+  .tgmsg{opacity:0; margin-top:16px}
+  .tgmsg .bubble{margin-top:0}
+  .tgmsg .bubble b{display:block; font-size:17px; letter-spacing:.08em; text-transform:uppercase; color:var(--brick); margin-bottom:6px}
+
   /* палец-тап */
   .tap{
     position:absolute; width:96px; height:96px; border-radius:50%; z-index:12; opacity:0;
@@ -224,6 +236,14 @@
     <div class="cap" id="cap3">
       <div class="rubric">03 · Оценки</div>
       <div class="title">Что сказал<br><em>преподаватель</em></div>
+    </div>
+    <div class="cap" id="cap5">
+      <div class="rubric">05 · Прогресс</div>
+      <div class="title">Сколько пройдено<br><em>по программе</em></div>
+    </div>
+    <div class="cap" id="cap6">
+      <div class="rubric">06 · Уведомления</div>
+      <div class="title">Напоминания<br><em>приходят в Телеграм</em></div>
     </div>
     <div class="cap" id="cap4">
       <div class="rubric">04 · Домашнее задание</div>
@@ -332,6 +352,43 @@
           </div>
         </div>
 
+        <!-- экран 3: прогресс -->
+        <div class="page" id="p-progress">
+          <div class="p-head">
+            <div class="eyebrow">Прогресс</div>
+            <h2>Аня · путь к HSK 2</h2>
+          </div>
+          <div class="big-card">
+            <div class="k">Программа</div>
+            <div class="v">14 <small>из 40 уроков</small></div>
+            <div class="bar"><i class="red" id="bar-prog" style="width:0%"></i></div>
+            <div class="note" id="note-prog">35% программы пройдено</div>
+          </div>
+          <div class="big-card">
+            <div class="k">Слова в тренажёре</div>
+            <div class="v">186 <small>из 300</small></div>
+            <div class="bar"><i id="bar-words" style="width:0%"></i></div>
+            <div class="note">62% выучено, остальные на повторении</div>
+          </div>
+          <div class="big-card">
+            <div class="k">Работа на уроке</div>
+            <div class="v">4,8 <small>средняя оценка</small></div>
+            <div class="bar"><i id="bar-mark" style="width:0%"></i></div>
+            <div class="note">за последние шесть занятий</div>
+          </div>
+        </div>
+
+        <!-- экран 4: Телеграм -->
+        <div class="page" id="p-tg">
+          <div class="tg-head">
+            <div class="ava">启</div>
+            <div class="who">Kitai School<small>уведомления</small></div>
+          </div>
+          <div class="tgmsg" id="tg1"><div class="bubble"><b>Урок завтра</b>Занятие в 18:00. Тема: «Мой день». Ссылка на урок внутри.<span class="time">17:00</span></div></div>
+          <div class="tgmsg" id="tg2"><div class="bubble"><b>Домашнее задание</b>Преподаватель проверил работу: оценка 5. Комментарий уже на странице.<span class="time">20:14</span></div></div>
+          <div class="tgmsg" id="tg3"><div class="bubble"><b>Сообщение в чате</b>Мария Орлова: «Аня, молодец! Повторите слова на «ч» — и будет идеально».<span class="time">20:31</span></div></div>
+        </div>
+
         <!-- уведомление -->
         <div class="push" id="push">
           <div class="ava">启</div>
@@ -362,6 +419,8 @@ const SCENES = [
   { id: 'lessons', dur: 6.2 },
   { id: 'marks',   dur: 6.4 },
   { id: 'hw',      dur: 6.2 },
+  { id: 'progress',dur: 6.0 },
+  { id: 'tg',      dur: 6.6 },
   { id: 'final',   dur: 5.8 }
 ];
 let acc = 0;
@@ -384,7 +443,8 @@ const phone = $('phone'), tap = $('tap'), push = $('push');
 const pChat = $('p-chat'), pParent = $('p-parent');
 const msg1 = $('msg1'), linkcard = $('linkcard'), urltext = $('urltext');
 const final = $('final');
-const caps = [$('cap0'), $('cap1'), $('cap2'), $('cap3'), $('cap4')];
+const caps = [$('cap0'), $('cap1'), $('cap2'), $('cap3'), $('cap4'), $('cap5'), $('cap6')];
+const pProgress = $('p-progress'), pTg = $('p-tg');
 
 const MSG_TEXT = 'Здравствуйте! Это страница Ани: расписание, оценки и домашние задания. Входить никуда не нужно — просто сохраните ссылку.';
 
@@ -405,7 +465,9 @@ window.setTime = function(t){
   else if (t < S.lessons.start)  caption(1, window01(t, S.access.start, S.access.end));
   else if (t < S.marks.start)    caption(2, window01(t, S.lessons.start, S.lessons.end));
   else if (t < S.hw.start)       caption(3, window01(t, S.marks.start, S.marks.end));
-  else if (t < S.final.start)    caption(4, window01(t, S.hw.start, S.hw.end));
+  else if (t < S.progress.start) caption(4, window01(t, S.hw.start, S.hw.end));
+  else if (t < S.tg.start)       caption(5, window01(t, S.progress.start, S.progress.end));
+  else if (t < S.final.start)    caption(6, window01(t, S.tg.start, S.tg.end));
   else                           caption(-1, 0);
 
   /* ---- экран 1: переписка со ссылкой ---- */
@@ -426,11 +488,11 @@ window.setTime = function(t){
   tap.style.transform = `scale(${(0.35 + 0.85 * tapP).toFixed(3)})`;
 
   // адресная строка меняется после нажатия
-  urltext.textContent = t > S.access.start + 4.5 ? 'kitai-school.ru/family/aQ7x…' : 'kitai-school.ru';
+  urltext.textContent = t >= S.tg.start + 0.1 ? 'Telegram' : (t > S.access.start + 4.5 ? 'kitai-school.ru/family/aQ7x…' : 'kitai-school.ru');
 
   /* ---- экран 2: страница родителя со скроллом ---- */
   const parentIn = easeOut(seg(t, S.access.start + 4.85, 0.55));
-  const parentOut = easeInOut(seg(t, S.final.start - 0.5, 0.5));
+  const parentOut = easeInOut(seg(t, S.progress.start - 0.1, 0.5));
   pParent.style.opacity = (parentIn * (1 - parentOut)).toFixed(3);
 
   // прокрутка: расписание → оценки → домашнее задание
@@ -443,6 +505,25 @@ window.setTime = function(t){
   const pushP = window01(t, S.marks.start - 0.9, S.marks.start + 1.4, 0.45);
   push.style.opacity = pushP.toFixed(3);
   push.style.transform = `translateY(${(-26 * (1 - pushP)).toFixed(1)}px)`;
+
+  /* ---- экран 3: прогресс ---- */
+  const prIn = easeOut(seg(t, S.progress.start + 0.2, 0.6));
+  const prOut = easeInOut(seg(t, S.tg.start - 0.1, 0.5));
+  pProgress.style.opacity = (prIn * (1 - prOut)).toFixed(3);
+  pProgress.style.transform = `translateY(${(30 * (1 - prIn)).toFixed(1)}px)`;
+  $('bar-prog').style.width = (35 * easeInOut(seg(t, S.progress.start + 0.9, 1.4))).toFixed(1) + '%';
+  $('bar-words').style.width = (62 * easeInOut(seg(t, S.progress.start + 1.3, 1.4))).toFixed(1) + '%';
+  $('bar-mark').style.width = (96 * easeInOut(seg(t, S.progress.start + 1.7, 1.4))).toFixed(1) + '%';
+
+  /* ---- экран 4: сообщения в Телеграме приходят по одному ---- */
+  const tgIn = easeOut(seg(t, S.tg.start + 0.2, 0.5));
+  const tgOut = easeInOut(seg(t, S.final.start - 0.5, 0.5));
+  pTg.style.opacity = (tgIn * (1 - tgOut)).toFixed(3);
+  [['tg1', 0.9], ['tg2', 2.4], ['tg3', 3.9]].forEach(([id, d]) => {
+    const v = easeOut(seg(t, S.tg.start + d, 0.55));
+    $(id).style.opacity = v.toFixed(3);
+    $(id).style.transform = `translateY(${(26 * (1 - v)).toFixed(1)}px)`;
+  });
 
   /* ---- финал ---- */
   const fIn = easeOut(seg(t, S.final.start + 0.1, 0.8));
