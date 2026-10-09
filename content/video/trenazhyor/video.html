@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Тренажёр — видео</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --brick:#A41E3A; --ink:#2C2420; --ink-2:#5A4F45; --taupe:#8B7D6B; --taupe-soft:#B8AC9C;
+    --cream:#FAF7F2; --surface:#FFFFFF; --hairline:#EAE3D8;
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-sans:'Inter',Arial,sans-serif;
+    --font-han:'Noto Serif SC',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#000}
+  #stage{position:relative; width:1080px; height:1920px; overflow:hidden; background:var(--cream); color:var(--ink);
+    font-family:var(--font-sans); -webkit-font-smoothing:antialiased}
+  #stage::before{content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+    background:radial-gradient(1300px 900px at 50% -8%, #FFFFFF 0%, rgba(255,255,255,0) 58%),
+               radial-gradient(1100px 900px at 50% 106%, rgba(164,30,58,.09) 0%, rgba(164,30,58,0) 62%)}
+  .ghost-han{position:absolute; right:-110px; top:300px; z-index:0; font-family:var(--font-han); font-weight:700;
+    font-size:620px; line-height:.8; color:var(--ink); opacity:.04}
+
+  .brandbar{position:absolute; left:80px; right:80px; top:64px; z-index:8; display:flex; align-items:center; justify-content:space-between}
+  .brandbar img{height:58px}
+  .brandbar .site{font-size:24px; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe); font-weight:600}
+
+  .caption{position:absolute; left:80px; right:80px; top:170px; z-index:7}
+  .cap{position:absolute; left:0; right:0; top:0; opacity:0}
+  .cap .seal{display:inline-flex; align-items:center; justify-content:center; width:68px; height:68px; border-radius:16px;
+    background:var(--brick); color:#FCE9C8; font-family:var(--font-han); font-weight:700; font-size:40px; margin-bottom:22px;
+    box-shadow:0 12px 26px rgba(164,30,58,.28); transform:rotate(-4deg)}
+  .cap .title{font-family:var(--font-display); font-weight:700; font-style:italic; font-size:78px; line-height:1.04; color:var(--ink)}
+  .cap .sub{font-size:30px; color:var(--brick); margin-top:20px; line-height:1.4; font-weight:700}
+
+  /* экран тренажёра */
+  .shot{position:absolute; left:80px; top:540px; width:920px; z-index:6; opacity:0; border-radius:38px; overflow:hidden;
+    box-shadow:0 40px 90px rgba(44,36,32,.18), 0 0 0 1px var(--hairline)}
+  .shot img{display:block; width:100%}
+  .dim{position:absolute; left:0; right:0; background:rgba(250,247,242,.74)}
+  .ring{position:absolute; left:2.6%; right:2.6%; border:5px solid var(--brick); border-radius:36px; opacity:0}
+
+  /* подпись под экраном */
+  .tag{position:absolute; left:80px; right:80px; z-index:7; opacity:0; display:block;
+    background:#fff; border:1px solid var(--hairline); border-radius:28px; padding:26px 34px; box-shadow:0 18px 44px rgba(44,36,32,.10)}
+  .tag b{display:block; font-size:36px; font-weight:800; color:var(--ink); margin-bottom:8px}
+  .tag span{font-size:30px; line-height:1.35; color:var(--ink-2)}
+
+  .final{position:absolute; left:80px; right:80px; top:360px; z-index:9; opacity:0}
+  .final .title{font-size:70px; font-weight:800; line-height:1.1; letter-spacing:-.02em; color:var(--ink)}
+  .final .title em{font-style:normal; color:var(--brick)}
+  .final .sub{font-size:32px; color:var(--ink-2); margin-top:24px; line-height:1.45}
+  .collage{display:flex; gap:28px; margin-top:56px; padding:0 8px}
+  .collage .cl{flex:1; height:560px; border-radius:30px; overflow:hidden; background:#fff; box-shadow:0 30px 70px rgba(44,36,32,.16), 0 0 0 1px var(--hairline)}
+  .collage .cl img{width:150%; display:block; margin-left:-25%; margin-top:-17%}
+  .final .stats{display:flex; gap:20px; margin-top:44px}
+  .final .stats .st{flex:1; height:190px; border-radius:30px; overflow:hidden; background:#fff; border:1px solid var(--hairline);
+    box-shadow:0 18px 44px rgba(44,36,32,.08); position:relative}
+  .final .stats img{position:absolute; width:1400px; max-width:none}
+  .final .cta{margin-top:40px; background:#fff; border:1px solid var(--hairline); border-radius:36px; padding:36px 44px;
+    box-shadow:0 24px 60px rgba(44,36,32,.10)}
+  .final .cta .label{font-size:26px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--taupe); margin-bottom:12px}
+  .final .cta .big{font-size:42px; font-weight:800; color:var(--brick); white-space:nowrap}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="ghost-han">练</div>
+  <div class="brandbar"><img src="../../../design-system/assets/kitai-logo.svg" alt="Kitai School"><div class="site">kitai-school.ru</div></div>
+
+  <div class="caption">
+    <div class="cap" id="cap0"><div class="seal">练</div><div class="title">Чем заниматься<br>между уроками?</div><div class="sub">В кабинете ученика есть тренажёр</div></div>
+    <div class="cap" id="cap1"><div class="seal">新</div><div class="title">Как выучить<br>новое?</div><div class="sub">→ Пропуски в предложениях и диалоги</div></div>
+    <div class="cap" id="cap2"><div class="seal">复</div><div class="title">Как не забыть<br>пройденное?</div><div class="sub">→ Карточки и игра на время</div></div>
+    <div class="cap" id="cap3"><div class="seal">句</div><div class="title">Как потренировать<br>навык?</div><div class="sub">→ Собрать предложение из слов</div></div>
+    <div class="cap" id="cap4"><div class="seal">字</div><div class="title">А как быть<br>с иероглифами?</div><div class="sub">→ Проверка, написание, порядок черт</div></div>
+  </div>
+
+  <div id="shots"></div>
+  <div id="tags"></div>
+
+  <div class="final" id="final">
+    <div class="title">Занятие собирается<br><em>из вашего урока</em></div>
+    <div class="sub">Тренажёр берёт слова и конструкции, которые были на уроке, и готовит короткий блок для повторения.</div>
+    <div class="cta"><div class="label">Подробности</div><div class="big">Пишите в личные сообщения</div></div>
+    <div class="collage">
+      <div class="cl" style="transform:rotate(-2.5deg)"><img src="shots/learn.jpg" alt=""></div>
+      <div class="cl" style="transform:rotate(2deg); margin-top:36px"><img src="shots/review.jpg" alt=""></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* экраны и карточки: y0/y1 — границы карточки в пикселях исходного скриншота */
+const SHOTS = [
+  { id: 'learn',  file: 'shots/learn.jpg',  w: 1169, h: 930,  cap: 1, dur: 8.2,
+    cards: [ { y0: 88,  y1: 478, name: 'Заполни пропуск', sub: 'выбери слово', say: 'В предложении пропущено слово, нужное выбрать из вариантов.' },
+             { y0: 516, y1: 906, name: 'Диалог', sub: 'слово в контексте', say: 'Новое слово встречается в живом диалоге, а не в списке.' } ] },
+  { id: 'review', file: 'shots/review.jpg', w: 1167, h: 945,  cap: 2, dur: 8.2,
+    cards: [ { y0: 94,  y1: 484, name: 'Карточки', sub: 'помню / не помню', say: 'Показывают слово, вы отмечаете, помните его или нет.' },
+             { y0: 522, y1: 912, name: 'Найти пару', sub: 'слово и перевод, на время', say: 'К слову нужно подобрать перевод, пока идёт время.' } ] },
+  { id: 'skill',  file: 'shots/skill.jpg',  w: 1169, h: 565,  cap: 3, dur: 5.6,
+    cards: [ { y0: 104, y1: 492, name: 'Собрать предложение', sub: 'расставь слова по порядку', say: 'Слова даны вперемешку, их нужно расставить по порядку.' } ] },
+  { id: 'hanzi',  file: 'shots/hanzi.jpg',  w: 1166, h: 1205, wpx: 760, cap: 4, dur: 11.2,
+    cards: [ { y0: 22,  y1: 262,  name: 'Быстрая проверка', sub: 'узнаёшь иероглиф?', say: 'Показывают иероглиф, нужно узнать его.' },
+             { y0: 324, y1: 714,  name: 'Написать иероглифы', sub: 'знаки урока', say: 'Пишете знаки, которые были на уроке.' },
+             { y0: 776, y1: 1166, name: 'Написание', sub: 'порядок черт', say: 'Показан порядок, в котором пишутся черты.' } ] }
+];
+const INTRO = 4.6, FINAL = 5.8;
+let acc = INTRO;
+SHOTS.forEach(s => { s.start = acc; s.end = acc + s.dur; acc += s.dur; s.wpx = s.wpx || 920; s.scale = s.wpx / s.w; s.H = s.h * s.scale; });
+const T_FINAL = acc, DUR = acc + FINAL;
+window.VIDEO_DURATION = DUR;
+
+const $ = id => document.getElementById(id);
+const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const back = x => { const c = 1.5; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const seg = (t, s, d) => clamp((t - s) / d, 0, 1);
+const win = (t, a, b, f = 0.45) => easeInOut(seg(t, a, f)) * (1 - easeInOut(seg(t, b - f, f)));
+
+/* собираем DOM */
+SHOTS.forEach(s => {
+  const box = document.createElement('div'); box.className = 'shot'; box.id = 'shot-' + s.id; box.style.width = s.wpx + 'px'; box.style.left = ((1080 - s.wpx) / 2) + 'px';
+  let h = `<img src="${s.file}" alt="">`;
+  s.cards.forEach((c, i) => {
+    const top = (c.y0 / s.h * 100).toFixed(2), hh = ((c.y1 - c.y0) / s.h * 100).toFixed(2);
+    h += `<div class="dim" id="dim-${s.id}-${i}" style="top:${top}%; height:${hh}%"></div>`;
+    h += `<div class="ring" id="ring-${s.id}-${i}" style="top:${top}%; height:${hh}%"></div>`;
+  });
+  box.innerHTML = h; $('shots').appendChild(box);
+  const tag = document.createElement('div'); tag.className = 'tag'; tag.id = 'tag-' + s.id;
+  $('tags').appendChild(tag);
+});
+const caps = [0,1,2,3,4].map(i => $('cap' + i));
+const SHOT_TOP = 540;
+
+window.setTime = function(t){
+  /* подписи-вопросы */
+  caps.forEach(c => c.style.opacity = 0);
+  if (t < SHOTS[0].start) caps[0].style.opacity = win(t, 0.15, SHOTS[0].start).toFixed(3);
+  SHOTS.forEach(s => { if (t >= s.start && t < s.end) caps[s.cap].style.opacity = win(t, s.start, s.end).toFixed(3); });
+
+  /* экраны */
+  SHOTS.forEach(s => {
+    const box = $('shot-' + s.id), tag = $('tag-' + s.id);
+    const inP = easeOut(seg(t, s.start + 0.2, 0.7));
+    const outP = easeInOut(seg(t, s.end - 0.4, 0.4));
+    const v = inP * (1 - outP);
+    box.style.opacity = v.toFixed(3);
+    box.style.transform = `translateY(${Math.round(50 * (1 - inP) - 30 * outP)}px) scale(${(0.96 + 0.04 * back(seg(t, s.start + 0.2, 0.8))).toFixed(4)})`;
+    // подпись под экраном
+    const tagTop = SHOT_TOP + s.H + 40;
+    tag.style.top = Math.round(tagTop) + 'px';
+    // фокус по карточкам: после вступления поочерёдно
+    const n = s.cards.length, t0 = s.start + 1.5, per = (s.end - 0.4 - t0) / n;
+    let focus = -1;
+    if (t >= t0) focus = Math.min(n - 1, Math.floor((t - t0) / per));
+    s.cards.forEach((c, i) => {
+      const on = (i === focus) ? easeOut(seg(t, t0 + i * per, 0.4)) : 0;
+      const dimV = focus < 0 ? 0 : (i === focus ? 0.0 : 1) ;
+      const dimEase = focus < 0 ? 0 : (i === focus ? 1 - easeOut(seg(t, t0 + i * per, 0.35)) : (i < focus ? 1 : easeOut(seg(t, t0, 0.35))));
+      $('dim-' + s.id + '-' + i).style.opacity = dimEase.toFixed(3);
+      $('ring-' + s.id + '-' + i).style.opacity = on.toFixed(3);
+    });
+    if (focus >= 0){
+      const c = s.cards[focus];
+      tag.innerHTML = `<b>${c.name}</b><span>${c.say}</span>`;
+      const tIn = easeOut(seg(t, t0 + focus * per + 0.1, 0.4));
+      tag.style.opacity = (tIn * (1 - outP)).toFixed(3);
+      tag.style.transform = `translateY(${Math.round(20 * (1 - tIn))}px)`;
+    } else tag.style.opacity = 0;
+  });
+
+  /* финал */
+  const fIn = easeOut(seg(t, T_FINAL + 0.1, 0.8));
+  $('final').style.opacity = fIn.toFixed(3);
+  $('final').style.transform = `translateY(${Math.round(36 * (1 - fIn))}px)`;
+  $('final').querySelector('.cta').style.transform = `scale(${(0.96 + 0.04 * back(seg(t, T_FINAL + 0.6, 0.7))).toFixed(4)})`;
+};
+window.setTime(0);
+</script>
+</body>
+</html>
