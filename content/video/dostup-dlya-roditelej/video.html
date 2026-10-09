@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Доступ для родителей — видео</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --brick:#A41E3A; --brick-deep:#841630; --brick-soft:#F7E6EB;
+    --ink:#2C2420; --ink-2:#5A4F45; --taupe:#8B7D6B; --taupe-soft:#B8AC9C;
+    --cream:#FAF7F2; --cream-2:#F3EDE3; --surface:#FFFFFF; --hairline:#EAE3D8;
+    --success:#27B260; --success-soft:#E3F6E9; --warn:#E08A1E; --highlight:#FCF6E2;
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-sans:'Inter',Arial,sans-serif;
+    --font-han:'Noto Serif SC',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#000}
+  #stage{
+    position:relative; width:1080px; height:1920px; overflow:hidden;
+    background:var(--cream); color:var(--ink);
+    font-family:var(--font-sans); -webkit-font-smoothing:antialiased;
+  }
+  #stage::before{
+    content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+    background:
+      radial-gradient(1300px 900px at 50% -8%, #FFFFFF 0%, rgba(255,255,255,0) 58%),
+      radial-gradient(1100px 900px at 50% 106%, rgba(164,30,58,.09) 0%, rgba(164,30,58,0) 62%);
+  }
+  .ghost-han{
+    position:absolute; left:-120px; top:300px; z-index:0;
+    font-family:var(--font-han); font-weight:700; font-size:620px; line-height:.8;
+    color:var(--ink); opacity:.04;
+  }
+
+  /* ---------- шапка кадра ---------- */
+  .brandbar{
+    position:absolute; left:80px; right:80px; top:64px; z-index:8;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brandbar img{height:58px}
+  .brandbar .site{font-size:24px; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe); font-weight:600}
+
+  /* ---------- подписи над телефоном ---------- */
+  .caption{position:absolute; left:80px; right:80px; top:190px; z-index:7}
+  .cap{position:absolute; left:0; right:0; top:0; opacity:0}
+  .cap .rubric{
+    font-size:26px; font-weight:700; letter-spacing:.26em; text-transform:uppercase;
+    color:var(--brick); margin-bottom:18px;
+  }
+  .cap .title{font-size:62px; font-weight:800; line-height:1.1; letter-spacing:-.02em; color:var(--ink)}
+  .cap .title em{font-style:normal; color:var(--brick)}
+  .cap .sub{font-size:30px; color:var(--ink-2); margin-top:16px; line-height:1.4}
+
+  /* ---------- телефон ---------- */
+  .phone{
+    position:absolute; left:50%; top:470px; width:600px; height:1180px; z-index:6;
+    transform:translateX(-50%);
+    background:#231C18; border-radius:68px; padding:13px;
+    box-shadow:0 50px 110px rgba(44,36,32,.28), 0 0 0 2px #3A2F29 inset;
+  }
+  .screen{
+    position:relative; width:100%; height:100%; border-radius:56px; overflow:hidden;
+    background:var(--cream); display:flex; flex-direction:column;
+  }
+  .notch{
+    position:absolute; left:50%; top:16px; transform:translateX(-50%);
+    width:150px; height:36px; border-radius:20px; background:#231C18; z-index:9;
+  }
+  .statusbar{
+    flex:none; height:66px; display:flex; align-items:center; justify-content:space-between;
+    padding:18px 40px 0; font-size:21px; font-weight:700; color:var(--ink);
+  }
+  .statusbar .icons{display:flex; gap:7px; align-items:flex-end}
+  .statusbar .icons i{display:block; width:5px; background:var(--ink); border-radius:2px}
+  .statusbar .bat{width:28px; height:14px; border:2px solid var(--ink); border-radius:4px; position:relative}
+  .statusbar .bat::after{content:''; position:absolute; left:2px; top:2px; bottom:2px; right:7px; background:var(--ink); border-radius:1px}
+
+  .urlbar{
+    flex:none; margin:10px 22px 14px; height:54px; border-radius:16px; background:#EFE9E0;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    font-size:21px; color:var(--ink-2);
+  }
+  .urlbar .lock{width:16px; height:13px; border:2.5px solid var(--taupe); border-radius:3px; position:relative; margin-top:3px}
+  .urlbar .lock::before{content:''; position:absolute; left:3px; top:-7px; width:8px; height:8px;
+    border:2.5px solid var(--taupe); border-bottom:none; border-radius:4px 4px 0 0}
+
+  .viewport{flex:1; position:relative; overflow:hidden}
+  .page{position:absolute; left:0; right:0; top:0; padding:0 22px 40px; opacity:0}
+
+  /* ---------- элементы интерфейса ---------- */
+  .tg-head{
+    display:flex; align-items:center; gap:14px; padding:14px 4px 18px; border-bottom:1px solid var(--hairline);
+  }
+  .tg-head .ava{width:52px; height:52px; border-radius:50%; background:var(--brick); color:#fff;
+    font-family:var(--font-han); font-size:26px; display:flex; align-items:center; justify-content:center}
+  .tg-head .who{font-size:23px; font-weight:700; color:var(--ink)}
+  .tg-head .who small{display:block; font-size:17px; font-weight:400; color:var(--taupe); margin-top:2px}
+  .bubble{
+    max-width:430px; background:var(--surface); border:1px solid var(--hairline); border-radius:20px 20px 20px 6px;
+    padding:18px 20px; font-size:21px; line-height:1.4; color:var(--ink); margin-top:18px;
+    box-shadow:0 4px 14px rgba(44,36,32,.05);
+  }
+  .bubble .time{display:block; text-align:right; font-size:15px; color:var(--taupe-soft); margin-top:8px}
+  .link-card{
+    max-width:440px; margin-top:14px; background:var(--surface); border:1px solid var(--hairline);
+    border-left:4px solid var(--brick); border-radius:14px; padding:14px 18px;
+  }
+  .link-card .u{font-size:19px; color:#3E7BC2; word-break:break-all}
+  .link-card .n{font-size:21px; font-weight:700; color:var(--ink); margin-top:8px}
+  .link-card .d{font-size:18px; color:var(--taupe); margin-top:3px}
+
+  .p-head{padding:16px 4px 6px}
+  .p-head .eyebrow{font-size:17px; letter-spacing:.14em; text-transform:uppercase; color:var(--taupe); font-weight:600}
+  .p-head h2{font-family:var(--font-display); font-size:40px; font-weight:700; color:var(--ink); margin-top:4px}
+  .p-head .meta{font-size:19px; color:var(--ink-2); margin-top:6px}
+
+  .tile-row{display:flex; gap:14px; margin-top:16px}
+  .tile{
+    flex:1; background:var(--surface); border:1px solid var(--hairline); border-radius:18px; padding:16px 18px;
+  }
+  .tile .k{font-size:16px; color:var(--taupe); letter-spacing:.06em; text-transform:uppercase; font-weight:600}
+  .tile .v{font-size:34px; font-weight:800; color:var(--ink); margin-top:6px}
+  .tile .v small{font-size:18px; font-weight:600; color:var(--taupe)}
+  .bar{height:7px; border-radius:4px; background:#E7DED1; margin-top:10px; overflow:hidden}
+  .bar i{display:block; height:100%; background:var(--success); border-radius:4px}
+
+  .lesson{
+    background:var(--surface); border:1px solid var(--hairline); border-radius:20px;
+    padding:18px 20px; margin-top:14px; display:flex; gap:16px;
+  }
+  .lesson .day{flex:none; text-align:center; min-width:52px}
+  .lesson .day b{display:block; font-size:30px; font-weight:800; color:var(--ink); line-height:1}
+  .lesson .day span{font-size:15px; color:var(--taupe); text-transform:uppercase; letter-spacing:.08em}
+  .lesson .body{flex:1}
+  .lesson .t{font-size:21px; font-weight:700; color:var(--ink)}
+  .lesson .s{font-size:18px; color:var(--ink-2); margin-top:4px}
+  .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+  .chip{font-size:16px; font-weight:600; padding:6px 12px; border-radius:999px}
+  .chip.ok{background:var(--success-soft); color:#1C7A44}
+  .chip.wait{background:var(--highlight); color:#9A6B12}
+  .chip.grey{background:#EFE9E0; color:var(--ink-2)}
+
+  .marks{background:var(--surface); border:1px solid var(--hairline); border-radius:20px; padding:18px 20px; margin-top:14px}
+  .marks .ttl{font-size:17px; letter-spacing:.12em; text-transform:uppercase; color:var(--taupe); font-weight:600; margin-bottom:12px}
+  .mark{display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--hairline)}
+  .mark:last-child{border-bottom:none}
+  .mark .nm{font-size:21px; color:var(--ink)}
+  .mark .rt{display:flex; align-items:center; gap:10px}
+  .mark .word{font-size:17px; color:var(--taupe)}
+  .mark .num{width:38px; height:38px; border-radius:12px; background:var(--success); color:#fff;
+    font-size:21px; font-weight:800; display:flex; align-items:center; justify-content:center}
+  .mark .num.four{background:#4E9E6A}
+
+  .fb{background:var(--surface); border:1px solid var(--hairline); border-left:4px solid var(--success);
+    border-radius:18px; padding:18px 20px; margin-top:14px}
+  .fb .who{font-size:18px; color:var(--taupe); margin-bottom:8px}
+  .fb .txt{font-size:20px; line-height:1.45; color:var(--ink)}
+
+  .hw{background:var(--surface); border:1px solid var(--hairline); border-radius:20px; padding:18px 20px; margin-top:14px}
+  .hw .ttl{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px}
+  .hw .ttl b{font-size:21px; color:var(--ink)}
+  .hw li{font-size:20px; line-height:1.45; color:var(--ink-2); margin-left:22px; margin-bottom:6px}
+  .hw li::marker{color:var(--brick)}
+  .hw .han{font-family:var(--font-han); color:var(--ink); font-weight:500}
+  .hw .due{font-size:18px; color:var(--taupe); margin-top:10px}
+
+  .push{
+    position:absolute; left:22px; right:22px; top:16px; z-index:10; opacity:0;
+    background:rgba(255,255,255,.96); border:1px solid var(--hairline); border-radius:22px;
+    padding:16px 18px; display:flex; gap:14px; align-items:flex-start;
+    box-shadow:0 18px 40px rgba(44,36,32,.18);
+  }
+  .push .ava{flex:none; width:44px; height:44px; border-radius:12px; background:var(--brick); color:#fff;
+    font-family:var(--font-han); font-size:22px; display:flex; align-items:center; justify-content:center}
+  .push .tx{font-size:19px; line-height:1.35; color:var(--ink)}
+  .push .tx b{display:block; margin-bottom:3px}
+
+  /* палец-тап */
+  .tap{
+    position:absolute; width:96px; height:96px; border-radius:50%; z-index:12; opacity:0;
+    border:4px solid rgba(164,30,58,.55); background:rgba(164,30,58,.14);
+  }
+
+  /* ---------- финальная плашка ---------- */
+  .final{
+    position:absolute; left:80px; right:80px; top:430px; z-index:9; opacity:0;
+  }
+  .final .title{font-size:64px; font-weight:800; line-height:1.12; letter-spacing:-.02em; color:var(--ink)}
+  .final .title em{font-style:normal; color:var(--brick)}
+  .final .sub{font-size:32px; color:var(--ink-2); margin-top:22px; line-height:1.45}
+  .final .cta{
+    margin-top:40px; background:var(--surface); border:1px solid var(--hairline); border-radius:36px;
+    padding:38px 44px; box-shadow:0 24px 60px rgba(44,36,32,.10);
+  }
+  .final .cta .label{font-size:26px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--taupe); margin-bottom:12px}
+  .final .cta .big{font-size:40px; font-weight:800; color:var(--brick); white-space:nowrap}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="ghost-han">家</div>
+
+  <div class="brandbar">
+    <img src="../../../design-system/assets/kitai-logo.svg" alt="Kitai School">
+    <div class="site">kitai-school.ru</div>
+  </div>
+
+  <!-- подписи над телефоном -->
+  <div class="caption">
+    <div class="cap" id="cap0">
+      <div class="rubric">Личный кабинет</div>
+      <div class="title">Страница<br><em>для родителей</em></div>
+      <div class="sub">Учёба ребёнка — всегда под рукой</div>
+    </div>
+    <div class="cap" id="cap1">
+      <div class="rubric">01 · Доступ</div>
+      <div class="title">Одна ссылка.<br><em>Без логина и пароля</em></div>
+    </div>
+    <div class="cap" id="cap2">
+      <div class="rubric">02 · Расписание</div>
+      <div class="title">Когда урок<br>и <em>был ли ребёнок</em></div>
+    </div>
+    <div class="cap" id="cap3">
+      <div class="rubric">03 · Оценки</div>
+      <div class="title">Что сказал<br><em>преподаватель</em></div>
+    </div>
+    <div class="cap" id="cap4">
+      <div class="rubric">04 · Домашнее задание</div>
+      <div class="title">Что задали<br>и <em>до какого числа</em></div>
+    </div>
+  </div>
+
+  <!-- телефон -->
+  <div class="phone" id="phone">
+    <div class="screen">
+      <div class="notch"></div>
+
+      <div class="statusbar">
+        <span>9:41</span>
+        <div class="icons">
+          <i style="height:9px"></i><i style="height:13px"></i><i style="height:17px"></i><i style="height:21px"></i>
+          <div class="bat" style="margin-left:8px"></div>
+        </div>
+      </div>
+
+      <div class="urlbar" id="urlbar"><span class="lock"></span><span id="urltext">kitai-school.ru</span></div>
+
+      <div class="viewport">
+        <!-- экран 1: сообщение со ссылкой -->
+        <div class="page" id="p-chat">
+          <div class="tg-head">
+            <div class="ava">启</div>
+            <div class="who">Kitai School<small>школа китайского языка</small></div>
+          </div>
+          <div class="bubble" id="msg1"></div>
+          <div class="link-card" id="linkcard" style="opacity:0">
+            <div class="u">kitai-school.ru/family/aQ7x…</div>
+            <div class="n">Аня · страница для родителей</div>
+            <div class="d">Расписание, оценки и домашние задания</div>
+          </div>
+        </div>
+
+        <!-- экран 2: страница родителя -->
+        <div class="page" id="p-parent">
+          <div class="p-head">
+            <div class="eyebrow">Страница для родителей</div>
+            <h2>Аня</h2>
+            <div class="meta">HSK 2 · вторник и четверг, 18:00</div>
+          </div>
+
+          <div class="tile-row">
+            <div class="tile">
+              <div class="k">Посещаемость</div>
+              <div class="v">6 <small>из 6</small></div>
+              <div class="bar"><i style="width:100%"></i></div>
+            </div>
+            <div class="tile">
+              <div class="k">Домашние</div>
+              <div class="v">5 <small>из 6</small></div>
+              <div class="bar"><i style="width:83%"></i></div>
+            </div>
+          </div>
+
+          <div class="lesson">
+            <div class="day"><b>13</b><span>вт</span></div>
+            <div class="body">
+              <div class="t">Урок 5 · Моя семья</div>
+              <div class="s">18:00–19:00 · преподаватель Чэнь Юй</div>
+              <div class="chips"><span class="chip ok">был на уроке</span><span class="chip grey">работа на уроке: 5</span></div>
+            </div>
+          </div>
+
+          <div class="lesson">
+            <div class="day"><b>15</b><span>чт</span></div>
+            <div class="body">
+              <div class="t">Урок 6 · Еда и напитки</div>
+              <div class="s">18:00–19:00 · преподаватель Мария Орлова</div>
+              <div class="chips"><span class="chip ok">был на уроке</span><span class="chip wait">ДЗ ждёт проверки</span></div>
+            </div>
+          </div>
+
+          <div class="marks">
+            <div class="ttl">Оценки за урок 6</div>
+            <div class="mark"><span class="nm">Работа на уроке</span><span class="rt"><span class="word">отлично</span><span class="num">5</span></span></div>
+            <div class="mark"><span class="nm">Устная речь</span><span class="rt"><span class="word">отлично</span><span class="num">5</span></span></div>
+            <div class="mark"><span class="nm">Диктант</span><span class="rt"><span class="word">хорошо</span><span class="num four">4</span></span></div>
+          </div>
+
+          <div class="fb">
+            <div class="who">Обратная связь · преподаватель Мария Орлова</div>
+            <div class="txt">Аня уверенно называет блюда и напитки, сама строит вопрос «что ты любишь». В диктанте путает тоны в словах с «ч» — повторим на следующем уроке.</div>
+          </div>
+
+          <div class="hw">
+            <div class="ttl"><b>Домашнее задание</b><span class="chip wait">до 19 октября</span></div>
+            <ul>
+              <li>выучить слова урока 6 и прочитать диалог вслух;</li>
+              <li>прописать иероглифы <span class="han">吃</span>, <span class="han">喝</span>, <span class="han">茶</span> по пять строк;</li>
+              <li>записать голосом три фразы о своей любимой еде.</li>
+            </ul>
+            <div class="due">Проверит преподаватель, результат появится здесь же</div>
+          </div>
+
+          <div class="lesson" style="border-left:4px solid var(--brick)">
+            <div class="day"><b>20</b><span>вт</span></div>
+            <div class="body">
+              <div class="t">Следующий урок · 18:00</div>
+              <div class="s">Тема: «Мой день» · преподаватель Чэнь Юй</div>
+              <div class="chips"><span class="chip grey">напомним в Телеграме</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- уведомление -->
+        <div class="push" id="push">
+          <div class="ava">启</div>
+          <div class="tx"><b>Kitai School</b>Урок прошёл: оценки и домашнее задание уже на странице Ани</div>
+        </div>
+
+        <div class="tap" id="tap"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- финал -->
+  <div class="final" id="final">
+    <div class="title">Доступ открывает<br><em>преподаватель</em></div>
+    <div class="sub">Одна ссылка на ребёнка: родитель видит расписание, оценки и домашние задания. Чат и тренажёр остаются личными — там только ученик и преподаватель.</div>
+    <div class="cta">
+      <div class="label">Как получить</div>
+      <div class="big">Пишите в личные сообщения</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- сценарий ---------- */
+const SCENES = [
+  { id: 'intro',   dur: 4.6 },
+  { id: 'access',  dur: 6.6 },
+  { id: 'lessons', dur: 6.2 },
+  { id: 'marks',   dur: 6.4 },
+  { id: 'hw',      dur: 6.2 },
+  { id: 'final',   dur: 5.8 }
+];
+let acc = 0;
+const S = {};
+SCENES.forEach(s => { S[s.id] = { start: acc, end: acc + s.dur }; acc += s.dur; });
+const DUR = acc;
+window.VIDEO_DURATION = DUR;
+
+const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const back = x => { const c = 1.6; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const seg = (t, s, d) => clamp((t - s) / d, 0, 1);
+/** 0 → 1 → 0: плавное появление и уход в окне [a, b] */
+const window01 = (t, a, b, f = 0.45) =>
+  easeInOut(seg(t, a, f)) * (1 - easeInOut(seg(t, b - f, f)));
+
+const $ = id => document.getElementById(id);
+const phone = $('phone'), tap = $('tap'), push = $('push');
+const pChat = $('p-chat'), pParent = $('p-parent');
+const msg1 = $('msg1'), linkcard = $('linkcard'), urltext = $('urltext');
+const final = $('final');
+const caps = [$('cap0'), $('cap1'), $('cap2'), $('cap3'), $('cap4')];
+
+const MSG_TEXT = 'Здравствуйте! Это страница Ани: расписание, оценки и домашние задания. Входить никуда не нужно — просто сохраните ссылку.';
+
+/** показать подпись i и спрятать остальные */
+function caption(i, v){ caps.forEach((c, k) => { if (k !== i) c.style.opacity = 0; }); if (i >= 0) caps[i].style.opacity = v; }
+
+window.setTime = function(t){
+  /* ---- телефон: выезжает в начале, уезжает в финале ---- */
+  const inP = easeOut(seg(t, 0.25, 1.1));
+  const outP = easeInOut(seg(t, S.final.start - 0.35, 0.6));
+  const float = 6 * Math.sin(t * 0.7);
+  phone.style.opacity = (inP * (1 - outP)).toFixed(3);
+  phone.style.transform =
+    `translateX(-50%) translateY(${(170 * (1 - inP) + float + 120 * outP).toFixed(1)}px) scale(${(0.97 + 0.03 * inP).toFixed(4)})`;
+
+  /* ---- подписи над телефоном ---- */
+  if (t < S.access.start)        caption(0, window01(t, S.intro.start + 0.15, S.intro.end));
+  else if (t < S.lessons.start)  caption(1, window01(t, S.access.start, S.access.end));
+  else if (t < S.marks.start)    caption(2, window01(t, S.lessons.start, S.lessons.end));
+  else if (t < S.hw.start)       caption(3, window01(t, S.marks.start, S.marks.end));
+  else if (t < S.final.start)    caption(4, window01(t, S.hw.start, S.hw.end));
+  else                           caption(-1, 0);
+
+  /* ---- экран 1: переписка со ссылкой ---- */
+  const chatOut = easeInOut(seg(t, S.access.start + 4.4, 0.35));
+  const chatOn = t < S.access.start + 5.2;
+  pChat.style.opacity = chatOn ? (1 - chatOut).toFixed(3) : 0;
+  pChat.style.transform = `translateY(${(-40 * chatOut).toFixed(1)}px)`;
+
+  // текст сообщения печатается
+  const typed = Math.round(MSG_TEXT.length * easeInOut(seg(t, S.access.start + 0.5, 1.9)));
+  msg1.innerHTML = MSG_TEXT.slice(0, typed) + (typed >= MSG_TEXT.length ? '<span class="time">12:30</span>' : '');
+  linkcard.style.opacity = easeOut(seg(t, S.access.start + 2.5, 0.5)).toFixed(3);
+
+  // палец нажимает на ссылку
+  const tapP = seg(t, S.access.start + 3.7, 0.75);
+  tap.style.left = '210px'; tap.style.top = '330px';
+  tap.style.opacity = (tapP > 0 && tapP < 1 ? 1 - tapP : 0).toFixed(3);
+  tap.style.transform = `scale(${(0.35 + 0.85 * tapP).toFixed(3)})`;
+
+  // адресная строка меняется после нажатия
+  urltext.textContent = t > S.access.start + 4.5 ? 'kitai-school.ru/family/aQ7x…' : 'kitai-school.ru';
+
+  /* ---- экран 2: страница родителя со скроллом ---- */
+  const parentIn = easeOut(seg(t, S.access.start + 4.85, 0.55));
+  const parentOut = easeInOut(seg(t, S.final.start - 0.5, 0.5));
+  pParent.style.opacity = (parentIn * (1 - parentOut)).toFixed(3);
+
+  // прокрутка: расписание → оценки → домашнее задание
+  let scroll = 0;
+  scroll += easeInOut(seg(t, S.marks.start + 0.2, 1.1)) * 330;   // к оценкам
+  scroll += easeInOut(seg(t, S.hw.start + 0.1, 1.1)) * 400;      // к домашнему заданию
+  pParent.style.transform = `translateY(${(30 * (1 - parentIn) - scroll).toFixed(1)}px)`;
+
+  /* ---- уведомление в начале блока с оценками ---- */
+  const pushP = window01(t, S.marks.start - 0.9, S.marks.start + 1.4, 0.45);
+  push.style.opacity = pushP.toFixed(3);
+  push.style.transform = `translateY(${(-26 * (1 - pushP)).toFixed(1)}px)`;
+
+  /* ---- финал ---- */
+  const fIn = easeOut(seg(t, S.final.start + 0.1, 0.8));
+  final.style.opacity = fIn.toFixed(3);
+  final.style.transform = `translateY(${(36 * (1 - fIn)).toFixed(1)}px)`;
+  final.querySelector('.cta').style.transform = `scale(${(0.96 + 0.04 * back(seg(t, S.final.start + 0.6, 0.7))).toFixed(4)})`;
+};
+window.setTime(0);
+</script>
+</body>
+</html>
