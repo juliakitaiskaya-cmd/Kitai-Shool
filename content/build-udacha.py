@@ -7,8 +7,8 @@ OUT = "udacha-po-kitayski.html"
 SLUG = "udacha-po-kitayski"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/udacha-po-kitayski-hero.png"
-FIG = "assets/udacha-po-kitayski-info.png"
+HERO = "https://static.tildacdn.com/tild3865-6131-4830-b165-336132326239/udacha-po-kitayski-h.png"
+FIG = "https://static.tildacdn.com/tild3533-3734-4434-a133-646565343164/udacha-po-kitayski-i.png"
 HERO_ALT = ("Каллиграфический лист с крупным словом 好运, чтением hǎoyùn и переводом «удача», с красной печатью "
             "в углу; рядом три соседних слова: 运气, 幸运, 吉祥")
 FIG_ALT = ("Схема: на входной двери знак 福 висит прямо, а внутри дома — на шкафу, сосуде для воды и мусорном "
