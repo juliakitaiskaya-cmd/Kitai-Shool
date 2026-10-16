@@ -7,8 +7,8 @@ OUT = "privet-po-kitayski.html"
 SLUG = "privet-po-kitayski"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/privet-po-kitayski-hero.png"
-FIG = "assets/privet-po-kitayski-info.png"
+HERO = "https://static.tildacdn.com/tild3535-3362-4438-b862-623134396266/privet-po-kitayski-h.png"
+FIG = "https://static.tildacdn.com/tild6462-3331-4066-a164-383164333163/privet-po-kitayski-i.png"
 HERO_ALT = ("Две клавиши клавиатуры со знаками 你 и 好, под ними чтение nǐ и hǎo с переводом «ты» и «хорошо», "
             "и подпись, что клавиши со значением «здравствуйте» не существует")
 FIG_ALT = ("Разбор трёх знаков на части в виде деталей пазла: 你 из 亻 и 尔 — семь черт, 好 из 女 и 子 — шесть черт, "
