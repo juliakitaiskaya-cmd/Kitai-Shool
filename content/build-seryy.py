@@ -7,8 +7,8 @@ OUT = "seryy-po-kitayski.html"
 SLUG = "seryy-po-kitayski"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/seryy-po-kitayski-hero.png"
-FIG = "assets/seryy-po-kitayski-info.png"
+HERO = "https://static.tildacdn.com/tild6637-3430-4930-b738-333231643232/seryy-po-kitayski-he.png"
+FIG = "https://static.tildacdn.com/tild3338-3865-4830-b630-393937356239/seryy-po-kitayski-in.png"
 HERO_ALT = ("Образец краски: серое поле со знаком 灰, ярлык с названием 灰色, чтением huīsè и значениями "
             "«пепел, зола, известь; серый; подавленный», рядом полоска из трёх оттенков от светло-серого "
             "до тёмно-серого")
