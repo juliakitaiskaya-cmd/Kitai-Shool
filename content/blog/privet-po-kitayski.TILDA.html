@@ -1,0 +1,404 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/privet-po-kitayski#article",
+      "headline": "«Привет» по-китайски: как пишется 你好 и почему отдельного иероглифа «здравствуйте» нет",
+      "description": "Как сказать и как написать «привет» по-китайски: 你好 nǐ hǎo — два знака, 你 «ты» и 好 «хорошо». Разбор состава знаков и числа черт: 你 — семь черт из 亻 и 尔, 好 — шесть черт из 女 и 子, вежливое 您 — одиннадцать черт из 你 и 心. Почему отдельного иероглифа со значением «здравствуйте» в письменности нет; почему записывается nǐ hǎo, а звучит ní hǎo; как набрать приветствие на клавиатуре и не выбрать из подсказок похожее слово; пять ошибок при письме.",
+      "image": "assets/privet-po-kitayski-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-16",
+      "dateModified": "2026-10-16",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/privet-po-kitayski",
+      "about": {
+        "@type": "Thing",
+        "name": "Приветствие в китайском языке и его написание"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/privet-po-kitayski#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как будет «привет» на китайском языке?", "acceptedAnswer": {"@type": "Answer", "text": "你好 — в пиньине nǐ hǎo. Это сочетание из двух знаков: 你 означает «ты», 好 означает «хорошо», а вместе получается приветствие. Вежливый вариант — 您好 (nín hǎo), его говорят старшему по возрасту или положению и незнакомому человеку в официальной обстановке. В речи сочетание звучит немного не так, как записано: ní hǎo."}},
+        {"@type": "Question", "name": "Как пишется «привет» по-китайски?", "acceptedAnswer": {"@type": "Answer", "text": "Двумя знаками подряд, без пробела между ними: 你好. В первом знаке семь черт, он состоит из части 亻 слева и части 尔 справа. Во втором знаке шесть черт: 女 слева и 子 справа. Пишут знаки в общем порядке — сверху вниз и слева направо, то есть в 你 сначала появляется левая часть, потом правая."}},
+        {"@type": "Question", "name": "Есть ли в китайском отдельный иероглиф «здравствуйте»?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, и это главное недоразумение вокруг темы. Приветствие в китайском собрано из двух знаков, и ни один из них сам по себе приветствием не является: 好 отдельно значит «хорошо», 你 отдельно — «ты». Вежливая форма 您好 тоже состоит из двух знаков. Поэтому искать один знак со значением «здравствуйте» бесполезно — его в письменности нет."}},
+        {"@type": "Question", "name": "Как набрать 你好 на клавиатуре?", "acceptedAnswer": {"@type": "Answer", "text": "Переключиться на китайскую раскладку и ввести латиницей nihao, без знаков тона. Программа предложит список вариантов, и 你好 почти всегда стоит в нём первым, но не всегда: рядом оказываются другие слова с тем же чтением, например 拟好 «подготовить, набросать». Поэтому выбирать нужно по знакам, а не по месту в списке."}},
+        {"@type": "Question", "name": "Чем знак 您 отличается от 你 на письме?", "acceptedAnswer": {"@type": "Answer", "text": "您 — это тот же знак 你, под которым дописано 心 «сердце». Получается одиннадцать черт вместо семи, и ключом у него считается уже 心. На слух разница тоже есть: 你 читается nǐ, 您 — nín. Вежливость в этой паре выражена буквально: к «ты» добавлено «сердце»."}},
+        {"@type": "Question", "name": "Можно ли записывать китайское приветствие русскими буквами?", "acceptedAnswer": {"@type": "Answer", "text": "Для первого знакомства — пожалуйста, но учить по такой записи не стоит. Русские буквы передают не те звуки, и то, что закрепится в памяти, придётся потом переучивать. Для записи звучания в китайском есть пиньинь — латиница со значками тона, и опираться лучше сразу на него."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/privet-po-kitayski#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "«Привет» по-китайски: как пишется 你好 и почему отдельного иероглифа «здравствуйте» нет", "item": "https://kitai-school.ru/article/privet-po-kitayski"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Первые слова</p>
+<h1>«Привет» по-китайски: <span class="italic">как пишется 你好 и почему отдельного иероглифа «здравствуйте» нет</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-16">16 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/privet-po-kitayski-hero.png" alt="Две клавиши клавиатуры со знаками 你 и 好, под ними чтение nǐ и hǎo с переводом «ты» и «хорошо», и подпись, что клавиши со значением «здравствуйте» не существует" width="1200" height="630"></figure>
+
+<p class="passport">Ответ на вопрос помещается в одну строку: <b><span class="han">你好</span>, в пиньине nǐ hǎo</b>. Дальше начинается то, что в эту строку не влезает. Приветствие здесь — <b>два знака, а не один</b>, у каждого внутри свои части, записывается оно чуть иначе, чем звучит, а отдельного иероглифа со значением «здравствуйте» в китайской письменности нет вообще. Ниже — как это пишется, как читается, как набирается на клавиатуре и где чаще всего ошибаются.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Сказать</b> — nǐ hǎo, а в речи это звучит как ní hǎo. <b>Написать</b> — <span class="han">你好</span>, два знака подряд, без пробела. <b>Вежливо</b> — <span class="han">您好</span> (nín hǎo). <b>Набрать</b> — ввести латиницей nihao и выбрать нужный вариант из подсказок. <b>Одного иероглифа «здравствуйте» не существует</b>: приветствие собрано из знаков «ты» и «хорошо».</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">как сказать и как написать</span></h2>
+<p>Всё, что нужно для первого раза, укладывается в четыре строки.</p>
+
+<ul>
+  <li><b>Как будет</b> — <span class="han">你好</span>, nǐ hǎo. Дословно «ты хорошо».</li>
+  <li><b>Как пишется</b> — два знака подряд: <span class="han">你</span> и <span class="han">好</span>. Пробела между ними нет.</li>
+  <li><b>Как вежливо</b> — <span class="han">您好</span>, nín hǎo. Тот же второй знак, первый — вежливая форма «ты».</li>
+  <li><b>Как произносится</b> — ní hǎo. Записывается одним, читается немного другим, и это нормально.</li>
+</ul>
+
+<p>Одну вещь оговорю сразу, чтобы не вводить в заблуждение. <span class="han">你好</span> — это вежливое приветствие для человека, с которым вы не близки, и между своими его почти не говорят. Это отдельная тема, со своими правилами и своими формулами, и она разобрана целиком здесь: <a href="https://kitai-school.ru/article/chto-otvechat-na-nikhao" target="_blank" rel="noopener">что отвечать на «нихао» и кому его вообще говорят</a>. В этой статье — письменная и звуковая сторона: из чего собраны знаки, как они пишутся и как набираются.</p>
+
+<h2>Как пишется <span class="italic">你好</span>: два знака и их части</h2>
+<p>Китайский знак почти никогда не бывает неделимым. Внутри у него части, и у каждой своя работа: одна отвечает за смысл, другая подсказывает звучание. В приветствии это видно хорошо.</p>
+
+<p><b><span class="han">你</span> nǐ «ты» — семь черт.</b> Слева стоит <span class="han">亻</span> — сокращённая форма знака «человек»; это ключ, по нему знак ищут в бумажном словаре. Справа — <span class="han">尔</span>, часть, которая подсказывает чтение. Как ключи управляют смыслом знаков целиком, разобрано отдельно: <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey-kak-ustroen-ieroglif-voda" target="_blank" rel="noopener">логика китайских ключей</a>.</p>
+
+<p><b><span class="han">好</span> hǎo «хорошо» — шесть черт.</b> Слева <span class="han">女</span> «женщина», справа <span class="han">子</span> «ребёнок». Объяснений, почему вместе получается «хорошо», ходит много, и все они красивые — но подтверждения у них нет, поэтому я их не пересказываю. Для письма достаточно запомнить две части.</p>
+
+<p><b><span class="han">您</span> nín «вы» — одиннадцать черт.</b> Это целиком знак <span class="han">你</span>, под которым дописано <span class="han">心</span> «сердце». Вежливость тут выражена буквально, и запоминается она легче, чем кажется: к «ты» добавлено «сердце».</p>
+
+<p>Порядок письма общий для всей китайской письменности: <b>сверху вниз и слева направо</b>. В знаке с левой и правой частью сначала пишут левую — то есть в <span class="han">你</span> сперва появляется <span class="han">亻</span>, и только потом <span class="han">尔</span>. Чем писать и в какой тетради — вопрос не праздный, он разобран здесь: <a href="https://kitai-school.ru/article/chem-pisat-kitajskie-ieroglify" target="_blank" rel="noopener">чем писать китайские иероглифы</a>. А почему знаки забываются через неделю после прописывания — здесь: <a href="https://kitai-school.ru/article/kak-zapominat-ieroglify" target="_blank" rel="noopener">как запоминать иероглифы</a>.</p>
+
+<h2>Почему отдельного иероглифа <span class="italic">«здравствуйте» нет</span></h2>
+<p>Запрос «китайский иероглиф здравствуйте» встречается часто, и за ним стоит понятное ожидание: раз в китайском каждое слово — знак, значит есть знак и для приветствия. Логика разумная, но язык устроен иначе.</p>
+
+<p><b>Такого знака нет.</b> Приветствие собрано из двух знаков, и ни один из них по отдельности приветствием не является:</p>
+
+<ul>
+  <li><span class="han">好</span> само по себе — «хорошо», «хороший». Это очень частотный знак, он встречается в десятках слов, и приветствия в нём нет.</li>
+  <li><span class="han">你</span> само по себе — «ты». Просто местоимение.</li>
+  <li>Приветствием становится только сочетание: <span class="han">你好</span>. Вежливая форма <span class="han">您好</span> — тоже два знака, а не один.</li>
+</ul>
+
+<figure class="ks-fig"><img src="assets/privet-po-kitayski-info.png" alt="Разбор трёх знаков на части в виде деталей пазла: 你 из 亻 и 尔 — семь черт, 好 из 女 и 子 — шесть черт, 您 из 你 и 心 — одиннадцать черт" width="1200" height="716"><figcaption>Приветствие — два знака, и каждый из них сам собран из частей.</figcaption></figure>
+
+<p>Из этого следует простая практическая вещь. <b>Если вам нужно написать приветствие, нужно написать оба знака.</b> Один знак, переписанный с картинки, приветствием не будет — он будет значить «ты» или «хорошо» в зависимости от того, какой вы выбрали. То же самое касается подарков и открыток: знак, который часто видят в красном квадрате, — это <span class="han">福</span> «счастье», и к приветствию он отношения не имеет.</p>
+
+<p>Так устроено не только приветствие. Большинство китайских слов сегодня состоит из двух знаков, и ожидание «одно слово — один знак» подводит постоянно. Почему в китайском нет букв и чем знак отличается от слова, разобрано здесь: <a href="https://kitai-school.ru/article/kakie-bukvy-v-kitayskom-yazyke" target="_blank" rel="noopener">какие буквы в китайском языке</a>.</p>
+
+<h2>Как набрать <span class="italic">你好</span> на клавиатуре</h2>
+<p>Писать от руки учатся не все и не сразу, а вот набрать приветствие в переписке приходится почти всем. Устроено это не так, как кажется со стороны.</p>
+
+<p>Китайский набирают <b>латиницей</b>. Вы переключаете раскладку, печатаете <b>nihao</b> — без значков тона, их при вводе не ставят, — и программа показывает список вариантов. <span class="han">你好</span> в этом списке почти всегда первое. Почти.</p>
+
+<div class="note">Слогов в китайском немного, а слов много, поэтому на одно и то же чтение приходится несколько разных слов. Рядом с <span class="han">你好</span> в подсказках стоит, например, <span class="han">拟好</span> — тоже nǐ hǎo, но означает «подготовить, набросать». Выбирать нужно <b>по знакам, а не по месту в списке</b>.</div>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик написал мне в мессенджер первое своё сообщение по-китайски. Я открыла и увидела <span class="han">拟好</span>.</p>
+  <p>Секунд пять я честно пыталась понять, что он хочет сказать. «Подготовить»? Что подготовить? Потом дошло: он здоровается.</p>
+  <p>Выяснилось всё за минуту. Набрал он правильно — nihao, буква в букву. А дальше, не глядя, нажал на первый вариант в списке, хотя нужный стоял вторым. Знаки он на тот момент ещё не читал, и отличить одно от другого просто не мог.</p>
+  <p>С тех пор я показываю этот момент всем, кто начинает переписываться: <b>набрать — это полдела, выбрать нужно глазами</b>. Пока знаки не читаются, любая подсказка клавиатуры — лотерея. Это, кстати, лучший аргумент за то, чтобы учить знаки с самого начала, а не откладывать их на потом.</p>
+</div>
+
+<p>Второе, что стоит знать про набор: <b>тоны при вводе не набирают</b>. Значки над гласными нужны для учёбы и словарей, а клавиатуре хватает букв. Поэтому «nihao» и «nǐ hǎo» для неё одно и то же, и выбор всё равно остаётся за вами.</p>
+
+<p>Третье: многие программы понимают сокращённый ввод — достаточно набрать первые буквы слогов, и <b>nh</b> уже выдаст <span class="han">你好</span> в числе первых вариантов. Удобно, но ловушка та же: чем короче запрос, тем длиннее список похожих слов, и выбирать всё равно приходится глазами.</p>
+
+<p>И способ, про который забывают: знак можно <b>нарисовать пальцем</b> — в телефоне есть рукописный ввод. Вот здесь и пригождается то, с чего начинался разговор: распознавание опирается на то, как знак нарисован, и привычный порядок черт заметно повышает шансы, что программа узнает именно <span class="han">你</span>.</p>
+
+<h2>Как это читается: <span class="italic">nǐ hǎo, а звучит ní hǎo</span></h2>
+<p>Здесь одна особенность, которую стоит знать с самого начала, иначе собственное произношение будет расходиться с тем, что слышно вокруг.</p>
+
+<p>Записывают приветствие как <b>nǐ hǎo</b> — оба слога третьим тоном. А произносят как <b>ní hǎo</b>: когда два третьих тона идут подряд, первый из них читается вторым. Это общее правило китайского, а не причуда приветствия: оно действует везде, где такие слоги оказываются рядом, и запоминать его отдельно для приветствия не нужно.</p>
+
+<p>И про запись русскими буквами, раз уж «ни хао» встречается на каждом шагу. Такая запись удобна ровно один раз — когда нужно произнести фразу через пять минут и больше к ней не возвращаться. Для учёбы она не годится: русские буквы передают другие звуки, и переучивать потом тяжелее, чем выучить сразу. Как ставят звуки и тоны, разобрано здесь: <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>.</p>
+
+<h2>Что ещё говорят <span class="italic">вместо 你好</span></h2>
+<p>Приветствий в китайском больше одного, и у каждого своё место. Здесь — короткая опись: как пишется, как читается, что значит дословно и когда звучит естественно.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Основные формы приветствия на письме.</caption>
+  <thead><tr><th>Форма</th><th>Чтение</th><th>Дословно</th><th>Когда</th></tr></thead>
+  <tbody>
+    <tr><td><b><span class="han">您好</span></b></td><td>nín hǎo</td><td>вы хорошо</td><td>вежливое обращение: к старшему, незнакомому, клиенту</td></tr>
+    <tr><td><b><span class="han">大家好</span></b></td><td>dàjiā hǎo</td><td>все хорошо</td><td>сразу всей группе — в классе, на встрече, в видео</td></tr>
+    <tr><td><b><span class="han">早上好</span></b></td><td>zǎoshang hǎo</td><td>утро хорошо</td><td>утреннее приветствие; вечером — 晚上好</td></tr>
+    <tr><td><b><span class="han">好久不见</span></b></td><td>hǎojiǔ bú jiàn</td><td>давно не виделись</td><td>знакомому после долгой паузы</td></tr>
+    <tr><td><b><span class="han">喂</span></b></td><td>wéi</td><td>алло</td><td>только в телефонном разговоре, при встрече так не здороваются</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Это именно опись, а не разбор. Кому из них что говорят, что отвечают в ответ, почему между знакомыми приветствие часто заменяется обращением по имени и что означает вопрос «поел?» — всё это разобрано в отдельной статье: <a href="https://kitai-school.ru/article/chto-otvechat-na-nikhao" target="_blank" rel="noopener">что отвечать на «нихао» и как здороваются со своими</a>. Там же готовые пары реплик. А как заканчивают разговор, разобрано здесь: <a href="https://kitai-school.ru/article/kak-poproshchatsya-na-kitajskom" target="_blank" rel="noopener">как попрощаться на китайском</a>.</p>
+
+<h2>Пять ошибок <span class="italic">при письме</span></h2>
+<p>Все пять я вижу регулярно, и все пять лечатся за один раз.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Что делают и почему так не надо.</caption>
+  <thead><tr><th>Что делают</th><th>В чём дело</th></tr></thead>
+  <tbody>
+    <tr><td><b>Пишут <span class="han">好你</span></b></td><td>знаки переставлены местами, и слова уже нет: порядок знаков в китайском меняет смысл</td></tr>
+    <tr><td><b>Ставят пробел между знаками</b></td><td>китайский текст пишется без пробелов внутри слова; 你好 — это 你好, а не 你 好</td></tr>
+    <tr><td><b>Отправляют носителю «ni hao» латиницей</b></td><td>пиньинь — учебная запись звучания, в переписке на нём не пишут</td></tr>
+    <tr><td><b>Записывают «ни хао» русскими буквами</b></td><td>русские буквы дают другие звуки, и произношение закрепляется неправильно</td></tr>
+    <tr><td><b>Пишут <span class="han">妳</span> вместо <span class="han">你</span> женщине</b></td><td>вариант 妳 встречается в традиционном письме, прежде всего на Тайване; на материке пишут 你 независимо от пола</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Про последнюю строку оговорюсь честно: <span class="han">妳</span> — не ошибка как таковая, а региональная особенность. Но если вы учите современный материковый китайский, писать женщине <span class="han">妳</span> не нужно: вас поймут, однако выглядеть это будет странно, как написанное не из той традиции. О том, как вообще устроено обращение и почему китайцы так внимательны к форме, — здесь: <a href="https://kitai-school.ru/article/kak-obshchayutsya-kitajcy" target="_blank" rel="noopener">как общаются китайцы</a>.</p>
+
+<div class="cta">
+  <p>Приветствие — первое, что произносят вслух, и первое, что закрепляется неправильно: по русской записи, с ровным тоном, без разницы между <span class="han">你好</span> и <span class="han">您好</span>. Разобрать это проще сразу, чем переучивать: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. Если интересует именно письменность — есть отдельный <a href="https://kitai-school.ru/ieroglifika" target="_blank" rel="noopener">курс иероглифики</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>. С чего начинать, если вы только подступаетесь, разобрано здесь: <a href="https://kitai-school.ru/article/izuchenie-kitajskogo-yazyka-s-nulya-s-chego-nachat" target="_blank" rel="noopener">изучение китайского с нуля</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как будет «привет» на китайском языке?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>你好 — в пиньине nǐ hǎo. Это сочетание из двух знаков: 你 означает «ты», 好 означает «хорошо», а вместе получается приветствие. Вежливый вариант — 您好 (nín hǎo), его говорят старшему по возрасту или положению и незнакомому человеку в официальной обстановке. В речи сочетание звучит немного не так, как записано: ní hǎo.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как пишется «привет» по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Двумя знаками подряд, без пробела между ними: 你好. В первом знаке семь черт, он состоит из части 亻 слева и части 尔 справа. Во втором знаке шесть черт: 女 слева и 子 справа. Пишут знаки в общем порядке — сверху вниз и слева направо, то есть в 你 сначала появляется левая часть, потом правая.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Есть ли в китайском отдельный иероглиф «здравствуйте»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и это главное недоразумение вокруг темы. Приветствие в китайском собрано из двух знаков, и ни один из них сам по себе приветствием не является: 好 отдельно значит «хорошо», 你 отдельно — «ты». Вежливая форма 您好 тоже состоит из двух знаков. Поэтому искать один знак со значением «здравствуйте» бесполезно — его в письменности нет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как набрать 你好 на клавиатуре?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Переключиться на китайскую раскладку и ввести латиницей nihao, без знаков тона. Программа предложит список вариантов, и 你好 почти всегда стоит в нём первым, но не всегда: рядом оказываются другие слова с тем же чтением, например 拟好 «подготовить, набросать». Поэтому выбирать нужно по знакам, а не по месту в списке.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем знак 您 отличается от 你 на письме?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>您 — это тот же знак 你, под которым дописано 心 «сердце». Получается одиннадцать черт вместо семи, и ключом у него считается уже 心. На слух разница тоже есть: 你 читается nǐ, 您 — nín. Вежливость в этой паре выражена буквально: к «ты» добавлено «сердце».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли записывать китайское приветствие русскими буквами?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Для первого знакомства — пожалуйста, но учить по такой записи не стоит. Русские буквы передают не те звуки, и то, что закрепится в памяти, придётся потом переучивать. Для записи звучания в китайском есть пиньинь — латиница со значками тона, и опираться лучше сразу на него.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть первое слово дастся легко! <span class="han">万事开头难</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Число черт, ключ и состав знаков приведены по словарным данным: <span class="han">你</span> — семь черт, ключ <span class="han">亻</span>, части <span class="han">亻</span> и <span class="han">尔</span>; <span class="han">好</span> — шесть черт, части <span class="han">女</span> и <span class="han">子</span>; <span class="han">您</span> — одиннадцать черт, ключ <span class="han">心</span>, части <span class="han">你</span> и <span class="han">心</span>. По данным Unicode у <span class="han">您</span> ключ 61 и семь дополнительных черт, что в сумме даёт те же одиннадцать.</li>
+    <li>Порядок письма — общее правило китайской письменности: сверху вниз, слева направо; в знаке с левой и правой частью сначала пишется левая.</li>
+    <li>Изменение тона: два третьих тона подряд, первый читается вторым. Правило общее, не относящееся только к приветствию.</li>
+    <li>Про <span class="han">妳</span>: вариант знака «ты» для обращения к женщине, встречающийся в текстах на традиционном письме, прежде всего на Тайване. Это описание сложившейся практики по словарным и пользовательским источникам, а не норма из справочника; на материке пишут <span class="han">你</span> независимо от пола.</li>
+    <li>Истории появления самой формулы <span class="han">你好</span> в статье нет намеренно: встречается утверждение, что как нейтральное универсальное приветствие она закрепилась в прошлом веке, но ссылки ведут на обучающие материалы, а не на исследования. Дат без надёжного источника я не привожу.</li>
+    <li>Народные объяснения состава знака <span class="han">好</span> не пересказываются: подтверждения им нет, а запоминанию они помогают не больше, чем простое «женщина плюс ребёнок».</li>
+    <li>Практика Kitai School: первые реплики у начинающих, типичные ошибки при письме и при выборе из подсказок клавиатуры.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Приветствие — это два знака. Одного иероглифа со значением «здравствуйте» в китайском нет</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
