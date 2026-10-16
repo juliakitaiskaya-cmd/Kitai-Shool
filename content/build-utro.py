@@ -7,8 +7,8 @@ OUT = "dobroe-utro-po-kitayski.html"
 SLUG = "dobroe-utro-po-kitayski"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/dobroe-utro-po-kitayski-hero.png"
-FIG = "assets/dobroe-utro-po-kitayski-info.png"
+HERO = "https://static.tildacdn.com/tild3365-6534-4162-b231-383830376130/dobroe-utro-po-kitay.png"
+FIG = "https://static.tildacdn.com/tild3639-3862-4131-b065-356637386231/dobroe-utro-po-kitay.png"
 HERO_ALT = ("Рассвет: солнце наполовину за линией горизонта, поверх него крупный знак 早, внизу три формы "
             "приветствия — 早上好 zǎoshang hǎo, 早 zǎo и 早安 zǎo'ān")
 FIG_ALT = ("Вокзальное табло с формами приветствия по времени суток: 早上好 раннее утро, 上午好 ближе к полудню, "
