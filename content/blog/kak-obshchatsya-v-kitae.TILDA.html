@@ -1,0 +1,408 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kak-obshchatsya-v-kitae#article",
+      "headline": "Как общаться в Китае: почему здесь слушают ситуацию, а не слова",
+      "description": "Как общаться в Китае: что здесь считывают кроме сказанного — кто присутствовал при разговоре, кто заговорил первым, как быстро ответили и о чём не сказали вовсе. Почему в групповом чате и на совещании соглашаются охотнее, чем один на один, и как проверить настоящее согласие. Что означает молчание в переписке и почему третий раз спрашивать не нужно. Зачем в разговоре нужен посредник 中间人. Как меняется речь по мере сокращения дистанции и шесть практических правил для тех, кто только начал работать или учиться в Китае.",
+      "image": "assets/kak-obshchatsya-v-kitae-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-16",
+      "dateModified": "2026-10-16",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kak-obshchatsya-v-kitae",
+      "about": {
+        "@type": "Thing",
+        "name": "Коммуникация в Китае и роль контекста в разговоре"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kak-obshchatsya-v-kitae#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как общаться в Китае, если язык пока слабый?", "acceptedAnswer": {"@type": "Answer", "text": "Опираться не на запас слов, а на форму вопроса. Короткий вопрос с выбором — «вторник или среда?», «здесь или там?» — понятен при любом уровне и не оставляет места обтекаемому ответу. Второе, что помогает: называть срок самому. Фраза «если не получится до пятницы, скажите, пожалуйста» снимает необходимость отказывать прямо, а вы получаете ясность."}},
+        {"@type": "Question", "name": "Как правильно общаться с китайцами на работе?", "acceptedAnswer": {"@type": "Answer", "text": "Три вещи дают больше всего. Первая: спрашивать про сроки и следующий шаг, а не про согласие. Вторая: проверять в личном разговоре то, что прозвучало при всех, — это разные по надёжности ответы. Третья: не поднимать неудобную тему при посторонних. И закладывать время: решение нередко согласуют с людьми, которых нет в комнате."}},
+        {"@type": "Question", "name": "Что значит, если на сообщение не ответили?", "acceptedAnswer": {"@type": "Answer", "text": "Чаще всего это ответ, а не забывчивость. Молчание в переписке — принятый способ не говорить «нет» вслух: ответа нет, но и отказа формально тоже нет, поэтому никто не оказывается в неловком положении. Повторять вопрос в третий раз не стоит — это читается как давление. Лучше переформулировать: предложить выбор из двух вариантов или назвать срок."}},
+        {"@type": "Question", "name": "Почему при всех все согласились, а потом ничего не произошло?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что публичное согласие и настоящее согласие — разные вещи. При свидетелях возразить труднее: несогласие в присутствии коллег ставит в неловкое положение и того, кто возражает, и того, кому возражают. Поэтому в группе соглашаются охотнее, а выполняют реже. Надёжный способ проверить — переспросить каждого участника отдельно, в личном разговоре."}},
+        {"@type": "Question", "name": "Зачем нужен посредник и как его попросить?", "acceptedAnswer": {"@type": "Answer", "text": "Посредник — 中间人 (zhōngjiānrén) — это общий знакомый, через которого выясняют неудобное. Приём выручает там, где прямой вопрос поставил бы человека перед необходимостью отказать вам в лицо. Просьба звучит обычно: «вы ближе знакомы, не могли бы вы узнать, удобно ли это». Отказ, полученный таким путём, никого не задевает: формально вопрос даже не прозвучал."}},
+        {"@type": "Question", "name": "Нужно ли самому говорить обтекаемо?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, и перегибать здесь не стоит. От иностранца ждут ясности, а чрезмерная мягкость читается как неопределённость: ваше «посмотрим» поймут как «да, но потом». Разумная середина такая: мысль формулируйте прямо, а форму делайте мягкой — с причиной, с благодарностью, без резких слов. Как это выглядит в конкретных фразах, разобрано в статье про формулы вежливого отказа."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kak-obshchatsya-v-kitae#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Как общаться в Китае: почему здесь слушают ситуацию, а не слова", "item": "https://kitai-school.ru/article/kak-obshchatsya-v-kitae"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Речевой этикет</p>
+<h1>Как общаться в Китае: <span class="italic">почему здесь слушают ситуацию, а не слова</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-16">16 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/kak-obshchatsya-v-kitae-hero.png" alt="Айсберг: над линией воды небольшая верхушка с фразой 我再看看 «я ещё посмотрю», под водой основная часть с пояснением, что срока нет, следующего шага нет и разговор свернули" width="1200" height="630"></figure>
+
+<p class="passport">Главная сложность для иностранца в Китае не в том, что он не знает слов. Она в том, что <b>слова здесь — только часть сообщения</b>. Рядом с ними всегда стоят обстоятельства: при ком сказано, в каком порядке говорили, как быстро ответили и ответили ли вообще. Мы читаем первую часть и считаем, что получили весь ответ. Разберём, что ещё входит в сообщение и как это читать.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Смысл складывается из слов и обстоятельств.</b> При всех соглашаются охотнее, чем наедине, — проверяйте согласие в личном разговоре. <b>Молчание в переписке — это ответ</b>, а не забывчивость. Неудобное принято выяснять через общего знакомого. И чем дольше вы знакомы, тем прямее с вами говорят: обтекаемость первых недель — про дистанцию, а не про вас.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">что считывают кроме слов</span></h2>
+<p>Четыре вещи, которые в китайском разговоре несут не меньше смысла, чем сказанное.</p>
+
+<ul>
+  <li><b>Кто присутствует.</b> Один и тот же вопрос при коллегах и наедине получает разные ответы.</li>
+  <li><b>Кто заговорил первым и в каком порядке.</b> Если старший по положению молчит, младшие обычно тоже не спорят.</li>
+  <li><b>Как быстро ответили.</b> Пауза перед ответом — часть ответа, и она редко означает «сейчас подумаю».</li>
+  <li><b>Чего не сказали.</b> Отсутствие срока, отсутствие следующего шага, отсутствие реакции — всё это сообщения.</li>
+</ul>
+
+<p>Отсюда и ответ на вопрос, с которым обычно сюда приходят: почему перевод слов не равен пониманию собеседника. Словарь переводит первую часть сообщения — ту, что произнесена. Вторая часть не переводится в принципе: она не в словах, а в том, при каких обстоятельствах эти слова прозвучали. Поэтому человек с отличным китайским может понимать каждое слово и всё равно уходить с переговоров с неверными выводами.</p>
+
+<p>Хорошая новость в том, что эта вторая часть читается не по наитию. У неё есть опоры, и они довольно простые: была ли названа конкретика, кто присутствовал при разговоре, что произошло после. Именно их мы и разберём.</p>
+
+<p>Сами фразы, за которыми чаще всего стоит отказ, мы разобрали отдельно — там шесть формул с разбором и способы отличить настоящее «подумаю» от вежливого «нет»: <a href="https://kitai-school.ru/article/kak-obshchayutsya-kitajcy" target="_blank" rel="noopener">как общаются китайцы и шесть формул вежливого отказа</a>. Здесь речь о другом: о том, что стоит вокруг слов.</p>
+
+<h2>Высокий контекст: <span class="italic">что это значит на деле</span></h2>
+<p>У такой манеры общения есть название — высокий контекст. Звучит академично, а означает простую вещь: <b>часть сообщения не произносится, потому что обе стороны и так её видят</b>.</p>
+
+<p>В китайском есть старая формула, которая описывает этот навык точнее любых определений: <span class="han">听话听音</span> — «слушая речь, слушай её звучание». То есть обращай внимание не только на сказанное, но и на то, как и при ком оно сказано.</p>
+
+<p>Вот пример, на котором разница видна лучше всего. Фраза «надо посоветоваться», сказанная при всём отделе, и та же фраза, сказанная вам одному в коридоре, — <b>два разных сообщения</b>, хотя слова совпадают. В первом случае человек не хочет обсуждать это публично. Во втором — ему действительно нужно с кем-то поговорить.</p>
+
+<p><b>Порядок речи тоже часть сообщения.</b> На встрече обычно первым высказывается старший по положению, и то, что он скажет, задаёт рамку остальным. Если он промолчал, прямых возражений почти не будет: спорить, когда руководитель не обозначил позиции, — значит поставить в неудобное положение и себя, и его. Поэтому тишина за столом после чьего-то предложения редко означает согласие. Чаще она означает, что высказываться пока не время.</p>
+
+<p><b>Скорость ответа — отдельный сигнал.</b> Быстрое «хорошо» и «хорошо» после паузы различаются сильнее, чем кажется. Пауза перед ответом обычно означает, что человек ищет вежливую форму, а не что он обдумывает детали. Это не повод давить и переспрашивать: как раз в этот момент ему нужно время, чтобы сформулировать ответ, который никого не заденет.</p>
+
+<p>Сюда же относится и то, <b>кому адресован ответ</b>. Если на ваш вопрос отвечают, глядя не на вас, а на старшего коллегу, разговор уже идёт не с вами: решение принимают не здесь. Это не невежливость, а указание, куда смотреть дальше — и кого имеет смысл спросить следующим.</p>
+
+<figure class="ks-fig"><img src="assets/kak-obshchatsya-v-kitae-info.png" alt="Весы: на лёгкой чаше сказанная фраза 我再看看, на тяжёлой — обстоятельства вокруг неё: назвали ли срок, куда пошёл разговор и что было через неделю" width="1200" height="584"><figcaption>Слова на одной чаше, обстоятельства — на другой. Перевешивает обычно вторая.</figcaption></figure>
+
+<div class="note">И сразу оговорка, чтобы не вышло карикатуры. <b>Это не «восточная загадочность».</b> Так общаются в любой среде, где люди давно знакомы и дорожат отношениями: в семье, в небольшой команде, среди старых коллег. Разница в том, что в Китае такая манера принята шире — она работает и между малознакомыми людьми, там, где мы ждали бы прямого ответа.</div>
+
+<h2>При всех и наедине: <span class="italic">почему ответы разные</span></h2>
+<p>Это первое, на чём спотыкаются приезжие, и самое дорогое по последствиям.</p>
+
+<p>В присутствии других людей возразить труднее. Несогласие при свидетелях ставит в неудобное положение сразу двоих: того, кто возражает, и того, кому возражают. Поэтому <b>в группе соглашаются охотнее — и выполняют реже</b>. Это не лицемерие, а способ не устраивать публичного столкновения.</p>
+
+<p>Нагляднее всего это видно на совещании. Предложение обсуждают, вопросы задают, возражений не слышно — и кажется, что решение принято. На деле общее обсуждение редко бывает местом, где принимают решения: оно чаще — место, где их объявляют. Настоящее согласование произошло раньше, в разговорах по двое, или не произошло вовсе.</p>
+
+<p>Отсюда простое следствие: <b>важные вещи выясняют до общей встречи, а не на ней</b>. Если вы приходите с предложением сразу на совещание, вы приходите туда первым — и остальным приходится реагировать публично, не посоветовавшись. В такой ситуации самый безопасный ответ для них — согласиться и ничего не делать.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Наш выпускник работал в китайской компании и вынес на совещание предложение: поменять порядок согласования документов. Рассказал, ответил на вопросы, возражений не услышал. Все кивнули.</p>
+  <p>Он ушёл с совещания уверенный, что договорились. Прошло две недели — не изменилось ничего.</p>
+  <p>Мы разобрали это на занятии, и он сделал вторую попытку: подошёл к участникам по одному. Выяснилось, что у двоих были серьёзные возражения по срокам. На совещании они их не высказали — не стали спорить при руководителе.</p>
+  <p>Предложение в итоге прошло, но в другом виде: с учётом тех самых возражений. С тех пор он проверяет каждое согласие в личном разговоре. <b>Публичное «да» — это не отказ, но и не согласие</b>, это просто отсутствие публичного спора.</p>
+</div>
+
+<p>Отсюда практический вывод. Если решение вам важно, после общей встречи стоит поговорить с участниками по отдельности — коротко, без нажима, в формате «что, по-вашему, может помешать». В личном разговоре вам скажут то, чего не сказали при всех.</p>
+
+<p>В групповых чатах действует ровно то же правило, только заметнее: сообщение в общий чат собирает одобрительные ответы, а вопрос, адресованный лично, — настоящий ответ. Как вообще устроен язык китайской переписки, с сокращениями и цифрами, разобрано отдельно: <a href="https://kitai-school.ru/article/kitajskij-internet-sleng" target="_blank" rel="noopener">китайский интернет-сленг</a>.</p>
+
+<h2>Молчание — <span class="italic">это тоже ответ</span></h2>
+<p>Вторая вещь, которая сбивает с толку, — отсутствие реакции.</p>
+
+<p>Если на ваше сообщение не ответили, скорее всего, его прочитали. <b>Молчание — принятый способ не говорить «нет» вслух</b>: ответа нет, но и отказа формально тоже нет, значит, никто не оказался в неловком положении. По нашим меркам это выглядит невежливо, по здешним — наоборот, бережно.</p>
+
+<p>Что с этим делать:</p>
+
+<ul>
+  <li><b>Не спрашивать третий раз.</b> Первое напоминание уместно, второе уже читается как давление.</li>
+  <li><b>Переформулировать с выбором.</b> Вместо «что скажете?» — «нам идти по первому варианту или по второму?».</li>
+  <li><b>Назвать срок самому.</b> «Если до пятницы не получится, скажите, пожалуйста» — так человеку проще ответить честно, не отказывая напрямую.</li>
+  <li><b>Сменить канал.</b> То, на что не отвечают в переписке, иногда спокойно решается голосом за две минуты.</li>
+</ul>
+
+<p>В деловой переписке эта логика особенно заметна, а форма обращения там отдельная тема: <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">деловое письмо китайскому партнёру</a>. Готовые фразы для встреч и писем собраны здесь: <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-delovogo-obscheniya" target="_blank" rel="noopener">китайский для делового общения</a>.</p>
+
+<h2>Посредник: <span class="italic">зачем нужен третий человек</span></h2>
+<p>Приём, который иностранцам кажется странным, а на деле решает половину неудобных ситуаций.</p>
+
+<p>Если вопрос деликатный, его часто выясняют не напрямую, а через <b><span class="han">中间人</span></b> (zhōngjiānrén) — общего знакомого, который знает обе стороны. Он спрашивает как бы между делом, и ответ приходит тем же путём.</p>
+
+<p>Для нас это выглядит как интрига за спиной. На самом деле наоборот: это способ <b>никого не поставить в положение, где придётся отказывать в лицо</b>. Отказ, полученный через третьего, не задевает — формально вопрос даже не прозвучал, а значит, и отказа не было.</p>
+
+<p>Просьба звучит буднично: «вы с ним ближе знакомы, не могли бы узнать, удобно ли это». Отказать в такой просьбе тоже легко, и это нормально. Сама готовность обеих сторон пользоваться посредником — признак того, что отношения уже есть, а не наоборот.</p>
+
+<h2>Дистанция: <span class="italic">чем ближе, тем прямее</span></h2>
+<p>И главное, что снимает большую часть тревоги: обтекаемость не вечна.</p>
+
+<p><b>Манера речи зависит от дистанции.</b> С малознакомым человеком говорят осторожно и обходят острые углы. С тем, с кем работают второй год, разговаривают куда прямее — иногда прямее, чем принято у нас. Первые недели в новом коллективе показывают не отношение лично к вам, а ту самую дистанцию, которая ещё не сократилась.</p>
+
+<p>Сокращается она не от стараний понравиться, а от простых вещей: вы не исчезаете, выполняете обещанное, появляетесь регулярно. Через несколько месяцев те же люди начинают говорить с вами короче и яснее — и это лучший признак того, что всё идёт правильно.</p>
+
+<p>Отдельный слой — иерархия и то, что в Китае называют «лицом»: с ними связано, кто кому и в какой форме может возразить. Это большая тема, и она разобрана целиком здесь: <a href="https://kitai-school.ru/article/kitayskiy-tiket-obscheniya-uvajenie-k-starshim-ierarhiya-i-ponyatie-lica" target="_blank" rel="noopener">китайский этикет общения</a>. Деловая сторона — встречи, визитки, банкеты — здесь: <a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a>.</p>
+
+<h2>Что делать иностранцу: <span class="italic">шесть правил</span></h2>
+<p>Собранные вместе выводы, которые работают сразу — даже если язык у вас пока небольшой.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Что помогает понимать друг друга.</caption>
+  <thead><tr><th>Правило</th><th>Как это выглядит</th></tr></thead>
+  <tbody>
+    <tr><td><b>Спрашивайте с выбором</b></td><td>«вторник или среда?» вместо «что вы думаете?»: на вопрос с двумя вариантами обтекаемо не ответишь</td></tr>
+    <tr><td><b>Проверяйте согласие наедине</b></td><td>то, что прозвучало при всех, стоит переспросить один на один — в личном разговоре вам скажут больше</td></tr>
+    <tr><td><b>Считайте молчание ответом</b></td><td>нет реакции на сообщение — это и есть реакция. Третий раз спрашивать не нужно</td></tr>
+    <tr><td><b>Называйте срок сами</b></td><td>«если до пятницы не получится, скажите, пожалуйста» — так собеседнику проще ответить честно</td></tr>
+    <tr><td><b>Не загоняйте в угол при свидетелях</b></td><td>неудобный вопрос при посторонних почти всегда получает неудобный ответ</td></tr>
+    <tr><td><b>Давайте времени больше, чем кажется</b></td><td>решение часто согласуют с теми, кого нет в разговоре, и это занимает дни</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>И ещё одно, что стоит знать заранее: <b>решение часто принимают не те, кто с вами говорит</b>. Собеседник может быть искренне за, но согласовать это с людьми, которых в разговоре нет. Отсюда и сроки, которые кажутся затянутыми, и ответы без конкретики: человеку действительно пока нечего вам сказать. Вопрос «с кем ещё нужно это обсудить?» в такой ситуации работает лучше, чем вопрос «когда будет ответ?».</p>
+
+<p>Седьмое правило не вошло в таблицу, потому что оно не про технику. <b>Не считайте обтекаемость хитростью.</b> За ней стоит привычка не ставить людей в неудобное положение — та же, по которой вам не скажут в лицо, что ваш план не годится. Как только это перестаёт раздражать, читать такие ответы становится заметно легче.</p>
+
+<div class="cta">
+  <p>Понимать собеседника здесь — не про словарный запас: можно знать все слова во фразе и всё равно услышать не то. На занятиях мы разбираем такие ситуации отдельно — что сказали, что имели в виду и что отвечать: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. Если главное для вас — заговорить, есть <a href="https://kitai-school.ru/article/kurs-po-razgovornoj-rechi-kitajskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как общаться в Китае, если язык пока слабый?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Опираться не на запас слов, а на форму вопроса. Короткий вопрос с выбором — «вторник или среда?», «здесь или там?» — понятен при любом уровне и не оставляет места обтекаемому ответу. Второе, что помогает: называть срок самому. Фраза «если не получится до пятницы, скажите, пожалуйста» снимает необходимость отказывать прямо, а вы получаете ясность.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как правильно общаться с китайцами на работе?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Три вещи дают больше всего. Первая: спрашивать про сроки и следующий шаг, а не про согласие. Вторая: проверять в личном разговоре то, что прозвучало при всех, — это разные по надёжности ответы. Третья: не поднимать неудобную тему при посторонних. И закладывать время: решение нередко согласуют с людьми, которых нет в комнате.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что значит, если на сообщение не ответили?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Чаще всего это ответ, а не забывчивость. Молчание в переписке — принятый способ не говорить «нет» вслух: ответа нет, но и отказа формально тоже нет, поэтому никто не оказывается в неловком положении. Повторять вопрос в третий раз не стоит — это читается как давление. Лучше переформулировать: предложить выбор из двух вариантов или назвать срок.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему при всех все согласились, а потом ничего не произошло?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что публичное согласие и настоящее согласие — разные вещи. При свидетелях возразить труднее: несогласие в присутствии коллег ставит в неловкое положение и того, кто возражает, и того, кому возражают. Поэтому в группе соглашаются охотнее, а выполняют реже. Надёжный способ проверить — переспросить каждого участника отдельно, в личном разговоре.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Зачем нужен посредник и как его попросить?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Посредник — 中间人 (zhōngjiānrén) — это общий знакомый, через которого выясняют неудобное. Приём выручает там, где прямой вопрос поставил бы человека перед необходимостью отказать вам в лицо. Просьба звучит обычно: «вы ближе знакомы, не могли бы вы узнать, удобно ли это». Отказ, полученный таким путём, никого не задевает: формально вопрос даже не прозвучал.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли самому говорить обтекаемо?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и перегибать здесь не стоит. От иностранца ждут ясности, а чрезмерная мягкость читается как неопределённость: ваше «посмотрим» поймут как «да, но потом». Разумная середина такая: мысль формулируйте прямо, а форму делайте мягкой — с причиной, с благодарностью, без резких слов. Как это выглядит в конкретных фразах, разобрано в статье про формулы вежливого отказа.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть разговор получается! <span class="han">听话听音</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Практика Kitai School: рабочие переписки, совещания и переговоры, которые ученики приносят на занятия, — что было сказано, что имелось в виду и чем закончилось.</li>
+    <li>Наблюдения за тем, как ведут себя в групповых чатах, на общих встречах и в личных разговорах; история в статье приведена с согласия участника, без названий компаний и имён.</li>
+    <li>Понятие высокого контекста дано как описание манеры общения, без ссылки на конкретную классификацию культур: в популярных пересказах она сильно упрощена, и строить на ней выводы я не берусь.</li>
+    <li>Формула <span class="han">听话听音</span> приводится как устойчивое выражение; датировок и авторства у таких формул нет.</li>
+    <li><b>Процентов и частотностей в статье нет намеренно:</b> надёжных данных о том, как часто отказывают непрямо, не существует, а цифры в таких текстах обычно берутся из воздуха.</li>
+    <li>Всё описанное — типичная картина, а не строгое правило: многое решают характер собеседника, его возраст, сфера работы и то, сколько вы уже знакомы.</li>
+    <li>Разбор конкретных формул вежливого отказа в статье не повторяется: он сделан отдельно, ссылка стоит в тексте.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Слова — только часть сообщения. Рядом с ними стоят обстоятельства, и читать нужно их тоже</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
