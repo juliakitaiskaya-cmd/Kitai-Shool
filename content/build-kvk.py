@@ -7,8 +7,8 @@ OUT = "kak-obshchatsya-v-kitae.html"
 SLUG = "kak-obshchatsya-v-kitae"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/kak-obshchatsya-v-kitae-hero.png"
-FIG = "assets/kak-obshchatsya-v-kitae-info.png"
+HERO = "https://static.tildacdn.com/tild3165-3966-4036-b834-346130333637/kak-obshchatsya-v-ki.png"
+FIG = "https://static.tildacdn.com/tild3235-3534-4561-b931-623932333963/kak-obshchatsya-v-ki.png"
 HERO_ALT = ("Айсберг: над линией воды небольшая верхушка с фразой 我再看看 «я ещё посмотрю», под водой основная "
             "часть с пояснением, что срока нет, следующего шага нет и разговор свернули")
 FIG_ALT = ("Весы: на лёгкой чаше сказанная фраза 我再看看, на тяжёлой — обстоятельства вокруг неё: назвали ли "
