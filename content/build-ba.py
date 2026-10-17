@@ -7,8 +7,8 @@ OUT = "konstrukciya-ba-v-kitayskom.html"
 SLUG = "konstrukciya-ba-v-kitayskom"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/konstrukciya-ba-hero.png"
-FIG = "assets/konstrukciya-ba-info.png"
+HERO = "https://static.tildacdn.com/tild3736-3831-4862-b536-343337663863/konstrukciya-ba-hero.png"
+FIG = "https://static.tildacdn.com/tild3262-3534-4934-b766-626562663666/konstrukciya-ba-info.png"
 HERO_ALT = ("Картонная посылка с ярлыком 书 «книга», красным штампом 把 поверх и строкой результата "
             "放在桌子上; рядом формула: подлежащее плюс 把 плюс объект плюс глагол плюс результат")
 FIG_ALT = ("Схема в виде турникета: предложение проходит четыре проверки подряд — известен ли объект, "
