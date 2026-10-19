@@ -7,8 +7,8 @@ OUT = "kakoy-kitayskiy-uchit.html"
 SLUG = "kakoy-kitayskiy-uchit"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/kakoy-kitayskiy-uchit-hero.png"
-FIG = "assets/kakoy-kitayskiy-uchit-info.png"
+HERO = "https://static.tildacdn.com/tild6365-3132-4237-a466-373565306566/kakoy-kitayskiy-uchi.png"
+FIG = "https://static.tildacdn.com/tild6363-6532-4366-a665-376265666130/kakoy-kitayskiy-uchi.png"
 HERO_ALT = ("Дорожный указатель с двумя стрелками: упрощённое начертание 汉 в сторону материка, Сингапура "
             "и HSK, традиционное 漢 в сторону Тайваня, Гонконга и Макао")
 FIG_ALT = ("Три переключателя: вариант речи закреплён на путунхуа, произносительный стандарт почти "
