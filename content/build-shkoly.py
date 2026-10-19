@@ -7,8 +7,8 @@ OUT = "kak-uchatsya-kitayskie-shkolniki.html"
 SLUG = "kak-uchatsya-kitayskie-shkolniki"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/kak-uchatsya-shkolniki-hero.png"
-FIG = "assets/kak-uchatsya-shkolniki-info.png"
+HERO = "https://static.tildacdn.com/tild6565-6231-4761-b434-373463363438/kak-uchatsya-shkolni.png"
+FIG = "https://static.tildacdn.com/tild6238-3930-4161-a636-663466666439/kak-uchatsya-shkolni.png"
 HERO_ALT = ("Школьная доска с расписанием на день: 语文, 数学, 英语, 体育, 科学, 道德与法治, 音乐 "
             "с переводом на русский")
 FIG_ALT = ("Пять учебников разной толщины: 语文 20–22 % учебных часов, 数学 13–15 %, 体育与健康 "
