@@ -7,8 +7,8 @@ OUT = "kitayskie-poslovicy-i-pogovorki.html"
 SLUG = "kitayskie-poslovicy-i-pogovorki"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/kitayskie-pogovorki-hero.png"
-FIG = "assets/kitayskie-pogovorki-info.png"
+HERO = "https://static.tildacdn.com/tild6630-3531-4438-a134-333231656363/kitayskie-pogovorki-.png"
+FIG = "https://static.tildacdn.com/tild6132-6433-4862-b230-306465393134/kitayskie-pogovorki-.png"
 HERO_ALT = ("Красные парные надписи по сторонам двери: слева 路遥知马力, справа 日久见人心, "
             "с подписями «первая половина» и «вторая половина»")
 FIG_ALT = ("Четыре карточки пословиц: на лицевой стороне иероглифы, пиньинь и дословный перевод, "
