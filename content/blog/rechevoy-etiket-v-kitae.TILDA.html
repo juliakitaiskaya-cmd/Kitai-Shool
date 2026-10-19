@@ -1,0 +1,399 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/rechevoy-etiket-v-kitae#article",
+      "headline": "Речевой этикет в Китае: формулы вежливости и слова, которыми лучше не злоупотреблять",
+      "description": "Речевой этикет в Китае: разбор формул вежливости и их уместности. Чем благодарность по-китайски отличается от привычной, почему тезис о «спасибо между близкими» расходится с опытом самих носителей, как различаются по весу три формулы извинения — 不好意思 для предупреждения неудобства, 抱歉 для сожаления без тяжёлой вины и 对不起 для признания уже случившегося нарушения. Как строится просьба, что отвечать на благодарность и почему избыток вежливых формул читается как неловкость, а не как хорошие манеры.",
+      "image": "assets/rechevoy-etiket-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-19",
+      "dateModified": "2026-10-19",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/rechevoy-etiket-v-kitae",
+      "about": {
+        "@type": "Thing",
+        "name": "Речевой этикет китайского языка"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/rechevoy-etiket-v-kitae#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "В чём особенности речевого этикета в Китае?", "acceptedAnswer": {"@type": "Answer", "text": "Главная особенность в том, что вежливость определяется уместностью формулы, а не её наличием. Русский и английский этикет поощряют частое употребление вежливых слов: лишнее «спасибо» никому не мешает. В китайском формула, сказанная не в той ситуации или не тому человеку, обращает на себя внимание и может прозвучать как отстранённость. Поэтому выбор здесь идёт не по шкале «вежливее — менее вежливо», а по ситуации."}},
+        {"@type": "Question", "name": "Чем 不好意思 отличается от 对不起?", "acceptedAnswer": {"@type": "Answer", "text": "Весом и моментом. 不好意思 предупреждает возможное неудобство: с него начинают просьбу, им смягчают отказ, им привлекают внимание — примерно как английским excuse me. 对不起 — это извинение за то, что уже произошло, за реальный проступок. Между ними есть промежуточное 抱歉. По описаниям, которые дают учебные источники, 不好意思 встречается чаще и в более разнообразных ситуациях."}},
+        {"@type": "Question", "name": "Правда ли, что китайцы не говорят «спасибо» близким?", "acceptedAnswer": {"@type": "Answer", "text": "Это распространённое наблюдение, но не правило, и носители тут расходятся. Одни считают, что частые формулы между родными создают дистанцию, другие — что благодарить в семье нормально и даже нужно, чтобы помощь не воспринималась как должное. Сходятся обычно на том, что дело не в самом факте, а в тоне, частоте и ситуации. Так что «не говорят» — упрощение."}},
+        {"@type": "Question", "name": "Как вежливо о чём-то попросить по-китайски?", "acceptedAnswer": {"@type": "Answer", "text": "Порядок примерно такой: смягчающее начало, затем сама просьба, затем благодарность в конце разговора, а не после каждого шага. В роли смягчающего начала чаще всего выступает 不好意思, а 请 ставится перед глаголом в самой просьбе. Главное правило для иностранца — не перегружать фразу формулами: одна в начале работает лучше, чем три подряд."}},
+        {"@type": "Question", "name": "Что отвечать, когда вас благодарят?", "acceptedAnswer": {"@type": "Answer", "text": "Нейтральный ответ — 不客气. В близком кругу часть носителей считает его слишком дежурным и предпочитает что-то более тёплое или просто короткую реплику, но это предпочтение, а не норма, и ошибкой 不客气 не будет. Для иностранца это безопасный выбор в любой ситуации, от магазина до рабочей переписки."}},
+        {"@type": "Question", "name": "Какие ошибки чаще всего делают иностранцы?", "acceptedAnswer": {"@type": "Answer", "text": "Две, и обе в сторону избытка. Первая — переносить русские формулы дословно: «извините, что беспокою» в каждой фразе звучит навязчиво. Вторая — считать, что вежливости много не бывает: постоянные извинения читаются как неуверенность, а не как хорошие манеры. Исправляется это не заучиванием новых формул, а сокращением количества старых."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/rechevoy-etiket-v-kitae#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Речевой этикет в Китае: формулы вежливости и слова, которыми лучше не злоупотреблять", "item": "https://kitai-school.ru/article/rechevoy-etiket-v-kitae"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Этикет</p>
+<h1>Речевой этикет в Китае: <span class="italic">формулы вежливости и слова, которыми лучше не злоупотреблять</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-19">19 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/rechevoy-etiket-hero.png" alt="Раскрытый веер, на складках которого написаны формулы вежливости: 谢谢, 不好意思, 请, 麻烦您, 不客气 с переводом" width="1200" height="630"></figure>
+
+<p class="passport">Вежливые слова учат первыми, и это разумно: без них трудно начать разговор. Беда в том, что вместе с ними переносят и привычку употреблять их по-русски — часто и на всякий случай. В китайском это даёт обратный эффект: <b>формула, сказанная не в той ситуации, обращает на себя внимание</b>, и говорящий выглядит не вежливым, а неловким. Разберём, за что здесь благодарят, чем различаются три формулы извинения и почему иностранцы ошибаются в сторону избытка, а не нехватки.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Вежливость измеряется уместностью</b>, а не количеством формул. <b>У извинений три веса:</b> 不好意思 предупреждает неудобство, 抱歉 выражает сожаление, 对不起 признаёт проступок. <b>Самое частое — лёгкое:</b> 不好意思 звучит в куда большем числе ситуаций. <b>«Спасибо» между близкими — спорная тема</b>, и носители расходятся. <b>Типичная ошибка иностранца — перебор</b>, а не нехватка.</p>
+</div>
+
+<h2>Чем речевой этикет отличается <span class="italic">от вежливости вообще</span></h2>
+<p>Разведём два разных предмета, потому что их постоянно смешивают.</p>
+
+<p><b>Этикет поведения</b> — это иерархия, обращение к старшим, сохранение лица, жесты, правила за столом. Про это у нас есть отдельные материалы, и здесь я их не повторяю: <a href="https://kitai-school.ru/article/kak-obshchayutsya-kitajcy" target="_blank" rel="noopener">как общаются китайцы</a> — про непрямую речь и вежливое «нет», <a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a> — про деловую часть, <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">деловое письмо китайскому партнёру</a> — про обращение в переписке.</p>
+
+<p><b>Речевой этикет</b> — это сами слова: чем благодарят, чем извиняются, с чего начинают просьбу, что отвечают на «спасибо». Вот об этом и пойдёт речь дальше.</p>
+
+<h2>Благодарность: <span class="italic">谢谢 и его границы</span></h2>
+<p><span class="han">谢谢</span> (xièxie) знают все, и это действительно основное слово благодарности. Вопрос не в том, как оно переводится, а в том, когда его говорят.</p>
+
+<p>В материалах по культуре речи встречается такое наблюдение: <b>китайцы не держат «спасибо» и «извините» постоянно на языке</b>, как это принято у многих иностранцев, и благодарят чаще не за конкретное действие, а за отношение. Разница тонкая, но заметная: «спасибо» здесь ближе к признанию чужого участия, чем к автоматической реакции на переданную солонку.</p>
+
+<p>Отсюда практический вывод для начинающего. <b>Благодарность уместна в конце эпизода, а не после каждого шага</b>: один раз в конце разговора, покупки, помощи — лучше, чем пять раз по ходу.</p>
+
+<h2>«Спасибо» между близкими: <span class="italic">почему это спорно</span></h2>
+<p>Это самый растиражированный тезис про китайскую вежливость: мол, в семье и между друзьями благодарить не принято, иначе прозвучит отчуждённо. Я проверила, и картина оказалась сложнее.</p>
+
+<p><b>Одни носители действительно так считают:</b> частые формулы в близком кругу воспринимаются как лишняя церемонность, и 不客气 в ответ родному человеку может прозвучать слишком дежурно.</p>
+
+<p><b>Другие возражают</b>, и столь же убедительно: благодарить в семье нормально и даже полезно, потому что это напоминает, что чужая помощь не сама собой разумеется. Встречаются и рассказы о том, как привычка благодарить дома сначала казалась странной, а потом прижилась.</p>
+
+<div class="note">Что из этого следует для изучающего. <b>«В Китае не говорят спасибо близким» — упрощение</b>, которое лучше не брать как правило. Носители сходятся не на запрете, а на том, что решают тон, частота и ситуация: сказанное тепло и к месту не отталкивает никого, а механически повторяемое отдаляет в любой культуре.</div>
+
+<p>Для иностранца вывод скорее успокаивающий: <b>вас не сочтут грубым за «спасибо»</b> и не сочтут невежливым за его отсутствие между своими. Рискует тот, кто произносит формулу автоматически, не глядя на ситуацию.</p>
+
+<h2>Извинение: <span class="italic">три формулы разного веса</span></h2>
+<p>Здесь у изучающих больше всего путаницы, хотя различие довольно чёткое.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Три формулы извинения.</caption>
+  <thead><tr><th>Формула</th><th>Вес</th><th>Что означает</th><th>Где уместна</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">不好意思</span><br><span class="italic">bù hǎoyìsi</span></td><td><b>лёгкое</b></td><td>неудобства ещё нет — вы его предупреждаете</td><td>просьба, отказ, привлечь внимание, вклиниться в разговор</td></tr>
+    <tr><td><span class="han">抱歉</span><br><span class="italic">bàoqiàn</span></td><td><b>среднее</b></td><td>сожаление без тяжёлой вины</td><td>опоздание, сорванная договорённость, деловая переписка</td></tr>
+    <tr><td><span class="han">对不起</span><br><span class="italic">duìbuqǐ</span></td><td><b>тяжёлое</b></td><td>нарушение уже произошло, и вы его признаёте</td><td>реальный проступок, причинённый ущерб, обида</td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="assets/rechevoy-etiket-info.png" alt="Три гири разного веса: лёгкая 不好意思, средняя 抱歉 и тяжёлая 对不起, с описанием, в какой ситуации какая уместна" width="1200" height="560"><figcaption>Разница не в степени вежливости, а в том, что именно произошло.</figcaption></figure>
+
+<p>Главное, что стоит запомнить: <b><span class="han">不好意思</span> относится к тому, что ещё не случилось</b>, — вы предупреждаете возможное неудобство. <b><span class="han">对不起</span> относится к тому, что уже случилось.</b> Учебные разборы формулируют это так: первое используют в просьбах и отказах, то есть для предотвращения потенциального неудобства, второе — там, где нарушение уже произошло.</p>
+
+<p>Отсюда и частотность: ситуаций, где нужно кого-то побеспокоить, в обычной жизни гораздо больше, чем ситуаций, где вы действительно виноваты. Поэтому <b>不好意思 звучит в речи заметно чаще</b>.</p>
+
+<div class="note">Две оговорки, без которых картина была бы слишком гладкой. Первая: у 对不起 отмечают <b>двустороннюю этикетную функцию</b> — оно не ограничено случаями собственной вины. Вторая: описания этих формул в источниках не вполне совпадают, часть материалов тайваньские, и единой нормы вам никто не предъявит. Градация по весу — рабочий ориентир, а не закон.</div>
+
+<h2>Просьба: <span class="italic">как просят по-китайски</span></h2>
+<p>Просьба — та ситуация, где иностранцы ошибаются чаще всего, и обычно в одну сторону.</p>
+
+<p>Рабочий порядок простой: <b>смягчающее начало, затем сама просьба, затем благодарность в конце</b>. В роли начала выступает 不好意思, а <span class="han">请</span> (qǐng) ставится перед глаголом внутри самой просьбы. Ещё одна частая формула — <span class="han">麻烦</span> (máfan), буквально «затруднять, беспокоить»: ею отмечают, что человеку придётся потратить усилия.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик собирался в командировку и честно выучил все формулы из учебника. Применял он их подряд: благодарил за каждое действие, извинялся перед каждой второй фразой.</p>
+  <p>Принимающая сторона сначала вежливо отвечала, потом стала просто коротко кивать. Он решил, что его не уважают, и начал добавлять формул ещё больше.</p>
+  <p>На разборе выяснилось, в чём дело: он воспринимал вежливость как громкость — чем больше вежливых слов, тем, казалось, лучше. Для собеседников это выглядело иначе: человек всё время извиняется, значит, ему неловко, значит, что-то не так.</p>
+  <p>Переделали просто: одно 不好意思 в начале просьбы, благодарность в конце разговора, а не после каждой реплики. На следующей встрече общение пошло заметно легче. <b>Вежливость здесь измеряется уместностью, а не количеством.</b></p>
+</div>
+
+<p>Стоит отдельно сказать про <span class="han">请</span>, потому что его часто принимают за прямой эквивалент русского «пожалуйста». На самом деле это глагол со значением «просить, приглашать», и ставится он <b>перед другим глаголом</b>: 请坐 — «садитесь», 请进 — «входите». В ответ на благодарность 请 не употребляется: там работает другая формула, о ней ниже.</p>
+
+<p>А <span class="han">麻烦</span> (máfan) буквально означает «затруднять, беспокоить». Когда человек говорит 麻烦您, он прямо называет вещи своими именами: признаёт, что его просьба создаёт собеседнику хлопоты. Этим она и отличается от нейтрального 请 — <b>в ней есть признание чужого усилия</b>, и потому она звучит теплее в ситуациях, где вы действительно кого-то нагружаете.</p>
+
+<p>Из этого следует правило, которое я советую держать в голове всем начинающим: <b>одно смягчение в начале работает лучше, чем три подряд</b>. Формулы вежливости не складываются и не усиливают друг друга — они размывают просьбу, и собеседнику становится труднее понять, чего от него, собственно, хотят.</p>
+
+<h2>Ответ <span class="italic">на благодарность</span></h2>
+<p>Базовый ответ — <span class="han">不客气</span> (bù kèqi), буквально «не церемоньтесь». Он подходит в магазине, в гостинице, на работе и в переписке; для иностранца это безопасный выбор в любой ситуации.</p>
+
+<p>Тонкость касается близкого круга. Часть носителей считает 不客气 в разговоре с родными слишком дежурным и предпочитает что-то более живое или просто короткую реплику. <b>Но это предпочтение, а не норма</b>: ошибкой 不客气 не будет нигде.</p>
+
+<p>Отдельно про сферу обслуживания, где у приезжих чаще всего возникает неловкость. В магазине, кафе или такси развёрнутые благодарности не ожидаются: короткое 谢谢 на выходе покрывает ситуацию целиком. Попытка поблагодарить за каждое действие — за принесённое меню, за сдачу, за открытую дверь — воспринимается как странность, а не как учтивость.</p>
+
+<p>В переписке логика похожая, но формулы длиннее: там вежливость держится на обращении и на структуре письма, а не на количестве «спасибо» внутри текста. Как устроено обращение к адресату и почему порядок частей письма важнее отдельных слов, разобрано отдельно: <a href="https://kitai-school.ru/article/kak-obrashchatsya-k-kitaycam-v-delovom-pisme" target="_blank" rel="noopener">деловое письмо китайскому партнёру</a>.</p>
+
+<p>Здесь работает то же правило, что и с благодарностью: важнее не выбор формулы, а соответствие тону разговора. В дружеской беседе уместна короткая и лёгкая реплика, в деловой — нейтральная и полная.</p>
+
+<h2>Чего иностранцу <span class="italic">лучше не делать</span></h2>
+<p>Четыре ошибки, которые я вижу чаще прочих.</p>
+
+<ul>
+  <li><b>Переносить русские формулы дословно.</b> «Извините, что беспокою» в начале каждой фразы звучит навязчиво, а не учтиво.</li>
+  <li><b>Извиняться вместо благодарности.</b> Там, где по-русски говорят «простите за хлопоты», по-китайски чаще уместно поблагодарить, а не извиниться.</li>
+  <li><b>Повторять формулу в каждой реплике.</b> Постоянные извинения читаются как неуверенность, и собеседник начинает чувствовать неловкость за вас.</li>
+  <li><b>Думать, что вежливости много не бывает.</b> Бывает: избыток формул создаёт дистанцию ровно так же, как их нехватка.</li>
+</ul>
+
+<p>Первую ошибку стоит развернуть, потому что она самая устойчивая. В русском «извините» работает как универсальный смягчитель: им открывают обращение к незнакомому, им предваряют вопрос, им заполняют паузу. Перенесённая в китайский, эта привычка даёт поток извинений там, где достаточно одного 不好意思 — и собеседник начинает искать, за что же вы так настойчиво извиняетесь.</p>
+
+<p>Вторая ошибка тоньше и видна в ситуациях, где вам помогли. По-русски естественно сказать «простите, что доставил хлопоты», и это звучит воспитанно. По-китайски в той же ситуации уместнее поблагодарить: <b>извинение переводит помощь в разряд причинённого неудобства</b>, а благодарность — в разряд оказанной услуги. Вторая рамка и приятнее собеседнику, и точнее описывает происходящее.</p>
+
+<p>Есть и пятая ошибка, о которой редко предупреждают: <b>вежливость не заменяет ясности</b>. Просьба, обложенная формулами со всех сторон, перестаёт быть понятной — собеседник слышит учтивость, но не слышит, что именно от него требуется. В китайском это особенно заметно, потому что сама просьба обычно формулируется коротко и прямо, а смягчение выносится в начало фразы.</p>
+
+<p>Исправляется это не заучиванием новых формул, а сокращением количества старых. <b>Выберите одну на эпизод</b> и посмотрите, как изменится реакция собеседника, — обычно разница заметна сразу.</p>
+
+<p>И последнее наблюдение, уже не про формулы. Люди, которые перестают следить за количеством вежливых слов и начинают следить за ситуацией, обычно проходят один и тот же путь: сначала им кажется, что они стали говорить грубее, потом выясняется, что собеседники отвечают охотнее. <b>Дело не в том, что вежливости стало меньше</b>, — она просто перестала перекрывать содержание разговора.</p>
+
+<p>Отдельная тема — прощание: там набор формул свой и зависит от того, увидитесь ли вы снова. Про это у нас есть разбор: <a href="https://kitai-school.ru/article/kak-poproshchatsya-na-kitajskom" target="_blank" rel="noopener">как попрощаться на китайском</a>. А рабочие фразы для встреч и переписки собраны здесь: <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-delovogo-obscheniya" target="_blank" rel="noopener">китайский для делового общения</a>.</p>
+
+<div class="cta">
+  <p>Формулы вежливости легко выучить и трудно применять: на занятиях мы разбираем не список фраз, а ситуации, в которых каждая уместна. <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">Онлайн-курсы китайского</a>: <a href="#popup:zayavka">оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>В чём особенности речевого этикета в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Главная особенность в том, что вежливость определяется уместностью формулы, а не её наличием. Русский и английский этикет поощряют частое употребление вежливых слов: лишнее «спасибо» никому не мешает. В китайском формула, сказанная не в той ситуации или не тому человеку, обращает на себя внимание и может прозвучать как отстранённость. Поэтому выбор здесь идёт не по шкале «вежливее — менее вежливо», а по ситуации.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 不好意思 отличается от 对不起?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Весом и моментом. 不好意思 предупреждает возможное неудобство: с него начинают просьбу, им смягчают отказ, им привлекают внимание — примерно как английским excuse me. 对不起 — это извинение за то, что уже произошло, за реальный проступок. Между ними есть промежуточное 抱歉. По описаниям, которые дают учебные источники, 不好意思 встречается чаще и в более разнообразных ситуациях.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что китайцы не говорят «спасибо» близким?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это распространённое наблюдение, но не правило, и носители тут расходятся. Одни считают, что частые формулы между родными создают дистанцию, другие — что благодарить в семье нормально и даже нужно, чтобы помощь не воспринималась как должное. Сходятся обычно на том, что дело не в самом факте, а в тоне, частоте и ситуации. Так что «не говорят» — упрощение.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как вежливо о чём-то попросить по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Порядок примерно такой: смягчающее начало, затем сама просьба, затем благодарность в конце разговора, а не после каждого шага. В роли смягчающего начала чаще всего выступает 不好意思, а 请 ставится перед глаголом в самой просьбе. Главное правило для иностранца — не перегружать фразу формулами: одна в начале работает лучше, чем три подряд.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что отвечать, когда вас благодарят?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нейтральный ответ — 不客气. В близком кругу часть носителей считает его слишком дежурным и предпочитает что-то более тёплое или просто короткую реплику, но это предпочтение, а не норма, и ошибкой 不客气 не будет. Для иностранца это безопасный выбор в любой ситуации, от магазина до рабочей переписки.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие ошибки чаще всего делают иностранцы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Две, и обе в сторону избытка. Первая — переносить русские формулы дословно: «извините, что беспокою» в каждой фразе звучит навязчиво. Вторая — считать, что вежливости много не бывает: постоянные извинения читаются как неуверенность, а не как хорошие манеры. Исправляется это не заучиванием новых формул, а сокращением количества старых.</p></div>
+  </details>
+</div>
+
+<p class="sign">Меньше формул — больше смысла! <span class="han">恰到好处</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Различие формул извинения приведено по учебным разборам: 不好意思 используется для предотвращения потенциального неудобства — в просьбах, отказах, при привлечении внимания; 对不起 — там, где нарушение уже произошло; 抱歉 занимает промежуточное положение. Градация по весу, которую дают источники: 对不起 больше 抱歉 больше 不好意思. Там же отмечено, что 不好意思 встречается чаще и в более разнообразных ситуациях.</li>
+    <li>Отдельно отмечена <b>двусторонняя этикетная функция</b> 对不起: формула не ограничена случаями собственной вины.</li>
+    <li><b>Оговорка к предыдущим пунктам:</b> источники по этой теме — учебные материалы и площадки вопросов и ответов, часть из них тайваньские; описания не вполне совпадают, и единой нормы они не задают.</li>
+    <li>Наблюдение о том, что китайцы не держат «спасибо» и «извините» постоянно на языке и благодарят чаще не за конкретное действие, а за отношение, приведено по материалу о культуре речи.</li>
+    <li><b>Тезис «между близкими частое 谢谢 звучит отчуждённо» подан как наблюдение, а не как правило, намеренно.</b> Проверка показала, что носители расходятся: одни считают частые формулы в близком кругу излишней церемонностью, другие — нормальной и полезной практикой. Сходятся на том, что решают тон, частота и ситуация.</li>
+    <li><b>Статистики употребления формул в статье нет:</b> корпусных данных я не нашла, а слово «чаще» в источниках дано без цифр, и здесь оно используется так же.</li>
+    <li><b>Чего в статье нет намеренно:</b> иерархии, обращения на 您, титулов, 面子 как понятия, жестов и застольных правил — это отдельные материалы блога; вежливого отказа — это «Как общаются китайцы»; делового контура — это бизнес-этикет. Формул приёма похвалы тоже нет: проверить их современную употребительность мне не удалось.</li>
+    <li>Практика Kitai School: типичные ошибки учеников при переносе русских формул вежливости в китайскую речь.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Вежливость здесь измеряется не количеством вежливых слов, а их уместностью. Избыток формул читается как неловкость</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
