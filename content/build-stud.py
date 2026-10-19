@@ -7,8 +7,8 @@ OUT = "mozhno-li-studentam-rabotat-v-kitae.html"
 SLUG = "mozhno-li-studentam-rabotat-v-kitae"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/rabota-studentam-hero.png"
-FIG = "assets/rabota-studentam-info.png"
+HERO = "https://static.tildacdn.com/tild3833-6165-4032-a332-616366373935/rabota-studentam-her.png"
+FIG = "https://static.tildacdn.com/tild3763-6163-4635-b235-616438353236/rabota-studentam-inf.png"
 HERO_ALT = ("Светофор с подписями: красный — трудоустройство, торговля и своё дело, жёлтый — "
             "подработка при вузе в пределах лимита, зелёный — практика по учебному плану")
 FIG_ALT = ("Три циферблата с лимитами подработки: 8 часов в неделю, 40 часов в месяц "
