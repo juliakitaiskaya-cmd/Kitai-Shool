@@ -1,0 +1,409 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/samoe-dlinnoe-slovo-v-kitayskom-yazyke#article",
+      "headline": "Самое длинное слово в китайском языке: существует ли оно и как вообще считать длину",
+      "description": "Самое длинное слово в китайском языке: почему у этого вопроса нет победителя. Чем различаются 字 (письменный знак) и 词 (слово), почему отсутствие пробелов делает границы слова предметом соглашения и как это влияет на подсчёты. Цифры по словарям и корпусам с указанием метода: около двух третей двузнаковых статей словаря, свыше девяноста процентов одно- и двусложных употреблений в устной речи. Четыре претендента на рекорд — терминологическое сочетание, имя собственное, фонетическое заимствование и четырёхзначное устойчивое выражение. Где границу неделимой единицы проводит государственный стандарт орфографии пиньиня GB/T 16159-2012.",
+      "image": "assets/samoe-dlinnoe-slovo-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-19",
+      "dateModified": "2026-10-19",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/samoe-dlinnoe-slovo-v-kitayskom-yazyke",
+      "about": {
+        "@type": "Thing",
+        "name": "Длина слова в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/samoe-dlinnoe-slovo-v-kitayskom-yazyke#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какое самое длинное слово в китайском языке?", "acceptedAnswer": {"@type": "Answer", "text": "Такого слова нет, и это не уклончивый ответ. В китайском письме нет пробелов, границы слова ничем не обозначены, а значит, длина зависит от того, где эти границы провести. Ни в словарях, ни в государственных стандартах нет понятия слова-рекордсмена. Всё, что предлагают в качестве рекорда, при разборе оказывается либо названием, либо терминологическим сочетанием, либо устойчивым выражением из нескольких частей."}},
+        {"@type": "Question", "name": "Какое самое длинное слово в Китае — может, есть официальный список?", "acceptedAnswer": {"@type": "Answer", "text": "Официального списка нет ни у одной организации, которая занимается нормированием китайского языка. Списки, которые ходят по соцсетям и форумам — «слово из восьмидесяти девяти иероглифов», «имя из двадцати трёх знаков», — не имеют источника: их невозможно проверить, и мы такие вещи не пересказываем. Есть другое, вполне официальное: правила орфографии, которые говорят, что писать слитно, а что раздельно."}},
+        {"@type": "Question", "name": "Какое самое длинное слово по-китайски знают сами китайцы?", "acceptedAnswer": {"@type": "Answer", "text": "Носителю языка этот вопрос обычно кажется странным — примерно как русскому вопрос, какая буква самая тяжёлая. Длину в знаках никто не считает, потому что знак и слово в китайском не одно и то же. Если спросить китайца о чём-то длинном, он скорее назовёт длинное название организации или химический термин и тут же объяснит, из каких частей оно составлено."}},
+        {"@type": "Question", "name": "Сколько иероглифов обычно в китайском слове?", "acceptedAnswer": {"@type": "Answer", "text": "Один или два — это подавляющее большинство. Подсчёты расходятся, потому что считают по-разному: по словарю выходит около двух третей двузнаковых статей, по корпусу устной речи одно- и двусложные дают свыше девяноста процентов всех употреблений. Трёх- и четырёхзначные слова встречаются заметно реже, а всё, что длиннее четырёх знаков, обычно оказывается составным названием."}},
+        {"@type": "Question", "name": "Длинные слова на китайском — это какие?", "acceptedAnswer": {"@type": "Answer", "text": "Длина набирается четырьмя способами. Терминология: название вещества или процесса складывается из названий его частей. Имена собственные: полные названия государств, учреждений и должностей. Фонетические заимствования: знаки подобраны по звучанию чужого слова, и длина пришла из языка-источника. Устойчивые выражения: четырёхзначные идиомы. Каждый из этих случаев длинный по своей причине, и ни один не является простым словом."}},
+        {"@type": "Question", "name": "Почему в русском самое длинное слово есть, а в китайском нет?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что длину в русском задаёт само слово: приставки, корни и суффиксы наращиваются, а пробелы по краям показывают, где слово кончилось. В китайском длину задаёт не слово, а то, сколько знаков решено считать одной единицей. Пробелов нет, поэтому граница — вопрос соглашения, а не наблюдения. Там, где в русском спор о рекорде, в китайском спор о самом понятии длины."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/samoe-dlinnoe-slovo-v-kitayskom-yazyke#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Самое длинное слово в китайском языке: существует ли оно и как вообще считать длину", "item": "https://kitai-school.ru/article/samoe-dlinnoe-slovo-v-kitayskom-yazyke"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Длина слова</p>
+<h1>Самое длинное слово в китайском языке: <span class="italic">существует ли оно и как вообще считать длину</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-19">19 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/samoe-dlinnoe-slovo-hero.png" alt="Строка из шести иероглифов 脱氧核糖核酸 и портновская мерная лента под ней с подписью «слово? два слова?» — в китайском письме нет пробелов" width="1200" height="630"></figure>
+
+<p class="passport">Вопрос о самом длинном слове задают почти все, кто начинает интересоваться китайским, — и ответ на него оказывается интереснее любого рекорда. <b>Победителя нет</b>, но не потому, что никто не считал. В китайском письме нет пробелов, границы слова ничем не обозначены, и длина получается такой, какой её решат считать. Разберём, что в китайском вообще называют словом, кто претендует на рекорд и где границу проводит государственный стандарт.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Самого длинного слова в китайском нет</b> — ни в словарях, ни в стандартах такого понятия не существует. <b>Пробелов в письме нет</b>, поэтому границы слова приходится назначать, а не наблюдать. <b>Типичное слово — один или два знака.</b> <b>Всё длинное оказывается составным</b>: термином, названием, заимствованием или идиомой. <b>Нормативная граница есть</b>: стандарт орфографии пиньиня делит всё длиннее четырёх слогов на части.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">рекорда нет — и это не отговорка</span></h2>
+<p>Если коротко, причин три, и каждая самостоятельная.</p>
+
+<ul>
+  <li><b>Нет понятия.</b> Ни словари, ни государственные стандарты не вводят «самое длинное слово» как величину, которую кто-то измеряет и фиксирует.</li>
+  <li><b>Нет границ.</b> В китайском тексте слова не отделены пробелами, поэтому длина конкретного слова зависит от того, где провести границу, — а это решение, а не наблюдение.</li>
+  <li><b>Нет победителя по существу.</b> Каждого претендента можно разобрать на части, и после разбора он перестаёт быть одним словом.</li>
+</ul>
+
+<p>Дальше разберём всё это по порядку: сначала что такое слово в китайском, потом какой длины слова бывают обычно, потом кто претендует на рекорд и чем эти претенденты оказываются.</p>
+
+<h2>Что в китайском считается словом: <span class="italic">字 и 词</span></h2>
+<p>Здесь кроется главная путаница, и без неё вопрос о длине не разбирается. В русском слово и его запись — почти одно и то же. В китайском это два разных уровня, и у каждого своё название, своя единица и свои правила.</p>
+
+<ul>
+  <li><b><span class="han">字</span> (zì) — письменный знак.</b> Тот самый иероглиф. Ему обычно соответствует один слог и чаще всего одна морфема — минимальная часть со своим значением.</li>
+  <li><b><span class="han">词</span> (cí) — слово.</b> Единица языка, которая может состоять из одного знака, из двух, изредка из трёх и больше.</li>
+</ul>
+
+<p>Когда спрашивают про самое длинное слово, считать обычно начинают знаки — просто потому, что они видны. Но <b>знак и слово не совпадают</b>, и измерение в знаках даёт длину записи, а не длину слова.</p>
+
+<p>Для носителя это не создаёт трудностей: границы восстанавливаются по смыслу так же незаметно, как мы на слух делим на слова звучащую русскую речь, где пауз между словами тоже нет. Трудность появляется у того, кто учит язык, — и у программ, которым текст приходится делить на слова принудительно, чтобы искать по нему или переносить строки.</p>
+
+<p>Именно поэтому вопрос о длине не имеет ответа внутри самого письма. <b>Чтобы измерить слово, нужно сначала назначить его границы</b>, а назначение границ — это уже внешнее решение: автора словаря, составителя стандарта или разработчика программы. Разные решения дают разную длину одного и того же куска текста.</p>
+
+<p>К этому добавляется вторая особенность, которая и делает вопрос неразрешимым. <b>В китайском письме нет пробелов между словами.</b> Текст идёт сплошной чередой знаков, и где кончается одно слово и начинается следующее, графически не показано нигде. Читатель определяет это сам — по смыслу и по опыту.</p>
+
+<div class="note">Отсюда следует вещь, которую стоит проговорить прямо: <b>разбиение китайского текста на слова — это отдельная задача со своими правилами</b>, а не очевидная данность. У разных корпусов и программ правила свои, и результаты расходятся. В исследовании по одному из корпусов письменных текстов прямо отмечено, что принятая там система деления склоняет результат в пользу двусложных слов. То есть даже статистика по длине зависит от того, как заранее договорились делить.</div>
+
+<p>Как устроена сама письменность, из чего складывается знак и почему в китайском нет алфавита — это отдельный большой разговор: <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost" target="_blank" rel="noopener">из чего состоит китайская письменность</a>. А если интересует, как значение знака подсказывает его ключ, смотрите разбор: <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey" target="_blank" rel="noopener">значение ключей в иероглифах</a>.</p>
+
+<figure class="ks-fig"><img src="assets/samoe-dlinnoe-slovo-info.png" alt="Четыре состава из вагонов-иероглифов разной длины с вердиктами: термин, имя собственное, заимствование, устойчивое выражение" width="1200" height="636"><figcaption>Четыре претендента на рекорд: длина у каждого своя, и причина длины у каждого своя.</figcaption></figure>
+
+<h2>Сколько знаков <span class="italic">в типичном слове</span></h2>
+<p>Рекорда нет, а норма есть. Цифры расходятся: одни считают статьи словаря, другие — употребления в тексте.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Длина слова по разным подсчётам: без указания метода цифра ничего не значит.</caption>
+  <thead><tr><th>Что считали</th><th>Чем мерили</th><th>Что вышло</th></tr></thead>
+  <tbody>
+    <tr><td><b>По статьям «Словаря современного китайского языка»</b></td><td>подсчёт 1999 года</td><td>двузнаковые единицы — около 67,6 % статей</td></tr>
+    <tr><td><b>По списку слов Chinese Lexical Database</b></td><td>около 48 000 слов</td><td>односложных 8 %, двусложных 70,4 %</td></tr>
+    <tr><td><b>По корпусу устной речи</b></td><td>около 1000 часов записей</td><td>одно- и двусложные — свыше 90 % употреблений</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Вывод общий и важнее отдельных процентов: <b>типичное китайское слово — это один или два знака</b>, а всё, что длиннее четырёх, почти всегда оказывается сочетанием.</p>
+
+<h2>Четыре претендента <span class="italic">на рекорд</span></h2>
+<p>Длина набирается четырьмя способами.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Кто претендует на звание самого длинного.</caption>
+  <thead><tr><th>Пример</th><th>Длина</th><th>Чем является</th><th>Почему длинное</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">脱氧核糖核酸</span></td><td>6 знаков</td><td><b>Термин</b></td><td>название вещества, собранное из названий его частей: сочетание, а не неделимое слово</td></tr>
+    <tr><td><span class="han">中华人民共和国</span></td><td>7 знаков</td><td><b>Имя собственное</b></td><td>полное название государства. Имена собственные в любом языке бывают какой угодно длины</td></tr>
+    <tr><td><span class="han">歇斯底里</span></td><td>4 знака</td><td><b>Фонетическое заимствование</b></td><td>знаки подобраны по звучанию чужого слова: длина пришла из языка-источника</td></tr>
+    <tr><td><span class="han">总而言之</span></td><td>4 знака</td><td><b>Устойчивое выражение</b></td><td>по стандарту орфографии записывается слитно целиком</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик принёс на занятие картинку из интернета: «самое длинное китайское слово», внушительная строка знаков. Попросил проверить, правда ли.</p>
+  <p>Разобрали вместе, знак за знаком. Выяснилось, что в строке записано полное название учреждения — то есть имя собственное, собранное из нескольких обычных слов. Рекорда там не было, был длинный адрес на вывеске.</p>
+  <p>Тогда я дала ему другое задание: взять страницу его собственного учебника и отметить карандашом, где кончается одно слово и начинается следующее. Он честно разметил абзац и сам удивился: почти все слова оказались в один или два знака.</p>
+  <p>А трудность, на которую он жаловался, была совсем в другом. <b>Мешали не длинные слова, а то, что границы между короткими нигде не обозначены</b> — и решать, где они проходят, приходится самому читателю.</p>
+</div>
+
+<p>Заметьте, что у всех четырёх длина появилась по разной причине: в термине — из устройства самой вещи, в названии — из административной точности, в заимствовании — из чужого языка, в идиоме — из её четырёхзначной формы. Общего рекорда между ними быть не может: это величины разной природы.</p>
+
+<p>Про четырёхзначные устойчивые выражения у нас есть отдельный разбор — что это за единицы, по каким схемам они собраны и почему их не переводят дословно: <a href="https://kitai-school.ru/article/idiomy-kitayskogo-yazyka" target="_blank" rel="noopener">идиомы китайского языка</a>.</p>
+
+<h2>Где границу проводит <span class="italic">государственный стандарт</span></h2>
+<p>Нормативный ответ на вопрос о границах слова всё-таки существует, просто он лежит не там, где его ищут. Это <b>стандарт орфографии пиньиня</b> GB/T 16159-2012 — государственный документ, который описывает, как записывать китайский латиницей: что писать слитно, что раздельно, где ставить дефис. Версия 2012 года заменила редакцию 1996 года, свела правила в раздел о слитном написании и добавила правила сокращений и пунктуации.</p>
+
+<p>Пиньинь интересен здесь тем, что в нём пробелы есть. А значит, при записи приходится решать то, что в иероглифике решать не нужно: где кончается слово. Стандарт это решение и фиксирует. Три пункта из него прямо отвечают на наш вопрос.</p>
+
+<ul>
+  <li><b>Четырёхзначное устойчивое выражение, которое читается как два двусложных отрезка, пишется через дефис:</b> <span class="han">光明磊落</span> — guāngmíng-lěiluò, <span class="han">颠三倒四</span> — diānsān-dǎosì.</li>
+  <li><b>Если на два отрезка оно не делится, пишется слитно целиком:</b> <span class="han">不亦乐乎</span> — bùyìlèhū, <span class="han">总而言之</span> — zǒng'éryánzhī, <span class="han">爱莫能助</span> — àimònéngzhù.</li>
+  <li><b>Названия длиннее четырёх слогов</b>, которые выражают единое понятие, записываются по словам или по языковым отрезкам. Слитно — только если на отрезки не делятся.</li>
+</ul>
+
+<p>Вот и ответ, насколько он вообще возможен. <b>Длиннее четырёх слогов неделимые единицы в стандарте практически не предусмотрены:</b> всё, что длиннее, документ велит разбирать на части. Не потому, что длинных записей не бывает, а потому, что они составные — и это видно, как только появляются пробелы.</p>
+
+<h2>Почему вопрос звучит естественно <span class="italic">для русского</span></h2>
+<p>Стоит объяснить и то, откуда вопрос вообще берётся. Он не наивный — он просто перенесён из языка с другим устройством.</p>
+
+<p>В русском, немецком или финском длина слова — наблюдаемая величина. Слово растёт за счёт приставок, корней и суффиксов, а пробелы по краям честно показывают, где оно кончилось. Поэтому спор о рекорде в таких языках осмысленный: спорят о том, считать ли конкретное образование настоящим словом, но сам способ измерения сомнений не вызывает.</p>
+
+<p>В китайском растёт не слово, а цепочка знаков. Нанизать можно сколько угодно: название учреждения, должность с перечислением ведомств, химический термин. Но <b>ни пробелов, ни окончаний, которые показали бы край, здесь нет</b>, и потому любая длинная цепочка — это вопрос о том, где вы сами решите её разрезать.</p>
+
+<p>Есть и вторая половина различия. В русском длинное слово обычно остаётся одним словом с одним значением. В китайском длинная цепочка почти всегда распадается на части, каждая из которых и сама по себе осмысленна. Поэтому сравнение «у них слово длиннее, чем у нас» не работает: сравниваются разные вещи.</p>
+
+<h2>Что полезнее спросить <span class="italic">вместо этого</span></h2>
+<p>Вопрос о длине хорош тем, что от него легко перейти к трём вопросам, у которых ответы есть.</p>
+
+<ul>
+  <li><b>Какой знак самый сложный?</b> Вот это измеримо: сложность знака считают в чертах, и рекордсмены известны. Про них у нас есть отдельный материал: <a href="https://kitai-school.ru/article/interesnye-fakty-o-kitayskom-yazyke" target="_blank" rel="noopener">интересные факты о китайском языке</a>.</li>
+  <li><b>Сколько знаков нужно знать?</b> Вопрос практический, и ответ на него зависит от цели — чтение новостей, экзамен или бытовое общение.</li>
+  <li><b>Как запомнить длинное слово?</b> Самый полезный из трёх. Длинное сочетание запоминается не целиком, а по частям, и разбор состава работает лучше повторения: <a href="https://kitai-school.ru/article/kak-zapominat-ieroglify" target="_blank" rel="noopener">как запоминать иероглифы</a>.</li>
+</ul>
+
+<p>Последний пункт стоит развернуть, потому что он прямо следует из всего сказанного. Раз длинные единицы в китайском составные, <b>учить их имеет смысл через состав</b>: разобрать, какие знаки внутри, что каждый значит, как они связаны. Знаки повторяются из слова в слово, и разобранное один раз сочетание тянет за собой следующие. Если интересно, откуда у знаков их значения и какие истории про это правда, а какие придуманы, — посмотрите: <a href="https://kitai-school.ru/article/kurs-po-ehtimologii-kitajskogo-yazyka-chto-v-istoriyakh" target="_blank" rel="noopener">курс по этимологии китайского</a>.</p>
+
+<div class="cta">
+  <p>Понимать, где в китайской фразе кончается одно слово и начинается другое, — навык, который ставится на занятиях довольно быстро, если объяснить логику, а не заучивать примеры. С этого мы и начинаем: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какое самое длинное слово в китайском языке?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Такого слова нет, и это не уклончивый ответ. В китайском письме нет пробелов, границы слова ничем не обозначены, а значит, длина зависит от того, где эти границы провести. Ни в словарях, ни в государственных стандартах нет понятия слова-рекордсмена. Всё, что предлагают в качестве рекорда, при разборе оказывается либо названием, либо терминологическим сочетанием, либо устойчивым выражением из нескольких частей.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какое самое длинное слово в Китае — может, есть официальный список?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Официального списка нет ни у одной организации, которая занимается нормированием китайского языка. Списки, которые ходят по соцсетям и форумам — «слово из восьмидесяти девяти иероглифов», «имя из двадцати трёх знаков», — не имеют источника: их невозможно проверить, и мы такие вещи не пересказываем. Есть другое, вполне официальное: правила орфографии, которые говорят, что писать слитно, а что раздельно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какое самое длинное слово по-китайски знают сами китайцы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Носителю языка этот вопрос обычно кажется странным — примерно как русскому вопрос, какая буква самая тяжёлая. Длину в знаках никто не считает, потому что знак и слово в китайском не одно и то же. Если спросить китайца о чём-то длинном, он скорее назовёт длинное название организации или химический термин и тут же объяснит, из каких частей оно составлено.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько иероглифов обычно в китайском слове?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Один или два — это подавляющее большинство. Подсчёты расходятся, потому что считают по-разному: по словарю выходит около двух третей двузнаковых статей, по корпусу устной речи одно- и двусложные дают свыше девяноста процентов всех употреблений. Трёх- и четырёхзначные слова встречаются заметно реже, а всё, что длиннее четырёх знаков, обычно оказывается составным названием.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Длинные слова на китайском — это какие?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Длина набирается четырьмя способами. Терминология: название вещества или процесса складывается из названий его частей. Имена собственные: полные названия государств, учреждений и должностей. Фонетические заимствования: знаки подобраны по звучанию чужого слова, и длина пришла из языка-источника. Устойчивые выражения: четырёхзначные идиомы. Каждый из этих случаев длинный по своей причине, и ни один не является простым словом.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему в русском самое длинное слово есть, а в китайском нет?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что длину в русском задаёт само слово: приставки, корни и суффиксы наращиваются, а пробелы по краям показывают, где слово кончилось. В китайском длину задаёт не слово, а то, сколько знаков решено считать одной единицей. Пробелов нет, поэтому граница — вопрос соглашения, а не наблюдения. Там, где в русском спор о рекорде, в китайском спор о самом понятии длины.</p></div>
+  </details>
+</div>
+
+<p class="sign">Считайте не знаки, а смыслы! <span class="han">字不等于词</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Различение <span class="han">字</span> (письменный знак, обычно слог и чаще всего морфема) и <span class="han">词</span> (слово) — базовое для описания китайского языка. Отсутствие пробелов между словами в китайском письме — наблюдаемый факт.</li>
+    <li>Подсчёты длины слова приведены с указанием метода: по статьям «Словаря современного китайского языка» (подсчёт 1999 года) — около 67,6 % двузнаковых; по списку слов Chinese Lexical Database — 8 % односложных и 70,4 % двусложных; по корпусу письменных текстов LCMC — свыше 40 % употреблений и около 70 % разных слов двусложные; по корпусу устной речи объёмом около 1000 часов — свыше 90 % употреблений одно- и двусложные; по словарю на уровне морфем — около 46 % только односложных и 7,2 % только многосложных.</li>
+    <li><b>Оговорка к цифрам существенная:</b> результат зависит от того, что считают (статьи словаря, разные слова или употребления в тексте) и как заранее договорились делить текст на слова. В исследовании по корпусу LCMC прямо отмечено, что принятая система деления склоняет результат в пользу двусложных.</li>
+    <li>Правила слитного написания приведены по государственному стандарту GB/T 16159-2012 «<span class="han">汉语拼音正词法基本规则</span>» (основные правила орфографии пиньиня), который заменил редакцию 1996 года. Примеры guāngmíng-lěiluò, diānsān-dǎosì, bùyìlèhū, zǒng'éryánzhī, àimònéngzhù — из текста стандарта.</li>
+    <li><b>Самого длинного слова в статье нет намеренно:</b> ни словари, ни стандарты такого понятия не вводят. Списки из соцсетей и форумов — «слово из восьмидесяти девяти иероглифов», «имя из двадцати трёх знаков» — не имеют проверяемого источника и здесь не пересказываются.</li>
+    <li>Рекорды по числу черт (самый сложный знак) — другая величина, и они разобраны в отдельном материале блога, ссылка стоит в тексте.</li>
+    <li>Практика Kitai School: разбор ученических вопросов о длине слов и упражнение на разметку границ слова в учебном тексте.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Длину слова в китайском нельзя измерить, пока не решено, где слово начинается и где кончается. Пробелов в письме нет</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
