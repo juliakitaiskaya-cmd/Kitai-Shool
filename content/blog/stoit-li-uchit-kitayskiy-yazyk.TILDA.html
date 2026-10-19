@@ -1,0 +1,404 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/stoit-li-uchit-kitayskiy-yazyk#article",
+      "headline": "Стоит ли учить китайский язык: как принять решение и когда честный ответ — нет",
+      "description": "Стоит ли учить китайский язык: статья не про пользу и не про трудности, а про само решение. Три вопроса, на которые нужно ответить до старта: зачем именно вам язык, к какому сроку он нужен и сколько часов в неделю вы дадите в обычную, а не идеальную неделю. Честный разбор задач, которые язык решает, и тех, которые он не решает, включая гарантию работы и быструю окупаемость. Пять случаев, когда учить не стоит, способ проверить намерение за две недели до оплаты курса и порядок действий, если решение всё-таки «да».",
+      "image": "assets/stoit-li-uchit-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-19",
+      "dateModified": "2026-10-19",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/stoit-li-uchit-kitayskiy-yazyk",
+      "about": {
+        "@type": "Thing",
+        "name": "Решение изучать китайский язык"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/stoit-li-uchit-kitayskiy-yazyk#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Стоит ли учить китайский язык, если нет конкретной цели?", "acceptedAnswer": {"@type": "Answer", "text": "Скорее нет — по крайней мере не в формате длинного курса. Китайский требует регулярности месяцами, и мотивация «для развития» обычно заканчивается раньше первых заметных результатов. Если язык интересен сам по себе, честнее начать с небольшого формата: несколько занятий, чтобы понять, нравится ли вам процесс, а не строить планы на год вперёд."}},
+        {"@type": "Question", "name": "Нужно ли учить китайский язык для работы с Китаем?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от того, что именно вы делаете. Для переписки по шаблонам и разовых заказов обычно хватает машинного перевода и помощи специалиста в сложных местах. Язык становится необходим там, где есть переговоры, личные отношения с партнёром, поездки, спорные ситуации — то есть там, где важны оттенки и доверие, а не передача фактов."}},
+        {"@type": "Question", "name": "Сколько времени нужно, чтобы язык начал приносить пользу?", "acceptedAnswer": {"@type": "Answer", "text": "Первые полезные вещи появляются рано: через несколько недель вы читаете вывески и понимаете структуру фразы. А вот рабочий уровень измеряется сотнями часов, и точные ориентиры по уровням у нас разобраны в отдельном материале. Главное, что стоит знать до старта: быстрых результатов здесь не бывает, и обещания обратного — маркетинг."}},
+        {"@type": "Question", "name": "Можно ли обойтись переводчиком вместо изучения языка?", "acceptedAnswer": {"@type": "Answer", "text": "Во многих задачах — да, и признать это честнее, чем продавать курс. Машинный перевод неплохо справляется с перепиской по фактам, инструкциями и описаниями товаров. Он плохо справляется с устной речью, с интонацией вежливости и с ситуациями, где важно, кто именно и как это сказал. Выбор между переводчиком и языком — это выбор между передачей информации и участием в разговоре."}},
+        {"@type": "Question", "name": "Как понять, что я не брошу через месяц?", "acceptedAnswer": {"@type": "Answer", "text": "Проверить до оплаты. Две недели позанимайтесь по бесплатным материалам в том режиме, который планируете: те же дни недели, то же время, та же продолжительность. Если за две недели режим выдержан хотя бы наполовину — вы, скорее всего, дойдёте. Если ни разу не сели — дело не в курсе и не в преподавателе, и курс этого не исправит."}},
+        {"@type": "Question", "name": "Китайский сложнее других языков?", "acceptedAnswer": {"@type": "Answer", "text": "В нём есть вещи, которых нет в европейских языках, — тоны и письменность, не связанная со звучанием. Есть и то, что проще: нет спряжения, склонения и согласования. Сравнивать языки по общей сложности я не берусь — сопоставимых измерений для этого нет, а подробный разбор того, что действительно трудно, а что проще, чем кажется, у нас есть отдельно."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/stoit-li-uchit-kitayskiy-yazyk#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Стоит ли учить китайский язык: как принять решение и когда честный ответ — нет", "item": "https://kitai-school.ru/article/stoit-li-uchit-kitayskiy-yazyk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Решение</p>
+<h1>Стоит ли учить китайский язык: <span class="italic">как принять решение и когда честный ответ — нет</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-19">19 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/stoit-li-uchit-hero.png" alt="Золотая монета со знаком 汉, стоящая на ребре между подписями «да, если задача совпала» и «нет, если задача другая»" width="1200" height="630"></figure>
+
+<p class="passport">Школе положено отвечать на этот вопрос «конечно, стоит», и обычно так и отвечают. Я напишу иначе, потому что за двадцать лет видела достаточно людей, которые заплатили за курс и бросили через месяц, — и почти всегда дело было не в языке и не в преподавателе. <b>Вопрос «стоит ли» задают про язык, а отвечать на него приходится про себя:</b> про свою задачу, срок и запас времени. Разберём, как принять это решение — и в каких случаях честный ответ «нет».</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Ответ зависит не от языка, а от задачи.</b> <b>Задачу нужно уметь назвать</b> одним предложением, иначе решение принимается на настроении. <b>Язык не гарантирует работу</b> и не заменяет специальность. <b>Есть пять случаев, когда учить не стоит</b>, и они перечислены прямо. <b>Проверить себя можно за две недели</b> — до того, как платить за курс.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">зависит не от языка, а от задачи</span></h2>
+<p>Китайский — хороший язык с большой практической отдачей, и доводов в его пользу хватает: про них у нас есть отдельный разбор, пересказывать его здесь я не буду: <a href="https://kitai-school.ru/article/zachem-uchit-kitayskiy-yazyk" target="_blank" rel="noopener">зачем учить китайский язык</a>. Трудности тоже разобраны отдельно, с честной кривой сложности: <a href="https://kitai-school.ru/article/slojno-li-uchit-kitayskiy-s-nulya" target="_blank" rel="noopener">сложно ли учить китайский с нуля</a>.</p>
+
+<p>Но ни один из этих текстов не отвечает на вопрос, который на самом деле задают. <b>Человек спрашивает не «полезен ли китайский вообще», а «нужен ли он мне»</b> — а это решается не свойствами языка, а составом вашей задачи.</p>
+
+<p>Отсюда и устройство этой статьи: сначала три вопроса к себе, потом разбор того, что язык решает и чего не решает, потом пять случаев, когда отвечать стоит «нет».</p>
+
+<h2>Три вопроса, <span class="italic">на которые стоит ответить до старта</span></h2>
+<p>Эти три вопроса я задаю на первой встрече. Они занимают десять минут и экономят месяцы.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Три вопроса до начала занятий.</caption>
+  <thead><tr><th>Вопрос</th><th>Что проверяем</th><th>На что обратить внимание</th></tr></thead>
+  <tbody>
+    <tr><td><b>Зачем именно вам язык</b></td><td>назовите задачу одним предложением, без слова «вообще»</td><td>«читать переписку поставщика без переводчика» — задача; «для саморазвития» — не задача, а настроение, и оно проходит к третьему месяцу</td></tr>
+    <tr><td><b>К какому сроку он нужен</b></td><td>есть ли дата, после которой знание станет бесполезным</td><td>если дата через три месяца, язык, скорее всего, не успеет: честнее искать обходной путь</td></tr>
+    <tr><td><b>Сколько часов в неделю вы дадите</b></td><td>не в идеальную неделю, а в обычную, с работой и усталостью</td><td>три часа в неделю, которые есть всегда, лучше десяти, которые бывают через раз</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Отдельно про первый вопрос, потому что он самый коварный. <b>Формулировка «для себя» почти всегда скрывает отсутствие задачи</b>, и это не упрёк: интерес к языку — нормальная причина начать. Проблема в том, что интерес живёт месяцами, а китайский требует лет, и на третьем месяце, когда новизна проходит, держать режим становится не на чем. Если задача всё-таки «для себя», честнее сразу планировать короткий горизонт: несколько месяцев и небольшой понятный результат, а не «выучить китайский».</p>
+
+<p>И про третий. Когда я спрашиваю про часы, люди обычно называют цифру из хорошей недели — той, где нет авралов, болезней и гостей. <b>Считать надо по плохой неделе</b>, потому что именно она определяет, сохранится ли режим.</p>
+
+<p>Если на все три есть внятные ответы, дальше можно обсуждать формат и программу. Если хотя бы один повисает — решение принимается преждевременно, и лучше вернуться к нему через месяц.</p>
+
+<h2>Что китайский решает, <span class="italic">а чего не решает</span></h2>
+<p>Разделим прямо, без обтекаемых формулировок.</p>
+
+<figure class="ks-fig"><img src="assets/stoit-li-uchit-info.png" alt="Две колонки: слева пять задач, которые китайский решает, справа пять, которые он не решает, с отметками" width="1200" height="560"><figcaption>Решение принимается по левой колонке: есть ли в ней ваша задача.</figcaption></figure>
+
+<p>Про правую колонку стоит сказать отдельно, потому что именно на ней строятся завышенные ожидания.</p>
+
+<p><b>Язык не гарантирует работу.</b> Он бывает условием при найме — строкой в требованиях, — но причиной найма служит профессия. Китаист без специальности конкурирует с переводчиками, которых на рынке достаточно; специалист со знанием китайского конкурирует в другой, гораздо более узкой лиге.</p>
+
+<p><b>Язык не окупается быстро.</b> Первые месяцы вы вкладываете время и не получаете ничего, кроме умения читать вывески. Это нормальное устройство процесса, но к нему нужно быть готовым: решения, принятые в расчёте на быструю отдачу, разваливаются именно здесь. Про обещания экспресс-результатов у нас есть разбор: <a href="https://kitai-school.ru/article/kak-bystro-vyuchit-kitajskij" target="_blank" rel="noopener">как быстро выучить китайский</a>.</p>
+
+<h2>Пять случаев, <span class="italic">когда учить не стоит</span></h2>
+<p>Здесь я перечислю то, что обычно не пишут на сайтах школ.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Когда я отговариваю.</caption>
+  <thead><tr><th>Случай</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td><b>Нужен разовый выезд в Китай</b></td><td>неделя-другая поездки закрывается переводчиком в телефоне и парой заученных фраз</td></tr>
+    <tr><td><b>Задача — переписка по шаблону</b></td><td>десяток типовых писем в месяц дешевле разобрать один раз с преподавателем, чем учить язык</td></tr>
+    <tr><td><b>Нет своей специальности</b></td><td>язык усиливает профессию, но не заменяет её: сам по себе он редко даёт работу</td></tr>
+    <tr><td><b>Срок меньше полугода, а требование жёсткое</b></td><td>за такое время до рабочего уровня не доходят, и честнее сказать это сразу</td></tr>
+    <tr><td><b>Нет свободных часов в обычной неделе</b></td><td>язык требует регулярности; при нулевом запасе времени курс превращается в трату денег</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Пришёл человек с запросом «нужен китайский для работы» и сразу записался на интенсив. На втором занятии выяснилось, в чём именно состоит работа: переписка с одним поставщиком, десяток типовых писем в месяц.</p>
+  <p>Я посчитала вслух, сколько часов уйдёт на уровень, при котором он сможет вести эту переписку сам. Цифра его не обрадовала, и это был честный разговор, а не приём.</p>
+  <p>Вместо курса мы сделали два часа разбора: как устроено деловое письмо, какие формулы вежливости обязательны, что в них нельзя терять при машинном переводе и где перевод обычно врёт. Он ушёл довольным и без курса.</p>
+  <p>Через год вернулся сам — уже с поездками и переговорами, под которые язык действительно был нужен. <b>Отговорить вовремя дешевле для человека и честнее для школы</b>, а если задача появится, он вернётся.</p>
+</div>
+
+<p>Обратите внимание: ни один из пяти случаев не означает «никогда». Все они означают «не сейчас» или «не этим способом». <b>Задача меняется — меняется и ответ</b>, и вернуться к вопросу через год совершенно нормально.</p>
+
+<h2>Чего стоит решение: <span class="italic">время, деньги, регулярность</span></h2>
+<p>Три ресурса, и самый дефицитный из них — не деньги.</p>
+
+<p><b>Время.</b> Главный расход, и он измеряется не неделями, а сотнями часов. Сколько именно часов уходит на каждый уровень и откуда берутся эти оценки, разобрано отдельно: <a href="https://kitai-school.ru/article/za-kakoe-vremya-realno-vyuchit-kitayskiy" target="_blank" rel="noopener">за какое время реально выучить китайский</a>. Там же видно, почему сроки в рекламе и сроки в методиках расходятся в разы.</p>
+
+<p><b>Деньги.</b> Их проще планировать, но важно считать не стоимость месяца, а стоимость пути до вашей задачи. Курс за условно небольшую сумму, после которого нужны ещё полтора года, обходится дороже, чем кажется при первом взгляде на прайс.</p>
+
+<p><b>Регулярность.</b> Самый недооценённый ресурс. Язык плохо переносит рывки: месяц интенсива с последующим перерывом даёт меньше, чем ровные три часа в неделю в течение полугода. Поэтому вопрос про «обычную неделю» в таблице выше стоит не случайно — он предсказывает результат лучше остальных.</p>
+
+<p>Есть и четвёртый ресурс, о котором вспоминают редко, — <b>внимание преподавателя и ваша готовность его использовать</b>. Занятие, на котором вы молчите и слушаете, стоит столько же, сколько занятие, на котором вы говорите и ошибаетесь, но пользы приносит в разы меньше. Это тоже часть цены решения: если вам тяжело говорить вслух при другом человеке, выбирайте формат, где это учтено, а не тот, где на вас просто будет меньше внимания.</p>
+
+<h2>Как проверить себя <span class="italic">за две недели</span></h2>
+<p>Дешёвый способ не потратить год впустую. Делается до оплаты курса.</p>
+
+<ul>
+  <li><b>Назначьте режим.</b> Конкретные дни и время — те самые, в которые планируете заниматься потом.</li>
+  <li><b>Две недели занимайтесь по бесплатным материалам.</b> Что именно брать и в каком порядке, расписано здесь: <a href="https://kitai-school.ru/article/izuchenie-kitajskogo-yazyka-s-nulya-s-chego-nachat" target="_blank" rel="noopener">изучение китайского с нуля</a>.</li>
+  <li><b>Ничего не меняйте под себя.</b> Смысл проверки в том, чтобы увидеть обычную свою неделю, а не идеальную.</li>
+  <li><b>Посчитайте, сколько раз вы сели.</b> Половина запланированного — хороший результат; ни разу — тоже результат, и важный.</li>
+</ul>
+
+<p>Эта проверка отвечает на вопрос, которого нет ни в одной рекламе: <b>выдержите ли вы режим, когда интерес схлынет</b>. Первые две недели обычно проходят на энтузиазме, поэтому если даже они не удались, курс ситуацию не изменит.</p>
+
+<p>Отдельно отмечу, чего эта проверка не показывает. <b>Она ничего не говорит о ваших способностях</b> — ни о слухе, ни о памяти, ни о «гуманитарном складе». Она проверяет ровно одно: помещается ли регулярное занятие в вашу жизнь в её нынешнем виде. Способности в изучении языка значат куда меньше, чем принято думать, а вот место в расписании — куда больше.</p>
+
+<p>И ещё одно наблюдение, ради которого я и советую эту проверку. Люди, которые её прошли, приходят на занятия с другим настроем: они уже знают, что режим у них держится, и не тратят первые месяцы на выяснение этого за свои деньги.</p>
+
+<h2>Если решение «да»: <span class="italic">с чего начинать</span></h2>
+<p>Три шага, в таком порядке.</p>
+
+<ul>
+  <li><b>Поставьте произношение в первые недели.</b> Переучиваться потом дороже: привычка к неверному звучанию закрепляется быстро.</li>
+  <li><b>Разберитесь, как устроен знак</b>, прежде чем заучивать списки. Порядок освоения с объяснением, почему именно такой, разобран здесь: <a href="https://kitai-school.ru/article/tapy-izucheniya-kitayskogo" target="_blank" rel="noopener">этапы изучения китайского</a>.</li>
+  <li><b>Назначьте точку проверки.</b> Через три месяца сверьтесь с задачей, которую формулировали на старте: стало ли ближе.</li>
+</ul>
+
+<p>Четвёртым шагом, уже после первых трёх, стоит найти, где вы будете язык применять, — пусть в минимальном виде. Это может быть короткая переписка, подкаст на фоне, сериал с субтитрами, разговорный клуб. <b>Язык, который некуда приложить, держится только на дисциплине</b>, а дисциплина кончается раньше, чем язык выучивается.</p>
+
+<p>И последнее, что я обычно говорю на первой встрече. <b>Решение учить язык — не клятва.</b> Его можно пересмотреть через полгода, если задача изменилась, и это не поражение, а нормальное управление собственным временем.</p>
+
+<div class="cta">
+  <p>Если на три вопроса из начала статьи у вас есть ответы — приходите, обсудим формат под вашу задачу. Если ответов пока нет, тоже приходите: разберёмся на вводном занятии, нужен ли вам курс вообще. <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">Онлайн-курсы китайского</a>: <a href="#popup:zayavka">оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Стоит ли учить китайский язык, если нет конкретной цели?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Скорее нет — по крайней мере не в формате длинного курса. Китайский требует регулярности месяцами, и мотивация «для развития» обычно заканчивается раньше первых заметных результатов. Если язык интересен сам по себе, честнее начать с небольшого формата: несколько занятий, чтобы понять, нравится ли вам процесс, а не строить планы на год вперёд.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли учить китайский язык для работы с Китаем?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Зависит от того, что именно вы делаете. Для переписки по шаблонам и разовых заказов обычно хватает машинного перевода и помощи специалиста в сложных местах. Язык становится необходим там, где есть переговоры, личные отношения с партнёром, поездки, спорные ситуации — то есть там, где важны оттенки и доверие, а не передача фактов.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько времени нужно, чтобы язык начал приносить пользу?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Первые полезные вещи появляются рано: через несколько недель вы читаете вывески и понимаете структуру фразы. А вот рабочий уровень измеряется сотнями часов, и точные ориентиры по уровням у нас разобраны в отдельном материале. Главное, что стоит знать до старта: быстрых результатов здесь не бывает, и обещания обратного — маркетинг.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли обойтись переводчиком вместо изучения языка?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Во многих задачах — да, и признать это честнее, чем продавать курс. Машинный перевод неплохо справляется с перепиской по фактам, инструкциями и описаниями товаров. Он плохо справляется с устной речью, с интонацией вежливости и с ситуациями, где важно, кто именно и как это сказал. Выбор между переводчиком и языком — это выбор между передачей информации и участием в разговоре.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как понять, что я не брошу через месяц?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Проверить до оплаты. Две недели позанимайтесь по бесплатным материалам в том режиме, который планируете: те же дни недели, то же время, та же продолжительность. Если за две недели режим выдержан хотя бы наполовину — вы, скорее всего, дойдёте. Если ни разу не сели — дело не в курсе и не в преподавателе, и курс этого не исправит.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Китайский сложнее других языков?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В нём есть вещи, которых нет в европейских языках, — тоны и письменность, не связанная со звучанием. Есть и то, что проще: нет спряжения, склонения и согласования. Сравнивать языки по общей сложности я не берусь — сопоставимых измерений для этого нет, а подробный разбор того, что действительно трудно, а что проще, чем кажется, у нас есть отдельно.</p></div>
+  </details>
+</div>
+
+<p class="sign">Решайте по задаче, а не по настроению! <span class="han">量力而行</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Чего в статье нет намеренно.</b> Аргументы в пользу языка — карьера, экономика, культура, польза для памяти — разобраны в отдельном материале блога, и здесь они не пересказываются, а отдаются ссылкой. То же с перечнем трудностей: иероглифика, тоны, кривая сложности и мифы разобраны в своей статье.</li>
+    <li><b>Цифр по рынку труда, зарплатам и числу вакансий в статье нет.</b> Проверяемых данных по российскому рынку у меня не нашлось, а приводить непроверенные я не стану. Утверждение «язык бывает условием найма, но причиной служит профессия» — наблюдение из практики, а не статистика, и подано именно так.</li>
+    <li><b>Сроков «до свободного владения» здесь тоже нет:</b> ориентиры по часам и уровням с оговорками к методикам разобраны в отдельном материале, ссылка стоит в тексте.</li>
+    <li>Сравнения китайского с другими языками по общей сложности в статье нет: сопоставимых измерений для такого сравнения не существует, есть только перечень того, что труднее и что легче в конкретных навыках.</li>
+    <li>Пять случаев, когда учить не стоит, и три вопроса до старта — <b>практика Kitai School</b>: это то, что я разбираю на первой встрече с учеником.</li>
+    <li>Проверка режима за две недели — тоже практика школы, а не исследование; предлагается как способ принять решение, а не как измерительный инструмент.</li>
+    <li>Историй успеха учеников в статье нет намеренно: единичные случаи ничего не доказывают, а как доказательство их обычно и используют.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Вопрос «стоит ли» задают про язык, а отвечать приходится про себя: про свою задачу, срок и запас времени</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
