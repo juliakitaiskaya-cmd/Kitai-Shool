@@ -7,8 +7,8 @@ OUT = "stoit-li-uchit-kitayskiy-yazyk.html"
 SLUG = "stoit-li-uchit-kitayskiy-yazyk"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/stoit-li-uchit-hero.png"
-FIG = "assets/stoit-li-uchit-info.png"
+HERO = "https://static.tildacdn.com/tild3232-6165-4136-b536-636363323764/stoit-li-uchit-hero.png"
+FIG = "https://static.tildacdn.com/tild3030-3130-4037-a436-633034393534/stoit-li-uchit-info.png"
 HERO_ALT = ("Золотая монета со знаком 汉, стоящая на ребре между подписями «да, если задача совпала» "
             "и «нет, если задача другая»")
 FIG_ALT = ("Две колонки: слева пять задач, которые китайский решает, справа пять, которые он "
