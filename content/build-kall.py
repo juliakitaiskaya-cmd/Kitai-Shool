@@ -7,8 +7,8 @@ OUT = "istoriya-kitayskoy-kalligrafii.html"
 SLUG = "istoriya-kitayskoy-kalligrafii"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/istoriya-kalligrafii-hero.png"
-FIG = "assets/istoriya-kalligrafii-info.png"
+HERO = "https://static.tildacdn.com/tild3836-3435-4964-b065-663266613166/istoriya-kalligrafii.png"
+FIG = "https://static.tildacdn.com/tild3236-6538-4030-a636-643264316130/istoriya-kalligrafii.png"
 HERO_ALT = ("Кисть, занесённая над листом с разметкой, и два горизонтальных мазка тушью с сухим "
             "окончанием; рядом красная печать со знаком 书")
 FIG_ALT = ("Пять музейных этикеток для стилей письма: чжуаньшу, лишу, цаошу, синшу и кайшу — "
