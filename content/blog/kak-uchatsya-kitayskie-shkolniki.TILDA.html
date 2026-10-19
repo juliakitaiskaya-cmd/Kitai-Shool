@@ -1,0 +1,403 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kak-uchatsya-kitayskie-shkolniki#article",
+      "headline": "Как учатся китайские школьники: предметы, языки, учебный год и нагрузка по неделям",
+      "description": "Как учатся китайские школьники: содержание обучения, а не структура системы. Доли учебных часов по государственному стандарту 2022 года — 语文 20–22 %, математика 13–15 %, физкультура 10–11 %, естественные науки 8–10 %, иностранный язык 6–8 % с третьего класса. Возраст приёма в первый класс по закону об обязательном образовании: шесть полных лет к 1 сентября, с возможной отсрочкой до семи. Нагрузка в часах: 910 в 1–2 классах, 1050 в 3–6, 9522 за девять лет. Учебный год из двух семестров с зимними каникулами, которые сдвигаются вслед за лунным Новым годом.",
+      "image": "assets/kak-uchatsya-shkolniki-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-19",
+      "dateModified": "2026-10-19",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kak-uchatsya-kitayskie-shkolniki",
+      "about": {
+        "@type": "Thing",
+        "name": "Обучение в китайской школе"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kak-uchatsya-kitayskie-shkolniki#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как учатся дети в Китае в школе — чем это отличается от нашей школы?", "acceptedAnswer": {"@type": "Answer", "text": "Набор предметов узнаваемый: родной язык, математика, иностранный, естественные науки, физкультура, музыка, изобразительное искусство. Отличается распределение времени. По государственному стандарту 2022 года на родной язык и литературу отводится 20–22 % всех часов — вдвое больше, чем на математику, и примерно втрое больше, чем на иностранный язык. Ещё одно отличие — единый учебный план: доли часов заданы на уровне страны, а школы и провинции распределяют нагрузку внутри этих рамок."}},
+        {"@type": "Question", "name": "Во сколько лет дети идут в школу в Китае?", "acceptedAnswer": {"@type": "Answer", "text": "По закону об обязательном образовании ребёнка отдают в школу, когда ему исполнилось шесть полных лет; в местностях, где условий недостаточно, срок можно отодвинуть до семи. Шесть лет должны исполниться до начала учебного года, то есть к 1 сентября, — на практике отсечкой служит 31 августа. Трактовки на местах при этом расходятся, в части регионов требования смягчены, так что единого правила «строго с шести» нет."}},
+        {"@type": "Question", "name": "Какие предметы изучают в китайских школах?", "acceptedAnswer": {"@type": "Answer", "text": "В обязательном образовании это 语文 (китайский язык и литература), 数学 (математика), 外语 (иностранный язык), 科学 (естественные науки), 体育与健康 (физкультура и здоровье), 道德与法治 (мораль и право), музыка и изобразительное искусство. Отдельным предметом с 2022 года идёт трудовое воспитание — не меньше одного урока в неделю с первого по девятый класс."}},
+        {"@type": "Question", "name": "Какие языки изучают в китайских школах?", "acceptedAnswer": {"@type": "Answer", "text": "Два: родной и иностранный. Родной — это 语文, предмет уровня нашей литературы вместе с русским языком, и он занимает больше всего часов. Иностранный обычно английский, начинается с третьего класса начальной школы, и в начальной школе упор делается на слушание и говорение. Само обучение при этом ведётся на путунхуа, даже если дома в семье говорят на местном варианте речи."}},
+        {"@type": "Question", "name": "Сколько уроков в неделю у китайских школьников?", "acceptedAnswer": {"@type": "Answer", "text": "Стандарт задаёт не уроки, а годовые часы: 910 в первом и втором классах, 1050 с третьего по шестой, и 9522 часа за все девять лет обязательного образования. Как разложить это по неделям, решают провинции. Для примера, в одном из провинциальных порядков исполнения это 26 уроков в неделю в 1–2 классах и 30 — в 3–6."}},
+        {"@type": "Question", "name": "Когда у китайских школьников каникулы?", "acceptedAnswer": {"@type": "Answer", "text": "Учебный год делится на два семестра: осенний начинается 1 сентября, весенний — после зимних каникул. Главная особенность в том, что зимние каникулы привязаны к Новому году по лунному календарю и потому каждый год сдвигаются, а вместе с ними едут и даты весеннего семестра, и начало лета. Единых дат по стране нет: их устанавливают региональные управления образования, и разброс между провинциями доходит до нескольких недель."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kak-uchatsya-kitayskie-shkolniki#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Как учатся китайские школьники: предметы, языки, учебный год и нагрузка по неделям", "item": "https://kitai-school.ru/article/kak-uchatsya-kitayskie-shkolniki"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Школа</p>
+<h1>Как учатся китайские школьники: <span class="italic">предметы, языки, учебный год и нагрузка по неделям</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-19">19 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/kak-uchatsya-shkolniki-hero.png" alt="Школьная доска с расписанием на день: 语文, 数学, 英语, 体育, 科学, 道德与法治, 音乐 с переводом на русский" width="1200" height="630"></figure>
+
+<p class="passport">Про китайскую школу чаще всего спрашивают, сколько в ней классов и что такое гаокао. Но у этих вопросов есть ответы, а вот <b>чему и сколько там учат, в русскоязычных источниках почти не разбирают</b> — и зря, потому что именно здесь начинаются настоящие отличия. Набор предметов в китайской школе узнаваемый, а вот распределение времени между ними устроено не так, как ожидает российский читатель. Разберём: сколько часов уходит на каждый предмет, когда начинается иностранный язык, во сколько лет берут в первый класс и как устроен учебный год.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Родной язык и литература — 20–22 % всех часов</b>, иностранный — 6–8 %. <b>Иностранный начинается с третьего класса.</b> <b>В первый класс берут с шести полных лет</b>, в части местностей можно с семи. <b>Нагрузка задана в часах за год:</b> 910 в младших классах, 1050 с третьего, 9522 за девять лет. <b>Единых дат каникул нет:</b> зимние сдвигаются вслед за лунным Новым годом.</p>
+</div>
+
+<h2>Что здесь есть <span class="italic">и чего здесь нет</span></h2>
+<p>Сразу разведу вопросы, чтобы вы не искали здесь того, чего в статье нет.</p>
+
+<ul>
+  <li><b>Про ступени и экзамены</b> — сколько лет длится каждая ступень, чем заканчивается девятый класс и как устроен выпускной экзамен — у нас есть отдельный разбор: <a href="https://kitai-school.ru/article/fakty-o-kitajskikh-shkolakh" target="_blank" rel="noopener">факты о китайских школах</a>. Там же про распорядок дня и гимнастику для глаз.</li>
+  <li><b>Про оценки и баллы</b> — как считают результат и что значат проходные пороги — тоже отдельный материал, и здесь я к ним не возвращаюсь.</li>
+  <li><b>Про путь после девятого класса</b>, если дорога идёт не в старшую школу: <a href="https://kitai-school.ru/article/est-li-v-kitae-kolledji" target="_blank" rel="noopener">есть ли в Китае колледжи</a>.</li>
+  <li><b>Про дошкольное</b>, то есть что происходит до первого класса: <a href="https://kitai-school.ru/article/detskie-sady-v-kitae" target="_blank" rel="noopener">детские сады в Китае</a>.</li>
+</ul>
+
+<p>А здесь — содержание: предметы, часы, языки, возраст приёма и календарь. То, что видит ребёнок, когда садится за парту.</p>
+
+<h2>Во сколько лет идут <span class="italic">в первый класс</span></h2>
+<p>Возраст приёма задан законом об обязательном образовании, и формулировка там точная: <b>ребёнка, которому исполнилось шесть полных лет, родители обязаны отдать в школу</b>. Там же сделана оговорка: в местностях, где условий недостаточно, срок можно отодвинуть до семи лет.</p>
+
+<p>«Шесть полных лет» разъясняется так: шесть должно исполниться <b>до начала нового учебного года, то есть к 1 сентября</b>. На практике отсечкой служит 31 августа, и дети, родившиеся в начале сентября, идут в школу почти на год позже сверстников.</p>
+
+<div class="note">Оговорка, без которой картина получится слишком стройной. <b>Трактовки на местах расходятся.</b> Спор идёт о том, запрещает ли закон принимать тех, кому шести ещё нет, и в части регионов требования смягчены. Так что правило «строго с шести» — упрощение, а точный порядок нужно смотреть в своём городе.</div>
+
+<p>Вторая важная вещь, которая удивляет приезжих: <b>в школу принимают без вступительных испытаний</b>, а местные власти обязаны обеспечить место в школе поблизости от места регистрации. То есть выбор школы в обязательном образовании привязан к тому, где семья прописана, а не к результатам ребёнка.</p>
+
+<h2>Какие предметы изучают <span class="italic">и сколько им отводят</span></h2>
+<p>Набор предметов никаких сюрпризов не содержит. Сюрприз в том, сколько времени на них отводится.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Доли учебных часов за девять лет обязательного образования, по государственному стандарту 2022 года.</caption>
+  <thead><tr><th>Предмет</th><th>Что это</th><th>Доля часов</th><th>Чем примечателен</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">语文</span></td><td><b>Китайский язык и литература</b></td><td>20–22 %</td><td>в редакции 2011 года было 13–15 %: доля выросла заметно</td></tr>
+    <tr><td><span class="han">数学</span></td><td><b>Математика</b></td><td>13–15 %</td><td>второй предмет по объёму часов</td></tr>
+    <tr><td><span class="han">体育与健康</span></td><td><b>Физкультура и здоровье</b></td><td>10–11 %</td><td>в 1–2 классах четыре урока в неделю, в 3–6 классах три</td></tr>
+    <tr><td><span class="han">科学</span></td><td><b>Естественные науки</b></td><td>8–10 %</td><td>по доле часов обходит иностранный язык</td></tr>
+    <tr><td><span class="han">外语</span></td><td><b>Иностранный язык</b></td><td>6–8 %</td><td>начинается с третьего класса, упор на слух и речь</td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="assets/kak-uchatsya-shkolniki-info.png" alt="Пять учебников разной толщины: 语文 20–22 % учебных часов, 数学 13–15 %, 体育与健康 10–11 %, 科学 8–10 %, 外语 6–8 %" width="1200" height="556"><figcaption>Доли заданы вилками: точное число часов внутри них определяют на местах.</figcaption></figure>
+
+<p>Вот эта строчка и есть главное: <b>на родной язык уходит примерно втрое больше времени, чем на иностранный</b>, и вдвое больше, чем на математику. Для российского читателя соотношение непривычное: у нас на иностранный в школе обычно отводится заметно больше.</p>
+
+<p>Кроме перечисленного, в обязательном образовании есть мораль и право, музыка и изобразительное искусство, а с 2022 года <b>отдельным предметом идёт трудовое воспитание</b> — не меньше одного урока в неделю с первого по девятый класс. Эта формулировка взята из провинциального порядка исполнения, то есть детализация на местах своя.</p>
+
+<h2>Какие языки изучают <span class="italic">в школе</span></h2>
+<p>Языков в расписании два, и путать их не стоит, потому что это совершенно разные предметы.</p>
+
+<p><b><span class="han">语文</span> — родной язык и литература.</b> Это не «китайский как иностранный», а предмет уровня нашего русского языка вместе с литературой: сочинения, разбор текстов, заучивание наизусть, классика. Именно он занимает больше всего часов в расписании.</p>
+
+<p><b><span class="han">外语</span> — иностранный язык</b>, чаще всего английский. Он начинается с третьего класса начальной школы, и в младших классах упор делается на слушание и говорение, а не на грамматику.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Семья переехала в Китай, подростка отдали в обычную школу. Родители заранее переживали за математику: думали, что программа окажется неподъёмной.</p>
+  <p>Математику он догнал за семестр — язык формул везде одинаковый, и задачу можно понять, даже не разобрав условие до последнего слова.</p>
+  <p>Тяжелее всего оказался 语文. Не разговорный китайский, который у него был вполне приличный, а школьный предмет: сочинения, заучивание наизусть, разбор классических текстов, которые и носителям даются не сразу.</p>
+  <p>Отставание по нему держалось дольше всего. <b>«Знает китайский» и «тянет китайский как школьный предмет» — разные вещи</b>, и родителям, которые планируют переезд, это стоит понимать заранее.</p>
+</div>
+
+<p>Разница между этими двумя предметами объясняет и частую родительскую ошибку. Ребёнок, свободно болтающий по-китайски, легко проходит собеседование и бытовые ситуации — а потом не тянет 语文, потому что там требуется не речь, а работа с текстом: пересказ, цитирование, разбор незнакомой лексики из классики. Подтянуть это репетитором по разговорному языку не получается: нужен человек, который работает именно со школьной программой.</p>
+
+<p>И третья языковая линия, которой в расписании нет, но которая работает постоянно: <b>обучение ведётся на путунхуа</b>. Для части детей это не тот язык, на котором говорят дома, — региональные варианты речи различаются сильно. Как устроена эта картина, разобрано отдельно: <a href="https://kitai-school.ru/article/kak-razgovarivaut-v-kitae" target="_blank" rel="noopener">как разговаривают в Китае</a>.</p>
+
+<p>Если вы думаете о том, чтобы ребёнок начал китайский заранее, до переезда или до школы, порядок и возрастные ориентиры разобраны здесь: <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-detey-marshrut-po-vozrastam" target="_blank" rel="noopener">китайский язык для детей</a>.</p>
+
+<h2>Сколько уроков в неделю <span class="italic">и за девять лет</span></h2>
+<p>Стандарт задаёт нагрузку не в уроках, а в годовых часах — и это удобнее, чем кажется, потому что позволяет сравнивать ступени между собой.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Учебная нагрузка в часах.</caption>
+  <thead><tr><th>Ступень</th><th>Сколько</th><th>Примечание</th></tr></thead>
+  <tbody>
+    <tr><td><b>1–2 классы</b></td><td>910 учебных часов в год</td><td>нагрузка самая лёгкая из всей школы</td></tr>
+    <tr><td><b>3–6 классы</b></td><td>1050 часов в год</td><td>прибавка приходится в том числе на иностранный язык</td></tr>
+    <tr><td><b>Все девять лет</b></td><td>9522 часа</td><td>суммарно за обязательное образование</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Как разложить эти часы по неделям, решают провинции. Для примера: в одном из провинциальных порядков исполнения это <b>26 уроков в неделю в первом и втором классах и 30 — с третьего по шестой</b>. В другой провинции цифры будут другими, и это нормально: общенациональной сетки расписания не существует.</p>
+
+<h2>Как устроен <span class="italic">учебный год</span></h2>
+<p>Учебный год делится на два семестра. Осенний начинается <b>1 сентября</b> — тут всё привычно. А дальше начинается то, к чему приезжие семьи обычно оказываются не готовы.</p>
+
+<p><b>Зимние каникулы привязаны к Новому году по лунному календарю</b>, а он каждый год приходится на разные даты — от конца января до середины февраля. Вслед за ним едут и каникулы, и начало весеннего семестра, и даже начало лета: если праздник поздний, весенний семестр сжимается, а летние каникулы выходят длиннее.</p>
+
+<p>Единого календаря по стране нет: конкретные даты устанавливают региональные управления образования. Разброс между провинциями доходит до нескольких недель, поэтому <b>любые «точные даты каникул в Китае» — это даты какого-то одного города</b>.</p>
+
+<h2>Что различается <span class="italic">от региона к региону</span></h2>
+<p>Это, пожалуй, главное, что стоит унести из статьи: единый в Китае только стандарт, а не практика.</p>
+
+<ul>
+  <li><b>Недельная нагрузка.</b> Доли часов заданы на уровне страны, расписание — на уровне провинции.</li>
+  <li><b>Даты каникул и семестров.</b> Устанавливаются регионально, разброс до нескольких недель.</li>
+  <li><b>Порядок приёма в первый класс.</b> Общий принцип — по месту регистрации и без экзаменов, детали различаются.</li>
+  <li><b>Возрастная отсечка.</b> Закон допускает отсрочку, а трактовки на местах разные.</li>
+</ul>
+
+<p>Отсюда практический совет тем, кто планирует переезд. <b>Проверять нужно три вещи, и все три — на месте:</b> с какого возраста в этом городе принимают в первый класс, к какой школе относится ваш адрес и какие даты каникул утверждены на текущий учебный год. Первые два пункта решают, пойдёт ли ребёнок в школу в этом году вообще, третий — когда вам планировать поездки.</p>
+
+<p>Отдельно про типы школ. Они есть — государственные, частные и школы для детей иностранцев, — но правила приёма в них задаются на местах, и проверенных обобщений по различиям между ними у меня нет. Поэтому честный ответ такой: <b>конкретные условия нужно смотреть в управлении образования того города</b>, куда вы собираетесь, а не в общих статьях про Китай.</p>
+
+<div class="cta">
+  <p>Если ребёнку предстоит учиться в Китае, язык лучше начинать не с переезда, а раньше: разговорный уровень снимает половину трудностей первого года. Мы занимаемся с детьми по возрастным программам — <a href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener">китайский для детей</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как учатся дети в Китае в школе — чем это отличается от нашей школы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Набор предметов узнаваемый: родной язык, математика, иностранный, естественные науки, физкультура, музыка, изобразительное искусство. Отличается распределение времени. По государственному стандарту 2022 года на родной язык и литературу отводится 20–22 % всех часов — вдвое больше, чем на математику, и примерно втрое больше, чем на иностранный язык. Ещё одно отличие — единый учебный план: доли часов заданы на уровне страны, а школы и провинции распределяют нагрузку внутри этих рамок.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Во сколько лет дети идут в школу в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По закону об обязательном образовании ребёнка отдают в школу, когда ему исполнилось шесть полных лет; в местностях, где условий недостаточно, срок можно отодвинуть до семи. Шесть лет должны исполниться до начала учебного года, то есть к 1 сентября, — на практике отсечкой служит 31 августа. Трактовки на местах при этом расходятся, в части регионов требования смягчены, так что единого правила «строго с шести» нет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие предметы изучают в китайских школах?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В обязательном образовании это 语文 (китайский язык и литература), 数学 (математика), 外语 (иностранный язык), 科学 (естественные науки), 体育与健康 (физкультура и здоровье), 道德与法治 (мораль и право), музыка и изобразительное искусство. Отдельным предметом с 2022 года идёт трудовое воспитание — не меньше одного урока в неделю с первого по девятый класс.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие языки изучают в китайских школах?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Два: родной и иностранный. Родной — это 语文, предмет уровня нашей литературы вместе с русским языком, и он занимает больше всего часов. Иностранный обычно английский, начинается с третьего класса начальной школы, и в начальной школе упор делается на слушание и говорение. Само обучение при этом ведётся на путунхуа, даже если дома в семье говорят на местном варианте речи.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько уроков в неделю у китайских школьников?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Стандарт задаёт не уроки, а годовые часы: 910 в первом и втором классах, 1050 с третьего по шестой, и 9522 часа за все девять лет обязательного образования. Как разложить это по неделям, решают провинции. Для примера, в одном из провинциальных порядков исполнения это 26 уроков в неделю в 1–2 классах и 30 — в 3–6.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Когда у китайских школьников каникулы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Учебный год делится на два семестра: осенний начинается 1 сентября, весенний — после зимних каникул. Главная особенность в том, что зимние каникулы привязаны к Новому году по лунному календарю и потому каждый год сдвигаются, а вместе с ними едут и даты весеннего семестра, и начало лета. Единых дат по стране нет: их устанавливают региональные управления образования, и разброс между провинциями доходит до нескольких недель.</p></div>
+  </details>
+</div>
+
+<p class="sign">Хорошей учёбы! <span class="han">好好学习</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li>Возраст приёма приведён по закону об обязательном образовании: статья 11 обязывает родителей отдать в школу ребёнка, которому исполнилось шесть полных лет, и допускает отсрочку до семи лет в местностях, где условий недостаточно; разъяснение ведомства уточняет, что шесть лет должны исполниться к началу учебного года, то есть к 1 сентября. Статья 12 закрепляет приём без вступительных испытаний и обязанность местных властей обеспечить место в школе поблизости от места регистрации.</li>
+    <li><b>Оговорка:</b> трактовки возрастной нормы на местах расходятся, в части регионов требования смягчены; единого правила «строго с шести» нет.</li>
+    <li>Доли учебных часов приведены по государственному стандарту общего образования 2022 года: 语文 — 20–22 % (в редакции 2011 года 13–15 %), 数学 — 13–15 %, 体育与健康 — 10–11 % (четыре урока в неделю в 1–2 классах, три в 3–6), 科学 — 8–10 %, 外语 — 6–8 % с началом в третьем классе и упором на слушание и говорение.</li>
+    <li>Учебная нагрузка: 910 часов в 1–2 классах, 1050 в 3–6, 9522 часа за девять лет обязательного образования. Пример недельной раскладки (26 и 30 уроков) взят из провинциального порядка исполнения; в других провинциях он свой.</li>
+    <li>Трудовое воспитание как самостоятельный предмет с одним уроком в неделю с 1 по 9 класс — <b>формулировка из провинциального документа</b>, а не из общенационального текста, и в статье она подана именно так.</li>
+    <li>Учебный год: осенний семестр с 1 сентября, весенний после зимних каникул, привязанных к Новому году по лунному календарю; конкретные даты устанавливают региональные управления образования, разброс между провинциями доходит до нескольких недель.</li>
+    <li><b>Чего в статье нет намеренно:</b> ступеней и выпускных экзаменов, баллов и шкал оценивания, подробного разбора типов школ. Первые два разобраны в отдельных материалах блога, по третьему проверенных обобщений у меня нет.</li>
+    <li><b>Оценки «уровня образования в Китае» в статье тоже нет:</b> это суждение, а не факт, и подтвердить его данными я не могу.</li>
+    <li>Практика Kitai School: работа с семьями, которые переезжают в Китай, и с детьми, поступающими в китайские школы.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">«Знает китайский» и «тянет китайский как школьный предмет» — разные вещи. Второе даётся заметно труднее</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
