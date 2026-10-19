@@ -7,8 +7,8 @@ OUT = "rechevoy-etiket-v-kitae.html"
 SLUG = "rechevoy-etiket-v-kitae"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/rechevoy-etiket-hero.png"
-FIG = "assets/rechevoy-etiket-info.png"
+HERO = "https://static.tildacdn.com/tild6463-6135-4165-b431-663064666135/rechevoy-etiket-hero.png"
+FIG = "https://static.tildacdn.com/tild6336-6534-4461-b036-393934663836/rechevoy-etiket-info.png"
 HERO_ALT = ("Раскрытый веер, на складках которого написаны формулы вежливости: 谢谢, 不好意思, 请, "
             "麻烦您, 不客气 с переводом")
 FIG_ALT = ("Три гири разного веса: лёгкая 不好意思, средняя 抱歉 и тяжёлая 对不起, с описанием, "
