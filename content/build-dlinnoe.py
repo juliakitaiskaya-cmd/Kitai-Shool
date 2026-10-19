@@ -7,8 +7,8 @@ OUT = "samoe-dlinnoe-slovo-v-kitayskom-yazyke.html"
 SLUG = "samoe-dlinnoe-slovo-v-kitayskom-yazyke"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/samoe-dlinnoe-slovo-hero.png"
-FIG = "assets/samoe-dlinnoe-slovo-info.png"
+HERO = "https://static.tildacdn.com/tild3165-3365-4663-a462-623966363464/samoe-dlinnoe-slovo-.png"
+FIG = "https://static.tildacdn.com/tild6663-6361-4362-a231-373331623938/samoe-dlinnoe-slovo-.png"
 HERO_ALT = ("Строка из шести иероглифов 脱氧核糖核酸 и портновская мерная лента под ней с подписью "
             "«слово? два слова?» — в китайском письме нет пробелов")
 FIG_ALT = ("Четыре состава из вагонов-иероглифов разной длины с вердиктами: термин, имя собственное, "
