@@ -7,8 +7,8 @@ OUT = "razgovornyy-klub-s-nositelem-yazyka.html"
 SLUG = "razgovornyy-klub-s-nositelem-yazyka"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/razgovornyy-klub-hero.png"
-FIG = "assets/razgovornyy-klub-info.png"
+HERO = "https://static.tildacdn.com/tild6566-3537-4237-b530-633337646365/razgovornyy-klub-her.png"
+FIG = "https://static.tildacdn.com/tild3662-3538-4537-b837-383464376463/razgovornyy-klub-inf.png"
 HERO_ALT = ("Микрофон внутри круговой стрелки и подпись о том, что слово в разговорном клубе "
             "переходит по кругу, а не достаётся одному")
 FIG_ALT = ("Схема встречи разговорного клуба: круглый стол сверху с ведущим и участниками "
