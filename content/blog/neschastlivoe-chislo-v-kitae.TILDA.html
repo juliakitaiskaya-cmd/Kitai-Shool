@@ -1,0 +1,437 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/neschastlivoe-chislo-v-kitae#article",
+      "headline": "Несчастливое число в Китае: четвёрка, её двузначные усиления и те числа, о которых говорят реже",
+      "description": "Несчастливые числа в Китае: четвёрка и созвучие 四 с 死, двузначные 14 и 24 с кантонскими созвучиями 實死 и 易死, пропуск тринадцатого этажа в Гонконге, седьмой лунный месяц и поминальные обряды 头七 и 七七, тройка и созвучие с 散 в подарках и на свадьбах, возрасты 73 и 84 из пословицы о Конфуции и Мэн-цзы, а также 二百五 как обидное слово. Разбор того, где обычай действительно работает, а где правило местное и источники расходятся.",
+      "image": "assets/neschastlivoe-chislo-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-20",
+      "dateModified": "2026-10-20",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/neschastlivoe-chislo-v-kitae",
+      "about": {
+        "@type": "Thing",
+        "name": "Несчастливые числа в китайской культуре"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/neschastlivoe-chislo-v-kitae#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какая цифра в Китае считается несчастливой?", "acceptedAnswer": {"@type": "Answer", "text": "Четвёрка. 四 (sì) звучит близко к 死 (sǐ) — «умереть», и из-за этого четвёрку избегают в нумерации: этажей, номеров, количеств. Важно, что это именно созвучие, а не одно и то же слово: у 四 четвёртый тон, у 死 третий, и для носителя они звучат по-разному. Отношение примерно такое же, как к числу тринадцать в Европе."}},
+        {"@type": "Question", "name": "Какое число китайцы считают несчастливым, кроме четвёрки?", "acceptedAnswer": {"@type": "Answer", "text": "Чаще всего называют 14 и 24: в кантонском они складываются в созвучия «непременно умрёт» и «легко умереть», поэтому считаются хуже простой четвёрки. Отдельно стоят седьмой лунный месяц, связанный с поминальными обрядами, тройка, которую избегают в подарках и на свадьбах, и возрасты 73 и 84 из народной пословицы."}},
+        {"@type": "Question", "name": "Почему 14 и 24 хуже, чем просто 4?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что двузначное число читается целиком и складывается в целое выражение. В кантонском 十四 близко к 實死 «непременно умрёт», а 二十四 — к 易死 «легко умереть». В путунхуа такой звуковой картины нет, но четвёрка на конце всё равно делает число нежелательным. Поэтому в домах пропускают не только четвёртый этаж, но и четырнадцатый."}},
+        {"@type": "Question", "name": "Правда ли, что семёрка в Китае несчастливая?", "acceptedAnswer": {"@type": "Answer", "text": "Само число — нет. Дурная слава у седьмого лунного месяца: его называют месяцем духов и стараются не назначать на него свадьбы, переезды и крупные покупки. Кроме того, семёрка задаёт ритм поминальных обрядов: 头七 — седьмой день после смерти, 七七 — сорок девятый. В обычном счёте и в названиях праздников семёрка ведёт себя спокойно."}},
+        {"@type": "Question", "name": "Что означают числа 73 и 84?", "acceptedAnswer": {"@type": "Answer", "text": "Это возрасты из народной пословицы: 七十三、八十四，阎王不叫自己去 — мол, в эти годы человек уходит сам, без зова. Объяснение в том, что 73 года прожил Конфуций, а 84 — Мэн-цзы. Возраст Конфуция подтверждается записью в «Цзо чжуань»; возраст Мэн-цзы известен по преданию и строгого подтверждения не имеет. Это примета, а не правило, и относятся к ней по-разному."}},
+        {"@type": "Question", "name": "Можно ли называть число 250?", "acceptedAnswer": {"@type": "Answer", "text": "В разговоре лучше обойтись: 二百五 давно значит не количество, а «дурень». Если речь о сумме или номере, скажите 两百五十 — это обычная форма, и двусмысленности в ней нет. К несчастливым числам 250 при этом не относится: тут дело не в созвучии со смертью, а в закрепившемся обидном значении."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/neschastlivoe-chislo-v-kitae#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Несчастливое число в Китае: четвёрка, её двузначные усиления и те числа, о которых говорят реже", "item": "https://kitai-school.ru/article/neschastlivoe-chislo-v-kitae"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Числа и суеверия</p>
+<h1>Несчастливое число в Китае: <span class="italic">четвёрка, её двузначные усиления и те числа, о которых говорят реже</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-20">20 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/neschastlivoe-chislo-hero.png" alt="Автомобильный номерной знак с четвёрками и подпись о том, что несчастливых чисел в Китае больше одного" width="1200" height="630"></figure>
+
+<p class="passport">На вопрос, какое несчастливое число в Китае, обычно отвечают одним словом: четыре. Ответ верный, но неполный — плохих чисел там несколько, и устроены они по-разному. Одни получили репутацию из-за созвучия, другие из-за месяца, в который попадают, третьи вообще не числа, а слова. Разберём их по порядку и честно скажем, где обычай действительно работает, а где это <b>местное правило, о котором в соседней провинции не слышали</b>.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Главное — четвёрка:</b> 四 (sì) звучит близко к 死 (sǐ). <b>14 и 24 считаются хуже</b> простой четвёрки: в кантонском они складываются в целые фразы. <b>Семёрка ни при чём</b> — дурная слава у седьмого лунного месяца. <b>Тройку избегают в подарках</b>, но далеко не везде. <b>73 и 84</b> — возрасты из пословицы. <b>250 — не несчастливое число</b>, а обидное слово.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">какая цифра в Китае считается несчастливой</span></h2>
+
+<p>Четвёрка. Причина одна и хорошо известна: 四 (sì) «четыре» звучит близко к 死 (sǐ) «умереть». Этого хватило, чтобы число вытеснили из нумерации — из этажей, номеров и количеств.</p>
+
+<p>Сразу важная оговорка, которую в пересказах обычно теряют. <b>Это созвучие, а не одно и то же слово:</b> у 四 четвёртый тон, у 死 третий, и для носителя они различаются примерно как для нас «зÁмок» и «замÓк». Как устроен сам знак, откуда взялась его форма и в каких словах 四 ведёт себя совершенно спокойно, разобрано отдельно: <a href="https://kitai-school.ru/article/ieroglif-chetyre" target="_blank" rel="noopener">иероглиф «четыре» (四)</a>.</p>
+
+<p>Понятнее всего это через привычное сравнение: роль четвёрки в Китае примерно та же, что у числа тринадцать в Европе. Условность, которую соблюдают, даже не веря в неё.</p>
+
+<p>А дальше начинается то, о чём в коротких ответах не говорят: четвёрка не одна.</p>
+
+<h2>Почему число вообще <span class="italic">становится плохим</span></h2>
+
+<p>В китайском сравнительно немного разных слогов и очень много слов, поэтому созвучия встречаются на каждом шагу. Это рабочий механизм языка: на нём держатся и поздравления, и шутки, и интернет-сокращения — отсюда же, например, цифровой сленг вроде 666: <a href="https://kitai-school.ru/article/kitajskij-internet-sleng" target="_blank" rel="noopener">китайский интернет-сленг</a>.</p>
+
+<p>Число для такого переноса подходит идеально: оно короткое, звучит часто и легко притягивает похожее слово. Работает это в обе стороны — у восьмёрки, шестёрки и девятки репутация, наоборот, хорошая, и разобрана она в материале про цифры: <a href="https://kitai-school.ru/article/cifry-ot-0-do-10-na-kitayskom" target="_blank" rel="noopener">цифры от 0 до 10 на китайском</a>.</p>
+
+<p>Но дурная слава складывается не всегда одинаково. Способов пять, и различать их стоит, потому что ведут они себя по-разному.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Пять способов, которыми число получает дурную славу.</caption>
+  <thead><tr><th>Способ</th><th>Пример</th><th>Что происходит</th></tr></thead>
+  <tbody>
+    <tr><td><b>Простое созвучие</b></td><td><span class="han">四 sì и 死 sǐ</span></td><td>число звучит похоже на неприятное слово — самый частый случай</td></tr>
+    <tr><td><b>Усиленное созвучие</b></td><td><span class="han">十四 и 二十四 в кантонском</span></td><td>двузначное число складывается в целую фразу, и она хуже одной четвёрки</td></tr>
+    <tr><td><b>Не число, а время</b></td><td><span class="han">седьмой лунный месяц</span></td><td>сама семёрка ни при чём: дурная слава у месяца и связанных с ним обрядов</td></tr>
+    <tr><td><b>Не созвучие, а значение</b></td><td><span class="han">二百五</span></td><td>число давно стало словом, и слово это обидное</td></tr>
+    <tr><td><b>Привычка со стороны</b></td><td><span class="han">тринадцать в Гонконге</span></td><td>число пришло с западной нумерацией вместе с суеверием</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Из таблицы видно главное: <b>единой китайской системы плохих чисел нет</b>. Есть несколько разных историй, которые в пересказах сливают в одну, и из-за этого появляются утверждения вроде «китайцы не любят нечётные числа» — проверить такое невозможно.</p>
+
+<h2>Четырнадцать и двадцать четыре: <span class="italic">хуже, чем просто четвёрка</span></h2>
+
+<p>Двузначное число читается целиком, и созвучие у него своё. Поэтому в домах нередко пропускают не только четвёртый этаж, но и четырнадцатый.</p>
+
+<figure class="ks-fig"><img src="assets/neschastlivoe-chislo-info.png" alt="Панель лифта с пропущенными этажами 4, 13 и 14 и разбор созвучий: 四 и 死, кантонские 實死 и 易死" width="1200" height="700"><figcaption>Набор пропущенных номеров зависит от города, застройщика и языка, на котором считают созвучие.</figcaption></figure>
+
+<p>Самая внятная звуковая картина получается в кантонском: 十四 звучит близко к 實死 «непременно умрёт», а 二十四 — к 易死 «легко умереть». В путунхуа таких готовых фраз не выходит, но четвёрка на конце всё равно делает число нежелательным.</p>
+
+<p>Отсюда понятно и почему в Гонконге нумерация «дырявая» дважды: к местным пропускам добавляется тринадцатый этаж, пришедший с западной нумерацией в колониальный период. Вывод для приезжего: <b>номер этажа не равен количеству этажей под вами</b>.</p>
+
+<h2>Семёрка: <span class="italic">число не виновато, виноват месяц</span></h2>
+
+<p>Семёрку в списках несчастливых чисел упоминают часто, и это неточность. <b>Само число дурной славы не имеет:</b> оно спокойно живёт в счёте и в названии праздника 七夕. Но с ним связаны две вещи, из-за которых семёрка в такие списки попадает.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Откуда у семёрки мрачная репутация.</caption>
+  <thead><tr><th>Что</th><th>О чём речь</th><th>Что с этим связано</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">七 qī</span></td><td><b>само число</b></td><td>дурной славы не имеет: оно есть и в счёте, и в названиях праздников</td></tr>
+    <tr><td><span class="han">七月</span></td><td><b>седьмой лунный месяц</b></td><td>месяц духов: на него не назначают свадьбы, переезды и крупные покупки</td></tr>
+    <tr><td><span class="han">头七</span></td><td><b>седьмой день</b></td><td>первый поминальный день после смерти</td></tr>
+    <tr><td><span class="han">七七</span></td><td><b>сорок девятый день</b></td><td>последний из семи поминальных дней</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Седьмой лунный месяц называют месяцем духов: на него стараются не назначать свадьбы, переезды и крупные покупки. Это ощутимо, потому что речь о целом месяце, а не об одном числе.</p>
+
+<p>Вторая история — поминальный счёт: обряды справляют каждые семь дней, до 七七, то есть до сорок девятого. Обычай сложился под влиянием буддизма и даосизма; народные объяснения — про семь застав или про семь душ, уходящих по одной, — <b>именно народные</b>.</p>
+
+<h2>Тройка: <span class="italic">обычай, который работает не везде</span></h2>
+
+<p>Тройку избегают в подарках и на свадьбах: 三 (sān) слышат как 散 (sàn) «расходиться». И сразу честная оговорка: <b>обычай этот местный</b>. Где-то его соблюдают строго, где-то о нём не слышали, а встречается и обратное прочтение — через созвучие с 生 «рождаться», при котором тройка оказывается хорошей.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица собиралась на свадьбу китайских друзей и спросила, сколько положить в красный конверт. Сумму она уже выбрала — с тройкой.</p>
+  <p>Я не стала говорить «так нельзя». Вместо этого предложила спросить у общих знакомых, и ответы пришли разные. В семье невесты тройки в подарках избегают: слышат в них 散. Подруга из другой провинции о таком обычае не слышала вообще и удивилась вопросу.</p>
+  <p>Сумму в итоге поменяли — не потому, что примета верна, а потому, что про семью невесты теперь было известно точно.</p>
+  <p>С тех пор я советую именно это. <b>Правило про числа редко бывает общекитайским</b>, и один вопрос заранее надёжнее любого списка примет из интернета.</p>
+</div>
+
+<p>Из этого следует правило, которое работает лучше любых списков: <b>про числа спрашивают, а не угадывают</b>. Вопрос «а у вас с этим как?» не бестактен — наоборот, он показывает, что вам не всё равно.</p>
+
+<h2>Семьдесят три и восемьдесят четыре: <span class="italic">возрасты из пословицы</span></h2>
+
+<p>Есть ещё два числа, которые в списках примет почти не встречаются, но в разговорах о возрасте всплывают постоянно. Это 73 и 84.</p>
+
+<p>Пословица звучит так: <span class="han">七十三、八十四，阎王不叫自己去</span> — в семьдесят три и восемьдесят четыре владыка загробного мира не зовёт, человек уходит сам. Объяснение простое: <b>73 года прожил Конфуций, 84 — Мэн-цзы</b>. Раз уж эти годы оказались последними для мудрецов, обычному человеку их тем более стоит опасаться.</p>
+
+<p>Насколько это достоверно. Возраст Конфуция подтверждается записью в «Цзо чжуань»: там прямо сказано, что в год его смерти ему было семьдесят три. С Мэн-цзы сложнее — число 84 держится на предании, строгого подтверждения у него нет. Считают при этом по 虚岁, то есть по счёту, в котором человеку при рождении уже год, и это добавляет расхождений.</p>
+
+<p>Относятся к пословице по-разному: кто-то вспоминает её с улыбкой, кто-то в эти годы действительно нервничает. Для иностранца важно одно: <b>не поднимать эту тему в разговоре с пожилым человеком</b> — даже в виде вопроса о том, правда ли так говорят. Разговор о возрасте и так требует осторожности, а здесь он упирается прямо в смерть.</p>
+
+<h2>Двести пятьдесят: <span class="italic">не несчастливое, а обидное</span></h2>
+
+<p>Это число стоит особняком, и путать его с четвёркой не нужно. <span class="han">二百五</span> (èrbǎiwǔ) в разговорной речи — не количество, а слово со значением «дурень». Никакой связи со смертью или дурными приметами тут нет: значение закрепилось само.</p>
+
+<p>Практическое следствие касается цен и номеров: сумму в двести пятьдесят лучше называть как <span class="han">两百五十</span>, и двусмысленность пропадает. Подробнее про запись чисел и про остальные цифры — в разборе <a href="https://kitai-school.ru/article/cifry-ot-0-do-10-na-kitayskom" target="_blank" rel="noopener">цифр от 0 до 10</a>.</p>
+
+<p>Откуда взялось это значение, объясняют по-разному — версий несколько, и ни одна не считается доказанной. Для разговора это неважно: значение закрепилось независимо от происхождения, и слышат его все. Важно другое — <b>не перепутать это с приметой</b>: тут нет ни созвучия со смертью, ни запрета на номер, просто слово.</p>
+
+<h2>Что с этим делать <span class="italic">иностранцу</span></h2>
+
+<p>Главная ошибка здесь — не нарушить примету, а переусердствовать. Человек, который выучил список и начинает проверять по нему каждую цифру, выглядит страннее того, кто про четвёрку вообще не слышал.</p>
+
+<p>Разумная мера такая: знать, что числа значимы, и помнить, где это действительно проявляется.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Где число имеет значение, а где нет.</caption>
+  <thead><tr><th>Ситуация</th><th>Важно ли</th><th>Что учитывать</th></tr></thead>
+  <tbody>
+    <tr><td><b>Подарки и красные конверты</b></td><td>да, и это самое частое</td><td>считают не цену, а количество предметов и последнюю цифру суммы</td></tr>
+    <tr><td><b>Выбор квартиры, этажа, номера</b></td><td>да</td><td>здесь суеверие превращается в деньги: цену это меняет, а жильё — нет</td></tr>
+    <tr><td><b>Даты торжеств</b></td><td>да</td><td>седьмой лунный месяц и отдельные числа обходят, дату согласуют со старшими</td></tr>
+    <tr><td><b>Переговоры и документы</b></td><td>иногда</td><td>крупные суммы и номера договоров иногда правят; спросить уместно, настаивать — нет</td></tr>
+    <tr><td><b>Обычная речь и счёт</b></td><td>нет</td><td>четверг остаётся 星期四, четыре сезона — 四季, и никто их не переименовывает</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Подарки стоят на пересечении сразу нескольких правил: кроме количества, там работают цвет упаковки и сам предмет. Цвет разобран отдельно: <a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значение цветов в Китае</a>, а деловая сторона — здесь: <a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a>.</p>
+
+<p>Если сомневаетесь, спросить можно прямо — это обычный вопрос, а не бестактность. Две фразы выручают почти всегда.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Как спросить про число, не гадая.</caption>
+  <thead><tr><th>Фраза</th><th>Пиньинь</th><th>Когда</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">这个数字有讲究吗</span></td><td><i>zhège shùzì yǒu jiǎngjiu ma</i></td><td>про номер, сумму или количество: «с этим числом есть какой-то порядок?»</td></tr>
+    <tr><td><span class="han">送礼有什么忌讳吗</span></td><td><i>sònglǐ yǒu shénme jìhuì ma</i></td><td>перед подарком: «есть ли в подарках что-то нежелательное?»</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Слово <span class="han">讲究</span> здесь ключевое: оно значит не «суеверие», а «принятый порядок, с которым считаются». Вопрос с ним звучит уважительно и не ставит собеседника в положение человека, который верит в приметы.</p>
+
+<p>Отдельно про даты. Если речь о торжестве, выбор дня обычно согласуют со старшими в семье, и вмешиваться в это гостю не нужно. Достаточно знать, что <b>дату могут передвинуть не из-за вас и не из-за погоды</b>, и воспринимать это спокойно.</p>
+
+<p>И последнее, о чём стоит сказать прямо. Суеверие про числа — не повод для шуток в разговоре с китайцами и не признак отсталости: <b>в Европе тринадцатый этаж пропускают ровно так же</b>, а в самолётах кое-где нет тринадцатого ряда. Разница только в том, какое число выпало из списка.</p>
+
+<div class="cta">
+  <p>Созвучия, поговорки и приметы перестают быть загадкой, когда появляется язык: слышно, что на что похоже. Мы учим китайскому с нуля и до свободной речи — <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какая цифра в Китае считается несчастливой?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Четвёрка. 四 (sì) звучит близко к 死 (sǐ) — «умереть», и из-за этого четвёрку избегают в нумерации: этажей, номеров, количеств. Важно, что это именно созвучие, а не одно и то же слово: у 四 четвёртый тон, у 死 третий, и для носителя они звучат по-разному. Отношение примерно такое же, как к числу тринадцать в Европе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какое число китайцы считают несчастливым, кроме четвёрки?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Чаще всего называют 14 и 24: в кантонском они складываются в созвучия «непременно умрёт» и «легко умереть», поэтому считаются хуже простой четвёрки. Отдельно стоят седьмой лунный месяц, связанный с поминальными обрядами, тройка, которую избегают в подарках и на свадьбах, и возрасты 73 и 84 из народной пословицы.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему 14 и 24 хуже, чем просто 4?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что двузначное число читается целиком и складывается в целое выражение. В кантонском 十四 близко к 實死 «непременно умрёт», а 二十四 — к 易死 «легко умереть». В путунхуа такой звуковой картины нет, но четвёрка на конце всё равно делает число нежелательным. Поэтому в домах пропускают не только четвёртый этаж, но и четырнадцатый.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что семёрка в Китае несчастливая?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Само число — нет. Дурная слава у седьмого лунного месяца: его называют месяцем духов и стараются не назначать на него свадьбы, переезды и крупные покупки. Кроме того, семёрка задаёт ритм поминальных обрядов: 头七 — седьмой день после смерти, 七七 — сорок девятый. В обычном счёте и в названиях праздников семёрка ведёт себя спокойно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что означают числа 73 и 84?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это возрасты из народной пословицы: 七十三、八十四，阎王不叫自己去 — мол, в эти годы человек уходит сам, без зова. Объяснение в том, что 73 года прожил Конфуций, а 84 — Мэн-цзы. Возраст Конфуция подтверждается записью в «Цзо чжуань»; возраст Мэн-цзы известен по преданию и строгого подтверждения не имеет. Это примета, а не правило, и относятся к ней по-разному.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли называть число 250?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В разговоре лучше обойтись: 二百五 давно значит не количество, а «дурень». Если речь о сумме или номере, скажите 两百五十 — это обычная форма, и двусмысленности в ней нет. К несчастливым числам 250 при этом не относится: тут дело не в созвучии со смертью, а в закрепившемся обидном значении.</p></div>
+  </details>
+</div>
+
+<p class="sign">Не угадывайте — спрашивайте! <span class="han">问一下就知道</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Созвучие 四 и 死</b> и его следствия в нумерации разобраны у нас отдельно, в статье про иероглиф «четыре»; здесь оно дано кратко и со ссылкой, чтобы не повторяться.</li>
+    <li><b>Кантонские созвучия:</b> 十四 близко к 實死 «непременно умрёт», 二十四 — к 易死 «легко умереть»; оттуда же сведения о том, что в Гонконге вместе с четвёрками пропускают и тринадцатый этаж, оставшийся от западной нумерации колониального периода. Источник — гонконгское издание о городской культуре.</li>
+    <li><b>Седьмой лунный месяц</b> как месяц духов и поминальный счёт по семь дней до 七七 — общее место в описаниях обрядности; влияние буддизма и даосизма на обычай отмечается в справочных материалах. Народные объяснения про семь застав и про уходящие по одной души названы в тексте народными.</li>
+    <li><b>Тройка и 散:</b> обычай описан в популярных материалах по народным приметам, но единым он не является — встречается и противоположное прочтение через 生. В статье это сказано прямо.</li>
+    <li><b>Пословица 七十三、八十四，阎王不叫自己去:</b> возраст Конфуция (73) зафиксирован в «Цзо чжуань» под шестнадцатым годом правления Ай-гуна; возраст Мэн-цзы (84) известен по преданию и строгого документального подтверждения не имеет. Счёт ведётся по 虚岁.</li>
+    <li><b>二百五</b> в значении «дурень» — словарное разговорное значение; происхождение выражения объясняют по-разному, и единственной версии в статье не названо.</li>
+    <li><b>Чего в статье нет намеренно:</b> цифр о том, насколько дешевле жильё на четвёртом этаже и сколько стоят автомобильные номера без четвёрок; доли зданий, пропускающих этажи; нумерологии и советов «как привлечь удачу». Таких данных в проверяемом виде нет, а гадание не наш жанр.</li>
+    <li>Практика Kitai School: разговоры с учениками о подарках, суммах и датах, а также наблюдение, что правило чаще оказывается семейным или провинциальным, чем общекитайским.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Почти каждое правило про числа здесь местное: спросить заранее надёжнее, чем выучить список примет</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
