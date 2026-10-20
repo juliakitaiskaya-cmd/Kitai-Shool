@@ -1,0 +1,498 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/razgovornyy-klub-s-nositelem-yazyka#article",
+      "headline": "Разговорный клуб с носителем языка: как устроены встречи, кому подходит и что говорить, чтобы не молчать",
+      "description": "Разговорный клуб с носителем языка как отдельный формат занятий китайским: чем он отличается от урока, свободной болтовни и языкового обмена. Устройство встречи по этапам от разминки до итога, уровень, с которого в клуб имеет смысл идти, разница между клубом с носителем и клубом с преподавателем, критерии выбора клуба в Москве и онлайн, а также набор разговорных формул, чтобы вступить в разговор, согласиться, мягко возразить, уточнить непонятое и выиграть время на обдумывание.",
+      "image": "assets/razgovornyy-klub-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-20",
+      "dateModified": "2026-10-20",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/razgovornyy-klub-s-nositelem-yazyka",
+      "about": {
+        "@type": "Thing",
+        "name": "Разговорный клуб с носителем языка"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/razgovornyy-klub-s-nositelem-yazyka#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что такое разговорный клуб с носителем языка?", "acceptedAnswer": {"@type": "Answer", "text": "Это встреча нескольких человек, которые полтора часа говорят на китайском на заранее объявленную тему, а ведёт её носитель языка. От урока клуб отличается тем, что нового здесь не объясняют, от болтовни — тем, что есть ведущий и порядок слова."}},
+        {"@type": "Question", "name": "С какого уровня можно идти в разговорный клуб?", "acceptedAnswer": {"@type": "Answer", "text": "Обычная точка входа — около HSK 2–3: этого хватает на короткое мнение, вопрос и просьбу повторить. Раньше можно только в клуб для начинающих, где ведущий спрашивает каждого по очереди. До HSK 1 идти рано."}},
+        {"@type": "Question", "name": "Чем разговорный клуб с носителями отличается от клуба с преподавателем?", "acceptedAnswer": {"@type": "Answer", "text": "У форматов разные задачи. Носитель даёт живую речь со скоростью и привычными оборотами, что тренирует слух; преподаватель разберёт ошибку сразу и объяснит по-русски. Если правила ещё шатаются, полезнее второе; если беглости нет — первое."}},
+        {"@type": "Question", "name": "Как выбрать разговорный клуб с носителем языка в Москве или онлайн?", "acceptedAnswer": {"@type": "Answer", "text": "Смотреть стоит на пять вещей: сколько человек приходит обычно, есть ли часть в парах, кто ведёт встречу, присылают ли тему заранее и что происходит с ошибками в конце. По устройству клуб в Москве и онлайн-клуб не различаются."}},
+        {"@type": "Question", "name": "Сколько раз в неделю нужно ходить в клуб?", "acceptedAnswer": {"@type": "Answer", "text": "Одного раза достаточно, если между встречами вы готовите мнение по следующей теме и повторяете выражения с прошлой: два раза без подготовки дают меньше, чем один раз с ней."}},
+        {"@type": "Question", "name": "Заменяет ли разговорный клуб занятия с преподавателем?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, и это не недостаток формата. В клубе не ставят произношение и не объясняют грамматику, там применяют то, что уже есть: занятия дают материал, клуб даёт место, где он начинает работать в живой речи."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/razgovornyy-klub-s-nositelem-yazyka#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Разговорный клуб с носителем языка: как устроены встречи, кому подходит и что говорить, чтобы не молчать", "item": "https://kitai-school.ru/article/razgovornyy-klub-s-nositelem-yazyka"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Формат занятий</p>
+<h1>Разговорный клуб с носителем языка: <span class="italic">как устроены встречи, кому подходит и что говорить, чтобы не молчать</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-20">20 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/razgovornyy-klub-hero.png" alt="Микрофон внутри круговой стрелки и подпись о том, что слово в разговорном клубе переходит по кругу, а не достаётся одному" width="1200" height="630"></figure>
+
+<p class="passport">Разговорный клуб с носителем языка записывают к себе в план почти все, кто дошёл до середины учебника и обнаружил, что читает прилично, а говорит с трудом. Ожидания при этом разные: одни думают, что их будут учить, другие — что просто дадут поболтать. Ни то ни другое формат не описывает, и поэтому часть людей уходит из клуба разочарованной. Разберём по порядку: <b>что такое клуб, как проходит встреча, чем клуб с носителем отличается от клуба с преподавателем, с какого уровня туда имеет смысл идти, как выбрать встречу и что говорить, чтобы участвовать, а не отсиживаться.</b></p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Клуб — не урок и не болтовня:</b> есть тема, ведущий и распределение слова. <b>Нового там не объясняют</b> — применяют то, что уже есть. <b>Точка входа</b> — примерно HSK 2–3, раньше только в начальный клуб. <b>Носитель и преподаватель решают разные задачи.</b> <b>Главное при выборе</b> — размер группы и работа в парах. <b>Результат зависит от вашей роли на встрече</b>, а не от самой встречи.</p>
+</div>
+
+<h2>Что такое разговорный клуб <span class="italic">и чем он не является</span></h2>
+
+<p>Разговорный клуб — это регулярная встреча небольшой группы, на которой полтора часа говорят на изучаемом языке по заранее объявленной теме. У встречи есть ведущий: он задаёт вопрос, следит за временем и за тем, чтобы говорили все.</p>
+
+<p>Проще всего понять формат через то, чем он не является. Сравнение ниже я составила по разговорам с учениками: каждая строка — чьё-то реальное ожидание, не совпавшее с действительностью.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Клуб и похожие на него форматы.</caption>
+  <thead><tr><th>Формат</th><th>Что в нём есть</th><th>Чем отличается клуб</th></tr></thead>
+  <tbody>
+    <tr><td><b>Урок</b></td><td>программа, новая тема и проверка усвоенного</td><td>в клубе нового не объясняют: он про применение того, что уже есть</td></tr>
+    <tr><td><b>Свободная болтовня</b></td><td>говорят кто о чём и кто сколько захочет</td><td>в клубе есть тема, ведущий и распределение слова</td></tr>
+    <tr><td><b>Языковой обмен</b></td><td>двое помогают друг другу, каждый в своём языке</td><td>в клубе язык один и помощь идёт в одну сторону</td></tr>
+    <tr><td><b>Урок с репетитором</b></td><td>всё время занятия принадлежит одному ученику</td><td>в клубе время делится на всех — это устройство формата, а не недостаток</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Из таблицы видно главное свойство формата: <b>в клубе ничего нового не дают</b>. Там нет объяснения грамматики, постановки тонов и работы с иероглификой — всё это остаётся занятиям. Клуб нужен для другого: чтобы выученное начало выходить изо рта без паузы на перевод в голове. Если базы пока нет, клуб её не создаст, и с этим лучше определиться до первой встречи, а не после третьей.</p>
+
+<p>Вторая половина ожиданий — противоположная: приду и наконец свободно поговорю. Свободно поговорить в группе из десяти человек не выйдет по арифметике: за полтора часа на каждого приходится несколько минут чистого говорения. Как эта арифметика работает в учебной группе, мы разбирали отдельно: <a href="https://kitai-school.ru/article/gruppovye-zanyatiya-po-kitayskomu-yazyku-kak-ustroen-urok" target="_blank" rel="noopener">групповые занятия по китайскому</a>. В клубе она такая же, и именно из-за неё приличные клубы делят участников на пары хотя бы раз за встречу.</p>
+
+<h2>Как проходит <span class="italic">встреча</span></h2>
+
+<p>Единого стандарта у клубов нет: это не нормативный формат, и каждая школа собирает его по-своему. Ниже — то, как встреча устроена у нас: полтора часа, пять частей, группа до восьми человек. Берите этот порядок как образец для сравнения с тем, что предлагают вам, а не как обязательный.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Полтора часа встречи по этапам.</caption>
+  <thead><tr><th>Время</th><th>Этап</th><th>Что происходит</th></tr></thead>
+  <tbody>
+    <tr><td><b>0–10 минут</b></td><td><b>Разминка</b></td><td>короткий круг: каждый говорит одну-две фразы о своей неделе</td></tr>
+    <tr><td><b>10–25 минут</b></td><td><b>Ввод темы</b></td><td>ведущий задаёт вопрос и даёт шесть-десять выражений, которые понадобятся</td></tr>
+    <tr><td><b>25–60 минут</b></td><td><b>Обсуждение</b></td><td>мнения, согласия, возражения, уточнения; ведущий следит, чтобы говорили не только те, кому легко</td></tr>
+    <tr><td><b>60–75 минут</b></td><td><b>Разговор в парах</b></td><td>по двое, о том же вопросе: за пятнадцать минут каждый говорит больше, чем за полчаса круга</td></tr>
+    <tr><td><b>75–90 минут</b></td><td><b>Итог</b></td><td>ведущий возвращает записанное: частые ошибки и выражения, которых не хватило</td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="assets/razgovornyy-klub-info.png" alt="Схема встречи разговорного клуба: круглый стол сверху с ведущим и участниками и пять этапов встречи с таймингом от разминки до итога" width="1200" height="672"><figcaption>Так выглядит наша встреча; у других школ этапы и тайминг свои.</figcaption></figure>
+
+<p>Два этапа из пяти чаще всего и отсутствуют в слабых клубах. Первый — <b>ввод темы</b>: шесть-десять выражений, выданных до обсуждения. Без них участник говорит теми словами, которые у него уже есть, то есть повторяет свой набор из встречи в встречу. Второй — <b>разговор в парах</b>: пятнадцать минут по двое дают каждому больше говорения, чем сорок минут общего круга, потому что в паре нельзя промолчать. Если части в парах нет, спросите почему.</p>
+
+<p>Про итог скажу отдельно: ведущий, который всю встречу помечает ошибки и удачные фразы, а в конце возвращает их группе, делает клуб учебным, а не просто приятным. Если ошибки не собирают, они повторяются.</p>
+
+<h2>Чем клуб с носителем отличается <span class="italic">от клуба с преподавателем</span></h2>
+
+<p>Разговорный клуб с носителями и клуб, который ведёт русскоязычный преподаватель, — это два разных занятия с одинаковым названием. Выбирать между ними нужно по задаче, которая стоит перед вами сейчас.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Две разные задачи.</caption>
+  <thead><tr><th>Что сравниваем</th><th>Клуб с носителем</th><th>Клуб с преподавателем</th></tr></thead>
+  <tbody>
+    <tr><td><b>Что слышите</b></td><td>живую речь со скоростью, сокращениями и привычными оборотами</td><td>речь, которую сознательно упрощают под ваш уровень</td></tr>
+    <tr><td><b>Что получаете взамен</b></td><td>привычку понимать на слух и не теряться от быстрого темпа</td><td>разбор ошибки сразу и объяснение, почему правильно так</td></tr>
+    <tr><td><b>Чего не ждать</b></td><td>объяснения грамматики на русском и разбора, почему вы ошиблись</td><td>полного погружения: преподаватель по-русски говорит и будет этим пользоваться</td></tr>
+    <tr><td><b>Кому заметнее пользы</b></td><td>тем, кто уже знает правила, но не успевает их применять</td><td>тем, у кого правила ещё шатаются и ошибки повторяются</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Частая ошибка — взять носителя без базы: полтора часа речи, которую не успеваешь разобрать. Зеркальная — годами ходить туда, где всё объясняют по-русски, имея твёрдую грамматику и не имея скорости.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица ходила в клуб полгода и была уверена, что он ей не помогает. Приходила, слушала, уходила. На занятии со мной сказала прямо: зря трачу вечер.</p>
+  <p>Стали разбирать по минутам. За полтора часа она произносила три-четыре фразы, и все — в ответ на прямой вопрос ведущего. Сама не вступала ни разу: пока собирала фразу, тему успевали сменить.</p>
+  <p>Клуб мы менять не стали. Договорились о двух вещах: приходить с готовым мнением по объявленной теме и вступать в разговор первой хотя бы дважды за встречу. Для второго выучили несколько фраз на то, чтобы взять слово.</p>
+  <p>Через месяц она сказала, что клуб внезапно стал полезным. Клуб при этом не изменился: та же группа, тот же ведущий, те же полтора часа. Изменилась только её роль в нём.</p>
+  <p><b>Клуб не даёт говорения сам по себе — он даёт возможность, которой нужно воспользоваться.</b></p>
+</div>
+
+<p>История эта не про силу воли, а про устройство формата. <b>В клубе слово не выдают — его берут.</b> Если вы отвечаете только на прямой вопрос, ваша норма — три-четыре фразы за встречу, сколько бы месяцев вы ни ходили.</p>
+
+<h2>С какого уровня <span class="italic">имеет смысл идти</span></h2>
+
+<p>Важно не количество слов, а способность собрать короткое высказывание без подготовки.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Уровень и готовность к клубу.</caption>
+  <thead><tr><th>Уровень</th><th>Вердикт</th><th>Почему так</th></tr></thead>
+  <tbody>
+    <tr><td><b>До HSK 1</b></td><td>рано</td><td>слов на реплику не хватает, и встреча превращается в полтора часа слушания</td></tr>
+    <tr><td><b>HSK 1 — начало HSK 2</b></td><td>можно, если клуб начальный</td><td>темы бытовые, ведущий спрашивает каждого по очереди, опорные фразы даны заранее</td></tr>
+    <tr><td><b>HSK 2–3</b></td><td>обычная точка входа</td><td>хватает на короткое мнение, вопрос и уточнение</td></tr>
+    <tr><td><b>HSK 4 и выше</b></td><td>нужен не меньше</td><td>словарь большой, а беглости нет: говорить негде</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Отдельный случай — большой пассивный словарь при слабом произношении: носитель будет переспрашивать, участник замкнётся, так что сначала стоит заняться звуками и тонами: <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>. На HSK 4 и выше клуб, наоборот, считают пройденным этапом, хотя разрыв между знанием и речью виден как раз здесь: <a href="https://kitai-school.ru/article/kurs-po-razgovornoj-rechi-kitajskogo-yazyka" target="_blank" rel="noopener">курс по разговорной речи</a>. Понять, где вы, помогает общая последовательность: <a href="https://kitai-school.ru/article/tapy-izucheniya-kitayskogo" target="_blank" rel="noopener">этапы изучения китайского</a>.</p>
+
+<h2>Что говорить, <span class="italic">чтобы участвовать</span></h2>
+
+<p>Молчат в клубе редко из-за того, что нечего сказать: обычно мысль есть, а фразы, которой её начать, нет, и пока человек её собирает, разговор уходит вперёд. Лечится это заготовками, которые выговариваются не задумываясь.</p>
+
+<h3>Вступить в разговор</h3>
+
+<div class="table-wrap">
+<table>
+  <caption>Как взять слово, не дожидаясь вопроса.</caption>
+  <thead><tr><th>Фраза</th><th>Пиньинь</th><th>Дословно</th><th>Когда говорить</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">我也想说一句</span></td><td><i>wǒ yě xiǎng shuō yí jù</i></td><td>я тоже хочу сказать одну фразу</td><td>короткий способ взять слово, не перебивая</td></tr>
+    <tr><td><span class="han">我有一个问题</span></td><td><i>wǒ yǒu yí ge wèntí</i></td><td>у меня есть один вопрос</td><td>когда по теме сказать нечего, а вступить хочется</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Согласиться и поддержать</h3>
+
+<div class="table-wrap">
+<table>
+  <caption>Чтобы реплика была не только 对.</caption>
+  <thead><tr><th>Фраза</th><th>Пиньинь</th><th>Дословно</th><th>Когда говорить</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">我同意你的看法</span></td><td><i>wǒ tóngyì nǐ de kànfǎ</i></td><td>я согласен с твоим взглядом</td><td>полная форма, звучит нейтрально и вежливо</td></tr>
+    <tr><td><span class="han">我也这么觉得</span></td><td><i>wǒ yě zhème juéde</i></td><td>я тоже так чувствую, так считаю</td><td>разговорный вариант, короче и мягче</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Возразить мягко</h3>
+
+<div class="table-wrap">
+<table>
+  <caption>Как спорить, не задевая собеседника.</caption>
+  <thead><tr><th>Фраза</th><th>Пиньинь</th><th>Дословно</th><th>Когда говорить</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">我有点不同的看法</span></td><td><i>wǒ yǒudiǎn bùtóng de kànfǎ</i></td><td>у меня немного другой взгляд</td><td>мягкое начало возражения</td></tr>
+    <tr><td><span class="han">话是这么说，不过……</span></td><td><i>huà shì zhème shuō, búguò…</i></td><td>слова такие, однако…</td><td>признать правоту и всё же возразить</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Обратите внимание на <span class="han">有点</span> в первой строке: оно снижает резкость, без него фраза звучит жёстче. Вежливость формулы зависит от того, кому вы её говорите, и единственного скрытого смысла я ни одной не приписываю.</p>
+
+<h3>Уточнить непонятое</h3>
+
+<div class="table-wrap">
+<table>
+  <caption>Чтобы не выпадать из разговора.</caption>
+  <thead><tr><th>Фраза</th><th>Пиньинь</th><th>Дословно</th><th>Когда говорить</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">不好意思，这个词是什么意思</span></td><td><i>bù hǎoyìsi, zhège cí shì shénme yìsi</i></td><td>извините, это слово — какой смысл</td><td>остановиться на незнакомом слове</td></tr>
+    <tr><td><span class="han">你能再说一遍吗</span></td><td><i>nǐ néng zài shuō yí biàn ma</i></td><td>ты можешь сказать ещё один раз</td><td>если не расслышали или не успели за темпом</td></tr>
+    <tr><td><span class="han">你的意思是……吗</span></td><td><i>nǐ de yìsi shì… ma</i></td><td>твой смысл — это…?</td><td>проверить, верно ли поняли</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Выиграть время</h3>
+
+<div class="table-wrap">
+<table>
+  <caption>Законные паузы вместо молчания.</caption>
+  <thead><tr><th>Фраза</th><th>Пиньинь</th><th>Дословно</th><th>Когда говорить</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">让我想一想</span></td><td><i>ràng wǒ xiǎng yi xiǎng</i></td><td>дай мне подумать</td><td>собеседник будет ждать, а не перехватит слово</td></tr>
+    <tr><td><span class="han">怎么说呢</span></td><td><i>zěnme shuō ne</i></td><td>как же это сказать</td><td>заполнитель паузы, носители говорят так постоянно</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Молчание читается как нежелание говорить, и слово переходит к другому; <span class="han">让我想一想</span> означает просьбу подождать, и вас подождут. Кто постеснялся переспросить или замолчал, теряет нить на второй минуте и дальше просто присутствует.</p>
+
+<p><b>Учить их лучше не списком:</b> возьмите по одной фразе из каждой группы и положите листок перед собой на встрече — задача употребить каждую.</p>
+
+<h2>Как выбрать клуб: <span class="italic">Москва и онлайн</span></h2>
+
+<p>Разговорный клуб с носителем языка в Москве и такой же клуб онлайн по устройству не различаются. Офлайн привязывает к расписанию, зато вживую легче вступать в разговор; онлайн собирает группу одного уровня из разных городов, а это важнее формата связи.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Пять вопросов организатору клуба.</caption>
+  <thead><tr><th>О чём спросить</th><th>Что выяснить</th><th>Почему это важно</th></tr></thead>
+  <tbody>
+    <tr><td><b>Размер группы</b></td><td>сколько приходит обычно, а не сколько записано</td><td>в кругу из двенадцати на каждого остаётся пара минут</td></tr>
+    <tr><td><b>Часть в парах</b></td><td>делятся ли участники по двое</td><td>без неё говорят только самые смелые</td></tr>
+    <tr><td><b>Кто ведёт</b></td><td>носитель, преподаватель или волонтёр</td><td>ведущий без опыта обычно говорит сам больше всех</td></tr>
+    <tr><td><b>Тема заранее</b></td><td>присылают ли вопрос и слова до встречи</td><td>подготовка меняет результат сильнее остального</td></tr>
+    <tr><td><b>Ошибки</b></td><td>собирает ли ведущий их на итог</td><td>иначе они повторяются из встречи в встречу</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Самый показательный — первый: уклончивый ответ обычно означает, что группа больше, чем хотелось бы. Про клуб в Москве добавлю: дорогу стоит посчитать заранее — сорок минут в один конец после работы решают, будете ли вы ходить через два месяца. Цены я не сравниваю намеренно; как считать их честно: <a href="https://kitai-school.ru/article/shkola-kitajskogo-yazyka-v-moskve-chto-schitat" target="_blank" rel="noopener">школа китайского языка в Москве</a>.</p>
+
+<div class="cta">
+  <p>У нас разговорный клуб идёт как часть обучения: группа одного уровня, тема и слова заранее, обязательная работа в парах. Посмотреть программы и расписание — <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Что делать <span class="italic">до и после встречи</span></h2>
+
+<p>Подготовка занимает двадцать минут и меняет результат сильнее выбора клуба.</p>
+
+<ul>
+  <li><b>Написать своё мнение по теме</b> — три-четыре предложения, чтобы мысль была готова, когда дойдёт очередь.</li>
+  <li><b>Выписать пять слов, которых не хватит.</b> Найденные заранее вы употребите, недостающие обойдёте.</li>
+</ul>
+
+<p>После встречи — ещё десять минут: записать мысль, оставшуюся непроизнесённой, повторить то, что вернул ведущий, отметить число своих реплик. О сроках скажу прямо: обещать, что вы заговорите через месяц клубов, я не буду. Уверенно можно сказать одно: тот, кто берёт слово сам, продвигается быстрее того, кто ждёт вопроса.</p>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое разговорный клуб с носителем языка?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это встреча нескольких человек, которые полтора часа говорят на китайском на заранее объявленную тему, а ведёт её носитель языка. От урока клуб отличается тем, что нового здесь не объясняют, от болтовни — тем, что есть ведущий и порядок слова.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С какого уровня можно идти в разговорный клуб?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Обычная точка входа — около HSK 2–3: этого хватает на короткое мнение, вопрос и просьбу повторить. Раньше можно только в клуб для начинающих, где ведущий спрашивает каждого по очереди. До HSK 1 идти рано.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем разговорный клуб с носителями отличается от клуба с преподавателем?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>У форматов разные задачи. Носитель даёт живую речь со скоростью и привычными оборотами, что тренирует слух; преподаватель разберёт ошибку сразу и объяснит по-русски. Если правила ещё шатаются, полезнее второе; если беглости нет — первое.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как выбрать разговорный клуб с носителем языка в Москве или онлайн?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Смотреть стоит на пять вещей: сколько человек приходит обычно, есть ли часть в парах, кто ведёт встречу, присылают ли тему заранее и что происходит с ошибками в конце. По устройству клуб в Москве и онлайн-клуб не различаются.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько раз в неделю нужно ходить в клуб?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Одного раза достаточно, если между встречами вы готовите мнение по следующей теме и повторяете выражения с прошлой: два раза без подготовки дают меньше, чем один раз с ней.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Заменяет ли разговорный клуб занятия с преподавателем?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и это не недостаток формата. В клубе не ставят произношение и не объясняют грамматику, там применяют то, что уже есть: занятия дают материал, клуб даёт место, где он начинает работать в живой речи.</p></div>
+  </details>
+</div>
+
+<p class="sign">На следующей встрече возьмите слово первым! <span class="han">我先说吧</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Практика Kitai School.</b> Устройство встречи, тайминг этапов, размер группы и правило работы в парах — наш формат, а не общий стандарт: разговорный клуб не нормативное понятие. Оттуда же наблюдения о молчащих.</li>
+    <li><b>Разговорные формулы</b> в пяти таблицах — общеупотребительные выражения с дословным переводом по знакам; вежливость каждой зависит от собеседника и ситуации, поэтому единственного прочтения ни одной не приписано.</li>
+    <li><b>Чего в статье нет намеренно:</b> скрытых смыслов, которых не найти в словарях; обещаний результата к сроку; цен и сравнения школ; статистики по числу клубов.</li>
+    <li><b>Чего клуб не делает:</b> не ставит произношение, не объясняет грамматику и не заменяет занятия. Утверждения, что носитель лучше преподавателя, в статье тоже нет.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Клуб не даёт говорения сам по себе: он даёт возможность, которой нужно воспользоваться</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
