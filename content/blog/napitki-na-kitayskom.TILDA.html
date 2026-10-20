@@ -1,0 +1,464 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/napitki-na-kitayskom#article",
+      "headline": "Напитки на китайском: вода, чай, кофе и молочный чай — как называются и как их заказать",
+      "description": "Лексика напитков на китайском языке: базовые названия с пиньинем и переводом, шесть категорий китайского чая и объяснение, почему 红茶 переводится как красный, а по-русски называется чёрным. Разбор заказа: 热的, 冰的, 常温, уровни сахара от 正常糖 до 无糖 и уровни льда от 正常冰 до 去冰. Молочный чай и топпинги 珍珠, 椰果, 布丁, 仙草, кофейные заимствования 拿铁, 卡布奇诺, 美式, а также фразы для кафе и магазина.",
+      "image": "assets/napitki-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-20",
+      "dateModified": "2026-10-20",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/napitki-na-kitayskom",
+      "about": {
+        "@type": "Thing",
+        "name": "Названия напитков в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/napitki-na-kitayskom#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как будет «напитки» на китайском?", "acceptedAnswer": {"@type": "Answer", "text": "Общее слово — 饮料 (yǐnliào). В меню им обычно подписан раздел, а внутри уже идут конкретные названия: 水 (shuǐ) вода, 茶 (chá) чай, 咖啡 (kāfēi) кофе, 奶茶 (nǎichá) молочный чай, 果汁 (guǒzhī) сок. Глагол «пить» — 喝 (hē), и с него начинается большинство фраз о напитках."}},
+        {"@type": "Question", "name": "Какие напитки на китайском языке нужно выучить в первую очередь?", "acceptedAnswer": {"@type": "Answer", "text": "Десяти слов хватает на кафе и магазин: 水, 矿泉水, 茶, 奶茶, 咖啡, 牛奶, 酸奶, 豆浆, 果汁, 可乐. К ним стоит сразу добавить слова заказа — 热的 «горячий», 冰的 «со льдом», 常温 «комнатной температуры» и уровни сахара, потому что без них вы получите напиток по умолчанию."}},
+        {"@type": "Question", "name": "Почему 红茶 переводят как «красный чай», если это чёрный?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что китайская классификация считает по цвету настоя, а европейская — по цвету сухого листа. То, что в России называют чёрным чаем, в Китае называется 红茶 (hóngchá) — «красный». А 黑茶 (hēichá), дословно «чёрный», это отдельная категория тёмных постферментированных чаёв, куда относят пуэр."}},
+        {"@type": "Question", "name": "Как попросить холодную воду в Китае?", "acceptedAnswer": {"@type": "Answer", "text": "Сказать 冰水 (bīngshuǐ) — вода со льдом, или 常温水 (chángwēn shuǐ) — вода комнатной температуры. Это важно, потому что по умолчанию в кафе приносят 热水 (rèshuǐ), горячую воду. Никакой ошибки официанта здесь нет: так принято, и к просьбе о холодной отнесутся спокойно."}},
+        {"@type": "Question", "name": "Что такое 奶茶 и чем отличается 珍珠奶茶?", "acceptedAnswer": {"@type": "Answer", "text": "奶茶 (nǎichá) — молочный чай, чай с молоком или сливочной основой. 珍珠奶茶 (zhēnzhū nǎichá) — тот же напиток с тапиокой: 珍珠 дословно «жемчужины», это тёмные шарики на дне стакана. Кроме тапиоки часто предлагают 椰果 кокосовое желе, 布丁 пудинг и 仙草 травяное желе."}},
+        {"@type": "Question", "name": "Как сказать «без сахара» по-китайски?", "acceptedAnswer": {"@type": "Answer", "text": "无糖 (wú táng). Рядом с ним в чайных используют 微糖 (wēi táng) «совсем чуть-чуть», 半糖 (bàn táng) «наполовину» и 少糖 (shǎo táng) «поменьше». Порядок уровней общий, но доли у каждой сети свои, поэтому надёжнее всего просить самый несладкий вариант, а не называть уровень."}},
+        {"@type": "Question", "name": "Как спросить, есть ли горячий вариант?", "acceptedAnswer": {"@type": "Answer", "text": "Сказать 有热的吗 (yǒu rè de ma) — «есть горячий?». По той же модели строятся и остальные вопросы: 有冰的吗 — «есть со льдом?», 有常温水吗 — «есть вода комнатной температуры?». Конструкция 有…吗 означает «есть ли…», и она выручает в любом магазине, не только с напитками."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/napitki-na-kitayskom#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Напитки на китайском: вода, чай, кофе и молочный чай — как называются и как их заказать", "item": "https://kitai-school.ru/article/napitki-na-kitayskom"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Напитки на китайском: <span class="italic">вода, чай, кофе и молочный чай — как называются и как их заказать</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-20">20 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/napitki-hero.png" alt="Меню-табло чайной с названиями напитков: 水, 茶, 奶茶, 咖啡, 果汁, 牛奶 с пиньинем и переводом" width="1200" height="630"></figure>
+
+<p class="passport">Напитки на китайском нужны в первый же день: за водой, чаем или кофе человек идёт раньше, чем успевает выучить что-то сложное. Но одних названий не хватает: в чайной у вас спросят про температуру, лёд и сахар, и если ответить нечем, напиток придёт таким, каким его делают по умолчанию. Разберём обе половины — <b>как называются напитки и какими словами их заказывают</b>.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Общее слово — 饮料</b> (yǐnliào), «напитки». <b>Воду приносят горячей:</b> холодную просят отдельно. <b>红茶 — это наш чёрный чай</b>, а 黑茶 — другая категория. <b>В чайной спросят про сахар и лёд</b>, ответ лучше знать заранее. <b>Кофейные названия — заимствования:</b> 拿铁, 卡布奇诺, 美式. <b>Уровни сладости у каждой сети свои</b>, надёжнее просить самый несладкий вариант.</p>
+</div>
+
+<h2>Десять слов, <span class="italic">с которых стоит начать</span></h2>
+
+<p>Этого набора хватает и в кафе, и в магазине у дома. Четвёртая колонка — то, о чём словари молчат: что именно вам принесут.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Базовые напитки на китайском языке.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Перевод</th><th>Что за этим стоит</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">水</span></td><td><i>shuǐ</i></td><td><b>вода</b></td><td>в кафе принесут горячую, если не уточнить</td></tr>
+    <tr><td><span class="han">矿泉水</span></td><td><i>kuàngquánshuǐ</i></td><td><b>минеральная вода</b></td><td>та, что продаётся в бутылке</td></tr>
+    <tr><td><span class="han">茶</span></td><td><i>chá</i></td><td><b>чай</b></td><td>общее слово; какой именно — уточняют отдельно</td></tr>
+    <tr><td><span class="han">奶茶</span></td><td><i>nǎichá</i></td><td><b>молочный чай</b></td><td>чай с молоком и, как правило, с топпингом</td></tr>
+    <tr><td><span class="han">咖啡</span></td><td><i>kāfēi</i></td><td><b>кофе</b></td><td>слово записано по звучанию</td></tr>
+    <tr><td><span class="han">牛奶</span></td><td><i>niúnǎi</i></td><td><b>молоко</b></td><td>в кафе чаще как добавка, а не напиток</td></tr>
+    <tr><td><span class="han">酸奶</span></td><td><i>suānnǎi</i></td><td><b>питьевой йогурт</b></td><td>часто в стакане с трубочкой</td></tr>
+    <tr><td><span class="han">豆浆</span></td><td><i>dòujiāng</i></td><td><b>соевое молоко</b></td><td>завтрак: подают горячим</td></tr>
+    <tr><td><span class="han">果汁</span></td><td><i>guǒzhī</i></td><td><b>сок</b></td><td>перед словом ставят название фрукта</td></tr>
+    <tr><td><span class="han">可乐</span></td><td><i>kělè</i></td><td><b>кола</b></td><td>по звучанию; в меню и в магазине</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Вода.</b> Если сказать просто 水, принесут горячую: это принятый порядок, а не оплошность. Про знак 水 и про ключ «три капли воды» есть отдельный разбор: <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey-kak-ustroen-ieroglif-voda" target="_blank" rel="noopener">иероглиф «вода» 水</a>. <b>Сок</b> почти всегда идёт с названием фрукта впереди: 苹果汁 (píngguǒzhī) яблочный, 橙汁 (chéngzhī) апельсиновый. <b>Из алкоголя</b> в меню встретятся 啤酒 (píjiǔ) пиво и 白酒 (báijiǔ) крепкая зерновая водка — 白酒 это не «белое вино», и перепутать неприятно. Вся столовая лексика целиком разобрана отдельно: <a href="https://kitai-school.ru/article/eda-na-kitayskom" target="_blank" rel="noopener">еда на китайском</a>.</p>
+
+<h2>Чай: <span class="italic">шесть категорий и главная путаница</span></h2>
+
+<p>Китайская классификация делит чай на шесть категорий по способу обработки листа, и названия построены одинаково: цвет плюс 茶.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Шесть категорий китайского чая.</caption>
+  <thead><tr><th>Название</th><th>Пиньинь</th><th>Цвет в названии</th><th>Что это</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">绿茶</span></td><td><i>lǜchá</i></td><td><b>зелёный</b></td><td>самая привычная категория, лист не окисляют</td></tr>
+    <tr><td><span class="han">白茶</span></td><td><i>báichá</i></td><td><b>белый</b></td><td>минимальная обработка, светлый настой</td></tr>
+    <tr><td><span class="han">黄茶</span></td><td><i>huángchá</i></td><td><b>жёлтый</b></td><td>редкая категория</td></tr>
+    <tr><td><span class="han">青茶</span></td><td><i>qīngchá</i></td><td><b>улун</b></td><td>второе название — 乌龙茶 wūlóngchá</td></tr>
+    <tr><td><span class="han">红茶</span></td><td><i>hóngchá</i></td><td><b>красный</b></td><td>это и есть то, что по-русски зовут чёрным</td></tr>
+    <tr><td><span class="han">黑茶</span></td><td><i>hēichá</i></td><td><b>тёмный</b></td><td>сюда относят пуэр — 普洱茶 pǔ'ěrchá</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Вот главная поправка, ради которой стоило затевать таблицу. <b>红茶 — это тот самый чай, который по-русски называется чёрным.</b> Китайское название считает по цвету настоя, русское — по цвету сухого листа, отсюда и расхождение.</p>
+
+<p>Отсюда и частая ошибка: человек хочет привычный чёрный чай, переводит слово дословно и просит 黑茶 — а получает тёмный постферментированный чай, к которому относится пуэр, 普洱茶 (pǔ'ěrchá). Вкус у него плотный, землистый, на ожидаемый не похожий. Ещё одно слово, которое принимают за категорию, — 花茶 (huāchá): это не седьмая категория, а чай с цветами, самый известный — жасминовый 茉莉花茶 (mòlìhuāchá).</p>
+
+<h2>Как заказать: <span class="italic">температура и лёд</span></h2>
+
+<p>Теперь вторая половина дела: в чайной вам зададут два вопроса, и к ним стоит быть готовым.</p>
+
+<figure class="ks-fig"><img src="assets/napitki-info.png" alt="Стакан молочного чая между двумя шкалами: уровни сладости от 正常糖 до 无糖 и уровни льда от 正常冰 до 去冰, плюс 常温 и 热的" width="1200" height="524"><figcaption>Порядок уровней общий; доли сиропа и льда у каждой сети свои.</figcaption></figure>
+
+<p>Минимальный набор ответов: <span class="han">热的</span> (rè de) горячий, <span class="han">冰的</span> (bīng de) со льдом, <span class="han">常温</span> (chángwēn) комнатной температуры. Частица 的 работает как «такой-то», и отвечать можно одним этим словом.</p>
+
+<p>Для воды есть три формы: 热水 (rèshuǐ) горячая, 冰水 (bīngshuǐ) со льдом, 常温水 (chángwēn shuǐ) комнатной температуры. Последнюю просят чаще всего.</p>
+
+<p>Размер стакана спросят тоже: 大杯 (dà bēi) большой, 中杯 (zhōng bēi) средний, 小杯 (xiǎo bēi) маленький. Счётное слово для напитков — 杯, «стакан»: <span class="han">一杯咖啡</span> (yì bēi kāfēi), одна чашка кофе. Как устроены числа, с которыми это слово стоит, разобрано здесь: <a href="https://kitai-school.ru/article/cifry-ot-0-do-10-na-kitayskom" target="_blank" rel="noopener">цифры от 0 до 10 на китайском</a>.</p>
+
+<h2>Молочный чай: <span class="italic">сахар и топпинги</span></h2>
+
+<p>У 奶茶 (nǎichá) свой порядок заказа: сначала напиток, потом уровень сахара, потом лёд, потом топпинг.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Частые топпинги.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Что это</th><th>Пояснение</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">珍珠</span></td><td><i>zhēnzhū</i></td><td><b>тапиока</b></td><td>те самые тёмные шарики; отсюда 珍珠奶茶</td></tr>
+    <tr><td><span class="han">椰果</span></td><td><i>yēguǒ</i></td><td><b>кокосовое желе</b></td><td>кубики, мягче тапиоки</td></tr>
+    <tr><td><span class="han">布丁</span></td><td><i>bùdīng</i></td><td><b>пудинг</b></td><td>по звучанию от английского слова</td></tr>
+    <tr><td><span class="han">仙草</span></td><td><i>xiāncǎo</i></td><td><b>травяное желе</b></td><td>тёмное, с горчинкой</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Самый известный вариант — 珍珠奶茶 (zhēnzhū nǎichá), с тапиокой. 珍珠 дословно «жемчужины».</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица полгода покупала молочный чай и каждый раз жаловалась на одно и то же: слишком сладко. Слов для заказа она не знала и просто показывала на витрину.</p>
+  <p>Выучили шкалу сладости, и она стала просить 半糖. В одной сети это действительно оказалось вдвое меньше. В другой разницы она почти не почувствовала и решила, что её не поняли.</p>
+  <p>Поняли правильно — просто за одним и тем же словом у разных сетей стоят разные доли сиропа. Единой шкалы не существует, и спорить тут не с кем.</p>
+  <p>Пришли к простому решению: называть не уровень, а результат. <b>Фраза «сделайте самый несладкий вариант» работает в любой чайной</b>, а уровни пригождаются там, где вы уже знаете, чего ждать.</p>
+</div>
+
+<p>Фраза, которой эта история закончилась, звучит так: <span class="han">最不甜的那种</span> (zuì bù tián de nà zhǒng) — «самый несладкий вариант». Её понимают везде, и она не требует знания внутренней шкалы конкретной сети.</p>
+
+<p>То же относится и ко льду. <span class="han">少冰</span> в одном месте означает пару кубиков, в другом — половину обычного количества. Если холодное вам не нужно вовсе, надёжнее сказать 去冰 или 常温: эти два слова понимают одинаково везде.</p>
+
+<h2>Кофе <span class="italic">и другие заимствования</span></h2>
+
+<p>Кофейная часть меню устроена проще, чем кажется: почти все названия записаны по звучанию. Знаки в них подобраны под звук, а не под смысл, и переводить их по частям бесполезно.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Кофе в китайском меню.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Перевод</th><th>Как получилось</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">咖啡</span></td><td><i>kāfēi</i></td><td><b>кофе</b></td><td>общее слово</td></tr>
+    <tr><td><span class="han">美式</span></td><td><i>měishì</i></td><td><b>американо</b></td><td>дословно «американский»</td></tr>
+    <tr><td><span class="han">拿铁</span></td><td><i>nátiě</i></td><td><b>латте</b></td><td>по звучанию итальянского слова</td></tr>
+    <tr><td><span class="han">卡布奇诺</span></td><td><i>kǎbùqínuò</i></td><td><b>капучино</b></td><td>четыре знака только ради звучания</td></tr>
+    <tr><td><span class="han">摩卡</span></td><td><i>mókǎ</i></td><td><b>мокко</b></td><td>там же, в кофейной части меню</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Исключение — 美式 (měishì): это не звукоподражание, а сокращение от «американский стиль». По той же модели строятся другие названия с 式, так что слово узнаётся легко.</p>
+
+<p>Полезно знать и две добавки, которые спросят вместе с кофе: 糖 (táng) сахар и 奶 (nǎi) молоко. Отказ строится проще всего через 不要 (bú yào) «не надо»: <span class="han">不要糖</span> — без сахара, <span class="han">不要奶</span> — без молока.</p>
+
+<p>Сама кофейня называется 咖啡店 (kāfēidiàn), чайная — 奶茶店 (nǎichádiàn), если речь о молочном чае, или 茶馆 (cháguǎn), если о традиционной чайной с заваркой в чайнике. Это разные заведения с разным набором напитков, и названия их не путают.</p>
+
+<p>Отсюда полезное наблюдение для всей лексики: <b>если слово выглядит странно и не раскладывается на понятные части — вероятно, это заимствование</b>. 咖啡, 巧克力 (qiǎokèlì) шоколад, 三明治 (sānmíngzhì) сэндвич устроены одинаково.</p>
+
+<h2>Что сказать <span class="italic">в кафе и в магазине</span></h2>
+
+<p>Одиннадцать фраз, которых хватает на любой заказ. Их стоит знать наизусть: в чайной очередь движется быстро, и времени собирать предложение не будет.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Фразы для заказа.</caption>
+  <thead><tr><th>Фраза</th><th>Пиньинь</th><th>Перевод</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">我要一杯奶茶</span></td><td><i>wǒ yào yì bēi nǎichá</i></td><td>мне один молочный чай</td></tr>
+    <tr><td><span class="han">热的，谢谢</span></td><td><i>rè de, xièxie</i></td><td>горячий, спасибо</td></tr>
+    <tr><td><span class="han">少糖，少冰</span></td><td><i>shǎo táng, shǎo bīng</i></td><td>поменьше сахара, поменьше льда</td></tr>
+    <tr><td><span class="han">不要冰</span></td><td><i>bú yào bīng</i></td><td>безо льда</td></tr>
+    <tr><td><span class="han">有常温水吗</span></td><td><i>yǒu chángwēn shuǐ ma</i></td><td>есть вода комнатной температуры?</td></tr>
+    <tr><td><span class="han">加珍珠</span></td><td><i>jiā zhēnzhū</i></td><td>добавьте тапиоку</td></tr>
+    <tr><td><span class="han">大杯还是小杯</span></td><td><i>dà bēi háishi xiǎo bēi</i></td><td>большой стакан или маленький? — это спросят вас</td></tr>
+    <tr><td><span class="han">在这儿喝</span></td><td><i>zài zhèr hē</i></td><td>буду пить здесь</td></tr>
+    <tr><td><span class="han">打包带走</span></td><td><i>dǎbāo dàizǒu</i></td><td>с собой</td></tr>
+    <tr><td><span class="han">不要糖</span></td><td><i>bú yào táng</i></td><td>без сахара</td></tr>
+    <tr><td><span class="han">多少钱</span></td><td><i>duōshao qián</i></td><td>сколько стоит?</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Обратите внимание на 大杯还是小杯 — это вопрос к вам, а не ваша реплика. Конструкция 还是 означает выбор между двумя вариантами, и ответом будет просто одно из названных слов.</p>
+
+<p>Ещё одна фраза, которая выручает всегда: <span class="han">这个</span> (zhège) — «вот это», с указанием на витрину или на картинку в меню. Названия в чайных часто придуманные, и разобрать их на слух трудно даже с хорошим уровнем, так что показать — не стыдно, а разумно.</p>
+
+<p>Если нужен более широкий набор дорожных фраз — для аэропорта, такси, отеля и рынка, — он собран отдельно: <a href="https://kitai-school.ru/article/kitajskij-yazyk-dlya-puteshestvij-50-fraz" target="_blank" rel="noopener">китайский для путешествий</a>.</p>
+
+<h2>Чай <span class="italic">в китайской повседневности</span></h2>
+
+<p>Про чайную церемонию написано много, и пересказывать её здесь я не буду: это отдельная большая тема. Скажу о том, что видно каждый день и что касается вас как гостя.</p>
+
+<p><b>Термос — обычная вещь.</b> Его носят с собой на работу, в поезд и на прогулку; кипяток наливают из общих кулеров, которые стоят в вокзалах, поездах и офисах. Для приезжего это первое, что бросается в глаза.</p>
+
+<p><b>Чай подливают соседям, а не себе</b> — особенно старшим. Это часть застольного порядка, и разобран он у нас в статье про этикет: <a href="https://kitai-school.ru/article/kitayskiy-tiket-obscheniya-uvajenie-k-starshim-ierarhiya-i-ponyatie-lica" target="_blank" rel="noopener">китайский этикет общения</a>.</p>
+
+<p><b>Чай предлагают гостю сразу</b> — в офисе, в магазине, дома. Отказываться не нужно, даже если пить не хочется: чашку можно просто взять и поставить рядом. Предложение здесь значит внимание к пришедшему, а не вопрос о жажде.</p>
+
+<p>Фраза, с которой чай подают, короткая: <span class="han">请喝茶</span> (qǐng hē chá) — «пожалуйста, пейте чай». Ответить достаточно 谢谢. Если чашку подливают, когда вы ещё пьёте, это не намёк поторопиться, а обычная вежливость: пустая чашка у гостя считается упущением хозяина.</p>
+
+<p>А вот чего я делать не стану — рассказывать о пользе зелёного чая и вреде холодной воды. Это область медицинских утверждений, проверить которые в рамках статьи о лексике невозможно. <b>Горячая вода в кафе — принятый порядок</b>, и этого объяснения достаточно, чтобы спокойно попросить холодную, если хочется холодной.</p>
+
+<div class="cta">
+  <p>Заказать напиток — первая маленькая победа в языке, и она случается уже на второй неделе занятий. Мы учим китайскому с нуля, с произношением и живой речью — <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как будет «напитки» на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Общее слово — 饮料 (yǐnliào). В меню им обычно подписан раздел, а внутри уже идут конкретные названия: 水 (shuǐ) вода, 茶 (chá) чай, 咖啡 (kāfēi) кофе, 奶茶 (nǎichá) молочный чай, 果汁 (guǒzhī) сок. Глагол «пить» — 喝 (hē), и с него начинается большинство фраз о напитках.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие напитки на китайском языке нужно выучить в первую очередь?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Десяти слов хватает на кафе и магазин: 水, 矿泉水, 茶, 奶茶, 咖啡, 牛奶, 酸奶, 豆浆, 果汁, 可乐. К ним стоит сразу добавить слова заказа — 热的 «горячий», 冰的 «со льдом», 常温 «комнатной температуры» и уровни сахара, потому что без них вы получите напиток по умолчанию.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему 红茶 переводят как «красный чай», если это чёрный?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что китайская классификация считает по цвету настоя, а европейская — по цвету сухого листа. То, что в России называют чёрным чаем, в Китае называется 红茶 (hóngchá) — «красный». А 黑茶 (hēichá), дословно «чёрный», это отдельная категория тёмных постферментированных чаёв, куда относят пуэр.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как попросить холодную воду в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сказать 冰水 (bīngshuǐ) — вода со льдом, или 常温水 (chángwēn shuǐ) — вода комнатной температуры. Это важно, потому что по умолчанию в кафе приносят 热水 (rèshuǐ), горячую воду. Никакой ошибки официанта здесь нет: так принято, и к просьбе о холодной отнесутся спокойно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое 奶茶 и чем отличается 珍珠奶茶?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>奶茶 (nǎichá) — молочный чай, чай с молоком или сливочной основой. 珍珠奶茶 (zhēnzhū nǎichá) — тот же напиток с тапиокой: 珍珠 дословно «жемчужины», это тёмные шарики на дне стакана. Кроме тапиоки часто предлагают 椰果 кокосовое желе, 布丁 пудинг и 仙草 травяное желе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сказать «без сахара» по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>无糖 (wú táng). Рядом с ним в чайных используют 微糖 (wēi táng) «совсем чуть-чуть», 半糖 (bàn táng) «наполовину» и 少糖 (shǎo táng) «поменьше». Порядок уровней общий, но доли у каждой сети свои, поэтому надёжнее всего просить самый несладкий вариант, а не называть уровень.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как спросить, есть ли горячий вариант?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сказать 有热的吗 (yǒu rè de ma) — «есть горячий?». По той же модели строятся и остальные вопросы: 有冰的吗 — «есть со льдом?», 有常温水吗 — «есть вода комнатной температуры?». Конструкция 有…吗 означает «есть ли…», и она выручает в любом магазине, не только с напитками.</p></div>
+  </details>
+</div>
+
+<p class="sign">Закажите сегодня что-нибудь по-китайски! <span class="han">我要一杯奶茶</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Названия напитков и категории чая</b> даны в стандартной классификации по шести категориям: 绿茶, 白茶, 黄茶, 青茶 (乌龙茶), 红茶, 黑茶. Расхождение русского «чёрного» и китайского 红茶 объясняется разными основаниями: цвет настоя против цвета сухого листа.</li>
+    <li><b>Уровни сладости и льда</b> — ходовой набор формулировок чайных сетей: 正常糖, 少糖, 半糖, 微糖, 无糖 и 正常冰, 少冰, 去冰, плюс 常温 и 热的. Порядок уровней общий, но доли у каждой сети свои, и в статье это сказано прямо; конкретных процентов не приводится намеренно.</li>
+    <li><b>Топпинги</b> 珍珠, 椰果, 布丁, 仙草 перечислены как частый набор, а не как обязательный стандарт: ассортимент у каждой сети свой.</li>
+    <li><b>Кофейные названия</b> разобраны как фонетические заимствования; 美式 отмечено отдельно как сокращение от «американский стиль», а не звукоподражание.</li>
+    <li><b>Чего в статье нет намеренно:</b> цен на напитки — они меняются, а порядок цен разобран в отдельном материале; процентов сахара; пересказа чайной церемонии; утверждений о пользе и вреде напитков для здоровья; советов об употреблении алкоголя.</li>
+    <li><b>Фразы для заказа</b> даны в разговорной форме, которой пользуются в кафе: короткие конструкции с 要, 不要 и 有…吗. Это не книжный стиль, а то, что реально звучит у стойки.</li>
+    <li>Практика Kitai School: заказы учеников в китайских кафе, типичные ошибки с 黑茶 и уровнями сладости, а также наблюдение, что просьба о самом несладком варианте работает надёжнее названия уровня.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Название — половина дела: напиток ещё нужно заказать горячим, со льдом или без сахара</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
