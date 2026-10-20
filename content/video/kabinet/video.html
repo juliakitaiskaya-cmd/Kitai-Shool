@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Кабинет ученика — видео</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --brick:#A41E3A; --ink:#2C2420; --ink-2:#5A4F45; --taupe:#8B7D6B; --taupe-soft:#B8AC9C;
+    --cream:#FAF7F2; --surface:#FFFFFF; --hairline:#EAE3D8;
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-sans:'Inter',Arial,sans-serif;
+    --font-han:'Noto Serif SC',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#000}
+  #stage{position:relative; width:1080px; height:1920px; overflow:hidden; background:var(--cream); color:var(--ink);
+    font-family:var(--font-sans); -webkit-font-smoothing:antialiased}
+  #stage::before{content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+    background:radial-gradient(1300px 900px at 50% -8%, #FFFFFF 0%, rgba(255,255,255,0) 58%),
+               radial-gradient(1100px 900px at 50% 106%, rgba(164,30,58,.09) 0%, rgba(164,30,58,0) 62%)}
+  .ghost-han{position:absolute; right:-110px; top:300px; z-index:0; font-family:var(--font-han); font-weight:700;
+    font-size:620px; line-height:.8; color:var(--ink); opacity:.04}
+
+  .brandbar{position:absolute; left:80px; right:80px; top:64px; z-index:8; display:flex; align-items:center; justify-content:space-between}
+  .brandbar img{height:58px}
+  .brandbar .site{font-size:24px; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe); font-weight:600}
+
+  .caption{position:absolute; left:80px; right:80px; top:170px; z-index:7}
+  .cap{position:absolute; left:0; right:0; top:0; opacity:0}
+  .cap .seal{display:inline-flex; align-items:center; justify-content:center; width:68px; height:68px; border-radius:16px;
+    background:var(--brick); color:#FCE9C8; font-family:var(--font-han); font-weight:700; font-size:40px; margin-bottom:22px;
+    box-shadow:0 12px 26px rgba(164,30,58,.28); transform:rotate(-4deg)}
+  .cap .title{font-family:var(--font-display); font-weight:700; font-style:italic; font-size:78px; line-height:1.04; color:var(--ink)}
+  .cap .sub{font-size:30px; color:var(--brick); margin-top:20px; line-height:1.4; font-weight:700}
+
+  /* окно с экраном кабинета */
+  .win{position:absolute; left:80px; top:560px; width:920px; height:760px; z-index:6; opacity:0; border-radius:34px; overflow:hidden;
+    background:#F6F0E8; box-shadow:0 40px 90px rgba(44,36,32,.18), 0 0 0 1px var(--hairline)}
+  .win .bar{position:absolute; left:0; right:0; top:0; height:0}
+  .win img{position:absolute; left:0; top:0; transform-origin:0 0; max-width:none}
+
+  .tag{position:absolute; left:80px; right:80px; top:1360px; z-index:7; opacity:0; display:block;
+    background:#fff; border:1px solid var(--hairline); border-radius:28px; padding:26px 34px; box-shadow:0 18px 44px rgba(44,36,32,.10)}
+  .tag b{display:block; font-size:36px; font-weight:800; color:var(--ink); margin-bottom:8px}
+  .tag span{font-size:30px; line-height:1.35; color:var(--ink-2)}
+
+  .final{position:absolute; left:80px; right:80px; top:340px; z-index:9; opacity:0}
+  .final .title{font-size:70px; font-weight:800; line-height:1.1; letter-spacing:-.02em; color:var(--ink)}
+  .final .title em{font-style:normal; color:var(--brick)}
+  .final .sub{font-size:32px; color:var(--ink-2); margin-top:24px; line-height:1.45}
+  .final .cta{margin-top:40px; background:#fff; border:1px solid var(--hairline); border-radius:36px; padding:36px 44px;
+    box-shadow:0 24px 60px rgba(44,36,32,.10)}
+  .final .cta .label{font-size:26px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--taupe); margin-bottom:12px}
+  .final .cta .big{font-size:42px; font-weight:800; color:var(--brick); white-space:nowrap}
+  .collage{display:flex; gap:28px; margin-top:56px; padding:0 8px}
+  .collage .cl{flex:1; height:400px; border-radius:30px; overflow:hidden; background:#fff; position:relative;
+    box-shadow:0 30px 70px rgba(44,36,32,.16), 0 0 0 1px var(--hairline)}
+  .collage .cl img{position:absolute; max-width:none}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="ghost-han">学</div>
+  <div class="brandbar"><img src="../../../design-system/assets/kitai-logo.svg" alt="Kitai School"><div class="site">kitai-school.ru</div></div>
+
+  <div class="caption">
+    <div class="cap" id="cap0"><div class="seal">窗</div><div class="title">Как выглядит<br>кабинет ученика?</div><div class="sub">Заглянем в демо-кабинет</div></div>
+    <div class="cap" id="cap1"><div class="seal">今</div><div class="title">С чего начать<br>день?</div><div class="sub">→ Главная: что сегодня и какая цель</div></div>
+    <div class="cap" id="cap2"><div class="seal">学</div><div class="title">Где вопросы<br>и задания?</div><div class="sub">→ Моя учёба</div></div>
+    <div class="cap" id="cap3"><div class="seal">练</div><div class="title">Что повторять<br>и учить?</div><div class="sub">→ Тренировка подбирает режим сама</div></div>
+    <div class="cap" id="cap4"><div class="seal">说</div><div class="title">Где<br>поговорить?</div><div class="sub">→ Практика: сценарии и свободный разговор</div></div>
+    <div class="cap" id="cap5"><div class="seal">词</div><div class="title">Где взять<br>слова?</div><div class="sub">→ Словари</div></div>
+  </div>
+
+  <div id="wins"></div>
+
+  <div class="final" id="final">
+    <div class="title">Заглянуть в кабинет<br><em>можно изнутри</em></div>
+    <div class="sub">Есть демо-кабинет: те же разделы, только без вашего расписания и оценок.</div>
+    <div class="cta"><div class="label">Как попасть</div><div class="big">Пишите в личные сообщения</div></div>
+    <div class="collage">
+      <div class="cl" style="transform:rotate(-2.5deg)"><img src="shots/trenirovka.webp" style="width:790px; left:-110px; top:-30px" alt=""></div>
+      <div class="cl" style="transform:rotate(2deg); margin-top:36px"><img src="shots/praktika.webp" style="width:960px; left:-270px; top:-58px" alt=""></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* x, y — левый верхний угол показываемого фрагмента в пикселях исходного скриншота; s — увеличение */
+const SCENES = [
+  { id: 'glavnaya',   file: 'shots/glavnaya.webp',   w: 1876, h: 917, cap: 1, dur: 7.0, tags: [
+      { x: 235, y: 0,   s: 0.8,  name: 'Что сегодня',  say: 'Ближайший урок и серия занятий — всё на одном экране.' },
+      { x: 235, y: 400, s: 1.15, name: 'Цель на день', say: 'Выучить ещё 5 слов; ниже — сколько слов на повторение и сколько новых.' } ] },
+  { id: 'uchyoba',    file: 'shots/uchyoba.webp',    w: 1864, h: 923, cap: 2, dur: 7.0, tags: [
+      { x: 240, y: 0, s: 0.8,  name: 'Спросить про китайский', say: 'Непонятную тему, слово или иероглиф можно спросить своими словами.' },
+      { x: 240, y: 0, s: 0.66, name: 'Всё по уроку', say: 'Вкладки: задания, расписание, итоги урока и тексты по уроку.' } ] },
+  { id: 'trenirovka', file: 'shots/trenirovka.webp', w: 1881, h: 917, cap: 3, dur: 7.0, tags: [
+      { x: 240, y: 0,   s: 0.66, name: 'Слова программы', say: 'Полоса показывает, сколько слов из программы уже выучено.' },
+      { x: 330, y: 400, s: 0.85, name: 'Изучить новое',   say: 'Режим подбирается автоматически, на занятие уходит 5–8 минут.' } ] },
+  { id: 'praktika',   file: 'shots/praktika.webp',   w: 1920, h: 917, cap: 4, dur: 7.0, tags: [
+      { x: 240, y: 0,   s: 0.7,  name: 'Три вида практики', say: 'Сценарии, свободный разговор и HSKK.' },
+      { x: 525, y: 400, s: 1.0,  name: 'Сценарии', say: 'Кафе, знакомство, магазин: заказать, познакомиться, узнать цену.' } ] },
+  { id: 'slovari',    file: 'shots/slovari.webp',    w: 1890, h: 923, cap: 5, dur: 7.0, tags: [
+      { x: 240, y: 0,   s: 0.8,  name: 'Большой словарь', say: 'Словари по HSK, New HSK 3.0, YCT, ESTC и сборник из 360 фраз.' },
+      { x: 240, y: 400, s: 1.0,  name: 'Слова по урокам', say: 'Слова можно выбрать по уроку и добавить в свой тренажёр кнопкой «Добавить».' } ] }
+];
+const WH = 760;
+const INTRO = 4.4, FINAL = 6.0;
+let acc = INTRO;
+SCENES.forEach(s => { s.start = acc; s.end = acc + s.dur; acc += s.dur; });
+const T_FINAL = acc;
+window.VIDEO_DURATION = acc + FINAL;
+
+const $ = id => document.getElementById(id);
+const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const back = x => { const c = 1.5; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const seg = (t, s, d) => clamp((t - s) / d, 0, 1);
+const win = (t, a, b, f = 0.45) => easeInOut(seg(t, a, f)) * (1 - easeInOut(seg(t, b - f, f)));
+
+SCENES.forEach(s => {
+  const w = document.createElement('div'); w.className = 'win'; w.id = 'win-' + s.id;
+  w.innerHTML = `<img id="img-${s.id}" src="${s.file}" width="${s.w}" height="${s.h}" alt="">`;
+  $('wins').appendChild(w);
+  const tag = document.createElement('div'); tag.className = 'tag'; tag.id = 'tag-' + s.id; $('wins').appendChild(tag);
+});
+const caps = [0,1,2,3,4,5].map(i => $('cap' + i));
+
+window.setTime = function(t){
+  caps.forEach(c => c.style.opacity = 0);
+  if (t < SCENES[0].start) caps[0].style.opacity = win(t, 0.15, SCENES[0].start).toFixed(3);
+  SCENES.forEach(s => { if (t >= s.start && t < s.end) caps[s.cap].style.opacity = win(t, s.start, s.end).toFixed(3); });
+
+  SCENES.forEach(s => {
+    const box = $('win-' + s.id), img = $('img-' + s.id), tag = $('tag-' + s.id);
+    const inP = easeOut(seg(t, s.start + 0.2, 0.7)), outP = easeInOut(seg(t, s.end - 0.4, 0.4));
+    box.style.opacity = (inP * (1 - outP)).toFixed(3);
+    box.style.transform = `translateY(${Math.round(50 * (1 - inP) - 30 * outP)}px) scale(${(0.96 + 0.04 * back(seg(t, s.start + 0.2, 0.8))).toFixed(4)})`;
+
+    // «камера»: фрагмент плавно переезжает от первой подсказки ко второй
+    const n = s.tags.length, t0 = s.start + 1.4, per = (s.end - 0.4 - t0) / n;
+    const slot = clamp(Math.floor((t - t0) / per), 0, n - 1);
+    const view = c => {
+      const vh = WH / c.s, oy = s.h * c.s < WH ? (WH - s.h * c.s) / 2 : 0;
+      return { x: c.x, y: clamp(c.y, 0, Math.max(0, s.h - vh)), s: c.s, oy };
+    };
+    const A = view(s.tags[Math.max(0, slot - 1)]), B = view(s.tags[slot]);
+    const kk = slot === 0 ? 1 : easeInOut(seg(t, t0 + slot * per, 0.9));
+    const L = (p, q) => p + (q - p) * kk;
+    const x = L(A.x, B.x), y = L(A.y, B.y), sc = L(A.s, B.s), oy = L(A.oy, B.oy);
+    img.style.transform = `translate(${(-x * sc).toFixed(1)}px, ${(oy - y * sc).toFixed(1)}px) scale(${sc.toFixed(4)})`;
+
+    // подпись под окном
+    if (t >= t0) {
+      const c = s.tags[slot];
+      tag.innerHTML = `<b>${c.name}</b><span>${c.say}</span>`;
+      const tIn = easeOut(seg(t, t0 + slot * per + 0.15, 0.4));
+      tag.style.opacity = (tIn * (1 - outP)).toFixed(3);
+      tag.style.transform = `translateY(${Math.round(20 * (1 - tIn))}px)`;
+    } else tag.style.opacity = 0;
+  });
+
+  const fIn = easeOut(seg(t, T_FINAL + 0.1, 0.8));
+  $('final').style.opacity = fIn.toFixed(3);
+  $('final').style.transform = `translateY(${Math.round(36 * (1 - fIn))}px)`;
+  $('final').querySelector('.cta').style.transform = `scale(${(0.96 + 0.04 * back(seg(t, T_FINAL + 0.6, 0.7))).toFixed(4)})`;
+};
+window.setTime(0);
+</script>
+</body>
+</html>
