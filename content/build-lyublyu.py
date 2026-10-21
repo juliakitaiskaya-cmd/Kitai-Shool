@@ -7,8 +7,8 @@ OUT = "ya-tebya-lyublyu-po-kitayski.html"
 SLUG = "ya-tebya-lyublyu-po-kitayski"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/lyublyu-hero.png"
-FIG = "assets/lyublyu-info.png"
+HERO = "https://static.tildacdn.com/tila3036-6131-4866-b730-393663336533/lyublyu-hero.png"
+FIG = "https://static.tildacdn.com/tila3165-3731-4164-b838-353538373339/lyublyu-info.png"
 HERO_ALT = ("Почтовая открытка с надписью 我爱你 wǒ ài nǐ «я тебя люблю» и маркой "
             "с иероглифом 爱 и числом 520")
 FIG_ALT = ("Тоновые контуры трёх слогов фразы 我爱你: третий тон у 我, четвёртый у 爱 "
