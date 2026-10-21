@@ -7,8 +7,8 @@ OUT = "siniy-cvet-na-kitayskom.html"
 SLUG = "siniy-cvet-na-kitayskom"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/siniy-hero.png"
-FIG = "assets/siniy-info.png"
+HERO = "https://static.tildacdn.com/tild6633-6139-4231-b031-383033636364/siniy-hero.png"
+FIG = "https://static.tildacdn.com/tild6238-3064-4836-a466-323564306363/siniy-info.png"
 HERO_ALT = ("Бирка с иероглифом 蓝 lán «синий», пришитая к куску синей ткани")
 FIG_ALT = ("Лист синьки с четырьмя словами: 蓝图 чертёж и план, 蓝领 рабочие специальности, "
            "蓝牙 Bluetooth, 蓝海 рынок без конкурентов")
