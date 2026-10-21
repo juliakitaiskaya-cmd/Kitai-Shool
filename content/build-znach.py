@@ -7,8 +7,8 @@ OUT = "chto-oznachayut-kitayskie-ieroglify.html"
 SLUG = "chto-oznachayut-kitayskie-ieroglify"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/znachenie-hero.png"
-FIG = "assets/znachenie-info.png"
+HERO = "https://static.tildacdn.com/tild6562-6438-4139-b234-636533356439/znachenie-hero.png"
+FIG = "https://static.tildacdn.com/tild3366-3433-4838-b766-386463346632/znachenie-info.png"
 HERO_ALT = ("Экран телефона с рукописным вводом иероглифа 生 и строкой подсказок словаря")
 FIG_ALT = ("Четыре слова со знаком 生: 生日 день рождения, 学生 ученик, 生肉 сырое мясо "
            "и 陌生 незнакомый — в каждом знак значит своё")
