@@ -1,0 +1,458 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/chernyy-cvet-na-kitayskom#article",
+      "headline": "Чёрный на китайском: иероглиф 黑, слова от 黑板 до 黑马 и значение «незаконный», которого нет в русском",
+      "description": "Разбор иероглифа 黑 (hēi) и лексики с ним: устройство знака из двенадцати черт с дымоходом сверху и 炎 внизу, объяснение из словаря «Шовэнь» через копоть от огня, ключ № 203 по «Канси». Цепочка значений от копоти к чёрному цвету, затем к скрытому и незаконному. Слова-цвет 黑板, 黑夜, 黑眼睛, 黑白; слова о нелегальном 黑市, 黑车, 黑中介, 黑名单, 黑工; заимствование 黑客, выражение 背黑锅 и пара 黑 с 白 в 颠倒黑白 и 白纸黑字.",
+      "image": "assets/chernyy-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-21",
+      "dateModified": "2026-10-21",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/chernyy-cvet-na-kitayskom",
+      "about": {
+        "@type": "Thing",
+        "name": "Иероглиф 黑 и слова с ним"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/chernyy-cvet-na-kitayskom#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как будет «чёрный» на китайском?", "acceptedAnswer": {"@type": "Answer", "text": "黑 (hēi), первый тон. В речи обычно говорят 黑色 (hēisè) — «чёрный цвет», по общей схеме: название цвета плюс знак 色. Чёрные глаза — 黑眼睛, чёрно-белое кино — 黑白电影, классная доска — 黑板, дословно «чёрная доска»."}},
+        {"@type": "Question", "name": "Как устроен иероглиф 黑?", "acceptedAnswer": {"@type": "Answer", "text": "В нём двенадцать черт. Верхнюю часть знака описывают как дымоход, нижнюю — как 炎, два огня, то есть пламя. Словарь «Шовэнь» объясняет 黑 как цвет, который даёт копоть от огня. Реконструкции древних форм расходятся в деталях, но направление общее: от копоти к названию цвета. В системе ключей «Канси» это ключ № 203."}},
+        {"@type": "Question", "name": "Почему 黑 в словах часто значит «незаконный»?", "acceptedAnswer": {"@type": "Answer", "text": "Это цепочка переносов: копоть — чёрный цвет — тёмное и скрытое — то, что делается тайно, а потому незаконно. Отсюда 黑市 «чёрный рынок», 黑车 «нелегальное такси», 黑中介 «недобросовестный посредник», 黑工 «работа без разрешения». В русском у слова «чёрный» есть похожий оттенок, но в китайском он заметно продуктивнее."}},
+        {"@type": "Question", "name": "Что значит 背黑锅?", "acceptedAnswer": {"@type": "Answer", "text": "背黑锅 (bēi hēiguō) — отдуваться за чужую вину, оказаться крайним. Дословно «нести чёрный котёл». Происхождение выражения объясняют по-разному, и надёжной версии я не нашла, поэтому привожу только значение: оно устойчивое и встречается часто."}},
+        {"@type": "Question", "name": "Что такое 黑客 и 黑马?", "acceptedAnswer": {"@type": "Answer", "text": "黑客 (hēikè) — хакер: слово записано по звучанию английского hacker, а знаки подобраны так, что складывается «чёрный гость». 黑马 (hēimǎ) — тёмная лошадка, неожиданный победитель; употребляется так же, как русское выражение, в спорте, выборах и конкурсах."}},
+        {"@type": "Question", "name": "Чёрный в Китае — траурный цвет?", "acceptedAnswer": {"@type": "Answer", "text": "Короткий ответ: траурным считается прежде всего белый, а чёрный скорее цвет формальности и серьёзности, хотя в современном быту он тоже появляется в траурном контексте. Подробно символика цветов, включая белый, чёрный и зелёный, разобрана в нашей отдельной статье о значении цветов в Китае — здесь мы занимаемся словами."}},
+        {"@type": "Question", "name": "Какие ещё иероглифы содержат ключ 黑?", "acceptedAnswer": {"@type": "Answer", "text": "Самые полезные два: 墨 (mò) «тушь» — сверху 黑, снизу 土 «земля», отсюда 墨水 чернила и 水墨画 живопись тушью; и 默 (mò) «молчать» — 沉默 молчание, 默默 молча. Знаков с этим ключом немного, зато слов, начинающихся с самого 黑, очень много."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/chernyy-cvet-na-kitayskom#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Чёрный на китайском: иероглиф 黑, слова от 黑板 до 黑马 и значение «незаконный», которого нет в русском", "item": "https://kitai-school.ru/article/chernyy-cvet-na-kitayskom"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Чёрный на китайском: <span class="italic">иероглиф 黑, слова от 黑板 до 黑马 и значение «незаконный», которого нет в русском</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-21">21 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/chernyy-hero.png" alt="Брусок китайской туши с тиснёным золотым иероглифом 黑 hēi «чёрный»" width="1200" height="630"></figure>
+
+<p class="passport">Чёрный по-китайски — 黑 (hēi), и выучить это слово несложно. Интереснее другое: <b>у знака 黑 длинная цепочка значений, и в конце её стоит «незаконный»</b>. 黑市 — чёрный рынок, 黑车 — нелегальное такси, 黑中介 — недобросовестный посредник. Разберём, как устроен сам иероглиф, какие слова с ним бывают и почему эту группу стоит узнавать в первую очередь.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Чёрный — 黑</b> (hēi), в речи 黑色. <b>Знак объясняют через копоть:</b> дымоход сверху, пламя внизу. <b>Цепочка значений:</b> копоть, чёрный цвет, скрытое, незаконное. <b>黑车 и 黑中介</b> — предупреждения, а не просто слова. <b>黑客 — хакер</b>, записанный по звучанию. <b>背黑锅</b> — отдуваться за чужую вину. <b>Символика цветов</b> разобрана у нас отдельно.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">как будет чёрный на китайском</span></h2>
+
+<p>黑 (hēi), первый тон — ровный и высокий. В речи, как и с другими цветами, чаще звучит форма с 色: 黑色 (hēisè), «чёрный цвет». Схема общая для всех цветов, и подробно она разобрана в статье про <a href="https://kitai-school.ru/article/cveta-na-kitayskom-s-transkripciey" target="_blank" rel="noopener">цвета на китайском с транскрипцией</a>.</p>
+
+<p>Слово работает и буквально, и в переносном смысле. Буквально — это цвет: 黑头发 чёрные волосы, 黑衣服 чёрная одежда. Переносно — всё тёмное, скрытое и дурное, и об этом будет большая часть статьи.</p>
+
+<p>Ещё одно значение, промежуточное между этими двумя, — «тёмный» в смысле освещённости: 天黑了 (tiān hēi le) значит «стемнело», и к цвету предмета это уже не относится. Фраза бытовая, её слышишь каждый вечер.</p>
+
+<p>Отдельно сразу скажу, чего здесь не будет. <b>Символику чёрного — связь со стихией воды, севером и трауром — мы разбирали в отдельной статье</b>, и пересказывать её я не стану: <a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значение цветов в Китае</a>. Эта статья про слово и про слова с ним.</p>
+
+<h2>Как устроен <span class="italic">иероглиф 黑</span></h2>
+
+<p>Знак непростой на вид, но логика в нём есть, и она объясняет всю дальнейшую лексику.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Карточка знака 黑.</caption>
+  <thead><tr><th>Что</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td><b>Чтение</b></td><td>hēi, первый тон</td></tr>
+    <tr><td><b>Значение</b></td><td>чёрный; тёмный; скрытый; дурной</td></tr>
+    <tr><td><b>Черт</b></td><td>двенадцать</td></tr>
+    <tr><td><b>Устройство</b></td><td>сверху часть, которую описывают как дымоход, внизу 炎 — пламя</td></tr>
+    <tr><td><b>В системе ключей</b></td><td>ключ № 203 по словарю «Канси»</td></tr>
+    <tr><td><b>В речи</b></td><td>обычно 黑色 (hēisè) — «чёрный цвет»</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Что внутри.</b> Нижняя часть знака — 炎 (yán), два огня друг над другом, то есть сильное пламя. Верхнюю часть описывают как дымоход или отверстие, через которое выходит дым. Словарь «Шовэнь» объясняет 黑 прямо: это цвет, который даёт копоть от огня.</p>
+
+<p>Оговорюсь честно: <b>реконструкции древних форм знака расходятся в деталях</b>. Разные исследователи видят в верхней части разные предметы, и единой картины нет. Но направление у всех объяснений одно: от огня и копоти к названию цвета.</p>
+
+<p>Для практики важнее другое. 黑 — не только знак, но и ключ: по системе словаря «Канси» это ключ номер двести три. О том, как ключ подсказывает смысл незнакомого знака, у нас есть отдельный материал — <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey" target="_blank" rel="noopener">значение ключей в китайских иероглифах</a>.</p>
+
+<p>Знаков с этим ключом немного, но два из них стоит знать. <span class="han">墨</span> (mò) — тушь: сверху 黑, снизу 土 «земля», и значение прозрачно, ведь тушь делали из сажи. Отсюда 墨水 (mòshuǐ) чернила и 水墨画 (shuǐmòhuà) живопись тушью. Второй знак — <span class="han">默</span> (mò), «молчать»: 沉默 (chénmò) молчание, 默默 (mòmò) молча, без слов.</p>
+
+<p>Зато слов, которые начинаются с 黑, очень много, и смысл в них держится на той самой цепочке от копоти к темноте. Цепочка эта короткая и понятная: копоть даёт название цвету, цвет переносится на темноту, темнота — на всё, что делается скрытно, а скрытное легко оказывается незаконным. Каждый шаг здесь объясним, и именно поэтому группы слов не нужно зубрить по отдельности. Разберём их по порядку: сначала безобидные, потом те, что служат предупреждением.</p>
+
+<h2>Слова, где чёрный — <span class="italic">это просто цвет</span></h2>
+
+<p>Начнём с безобидной части. Здесь 黑 означает ровно то, что написано, и никаких вторых смыслов искать не нужно.</p>
+
+<figure class="ks-fig"><img src="assets/chernyy-info.png" alt="Три группы слов с иероглифом 黑: просто цвет — 黑板, 黑夜, 黑眼睛; тайное и скрытое — 黑暗, 黑名单, 黑客; незаконное — 黑市, 黑车, 黑中介" width="1200" height="432"><figcaption>Одна цепочка значений: копоть, цвет, скрытое, незаконное.</figcaption></figure>
+
+<div class="table-wrap">
+<table>
+  <caption>Чёрный как цвет.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Значение</th><th>Пояснение</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">黑板</span></td><td><i>hēibǎn</i></td><td><b>классная доска</b></td><td>дословно «чёрная доска»</td></tr>
+    <tr><td><span class="han">黑夜</span></td><td><i>hēiyè</i></td><td><b>тёмная ночь</b></td><td>в отличие от нейтрального 夜晚</td></tr>
+    <tr><td><span class="han">黑眼睛</span></td><td><i>hēi yǎnjing</i></td><td><b>чёрные глаза</b></td><td>обычное описание внешности</td></tr>
+    <tr><td><span class="han">黑白</span></td><td><i>hēibái</i></td><td><b>чёрно-белый</b></td><td>о фотографии, кино, печати</td></tr>
+    <tr><td><span class="han">黑色</span></td><td><i>hēisè</i></td><td><b>чёрный цвет</b></td><td>базовая форма для описания предметов</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Самое употребительное в этом списке — 黑板. Классную доску называют чёрной независимо от того, какого она цвета на самом деле: слово закрепилось и стало названием предмета. Рядом живёт 黑板报 (hēibǎnbào) — стенгазета, которую в китайских школах рисуют мелом прямо на доске.</p>
+
+<p>Пара 黑夜 и 夜晚 (yèwǎn) показывает оттенок: второе — нейтральное «ночь, вечернее время», первое подчёркивает темноту. Поэтому 黑夜 чаще встречается в книжной речи и в описаниях, а в разговоре о времени берут 晚上.</p>
+
+<h2>Когда 黑 значит <span class="italic">«незаконный»</span></h2>
+
+<p>А вот группа, ради которой стоило всё затевать. В этих словах 黑 к цвету отношения не имеет: оно означает, что дело делается в обход правил.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Чёрный как «нелегальный».</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Значение</th><th>О чём речь</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">黑市</span></td><td><i>hēishì</i></td><td><b>чёрный рынок</b></td><td>торговля вне закона, в том числе валютная</td></tr>
+    <tr><td><span class="han">黑车</span></td><td><i>hēichē</i></td><td><b>нелегальное такси</b></td><td>машина без лицензии; цену назначают на месте</td></tr>
+    <tr><td><span class="han">黑中介</span></td><td><i>hēi zhōngjiè</i></td><td><b>недобросовестный посредник</b></td><td>чаще всего о жилье и трудоустройстве</td></tr>
+    <tr><td><span class="han">黑名单</span></td><td><i>hēi míngdān</i></td><td><b>чёрный список</b></td><td>и в быту, и в документах</td></tr>
+    <tr><td><span class="han">黑工</span></td><td><i>hēigōng</i></td><td><b>нелегальная работа</b></td><td>о работе без разрешения</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица прилетела в Китай вечером и у вокзала села в машину, которую предложил человек с табличкой. Довёз он нормально и вёл себя вежливо, но взял заметно больше обычного.</p>
+  <p>На занятии она рассказала об этом скорее как о забавном случае. Мы разобрали слово, которое ей тогда не встретилось: 黑车 — «чёрная машина», то есть такси без лицензии.</p>
+  <p>Самое обидное выяснилось потом. Предупреждение висело прямо у выхода из вокзала, крупными знаками. Прочитать его она не могла, а картинка там была такая же, как на всех остальных объявлениях.</p>
+  <p><b>Знак 黑 в составе слова часто работает предупреждением.</b> Узнавать его стоит раньше, чем выучишь само слово: даже если вы не разберёте вторую часть, уже понятно, что речь о чём-то нелегальном.</p>
+</div>
+
+<p>Практический вывод из этой истории простой. <b>Если в объявлении или в предупреждении вы видите знакомый знак 黑, это почти наверняка про нелегальное</b> — и вторую часть слова можно посмотреть позже, а решение принять сразу.</p>
+
+<p>Пара слов пригодится и в дороге, и при поиске жилья: 黑车 вам предложат у вокзала или аэропорта, 黑中介 встретится при аренде квартиры. Базовые дорожные фразы, с которыми проще отказаться и объясниться, собраны отдельно: <a href="https://kitai-school.ru/article/kitajskij-yazyk-dlya-puteshestvij-50-fraz" target="_blank" rel="noopener">китайский язык для путешествий</a>.</p>
+
+<p>Противоположность этой группе тоже есть, и её полезно знать: 正规 (zhèngguī) значит «официальный, по правилам». 正规出租车 — лицензированное такси, 正规中介 — агентство с документами. Если спрашиваете совета у местных, это слово в вопросе сразу показывает, что вы понимаете разницу.</p>
+
+<p>Заодно стоит запомнить, как лицензированное такси выглядит в словах: у него есть счётчик — 计价器 (jìjiàqì), и чек — 发票 (fāpiào). Просьба 我要发票 (wǒ yào fāpiào), «мне нужен чек», в нелегальной машине попросту не сработает, и это ещё один способ понять, с чем вы имеете дело, не вступая в спор.</p>
+
+<h2>黑客, 黑马 <span class="italic">и 背黑锅</span></h2>
+
+<p>Три слова, которые стоят особняком: два заимствования и одно выражение.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Отдельные случаи.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Значение</th><th>Как устроено</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">黑客</span></td><td><i>hēikè</i></td><td><b>хакер</b></td><td>запись по звучанию: «чёрный» плюс «гость»</td></tr>
+    <tr><td><span class="han">黑马</span></td><td><i>hēimǎ</i></td><td><b>тёмная лошадка</b></td><td>о неожиданном победителе — как и по-русски</td></tr>
+    <tr><td><span class="han">背黑锅</span></td><td><i>bēi hēiguō</i></td><td><b>отдуваться за чужую вину</b></td><td>дословно «нести чёрный котёл»</td></tr>
+    <tr><td><span class="han">黑心</span></td><td><i>hēixīn</i></td><td><b>бессовестный</b></td><td>о человеке и о товаре: 黑心商家 — нечестный продавец</td></tr>
+    <tr><td><span class="han">抹黑</span></td><td><i>mǒhēi</i></td><td><b>очернить, опорочить</b></td><td>дословно «замазать чёрным»</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>黑客</b> — хороший пример китайского заимствования. Слово hacker записано по звучанию, но знаки подобраны не случайно: получилось «чёрный гость», и смысл в этом тоже читается. Так в китайском устроены многие заимствования: звук подбирают первым делом, но из подходящих по звучанию знаков берут те, что дают осмысленную картинку.</p>
+
+<p><b>背黑锅</b> переводится как «отдуваться за чужую вину», дословно — «нести чёрный котёл». Происхождение выражения объясняют по-разному, и надёжной версии я не нашла, поэтому ограничусь значением. Употребляется оно часто, в том числе в разговоре о работе.</p>
+
+<p>А про <b>黑马</b> скажу осторожно: в китайском оно значит ровно то же, что русская «тёмная лошадка» — неожиданный победитель. Откуда слово пришло в китайский, в проверяемом виде я не нашла, так что утверждать ничего не буду. Употребляется оно широко: о спортсменах, о претендентах на пост, о фильмах, которые внезапно собрали кассу, и о компаниях, выстреливших из ниоткуда.</p>
+
+<p>Сюда же стоит добавить 黑心 (hēixīn) — «чёрное сердце», то есть бессовестный. Чаще всего встречается в сочетании 黑心商家 — нечестный продавец, и в новостях о некачественных товарах. И 抹黑 (mǒhēi), дословно «замазать чёрным»: очернить, испортить репутацию — слово из газетного и политического языка, в бытовой речи оно звучит редко.</p>
+
+<h2>Пара <span class="italic">黑 и 白</span></h2>
+
+<p>Чёрный и белый в китайском, как и в русском, постоянно ходят парой — и в прямом смысле, и в переносном.</p>
+
+<ul>
+  <li><span class="han">黑白</span> (hēibái) — чёрно-белый: о фотографии, кино, печати.</li>
+  <li><span class="han">颠倒黑白</span> (diāndǎo hēibái) — «переворачивать чёрное и белое», то есть искажать правду, выдавать одно за другое.</li>
+  <li><span class="han">白纸黑字</span> (bái zhǐ hēi zì) — «на белой бумаге чёрные знаки», наше «чёрным по белому»: о том, что записано и подтверждено.</li>
+  <li><span class="han">黑白分明</span> (hēibái fēnmíng) — когда границы ясны и одно чётко отделено от другого.</li>
+</ul>
+
+<p>Любопытно, что русские и китайские выражения здесь совпадают почти дословно. Это не заимствование, а простое совпадение образа: контраст чёрного и белого одинаково очевиден в любой культуре.</p>
+
+<p>Есть и асимметрия, о которой стоит помнить. У белого в китайском своя группа переносных значений, и она не совпадает с русской: 白 может значить «напрасно» — 白跑一趟 (bái pǎo yí tàng) «сходить впустую», и «бесплатно» — 白吃 (bái chī) «поесть даром». Так что пара 黑 и 白 работает вместе только в устойчивых выражениях, а по отдельности знаки расходятся далеко.</p>
+
+<h2>Что из этого <span class="italic">важно иностранцу</span></h2>
+
+<p>Свод короткий, и он про практику, а не про символику.</p>
+
+<ul>
+  <li><b>Выучите группу «нелегального» раньше остальных.</b> 黑车, 黑中介, 黑市, 黑工 — четыре слова, которые экономят деньги и нервы.</li>
+  <li><b>Не бойтесь самого цвета.</b> Чёрная одежда в Китае обычна, деловой костюм тёмный, и никакого подтекста в этом нет.</li>
+  <li><b>Про подарки и оформление</b> смотрите нашу статью о цветах: там разобрано, что уместно на празднике, а что нет: <a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значение цветов в Китае</a>.</li>
+  <li><b>В словах 黑客 и 黑马</b> значение «незаконный» не работает: это заимствования, и ориентироваться нужно на слово целиком.</li>
+  <li><b>Спрашивая дорогу или совет,</b> пользуйтесь словом 正规 «официальный»: 正规出租车, 正规中介 — так вопрос звучит понятнее и короче любых объяснений.</li>
+</ul>
+
+<p>И общий приём, который работает за пределами этой темы: <b>если знак в слове даёт странный перевод, посмотрите, нет ли у него переносного значения</b>. У 黑 их несколько, и они разведены по группам, которые легко запомнить.</p>
+
+<p>Проверить себя можно так: возьмите незнакомое слово с 黑 и попробуйте угадать группу до того, как посмотрите перевод. Речь о предмете — скорее всего цвет. Речь о действии или услуге — скорее всего что-то в обход правил. Две-три проверки, и догадка начинает срабатывать сама, без словаря под рукой.</p>
+
+<div class="cta">
+  <p>Такие группы слов учатся за один вечер, если понимать логику знака. Этому мы и учим — <a href="https://kitai-school.ru/ieroglifika" target="_blank" rel="noopener">курс иероглифики</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как будет «чёрный» на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>黑 (hēi), первый тон. В речи обычно говорят 黑色 (hēisè) — «чёрный цвет», по общей схеме: название цвета плюс знак 色. Чёрные глаза — 黑眼睛, чёрно-белое кино — 黑白电影, классная доска — 黑板, дословно «чёрная доска».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как устроен иероглиф 黑?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В нём двенадцать черт. Верхнюю часть знака описывают как дымоход, нижнюю — как 炎, два огня, то есть пламя. Словарь «Шовэнь» объясняет 黑 как цвет, который даёт копоть от огня. Реконструкции древних форм расходятся в деталях, но направление общее: от копоти к названию цвета. В системе ключей «Канси» это ключ № 203.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему 黑 в словах часто значит «незаконный»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это цепочка переносов: копоть — чёрный цвет — тёмное и скрытое — то, что делается тайно, а потому незаконно. Отсюда 黑市 «чёрный рынок», 黑车 «нелегальное такси», 黑中介 «недобросовестный посредник», 黑工 «работа без разрешения». В русском у слова «чёрный» есть похожий оттенок, но в китайском он заметно продуктивнее.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что значит 背黑锅?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>背黑锅 (bēi hēiguō) — отдуваться за чужую вину, оказаться крайним. Дословно «нести чёрный котёл». Происхождение выражения объясняют по-разному, и надёжной версии я не нашла, поэтому привожу только значение: оно устойчивое и встречается часто.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое 黑客 и 黑马?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>黑客 (hēikè) — хакер: слово записано по звучанию английского hacker, а знаки подобраны так, что складывается «чёрный гость». 黑马 (hēimǎ) — тёмная лошадка, неожиданный победитель; употребляется так же, как русское выражение, в спорте, выборах и конкурсах.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чёрный в Китае — траурный цвет?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Короткий ответ: траурным считается прежде всего белый, а чёрный скорее цвет формальности и серьёзности, хотя в современном быту он тоже появляется в траурном контексте. Подробно символика цветов, включая белый, чёрный и зелёный, разобрана в нашей отдельной статье о значении цветов в Китае — здесь мы занимаемся словами.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие ещё иероглифы содержат ключ 黑?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Самые полезные два: 墨 (mò) «тушь» — сверху 黑, снизу 土 «земля», отсюда 墨水 чернила и 水墨画 живопись тушью; и 默 (mò) «молчать» — 沉默 молчание, 默默 молча. Знаков с этим ключом немного, зато слов, начинающихся с самого 黑, очень много.</p></div>
+  </details>
+</div>
+
+<p class="sign">Увидели 黑 — присмотритесь к слову! <span class="han">小心黑车</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Знак 黑:</b> чтение hēi, двенадцать черт, ключ № 203 по словарю «Канси». Объяснение из «Шовэнь» — цвет, полученный от копоти огня, — и устройство знака с дымоходом сверху и 炎 внизу приведены по словарным данным; расхождение реконструкций отмечено в тексте.</li>
+    <li><b>Цепочка значений</b> от копоти к чёрному цвету, затем к скрытому и незаконному приведена по словарным толкованиям знака.</li>
+    <li><b>Слова</b> 黑板, 黑夜, 黑眼睛, 黑白, 黑市, 黑车, 黑中介, 黑名单, 黑工, 黑心, 抹黑 даны в словарных значениях.</li>
+    <li><b>黑客</b> — запись английского hacker по звучанию, где знаки складываются в «чёрного гостя». <b>黑马</b> употребляется как русская «тёмная лошадка»; происхождение слова в китайском я не проверяла и потому не описываю. <b>背黑锅</b> приведено со значением, но без версии происхождения: надёжной я не нашла.</li>
+    <li><b>Выражения</b> 颠倒黑白, 白纸黑字 и 黑白分明 — словарные; совпадение образа с русскими оборотами отмечено как совпадение, а не как заимствование.</li>
+    <li><b>Чего в статье нет намеренно:</b> символики чёрного, белого и зелёного — она разобрана в нашей статье о значении цветов и дана ссылкой; советов, связанных с трауром и похоронами; статистики по нелегальным перевозкам и теневому рынку.</li>
+    <li><b>Знаки 墨 и 默</b> приведены со словарными значениями как примеры иероглифов с ключом 黑; <b>正规</b> — «официальный, соответствующий правилам» — дано как слово, противоположное группе с 黑.</li>
+    <li>Практика Kitai School: разборы с учениками, в том числе случай с 黑车 у вокзала.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Знак 黑 в составе слова часто работает предупреждением: 黑车, 黑中介, 黑市</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
