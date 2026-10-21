@@ -1,0 +1,435 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/siniy-cvet-na-kitayskom#article",
+      "headline": "Синий на китайском: 蓝 и его оттенки, а ещё 蓝图, 蓝领 и другие слова, где цвет уже не про цвет",
+      "description": "Лексика синего цвета в китайском языке: слово 蓝 и форма 蓝色, оттенки от 浅蓝色 и 深蓝色 до книжных 蔚蓝 и 湛蓝, а также 藏蓝, 宝蓝 и 靛蓝. Слова, где цвет уже не главное: 蓝图 чертёж и план действий от английского blueprint, 蓝领 рабочие специальности рядом с 白领 и 金领, 蓝牙 Bluetooth, 蓝海 рынок без конкурентов и 蓝天 чистое небо. Плюс правило описания предмета по цвету через 的 и фразы для магазина.",
+      "image": "assets/siniy-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-21",
+      "dateModified": "2026-10-21",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/siniy-cvet-na-kitayskom",
+      "about": {
+        "@type": "Thing",
+        "name": "Синий цвет в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/siniy-cvet-na-kitayskom#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как будет «синий» на китайском?", "acceptedAnswer": {"@type": "Answer", "text": "蓝 (lán). В речи обычно говорят 蓝色 (lánsè) — «синий цвет»: к названию цвета добавляется знак 色. Светло-синий — 浅蓝色 (qiǎnlánsè), тёмно-синий — 深蓝色 (shēnlánsè). Отдельного слова для голубого в китайском нет: это просто светлый оттенок того же 蓝."}},
+        {"@type": "Question", "name": "Как сказать «тёмно-синий» и «светло-синий»?", "acceptedAnswer": {"@type": "Answer", "text": "深蓝色 (shēnlánsè) и 浅蓝色 (qiǎnlánsè): 深 значит «глубокий, тёмный», 浅 — «мелкий, светлый». Эта пара работает со всеми цветами, не только с синим. Есть и отдельные слова для оттенков: 藏蓝 (zànglán) — тёмно-синий с фиолетовым отливом, 宝蓝 (bǎolán) — яркий сапфировый, 湖蓝 (húlán) — с зеленоватым отливом. В книжной речи встречаются 蔚蓝 и 湛蓝: оба про чистый насыщенный цвет неба и моря."}},
+        {"@type": "Question", "name": "Что означает 蓝图?", "acceptedAnswer": {"@type": "Answer", "text": "Буквально — чертёж, а в переносном смысле план или программа действий: 发展蓝图 — «план развития». Слово пришло от английского blueprint, а то — от старой технологии копирования чертежей, при которой линии получались белыми на синей бумаге. В деловых текстах переносное значение встречается чаще прямого."}},
+        {"@type": "Question", "name": "Почему рабочих называют 蓝领?", "acceptedAnswer": {"@type": "Answer", "text": "蓝领 (lánlǐng) — калька с английского blue collar, «синий воротник»: так называли рабочие специальности по цвету спецодежды. Рядом в китайском живут 白领 (báilǐng) — служащие, офисные работники, и 金领 (jīnlǐng) — руководители высокого уровня."}},
+        {"@type": "Question", "name": "Чем 蓝 отличается от 青?", "acceptedAnswer": {"@type": "Answer", "text": "蓝 — обычное современное слово «синий». 青 (qīng) — старое название целой области спектра: в разных словах оно значит и синий, и зелёный, и чёрный, а ещё молодость и начало, как в 青年 «молодёжь». Практическое правило: описывая предмет, берите 蓝色; 青 вы встретите в готовых словах, и значение там подскажет сам предмет. Подробный разбор 青 и символика цветов есть в нашей отдельной статье о значении цветов в Китае."}},
+        {"@type": "Question", "name": "Как описать предмет по цвету?", "acceptedAnswer": {"@type": "Answer", "text": "Цвет ставится перед предметом, между ними обычно стоит 的: 蓝色的衣服 — «синяя одежда», 深蓝色的裤子 — «тёмно-синие брюки». Если предмет уже назван, достаточно сказать 这个是蓝色的 — «вот это синее». В магазине выручает вопрос 有没有蓝色的 — «а синий есть?». Порядок обратный русскому здесь не работает: сказать «куртка синяя» по-китайски нельзя."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/siniy-cvet-na-kitayskom#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Синий на китайском: 蓝 и его оттенки, а ещё 蓝图, 蓝领 и другие слова, где цвет уже не про цвет", "item": "https://kitai-school.ru/article/siniy-cvet-na-kitayskom"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Синий на китайском: <span class="italic">蓝 и его оттенки, а ещё 蓝图, 蓝领 и другие слова, где цвет уже не про цвет</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-21">21 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/siniy-hero.png" alt="Бирка с иероглифом 蓝 lán «синий», пришитая к куску синей ткани" width="1200" height="630"></figure>
+
+<p class="passport">Синий по-китайски — 蓝 (lán), и выучить это слово можно за минуту. Дальше начинается интересное: <b>знак 蓝 входит в десятки слов, и во многих из них цвет уже не главное</b>. 蓝图 — это чертёж и план действий, 蓝领 — рабочие специальности, 蓝牙 — Bluetooth, 蓝海 — рынок без конкурентов. Разберём оттенки, эти слова и заодно правило, по которому цвет ставится рядом с предметом.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Синий — 蓝</b> (lán), в речи чаще 蓝色. <b>Голубого отдельным словом нет:</b> это 浅蓝色, «светло-синий». <b>Оттенков много:</b> от бытовых 天蓝 и 湖蓝 до книжных 蔚蓝 и 湛蓝. <b>蓝图 — это план,</b> а не «синий рисунок». <b>蓝领 — профессия,</b> рядом 白领 и 金领. <b>Цвет ставится перед предметом</b> через 的.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">как будет синий на китайском</span></h2>
+
+<p>蓝 (lán), а в обычной речи — 蓝色 (lánsè). Второй знак, 色 (sè), означает «цвет», и по этой схеме собраны почти все названия цветов: как именно, разобрано отдельно: <a href="https://kitai-school.ru/article/cveta-na-kitayskom-s-transkripciey" target="_blank" rel="noopener">цвета на китайском с транскрипцией</a>.</p>
+
+<p>Слово 蓝 не всегда было названием цвета. Сначала так называли растение, из которого добывали синюю краску, и только потом название краски стало названием оттенка. Отсюда и слово 靛蓝 (diànlán) — индиго.</p>
+
+<p>Знак при этом устроен прозрачно: сверху стоит 艹, «трава», и это прямое указание на растительное происхождение краски. Как ключ подсказывает смысл знака, разобрано отдельно: <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey" target="_blank" rel="noopener">значение ключей в китайских иероглифах</a>.</p>
+
+<p>Ещё одно, что стоит знать сразу: <b>отдельного слова для голубого в китайском нет</b>. Там, где русский различает синий и голубой, китайский добавляет уточнение — 浅蓝色, «светло-синий».</p>
+
+<p>Про символику — какие смыслы за синим закреплены в культуре и почему 青 это особая история — у нас есть отдельная статья: <a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значение цветов в Китае</a>. Здесь мы занимаемся словами.</p>
+
+<h2>Оттенки: <span class="italic">от 浅蓝 до 藏蓝</span></h2>
+
+<p>Базовая пара проста: 浅 (qiǎn) — светлый, 深 (shēn) — тёмный. Но кроме неё есть отдельные названия, и часть из них встречается чаще, чем кажется.</p>
+
+<p>Устроены такие названия одинаково: к 蓝 спереди приставляется слово-подсказка. 天 «небо» даёт небесно-синий, 湖 «озеро» — озёрно-синий, 宝 «драгоценность» — сапфировый. Логика та же, что у русских «небесно-голубой» и «изумрудный», и угадывать по ней можно смело.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Оттенки синего.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Перевод</th><th>Где встречается</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">浅蓝色</span></td><td><i>qiǎnlánsè</i></td><td><b>светло-синий</b></td><td>то, что по-русски назвали бы голубым</td></tr>
+    <tr><td><span class="han">深蓝色</span></td><td><i>shēnlánsè</i></td><td><b>тёмно-синий</b></td><td>общее слово для всех тёмных оттенков</td></tr>
+    <tr><td><span class="han">天蓝色</span></td><td><i>tiānlánsè</i></td><td><b>небесно-синий</b></td><td>дословно «цвет неба»</td></tr>
+    <tr><td><span class="han">湖蓝色</span></td><td><i>húlánsè</i></td><td><b>озёрно-синий</b></td><td>с зеленоватым отливом</td></tr>
+    <tr><td><span class="han">蔚蓝</span></td><td><i>wèilán</i></td><td><b>лазурный</b></td><td>книжное слово, о небе и море</td></tr>
+    <tr><td><span class="han">湛蓝</span></td><td><i>zhànlán</i></td><td><b>густо-синий</b></td><td>тоже книжное: о чистом глубоком цвете</td></tr>
+    <tr><td><span class="han">藏蓝</span></td><td><i>zànglán</i></td><td><b>тёмно-синий с фиолетовым</b></td><td>цвет формы и строгой одежды</td></tr>
+    <tr><td><span class="han">宝蓝</span></td><td><i>bǎolán</i></td><td><b>сапфировый</b></td><td>дословно «драгоценно-синий», яркий</td></tr>
+    <tr><td><span class="han">靛蓝</span></td><td><i>diànlán</i></td><td><b>индиго</b></td><td>название краски, от которой всё и пошло</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Два слова из таблицы — книжные. <span class="han">蔚蓝</span> и <span class="han">湛蓝</span> в разговоре почти не звучат, зато регулярно попадаются в описаниях неба и моря. Если встретите их в тексте, знайте: автор старался.</p>
+
+<p>А <span class="han">藏蓝</span> — наоборот, слово повседневное. Так называют тёмно-синий с фиолетовым отливом: цвет школьной формы, делового костюма и строгой одежды вообще.</p>
+
+<h2>Слова, где синий <span class="italic">уже не про цвет</span></h2>
+
+<p>Вот основная часть статьи. В этих словах 蓝 стоит внутри, но значение держится не на цвете.</p>
+
+<figure class="ks-fig"><img src="assets/siniy-info.png" alt="Лист синьки с четырьмя словами: 蓝图 чертёж и план, 蓝领 рабочие специальности, 蓝牙 Bluetooth, 蓝海 рынок без конкурентов" width="1200" height="540"><figcaption>Фон этой схемы — та самая синька, от которой пошло слово 蓝图.</figcaption></figure>
+
+<div class="table-wrap">
+<table>
+  <caption>Слова с 蓝.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Значение</th><th>Что полезно знать</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">蓝图</span></td><td><i>lántú</i></td><td><b>чертёж; план действий</b></td><td>в деловых текстах второе значение встречается чаще первого</td></tr>
+    <tr><td><span class="han">蓝领</span></td><td><i>lánlǐng</i></td><td><b>рабочие специальности</b></td><td>рядом живут 白领 служащие и 金领 руководители</td></tr>
+    <tr><td><span class="han">蓝牙</span></td><td><i>lányá</i></td><td><b>Bluetooth</b></td><td>название перенесено из английского целиком</td></tr>
+    <tr><td><span class="han">蓝海</span></td><td><i>lánhǎi</i></td><td><b>рынок без конкурентов</b></td><td>противопоставлен 红海 — рынку, где тесно</td></tr>
+    <tr><td><span class="han">蓝天</span></td><td><i>lántiān</i></td><td><b>чистое небо</b></td><td>в новостях — ещё и о чистом воздухе в городах</td></tr>
+    <tr><td><span class="han">蓝莓</span></td><td><i>lánméi</i></td><td><b>голубика</b></td><td>здесь цвет всё-таки при деле</td></tr>
+    <tr><td><span class="han">蓝宝石</span></td><td><i>lánbǎoshí</i></td><td><b>сапфир</b></td><td>дословно «синий драгоценный камень»</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Обратите внимание на пару 蓝领 и 白领. Деление по цвету воротника пришло из английского, но в китайском оно прижилось и дополнилось: 金领 (jīnlǐng) — «золотой воротник», о людях на высоких должностях. Эта лексика встречается в деловых текстах постоянно: <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>.</p>
+
+<h2>蓝图: <span class="italic">как чертёж стал планом</span></h2>
+
+<p>Это слово заслуживает отдельного разбора — и как лексика, и как история.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик переводил деловое письмо и застрял на одном предложении. В нём стояло 蓝图, и он честно перевёл по знакам: «синий рисунок».</p>
+  <p>Фраза после этого рассыпалась. Речь в письме шла о планах компании на три года, и никакого рисунка там быть не могло.</p>
+  <p>Разобрали вместе. 蓝图 — это чертёж, а в переносном смысле программа действий, и в деловых текстах второе значение встречается чаще первого. Предложение собралось сразу, как только слово встало на место.</p>
+  <p><b>Слово с цветом внутри далеко не всегда про цвет.</b> Проверять такие слова нужно целиком — по словарю, а не по частям, даже если каждая часть знакома.</p>
+</div>
+
+<p>Теперь про происхождение. <b>蓝图 — перевод английского blueprint</b>, а то слово появилось от технологии копирования чертежей: оттиск получался с белыми линиями на синей бумаге. Само английское слово известно с 1880-х годов, а переносное значение «подробный план» закрепилось за ним в 1920-е — и в китайский оно пришло уже с обоими значениями.</p>
+
+<p>Поэтому в современных текстах 蓝图 чаще встречается там, где речь о планах: 发展蓝图 (fāzhǎn lántú) — «план развития», 宏伟蓝图 (hóngwěi lántú) — «грандиозный замысел». Чертёж в прямом смысле тоже никуда не делся, но он остался в технических контекстах.</p>
+
+<p>Такой путь слова — обычное дело для заимствований из технического языка. Сначала появляется вещь, потом её название переносится на то, что эта вещь изображает. По-русски «дорожная карта» прошла ровно ту же дорогу: сначала это была карта, потом план действий, и сегодня второе значение встречается чаще.</p>
+
+<h2>Зачем рядом <span class="italic">стоит 青</span></h2>
+
+<p>Если вы искали синий цвет в китайском, то наверняка натыкались на знак 青 (qīng) и на объяснения, что он означает то синий, то зелёный.</p>
+
+<p>Коротко: это так. 青 — старое слово, которое называет не оттенок, а целую область спектра: 青草 это зелёная трава, 青天 — синее небо, 青山 — сине-зелёные горы вдалеке. Плюс у знака есть второй слой значений — молодость и начало.</p>
+
+<p>Встречается 青 и в современных словах, которые к цвету отношения уже не имеют: 青年 (qīngnián) — молодёжь, 青春 (qīngchūn) — юность. Так что если знак попался вам в слове про возраст, искать там оттенок бесполезно.</p>
+
+<p>Подробно, с таблицей слов и объяснением, почему русское «зелёный или синий?» на этот вопрос не отвечает, разобрано у нас отдельно: <a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значение цветов в Китае</a>. Пересказывать не буду — скажу только, что <b>на 蓝 эта история не распространяется</b>: 蓝 это именно синий, без двусмысленности.</p>
+
+<p>Для практики разница простая. Если вы описываете предмет и хотите сказать «синий», берите 蓝色 и не ошибётесь. 青 оставьте для случаев, когда оно само встретилось вам в готовом слове: угадать, какой цвет имеется в виду, можно по предмету, а подставлять этот знак самому не нужно.</p>
+
+<h2>Как описать предмет <span class="italic">по цвету</span></h2>
+
+<p>Грамматика здесь простая и одинаковая для всех цветов: сначала цвет, потом предмет, между ними 的.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Фразы с цветом.</caption>
+  <thead><tr><th>Фраза</th><th>Пиньинь</th><th>Перевод</th><th>Как устроено</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">蓝色的衣服</span></td><td><i>lánsè de yīfu</i></td><td><b>синяя одежда</b></td><td>обычный порядок: цвет, 的, предмет</td></tr>
+    <tr><td><span class="han">一件蓝色的外套</span></td><td><i>yí jiàn lánsè de wàitào</i></td><td><b>синяя куртка</b></td><td>со счётным словом 件 перед цветом</td></tr>
+    <tr><td><span class="han">深蓝色的裤子</span></td><td><i>shēnlánsè de kùzi</i></td><td><b>тёмно-синие брюки</b></td><td>оттенок строится так же</td></tr>
+    <tr><td><span class="han">这个是蓝色的</span></td><td><i>zhège shì lánsè de</i></td><td><b>вот это синее</b></td><td>когда предмет уже назван</td></tr>
+    <tr><td><span class="han">有没有蓝色的</span></td><td><i>yǒu méiyǒu lánsè de</i></td><td><b>а синий есть?</b></td><td>вопрос в магазине</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Две типичные ошибки. Первая — поставить цвет после предмета, как в русском «куртка синяя»: по-китайски так не говорят, порядок жёсткий. Вторая — забыть 色 и сказать 蓝衣服: в некоторых устойчивых сочетаниях это допустимо, но безопаснее говорить 蓝色的衣服.</p>
+
+<p>Третья ошибка тоньше и встречается у тех, кто уже немного говорит: сказать 很蓝色 по образцу 很好. Так не получится — 蓝色 это существительное, «синий цвет», и наречие степени к нему не ставится. Если нужно «очень синий», говорят 很蓝 или описывают оттенок словом: 深蓝色, 宝蓝色.</p>
+
+<p>И про счётные слова: если перед предметом стоит число, счётное слово встаёт перед цветом — 一件蓝色的外套, а не наоборот. Счётное слово выбирается по предмету, а не по цвету: 件 для одежды, 条 для брюк и всего длинного, 个 как запасной вариант, когда нужное не вспоминается.</p>
+
+<p>Ещё одна полезная конструкция — сравнение оттенков. 这个比那个蓝 (zhège bǐ nàge lán) значит «этот синее того»: сравнительное 比 ставится между предметами, а цвет идёт в конце уже без 色.</p>
+
+<h2>Где синий <span class="italic">встретится в Китае</span></h2>
+
+<p>Несколько наблюдений, которые пригодятся в поездке. Это именно наблюдения, а не правила.</p>
+
+<ul>
+  <li><b>Школьная форма.</b> Сине-белые спортивные костюмы — самый узнаваемый вид школьной одежды в материковом Китае.</li>
+  <li><b>Рабочая одежда.</b> Тёмно-синие спецовки носят на стройках и производствах, отсюда и 蓝领 как название группы профессий.</li>
+  <li><b>Фарфор.</b> Бело-синие изделия с кобальтовой росписью называются 青花瓷 (qīnghuācí) — и в названии стоит именно 青, а не 蓝: слово старше.</li>
+  <li><b>Указатели.</b> Синий фон с белыми знаками — обычное оформление дорожных и транспортных указателей, в том числе в метро.</li>
+  <li><b>Упаковка и реклама.</b> Синий часто берут для техники, воды и всего, что хочет выглядеть надёжным и прохладным: логика та же, что в европейской рекламе.</li>
+</ul>
+
+<p>Отдельно про указатели. Синий фон в китайской навигации означает примерно то же, что и у нас: это служебная информация, направления и названия станций. Красным выделяют запреты и предупреждения, зелёным — выходы и безопасные маршруты. Для приезжего это первое, что помогает ориентироваться в метро, пока иероглифы ещё не читаются.</p>
+
+<p>Если собираетесь покупать одежду, пригодится и словарь цветов целиком, и пара фраз про размеры: <a href="https://kitai-school.ru/article/cveta-na-kitayskom-s-transkripciey" target="_blank" rel="noopener">цвета на китайском с транскрипцией</a>.</p>
+
+<div class="cta">
+  <p>Такие слова, как 蓝图, учатся не списком, а в текстах, где они живут. Мы учим китайскому с нуля и до делового уровня — <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как будет «синий» на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>蓝 (lán). В речи обычно говорят 蓝色 (lánsè) — «синий цвет»: к названию цвета добавляется знак 色. Светло-синий — 浅蓝色 (qiǎnlánsè), тёмно-синий — 深蓝色 (shēnlánsè). Отдельного слова для голубого в китайском нет: это просто светлый оттенок того же 蓝.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сказать «тёмно-синий» и «светло-синий»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>深蓝色 (shēnlánsè) и 浅蓝色 (qiǎnlánsè): 深 значит «глубокий, тёмный», 浅 — «мелкий, светлый». Эта пара работает со всеми цветами, не только с синим. Есть и отдельные слова для оттенков: 藏蓝 (zànglán) — тёмно-синий с фиолетовым отливом, 宝蓝 (bǎolán) — яркий сапфировый, 湖蓝 (húlán) — с зеленоватым отливом. В книжной речи встречаются 蔚蓝 и 湛蓝: оба про чистый насыщенный цвет неба и моря.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что означает 蓝图?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Буквально — чертёж, а в переносном смысле план или программа действий: 发展蓝图 — «план развития». Слово пришло от английского blueprint, а то — от старой технологии копирования чертежей, при которой линии получались белыми на синей бумаге. В деловых текстах переносное значение встречается чаще прямого.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему рабочих называют 蓝领?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>蓝领 (lánlǐng) — калька с английского blue collar, «синий воротник»: так называли рабочие специальности по цвету спецодежды. Рядом в китайском живут 白领 (báilǐng) — служащие, офисные работники, и 金领 (jīnlǐng) — руководители высокого уровня.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 蓝 отличается от 青?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>蓝 — обычное современное слово «синий». 青 (qīng) — старое название целой области спектра: в разных словах оно значит и синий, и зелёный, и чёрный, а ещё молодость и начало, как в 青年 «молодёжь». Практическое правило: описывая предмет, берите 蓝色; 青 вы встретите в готовых словах, и значение там подскажет сам предмет. Подробный разбор 青 и символика цветов есть в нашей отдельной статье о значении цветов в Китае.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как описать предмет по цвету?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Цвет ставится перед предметом, между ними обычно стоит 的: 蓝色的衣服 — «синяя одежда», 深蓝色的裤子 — «тёмно-синие брюки». Если предмет уже назван, достаточно сказать 这个是蓝色的 — «вот это синее». В магазине выручает вопрос 有没有蓝色的 — «а синий есть?». Порядок обратный русскому здесь не работает: сказать «куртка синяя» по-китайски нельзя.</p></div>
+  </details>
+</div>
+
+<p class="sign">Проверяйте слово целиком! <span class="han">蓝图不是蓝色的图</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Слово 蓝</b> и оттенки 浅蓝色, 深蓝色, 天蓝色, 湖蓝色, 蔚蓝, 湛蓝, 藏蓝, 宝蓝, 靛蓝 приведены по словарным значениям. Пара 浅 и 深 работает со всеми цветами, и схема названий через 色 разобрана у нас отдельно.</li>
+    <li><b>蓝图:</b> значение «чертёж» и переносное «план действий» — словарные. Происхождение от английского blueprint, а того — от технологии копирования с белыми линиями на синем фоне, приведено по этимологическому словарю английского языка: слово известно с 1882 года, переносное значение зафиксировано с 1926 года.</li>
+    <li><b>蓝领</b> — калька с английского blue collar; рядом существуют 白领 и 金领. <b>蓝牙</b> — название Bluetooth, перенесённое из английского; скандинавскую легенду о происхождении самого названия я не проверяла и потому не привожу.</li>
+    <li><b>蓝海</b> и 红海 — термины делового языка; <b>蓝天</b> в новостях употребляется и в значении «чистый воздух», но цифр о качестве воздуха в статье нет: это текст про слова.</li>
+    <li><b>Символика синего и разбор 青</b> сюда не входят намеренно: обе темы разобраны в нашей статье о значении цветов, и на неё стоят ссылки.</li>
+    <li><b>Чего в статье нет намеренно:</b> «значений оттенков» — у 藏蓝 нет отдельной символики, это просто тёмно-синий; рекомендаций, что носить и дарить.</li>
+    <li><b>Наблюдения о школьной форме, спецовках и цвете указателей</b> даны как наблюдения, без ссылок на нормативы: единого государственного стандарта на школьную форму, который предписывал бы синий, я не нашла.</li>
+    <li>Практика Kitai School: разборы деловых писем с учениками, в том числе случай с 蓝图.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Слово с цветом внутри далеко не всегда про цвет: 蓝图 — это план, а 蓝领 — профессия</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
