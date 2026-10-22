@@ -1,0 +1,447 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kak-kitaycy-uchat-svoy-yazyk#article",
+      "headline": "Как китайцы учат свой язык: пиньинь в первом классе, прописи в клетку и шесть языков на выбор в гаокао",
+      "description": "Как устроено обучение грамоте в китайской школе: пиньинь в первые недели первого класса, базовые черты и ключи, письмо в клетке 田字格, прописи и диктанты 听写. Нормативы стандарта обязательного образования по числу знаков с оговоркой о расхождении редакций, отличие предмета 语文 от курса китайского для иностранцев, английский с третьего класса и выбор одного из шести иностранных языков на гаокао: английского, русского, японского, немецкого, французского или испанского. Отдельно — что из школьной методики переносится на самостоятельную учёбу взрослого, а что нет.",
+      "image": "https://static.tildacdn.com/tila6339-3162-4531-b939-376463396536/yk-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-22",
+      "dateModified": "2026-10-22",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kak-kitaycy-uchat-svoy-yazyk",
+      "about": {
+        "@type": "Thing",
+        "name": "Обучение грамоте в китайской школе"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kak-kitaycy-uchat-svoy-yazyk#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "С чего китайские дети начинают учить иероглифы?", "acceptedAnswer": {"@type": "Answer", "text": "Не с иероглифов. Первые недели первого класса уходят на пиньинь — запись звуков латиницей с обозначением тонов. Дети учатся читать по слогам то, что они и так умеют говорить, и только потом переходят к знакам. Сроки по учебникам различаются, но порядок обычно именно такой: сначала звук, потом начертание."}},
+        {"@type": "Question", "name": "Зачем нужна клетка 田字格?", "acceptedAnswer": {"@type": "Answer", "text": "Это квадрат, разделённый пунктирными линиями по вертикали, горизонтали, а в части прописей и по диагоналям. Знак в китайском письме занимает одинаковый квадрат независимо от того, из скольких черт он состоит, и клетка задаёт пропорции: где проходит середина, насколько части отступают от края. Без неё знак у новичка выходит перекошенным."}},
+        {"@type": "Question", "name": "Что такое 听写?", "acceptedAnswer": {"@type": "Answer", "text": "听写 (tīngxiě) — диктант на знаки: учитель называет слово, дети пишут его по памяти. Это обычная часть курса 语文 и главная проверка того, что знак выучен. Разница с нашим диктантом в том, что ошибкой считается и неверная черта: знак либо написан правильно, либо нет."}},
+        {"@type": "Question", "name": "Сколько иероглифов учат в китайской школе?", "acceptedAnswer": {"@type": "Answer", "text": "По стандарту обязательного образования к концу начальной школы ожидается узнавание около 3000 знаков, из них около 2500 ребёнок должен уметь писать; к концу девятого класса — около 3500 и 3000 соответственно. Числа привожу с оговоркой: редакции стандарта расходятся, и в разных источниках для начальной школы встречается и 3000, и 3500."}},
+        {"@type": "Question", "name": "Какой иностранный язык учат в китайской школе?", "acceptedAnswer": {"@type": "Answer", "text": "Чаще всего английский, обычно с третьего класса начальной школы. В отдельных школах преподают японский, русский, немецкий, французский или испанский — как правило, там, где для этого есть учителя и сложившаяся программа."}},
+        {"@type": "Question", "name": "Какой иностранный язык сдают на гаокао?", "acceptedAnswer": {"@type": "Answer", "text": "Один из шести: английский, русский, японский, немецкий, французский или испанский. Подавляющее большинство выбирает английский. Порядок и форма экзамена различаются по провинциям, устный экзамен по «малым языкам» проводится отдельно и не везде. Утверждение, что эти языки сдавать легче, я проверить не смогла: официальных данных о сравнении нет."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kak-kitaycy-uchat-svoy-yazyk#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Как китайцы учат свой язык: пиньинь в первом классе, прописи в клетку и шесть языков на выбор в гаокао", "item": "https://kitai-school.ru/article/kak-kitaycy-uchat-svoy-yazyk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Школа</p>
+<h1>Как китайцы учат свой язык: <span class="italic">пиньинь в первом классе, прописи в клетку и шесть языков на выбор в гаокао</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-22">22 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila6339-3162-4531-b939-376463396536/yk-hero.png" alt="Страница китайского букваря: знак 水 shuǐ «вода» в клетке с пунктирными осями, пиньинь и четыре черты знака" width="1200" height="630"></figure>
+
+<p class="passport">Китайский ребёнок приходит в первый класс, уже свободно разговаривая. Учить язык ему не нужно — нужно научиться его записывать, и это совсем другая задача. <b>Поэтому первые недели в школе уходят не на иероглифы, а на пиньинь</b>: звуки, тоны, чтение по слогам. Знаки начинаются позже, и начинаются они с черт и клетки. Разберём весь порядок — и посмотрим, что из него работает у взрослого, а что нет.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Сначала пиньинь,</b> потом знаки. <b>Черты и ключи</b> — знак разбирают на части. <b>Клетка 田字格</b> задаёт пропорции. <b>听写</b> — диктант на знаки, главная проверка. <b>Стандарт</b> ожидает около 3000 знаков к концу начальной школы, но редакции расходятся. <b>Иностранный</b> — чаще английский с третьего класса. <b>На гаокао</b> сдают один язык из шести, включая русский.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">что именно учат китайцы</span></h2>
+
+<p>Родной язык в китайской школе называется 语文 (yǔwén) — это предмет уровня нашего «русский язык и литература», а не курс китайского для иностранцев. Там читают тексты, разбирают стихи, пишут сочинения и учат знаки. Иностранный язык идёт отдельным предметом, 外语 (wàiyǔ), и чаще всего это английский.</p>
+
+<p>Дома при этом может звучать не путунхуа, а местный диалект, и для многих детей школа становится первым местом, где нормативное произношение требуется постоянно. Эту часть — путунхуа, диалектные группы, что с ними происходит сейчас — мы подробно разбирали отдельно: <a href="https://kitai-school.ru/article/kak-razgovarivaut-v-kitae" target="_blank" rel="noopener">как разговаривают в Китае</a>. Про школьные предметы и расписание у нас тоже есть материал, и здесь я его пересказывать не буду.</p>
+
+<p>Эта статья про третье: <b>как ребёнка учат писать</b>. Именно эта часть школьной программы интереснее всего тем, кто учит китайский сам, — потому что методика обучения грамоте отработана десятилетиями и устроена логично.</p>
+
+<h2>С чего начинается грамота: <span class="italic">пиньинь</span></h2>
+
+<p>Самое неожиданное для нас: китайский первоклассник начинает не со знаков, а с латиницы. Пиньинь — система записи звуков буквами латинского алфавита с надстрочными знаками тонов — вводится в первые же недели.</p>
+
+<p>Логика простая. Ребёнок знает тысячи слов на слух, но не умеет ни читать, ни писать. Пиньинь даёт ему опору: он видит запись, узнаёт в ней знакомое слово и читает текст, в котором ещё не знает ни одного иероглифа. Первые страницы букваря так и выглядят — пиньинь крупно, знаки мелко или вовсе без них.</p>
+
+<p>Вторая задача пиньиня — произношение. В классе сидят дети из семей, где говорят по-разному, и пиньинь задаёт единую норму: где различаются <i>zh</i> и <i>z</i>, <i>sh</i> и <i>s</i>, <i>n</i> и <i>ng</i>. На юге это не формальность: часть различий в местной речи стёрта, и их ставят заново.</p>
+
+<p>Тоны отрабатываются там же. Ребёнок тоны слышит и воспроизводит безошибочно — он на них говорит с двух лет, — но не знает, что их четыре и что у них есть названия. Пиньинь это проговаривает вслух и делает систему видимой.</p>
+
+<p><b>Оговорюсь про сроки.</b> «Первые недели» — это общая картина, а не единое расписание: учебники разных издательств распределяют материал по-разному, и где-то знаки начинаются раньше, где-то позже. Сам порядок — сначала звук, потом начертание — устойчив.</p>
+
+<p>Для взрослого отсюда следует вывод, который многие игнорируют: <b>пиньинь не костыль и не ступенька, которую надо поскорее перешагнуть</b>. Китайские дети тратят на него недели, хотя язык уже знают. У того, кто учит с нуля, оснований торопиться ещё меньше.</p>
+
+<h2>Черты, ключи <span class="italic">и клетка 田字格</span></h2>
+
+<p>Когда пиньинь освоен, начинаются знаки. И здесь главное, чего не делают в школе: знак не запоминают картинкой целиком. Его сразу разбирают на части.</p>
+
+<p>Первая часть — черты. Их немного, у каждой есть название, и пишутся они в определённом порядке.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Базовые черты и направление движения.</caption>
+  <thead><tr><th>Черта</th><th>Пиньинь</th><th>Название</th><th>Как пишется</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">横</span></td><td><i>héng</i></td><td><b>горизонтальная</b></td><td>слева направо</td></tr>
+    <tr><td><span class="han">竖</span></td><td><i>shù</i></td><td><b>вертикальная</b></td><td>сверху вниз</td></tr>
+    <tr><td><span class="han">撇</span></td><td><i>piě</i></td><td><b>откидная влево</b></td><td>из правого верхнего угла вниз</td></tr>
+    <tr><td><span class="han">捺</span></td><td><i>nà</i></td><td><b>откидная вправо</b></td><td>с нажимом к концу</td></tr>
+    <tr><td><span class="han">点</span></td><td><i>diǎn</i></td><td><b>точка</b></td><td>короткое движение с нажимом</td></tr>
+    <tr><td><span class="han">提</span></td><td><i>tí</i></td><td><b>подъём</b></td><td>снизу вверх направо</td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila3561-6333-4763-b932-383636306132/yk-info.png" alt="Клетка 田字格 с диагоналями и знаком 永 и четыре шага обучения грамоте: пиньинь, черты и ключи, прописи, диктанты 听写" width="1200" height="560"><figcaption>Четыре шага обучения грамоте и клетка, в которой пишут знак.</figcaption></figure>
+
+<p>К ним добавляются составные: 折 (zhé) — ломаная, с поворотом, и 钩 (gōu) — крюк на конце. Комбинации вроде 横折钩 («горизонтальная с поворотом и крюком») дети называют вслух, когда пишут знак, — примерно как мы проговариваем «палочка, палочка, крючок».</p>
+
+<p><b>Порядок черт — не формальность.</b> Он отвечает за то, как знак выглядит и как он пишется быстро: при правильном порядке рука движется без возвратов. В диктанте неверный порядок видно по тому, как легли соединения, и за него снижают оценку.</p>
+
+<p>Вторая часть — ключи, они же графемы: повторяющиеся элементы, из которых собраны знаки. Ребёнок довольно рано узнаёт, что 氵— это про воду, 木 — про дерево, 讠— про речь. Дальше незнакомый знак перестаёт быть набором линий: видно, из чего он собран и о чём примерно речь. Как эта система устроена и что она даёт на практике, разобрано отдельно: <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey" target="_blank" rel="noopener">значение ключей в китайских иероглифах</a>.</p>
+
+<p>Третья часть — клетка. 田字格 (tiánzìgé) — квадрат, разделённый пунктиром пополам по вертикали и горизонтали, а в части прописей ещё и по диагоналям. Название пошло от знака 田 «поле», который выглядит точно так же.</p>
+
+<p>Клетка нужна вот зачем. В китайском письме любой знак занимает одинаковый квадрат — и 一 из одной черты, и 爱 из десяти; различается только плотность. Пунктир показывает, где проходит середина и как делится место между левой и правой половиной знака. Без клетки знак у новичка выходит перекошенным.</p>
+
+<p>Прописи устроены по шагам: первые знаки в строке напечатаны серым и их обводят, следующие даны пунктиром, последние клетки пустые. К концу строки опора убрана полностью.</p>
+
+<h2>Диктанты <span class="italic">и повторение</span></h2>
+
+<p>Знак, который ребёнок умеет узнавать, он не обязательно умеет написать. Эти два умения в китайской школе разделены, и проверяются они по-разному.</p>
+
+<p>Узнавание проверяется чтением. Письмо — диктантом: 听写 (tīngxiě), дословно «слушать и писать»: учитель называет слово, дети пишут его по памяти, без опоры на пиньинь.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица решила учить знаки так, как учат китайские дети. Купила прописи для первого класса, расчертила расписание и месяц честно писала строчками по клеткам.</p>
+  <p>Через месяц пришла с жалобой: рука знаки помнит, а в тексте они не узнаются. Открывает книгу — и знак, который она выписала двести раз, не читается.</p>
+  <p>Разобрались быстро. Детская методика опирается на то, чего у взрослого нет: ребёнок к первому классу уже свободно говорит и знает эти слова на слух. Ему остаётся связать знакомое звучание с начертанием. Взрослый, который учит язык с нуля, пишет знак, за которым у него пока нет ни слова, ни смысла — остаётся одна моторика.</p>
+  <p><b>Прописи мы оставили, но привязали к словам, которые она уже употребляет.</b> Пишет не отдельный знак, а слово целиком, и проговаривает его вслух. Узнавание в тексте появилось примерно через три недели.</p>
+</div>
+
+<p>У диктантов есть ещё одна причина, не связанная с обучением. <b>Знаки забываются и у носителей</b> — явление называют 提笔忘字 (tí bǐ wàng zì), «взял ручку и забыл знак». Человек читает слово и набирает его на телефоне по пиньиню, а написать рукой не может: форму помнит приблизительно. С распространением набора это стало обычной жалобой, и ежедневное письмо рукой — ровно то, что ей противостоит.</p>
+
+<p>Приёмы, которые взрослый может взять из этой части школьной программы, собраны у нас в отдельном разборе: <a href="https://kitai-school.ru/article/kak-zapominat-ieroglify" target="_blank" rel="noopener">как запоминать иероглифы</a>.</p>
+
+<h2>Сколько знаков <span class="italic">ожидает стандарт</span></h2>
+
+<p>Нормативы по числу иероглифов заданы государственным стандартом обязательного образования. Разделены они так же, как и умения: отдельно — сколько знаков узнавать, отдельно — сколько уметь писать.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Ориентиры по числу знаков. Числа приблизительные, см. оговорку ниже.</caption>
+  <thead><tr><th>Этап</th><th>Узнавать</th><th>Уметь писать</th><th>Примечание</th></tr></thead>
+  <tbody>
+    <tr><td><b>Первые два года</b></td><td>около 1600</td><td>около 800</td><td>узнавать заметно больше, чем писать</td></tr>
+    <tr><td><b>Конец начальной школы</b></td><td>около 3000</td><td>около 2500</td><td>редакции стандарта расходятся: встречается и 3500</td></tr>
+    <tr><td><b>Конец девятого класса</b></td><td>около 3500</td><td>около 3000</td><td>дальше растёт не число знаков, а запас слов</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Важная оговорка.</b> Редакции стандарта расходятся, и в источниках для конца начальной школы встречается и «около 3000», и «около 3500». Какая цифра действует в конкретной школе, зависит от редакции и от учебника, по которому она работает. Поэтому все числа выше — ориентиры порядка величины, а не норма, по которой можно кого-то проверять.</p>
+
+<p>Что из этих чисел действительно полезно знать: <b>разрыв между «узнавать» и «писать» заложен в самой программе</b>. Узнавать всегда требуется больше. Это не послабление, а признание того, как устроено чтение: для узнавания знака достаточно общей формы, для письма нужна точная.</p>
+
+<p>Сопоставлять эти числа с тем, сколько знаков нужно иностранцу, напрямую не стоит: задачи разные. Сколько знаков действительно нужно для чтения и на что хватает двух тысяч, разобрано отдельно: <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost" target="_blank" rel="noopener">в Китае буквы или иероглифы</a>.</p>
+
+<h2>Какой иностранный <span class="italic">учат в школе</span></h2>
+
+<p>Иностранный язык в китайской школе — отдельный предмет, 外语. В подавляющем большинстве школ это английский, и начинается он обычно с третьего класса начальной школы. Школьные предметы и распорядок дня разобраны у нас в отдельной статье.</p>
+
+<p>Остальные пять языков из экзаменационного списка в школах тоже преподают, но заметно реже, и зависит это от конкретной школы: есть ли учителя, есть ли сложившаяся программа, есть ли набор в такой класс. Выбирает язык обычно не ребёнок, а школа.</p>
+
+<p>Русский держится прежде всего на северо-востоке и в приграничных районах, где он давно преподаётся и где для этого есть учителя. В остальной части страны школа с русским — скорее исключение.</p>
+
+<h2>Шесть языков <span class="italic">на гаокао</span></h2>
+
+<p>Гаокао — единый выпускной экзамен, по результатам которого поступают в вуз. Иностранный язык в нём один из основных предметов, и сдать его можно не только по-английски.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Языки, из которых выбирают на экзамене.</caption>
+  <thead><tr><th>Язык</th><th>Пиньинь</th><th>По-русски</th><th>Насколько распространён</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">英语</span></td><td><i>yīngyǔ</i></td><td><b>английский</b></td><td>выбор подавляющего большинства</td></tr>
+    <tr><td><span class="han">俄语</span></td><td><i>éyǔ</i></td><td><b>русский</b></td><td>чаще на северо-востоке и у границы</td></tr>
+    <tr><td><span class="han">日语</span></td><td><i>rìyǔ</i></td><td><b>японский</b></td><td>второй по распространённости выбор</td></tr>
+    <tr><td><span class="han">德语</span></td><td><i>déyǔ</i></td><td><b>немецкий</b></td><td>обычно там, где есть школа с программой</td></tr>
+    <tr><td><span class="han">法语</span></td><td><i>fǎyǔ</i></td><td><b>французский</b></td><td>то же: нужна школа, где его преподают</td></tr>
+    <tr><td><span class="han">西班牙语</span></td><td><i>xībānyáyǔ</i></td><td><b>испанский</b></td><td>самый редкий из шести</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Язык школьник указывает при регистрации на экзамен, и почти всегда это тот же язык, что преподавали в школе: готовиться к экзамену по предмету, которого не было в расписании, мало кто решается.</p>
+
+<p><b>Порядок различается по провинциям.</b> Экзаменационные ведомства у каждой провинции свои, и у них могут различаться и форма работы, и наличие устной части. Устный экзамен по «малым языкам» проводится отдельно и не во всех регионах.</p>
+
+<p>Отдельно про распространённое утверждение, что «малые языки» сдавать легче. <b>Проверить это я не смогла</b>: официальных данных, сопоставляющих сложность вариантов по языкам, нет. Поэтому отмечу, что такое мнение существует, и оставлю его без подтверждения. Долей сдающих каждый язык я тоже не привожу: проверяемых публикаций за этими цифрами я не нашла.</p>
+
+<h2>Что из этого <span class="italic">полезно взрослому</span></h2>
+
+<p>Теперь главное: что из школьной методики переносится на самостоятельную учёбу, а что нет.</p>
+
+<p><b>Переносится — порядок.</b> Сначала звук, потом знак. Выучить произношение слова, а уже потом его начертание — работающая последовательность, и китайская школа ей следует буквально.</p>
+
+<p><b>Переносится — разбор знака на части.</b> Черты и ключи вместо запоминания картинкой целиком. Именно это отличает того, кто учит сотый знак так же быстро, как десятый, от того, у кого скорость падает с каждым новым.</p>
+
+<p><b>Переносится — клетка.</b> Писать знаки в 田字格 имеет смысл и взрослому: пропорции получаются ровными без отдельных усилий. Тетради с такой разлиновкой продаются, подойдёт и обычная клетчатая.</p>
+
+<p><b>Переносится — диктант.</b> Самое честное упражнение: начитайте себе слова, которые учили на неделе, и напишите их по памяти через день.</p>
+
+<p><b>А вот что не переносится.</b> Количество повторений. Китайский ребёнок пишет знак десятками строк — и может себе это позволить, потому что слово он уже знает: моторика ложится на готовый смысл. У взрослого, который учит язык с нуля, этой опоры нет, и строчки без работы со словом дают одну механику, как в истории выше.</p>
+
+<p>Вывод из этого простой: <b>прописи привязывайте к словам, которые уже употребляете</b>. Не отдельный знак строчкой, а слово целиком, с проговариванием вслух. Тогда у каждой строки есть смысл, а не одно движение руки.</p>
+
+<p>И про темп. Школьная программа растянута на девять лет, и за ней стоит ежедневная работа небольшими порциями, а не рывок за полгода. Если ребёнок рядом с вами тоже учит китайский, у нас есть маршрут по возрастам: <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-detey-marshrut-po-vozrastam" target="_blank" rel="noopener">китайский язык для детей</a>.</p>
+
+<div class="cta">
+  <p>Поставить порядок — звук, разбор знака, письмо в клетке — проще под присмотром: <a href="https://kitai-school.ru/ieroglifika" target="_blank" rel="noopener">курс иероглифики</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С чего китайские дети начинают учить иероглифы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Не с иероглифов. Первые недели первого класса уходят на пиньинь — запись звуков латиницей с обозначением тонов. Дети учатся читать по слогам то, что они и так умеют говорить, и только потом переходят к знакам. Сроки по учебникам различаются, но порядок обычно именно такой: сначала звук, потом начертание.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Зачем нужна клетка 田字格?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это квадрат, разделённый пунктирными линиями по вертикали, горизонтали, а в части прописей и по диагоналям. Знак в китайском письме занимает одинаковый квадрат независимо от того, из скольких черт он состоит, и клетка задаёт пропорции: где проходит середина, насколько части отступают от края. Без неё знак у новичка выходит перекошенным.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое 听写?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>听写 (tīngxiě) — диктант на знаки: учитель называет слово, дети пишут его по памяти. Это обычная часть курса 语文 и главная проверка того, что знак выучен. Разница с нашим диктантом в том, что ошибкой считается и неверная черта: знак либо написан правильно, либо нет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько иероглифов учат в китайской школе?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По стандарту обязательного образования к концу начальной школы ожидается узнавание около 3000 знаков, из них около 2500 ребёнок должен уметь писать; к концу девятого класса — около 3500 и 3000 соответственно. Числа привожу с оговоркой: редакции стандарта расходятся, и в разных источниках для начальной школы встречается и 3000, и 3500.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой иностранный язык учат в китайской школе?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Чаще всего английский, обычно с третьего класса начальной школы. В отдельных школах преподают японский, русский, немецкий, французский или испанский — как правило, там, где для этого есть учителя и сложившаяся программа.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой иностранный язык сдают на гаокао?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Один из шести: английский, русский, японский, немецкий, французский или испанский. Подавляющее большинство выбирает английский. Порядок и форма экзамена различаются по провинциям, устный экзамен по «малым языкам» проводится отдельно и не везде. Утверждение, что эти языки сдавать легче, я проверить не смогла: официальных данных о сравнении нет.</p></div>
+  </details>
+</div>
+
+<p class="sign">Четыре шага, и первый из них — не иероглиф! <span class="han">先学拼音</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Порядок обучения грамоте</b> — пиньинь в первые недели, затем черты, ключи, письмо в клетке и диктанты — приведён по описаниям программы предмета 语文 для начальной школы. Сроки даны как общая картина: учебники разных издательств распределяют материал по-разному.</li>
+    <li><b>Базовые черты</b> 横, 竖, 撇, 捺, 点, 提 и составные 折 и 钩 даны с названиями и направлением движения по словарным данным.</li>
+    <li><b>田字格</b> описана как квадрат с пунктирным делением; назначение — задавать пропорции знака в общем квадрате.</li>
+    <li><b>听写</b> — диктант на знаки, названный как обычная практика курса, а не как норматив. <b>提笔忘字</b> приведено как устойчивое выражение о забывании начертания при сохранном узнавании.</li>
+    <li><b>Числа по знакам</b> — около 1600 и 800 за первые два года, около 3000 и 2500 к концу начальной школы, около 3500 и 3000 к концу девятого класса — приведены по стандарту обязательного образования. <b>Редакции стандарта расходятся</b> (для начальной школы встречается и 3000, и 3500), и в тексте это сказано прямо.</li>
+    <li><b>Шесть языков на гаокао</b> — английский, русский, японский, немецкий, французский, испанский — по материалам провинциальных экзаменационных ведомств. Различия порядка и формы экзамена по провинциям и отдельный устный экзамен по «малым языкам» отмечены как региональная особенность.</li>
+    <li><b>Чего в статье нет намеренно:</b> пересказа про путунхуа, диалекты и школьные предметы — обе темы разобраны у нас отдельно и даны ссылками; утверждения, что «малые языки» на гаокао легче, и долей сдающих каждый язык — проверяемых данных я не нашла; советов, как учить ребёнка, и сравнения школьных систем по качеству.</li>
+    <li>Практика Kitai School: разборы с учениками, в том числе случай с прописями для первого класса.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Китайский ребёнок к первому классу уже свободно говорит: в школе он учится не языку, а письму</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
