@@ -1,0 +1,480 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kitayskaya-sistema-schisleniya#article",
+      "headline": "Китайская система счисления: разряды 百, 千, 万 и 亿, группы по четыре нуля и запись чисел до арабских цифр",
+      "description": "Как устроена китайская система счисления выше ста: разряды 十, 百, 千, 万 и 亿, группировка по четыре нуля вместо трёх, отсутствие отдельных знаков для миллиона и миллиарда (一百万 и 十亿), правило нуля внутри числа со знаком 零, «большие» формы цифр 壹 贰 叁 肆 伍 陆 柒 捌 玖 拾 佰 仟 в банковских документах и запись чисел до арабских цифр: счётные палочки с чередованием разрядов и пустым местом на месте нуля, счёты 算盘 и суучжоуские торговые цифры 苏州码子.",
+      "image": "https://static.tildacdn.com/tild6166-3262-4337-a338-393130396461/sch-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-23",
+      "dateModified": "2026-10-23",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kitayskaya-sistema-schisleniya",
+      "about": {
+        "@type": "Thing",
+        "name": "Китайская система счисления"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kitayskaya-sistema-schisleniya#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как устроена китайская система счисления?", "acceptedAnswer": {"@type": "Answer", "text": "Она десятичная и позиционная, как и наша: есть знаки для цифр от 一 до 九 и знаки разрядов 十 (10), 百 (100), 千 (1000), 万 (10 000) и 亿 (100 000 000). Число собирается из цифры и разряда: 45 — это 四十五, «четыре десятка пять». Главное отличие от русского начинается выше тысячи: крупные разряды идут через четыре нуля, а не через три."}},
+        {"@type": "Question", "name": "Сколько это — 万?", "acceptedAnswer": {"@type": "Answer", "text": "万 (wàn) — десять тысяч. Это самый важный знак во всей теме: именно на нём делают ошибку в ценах и зарплатах. 10万 — это сто тысяч, 100万 — миллион, 1000万 — десять миллионов. Простое правило: увидели 万, умножьте стоящее перед ним число на десять тысяч."}},
+        {"@type": "Question", "name": "Как по-китайски будет миллион и миллиард?", "acceptedAnswer": {"@type": "Answer", "text": "Отдельных знаков для них нет. Миллион — 一百万 (yìbǎi wàn), то есть «сто раз по десять тысяч». Миллиард — 十亿 (shí yì), «десять раз по сто миллионов». Поэтому прямой перевод по словам здесь не работает: нужно пересчитывать разряды."}},
+        {"@type": "Question", "name": "Зачем в числе ставят 零?", "acceptedAnswer": {"@type": "Answer", "text": "零 (líng) отмечает пропущенный разряд внутри числа. 1005 — это 一千零五: после тысячи идут два пустых разряда, и вместо них ставится один 零. Несколько нулей подряд дают всё равно один знак. А в конце числа 零 не ставят: 1050 — это 一千零五十."}},
+        {"@type": "Question", "name": "Что такое 壹 贰 叁 и почему они другие?", "acceptedAnswer": {"@type": "Answer", "text": "Это «большие» формы цифр, второй набор знаков для тех же чисел. Их пишут в банковских документах, на чеках и в договорах, потому что обычные 一, 二, 三 слишком просты: к ним легко дописать лишнюю черту и превратить одно число в другое. У 壹, 贰 и 叁 такой возможности нет."}},
+        {"@type": "Question", "name": "Как записывали числа в древнем Китае?", "acceptedAnswer": {"@type": "Answer", "text": "Счётными палочками: их раскладывали по разрядам на столе или на доске. Соседние разряды выкладывали поперёк друг другу — один вертикально, следующий горизонтально, — чтобы они не сливались, а пустое место означало ноль. Это уже десятичная позиционная запись. Позже распространились счёты 算盘; счёт на них, 珠算, входит в список нематериального культурного наследия ЮНЕСКО."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kitayskaya-sistema-schisleniya#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Китайская система счисления: разряды 百, 千, 万 и 亿, группы по четыре нуля и запись чисел до арабских цифр", "item": "https://kitai-school.ru/article/kitayskaya-sistema-schisleniya"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Числа</p>
+<h1>Китайская система счисления: <span class="italic">разряды 百, 千, 万 и 亿, группы по четыре нуля и запись чисел до арабских цифр</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-23">23 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tild6166-3262-4337-a338-393130396461/sch-hero.png" alt="Число 2016, выложенное счётными палочками: разряды идут поперёк друг другу, на месте нуля пустое место" width="1200" height="630"></figure>
+
+<p class="passport">До ста китайский счёт устроен так прозрачно, что его хватает выучить один раз: 11 — это «десять один», 21 — «два десятка один». А вот выше начинается то, чего в русском нет. <b>Главный крупный разряд в китайском — не тысяча, а 万 (wàn), десять тысяч</b>, и дальше числа растут группами по четыре нуля. Из-за этого цену в объявлении легко прочитать в десять раз меньше настоящей. Разберём всю систему — и заодно посмотрим, как числа записывали до арабских цифр.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Система десятичная:</b> цифра плюс разряд. <b>Разряды:</b> 十 10, 百 100, 千 1000, 万 10 000, 亿 100 000 000. <b>Группы по четыре нуля,</b> а не по три. <b>Миллион — 一百万,</b> миллиард — 十亿. <b>零</b> отмечает пропуск внутри числа. <b>壹 贰 叁</b> — формы для документов. <b>До арабских цифр</b> числа выкладывали счётными палочками.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">как устроен китайский счёт</span></h2>
+
+<p>Система десятичная и позиционная, как наша. Есть девять знаков для цифр и отдельные знаки для разрядов, а число собирается из того и другого: цифра говорит сколько, разряд — чего именно.</p>
+
+<p>Ровно то же самое делает русский язык, когда мы говорим «две тысячи пятьсот». Разница в двух вещах. Во-первых, китайская запись доводит этот принцип до конца и не знает исключений вроде «сорок» и «девяносто». Во-вторых — и это главное — крупные разряды у неё идут через четыре нуля, а не через три.</p>
+
+<p>Счёт до ста мы подробно разбирали отдельно, и здесь он нужен только как отправная точка: <a href="https://kitai-school.ru/article/cifry-ot-0-do-10-na-kitayskom" target="_blank" rel="noopener">цифры от 0 до 10 на китайском</a>. Вот напоминание в одну таблицу.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Как собираются числа до ста.</caption>
+  <thead><tr><th>Число</th><th>Знаки</th><th>Пиньинь</th><th>Дословно</th></tr></thead>
+  <tbody>
+    <tr><td><b>11</b></td><td><span class="han">十一</span></td><td><i>shíyī</i></td><td>десять один</td></tr>
+    <tr><td><b>20</b></td><td><span class="han">二十</span></td><td><i>èrshí</i></td><td>два десятка</td></tr>
+    <tr><td><b>45</b></td><td><span class="han">四十五</span></td><td><i>sìshíwǔ</i></td><td>четыре десятка пять</td></tr>
+    <tr><td><b>99</b></td><td><span class="han">九十九</span></td><td><i>jiǔshíjiǔ</i></td><td>девять десятков девять</td></tr>
+    <tr><td><b>100</b></td><td><span class="han">一百</span></td><td><i>yìbǎi</i></td><td>одна сотня</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Дальше этой таблицы начинается то, ради чего и написана статья.</p>
+
+<h2>Разряды: <span class="italic">百, 千, 万 и 亿</span></h2>
+
+<p>Знаков разрядов немного, и выучить их стоит сразу все, вместе с величинами.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Разряды китайского счёта.</caption>
+  <thead><tr><th>Знак</th><th>Пиньинь</th><th>Величина</th><th>По-русски</th><th>Что важно</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">十</span></td><td><i>shí</i></td><td><b>10</b></td><td>десять</td><td>一十 отдельно обычно не говорят</td></tr>
+    <tr><td><span class="han">百</span></td><td><i>bǎi</i></td><td><b>100</b></td><td>сто</td><td>二百 или 两百 — оба варианта в ходу</td></tr>
+    <tr><td><span class="han">千</span></td><td><i>qiān</i></td><td><b>1 000</b></td><td>тысяча</td><td>дальше наша и китайская запись расходятся</td></tr>
+    <tr><td><span class="han">万</span></td><td><i>wàn</i></td><td><b>10 000</b></td><td>десять тысяч</td><td>главный крупный разряд: на нём держится всё</td></tr>
+    <tr><td><span class="han">亿</span></td><td><i>yì</i></td><td><b>100 000 000</b></td><td>сто миллионов</td><td>следующая ступень — снова через четыре нуля</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>До тысячи всё совпадает с привычным: 三百 — триста, 五千 — пять тысяч. А вот <b>следующая ступень после 千 — это не «десять тысяч» как производное от тысячи, а отдельный разряд 万</b> со своим знаком. Для китайского это самостоятельная единица счёта, такая же базовая, как для нас тысяча.</p>
+
+<p>И дальше система повторяет этот шаг: следующий знак 亿 стоит не через три нуля от 万, а через четыре. 万 — это 10⁴, 亿 — 10⁸.</p>
+
+<p>Устройство это не только китайское. Ту же группировку по четыре разряда используют японский и корейский счёт — знаки там свои, а шаг между крупными разрядами тот же самый. Так что привычка, выработанная на китайских числах, пригодится и за его пределами, а вот привычка считать тысячами в этой части Азии подводит постоянно.</p>
+
+<h2>Группы <span class="italic">по четыре нуля</span></h2>
+
+<p>Вот место, где ломается всё. Мы делим длинное число на группы по три разряда — тысячи, миллионы, миллиарды. Китайская запись делит то же число по четыре.</p>
+
+<p>Посмотрим, что из этого получается, по шагам.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Как растут числа после тысячи.</caption>
+  <thead><tr><th>Число</th><th>Знаки</th><th>Пиньинь</th><th>Как это читается</th></tr></thead>
+  <tbody>
+    <tr><td><b>10 000</b></td><td><span class="han">一万</span></td><td><i>yí wàn</i></td><td>единица в разряде 万</td></tr>
+    <tr><td><b>100 000</b></td><td><span class="han">十万</span></td><td><i>shí wàn</i></td><td>десять раз по 万, отдельного знака нет</td></tr>
+    <tr><td><b>1 000 000</b></td><td><span class="han">一百万</span></td><td><i>yìbǎi wàn</i></td><td>сто раз по 万 — вот и миллион</td></tr>
+    <tr><td><b>10 000 000</b></td><td><span class="han">一千万</span></td><td><i>yìqiān wàn</i></td><td>тысяча раз по 万</td></tr>
+    <tr><td><b>100 000 000</b></td><td><span class="han">一亿</span></td><td><i>yí yì</i></td><td>следующий разряд, снова через четыре нуля</td></tr>
+    <tr><td><b>1 000 000 000</b></td><td><span class="han">十亿</span></td><td><i>shí yì</i></td><td>миллиард — это «десять 亿»</td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tild6535-3762-4936-b865-316532646533/sch-info.png" alt="Число 1234567890 с двумя разметками: сверху привычная разбивка по три разряда, снизу китайская по четыре — 12 亿, 3456 万 и 7890" width="1200" height="560"><figcaption>Одно и то же число в двух разметках: по три разряда и по четыре.</figcaption></figure>
+
+<p>Обратите внимание на вторую строку. <b>Для ста тысяч отдельного знака нет</b> — это 十万, «десять раз по десять тысяч». В русском для этого числа тоже нет своего слова, но мы говорим «сто тысяч» и опираемся на тысячу, а китайский опирается на 万.</p>
+
+<p>Третья строка — та самая, из-за которой путаются в ценах. Миллион по-китайски — 一百万, дословно «сто десятков тысяч». Никакого отдельного «миллиона» в системе не предусмотрено.</p>
+
+<p>И последняя строка: миллиард — это 十亿. То есть между 万 и 亿 умещается ровно четыре разряда, и ни один из них своего знака не имеет.</p>
+
+<h2>Как это <span class="italic">читать и переводить</span></h2>
+
+<p>На практике нужен не пересчёт в уме, а привычка. Вот порядок, который я даю ученикам.</p>
+
+<ul>
+  <li><b>Найдите в числе 万 или 亿.</b> Если их нет, число меньше десяти тысяч и переводится напрямую.</li>
+  <li><b>Возьмите всё, что стоит перед знаком,</b> и умножьте: перед 万 — на десять тысяч, перед 亿 — на сто миллионов.</li>
+  <li><b>Прибавьте остаток,</b> который стоит после знака.</li>
+  <li><b>И только теперь</b> переводите результат в привычные разряды.</li>
+</ul>
+
+<p>Разберём на примере: 35万. Перед знаком стоит 35, умножаем на десять тысяч — получается 350 000. Триста пятьдесят тысяч. Ещё пример: 2亿5000万. Первая часть — два раза по сто миллионов, то есть 200 000 000. Вторая — пять тысяч раз по десять тысяч, то есть 50 000 000. Вместе 250 000 000, двести пятьдесят миллионов.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица подбирала квартиру и присылала объявления с ценами: «120万». Перевела это для себя как сто двадцать тысяч юаней и написала, что цены её приятно удивили.</p>
+  <p>На занятии выяснилось, что речь про миллион двести тысяч — в десять раз больше, чем она посчитала. Ошибка вышла ровно в том месте, где её и делают все: 万 она приняла за тысячу.</p>
+  <p><b>Разобрали приём, который с тех пор работает без сбоев.</b> Ориентир держать не на тысяче, а на 万: увидели этот знак — сначала умножьте стоящее перед ним число на десять тысяч, и только потом переводите результат в привычные разряды.</p>
+  <p>Через неделю она прислала объявление с 68万 и сразу свой пересчёт: шестьсот восемьдесят тысяч. Правильно.</p>
+</div>
+
+<p>Есть и запись с десятичной частью, которая сначала сбивает с толку: 1.2万. Читается она как «одна целая две десятых от десяти тысяч», то есть 12 000. Так оформляют цены, число просмотров и любые округлённые величины, и правило здесь ровно то же: умножаем на десять тысяч, но уже дробное число.</p>
+
+<p>Суммы в примерах условные, но сама ситуация повторяется постоянно. С 万 вы встретитесь в первый же день: в ценах на жильё, в объявлениях о зарплате, в новостях и в любом разговоре про деньги. Лексика, где эти числа звучат чаще всего, собрана отдельно: <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>.</p>
+
+<h2>Ноль <span class="italic">внутри числа</span></h2>
+
+<p>Отдельное правило — про пропущенные разряды. Если внутри числа есть пустое место, его отмечают знаком 零 (líng).</p>
+
+<ul>
+  <li><span class="han">1005</span> — 一千零五: после тысячи два разряда пустые, и вместо них один 零.</li>
+  <li><span class="han">10 030</span> — 一万零三十: пропуск между 万 и десятками.</li>
+  <li><span class="han">2008</span> — 二零零八 при чтении по цифрам, но как число — 二千零八.</li>
+</ul>
+
+<p><b>Два правила, которые покрывают почти все случаи.</b> Первое: сколько бы разрядов подряд ни было пустыми, 零 ставится один раз. Второе: в конце числа 零 не ставят — 1050 это 一千零五十, а не «一千零五十零».</p>
+
+<p>Год и номер читают иначе — по цифрам подряд, без разрядов: 2026 год звучит как 二零二六年. Это не число, а последовательность знаков, и правило про 零 к ней не относится.</p>
+
+<h2>«Большие» формы <span class="italic">в документах</span></h2>
+
+<p>Если вы увидите в банковской бумаге незнакомые знаки на месте обычных цифр — это не ошибка. Для документов существует второй набор форм.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>«Большие» формы цифр и разрядов.</caption>
+  <thead><tr><th>Форма для документов</th><th>Обычная</th><th>Пиньинь</th><th>Значение</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">零</span></td><td><span class="han">〇</span></td><td><i>líng</i></td><td>ноль</td></tr>
+    <tr><td><span class="han">壹</span></td><td><span class="han">一</span></td><td><i>yī</i></td><td>один</td></tr>
+    <tr><td><span class="han">贰</span></td><td><span class="han">二</span></td><td><i>èr</i></td><td>два</td></tr>
+    <tr><td><span class="han">叁</span></td><td><span class="han">三</span></td><td><i>sān</i></td><td>три</td></tr>
+    <tr><td><span class="han">肆</span></td><td><span class="han">四</span></td><td><i>sì</i></td><td>четыре</td></tr>
+    <tr><td><span class="han">伍</span></td><td><span class="han">五</span></td><td><i>wǔ</i></td><td>пять</td></tr>
+    <tr><td><span class="han">陆</span></td><td><span class="han">六</span></td><td><i>liù</i></td><td>шесть</td></tr>
+    <tr><td><span class="han">柒</span></td><td><span class="han">七</span></td><td><i>qī</i></td><td>семь</td></tr>
+    <tr><td><span class="han">捌</span></td><td><span class="han">八</span></td><td><i>bā</i></td><td>восемь</td></tr>
+    <tr><td><span class="han">玖</span></td><td><span class="han">九</span></td><td><i>jiǔ</i></td><td>девять</td></tr>
+    <tr><td><span class="han">拾</span></td><td><span class="han">十</span></td><td><i>shí</i></td><td>десять</td></tr>
+    <tr><td><span class="han">佰</span></td><td><span class="han">百</span></td><td><i>bǎi</i></td><td>сто</td></tr>
+    <tr><td><span class="han">仟</span></td><td><span class="han">千</span></td><td><i>qiān</i></td><td>тысяча</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Причина простая и чисто практическая. Обычные 一, 二, 三 — это одна, две и три черты: к единице достаточно дописать линию, и в документе появляется двойка. У знаков 壹, 贰 и 叁 такой возможности нет, подделать их незаметно нельзя.</p>
+
+<p>Встретите вы их в чеках, платёжных поручениях, договорах и квитанциях. Писать их самому обычно не требуется, а вот узнавать полезно: иначе сумма в документе выглядит набором незнакомых знаков. Заодно это хороший пример того, как письменность решает задачу, с которой цифры не справляются — об устройстве самой письменности у нас есть отдельный разбор: <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost" target="_blank" rel="noopener">в Китае буквы или иероглифы</a>.</p>
+
+<h2>Как записывали числа <span class="italic">до арабских цифр</span></h2>
+
+<p>Самое интересное начинается, когда смотришь, чем считали до появления привычных значков.</p>
+
+<p><b>Счётные палочки.</b> Короткие палочки раскладывали на столе или на расчерченной доске: каждый разряд занимал своё место. Единицы, сотни и десятки тысяч выкладывали вертикально, десятки и тысячи — горизонтально, чтобы соседние разряды не сливались в сплошной ряд. Числа от шести до девяти показывали одной поперечной палочкой, которая означала пять, и ещё несколькими рядом.</p>
+
+<p>Отдельная деталь: палочки различали по цвету, и этим обозначали положительные и отрицательные числа. То есть минус в такой записи был не знаком, а свойством самой палочки — а работать с отрицательными величинами система умела.</p>
+
+<p>А пустой разряд оставляли пустым — место просто не занимали. Это и есть позиционная десятичная запись, работающая по тем же принципам, что и современная.</p>
+
+<p>Дат появления палочек я называть не буду: оценки расходятся, и единой принятой датировки нет. По той же причине не называю имён — у системы записи нет одного изобретателя.</p>
+
+<p><b>Счёты.</b> Позже появилось устройство, знакомое многим по виду: рамка с рядами косточек, где каждый ряд отвечает за свой разряд. По-китайски счёты — 算盘 (suànpán), а счёт на них — 珠算 (zhūsuàn). Эта техника входит в список нематериального культурного наследия ЮНЕСКО, и ей до сих пор учат на отдельных занятиях.</p>
+
+<p><b>Торговые цифры.</b> Был и третий набор знаков — 苏州码子 (sūzhōu mǎzi), скорописные цифры, которыми в лавках подписывали цены: писать их быстрее, чем обычные иероглифы. Сейчас это редкость, но на рынках и в старых лавках их ещё можно встретить.</p>
+
+<p>Счёты, кстати, встречаются и сейчас: их можно увидеть на прилавке в небольшой лавке или на рынке, рядом с телефоном для оплаты. Насколько часто ими действительно пользуются, я судить не берусь — проверяемых данных об этом не нашла, а наблюдения у разных приезжих расходятся.</p>
+
+<p>Все три системы объединяет одно: разрядность. Сколько бы ни менялись значки, счёт в них устроен одинаково — цифра и её место.</p>
+
+<h2>Что из этого <span class="italic">нужно на практике</span></h2>
+
+<p>Свод короткий и весь про деньги и числа, которые вы увидите своими глазами.</p>
+
+<ul>
+  <li><b>Выучите 万 раньше остальных разрядов.</b> Это единственный знак, ошибка в котором стоит порядка величины.</li>
+  <li><b>Запомните два перевода наизусть:</b> миллион — 一百万, миллиард — 十亿. Их приходится называть чаще всего, а вывести в уме сложнее всего.</li>
+  <li><b>Увидели 零 внутри числа</b> — значит, там пропущен разряд, и число длиннее, чем кажется по количеству знаков.</li>
+  <li><b>В документе цифры выглядят незнакомо</b> — ищите соответствие в таблице «больших» форм, это те же числа.</li>
+  <li><b>Не переводите по словам.</b> «Десять тысяч» и 万 — это одно число, но разные единицы счёта, и попытка подставить русское слово вместо знака как раз и даёт ошибку.</li>
+</ul>
+
+<p>И приём на каждый день: когда видите цену с 万, не переводите её сразу в рубли. Сначала получите сумму в юанях целиком, проверьте порядок величины — и только потом считайте дальше. Два действия вместо одного, зато без промахов в десять раз.</p>
+
+<div class="cta">
+  <p>Разряды, документы и числа в речи разбираем на занятиях — <a href="https://kitai-school.ru/ieroglifika" target="_blank" rel="noopener">курс иероглифики</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как устроена китайская система счисления?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Она десятичная и позиционная, как и наша: есть знаки для цифр от 一 до 九 и знаки разрядов 十 (10), 百 (100), 千 (1000), 万 (10 000) и 亿 (100 000 000). Число собирается из цифры и разряда: 45 — это 四十五, «четыре десятка пять». Главное отличие от русского начинается выше тысячи: крупные разряды идут через четыре нуля, а не через три.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько это — 万?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>万 (wàn) — десять тысяч. Это самый важный знак во всей теме: именно на нём делают ошибку в ценах и зарплатах. 10万 — это сто тысяч, 100万 — миллион, 1000万 — десять миллионов. Простое правило: увидели 万, умножьте стоящее перед ним число на десять тысяч.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как по-китайски будет миллион и миллиард?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Отдельных знаков для них нет. Миллион — 一百万 (yìbǎi wàn), то есть «сто раз по десять тысяч». Миллиард — 十亿 (shí yì), «десять раз по сто миллионов». Поэтому прямой перевод по словам здесь не работает: нужно пересчитывать разряды.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Зачем в числе ставят 零?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>零 (líng) отмечает пропущенный разряд внутри числа. 1005 — это 一千零五: после тысячи идут два пустых разряда, и вместо них ставится один 零. Несколько нулей подряд дают всё равно один знак. А в конце числа 零 не ставят: 1050 — это 一千零五十.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое 壹 贰 叁 и почему они другие?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это «большие» формы цифр, второй набор знаков для тех же чисел. Их пишут в банковских документах, на чеках и в договорах, потому что обычные 一, 二, 三 слишком просты: к ним легко дописать лишнюю черту и превратить одно число в другое. У 壹, 贰 и 叁 такой возможности нет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как записывали числа в древнем Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Счётными палочками: их раскладывали по разрядам на столе или на доске. Соседние разряды выкладывали поперёк друг другу — один вертикально, следующий горизонтально, — чтобы они не сливались, а пустое место означало ноль. Это уже десятичная позиционная запись. Позже распространились счёты 算盘; счёт на них, 珠算, входит в список нематериального культурного наследия ЮНЕСКО.</p></div>
+  </details>
+</div>
+
+<p class="sign">Главное число статьи — десять тысяч! <span class="han">一万</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Разряды</b> 十 (10), 百 (100), 千 (1000), 万 (10 000), 亿 (100 000 000) и группировка крупных разрядов через четыре нуля приведены по словарным данным. Все числовые примеры в статье пересчитаны.</li>
+    <li><b>Отсутствие отдельных знаков</b> для ста тысяч, миллиона и миллиарда: 十万, 一百万 и 十亿 — производные от 万 и 亿.</li>
+    <li><b>Правило 零</b> внутри числа и его отсутствие в конце числа даны по нормам записи числительных; чтение года и номера по цифрам отмечено как отдельный случай.</li>
+    <li><b>«Большие» формы</b> 壹 贰 叁 肆 伍 陆 柒 捌 玖 拾 佰 仟 приведены как формы для финансовых документов; назначение — защита записи от дописывания.</li>
+    <li><b>Счётные палочки:</b> чередование направления соседних разрядов, обозначение чисел от шести до девяти поперечной палочкой и пустое место на месте нуля описаны по известным сведениям о системе. <b>Дат и имён не называю</b>: оценки расходятся, единой принятой датировки нет.</li>
+    <li><b>Счёты</b> 算盘 и счёт на них 珠算: техника входит в список нематериального культурного наследия ЮНЕСКО. Год внесения и номер в списке не привожу.</li>
+    <li><b>Суучжоуские цифры</b> 苏州码子 упомянуты как торговая скоропись; оценок распространённости не даю.</li>
+    <li><b>Чего в статье нет намеренно:</b> пересказа счёта до ста, разницы 二 и 两, чтения 一 как yāo в номерах и счёта на пальцах — всё это разобрано в нашей статье про цифры и дано ссылкой; курсов валют и реальных цен; утверждений о том, что одна система записи удобнее другой.</li>
+    <li>Практика Kitai School: разборы с учениками, в том числе случай с ценой «120万».</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Китайские числа растут группами по четыре нуля: главный крупный разряд — не тысяча, а 万, десять тысяч</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
