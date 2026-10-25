@@ -1,0 +1,502 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kitayskie-slova-dlya-nachinayushchih#article",
+      "headline": "Китайские слова для начинающих с произношением и переводом: 70 слов первого месяца",
+      "description": "Стартовый словарь на 70 слов с иероглифами, пиньинем и переводом: десять вежливых формул, четырнадцать служебных слов 是, 有, 不, 没, 很, 要, двенадцать местоимений и вопросительных слов, двадцать четыре бытовых существительных и десять глаголов первого месяца. Отдельно разобрано устройство карточки слова и почему слово без тона приходится учить заново.",
+      "image": "https://static.tildacdn.com/tild6663-3233-4836-b438-633334313966/sl-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kitayskie-slova-dlya-nachinayushchih",
+      "about": {
+        "@type": "Thing",
+        "name": "Базовый словарь китайского языка для начинающих"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kitayskie-slova-dlya-nachinayushchih#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Сколько слов нужно знать для начала?", "acceptedAnswer": {"@type": "Answer", "text": "Для первых фраз хватает нескольких десятков, и здесь собрано 70: вежливые формы, служебные слова, местоимения, существительные и глаголы. Это каркас, а не разговорник: дальше на него нанизывается лексика по вашим темам."}},
+        {"@type": "Question", "name": "С каких слов начинать учить китайский?", "acceptedAnswer": {"@type": "Answer", "text": "Не с красивых, а со служебных: 是 «быть», 有 «иметь», 不 «не», 很 «очень», 要 «хотеть». Вторыми идут местоимения и вопросительные слова, третьими — глаголы и бытовые слова."}},
+        {"@type": "Question", "name": "Нужно ли сразу учить иероглифы или достаточно пиньиня?", "acceptedAnswer": {"@type": "Answer", "text": "Пиньинь нужен сразу — это правила чтения. Знаки подключают следующим шагом, начиная с тех, что есть в этих же словах: 人, 水, 中. Учить только пиньинь можно на первой неделе, дальше это мешает чтению: в тексте пиньиня не будет."}},
+        {"@type": "Question", "name": "Почему слово без тона не считается выученным?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что тон — часть слова, а не интонация фразы: 买 (mǎi) «покупать» и 卖 (mài) «продавать» различаются только им. Слово без тона — догадка для собеседника."}},
+        {"@type": "Question", "name": "Сколько новых слов в день реально запоминать?", "acceptedAnswer": {"@type": "Answer", "text": "Сроков я называть не буду: скорость зависит от того, сколько времени вы тратите и как регулярно возвращаетесь к выученному. Семьдесят слов — это два-три в день за месяц, и такой темп выдерживается без усилий."}},
+        {"@type": "Question", "name": "Что учить после этих семидесяти слов?", "acceptedAnswer": {"@type": "Answer", "text": "Числа и всё, что с ними связано: цены, время, даты. Тематическая лексика под вашу задачу. Счётные слова. И схемы предложений — параллельно со словами."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kitayskie-slova-dlya-nachinayushchih#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Китайские слова для начинающих с произношением и переводом: 70 слов первого месяца", "item": "https://kitai-school.ru/article/kitayskie-slova-dlya-nachinayushchih"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Словарь</p>
+<h1>Китайские слова для начинающих с произношением и переводом: <span class="italic">70 слов первого месяца</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-26">26 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tild6663-3233-4836-b438-633334313966/sl-hero.png" alt="Четыре стикера-заметки с китайскими словами: 你好 nǐ hǎo «здравствуйте», 谢谢 xièxie «спасибо», 我 wǒ «я», 要 yào «хотеть, нужно»" width="1200" height="630"></figure>
+
+<p class="passport">Списки «ста китайских слов» обычно начинаются с приветствий и названий блюд. Читать приятно, а говорить после такого списка не получается: <b>фразу держат не блюда, а служебные слова</b> — 是, 有, 不, 很, 要. Поэтому здесь собраны семьдесят слов другого сорта, из которых собирается предложение: каждое с иероглифом, пиньинем и переводом, и отдельно разобрано, как их учить.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>70 слов</b> в пяти группах. <b>Главная</b> — служебные: 是, 有, 不, 很, 要. <b>Тон учится вместе со словом,</b> иначе слово придётся учить заново. <b>В карточке</b> — знак, пиньинь с тоном, перевод и пример. <b>Чего здесь нет:</b> чисел, еды и фраз для поездки — по ним у нас отдельные разборы. <b>Это каркас,</b> а не разговорник.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">сколько слов нужно для старта</span></h2>
+
+<p>Для первых фраз хватает нескольких десятков слов — важно, каких. Разница между «выучил сто слов» и «могу сказать» проходит по служебной лексике.</p>
+
+<p>Проверить легко. Со словами «чай», «рис» и «красивый» вы только назовёте предметы. Со словами 我, 要, 不, 吗 — скажете «я хочу», «я не хочу» и «вы хотите?». Поэтому служебная часть здесь самая большая.</p>
+
+<p><b>Чего здесь нет намеренно.</b> Числа, еда и дорожные фразы в список не вошли: по каждой теме есть отдельный разбор. Числа — <a href="https://kitai-school.ru/article/cifry-ot-0-do-10-na-kitayskom" target="_blank" rel="noopener">цифры от 0 до 10 на китайском</a>, меню и продукты — <a href="https://kitai-school.ru/article/eda-na-kitayskom" target="_blank" rel="noopener">еда на китайском</a>, фразы для поездки — <a href="https://kitai-school.ru/article/kitajskij-yazyk-dlya-puteshestvij-50-fraz" target="_blank" rel="noopener">китайский язык для путешествий</a>, а разбор 再见 — <a href="https://kitai-school.ru/article/do-svidaniya-po-kitayski-kak-na-samom-dele-chitaetsya" target="_blank" rel="noopener">до свидания по-китайски</a>.</p>
+
+<p>И оговорка. В статье про старт с нуля сказано, что <b>в первую неделю список слов не учат</b> — сначала тоны, пиньинь и десяток фраз вслух: <a href="https://kitai-school.ru/article/izuchenie-kitajskogo-yazyka-s-nulya-s-chego-nachat" target="_blank" rel="noopener">изучение китайского с нуля</a>. Этот список для второй-четвёртой недели.</p>
+
+<h2>Вежливость: <span class="italic">десять первых реплик</span></h2>
+
+<p>С этого начинается разговор — слова первого дня.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Вежливые формы и приветствия.</caption>
+  <thead><tr><th>Знак</th><th>Пиньинь</th><th>Перевод</th><th>Пояснение</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">你好</span></td><td><i>nǐ hǎo</i></td><td><b>здравствуйте, привет</b></td><td>годится почти для всех случаев</td></tr>
+    <tr><td><span class="han">您好</span></td><td><i>nín hǎo</i></td><td><b>здравствуйте (вежливо)</b></td><td>к одному человеку, уважительно</td></tr>
+    <tr><td><span class="han">谢谢</span></td><td><i>xièxie</i></td><td><b>спасибо</b></td><td>второй слог звучит легко и коротко</td></tr>
+    <tr><td><span class="han">不客气</span></td><td><i>bú kèqi</i></td><td><b>не за что</b></td><td>ответ на «спасибо»</td></tr>
+    <tr><td><span class="han">对不起</span></td><td><i>duìbuqǐ</i></td><td><b>извините</b></td><td>когда виноваты</td></tr>
+    <tr><td><span class="han">没关系</span></td><td><i>méi guānxi</i></td><td><b>ничего страшного</b></td><td>ответ на извинение</td></tr>
+    <tr><td><span class="han">请</span></td><td><i>qǐng</i></td><td><b>пожалуйста</b></td><td>перед просьбой: 请进 — «входите»</td></tr>
+    <tr><td><span class="han">请问</span></td><td><i>qǐngwèn</i></td><td><b>позвольте спросить</b></td><td>вводит вопрос к незнакомому</td></tr>
+    <tr><td><span class="han">再见</span></td><td><i>zàijiàn</i></td><td><b>до свидания</b></td><td>дословно «снова увидимся»</td></tr>
+    <tr><td><span class="han">晚安</span></td><td><i>wǎn'ān</i></td><td><b>спокойной ночи</b></td><td>только на ночь, не вечером</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Две пары работают вместе: 谢谢 и 不客气, 对不起 и 没关系. Учить их стоит парами — в разговоре они так и звучат.</p>
+
+<p>Отдельно стоит 请问 (qǐngwèn) — не «пожалуйста», а вежливое начало вопроса к незнакомому: 请问，车站在哪儿 — «позвольте спросить, где остановка».</p>
+
+<h2>Карточка слова: <span class="italic">что в ней должно быть</span></h2>
+
+<p>Договоримся, что значит «выучить слово». В китайском это не два поля, а четыре.</p>
+
+<ul>
+  <li><b>Иероглиф.</b> Даже если вы пока не пишете его от руки, знак нужно узнавать.</li>
+  <li><b>Пиньинь с тоном.</b> Именно с тоном: без него запись неполная.</li>
+  <li><b>Перевод.</b> Короткий, одним-двумя словами, без списка значений.</li>
+  <li><b>Пример.</b> Короткая фраза, в которой слово стоит на своём месте.</li>
+</ul>
+
+<p>Четвёртое поле пропускают чаще всего, а оно и держит слово в памяти: 要 отдельно забывается за день, а 我要水 «мне нужна вода» — уже готовая фраза.</p>
+
+<p><b>Про тоны.</b> Тон — часть слова, как буква в русском: сменить тон всё равно что сказать «дом» вместо «дым». Как их ставить и слышать, разобрано отдельно: <a href="https://kitai-school.ru/article/korrektirovka-proiznosheniya-v-kitayskom" target="_blank" rel="noopener">корректировка произношения</a>.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tild3133-3961-4635-b732-626435313766/sl-info.png" alt="Семь кармашков с группами слов первого месяца: вежливость 10, слова-опоры 14, местоимения 6, вопросы 6, люди и вещи 12, места и время 12, глаголы 10 — всего 70 слов" width="1200" height="540"><figcaption>Семьдесят слов разложены по семи группам — так их удобнее брать по частям.</figcaption></figure>
+
+<h2>Слова-опоры: <span class="italic">是, 有, 不, 很 и ещё десять</span></h2>
+
+<p>Главный раздел. Эти четырнадцать слов не переводятся красиво, зато без них не собирается ни одно предложение.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Служебные слова, на которых держится фраза.</caption>
+  <thead><tr><th>Знак</th><th>Пиньинь</th><th>Перевод</th><th>Пример или пояснение</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">是</span></td><td><i>shì</i></td><td><b>быть</b></td><td>我是学生 — «я студент»</td></tr>
+    <tr><td><span class="han">有</span></td><td><i>yǒu</i></td><td><b>иметь, есть</b></td><td>我有时间 — «у меня есть время»</td></tr>
+    <tr><td><span class="han">不</span></td><td><i>bù</i></td><td><b>не</b></td><td>общее отрицание</td></tr>
+    <tr><td><span class="han">没</span></td><td><i>méi</i></td><td><b>не</b></td><td>для 有 и для прошлого</td></tr>
+    <tr><td><span class="han">很</span></td><td><i>hěn</i></td><td><b>очень</b></td><td>перед прилагательным почти всегда</td></tr>
+    <tr><td><span class="han">也</span></td><td><i>yě</i></td><td><b>тоже</b></td><td>我也去 — «я тоже иду»</td></tr>
+    <tr><td><span class="han">都</span></td><td><i>dōu</i></td><td><b>все, оба</b></td><td>我们都是学生 — «мы все студенты»</td></tr>
+    <tr><td><span class="han">要</span></td><td><i>yào</i></td><td><b>хотеть, нужно</b></td><td>我要水 — «мне нужна вода»</td></tr>
+    <tr><td><span class="han">想</span></td><td><i>xiǎng</i></td><td><b>хотеть, думать</b></td><td>мягче, чем 要</td></tr>
+    <tr><td><span class="han">会</span></td><td><i>huì</i></td><td><b>уметь</b></td><td>об умении</td></tr>
+    <tr><td><span class="han">能</span></td><td><i>néng</i></td><td><b>мочь</b></td><td>о возможности сейчас</td></tr>
+    <tr><td><span class="han">可以</span></td><td><i>kěyǐ</i></td><td><b>можно</b></td><td>о разрешении: 可以吗</td></tr>
+    <tr><td><span class="han">的</span></td><td><i>de</i></td><td><b>показатель определения</b></td><td>我的书 «моя книга»</td></tr>
+    <tr><td><span class="han">吗</span></td><td><i>ma</i></td><td><b>вопросительная частица</b></td><td>в конце: 你好吗</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик пришёл с выученным списком: сто с лишним слов, читает уверенно, перевод называет без запинки. Гордился — и было чем.</p>
+  <p>В разговоре выяснилось, что примерно половину он выучил без тонов. Запомнил «ма», «шуй», «чи» и решил, что тон приложится потом, когда слов станет больше.</p>
+  <p>Проверили на паре 买 (mǎi) «покупать» и 卖 (mài) «продавать». Слова различаются только тоном, и в его исполнении это было одно слово — собеседник в магазине понял бы наугад.</p>
+  <p><b>Список пришлось переучивать заново</b>, уже с тоном как частью слова. Вывод он сформулировал сам: слово без тона не выучено, а только узнано.</p>
+</div>
+
+<p><b>Две пары, которые путают чаще всего.</b> 不 отрицает что угодно, 没 работает с 有 и с прошедшим: «не иду» — 不去, «не ходил» — 没去.</p>
+
+<p>Вторая пара — 会 и 能: оба переводятся «мочь», но 会 про умение (我会说中文 «я умею говорить по-китайски»), а 能 про возможность сейчас (我不能去 «я не могу пойти»). Целиком разбирать её здесь не буду: на первом месяце довольно знать, что слова разные.</p>
+
+<p>И про 很: оно стоит там, где по-русски «очень» не нужно — 我很好 значит просто «у меня всё хорошо».</p>
+
+<h2>Местоимения и вопросы: <span class="italic">двенадцать служебных слов</span></h2>
+
+<p>Шесть местоимений и шесть вопросительных слов. Этого набора хватает, чтобы задать почти любой бытовой вопрос.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Местоимения и вопросительные слова.</caption>
+  <thead><tr><th>Знак</th><th>Пиньинь</th><th>Перевод</th><th>Пояснение</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">我</span></td><td><i>wǒ</i></td><td><b>я</b></td><td>форма не меняется ни в одной роли</td></tr>
+    <tr><td><span class="han">你</span></td><td><i>nǐ</i></td><td><b>ты</b></td><td>нейтральное обращение</td></tr>
+    <tr><td><span class="han">他</span></td><td><i>tā</i></td><td><b>он</b></td><td>она — 她, звучит так же</td></tr>
+    <tr><td><span class="han">我们</span></td><td><i>wǒmen</i></td><td><b>мы</b></td><td>суффикс 们 даёт множественное число</td></tr>
+    <tr><td><span class="han">这个</span></td><td><i>zhège</i></td><td><b>этот</b></td><td>со счётным словом 个</td></tr>
+    <tr><td><span class="han">那个</span></td><td><i>nàge</i></td><td><b>тот</b></td><td>про дальний предмет</td></tr>
+    <tr><td><span class="han">什么</span></td><td><i>shénme</i></td><td><b>что, какой</b></td><td>什么时候 — «когда»</td></tr>
+    <tr><td><span class="han">谁</span></td><td><i>shéi</i></td><td><b>кто</b></td><td>встречается и чтение shuí</td></tr>
+    <tr><td><span class="han">哪儿</span></td><td><i>nǎr</i></td><td><b>где, куда</b></td><td>нейтральный вариант — 哪里</td></tr>
+    <tr><td><span class="han">几</span></td><td><i>jǐ</i></td><td><b>сколько</b></td><td>о небольшом количестве, до десяти</td></tr>
+    <tr><td><span class="han">多少</span></td><td><i>duōshao</i></td><td><b>сколько</b></td><td>о любом количестве и о цене</td></tr>
+    <tr><td><span class="han">怎么</span></td><td><i>zěnme</i></td><td><b>как</b></td><td>怎么走 — «как пройти»</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Главное свойство вопросительных слов: <b>они стоят там, где в ответе будет нужное слово</b>. «Ты идёшь куда?» — 你去哪儿, порядок не меняется.</p>
+
+<p>Про 几 и 多少: 几 спрашивает о небольшом количестве и требует счётного слова (几个人 «сколько человек»), 多少 — о любом количестве и о цене: 多少钱.</p>
+
+<h2>Люди, вещи, места <span class="italic">и время</span></h2>
+
+<p>Двадцать четыре существительных, которые встречаются в первый же день: от 手机 до 医院.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Бытовая лексика первого месяца.</caption>
+  <thead><tr><th>Знак</th><th>Пиньинь</th><th>Перевод</th><th>Пояснение</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">人</span></td><td><i>rén</i></td><td><b>человек</b></td><td>中国人 — «китаец»</td></tr>
+    <tr><td><span class="han">朋友</span></td><td><i>péngyou</i></td><td><b>друг</b></td><td>朋友们 — «друзья» при обращении</td></tr>
+    <tr><td><span class="han">老师</span></td><td><i>lǎoshī</i></td><td><b>учитель</b></td><td>и обращение к преподавателю</td></tr>
+    <tr><td><span class="han">学生</span></td><td><i>xuésheng</i></td><td><b>ученик, студент</b></td><td>о любом учащемся</td></tr>
+    <tr><td><span class="han">家</span></td><td><i>jiā</i></td><td><b>дом, семья</b></td><td>回家 — «вернуться домой»</td></tr>
+    <tr><td><span class="han">名字</span></td><td><i>míngzi</i></td><td><b>имя</b></td><td>你叫什么名字 — «как вас зовут»</td></tr>
+    <tr><td><span class="han">中国</span></td><td><i>Zhōngguó</i></td><td><b>Китай</b></td><td>дословно «срединное государство»</td></tr>
+    <tr><td><span class="han">中国人</span></td><td><i>Zhōngguórén</i></td><td><b>китаец</b></td><td>страна плюс 人</td></tr>
+    <tr><td><span class="han">水</span></td><td><i>shuǐ</i></td><td><b>вода</b></td><td>一瓶水 — «бутылка воды»</td></tr>
+    <tr><td><span class="han">钱</span></td><td><i>qián</i></td><td><b>деньги</b></td><td>多少钱 — «сколько стоит»</td></tr>
+    <tr><td><span class="han">手机</span></td><td><i>shǒujī</i></td><td><b>телефон</b></td><td>дословно «ручная машинка»</td></tr>
+    <tr><td><span class="han">时间</span></td><td><i>shíjiān</i></td><td><b>время</b></td><td>没时间 — «нет времени»</td></tr>
+    <tr><td><span class="han">学校</span></td><td><i>xuéxiào</i></td><td><b>школа</b></td><td>и учебное заведение вообще</td></tr>
+    <tr><td><span class="han">公司</span></td><td><i>gōngsī</i></td><td><b>компания</b></td><td>我们公司 — «наша компания»</td></tr>
+    <tr><td><span class="han">医院</span></td><td><i>yīyuàn</i></td><td><b>больница</b></td><td>пригодится раньше, чем хотелось бы</td></tr>
+    <tr><td><span class="han">商店</span></td><td><i>shāngdiàn</i></td><td><b>магазин</b></td><td>о небольшом магазине</td></tr>
+    <tr><td><span class="han">饭馆</span></td><td><i>fànguǎn</i></td><td><b>ресторан</b></td><td>о недорогом заведении</td></tr>
+    <tr><td><span class="han">车站</span></td><td><i>chēzhàn</i></td><td><b>остановка, вокзал</b></td><td>и автобусная, и железнодорожный</td></tr>
+    <tr><td><span class="han">今天</span></td><td><i>jīntiān</i></td><td><b>сегодня</b></td><td>день плюс 天</td></tr>
+    <tr><td><span class="han">明天</span></td><td><i>míngtiān</i></td><td><b>завтра</b></td><td>та же схема</td></tr>
+    <tr><td><span class="han">昨天</span></td><td><i>zuótiān</i></td><td><b>вчера</b></td><td>та же схема</td></tr>
+    <tr><td><span class="han">早上</span></td><td><i>zǎoshang</i></td><td><b>утро</b></td><td>早上好 — «доброе утро»</td></tr>
+    <tr><td><span class="han">晚上</span></td><td><i>wǎnshang</i></td><td><b>вечер</b></td><td>晚上好 — «добрый вечер»</td></tr>
+    <tr><td><span class="han">现在</span></td><td><i>xiànzài</i></td><td><b>сейчас</b></td><td>现在几点 — «сколько времени»</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Обратите внимание на 今天, 明天 и 昨天: все три собраны из знакомой части и знака 天 «день». Так устроена значительная часть лексики — знакомые знаки складываются в новое слово. То же с 中国人: «Китай» плюс «человек», и по этой схеме получаются названия жителей любой страны.</p>
+
+<h2>Десять глаголов, <span class="italic">которые нужны сразу</span></h2>
+
+<p>Глаголов в китайском много, но на первом месяце хватает десяти.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Глаголы первого месяца.</caption>
+  <thead><tr><th>Знак</th><th>Пиньинь</th><th>Перевод</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">去</span></td><td><i>qù</i></td><td><b>идти, ехать</b></td><td>去中国 — «поехать в Китай»</td></tr>
+    <tr><td><span class="han">来</span></td><td><i>lái</i></td><td><b>приходить</b></td><td>движение к говорящему</td></tr>
+    <tr><td><span class="han">吃</span></td><td><i>chī</i></td><td><b>есть</b></td><td>吃饭 — «поесть»</td></tr>
+    <tr><td><span class="han">喝</span></td><td><i>hē</i></td><td><b>пить</b></td><td>喝水 — «пить воду»</td></tr>
+    <tr><td><span class="han">看</span></td><td><i>kàn</i></td><td><b>смотреть, читать</b></td><td>看书 — «читать книгу»</td></tr>
+    <tr><td><span class="han">说</span></td><td><i>shuō</i></td><td><b>говорить</b></td><td>说中文 — «говорить по-китайски»</td></tr>
+    <tr><td><span class="han">听</span></td><td><i>tīng</i></td><td><b>слушать</b></td><td>听不懂 — «не понимаю на слух»</td></tr>
+    <tr><td><span class="han">买</span></td><td><i>mǎi</i></td><td><b>покупать</b></td><td>третий тон, не перепутайте с 卖</td></tr>
+    <tr><td><span class="han">做</span></td><td><i>zuò</i></td><td><b>делать</b></td><td>做什么 — «что делаешь»</td></tr>
+    <tr><td><span class="han">学</span></td><td><i>xué</i></td><td><b>учить, учиться</b></td><td>学中文 — «учить китайский»</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Глаголы не спрягаются: 我去, 你去, 他去 — форма одна. Время показывают слова вроде 今天 и 明天, сам глагол не меняется.</p>
+
+<p>Когда десяти станет мало, продолжение собрано отдельно: <a href="https://kitai-school.ru/article/top-50-bazovyh-glagolov-kitayskogo-yazyka-s-primerami" target="_blank" rel="noopener">топ-50 базовых глаголов</a> — пятьдесят глаголов с примерами.</p>
+
+<h2>Как учить эти слова, <span class="italic">чтобы они остались</span></h2>
+
+<p>Несколько приёмов, которые работают у моих учеников.</p>
+
+<ul>
+  <li><b>Учите группами, а не подряд.</b> Десять вежливых формул за раз, потом неделя на служебные — так слова связываются между собой.</li>
+  <li><b>Сразу во фразе.</b> Не 要, а 我要水. Слово, выученное внутри фразы, вспоминается вместе с ней.</li>
+  <li><b>Проговаривайте вслух.</b> Тон не запоминается глазами: его нужно произнести несколько раз.</li>
+  <li><b>Возвращайтесь к старому.</b> Три новых слова и пять повторённых лучше, чем восемь новых.</li>
+  <li><b>Пишите знаки от руки.</b> Не ради красоты: при письме знак разбирается на части и запоминается прочнее.</li>
+</ul>
+
+<p><b>Чего делать не стоит.</b> Не учить по сто слов за вечер: к утру останется десяток, и не те. Не переводить слово списком значений — берите одно, самое частое. И не откладывать тоны «на потом»: эту ошибку дороже всего исправлять.</p>
+
+<p>Этот набор покрывает заметную часть лексики первого уровня экзамена — что там спрашивают, разобрано отдельно: <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1</a>.</p>
+
+<div class="cta">
+  <p>Поставить произношение и собрать первые фразы быстрее с преподавателем — <a href="https://kitai-school.ru/ieroglifika" target="_blank" rel="noopener">курс иероглифики</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько слов нужно знать для начала?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Для первых фраз хватает нескольких десятков, и здесь собрано 70: вежливые формы, служебные слова, местоимения, существительные и глаголы. Это каркас, а не разговорник: дальше на него нанизывается лексика по вашим темам.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С каких слов начинать учить китайский?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Не с красивых, а со служебных: 是 «быть», 有 «иметь», 不 «не», 很 «очень», 要 «хотеть». Вторыми идут местоимения и вопросительные слова, третьими — глаголы и бытовые слова.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли сразу учить иероглифы или достаточно пиньиня?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Пиньинь нужен сразу — это правила чтения. Знаки подключают следующим шагом, начиная с тех, что есть в этих же словах: 人, 水, 中. Учить только пиньинь можно на первой неделе, дальше это мешает чтению: в тексте пиньиня не будет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему слово без тона не считается выученным?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что тон — часть слова, а не интонация фразы: 买 (mǎi) «покупать» и 卖 (mài) «продавать» различаются только им. Слово без тона — догадка для собеседника.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько новых слов в день реально запоминать?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сроков я называть не буду: скорость зависит от того, сколько времени вы тратите и как регулярно возвращаетесь к выученному. Семьдесят слов — это два-три в день за месяц, и такой темп выдерживается без усилий.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что учить после этих семидесяти слов?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Числа и всё, что с ними связано: цены, время, даты. Тематическая лексика под вашу задачу. Счётные слова. И схемы предложений — параллельно со словами.</p></div>
+  </details>
+</div>
+
+<p class="sign">Начните с тех, что держат фразу! <span class="han">我要学中文</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Состав словаря:</b> 70 слов в пяти таблицах — 10 вежливых формул, 14 служебных, 12 местоимений и вопросительных, 24 бытовых существительных, 10 глаголов. Число и отсутствие повторов проверяются скриптом при сборке.</li>
+    <li><b>Значения и чтения</b> приведены по словарным данным; у 谁 отмечено второе чтение shuí, у 哪儿 — вариант 哪里. <b>Различия</b> 不 и 没, 会 и 能, 几 и 多少 даны кратко, как ориентиры первого месяца: полный разбор этих пар не обещается.</li>
+    <li><b>Устройство карточки</b> — знак, пиньинь с тоном, перевод, пример — приведено как рабочий приём, а не единственно верный способ. <b>Пара 买 и 卖</b> — пример слов, различающихся только тоном.</li>
+    <li><b>Чего нет намеренно:</b> чисел, лексики меню и дорожных фраз — по ним отдельные разборы, даны ссылками; разбора четырёх тонов — ссылка на статью про произношение; сроков вида «выучите за неделю»; названий приложений.</li>
+    <li>Практика Kitai School: разборы с учениками, в том числе случай со списком, выученным без тонов.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Первыми учат не красивые слова, а те, что держат фразу: 是, 有, 不, 很, 要</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
