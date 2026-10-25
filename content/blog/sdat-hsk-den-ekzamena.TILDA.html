@@ -1,0 +1,472 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/sdat-hsk-den-ekzamena#article",
+      "headline": "Сдать HSK: как проходит день экзамена, что взять с собой и где теряют баллы на формате, а не на языке",
+      "description": "Процедура дня экзамена HSK: что берут с собой и что оставляют дома, как устроена регистрация на месте, заполнение бланка, порядок трёх частей — аудирования, чтения и письма, — и что происходит после сдачи материалов. Разобраны потери на формате: ожидание повтора в аудировании, застревание на одном тексте в чтении, перенос ответов в бланк в последние минуты. Даты, регистрация, уровни и система баллов вынесены в отдельные разборы и даны ссылками.",
+      "image": "https://static.tildacdn.com/tila6666-3936-4137-b566-353539623132/hsk-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-28",
+      "dateModified": "2026-10-28",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/sdat-hsk-den-ekzamena",
+      "about": {
+        "@type": "Thing",
+        "name": "Экзамен HSK: день экзамена и работа с форматом"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/sdat-hsk-den-ekzamena#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как проходит экзамен HSK?", "acceptedAnswer": {"@type": "Answer", "text": "В один день и в один заход: сначала аудирование, затем чтение, затем письменная часть. Перед стартом заполняют бланк с личными данными, после окончания материалы остаются в аудитории. Между частями отдельных перерывов обычно нет — экзамен идёт подряд. Точный порядок и длительность задаёт центр и уровень, который вы сдаёте."}},
+        {"@type": "Question", "name": "Что нужно взять с собой на экзамен?", "acceptedAnswer": {"@type": "Answer", "text": "Документ, удостоверяющий личность, — тот же, что был указан при регистрации: данные сверяют со списком. Для бумажного формата — простые карандаши и ластик. Телефон, умные часы, наушники, словари и собственные черновики в аудиторию не проносят. Правила по воде и по хранению вещей у центров различаются, уточняйте заранее."}},
+        {"@type": "Question", "name": "Аудирование включают один раз или два?", "acceptedAnswer": {"@type": "Answer", "text": "Один. Запись идёт для всей аудитории сразу, перемотки и повтора нет ни на одном уровне. Поэтому главный приём здесь простой: не расслышали — отметьте любой вариант и слушайте дальше. Попытка вспомнить пропущенный фрагмент обычно стоит ещё одного вопроса."}},
+        {"@type": "Question", "name": "Что делать, если не успеваешь по времени?", "acceptedAnswer": {"@type": "Answer", "text": "Не доделывать то, на чём застряли, а переходить дальше. Время на каждую часть ограничено отдельно, и несделанное в чтении не компенсируется письменной частью. Непонятное задание пропускают, отмечают и возвращаются к нему, если время останется. Пустых ответов в бланке лучше не оставлять."}},
+        {"@type": "Question", "name": "Можно ли пересдать HSK?", "acceptedAnswer": {"@type": "Answer", "text": "Да, ограничений на число попыток в общем порядке нет: можно записаться на следующую сессию. Разумнее не на ближайшую, а на ту, до которой успеете разобрать ошибки. Даты и сроки записи у каждого центра свои, и это стоит проверять заранее."}},
+        {"@type": "Question", "name": "Когда приходят результаты?", "acceptedAnswer": {"@type": "Answer", "text": "Сначала результат появляется в личном кабинете на сайте экзамена, бумажный сертификат идёт дольше. Конкретные сроки зависят от центра и сессии, поэтому называть числа я не буду — их уточняют там, где вы записывались."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/sdat-hsk-den-ekzamena#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Сдать HSK: как проходит день экзамена, что взять с собой и где теряют баллы на формате, а не на языке", "item": "https://kitai-school.ru/article/sdat-hsk-den-ekzamena"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамен</p>
+<h1>Сдать HSK: <span class="italic">как проходит день экзамена, что взять с собой и где теряют баллы на формате, а не на языке</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-10-28">28 октября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila6666-3936-4137-b566-353539623132/hsk-hero.png" alt="Песочные часы и три части экзамена HSK: 听力 аудирование, 阅读 чтение, 书写 письмо" width="1200" height="630"></figure>
+
+<p class="passport">Выученные слова не спасают, если на чтении вы застряли на первом тексте, а бланк заполняли в последние минуты. <b>Заметная часть потерь на HSK случается не из-за языка, а из-за формата</b>: записи, которая звучит один раз, времени, ограниченного отдельно для каждой части, и правил, о которых узнают уже в аудитории. Разберём день экзамена по шагам — от того, что положить в сумку, до того, когда приходит результат.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Три части подряд:</b> аудирование, чтение, письмо. <b>Запись звучит один раз.</b> <b>Время у каждой части своё</b> — несделанное в чтении письмом не компенсируется. <b>Документ</b> — тот же, что при регистрации. <b>Телефон и словари</b> в аудиторию не проносят. <b>Непонятное задание</b> пропускают и возвращаются. <b>Даты и баллы</b> — в отдельных разборах.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">из чего состоит день экзамена</span></h2>
+
+<p>Экзамен проходит в один день и в один заход: аудирование, чтение, письменная часть, отдельных перерывов между ними обычно нет. До старта заполняют бланк с личными данными, после окончания материалы остаются в аудитории.</p>
+
+<p>Длительность частей и число заданий зависят от уровня, и эти цифры у нас разобраны там, где им место: по HSK 4 — <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">разбор HSK 4</a>, по HSK 5 — <a href="https://kitai-school.ru/article/hsk-5-kak-sdat-universitetskiy-kzamen" target="_blank" rel="noopener">HSK 5</a>, а как складывается итоговый балл — <a href="https://kitai-school.ru/article/sistema-ocenki-hsk-4" target="_blank" rel="noopener">система оценки HSK 4</a>. Здесь чисел не будет: они различаются по уровням и пересматриваются, и третье место с теми же цифрами гарантированно с ними разойдётся.</p>
+
+<p>Про даты сессий, окна регистрации и выбор центра тоже есть отдельный разбор, и он подробный: <a href="https://kitai-school.ru/article/daty-sdachi-hsk-raspisanie-sessiy" target="_blank" rel="noopener">даты сдачи HSK</a>. А что именно подтверждает сертификат и сколько он действует — <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK</a>.</p>
+
+<p>Эта статья про другое: <b>про сам день и про то, что решается порядком действий</b>, а не знанием слов.</p>
+
+<h2>До экзамена: <span class="italic">что взять и что оставить дома</span></h2>
+
+<p>Список короткий, и половина пунктов — про то, чего в аудитории быть не должно.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Что взять с собой.</caption>
+  <thead><tr><th>Что</th><th>Насколько обязательно</th><th>Зачем</th></tr></thead>
+  <tbody>
+    <tr><td><b>Документ, удостоверяющий личность</b></td><td>обязательно</td><td>тот же, что указан при регистрации: данные сверяют со списком</td></tr>
+    <tr><td><b>Распечатка или номер регистрации</b></td><td>желательно</td><td>ускоряет поиск вашего места в списках</td></tr>
+    <tr><td><b>Простые карандаши и ластик</b></td><td>для бумажного формата</td><td>бланк заполняют карандашом; запасной не помешает</td></tr>
+    <tr><td><b>Бутылка воды без этикетки</b></td><td>по правилам центра</td><td>где-то можно, где-то нет — уточняйте заранее</td></tr>
+    <tr><td><b>Часы без умных функций</b></td><td>на ваше усмотрение</td><td>в аудитории есть часы, но свои спокойнее</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Главный пункт — первый.</b> Документ должен быть тем же, по которому вы регистрировались: данные сверяют со списком участников, и расхождение решается не на месте.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Что остаётся за дверью.</caption>
+  <thead><tr><th>Что</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td><b>Телефон</b></td><td>сдаётся на хранение или выключается и убирается — правила у центров разные</td></tr>
+    <tr><td><b>Умные часы и наушники</b></td><td>любая электроника с экраном или связью</td></tr>
+    <tr><td><b>Словари, в том числе бумажные</b></td><td>никакие справочные материалы не допускаются</td></tr>
+    <tr><td><b>Свои черновики и стикеры</b></td><td>черновик на бумажном формате выдают, на компьютерном его нет</td></tr>
+    <tr><td><b>Сумка на столе</b></td><td>вещи убирают туда, куда укажет наблюдающий</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Правила по мелочам — вода, порядок хранения сумок, можно ли выходить — у центров различаются. Это тот случай, когда один вопрос заранее экономит нервы в день экзамена.</p>
+
+<p>Ещё одна мелочь, о которой вспоминают в последний момент: <b>на компьютерном формате писать от руки не придётся вовсе</b>, а на бумажном всё заполняется карандашом — ручка не подойдёт. Какой формат проводит ваш центр, лучше знать заранее: от этого зависит и то, как вы тренируетесь дома.</p>
+
+<h2>Как проходит день: <span class="italic">по шагам</span></h2>
+
+<p>Общая схема одинакова почти везде, различия — в деталях, которые задаёт центр.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila3731-6166-4038-b563-333237346366/hsk-info.png" alt="Чек-лист дня экзамена HSK в три столбца: до входа, в аудитории и после — документ, телефон на хранение, аудирование звучит один раз, результат сначала в личном кабинете" width="1200" height="500"><figcaption>Чек-лист дня: до входа, в аудитории и после.</figcaption></figure>
+
+<div class="table-wrap">
+<table>
+  <caption>Порядок дня экзамена.</caption>
+  <thead><tr><th>Этап</th><th>Что происходит</th><th>Что важно</th></tr></thead>
+  <tbody>
+    <tr><td><b>Приход</b></td><td>приходят заранее: списки участников вывешивают у аудиторий</td><td>опоздание после начала аудирования почти всегда означает недопуск</td></tr>
+    <tr><td><b>Регистрация на месте</b></td><td>сверяют документ, выдают материалы, показывают место</td><td>место закреплено за номером, пересаживаться нельзя</td></tr>
+    <tr><td><b>Заполнение бланка</b></td><td>личные данные вносят до старта, под диктовку наблюдающего</td><td>это не часть экзамена, но ошибка здесь стоит результата</td></tr>
+    <tr><td><b>Аудирование</b></td><td>запись включают один раз для всей аудитории</td><td>перемотки и повтора нет ни на одном уровне</td></tr>
+    <tr><td><b>Чтение</b></td><td>начинается сразу после аудирования</td><td>самая частая потеря времени</td></tr>
+    <tr><td><b>Письмо</b></td><td>идёт последним</td><td>на компьютерном формате знаки набирают</td></tr>
+    <tr><td><b>Сдача материалов</b></td><td>бланк и задания остаются в аудитории</td><td>выносить ничего нельзя, в том числе черновик</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Про приход.</b> Приезжать стоит с запасом: найти аудиторию по спискам, сдать вещи и сесть на место до начала. Опоздание после старта аудирования почти всегда означает недопуск. <b>Про бланк:</b> личные данные вносят до начала, под диктовку наблюдающего, и ошибка в номере документа портит результат вернее, чем пара неверных ответов.</p>
+
+<h2>Аудирование: <span class="italic">формат, который прощает меньше всего</span></h2>
+
+<p>Запись включают один раз для всей аудитории: перемотки нет, повтора нет, паузы между вопросами короткие.</p>
+
+<p>Отсюда два правила, которые доводят до автоматизма на пробниках.</p>
+
+<ul>
+  <li><b>Не расслышали — отвечайте и идите дальше.</b> Пока вы вспоминаете пропущенное, звучит следующий вопрос.</li>
+  <li><b>Варианты читайте в паузе,</b> до того как начнётся очередной фрагмент. Если начать читать после — вы уже слушаете вполуха.</li>
+</ul>
+
+<p>Выдерживаете ли вы этот темп, проверяется только в условиях экзамена: пробный тест с таймером и без остановок как раз для этого, <a href="https://kitai-school.ru/article/hsk-4-probnyy-test-kak-ponyat-chto-ty-realno-gotov" target="_blank" rel="noopener">пробный тест HSK 4</a>.</p>
+
+<h2>Чтение: <span class="italic">как не застрять на одном тексте</span></h2>
+
+<p>Здесь теряют больше всего, и почти всегда — не по незнанию слов.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица пришла на экзамен с хорошим запасом: пробные тесты писала уверенно, лексику знала лучше группы. Волновалась она только за аудирование.</p>
+  <p>А потеряла баллы на чтении. Первый длинный текст показался непонятным, и она решила разобраться в нём до конца, прежде чем идти дальше. Разобралась и ответила верно.</p>
+  <p><b>До последних заданий она просто не дошла — время кончилось.</b> Балл за чтение оказался ниже, чем на всех её пробниках, при том же самом знании языка.</p>
+  <p>Теперь она делает иначе: непонятный текст пропускает сразу, отмечает и возвращается, если останется время. На экзамене выигрывает не тот, кто понял всё, а тот, кто дошёл до конца.</p>
+</div>
+
+<div class="table-wrap">
+<table>
+  <caption>Где теряют баллы на формате.</caption>
+  <thead><tr><th>Часть</th><th>Что делают</th><th>Что помогает</th></tr></thead>
+  <tbody>
+    <tr><td><b>Аудирование</b></td><td>ждут повтора и теряют следующий вопрос</td><td>не расслышали — отвечайте наугад и слушайте дальше</td></tr>
+    <tr><td><b>Аудирование</b></td><td>читают варианты после того, как запись пошла</td><td>варианты просматривают в паузе, до начала фрагмента</td></tr>
+    <tr><td><b>Чтение</b></td><td>разбирают непонятный текст до победы</td><td>пропустить, отметить, вернуться, если останется время</td></tr>
+    <tr><td><b>Чтение</b></td><td>переносят ответы в бланк в конце</td><td>на бумажном формате переносите по ходу: в конце времени не будет</td></tr>
+    <tr><td><b>Письмо</b></td><td>пишут черновик целиком, а потом переписывают</td><td>сразу в чистовик, черновик — только для порядка слов</td></tr>
+    <tr><td><b>Все части</b></td><td>следят за временем по своим ощущениям</td><td>смотрите на часы после каждого блока заданий, а не в конце</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>В таблице выше нет ни одного пункта про словарный запас — и это главное наблюдение после разбора десятков экзаменов. Человек с одинаковым знанием языка может получить заметно разный балл в зависимости от того, как он распоряжается временем и как ведёт себя, встретив непонятное.</p>
+
+<p><b>Приём, который работает:</b> непонятный текст пропускают сразу, отмечают его номер и возвращаются, если останется время. Решение «разберусь, а потом пойду дальше» на экзамене почти всегда проигрывает, потому что цена одного задания и цена пяти последних одинаково измеряется в баллах.</p>
+
+<p>Второй приём — про бланк. На бумажном формате ответы переносят по ходу, блоками, а не в конце: в конце времени не остаётся ни у кого. На компьютерном формате этой проблемы нет, зато нет и черновика.</p>
+
+<p>Третий приём — про порядок внутри части. Задания в чтении устроены блоками разного типа, и сложность внутри блока растёт неравномерно: последние задания не обязательно самые трудные. Поэтому доходить до конца стоит в любом случае — там вполне может оказаться то, что вы делаете быстрее всего.</p>
+
+<p>И про незнакомые знаки. Встретив в тексте непонятный иероглиф, не останавливайтесь на нём: в заданиях на выбор ответа смысл чаще всего собирается из соседних предложений. Попытка вспомнить одно слово обходится дороже, чем пропущенная деталь.</p>
+
+<h2>Письмо: <span class="italic">что успеть и в каком порядке</span></h2>
+
+<p>Письменная часть идёт последней, когда внимание уже израсходовано. Поэтому здесь важен порядок действий, а не словарный запас.</p>
+
+<ul>
+  <li><b>Сразу в чистовик.</b> Черновик целиком — роскошь: переписать его обычно не успевают.</li>
+  <li><b>Сначала то, что знаете точно.</b> Задания не обязаны идти по возрастанию сложности.</li>
+  <li><b>Не бросайте задание посередине.</b> Начатое и недописанное предложение чаще всего не засчитывают вовсе, а на него уже потрачено время.</li>
+  <li><b>Знак забыли — пишите то, что помните.</b> Пустое место не даёт ничего, приблизительный знак иногда засчитывается.</li>
+  <li><b>На компьютерном формате</b> знаки набирают по пиньиню и выбирают из списка — проверьте заранее, что умеете это делать быстро.</li>
+  <li><b>Следите за объёмом, а не за красотой.</b> Незаконченное задание теряет больше, чем неидеальная формулировка в законченном.</li>
+</ul>
+
+<p>Отдельно про усталость. Письменная часть идёт в конце, и к ней подходят уже вымотанными — это нормальное состояние, а не признак плохой подготовки. Помогает простая вещь: на пробниках прогонять все три части подряд, без пауз между ними. Тогда последняя часть перестаёт быть неожиданностью.</p>
+
+<p>Устная часть — отдельный экзамен, HSKK, и сдают его не все. Если он вам нужен, подготовка к нему устроена иначе: <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">устный экзамен HSKK</a>.</p>
+
+<h2>Чего нельзя <span class="italic">в аудитории</span></h2>
+
+<p>Правила простые, но нарушение любого из них стоит результата целиком. Наблюдающие следят за ними буквально, и разбираться в намерениях никто не будет: телефон на столе выглядит одинаково и у того, кто забыл его убрать, и у того, кто решил подсмотреть.</p>
+
+<ul>
+  <li><b>Доставать телефон</b> — даже чтобы посмотреть время: время показывают часы в аудитории и наблюдающий.</li>
+  <li><b>Начинать часть раньше команды</b> или продолжать после сигнала об окончании.</li>
+  <li><b>Переговариваться и смотреть в чужой бланк</b> — это относится и к попытке подсказать соседу, даже знаками.</li>
+  <li><b>Пересаживаться</b> на другое место: оно закреплено за номером в списке участников.</li>
+  <li><b>Выносить материалы</b> — бланк, задания и черновик остаются в аудитории, переписывать задания себе тоже нельзя.</li>
+</ul>
+
+<p>Отдельно про выход из аудитории: где-то выходить можно в сопровождении, где-то нет. Это тоже стоит спросить заранее, а не поднимать руку посреди аудирования.</p>
+
+<p>И про вопросы к наблюдающему. Спросить можно и нужно, если что-то не работает: не слышно запись, не тот бланк, сломался карандаш. А вот содержание заданий не объясняют, и на вопрос о значении слова вам просто не ответят — это не грубость, а правило.</p>
+
+<h2>После экзамена: <span class="italic">результаты и пересдача</span></h2>
+
+<p>Сразу после выхода из аудитории возникает желание проверить ответы по памяти — с одногруппниками, в чате, по учебнику. Делать этого не стоит: задания вы помните обрывками, а совпадение чужого ответа с вашим ничего не доказывает. Единственный достоверный источник — личный кабинет.</p>
+
+<p>Результат сначала появляется в личном кабинете на сайте экзамена, бумажный сертификат идёт заметно дольше. Конкретные сроки зависят от центра и сессии, и их уточняют там, где вы записывались.</p>
+
+<p>Отдельно стоит сказать про ожидание. Между экзаменом и результатом проходит время, и в этот промежуток многие успевают передумать всё: вспомнить неотвеченное задание, пересчитать в уме примерный балл, расстроиться заранее. Пользы в этом нет ровно никакой, а вот спокойно вернуться к занятиям через пару дней после экзамена — решение рабочее.</p>
+
+<p>Если балла не хватило, пересдать можно: ограничений на число попыток в общем порядке нет. <b>Разумнее записываться не на ближайшую сессию, а на ту, до которой успеете разобрать ошибки</b> — чаще всего это те же потери на формате, а не пробелы в языке.</p>
+
+<p>Пока результат идёт, полезно сделать одну вещь: записать по свежей памяти, где именно кончилось время и на каком задании вы перестали слушать запись. Через неделю эти детали забываются, а именно они и показывают, что подтягивать.</p>
+
+<p>Бывает и обратная ситуация: балл набран, а уверенности нет. Это обычное дело, потому что экзамен проверяет не всё — говорение в HSK не входит вовсе, и человек с хорошим баллом может теряться в разговоре. Что именно подтверждает сертификат и чего он не подтверждает, разобрано отдельно: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK</a>.</p>
+
+<p>Полезно и другое: сравнить ощущения от экзамена с ощущениями от последнего пробника. Если на пробнике вы укладывались, а на экзамене нет, дело не в языке, а в обстановке — и тренировать нужно именно её, прогоняя части подряд и с таймером.</p>
+
+<p>И последнее. Разбор прошедшего экзамена полезнее любых переживаний: выпишите, где кончилось время и в какой момент вы перестали слушать запись. Эти две строчки обычно и есть ваш план подготовки к следующему разу.</p>
+
+<div class="cta">
+  <p>Мы готовим к экзамену не только по учебнику, но и по формату — <a href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener">подготовка к HSK</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как проходит экзамен HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В один день и в один заход: сначала аудирование, затем чтение, затем письменная часть. Перед стартом заполняют бланк с личными данными, после окончания материалы остаются в аудитории. Между частями отдельных перерывов обычно нет — экзамен идёт подряд. Точный порядок и длительность задаёт центр и уровень, который вы сдаёте.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что нужно взять с собой на экзамен?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Документ, удостоверяющий личность, — тот же, что был указан при регистрации: данные сверяют со списком. Для бумажного формата — простые карандаши и ластик. Телефон, умные часы, наушники, словари и собственные черновики в аудиторию не проносят. Правила по воде и по хранению вещей у центров различаются, уточняйте заранее.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Аудирование включают один раз или два?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Один. Запись идёт для всей аудитории сразу, перемотки и повтора нет ни на одном уровне. Поэтому главный приём здесь простой: не расслышали — отметьте любой вариант и слушайте дальше. Попытка вспомнить пропущенный фрагмент обычно стоит ещё одного вопроса.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что делать, если не успеваешь по времени?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Не доделывать то, на чём застряли, а переходить дальше. Время на каждую часть ограничено отдельно, и несделанное в чтении не компенсируется письменной частью. Непонятное задание пропускают, отмечают и возвращаются к нему, если время останется. Пустых ответов в бланке лучше не оставлять.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли пересдать HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, ограничений на число попыток в общем порядке нет: можно записаться на следующую сессию. Разумнее не на ближайшую, а на ту, до которой успеете разобрать ошибки. Даты и сроки записи у каждого центра свои, и это стоит проверять заранее.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Когда приходят результаты?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сначала результат появляется в личном кабинете на сайте экзамена, бумажный сертификат идёт дольше. Конкретные сроки зависят от центра и сессии, поэтому называть числа я не буду — их уточняют там, где вы записывались.</p></div>
+  </details>
+</div>
+
+<p class="sign">Дойти до конца каждой части! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Порядок дня экзамена</b> — регистрация на месте со сверкой документа, заполнение бланка до старта, три части подряд, материалы остаются в аудитории — приведён по общему порядку проведения экзамена. <b>Детали задаёт центр</b>, и в тексте это сказано прямо.</li>
+    <li><b>Аудирование звучит один раз</b>, перемотки и повтора нет; паузы между вопросами фиксированные.</li>
+    <li><b>Различия форматов:</b> на бумажном ответы переносят в бланк и выдают черновик, на компьютерном знаки набирают, черновика нет. Какой формат проводит ваш центр, уточняется у него.</li>
+    <li><b>Время на части ограничено по отдельности</b>, несделанное в одной части не компенсируется другой.</li>
+    <li><b>Пересдача:</b> ограничений на число попыток в общем порядке нет; сроки и даты сессий — у центра.</li>
+    <li><b>Результаты</b> появляются в личном кабинете раньше бумажного сертификата; сроки зависят от центра и сессии.</li>
+    <li><b>Чего в статье нет намеренно:</b> минут, числа заданий и проходных баллов — они разобраны на страницах уровней и в статье про систему оценки и даны ссылками; дат сессий и сроков регистрации — отдельный разбор; адресов экзаменационных центров — состав центров меняется, и устаревший список хуже отсутствующего; утверждений вида «ошибается 80 % новичков» — проверяемых данных за такими цифрами нет.</li>
+    <li>Практика Kitai School: разборы с учениками после экзаменов, в том числе случай с потерянным временем на чтении.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">На экзамене выигрывает не тот, кто понял всё, а тот, кто дошёл до конца каждой части</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
