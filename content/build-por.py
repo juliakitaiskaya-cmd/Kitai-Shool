@@ -8,7 +8,7 @@ SLUG = "poryadkovye-chislitelnye-v-kitayskom-yazyke"
 U = "https://kitai-school.ru/article/"
 
 HERO = "https://static.tildacdn.com/tild6238-3665-4265-b634-386339616439/por-hero.png"
-FIG = "https://static.tildacdn.com/tila3234-6637-4332-b761-653336363931/kir-info.png"
+FIG = "https://static.tildacdn.com/tild3964-6138-4739-b134-343139316531/por-info.png"
 HERO_ALT = ("Номерок из гардероба с иероглифом 三 на цепочке и подпись: «который "
             "по счёту? — 第三, dì-sān, третий»")
 FIG_ALT = ("Конструкция из четырёх блоков — 第, 三, 本, 书 — и четыре случая, где 第 "
