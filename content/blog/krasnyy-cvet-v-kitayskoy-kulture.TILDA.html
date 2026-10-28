@@ -1,0 +1,439 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/krasnyy-cvet-v-kitayskoy-kulture#article",
+      "headline": "Красный цвет в китайской культуре: от свадебных конвертов до слов с корнем 红",
+      "description": "Красный цвет (红, hóng) в китайской культуре: связь со стихией огня и югом, устройство конвертов 红包 — кто кому дарит, какие числа выбирают и как передают, свадебное «красное дело» 红事 и знак двойного счастья 囍, слова с корнем 红 — 走红, 开门红, 红人, 眼红, 分红, 红榜 и 红线, а также случаи, где красный неуместен: человеческие имена и траурные поводы.",
+      "image": "https://static.tildacdn.com/tila3264-6139-4632-b265-333764336238/kras-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/krasnyy-cvet-v-kitayskoy-kulture",
+      "about": {
+        "@type": "Thing",
+        "name": "Символика красного цвета в Китае"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/krasnyy-cvet-v-kitayskoy-kulture#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что символизирует красный цвет в Китае?", "acceptedAnswer": {"@type": "Answer", "text": "Радость, удачу и защиту. Красный (红, hóng) связан со стихией огня, югом и летом, и за ним закреплены смыслы, которые у нас разошлись бы по разным цветам: это и праздник, и благополучие, и оберег. Поэтому он появляется там, где у события хороший повод — на свадьбе, на Новый год, в конверте с деньгами."}},
+        {"@type": "Question", "name": "Почему деньги дарят в красных конвертах?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что конверт здесь часть подарка, а не упаковка. Красный цвет сам по себе работает как пожелание удачи, и деньги, переданные без конверта, выглядят голой суммой. Называется такой конверт 红包 (hóngbāo), и дарят его на Новый год, свадьбу, день рождения и другие радостные поводы."}},
+        {"@type": "Question", "name": "Сколько денег кладут в 红包?", "acceptedAnswer": {"@type": "Answer", "text": "Единой суммы нет: она зависит от повода, города и того, насколько вы близки. Называть цифру было бы выдумкой. А вот выбор числа подчиняется правилам: избегают четвёрки, потому что 四 созвучно слову «смерть», и ценят восьмёрку как число достатка. На радостные поводы суммы обычно чётные."}},
+        {"@type": "Question", "name": "Почему нельзя писать имя красной ручкой?", "acceptedAnswer": {"@type": "Answer", "text": "Красным когда-то записывали имена умерших и имена приговорённых, и за цветом закрепилось это значение. Написать чьё-то имя красным — плохая примета, и на практике это замечают даже те, кто про историю не думает. Имена пишут чёрным или синим, а красной остаётся бумага, рамка или конверт."}},
+        {"@type": "Question", "name": "Что означает знак 囍?", "acceptedAnswer": {"@type": "Answer", "text": "囍 (shuāngxǐ) — «двойное счастье», знак из двух иероглифов 喜 «радость». Его вырезают из красной бумаги и клеят на окна, двери и подарки к свадьбе: счастье для двоих, а не для одного. В обычных текстах он не встречается — это именно свадебный знак."}},
+        {"@type": "Question", "name": "Бывает ли красный неуместен?", "acceptedAnswer": {"@type": "Answer", "text": "Да, и случаев немного, но они заметные. Красный не используют в траурных поводах: на похоронах уместны белый и чёрный. Им не пишут человеческие имена. И в деловой переписке красным не выделяют текст так же свободно, как у нас, — этот цвет воспринимается сильнее."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/krasnyy-cvet-v-kitayskoy-kulture#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Красный цвет в китайской культуре: от свадебных конвертов до слов с корнем 红", "item": "https://kitai-school.ru/article/krasnyy-cvet-v-kitayskoy-kulture"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Культура</p>
+<h1>Красный цвет в китайской культуре: <span class="italic">от свадебных конвертов до слов с корнем 红</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-05">5 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila3264-6139-4632-b265-333764336238/kras-hero.png" alt="Красная бумажная вырезка со знаком 囍 «двойное счастье», наклеенная на оконное стекло" width="1200" height="630"></figure>
+
+<p class="passport">Про красный в Китае обычно говорят одно: цвет счастья и удачи. Это правда, но на этом рассказ чаще всего и заканчивается. <b>А красный живёт ещё и внутри языка</b>: «стать популярным» по-китайски — 走红, «завидовать» — 眼红, «удачное начало» — 开门红. Разберём и обряды, и слова, и те случаи, где этот цвет лучше убрать.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>红 (hóng)</b> — радость, удача, защита. <b>Стихия</b> — огонь, сторона — юг. <b>红包</b> — конверт с деньгами, сам конверт и есть пожелание. <b>囍</b> — свадебный знак двойного счастья. <b>В словах:</b> 走红, 开门红, 眼红, 分红. <b>Нельзя</b> писать красным имена и надевать красное на похороны.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">что значит красный</span></h2>
+
+<p>Красный по-китайски — 红 (hóng). За ним закреплены три смысла, и в быту они работают вместе.</p>
+
+<ul>
+  <li><b>Радость.</b> Красный — цвет праздника и любого хорошего повода: свадьбы, Нового года, рождения ребёнка, открытия дела.</li>
+  <li><b>Удача и достаток.</b> Отсюда красные конверты с деньгами и красные вывески магазинов.</li>
+  <li><b>Защита.</b> В год своего знака по двенадцатилетнему кругу носят красное — пояс или нить на запястье.</li>
+</ul>
+
+<p>Для русского глаза это непривычное сочетание: у нас праздничное, денежное и оберегающее разошлись бы по разным цветам. <b>В китайской системе это один цвет</b>, и потому он встречается так часто.</p>
+
+<p>Проще всего это заметить в магазине подарков. Красная коробка подходит почти к любому поводу, и выбирают её не ради вкуса, а потому что цвет уже сказал нужное. Белая упаковка на том же прилавке означает ровно противоположное, и перепутать их — ошибка, которую заметят все.</p>
+
+<p>Остальные цвета устроены не менее стройно: жёлтый связан с властью, белый — с трауром, чёрный — с серьёзностью. Общая картина разобрана отдельно: <a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значение цветов в Китае</a>.</p>
+
+<h2>Откуда у цвета <span class="italic">эти смыслы</span></h2>
+
+<p>Китайская традиция распределяет цвета по пяти стихиям, и каждому достаётся своя сторона света, время года и набор значений.</p>
+
+<p><b>Красному досталась стихия огня</b>, юг и лето. Отсюда и тепло, и свет, и сила, и способность отгонять дурное — всё, что потом переросло в праздничную символику.</p>
+
+<p>Юг в этой системе — сторона тепла и роста, лето — время, когда всё созревает. Поэтому у красного нет ни одного «холодного» значения: он весь про движение вверх, про прибыль и про жизнь.</p>
+
+<p>Там же объясняется и его защитная роль. Огонь отпугивает, и цвет огня стали использовать так же: красная нить на запястье, красный пояс в год своего знака, красная бумага на дверях. Это народная традиция, а не предписание, и относятся к ней спокойно — но носят.</p>
+
+<p>К этому добавилась легенда о чудовище, которое боялось красного цвета и шума: её пересказывают каждый раз, когда объясняют новогодние фонари и хлопушки. Мы разбирали её в статье про традиционные праздники, здесь достаточно знать, что она есть.</p>
+
+<p>Названия цветов в китайском вообще устроены прозрачно — через корень 色 и несколько базовых слов: <a href="https://kitai-school.ru/article/cveta-na-kitayskom-s-transkripciey" target="_blank" rel="noopener">цвета на китайском с транскрипцией</a>.</p>
+
+<h2>红包: как устроены <span class="italic">красные конверты</span></h2>
+
+<p>Самая живая часть темы. 红包 (hóngbāo) — красный конверт, в котором передают деньги. Не упаковка, а часть подарка: цвет работает как пожелание.</p>
+
+<p>Привычка эта древняя, а повод у неё практичный: деньги, переданные в руки, выглядят расчётом, а деньги в конверте — подарком. Конверт убирает неловкость, и потому им пользуются даже там, где все понимают, о какой сумме речь.</p>
+
+<p>Сами конверты продаются везде: в канцелярских лавках, в супермаркетах, на почте. Перед Новым годом их выкладывают целыми стопками у касс, с золотым тиснением и пожеланиями.</p>
+
+<p><b>Поводы.</b> Новый год — дети получают конверты от старших родственников. Свадьба — гости дарят конверт молодожёнам. День рождения, рождение ребёнка, переезд, открытие дела, иногда — благодарность врачу или учителю, хотя тут всё зависит от обстоятельств.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila6664-6462-4938-b637-333264643339/kras-info.png" alt="Красный конверт 红包 с золотым знаком 福, вложенное содержимое и три правила: кто кому дарит, какие числа выбирают, как передают" width="1200" height="540"><figcaption>Конверт и есть пожелание: сумма зависит от повода, а вот числа выбирают всегда.</figcaption></figure>
+
+<p><b>Числа.</b> Конкретной суммы не назову — она зависит от города, повода и того, насколько вы близки, и любая цифра была бы выдумкой. А вот выбор числа подчиняется правилам: четвёрки избегают, потому что 四 звучит почти как слово «смерть», а восьмёрку любят за созвучие с достатком. На радостные поводы суммы обычно чётные.</p>
+
+<p><b>Как передают.</b> Двумя руками, с короткой фразой-пожеланием. Конверт не вскрывают при дарителе: подарки в Китае вообще не разворачивают на глазах у того, кто их принёс. Это общее правило вежливости, и оно работает и в деловой среде: <a href="https://kitai-school.ru/article/biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse" target="_blank" rel="noopener">бизнес-этикет в Китае</a>.</p>
+
+<p>Отдельная примета времени — конверты в мессенджерах. На праздники их отправляют коллегам и в семейные чаты, иногда на случайную сумму, которую приложение делит между участниками. Повод тот же, форма новая.</p>
+
+<h2>Свадьба: <span class="italic">红事 и знак 囍</span></h2>
+
+<p>В китайском есть пара слов, которая показывает всю систему разом. <b>Свадьбу и другие радостные события называют 红事</b> (hóngshì) — «красное дело». Похороны — 白事 (báishì), «белое дело».</p>
+
+<p>Это не метафора и не поэзия, а обиходные слова: по ним сразу понятно, о каком событии речь и в чём туда идти.</p>
+
+<p>Главный свадебный знак — 囍 (shuāngxǐ), «двойное счастье». Он собран из двух иероглифов 喜 «радость», поставленных рядом: счастье не одного человека, а двоих. Его вырезают из красной бумаги и клеят на окна, двери, машины и подарки. В обычных текстах 囍 не встречается — это знак для одного случая.</p>
+
+<p>Невеста в традиционном наряде тоже в красном, и приданое, и приглашения. Белое платье сегодня носят свободно, но красный остаётся цветом самого события — им оформляют зал, конверты и подарки.</p>
+
+<h2>Когда красный <span class="italic">неуместен</span></h2>
+
+<p>Случаев немного, и все они стоят того, чтобы запомнить.</p>
+
+<p><b>Человеческие имена.</b> Красной ручкой имя не пишут — ни на открытке, ни в списке, ни в подписи к подарку.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица готовила новогодние открытки китайским партнёрам и подписывала их красной ручкой: решила, что так праздничнее и ближе к теме. Имена адресатов тоже вышли красными.</p>
+  <p>Коллега, которому она показала черновик, мягко попросил переписать. Без объяснений, просто «лучше синей».</p>
+  <p><b>На занятии мы разобрали, в чём дело.</b> Красным когда-то записывали имена умерших и приговорённых, и привычка не писать человеческое имя этим цветом осталась до сих пор — даже у тех, кто про её происхождение не задумывается.</p>
+  <p>Открытки она переписала, и на том же столе остались красными конверт, рамка и бумага. Цвет никуда не делся — ушёл только из имени.</p>
+</div>
+
+<p>Из того же ряда — красная строка в документе напротив фамилии или красная галочка рядом с именем человека. Формально ничего страшного, но ощущение останется неприятное, и лучше этого не делать.</p>
+
+<p><b>Траурные поводы.</b> На похоронах и поминальных днях красного не носят: это цвет радости, и здесь он звучит неуважительно. Уместны белый, чёрный и сдержанные тона.</p>
+
+<p>Из бытового: красную одежду не надевают на поминальные мероприятия даже как деталь. Если вы не уверены, чем закончится день, проще выбрать сдержанный верх — и не оказаться самым ярким человеком в комнате.</p>
+
+<p><b>Рабочая переписка.</b> Выделять красным абзацы и правки, как мы привыкли, стоит осторожнее: цвет читается сильнее, чем у нас, и может выглядеть резко. Для пометок берут другие цвета.</p>
+
+<h2>Красный <span class="italic">в словах</span></h2>
+
+<p>Вот то, о чём обычно не пишут. Цвет закрепился не только в обрядах, но и в обычной лексике, и значения там те же: успех, прибыль, внимание.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Слова с корнем 红.</caption>
+  <thead><tr><th>Слово</th><th>Пиньинь</th><th>Значение</th><th>Как употребляется</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">走红</span></td><td><i>zǒuhóng</i></td><td><b>стать популярным</b></td><td>про артиста, блюдо или песню: 这首歌走红了</td></tr>
+    <tr><td><span class="han">开门红</span></td><td><i>kāiménhóng</i></td><td><b>удачное начало</b></td><td>о первом дне года или первой сделке</td></tr>
+    <tr><td><span class="han">红人</span></td><td><i>hóngrén</i></td><td><b>тот, кто на виду</b></td><td>популярный человек или любимчик начальства</td></tr>
+    <tr><td><span class="han">眼红</span></td><td><i>yǎnhóng</i></td><td><b>завидовать</b></td><td>дословно «покраснели глаза» — от чужого успеха</td></tr>
+    <tr><td><span class="han">分红</span></td><td><i>fēnhóng</i></td><td><b>делить прибыль</b></td><td>дивиденды и премии по итогам года</td></tr>
+    <tr><td><span class="han">红榜</span></td><td><i>hóngbǎng</i></td><td><b>доска почёта</b></td><td>список отличившихся — в школе или на заводе</td></tr>
+    <tr><td><span class="han">红线</span></td><td><i>hóngxiàn</i></td><td><b>нить судьбы; красная черта</b></td><td>в преданиях связывает двоих, в современной речи означает предел, который не переходят</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Отдельно стоит 红线. В старых преданиях красная нить связывает двоих, кому суждено быть вместе, — отсюда «нить судьбы». А в современной речи то же слово значит «красная черта»: предел, который не переходят. Два значения живут рядом, и понять, о каком речь, помогает только контекст.</p>
+
+<p>Обратите внимание на 眼红. Буквально это «покрасневшие глаза», а значит — «завидовать чужому успеху». Тот же красный, но с обратным знаком: не твоя удача, а чужая, и от этого неприятно.</p>
+
+<p>Ещё одно слово из того же гнезда — 红红火火 (hónghóng huǒhuǒ). Дословно «красно и жарко», а по смыслу — «пусть всё кипит и идёт в гору». Его говорят в пожеланиях на Новый год и при открытии дела, и в нём красный стоит рядом с огнём ровно так, как в системе стихий.</p>
+
+<p><b>Практический вывод для изучающих:</b> встретив незнакомое слово с 红, сначала проверьте, не идёт ли речь об успехе или деньгах. В большинстве случаев идёт.</p>
+
+<h2>Красный <span class="italic">в городе и в работе</span></h2>
+
+<p>Если приехать в любой китайский город, цвет видно сразу: красные вывески магазинов, красная упаковка чая и подарочных наборов, красные конверты в кассах супермаркетов перед Новым годом.</p>
+
+<p>Отдельная примета — красные растяжки с белыми иероглифами на зданиях: ими поздравляют, объявляют и напоминают. Для приезжего это первое, что бросается в глаза, и это же первый повод начать читать вывески: тексты там короткие и повторяются.</p>
+
+<p>В деловой среде красный тоже на месте — в оформлении, на приглашениях, в подарочных коробках. Логика простая: если нужно показать «праздник», «удачу» или «мы рады», берут красный, и это читается без пояснений.</p>
+
+<p>А вот слова с 红 полезно узнавать на слух. 开门红 в разговоре о первом квартале, 分红 на собрании, 走红 про нового артиста — всё это обиходная речь, а не книжные обороты. Какая лексика нужна в работе, разбирали отдельно: <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>.</p>
+
+<h2>Частые <span class="italic">ошибки</span></h2>
+
+<p>Пять промахов, которые иностранцы делают чаще всего. Ни один не считается грубостью, но каждый заметен.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Как не надо и как надо.</caption>
+  <thead><tr><th>Так делают</th><th>А лучше</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td>Подписать имя красной ручкой</td><td><b>Чёрной или синей</b></td><td>красным записывали имена умерших, и привычка осталась</td></tr>
+    <tr><td>Прийти в красном на похороны</td><td><b>Тёмная сдержанная одежда</b></td><td>траурные цвета — белый и чёрный, красный тут неуместен</td></tr>
+    <tr><td>Положить в конверт сумму с четвёркой</td><td><b>Выбрать другое число</b></td><td>四 созвучно слову «смерть», этого избегают</td></tr>
+    <tr><td>Передать конверт одной рукой</td><td><b>Двумя руками</b></td><td>так передают всё, что имеет значение, — от подарка до визитки</td></tr>
+    <tr><td>Открыть конверт при дарителе</td><td><b>Поблагодарить и убрать</b></td><td>подарки в Китае не разворачивают на глазах</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Общее правило простое: <b>красный уместен там, где повод хороший</b>. Если событие радостное — цвет на месте. Если событие грустное или речь о конкретном человеке и его имени — лучше обойтись без него.</p>
+
+<div class="cta">
+  <p>Культура разбирается на занятиях вместе с языком — слова вроде 红包 и 开门红 запоминаются вместе с тем, что за ними стоит: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что символизирует красный цвет в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Радость, удачу и защиту. Красный (红, hóng) связан со стихией огня, югом и летом, и за ним закреплены смыслы, которые у нас разошлись бы по разным цветам: это и праздник, и благополучие, и оберег. Поэтому он появляется там, где у события хороший повод — на свадьбе, на Новый год, в конверте с деньгами.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему деньги дарят в красных конвертах?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что конверт здесь часть подарка, а не упаковка. Красный цвет сам по себе работает как пожелание удачи, и деньги, переданные без конверта, выглядят голой суммой. Называется такой конверт 红包 (hóngbāo), и дарят его на Новый год, свадьбу, день рождения и другие радостные поводы.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько денег кладут в 红包?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Единой суммы нет: она зависит от повода, города и того, насколько вы близки. Называть цифру было бы выдумкой. А вот выбор числа подчиняется правилам: избегают четвёрки, потому что 四 созвучно слову «смерть», и ценят восьмёрку как число достатка. На радостные поводы суммы обычно чётные.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему нельзя писать имя красной ручкой?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Красным когда-то записывали имена умерших и имена приговорённых, и за цветом закрепилось это значение. Написать чьё-то имя красным — плохая примета, и на практике это замечают даже те, кто про историю не думает. Имена пишут чёрным или синим, а красной остаётся бумага, рамка или конверт.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что означает знак 囍?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>囍 (shuāngxǐ) — «двойное счастье», знак из двух иероглифов 喜 «радость». Его вырезают из красной бумаги и клеят на окна, двери и подарки к свадьбе: счастье для двоих, а не для одного. В обычных текстах он не встречается — это именно свадебный знак.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Бывает ли красный неуместен?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, и случаев немного, но они заметные. Красный не используют в траурных поводах: на похоронах уместны белый и чёрный. Им не пишут человеческие имена. И в деловой переписке красным не выделяют текст так же свободно, как у нас, — этот цвет воспринимается сильнее.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть у вас будет 开门红! <span class="han">红红火火</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Значения цвета</b> — радость, удача, защита — приведены по описаниям традиционной символики; связь красного со стихией огня, югом и летом дана по системе пяти стихий, подробно разобранной в нашей статье о цветах.</li>
+    <li><b>红包</b> описан по современной практике: поводы, передача двумя руками, правило не вскрывать подарок при дарителе.</li>
+    <li><b>Конкретных сумм в статье нет намеренно:</b> они зависят от региона, повода и отношений. Названы только правила выбора числа — избегают 四 из-за созвучия, ценят 八.</li>
+    <li><b>红事 и 白事</b> приведены как обиходные обозначения радостных и траурных событий.</li>
+    <li><b>囍</b> описан как знак из двух 喜, используемый в свадебном оформлении; отмечено, что в обычных текстах он не встречается.</li>
+    <li><b>Слова с корнем 红</b> — 走红, 开门红, 红人, 眼红, 分红, 红榜, 红线 — приведены со значениями по словарным данным. Их число проверяется скриптом при сборке.</li>
+    <li><b>Запрет писать имена красным</b> описан по бытовой традиции: так записывали имена умерших и приговорённых.</li>
+    <li><b>Легенда о чудовище,</b> боявшемся красного, не пересказывается: она уже разобрана в нашей статье о традиционных праздниках, здесь только упоминание.</li>
+    <li><b>Чего в статье нет намеренно:</b> государственной символики и политических значений цвета; дат и статистики по цифровым конвертам; утверждения, что белое платье на свадьбе недопустимо — сегодня оно обычно; разбора свадебных нарядов, про одежду у нас отдельная статья.</li>
+    <li>Практика Kitai School: разборы с учениками, в том числе случай с подписанными красной ручкой открытками.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Красный живёт не только в обрядах, но и внутри языка: 走红, 开门红 и 眼红 — это тот же цвет, только в словах</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
