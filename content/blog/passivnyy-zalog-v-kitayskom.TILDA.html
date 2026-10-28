@@ -1,0 +1,480 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/passivnyy-zalog-v-kitayskom#article",
+      "headline": "Пассивный залог в китайском: конструкция с 被 и почему её используют реже, чем кажется",
+      "description": "Пассивный залог в китайском языке: схема конструкции с 被 (bèi) по слотам — объект, показатель, необязательный деятель, глагол и обязательный элемент после него. Почему у 被 оттенок неприятного события (被骗, 被偷, 被罚) и где конструкция нейтральна (被选为, 被评为). Замены в живой речи: 叫 / 让 / 给, форма без показателя, 是…的, глаголы 受 / 遭 / 挨. Отличие от конструкции с 把 и типичные ошибки дословного перевода русского страдательного залога.",
+      "image": "https://static.tildacdn.com/tila3230-6138-4665-b731-326631613437/bei-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/passivnyy-zalog-v-kitayskom",
+      "about": {
+        "@type": "Thing",
+        "name": "Страдательный залог в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/passivnyy-zalog-v-kitayskom#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как строится пассивный залог в китайском?", "acceptedAnswer": {"@type": "Answer", "text": "По схеме: объект + 被 + (деятель) + глагол + то, что стоит после глагола. Например, 手机被小偷偷了 — «телефон украл вор». Объект выносится на первое место, 被 (bèi) показывает, что с ним что-то сделали, а после глагола почти всегда стоит 了, результат или дополнение: пустым глагол в этой конструкции не остаётся."}},
+        {"@type": "Question", "name": "Обязательно ли называть того, кто совершил действие?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, и это главное удобство конструкции. Деятеля можно убрать: 手机被偷了 — «телефон украли», и неважно кто. Русский пассив устроен так же: «телефон украли» мы тоже говорим без подлежащего. Если деятель известен и важен, его ставят сразу после 被."}},
+        {"@type": "Question", "name": "Правда ли, что 被 используют только для неприятных событий?", "acceptedAnswer": {"@type": "Answer", "text": "Оттенок есть, правила нет. Чаще всего 被 встречается там, где с объектом случилось что-то плохое: 被骗 «обманули», 被偷 «украли», 被罚 «оштрафовали». Но в письменной и официальной речи конструкция совершенно нейтральна: 被选为 «избран», 被评为 «признан». Решает не сама конструкция, а регистр и глагол."}},
+        {"@type": "Question", "name": "Чем заменить 被 в разговоре?", "acceptedAnswer": {"@type": "Answer", "text": "Тремя способами. Первый — разговорные 叫, 让 и 给 вместо 被: 我的车叫人撞了. Второй, самый частый, — вообще без показателя: 饭做好了 «еда готова», форма активная, смысл страдательный. Третий — 是…的, когда важно, кем и когда сделано: 这本书是他写的."}},
+        {"@type": "Question", "name": "Чем 被 отличается от 把?", "acceptedAnswer": {"@type": "Answer", "text": "Это одно и то же событие, рассказанное с разных сторон. 把 ставит в центр деятеля: фраза получается о том, что он сделал с предметом. 被 ставит в центр предмет: фраза о том, что с ним произошло. Требование у обеих конструкций общее — после глагола должно что-то стоять. Конструкция с 把 разобрана у нас отдельно."}},
+        {"@type": "Question", "name": "На каком уровне проходят пассив?", "acceptedAnswer": {"@type": "Answer", "text": "被 входит в программу HSK 3 — там он стоит рядом с конструкцией 把, сравнением с 比 и результативными морфемами. Это не случайное соседство: все четыре темы требуют одного и того же навыка — следить за тем, что стоит после глагола."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/passivnyy-zalog-v-kitayskom#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Пассивный залог в китайском: конструкция с 被 и почему её используют реже, чем кажется", "item": "https://kitai-school.ru/article/passivnyy-zalog-v-kitayskom"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Грамматика</p>
+<h1>Пассивный залог в китайском: <span class="italic">конструкция с 被 и почему её используют реже, чем кажется</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-11">11 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila3230-6138-4665-b731-326631613437/bei-hero.png" alt="Пунктирный след от телефона на столе с подписью «было здесь» и карточка 手机被偷了 shǒujī bèi tōu le «телефон украли»" width="1200" height="630"></figure>
+
+<p class="passport">Пассив в китайском есть, и строится он просто: показатель 被 (bèi) перед глаголом. Трудность в другом. <b>Русскоязычный ставит 被 там, где китаец сказал бы иначе</b> — и фраза приобретает оттенок неприятности, которого в ней не задумывалось. Разберём схему конструкции, её оттенок и три способа обойтись без неё.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Схема:</b> объект + 被 + (деятель) + глагол + обязательный хвост. <b>Деятеля</b> можно убрать: 手机被偷了. <b>Оттенок:</b> чаще про неприятное — 被骗, 被偷. <b>Нейтрально</b> звучит в письменной речи: 被选为. <b>Заменяют</b> на 叫 / 让, форму без показателя и 是…的. <b>Уровень:</b> HSK 3.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">что такое 被</span></h2>
+
+<p>被 — показатель страдательного залога. Он ставится перед глаголом и говорит: с объектом это сделали.</p>
+
+<p>Сравним два взгляда на одно событие. 小偷偷了手机 — «вор украл телефон», рассказ идёт от вора. 手机被偷了 — «телефон украли», рассказ идёт от телефона. Событие одно, а начало фразы разное, и от этого зависит, о чём речь дальше.</p>
+
+<p><b>Выбор между ними — это выбор темы разговора.</b> Если дальше вы говорите про вора, начинайте с вора. Если про телефон и про то, что теперь делать, начинайте с телефона.</p>
+
+<p>Произносится 被 как <i>bèi</i>, четвёртым тоном. Тот же знак пишет совсем другое слово — 被子 (bèizi) «одеяло», и это неплохая зацепка для памяти: у знака два совершенно разных употребления, и путать их не придётся, потому что в предложении они стоят в разных местах.</p>
+
+<p>Теперь к главному вопросу статьи. Русский пассив — рабочая, нейтральная форма: «дом построен», «письмо отправлено», «решение принято». Китайский 被 нейтрален далеко не всегда, и переносить русскую привычку целиком нельзя.</p>
+
+<h2>Как собирается <span class="italic">конструкция</span></h2>
+
+<p>Разберём фразу по частям. Возьмём полный вариант: 手机被小偷偷了 — «телефон украл вор».</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Части конструкции с 被 на примере 手机被小偷偷了.</caption>
+  <thead><tr><th>Часть фразы</th><th>Что в ней стоит</th><th>Пример</th><th>Пиньинь</th><th>Нужен ли</th></tr></thead>
+  <tbody>
+    <tr><td><b>Объект</b></td><td>то, с чем что-то произошло</td><td><span class="han">手机</span></td><td><i>shǒujī</i></td><td>обязателен</td></tr>
+    <tr><td><b>被</b></td><td>показатель пассива</td><td><span class="han">被</span></td><td><i>bèi</i></td><td>обязателен</td></tr>
+    <tr><td><b>Деятель</b></td><td>кто это сделал</td><td><span class="han">小偷</span></td><td><i>xiǎotōu</i></td><td>можно убрать</td></tr>
+    <tr><td><b>Глагол</b></td><td>само действие</td><td><span class="han">偷</span></td><td><i>tōu</i></td><td>обязателен</td></tr>
+    <tr><td><b>После глагола</b></td><td>了, результат или дополнение</td><td><span class="han">了</span></td><td><i>le</i></td><td>обязателен</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Главное техническое правило — последняя строка таблицы.</b> После глагола в этой конструкции почти всегда что-то стоит: частица 了, результативная морфема, дополнение. Голый глагол звучит оборванно, как русское «телефон был украден» без точки.</p>
+
+<p>Поэтому 手机被偷了 — нормальная фраза, а 手机被偷 — нет. То же с результатом: 杯子被打破了 «чашку разбили» — тут после глагола стоит 破, показывающий исход.</p>
+
+<p>Такое же требование есть у соседних тем третьего уровня: там всюду важно, чем заканчивается глагольная часть. Если порядок слов в простом предложении пока даётся с трудом, лучше начать с него — в нашем <a href="https://kitai-school.ru/article/kurs-po-grammatike-kitajskogo-yazyka-kak-ustroen" target="_blank" rel="noopener">курсе по грамматике китайского языка</a> эта тема идёт раньше пассива.</p>
+
+<p><b>Отрицание ставится перед 被</b>, а не перед глаголом: 手机没被偷 — «телефон не украли». В общих утверждениях встречается 不被: 这种说法不被接受 — «такая формулировка не принимается».</p>
+
+<p>Ещё одно ограничение: глагол должен быть переходным и означать воздействие на объект. С глаголами состояния 被 не работает — нельзя сказать «дверь была открыта» через 被, если речь о состоянии двери, а не о том, что её кто-то распахнул.</p>
+
+<h2>Деятеля <span class="italic">можно не называть</span></h2>
+
+<p>Вернёмся к третьей строке таблицы. Это единственная часть, которую можно убрать без ущерба для фразы.</p>
+
+<p>手机被小偷偷了 — «телефон украл вор». 手机被偷了 — «телефон украли». Вторая фраза короче, и носитель чаще скажет именно её: кто именно украл, обычно неизвестно и неважно.</p>
+
+<p><b>Это и есть главная причина, по которой конструкция вообще нужна.</b> Когда деятель неизвестен, активная фраза становится неудобной: приходится выдумывать подлежащее. 被 снимает эту задачу.</p>
+
+<p>В русском работает тот же приём, только без показателя: «телефон украли», «меня оштрафовали» — подлежащего нет, и никого это не смущает. Китайский в этом случае ставит 被, и фраза остаётся полной.</p>
+
+<p>Если же деятель важен, его называют: 我被老师批评了 — «меня отругал преподаватель». Здесь без 老师 фраза теряет смысл: важно именно то, кто отругал.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila3561-3535-4566-b438-636631343963/bei-info.png" alt="Схема конструкции с 被: пять блоков 手机 被 小偷 偷 了, блок «деятель» пунктирный и убирается; ниже три замены — 叫 / 让, форма без показателя, 是…的" width="1200" height="560"><figcaption>Блок «деятель» нарисован пунктиром: это единственная часть схемы, которую можно убрать.</figcaption></figure>
+
+<h2>Откуда у 被 <span class="italic">привкус неприятного</span></h2>
+
+<p>А теперь то, из-за чего эта конструкция и попадает в список сложных тем.</p>
+
+<p>Посмотрите на глаголы, с которыми 被 встречается чаще всего. Закономерность видна сразу.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Частые связки с 被.</caption>
+  <thead><tr><th>Связка</th><th>Пиньинь</th><th>Перевод</th><th>Где встречается</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">被骗</span></td><td><i>bèi piàn</i></td><td><b>обманули</b></td><td>самое частое из всех</td></tr>
+    <tr><td><span class="han">被偷</span></td><td><i>bèi tōu</i></td><td><b>украли</b></td><td>про вещи и деньги</td></tr>
+    <tr><td><span class="han">被罚</span></td><td><i>bèi fá</i></td><td><b>оштрафовали</b></td><td>штраф, взыскание</td></tr>
+    <tr><td><span class="han">被骂</span></td><td><i>bèi mà</i></td><td><b>отругали</b></td><td>дома, на работе, в школе</td></tr>
+    <tr><td><span class="han">被打</span></td><td><i>bèi dǎ</i></td><td><b>побили</b></td><td>про драку и насилие</td></tr>
+    <tr><td><span class="han">被抓</span></td><td><i>bèi zhuā</i></td><td><b>задержали</b></td><td>про полицию</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Все шесть — про то, что случилось с человеком против его воли.</b> Отсюда и ощущение: поставив 被, вы как будто сообщаете о происшествии, даже если глагол сам по себе нейтральный.</p>
+
+<p>Поэтому фраза вроде «меня пригласили на ужин», собранная через 被, звучит странно. Грамматически она собрана верно, а на слух получается, что вас на этот ужин затащили.</p>
+
+<p>Оговорка, без которой картина будет неверной: <b>это оттенок, а не правило</b>. Нет списка глаголов, с которыми 被 запрещён, и нет запрета на нейтральные фразы. Есть привычка речи, и с ней нужно считаться ровно так же, как с грамматикой.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица писала партнёрам сама и однажды принесла на занятие письмо с фразой «ваш заказ был отправлен». Перевела она её дословно — через 被.</p>
+  <p>Получилось предложение, в котором с заказом будто случилась неприятность. Китайская сторона прочитала бы это не как уведомление, а как жалобу: заказ куда-то отправили, и говорящий этим недоволен.</p>
+  <p><b>Нужного смысла там просто нет.</b> В деловом письме такая фраза идёт глаголом с результатом: 已经发出了 — «уже отправлен», спокойно и по делу.</p>
+  <p>Мы выписали десяток её обычных фраз партнёрам — «договор подписан», «образцы получены», «оплата проведена» — и для каждой подобрали форму без 被. После этого письма стали звучать ровно, а 被 осталось там, где оно и нужно: в рассказах о том, что пошло не так.</p>
+</div>
+
+<h2>Где 被 <span class="italic">совершенно нейтрален</span></h2>
+
+<p>Теперь обратная сторона. В письменной речи — в новостях, документах, официальных сообщениях — 被 никакого привкуса не имеет.</p>
+
+<p>被选为 (bèi xuǎnwéi) «избран», 被评为 (bèi píngwéi) «признан», 被誉为 (bèi yùwéi) «славится как» — это нормальные формулы хороших новостей. Здесь конструкция решает ту же задачу, что в русском: поставить на первое место то, о чём речь.</p>
+
+<p><b>Решает регистр, а не сама конструкция.</b> В разговоре 被 почти всегда сообщает о происшествии, в тексте — просто меняет порядок. Поэтому одно и то же правило нельзя применять к устной фразе и к пресс-релизу.</p>
+
+<p>Отсюда практический вывод для тех, кто готовит деловые письма: если фраза должна звучать нейтрально, а вы не уверены в регистре, 被 лучше обойти. Способы — в следующем разделе, их три.</p>
+
+<p>Есть и четвёртая группа, книжная: оборот 为…所 (wéi… suǒ). Он встречается в текстах и в устойчивых выражениях, но в живой речи не нужен совсем, и начинающим его можно просто узнавать в лицо.</p>
+
+<h2>Чем 被 заменяют <span class="italic">в живой речи</span></h2>
+
+<p>Вот и обещанный ответ на вопрос из заголовка: почему конструкцию используют реже, чем ждёт русскоязычный. Потому что у неё есть три привычных замены.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Чем в речи заменяют конструкцию с 被.</caption>
+  <thead><tr><th>Форма</th><th>Пиньинь</th><th>Когда берут</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">叫 / 让 / 给</span></td><td><i>jiào / ràng / gěi</i></td><td>разговорная замена 被</td><td><span class="han">我的车叫人撞了</span> — мою машину задели</td></tr>
+    <tr><td><span class="han">без показателя</span></td><td><i>—</i></td><td>форма активная, смысл страдательный</td><td><span class="han">饭做好了</span> — еда готова</td></tr>
+    <tr><td><span class="han">是…的</span></td><td><i>shì… de</i></td><td>когда важно, кем и когда сделано</td><td><span class="han">这本书是他写的</span> — эту книгу написал он</td></tr>
+    <tr><td><span class="han">受 / 遭 / 挨</span></td><td><i>shòu / zāo / āi</i></td><td>отдельные глаголы со страдательным смыслом</td><td><span class="han">受到欢迎</span> — пользоваться успехом</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Самая частая — вторая.</b> 饭做好了 «еда готова», 作业写完了 «домашнее задание сделано», 衣服洗了 «вещи постираны». Форма по виду активная, а смысл страдательный, и никакого показателя не требуется.</p>
+
+<p>Там, где русский обязан поставить страдательную форму, китайский обходится обычным глаголом с результатом — и 被 просто не нужно.</p>
+
+<p>Разговорные 叫, 让 и 给 работают как 被, но звучат проще: 我的车叫人撞了. Важная деталь: после 叫 и 让 деятеля назвать нужно, выбросить его, как после 被, не получится. Если называть некого, ставят 人 — «кто-то».</p>
+
+<p>是…的 решает другую задачу. Эта конструкция не про страдательность, а про акцент: кем, когда и где сделано. 这本书是他写的 — «эту книгу написал он», и всё внимание на авторе.</p>
+
+<p>Рядом стоят глаголы 受, 遭 и 挨. Они сами по себе значат «подвергнуться», «испытать»: 受到欢迎 «пользоваться успехом», 挨骂 «получить выговор». Это не показатели, а полноценные глаголы, и разбирать их стоит отдельно от 被; упомяну только, что 遭 и 挨 тоже чаще про неприятное, а 受 нейтральнее.</p>
+
+<h2>被 и 把: <span class="italic">одно событие, два взгляда</span></h2>
+
+<p>Две конструкции вечно идут в учебниках рядом, и путать их легко.</p>
+
+<p>把 ставит в центр того, кто действует, и сообщает, что он сделал с объектом. 被 ставит в центр объект и сообщает, что с ним произошло. Событие может быть одним и тем же — меняется точка зрения.</p>
+
+<p>Возьмём пример: 他把文件删了 — «он удалил файл», говорим про него и его действие. 文件被他删了 — «файл удалён им», говорим про файл, а деятель уходит в середину фразы.</p>
+
+<p><b>Общее у них одно требование:</b> и там, и там после глагола должно что-то стоять. Голый глагол не годится ни в одной из двух конструкций, и это полезно запомнить сразу про обе.</p>
+
+<p>Разница в оттенке тоже есть. 把 ничем не окрашен, а 被, как мы разобрали, в разговоре чаще сообщает о неприятном. Поэтому для нейтрального сообщения о своём же действии берут 把, а не перестраивают фразу в пассив.</p>
+
+<h2>Что ломается <span class="italic">при переводе с русского</span></h2>
+
+<p>Четыре типовые ошибки — все из одного источника: русская фраза переносится в китайский по словам.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Частые ошибки при дословном переводе страдательного залога.</caption>
+  <thead><tr><th>Русская фраза</th><th>Как хочется сказать</th><th>Как говорят</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td><b>Книга была написана им</b></td><td><span class="han bad">书被他写了</span></td><td><span class="han">这本书是他写的</span></td><td>важно, кто автор, — значит 是…的</td></tr>
+    <tr><td><b>Ужин приготовлен</b></td><td><span class="han bad">饭被做好了</span></td><td><span class="han">饭做好了</span></td><td>обычная фраза без показателя</td></tr>
+    <tr><td><b>Меня пригласили на ужин</b></td><td><span class="han bad">我被请吃饭了</span></td><td><span class="han">他们请我吃饭了</span></td><td>приятное событие — проще сказать прямо</td></tr>
+    <tr><td><b>Дверь открыта</b></td><td><span class="han bad">门被开了</span></td><td><span class="han">门开着</span></td><td>это состояние, а не происшествие</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Общий корень у всех четырёх один.</b> В русском страдательный залог — обычная форма вежливой, нейтральной речи, и мы берём её не задумываясь. В китайском нейтральную задачу решают другие средства, а 被 остаётся для случаев, когда с объектом действительно что-то произошло.</p>
+
+<p>Отдельно про четвёртую строку. «Дверь открыта» по-русски может значить и действие («её открыли»), и состояние («она сейчас открыта»). Китайский эти два смысла разводит: первое — через действие с результатом, второе — через 着, показатель состояния.</p>
+
+<p>Есть и пятая ошибка, которая встречается реже, но заметнее: 被 ставят перед глаголом, у которого нет объекта, — «я упал», «он устал». Такие глаголы в пассив не превращаются ни в каком языке, и проверить это просто: если к глаголу нельзя задать вопрос «кого, что», 被 ему не нужно.</p>
+
+<h2>Как это <span class="italic">тренировать</span></h2>
+
+<p>Порядок освоения, который работает на занятиях.</p>
+
+<ul>
+  <li><b>Сначала хвост глагола.</b> Пока не закрепилась привычка ставить 了 или результат после глагола, пассив будет собираться неправильно. Это же навык нужен для 把 и для сравнения с 比.</li>
+  <li><b>Потом короткая форма без деятеля:</b> 手机被偷了, 钱包被偷了, 自行车被偷了. Десяток таких фраз, и схема перестаёт требовать усилий.</li>
+  <li><b>Затем полная форма с деятелем</b> — и сразу же пара к ней через 把, чтобы разница в точке зрения стала осязаемой.</li>
+  <li><b>Отдельно — замены.</b> Возьмите свои обычные русские фразы со страдательным залогом и переведите каждую без 被. Это упражнение даёт больше, чем разбор правила.</li>
+  <li><b>В конце — регистр.</b> Прочитайте несколько новостных заголовков: там 被 нейтрален, и разница между текстом и разговором станет слышна.</li>
+</ul>
+
+<p>Конструкция входит в программу <a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">HSK 3</a>: она стоит там рядом с 把, сравнением с 比 и результативными морфемами. Соседство не случайное — все четыре темы про то, чем заканчивается глагольная часть.</p>
+
+<p>Если лексики на примеры не хватает, опереться можно на базовый список: <a href="https://kitai-school.ru/article/top-50-bazovyh-glagolov-kitayskogo-yazyka-s-primerami" target="_blank" rel="noopener">топ-50 базовых глаголов китайского</a>. И имейте в виду отдельную ловушку: с <a href="https://kitai-school.ru/article/razdelno-sochetaemye-glagoly" target="_blank" rel="noopener">раздельно-сочетаемыми глаголами</a> пассив строится не так прямолинейно, потому что такой глагол внутри делится на две части.</p>
+
+<div class="cta">
+  <p>Грамматику мы разбираем на своих же фразах — тех, которые вы действительно пишете и говорите: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как строится пассивный залог в китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По схеме: объект + 被 + (деятель) + глагол + то, что стоит после глагола. Например, 手机被小偷偷了 — «телефон украл вор». Объект выносится на первое место, 被 (bèi) показывает, что с ним что-то сделали, а после глагола почти всегда стоит 了, результат или дополнение: пустым глагол в этой конструкции не остаётся.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Обязательно ли называть того, кто совершил действие?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и это главное удобство конструкции. Деятеля можно убрать: 手机被偷了 — «телефон украли», и неважно кто. Русский пассив устроен так же: «телефон украли» мы тоже говорим без подлежащего. Если деятель известен и важен, его ставят сразу после 被.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что 被 используют только для неприятных событий?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Оттенок есть, правила нет. Чаще всего 被 встречается там, где с объектом случилось что-то плохое: 被骗 «обманули», 被偷 «украли», 被罚 «оштрафовали». Но в письменной и официальной речи конструкция совершенно нейтральна: 被选为 «избран», 被评为 «признан». Решает не сама конструкция, а регистр и глагол.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем заменить 被 в разговоре?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Тремя способами. Первый — разговорные 叫, 让 и 给 вместо 被: 我的车叫人撞了. Второй, самый частый, — вообще без показателя: 饭做好了 «еда готова», форма активная, смысл страдательный. Третий — 是…的, когда важно, кем и когда сделано: 这本书是他写的.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 被 отличается от 把?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это одно и то же событие, рассказанное с разных сторон. 把 ставит в центр деятеля: фраза получается о том, что он сделал с предметом. 被 ставит в центр предмет: фраза о том, что с ним произошло. Требование у обеих конструкций общее — после глагола должно что-то стоять. Конструкция с 把 разобрана у нас отдельно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>На каком уровне проходят пассив?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>被 входит в программу HSK 3 — там он стоит рядом с конструкцией 把, сравнением с 比 и результативными морфемами. Это не случайное соседство: все четыре темы требуют одного и того же навыка — следить за тем, что стоит после глагола.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть все ваши новости будут без 被! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Схема конструкции</b> — объект, 被, необязательный деятель, глагол и обязательный элемент после него — приведена по употреблению и совпадает с разбором на картинке.</li>
+    <li><b>Требование к хвосту глагола</b> (了, результативная морфема или дополнение) дано как практическое правило: фраза без него звучит оборванно.</li>
+    <li><b>Отрицание</b> 没被 и книжное 不被 приведены по употреблению.</li>
+    <li><b>Связки</b> 被骗, 被偷, 被罚, 被骂, 被打, 被抓 — частотные сочетания, по ним и описан оттенок конструкции. <b>Никаких цифр частотности в статье нет:</b> проверяемых публикаций с числами я не нашла, поэтому «реже, чем кажется» названо наблюдением, а не измерением.</li>
+    <li><b>Нейтральные употребления</b> 被选为, 被评为, 被誉为 приведены как формулы письменной речи. <b>Историю конструкции и датировки мы не приводим:</b> восстановить их достоверно в объёме статьи нельзя.</li>
+    <li><b>Замены</b> 叫 / 让 / 给, форма без показателя, 是…的 и книжное 为…所 — по употреблению; про 叫 и 让 отдельно сказано, что деятель при них обязателен.</li>
+    <li><b>Глаголы</b> 受, 遭, 挨 упомянуты как соседняя тема без подробного разбора.</li>
+    <li><b>Уровень HSK 3</b> указан по нашему же разбору программы третьего уровня.</li>
+    <li><b>Чего в статье нет намеренно:</b> полного разбора конструкции с 把 — про неё отдельный материал; общего порядка слов в предложении — тоже отдельный; подробностей про 受 / 遭 / 挨; ссылок на учебники, которых я не держала в руках.</li>
+    <li>Практика Kitai School: разборы с учениками, в том числе деловая переписка с лишними 被.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">被 ставят, когда смотрят на дело со стороны объекта. Кто это сделал — можно и не называть: 手机被偷了, «телефон украли»</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
