@@ -1,0 +1,469 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/mesyacy-na-kitayskom#article",
+      "headline": "Месяцы на китайском: почему их не нужно запоминать по отдельности",
+      "description": "Месяцы на китайском языке: все двенадцать названий от 一月 до 十二月 с пиньинем и переводом, правило «число плюс 月», почему перед номером месяца не ставят 第, разница между 几月 «какой месяц» и 几个月 «сколько месяцев», счётное слово 个月 для длительности (一个月, 半个月, 三个半月), относительные 上个月, 这个月 и 下个月, части месяца 月初, 月中, 月底 и лунные названия 正月 и 腊月.",
+      "image": "https://static.tildacdn.com/tila6264-3861-4061-b335-383562373432/mes-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-07",
+      "dateModified": "2026-11-07",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/mesyacy-na-kitayskom",
+      "about": {
+        "@type": "Thing",
+        "name": "Названия месяцев в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/mesyacy-na-kitayskom#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как будут месяцы на китайском?", "acceptedAnswer": {"@type": "Answer", "text": "Все двенадцать строятся по одному правилу: число плюс 月 (yuè). 一月 — январь, 二月 — февраль, 三月 — март и так далее до 十二月 — декабрь. Отдельных слов, как в русском, нет, и учить двенадцать названий не нужно — достаточно знать счёт до двенадцати и один иероглиф."}},
+        {"@type": "Question", "name": "Как сказать «февраль» по-китайски?", "acceptedAnswer": {"@type": "Answer", "text": "二月 (èryuè) — дословно «второй месяц». По тому же образцу: март — 三月 (sānyuè), апрель — 四月 (sìyuè), май — 五月 (wǔyuè). Ноябрь и декабрь строятся так же, просто число становится двузначным: 十一月 (shíyīyuè) и 十二月 (shí'èryuè)."}},
+        {"@type": "Question", "name": "Чем отличается 几月 от 几个月?", "acceptedAnswer": {"@type": "Answer", "text": "几月 (jǐ yuè) — «какой месяц», вопрос о названии: 你的生日是几月？ «в каком месяце у тебя день рождения». 几个月 (jǐ ge yuè) — «сколько месяцев», вопрос о длительности: 你学了几个月？ «сколько месяцев вы учитесь». Разница в одном слоге 个, и именно на ней чаще всего ошибаются."}},
+        {"@type": "Question", "name": "Как сказать «три месяца»?", "acceptedAnswer": {"@type": "Answer", "text": "三个月 (sān ge yuè) — со счётным словом 个. Без него получится 三月, то есть «март». Так же устроены и другие отрезки: 一个月 — месяц, 两个月 — два месяца, 半个月 — полмесяца, 三个半月 — три с половиной месяца."}},
+        {"@type": "Question", "name": "Как будет «в следующем месяце»?", "acceptedAnswer": {"@type": "Answer", "text": "下个月 (xià ge yuè). По той же схеме: 上个月 — в прошлом месяце, 这个月 — в этом. Предлог здесь не нужен, слово само работает обстоятельством времени и обычно стоит в начале предложения: 下个月我去中国 «в следующем месяце я еду в Китай»."}},
+        {"@type": "Question", "name": "Почему месяцы не называются отдельными словами?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что китайский календарь считает месяцы по порядку, а не называет их именами богов и императоров, как это вышло в латинской традиции. Удобство очевидное: ошибиться в названии невозможно, а перепутать июль и июнь, как бывает у начинающих с английским, просто не получится — это 七月 и 六月."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/mesyacy-na-kitayskom#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Месяцы на китайском: почему их не нужно запоминать по отдельности", "item": "https://kitai-school.ru/article/mesyacy-na-kitayskom"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Месяцы на китайском: <span class="italic">почему их не нужно запоминать по отдельности</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-07">7 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila6264-3861-4061-b335-383562373432/mes-hero.png" alt="Нумератор с барабаном цифр и красной ячейкой 月: цифра меняется, а 月 остаётся на месте" width="1200" height="630"></figure>
+
+<p class="passport">Это один из тех разделов, где китайский проще русского, и заметно проще. <b>Названий месяцев как отдельных слов в нём нет:</b> есть число и иероглиф 月. Выучив счёт до двенадцати, вы уже знаете весь год. Разберём всю дюжину, а заодно ловушку, на которой спотыкаются почти все, — разницу 几月 и 几个月.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Схема:</b> число + 月. <b>Январь</b> — 一月, <b>декабрь</b> — 十二月. <b>第 не нужно.</b> <b>几月</b> — какой месяц, <b>几个月</b> — сколько месяцев. <b>Длительность</b> считают с 个: 三个月. <b>Относительные:</b> 上个月, 这个月, 下个月. <b>Части месяца:</b> 月初, 月中, 月底.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">число плюс 月</span></h2>
+
+<p>Иероглиф 月 (yuè) означает «месяц». Ставим перед ним номер — получаем название: 一月 «январь», 二月 «февраль», 三月 «март».</p>
+
+<p>Проверить себя просто: назовите любое число от одного до двенадцати, добавьте 月 — и вы получили название месяца, даже если никогда его не слышали.</p>
+
+<p>Исключений нет ни одного. <b>Двенадцатый месяц — это 十二月</b>, ровно по той же схеме, что и второй.</p>
+
+<p>Сравните с русским, где двенадцать названий пришли из латыни и ни одно не выводится из другого: «январь» и «февраль» надо просто выучить, причём вместе с написанием. В китайском такой работы нет вовсе — знаете счёт, знаете год.</p>
+
+<p>Тот же знак означает и «луна»: 月亮 (yuèliang) — луна на небе. Связь прямая: месяц как отрезок времени отсчитывали по лунным фазам, и название осталось.</p>
+
+<p>Из этого следует приятный вывод для начинающих: месяцы можно не учить вовсе. Их не нужно повторять карточками и проверять себя списком — достаточно один раз понять правило, и любое название соберётся на ходу, даже если вы видите его впервые.</p>
+
+<p>На практике это значит, что весь раздел занимает одно занятие, а то и десять минут внутри него. Для сравнения: на дни недели уходит примерно столько же, а вот на счётные слова — недели.</p>
+
+<p>Если счёт до двенадцати пока не уверенный, начните с него — всё остальное приложится: <a href="https://kitai-school.ru/article/cifry-ot-0-do-10-na-kitayskom" target="_blank" rel="noopener">цифры от 0 до 10 на китайском</a>.</p>
+
+<p>И ещё одно удобство, которое оценят начинающие: <b>месяц в китайском не склоняется и не меняет формы</b>. 三月 остаётся 三月 и в роли подлежащего, и после предлога, и в дате. Выучили один раз — пользуетесь всегда.</p>
+
+<h2>Все двенадцать <span class="italic">месяцев</span></h2>
+
+<p>Ниже вся дюжина. Отдельно отмечу ноябрь и декабрь: многие ждут от них какой-то особой формы, раз число стало двузначным, но правило то же самое — 十一月 и 十二月, просто номер длиннее.</p>
+
+<p>Таблица целиком, с пиньинем. Обратите внимание на тон: 月 всегда читается четвёртым, а меняется только первая часть.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Месяцы на китайском с пиньинем.</caption>
+  <thead><tr><th>№</th><th>Как пишется</th><th>Пиньинь</th><th>Перевод</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="han">一月</span></td><td><i>yīyuè</i></td><td><b>январь</b></td></tr>
+    <tr><td>2</td><td><span class="han">二月</span></td><td><i>èryuè</i></td><td><b>февраль</b></td></tr>
+    <tr><td>3</td><td><span class="han">三月</span></td><td><i>sānyuè</i></td><td><b>март</b></td></tr>
+    <tr><td>4</td><td><span class="han">四月</span></td><td><i>sìyuè</i></td><td><b>апрель</b></td></tr>
+    <tr><td>5</td><td><span class="han">五月</span></td><td><i>wǔyuè</i></td><td><b>май</b></td></tr>
+    <tr><td>6</td><td><span class="han">六月</span></td><td><i>liùyuè</i></td><td><b>июнь</b></td></tr>
+    <tr><td>7</td><td><span class="han">七月</span></td><td><i>qīyuè</i></td><td><b>июль</b></td></tr>
+    <tr><td>8</td><td><span class="han">八月</span></td><td><i>bāyuè</i></td><td><b>август</b></td></tr>
+    <tr><td>9</td><td><span class="han">九月</span></td><td><i>jiǔyuè</i></td><td><b>сентябрь</b></td></tr>
+    <tr><td>10</td><td><span class="han">十月</span></td><td><i>shíyuè</i></td><td><b>октябрь</b></td></tr>
+    <tr><td>11</td><td><span class="han">十一月</span></td><td><i>shíyīyuè</i></td><td><b>ноябрь</b></td></tr>
+    <tr><td>12</td><td><span class="han">十二月</span></td><td><i>shí'èryuè</i></td><td><b>декабрь</b></td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila6530-6666-4466-b038-376236366462/mes-info.png" alt="Сетка из двенадцати месяцев от 一月 до 十二月 с пиньинем и переводом, внизу сравнение 几月 «какой месяц» и 几个月 «сколько месяцев»" width="1200" height="600"><figcaption>Вся дюжина строится одинаково — а внизу та самая пара, на которой ошибаются.</figcaption></figure>
+
+<h2>Почему не <span class="italic">第一月</span></h2>
+
+<p>Логичный вопрос: если 一月 — это «первый месяц», не нужен ли здесь показатель порядка 第?</p>
+
+<p>Вопрос этот задают почти на каждой группе, и он правильный: по-русски «первый месяц» и «январь» — разные выражения.</p>
+
+<p><b>Не нужен.</b> Месяцы — это пронумерованный ряд, в котором другого порядка быть не может, и дополнительный показатель в нём избыточен. Форма 第一月 звучит так же странно, как «первый месяц номер один».</p>
+
+<p>Это общий принцип китайского: показатель ставят там, где без него порядок непонятен, и не ставят там, где он очевиден. Месяцы идут друг за другом по определению, и напоминать об этом нечем.</p>
+
+<p>Точно так же устроены дни недели, этажи и номера маршрутов — там номер тоже работает названием. Как называют дни недели и почему способов целых три, разобрано отдельно: <a href="https://kitai-school.ru/article/dni-nedeli-v-kitae" target="_blank" rel="noopener">дни недели в Китае</a>.</p>
+
+<h2>几月 и 几个月: <span class="italic">вопрос и длительность</span></h2>
+
+<p>Вот место, где ошибаются чаще всего, и ошибка меняет смысл вопроса целиком.</p>
+
+<ul>
+  <li><b>几月</b> (jǐ yuè) — «какой месяц». Спрашивает про название: 你的生日是几月？ — «в каком месяце у тебя день рождения?»</li>
+  <li><b>几个月</b> (jǐ ge yuè) — «сколько месяцев». Спрашивает про длительность: 你学了几个月？ — «сколько месяцев вы учитесь?»</li>
+</ul>
+
+<p>Разница в одном слоге, 个, и именно он превращает название в единицу измерения.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица писала китайскому коллеге про сроки проекта и спросила: 这个项目要几月？ Она имела в виду «сколько месяцев займёт работа».</p>
+  <p>Коллега ответил коротко: «май». С его стороны вопрос звучал как «в каком месяце», и ответ был на него.</p>
+  <p><b>Разобрали на занятии.</b> 几月 спрашивает, какой это месяц из двенадцати. Длительность — это 几个月, с 个 посередине. Один слог, а вопрос получается совсем другой.</p>
+  <p>Проверку она придумала себе сама: если по-русски в вопрос подставляется «сколько», значит нужно 个. С тех пор не ошибалась ни разу.</p>
+</div>
+
+<p>Проверка, которая работает всегда: <b>подставьте по-русски «сколько»</b>. Если фраза собирается — нужно 个. «Сколько месяцев вы там были» — 几个月. «В каком месяце вы там были» — 几月.</p>
+
+<h2>个月: <span class="italic">как считают длительность</span></h2>
+
+<p>Когда речь о сроке, 月 ведёт себя как обычное существительное и требует счётного слова 个.</p>
+
+<ul>
+  <li><b>一个月</b> — один месяц</li>
+  <li><b>两个月</b> — два месяца (именно 两, а не 二)</li>
+  <li><b>半个月</b> — полмесяца</li>
+  <li><b>三个半月</b> — три с половиной месяца</li>
+</ul>
+
+<p>Эта же схема работает со всеми единицами времени, у которых есть счётное слово: 一个星期 — неделя, 一个小时 — час. А вот дни и годы обходятся без 个: 三天 — три дня, 三年 — три года. Логики тут искать не стоит, это просто надо знать.</p>
+
+<p>Третий и четвёртый примеры стоит запомнить отдельно: <b>半 «половина» встаёт перед 个</b> в значении «полмесяца» и после числа в значении «с половиной». Перепутать легко, а разница заметная.</p>
+
+<p>Почему перед счётным словом ставится 两, а не 二, и как устроены счётные слова вообще — отдельная большая тема, у нас есть разбор; здесь достаточно запомнить саму форму.</p>
+
+<h2>Прошлый, этот, <span class="italic">следующий</span></h2>
+
+<p>Эти слова понадобятся раньше, чем названия месяцев: в разговоре они встречаются постоянно.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Относительные месяцы и части месяца.</caption>
+  <thead><tr><th>Как пишется</th><th>Пиньинь</th><th>Перевод</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">上个月</span></td><td><i>shàng ge yuè</i></td><td><b>в прошлом месяце</b></td><td>上个月我去了北京 — в прошлом месяце я ездил в Пекин</td></tr>
+    <tr><td><span class="han">这个月</span></td><td><i>zhè ge yuè</i></td><td><b>в этом месяце</b></td><td>这个月很忙 — в этом месяце много дел</td></tr>
+    <tr><td><span class="han">下个月</span></td><td><i>xià ge yuè</i></td><td><b>в следующем месяце</b></td><td>下个月见 — увидимся в следующем месяце</td></tr>
+    <tr><td><span class="han">月初</span></td><td><i>yuèchū</i></td><td><b>в начале месяца</b></td><td>月初发工资 — зарплату выдают в начале месяца</td></tr>
+    <tr><td><span class="han">月中</span></td><td><i>yuèzhōng</i></td><td><b>в середине месяца</b></td><td>月中有考试 — в середине месяца экзамен</td></tr>
+    <tr><td><span class="han">月底</span></td><td><i>yuèdǐ</i></td><td><b>в конце месяца</b></td><td>月底交报告 — отчёт сдают в конце месяца</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Обратите внимание на 个 в первых трёх: 上个月, а не 上月. Короткая форма существует, но принадлежит письменной речи — в разговоре она звучит сухо, как «в месяце минувшем».</p>
+
+<p>С ними же работают и уточнения: 上上个月 — «позапрошлый месяц», 下下个月 — «через месяц после следующего». Конструкция удваивается буквально, и это один из тех случаев, когда китайский устроен прозрачнее русского.</p>
+
+<p>Предлог к таким словам не нужен. <b>Они сами работают обстоятельством времени</b> и обычно стоят в начале предложения, перед подлежащим или сразу после него: 下个月我去中国.</p>
+
+<h2>Начало, середина, <span class="italic">конец месяца</span></h2>
+
+<p>月初, 月中 и 月底 устроены прозрачно: 初 — начало, 中 — середина, 底 — дно, то есть конец.</p>
+
+<p>Запомнить легко через образ: начало — верх списка, конец — его дно. 底 и в других словах означает нижнюю границу: 年底, 月底, 到底 «в конце концов».</p>
+
+<p>В работе они встречаются постоянно: зарплата в 月初, отчёт в 月底. Та же логика работает и с годом: 年初 — начало года, 年底 — конец года. Выучив одну пару, вы получаете вторую бесплатно.</p>
+
+<p>Для суток используется другой набор слов — утро, день, вечер и часы; про время у нас отдельный разбор: <a href="https://kitai-school.ru/article/uchimsya-nazyvat-vremya-chasy-i-minuty-na-kitayskom" target="_blank" rel="noopener">время, часы и минуты на китайском</a>.</p>
+
+<h2>Лунные месяцы: <span class="italic">正月 и 腊月</span></h2>
+
+<p>Всё сказанное относится к обычному календарю. Но у традиционного, лунно-солнечного, есть свои названия для двух месяцев, и их стоит узнавать.</p>
+
+<p><b>正月</b> (zhēngyuè) — первый месяц лунного года, тот самый, с которого начинается Новый год. <b>腊月</b> (làyuè) — двенадцатый, последний перед ним. Остальные десять называют просто по номерам.</p>
+
+<p>Обратите внимание на чтение: в 正月 знак 正 читается первым тоном, zhēng, хотя обычно он читается zhèng. Это устойчивое исключение, и оно встречается именно в календарных словах.</p>
+
+<p>В разговоре о традиционных датах лунный месяц обычно и называют: сказать 正月 понятнее, чем объяснять, какой это месяц по обычному календарю.</p>
+
+<p>Сами праздники и то, почему их даты каждый год смещаются, мы разбирали в отдельной статье; здесь достаточно знать, что лунные названия существуют и в быту встречаются.</p>
+
+<h2>Частые <span class="italic">ошибки</span></h2>
+
+<p>Пять промахов, которые повторяются из группы в группу.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Как не надо и как надо.</caption>
+  <thead><tr><th>Ошибка</th><th>Правильно</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">我学了三月</span></td><td><span class="han">我学了三个月</span></td><td>длительность считается с 个: три месяца — 三个月</td></tr>
+    <tr><td><span class="han">第三月</span></td><td><span class="han">三月</span></td><td>перед номером месяца порядковый показатель не ставят</td></tr>
+    <tr><td><span class="han">你学了几月？</span></td><td><span class="han">你学了几个月？</span></td><td>вопрос о длительности тоже требует 个</td></tr>
+    <tr><td><span class="han">一月 в значении «один месяц»</span></td><td><span class="han">一个月</span></td><td>一月 — это январь, а не количество</td></tr>
+    <tr><td><span class="han">上月 в разговоре</span></td><td><span class="han">上个月</span></td><td>форма без 个 книжная, в речи звучит сухо</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Четвёртая строка заслуживает отдельного внимания, потому что на письме она выглядит безобидно. 我在北京住了一月 читается как «я жил в Пекине в январе», хотя сказать хотели «месяц». Собеседник поймёт по контексту, но переспросит.</p>
+
+<p>Первые три — одна и та же ошибка в трёх видах: пропущенное 个. Если запомнить только её, половина проблем с месяцами исчезнет сразу.</p>
+
+<p>А общая логика такая: <b>月 без 个 называет месяц, 个月 измеряет время</b>. Как устроены подобные пары в грамматике вообще и почему порядок слов решает больше, чем окончания, разобрано здесь: <a href="https://kitai-school.ru/article/kurs-po-grammatike-kitajskogo-yazyka-kak-ustroen" target="_blank" rel="noopener">курс по грамматике</a>.</p>
+
+<div class="cta">
+  <p>Календарь и даты ставятся на первых занятиях — вместе со счётом, который для них и нужен: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как будут месяцы на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Все двенадцать строятся по одному правилу: число плюс 月 (yuè). 一月 — январь, 二月 — февраль, 三月 — март и так далее до 十二月 — декабрь. Отдельных слов, как в русском, нет, и учить двенадцать названий не нужно — достаточно знать счёт до двенадцати и один иероглиф.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сказать «февраль» по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>二月 (èryuè) — дословно «второй месяц». По тому же образцу: март — 三月 (sānyuè), апрель — 四月 (sìyuè), май — 五月 (wǔyuè). Ноябрь и декабрь строятся так же, просто число становится двузначным: 十一月 (shíyīyuè) и 十二月 (shí'èryuè).</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем отличается 几月 от 几个月?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>几月 (jǐ yuè) — «какой месяц», вопрос о названии: 你的生日是几月？ «в каком месяце у тебя день рождения». 几个月 (jǐ ge yuè) — «сколько месяцев», вопрос о длительности: 你学了几个月？ «сколько месяцев вы учитесь». Разница в одном слоге 个, и именно на ней чаще всего ошибаются.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сказать «три месяца»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>三个月 (sān ge yuè) — со счётным словом 个. Без него получится 三月, то есть «март». Так же устроены и другие отрезки: 一个月 — месяц, 两个月 — два месяца, 半个月 — полмесяца, 三个半月 — три с половиной месяца.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как будет «в следующем месяце»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>下个月 (xià ge yuè). По той же схеме: 上个月 — в прошлом месяце, 这个月 — в этом. Предлог здесь не нужен, слово само работает обстоятельством времени и обычно стоит в начале предложения: 下个月我去中国 «в следующем месяце я еду в Китай».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему месяцы не называются отдельными словами?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что китайский календарь считает месяцы по порядку, а не называет их именами богов и императоров, как это вышло в латинской традиции. Удобство очевидное: ошибиться в названии невозможно, а перепутать июль и июнь, как бывает у начинающих с английским, просто не получится — это 七月 и 六月.</p></div>
+  </details>
+</div>
+
+<p class="sign">Удачного вам месяца, какой бы ни был по счёту! <span class="han">下个月见</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Названия месяцев</b> — 一月 … 十二月 — приведены со знаками, пиньинем и переводом. Их число и наличие пиньиня проверяются скриптом при сборке страницы.</li>
+    <li><b>Правило «число плюс 月»</b> и отсутствие показателя 第 перед номером месяца даны по нормам грамматики; подробнее про 第 — в нашей статье о порядковых числительных.</li>
+    <li><b>Различие 几月 и 几个月</b> описано по употреблению: вопрос о названии месяца против вопроса о длительности.</li>
+    <li><b>Формы длительности</b> 一个月, 两个月, 半个月 и 三个半月 приведены с пояснением, где стоит 半.</li>
+    <li><b>Относительные месяцы</b> 上个月, 这个月, 下个月 и части месяца 月初, 月中, 月底 даны с примерами; про форму 上月 сказано, что она письменная, а не ошибочная.</li>
+    <li><b>Лунные названия</b> 正月 и 腊月 приведены вместе с особым чтением 正 первым тоном в календарных словах.</li>
+    <li><b>Чего в статье нет намеренно:</b> порядка записи даты и различия 日 и 号 — это тема нашей статьи про даты; разбора дней недели — для них отдельная страница; исторических названий всех двенадцати лунных месяцев — в живой речи они почти не встречаются; дат лунных месяцев в привычном календаре — про это статья о праздниках.</li>
+    <li>Практика Kitai School: разборы с учениками, в том числе случай с вопросом о сроках проекта.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">月 без 个 называет месяц, 个月 измеряет время: 三月 — март, 三个月 — три месяца</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
