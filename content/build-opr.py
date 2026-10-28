@@ -7,8 +7,8 @@ OUT = "poryadok-opredeleniy-v-kitayskom.html"
 SLUG = "poryadok-opredeleniy-v-kitayskom"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/opr-hero.png"
-FIG = "assets/opr-info.png"
+HERO = "https://static.tildacdn.com/tila6262-3463-4465-a166-393938323733/opr-hero.png"
+FIG = "https://static.tildacdn.com/tila6230-6362-4838-a337-356564623565/opr-info.png"
 HERO_ALT = ("Фраза 我的那三本很有意思的中文书 со скобкой под определениями и отдельной "
             "скобкой под последним знаком 书")
 FIG_ALT = ("Шесть строк роста именной группы от 书 до 我的那三本很有意思的中文书 "
