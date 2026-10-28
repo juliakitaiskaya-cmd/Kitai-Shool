@@ -1,0 +1,465 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/poryadok-opredeleniy-v-kitayskom#article",
+      "headline": "Порядок определений в китайском: почему длинное описание выстраивается строго по правилам",
+      "description": "Порядок определений в китайском языке: пять мест перед существительным — принадлежность, указание, число со счётным словом, качество и вид — на эталонном примере 我的那三本很有意思的中文书. Правила частицы 的: когда она обязательна (老师的书, 很好的人, 我买的书), когда убирается (我妈妈, 新书, 木头桌子) и как она меняет смысл фразы. Разбор длинных определений с оборотом и пять типичных ошибок при переносе русского порядка слов.",
+      "image": "assets/opr-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-12",
+      "dateModified": "2026-11-12",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/poryadok-opredeleniy-v-kitayskom",
+      "about": {
+        "@type": "Thing",
+        "name": "Порядок определений в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/poryadok-opredeleniy-v-kitayskom#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "В каком порядке ставятся определения в китайском?", "acceptedAnswer": {"@type": "Answer", "text": "По пяти местам, и переставлять их нельзя: чьё, какое, сколько со счётным словом, какого качества, что за — и только потом само существительное. Полный пример: 我的那三本很有意思的中文书 — «те мои три очень интересные книги по китайскому». Так длинно, конечно, не говорят, но порядок виден на нём лучше всего."}},
+        {"@type": "Question", "name": "Где ставится 的, а где её убирают?", "acceptedAnswer": {"@type": "Answer", "text": "的 нужна при принадлежности (老师的书), при качестве с 很 (很好的人) и при обороте перед словом (我买的书). Убирают её при родстве и «своих» (我妈妈, 我们学校), при односложном качестве (新书, 红花) и при указании на вид или материал (中文书, 木头桌子)."}},
+        {"@type": "Question", "name": "Можно ли поставить прилагательное после существительного?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Если поставить описание после слова, получится не словосочетание, а целое предложение: 书很有意思 значит «книга интересная», это уже законченная мысль. Чтобы вышло «интересная книга», описание идёт перед словом: 很有意思的书."}},
+        {"@type": "Question", "name": "Чем 我妈妈 отличается от 我的妈妈?", "acceptedAnswer": {"@type": "Answer", "text": "Оба варианта правильные. 我妈妈 — обычный разговорный, с родными и со «своими» частицу убирают. 我的妈妈 звучит чуть более отдельно и попадается там, где нужно подчеркнуть именно принадлежность. На слух первый вариант встречается заметно чаще."}},
+        {"@type": "Question", "name": "Сколько определений можно поставить подряд?", "acceptedAnswer": {"@type": "Answer", "text": "Грамматика не ограничивает, ограничивает слух. Собрать фразу с пятью определениями можно, и она будет правильной, но слушатель к концу забудет начало. На практике носитель ставит одно-два определения, а остальное выносит во второе предложение."}},
+        {"@type": "Question", "name": "Почему 我买书 и 我买的书 значат разное?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что 的 превращает глагольную часть в определение. 我买书 — это предложение: «я покупаю книги». 我买的书 — словосочетание: «книга, которую я купил». Разница в одном знаке, а меняется всё: в первом случае перед вами законченная мысль, во втором — название предмета."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/poryadok-opredeleniy-v-kitayskom#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Порядок определений в китайском: почему длинное описание выстраивается строго по правилам", "item": "https://kitai-school.ru/article/poryadok-opredeleniy-v-kitayskom"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Грамматика</p>
+<h1>Порядок определений в китайском: <span class="italic">почему длинное описание выстраивается строго по правилам</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-12">12 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/opr-hero.png" alt="Фраза 我的那三本很有意思的中文书 со скобкой под определениями и отдельной скобкой под последним знаком 书" width="1200" height="630"></figure>
+
+<p class="passport">В китайском определение всегда стоит перед тем словом, которое описывает. Пока определение одно, это не доставляет хлопот. <b>Как только их становится несколько, выясняется, что порядок у них свой</b> — и переставить ничего нельзя. Разберём пять мест перед существительным, правила частицы 的 и то, как читать длинную фразу, не теряя её смысла.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Пять мест:</b> чьё, какое, сколько со счётным словом, какого качества, что за — и только потом существительное. <b>Эталон:</b> 我的那三本很有意思的中文书. <b>的 нужна</b> при принадлежности, при качестве с 很 и при обороте. <b>的 убирается</b> у родни, у односложных прилагательных и у вида с материалом. <b>Главное слово — всегда последнее.</b></p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">главное слово всегда последнее</span></h2>
+
+<p>Правило, из которого растёт вся статья, помещается в одну строку: что бы ни описывало существительное, описание идёт перед ним.</p>
+
+<p>Отсюда следует приём, который выручает при чтении. <b>Чтобы понять длинную китайскую фразу, найдите в ней последний знак перед точкой или перед глаголом.</b> Это и есть то, о чём речь. Всё остальное — подробности о нём.</p>
+
+<p>Проверим на нашем эталоне: 我的那三本很有意思的中文书. Последний знак — 书 «книга». Значит, речь о книгах, а двенадцать знаков перед ними рассказывают, чьи они, какие, сколько их и о чём.</p>
+
+<p>Русский так не делает. Мы спокойно говорим «книга интересная» и «интересная книга», меняя порядок ради выразительности. В китайском такой свободы нет: <b>поставьте описание после слова — и получится не словосочетание, а предложение</b>. 书很有意思 значит «книга интересная», это законченная мысль.</p>
+
+<p>Один факт отсюда берём и идём дальше: само место описания разобрано у нас в статье про порядок слов, вместе с датами и адресами. Здесь нас интересует другое — что происходит, когда определений несколько.</p>
+
+<h2>Пять мест <span class="italic">перед существительным</span></h2>
+
+<p>Если выписать подряд все подробности, которые можно навесить на одно существительное, получится пять мест с постоянным порядком.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Порядок определений на примере 我的那三本很有意思的中文书.</caption>
+  <thead><tr><th>№</th><th>Место</th><th>Что в нём</th><th>Пример</th><th>Пиньинь</th><th>Перевод</th></tr></thead>
+  <tbody>
+    <tr><td><b>1</b></td><td><b>Чьё</b></td><td>принадлежность</td><td><span class="han">我的</span></td><td><i>wǒ de</i></td><td>моё</td></tr>
+    <tr><td><b>2</b></td><td><b>Какое</b></td><td>указание</td><td><span class="han">那</span></td><td><i>nà</i></td><td>то</td></tr>
+    <tr><td><b>3</b></td><td><b>Сколько</b></td><td>число со счётным словом</td><td><span class="han">三本</span></td><td><i>sān běn</i></td><td>три штуки</td></tr>
+    <tr><td><b>4</b></td><td><b>Какого качества</b></td><td>описание, оценка, цвет</td><td><span class="han">很有意思的</span></td><td><i>hěn yǒu yìsi de</i></td><td>очень интересные</td></tr>
+    <tr><td><b>5</b></td><td><b>Что за</b></td><td>вид, материал, назначение</td><td><span class="han">中文</span></td><td><i>Zhōngwén</i></td><td>по китайскому</td></tr>
+    <tr><td><b>—</b></td><td><b>Существительное</b></td><td>то, о чём речь</td><td><span class="han">书</span></td><td><i>shū</i></td><td>книги</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Сразу оговорка: так длинно никто не говорит.</b> Эталон нужен как линейка — на нём видно все пять мест сразу. В живой речи определений обычно одно или два.</p>
+
+<p>Главное свойство этого ряда — места можно оставлять пустыми, но нельзя менять местами. 那三本书 правильно, 三本那书 — нет. 我的中文书 правильно, 中文我的书 — нет.</p>
+
+<p>Про третье место скажу отдельно: число в китайском не ставится к существительному напрямую, между ними обязательно стоит счётное слово. Это отдельная большая тема, и разобрана она у нас отдельно; здесь достаточно помнить, что число и счётное слово ходят вместе и занимают одно место.</p>
+
+<h2>Частица 的: <span class="italic">когда нужна и когда мешает</span></h2>
+
+<p>Теперь про знак, который связывает определение с существительным. 的 (de) — самая частая частица китайского языка, и половина ошибок в именной группе связана именно с ней.</p>
+
+<p>Правило простое по смыслу: <b>的 ставится там, где связь между определением и словом не самоочевидна</b>, и убирается там, где эти два слова и так воспринимаются как одно целое.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Когда 的 нужна и когда её убирают.</caption>
+  <thead><tr><th>Случай</th><th>Пример</th><th>Пиньинь</th><th>Перевод</th><th>的</th></tr></thead>
+  <tbody>
+    <tr><td><b>Принадлежность</b></td><td><span class="han">老师的书</span></td><td><i>lǎoshī de shū</i></td><td>книга преподавателя</td><td>нужна</td></tr>
+    <tr><td><b>Родство и своё</b></td><td><span class="han">我妈妈</span></td><td><i>wǒ māma</i></td><td>моя мама</td><td>убирается</td></tr>
+    <tr><td><b>Односложное качество</b></td><td><span class="han">新书</span></td><td><i>xīn shū</i></td><td>новая книга</td><td>убирается</td></tr>
+    <tr><td><b>Качество с 很</b></td><td><span class="han">很好的人</span></td><td><i>hěn hǎo de rén</i></td><td>очень хороший человек</td><td>нужна</td></tr>
+    <tr><td><b>Вид и материал</b></td><td><span class="han">木头桌子</span></td><td><i>mùtou zhuōzi</i></td><td>деревянный стол</td><td>убирается</td></tr>
+    <tr><td><b>Оборот перед словом</b></td><td><span class="han">我买的书</span></td><td><i>wǒ mǎi de shū</i></td><td>книга, которую я купил</td><td>нужна</td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="assets/opr-info.png" alt="Шесть строк роста именной группы от 书 до 我的那三本很有意思的中文书 с отметкой «с 的» или «без 的» и лентой слотов" width="1200" height="700"><figcaption>Фраза растёт влево по одному блоку, и у каждого шага своё правило про 的.</figcaption></figure>
+
+<p>Разберём вторую строку: 我妈妈 — «моя мама», без всякой частицы. С роднёй, со своей школой, со своим домом 的 обычно убирают: 我们学校, 我家. Вариант 我的妈妈 тоже правильный, просто звучит чуть более отдельно и встречается реже.</p>
+
+<p>Третья и четвёртая строки — пара, которую стоит запомнить вместе. <b>Односложное прилагательное идёт без частицы:</b> 新书 «новая книга», 红花 «красный цветок», 好人 «хороший человек». А вот с 很 перед прилагательным частица нужна: 很好的人.</p>
+
+<p>Есть у 的 и ещё одна работа, о которой на старте не говорят. <b>Она умеет заменять собой существительное:</b> 我的 — «моё», 红的 — «красное», 新的 — «новое». Слово просто не называют, потому что из разговора и так понятно, о чём речь.</p>
+
+<h2>Ближе к слову — <span class="italic">то, что постояннее</span></h2>
+
+<p>Здесь придётся сделать поправку к общему правилу, и сделаю её честно.</p>
+
+<p>Первые три места — чьё, какое и сколько — закреплены жёстко. <b>А вот внутри описательной части строгого закона нет</b>, там действует склонность: чем постояннее признак, тем ближе он стоит к существительному.</p>
+
+<p>Порядок получается такой: сначала оценка, потом размер и цвет, в самом конце — материал и назначение. 很漂亮的红色连衣裙 — «очень красивое красное платье»: оценка впереди, цвет вплотную к слову. Про названия цветов и их устройство у нас есть разбор: <a href="https://kitai-school.ru/article/cveta-na-kitayskom-s-transkripciey" target="_blank" rel="noopener">цвета на китайском</a>.</p>
+
+<p><b>Пятое место стоит особняком</b>, и в учебных списках его часто забывают. 中文书 — «книга по китайскому», 木头桌子 — «деревянный стол», 中国朋友 — «друг из Китая». Частицы здесь нет, и это не описание, а указание на вид предмета.</p>
+
+<p>Проверить, качество перед вами или вид, можно простым вопросом. Качество отвечает на «какой» и допускает степень: книга может быть очень интересной. Вид отвечает на «что за» и степени не имеет: книга не бывает «очень по китайскому».</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик переводил описание товара для карточки на китайской площадке и собрал определение так, как оно звучало по-русски: сначала качество, потом принадлежность, и с 的 после каждого слова.</p>
+  <p>Китайский коллега эту фразу не дочитал. Не из вредности: существительное стояло в самом конце, за пятью оборотами, и до него надо было ещё добраться, держа в голове всё описание.</p>
+  <p><b>Грамматических ошибок там почти не было.</b> Была одна большая: длина. Фраза собрана верно, а слушать и читать её тяжело.</p>
+  <p>На занятии мы собрали ту же мысль заново: убрали два 的 из трёх, оставили перед существительным одно короткое описание, а остальное вынесли во второе предложение. Карточка стала короче на треть, и вопросов к ней больше не было.</p>
+</div>
+
+<h2>Когда 的 <span class="italic">меняет смысл</span></h2>
+
+<p>А теперь самый наглядный пример во всей теме. Две фразы, которые различаются одним знаком.</p>
+
+<p>我买书 — «я покупаю книги». Это предложение: есть кто, есть что делает, есть что.</p>
+
+<p>我买的书 — «книга, которую я купил». Это уже не предложение, а название предмета: частица превратила всю глагольную часть в определение.</p>
+
+<p>Та же частица собирает и более привычные определения из целых кусков речи. 学中文的学生 — «студент, который учит китайский». 穿红衣服的女孩 — «девушка в красном». В обоих случаях перед нами не описание одним словом, а маленькое высказывание, превращённое в определение.</p>
+
+<p>Обратите внимание, что при этом порядок внутри самого оборота остаётся обычным: 学中文 собрано как нормальное «учит китайский», и только 的 в конце переводит всю конструкцию в новое качество. Менять что-то внутри оборота не нужно.</p>
+
+<p><b>Вот что делает 的 по существу:</b> она берёт любой кусок речи — слово, оборот, целое высказывание — и превращает его в описание следующего за ним существительного. 昨天来的人 — «человек, который приходил вчера». 在门口等的朋友 — «друг, который ждёт у входа».</p>
+
+<p>Для русского уха это переворот. У нас придаточное идёт после слова: «книга, которую я купил». В китайском оно идёт перед словом, целиком, и заканчивается частицей.</p>
+
+<h2>Длинные определения: <span class="italic">оборот перед словом</span></h2>
+
+<p>Из предыдущего раздела следует неудобное: определением может стать не только слово, но и целая фраза. И она тоже встанет перед существительным.</p>
+
+<p>Разберём на примере: 我昨天在书店买的那本书 — «та книга, которую я вчера купил в книжном». Читать это следует с конца: 书 — книга, 那本 — та, а всё остальное описывает, что это за книга.</p>
+
+<p>Соберём её по шагам, от конца к началу. 书 — книга. 那本书 — та книга. 我买的那本书 — та книга, которую я купил. 我昨天买的那本书 — та книга, которую я купил вчера. И наконец полный вариант с местом покупки.</p>
+
+<p>Так же её удобно и строить: назвали предмет, добавили указание, потом оборот — и каждый шаг проверяется отдельно. Собирать такую фразу сразу целиком почти никогда не получается, даже у тех, кто давно говорит свободно.</p>
+
+<p><b>Приём для чтения тот же, что в начале статьи:</b> находим последний знак, понимаем, о чём речь, и только потом возвращаемся к началу за подробностями. Без этого длинная фраза кажется набором слов.</p>
+
+<p>Приём для сбора — обратный. Сначала назовите главное слово, потом решите, какие подробности действительно нужны, и расставьте их по пяти местам. Все сразу нужны редко.</p>
+
+<p>Полезно сразу проверить себя на обратном переводе. Возьмите русскую фразу с придаточным — «письмо, которое пришло утром» — и соберите её по-китайски: сначала оборот, потом 的, потом существительное. Если рука тянется поставить описание после слова, значит, привычка ещё не сменилась.</p>
+
+<p>Второе упражнение того же рода: прочитайте вслух три длинные фразы из учебного текста и для каждой назовите главное слово, не переводя остального. Это ровно тот навык, который нужен на чтении.</p>
+
+<p>Здесь же лежит практический предел. Грамматика длину не ограничивает, а вот слушатель — ограничивает: <b>к концу длинного определения он забывает его начало</b>. Поэтому носитель чаще делит мысль на два коротких предложения, чем строит одно многоэтажное.</p>
+
+<h2>Пять ошибок <span class="italic">русскоязычного</span></h2>
+
+<p>Все пять растут из одного: русский порядок переносится в китайский как есть.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Частые ошибки в именной группе.</caption>
+  <thead><tr><th>Ошибка</th><th>Как получается</th><th>Как правильно</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td><b>Ставят определение после слова</b></td><td><span class="han bad">书很有意思的</span></td><td><span class="han">很有意思的书</span></td><td>после слова ничего не бывает</td></tr>
+    <tr><td><b>Забывают 的 в обороте</b></td><td><span class="han bad">我买书</span></td><td><span class="han">我买的书</span></td><td>без 的 это «я покупаю книги»</td></tr>
+    <tr><td><b>Ставят 的 после местоимения с родством</b></td><td><span class="han bad">我的妈妈每天做饭</span></td><td><span class="han">我妈妈每天做饭</span></td><td>со своими 的 обычно убирают</td></tr>
+    <tr><td><b>Меняют местами число и указание</b></td><td><span class="han bad">三本那书</span></td><td><span class="han">那三本书</span></td><td>указание идёт раньше числа</td></tr>
+    <tr><td><b>Нанизывают 的 подряд</b></td><td><span class="han bad">我的朋友的妈妈的车</span></td><td><span class="han">我朋友妈妈的车</span></td><td>两 的 из трёх лишние</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Первая строка таблицы выглядит безобидно, а встречается чаще всех. Она же самая легко исправимая: достаточно запомнить, что после существительного в именной группе не бывает ничего, и проверять конец фразы.</p>
+
+<p><b>Вторая строка — самая дорогая.</b> Пропущенная 的 не делает фразу корявой, она делает её другой: вместо названия предмета получается законченное предложение, и собеседник понимает вас неправильно, не замечая ошибки.</p>
+
+<p>Пятая строка — про меру. Нанизывать 的 грамматика разрешает, но три частицы подряд звучат тяжело, и носитель так не скажет. Две из трёх здесь убираются без потери смысла, потому что речь о своих.</p>
+
+<p>Отдельно замечу про четвёртую: 那 и 三本 путают местами чаще всего, потому что по-русски «три той книги» звучит дико, и ориентироваться на слух не выходит. Помогает только порядок: указание всегда раньше числа.</p>
+
+<h2>Как это собирать <span class="italic">на практике</span></h2>
+
+<p>Порядок отработки, который работает на занятиях.</p>
+
+<ul>
+  <li><b>Сначала два слова.</b> 新书, 好人, 红花 — определение без частицы. Десяток таких пар, и позиция описания закрепляется сама.</li>
+  <li><b>Потом принадлежность.</b> 老师的书, 我朋友的车 — и сразу же пара без частицы: 我妈妈, 我家. Разница между ними важнее, чем кажется.</li>
+  <li><b>Затем число со счётным словом:</b> 三本书, 那三本书. Здесь же становится видно, что указание идёт раньше числа.</li>
+  <li><b>После этого оборот с 的.</b> 我买的书, 昨天来的人 — и обязательно рядом вариант без частицы, чтобы разница в смысле была наглядной.</li>
+  <li><b>В конце — сборка эталона целиком</b> и его разборка обратно. Если вы можете собрать 我的那三本很有意思的中文书 и объяснить каждое место, тема закрыта.</li>
+</ul>
+
+<p>Тема относится к базовой грамматике и разбирается задолго до <a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">HSK 3</a>, но именно в заданиях третьего уровня длинные определения начинают попадаться постоянно. Где место этой теме среди остальных и в каком порядке её дают, видно по разбору программы: <a href="https://kitai-school.ru/article/kurs-po-grammatike-kitajskogo-yazyka-kak-ustroen" target="_blank" rel="noopener">курс по грамматике китайского языка</a>.</p>
+
+<p>Для упражнений нужен запас обычных слов, прежде всего глаголов: без них не собрать оборот перед существительным. Базовый список у нас есть: <a href="https://kitai-school.ru/article/top-50-bazovyh-glagolov-kitayskogo-yazyka-s-primerami" target="_blank" rel="noopener">топ-50 базовых глаголов китайского</a>.</p>
+
+<div class="cta">
+  <p>Такие вещи быстрее ставятся на своих же фразах — тех, которые вы правда пишете и говорите: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>В каком порядке ставятся определения в китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По пяти местам, и переставлять их нельзя: чьё, какое, сколько со счётным словом, какого качества, что за — и только потом само существительное. Полный пример: 我的那三本很有意思的中文书 — «те мои три очень интересные книги по китайскому». Так длинно, конечно, не говорят, но порядок виден на нём лучше всего.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где ставится 的, а где её убирают?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>的 нужна при принадлежности (老师的书), при качестве с 很 (很好的人) и при обороте перед словом (我买的书). Убирают её при родстве и «своих» (我妈妈, 我们学校), при односложном качестве (新书, 红花) и при указании на вид или материал (中文书, 木头桌子).</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли поставить прилагательное после существительного?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. Если поставить описание после слова, получится не словосочетание, а целое предложение: 书很有意思 значит «книга интересная», это уже законченная мысль. Чтобы вышло «интересная книга», описание идёт перед словом: 很有意思的书.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 我妈妈 отличается от 我的妈妈?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Оба варианта правильные. 我妈妈 — обычный разговорный, с родными и со «своими» частицу убирают. 我的妈妈 звучит чуть более отдельно и попадается там, где нужно подчеркнуть именно принадлежность. На слух первый вариант встречается заметно чаще.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько определений можно поставить подряд?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Грамматика не ограничивает, ограничивает слух. Собрать фразу с пятью определениями можно, и она будет правильной, но слушатель к концу забудет начало. На практике носитель ставит одно-два определения, а остальное выносит во второе предложение.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему 我买书 и 我买的书 значат разное?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что 的 превращает глагольную часть в определение. 我买书 — это предложение: «я покупаю книги». 我买的书 — словосочетание: «книга, которую я купил». Разница в одном знаке, а меняется всё: в первом случае перед вами законченная мысль, во втором — название предмета.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть главное слово всегда находится с первого раза! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Позиция определения</b> — всегда перед определяемым словом — приведена как правило без исключений; контраст 很有意思的书 и 书很有意思 показывает, что перестановка меняет словосочетание на предложение.</li>
+    <li><b>Порядок пяти мест</b> приведён по употреблению и совпадает на обеих картинках статьи. Эталон 我的那三本很有意思的中文书 собран по этому порядку и сразу назван учебным: так длинно не говорят.</li>
+    <li><b>Правила 的</b> — принадлежность, родство и «свои», односложное качество, качество с 很, вид и материал, оборот перед словом — даны по употреблению.</li>
+    <li><b>Порядок внутри описательной части</b> (оценка, цвет, материал и назначение) назван <b>склонностью, а не законом</b>: жёсткого правила там нет, и в статье это сказано прямо.</li>
+    <li><b>Пятое место</b> — классифицирующее определение без частицы (中文书, 木头桌子, 中国朋友) — выделено отдельно, с проверкой через вопрос «какой» и «что за».</li>
+    <li><b>Пара 我买书 и 我买的书</b> приведена как самый наглядный случай, где частица меняет не оттенок, а смысл.</li>
+    <li><b>Совет про длину</b> — делить мысль на два предложения — <b>наблюдение, а не норма</b>: грамматика длину определения не ограничивает, и об этом сказано.</li>
+    <li><b>Статистики нет:</b> данных о частотности 的 и о средней длине именных групп я не нашла, поэтому чисел в статье нет.</li>
+    <li><b>Чего в статье нет намеренно:</b> списка счётных слов и правил их выбора — отдельная статья; дат и адресов со счётом от большого к маленькому — занято статьёй про порядок слов; таблицы местоимений; отсылок к пособиям, которых у меня нет на руках.</li>
+    <li>Практика Kitai School: разборы с учениками, в том числе описание товара для карточки на китайской площадке.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Чтобы понять длинную китайскую фразу, найдите последний знак перед точкой или перед глаголом: всё, что слева, описывает его</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
