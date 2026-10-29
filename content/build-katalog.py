@@ -1,236 +1,263 @@
 # -*- coding: utf-8 -*-
-import re, io
+"""Добавляет в каталог статьи, у которых появился адрес в выгрузке."""
+import re, os
 
-B = "https://kitai-school.ru/article/"
+os.chdir("/home/user/Kitai-Shool/content/blog")
+SRC = "_katalog-statej.html"
+U = "https://kitai-school.ru/article/"
 
-SECTIONS = [
-("hsk", "试", "Экзамены HSK", [
- ("hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza","HSK 1","Первый уровень: 150 слов, структура, форматы заданий и типичные ловушки экзамена."),
- ("hsk-1-probnyy-test-kak-ispolzovat-onlayn-trenajer","HSK 1 — пробный тест","Как использовать онлайн-тренажёр и честно проверить готовность к первому уровню."),
- ("hsk-2-sdaem-vtoroy-uroven-bez-stressa","HSK 2","Второй уровень: 300 слов, первые связные тексты и главная ловушка иероглифики."),
- ("hsk-2-probnyy-test-kak-ponyat-chto-ty-deystvitelno-gotov","HSK 2 — пробный тест","Готовы ли вы на самом деле: как проходить пробник без пиньиня и разбирать ошибки."),
- ("hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma","HSK 3","Уровень, где исчезает пиньинь: 600 слов, три раздела и добавляется письмо."),
- ("hsk-3-probnyy-test-kak-preodolet-barer-i-sdat-na-maksimum","HSK 3 — пробный тест","Прыжок на новый уровень: как готовиться к чтению без пиньиня и к письму."),
- ("hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov","HSK 4","Уровень «свободно говорю»: 1200 слов, новые форматы и как сдать в 2026 году."),
- ("hsk-4-probnyy-test-kak-ponyat-chto-ty-realno-gotov","HSK 4 — пробный тест","Как понять, что вы действительно готовы: скорость чтения и стратегия по времени."),
- ("podgotovka-k-hsk-4","Подготовка к HSK 4","Структура экзамена и понятный план занятий, чтобы дойти до сдачи."),
- ("sistema-ocenki-hsk-4","Система оценки HSK 4","Как считаются баллы, что такое проходные 180 и почему для вуза нужно больше."),
- ("ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu","От HSK 1 до HSK 4: слова и знаки","Почему 1200 слов — это не 1200 иероглифов и как на самом деле растёт объём."),
- ("hsk-5-kak-sdat-universitetskiy-kzamen","HSK 5","«Университетский» уровень: 2500 слов, длинные тексты и ловушки с синонимами."),
- ("hsk-5-probnyy-test","HSK 5 — пробный тест","Как устроить себе настоящую симуляцию экзамена и разобрать результат по темам."),
- ("sertifikat-hsk-chto-to-za-kzamen","Сертификат HSK","Что подтверждает сертификат, кому он нужен и что меняет переход на HSK 3.0."),
-]),
-("hskk", "说", "Устные экзамены HSKK и YCT", [
- ("hskk-kak-podgotovitsya-k-ustnomu-kzamenu","HSKK: устный экзамен","Как собрать связный ответ за минуту подготовки и что делать, если забыли слово."),
- ("hskk-1-kak-sdat","HSKK 1","Начальный уровень: повтор за диктором, короткие ответы и как перестать бояться."),
- ("hskk-2-kak-sdat-sredniy-uroven","HSKK 2","Средний уровень: рассказ по картинке, схема из четырёх предложений и связки."),
- ("hskk-3-kak-sdat-vysshiy-uroven","HSKK 3","Высший уровень: чтение вслух, пересказ и разговор о сложном простыми словами."),
- ("yct-kzamen-po-kitayskomu-dlya-detey","YCT: экзамен для детей","Четыре уровня детского экзамена, как выбрать свой и что сертификат реально даёт."),
- ("sdat-yct-v-moskve-kak-zapisatsya","Сдать YCT в Москве","Как найти центр, о чём спросить при записи, что взять с собой и как пройдёт день."),
-]),
-("csca", "考", "Экзамен CSCA", [
- ("csca-glavnyy-kzamen-dlya-postupleniya-v-vuzy-kitaya","CSCA: экзамен для вузов Китая","Что это за экзамен, из каких предметов состоит, структура и даты."),
- ("matematika-na-csca-kak-ponimat-usloviya-zadach","Математика на CSCA","Темы, лексика и как не потерять баллы на «мелочах» вроде 至少 и 至多."),
- ("fizika-na-csca-kak-vyuchit-fizicheskuu-terminologiu-na-kitayskom","Физика на CSCA","Как читать физические термины по составу слова и учить лексику быстрее."),
- ("himiya-na-csca-kak-vyuchit-kitayskuu-himicheskuu-terminologiu","Химия на CSCA","Названия элементов и ключ-подсказка: как устроена химическая лексика."),
-]),
-("grammar", "语", "Грамматика", [
- ("kak-zadavat-voprosy-na-kitayskom-vse-o-chastice--ma-za-5-minut","Частица 吗","Самый простой способ задать вопрос: как работает 吗 и когда она не нужна."),
- ("konstruktor-voprosov-v-kitayskom-shemy-i-pravila","Конструктор вопросов","Вопросительные местоимения и схемы: как собрать любой вопрос без перестановок."),
- ("razdelno-sochetaemye-glagoly","Раздельно-сочетаемые глаголы 离合词","Почему 见面 нельзя сказать «见面他» и как правильно разрывать такие глаголы."),
- ("minus-na-minus-daet-plus-kak-rabotaet-dvoynoe-otricanie","Двойное отрицание","不得不, 非…不可 и ловушки 差点儿没 и 好不: два минуса дают плюс с оттенком."),
-]),
-("lexika", "词", "Лексика и произношение", [
- ("top-50-bazovyh-glagolov-kitayskogo-yazyka-s-primerami","50 базовых глаголов","Ядро повседневной речи: глаголы с примерами и сочетаниями, а не списком."),
- ("eda-na-kitayskom","Еда: 60 слов для меню","Продукты, блюда и способы готовки: как из одних знаков складываются десятки названий."),
- ("cveta-na-kitayskom-s-transkripciey","Цвета с транскрипцией","Схема «качество + 色»: основные цвета с пиньинем и прозрачная логика названий."),
- ("cifry-ot-0-do-10-na-kitayskom","Цифры от 0 до 10","Тоны и транскрипция, изменение тона у 一, разница 二 и 两 и счёт на пальцах."),
- ("uchimsya-nazyvat-vremya-chasy-i-minuty-na-kitayskom","Время: часы и минуты","Как называть время по-китайски, от 点 и 分 до 半 и 差."),
- ("dni-nedeli-v-kitae","Дни недели","星期, 周 и 礼拜: три способа назвать день и почему воскресенье не «седьмое»."),
- ("dni-mesyacy-i-gody-na-kitayskom","Даты: дни, месяцы, годы","Порядок год → месяц → число, разница 号 и 日 и как заполнять документы."),
- ("do-svidaniya-po-kitayski-kak-na-samom-dele-chitaetsya","«До свидания» — как читается","再见 по слогам: почему «цзайцзянь» лишь приблизительно и при чём тут тоны."),
- ("korrektirovka-proiznosheniya-v-kitayskom","Корректировка произношения","Как поставить тоны и трудные звуки, чтобы вас понимали носители."),
- ("kak-govoryat-jivotnye-na-kitayskom","Как «говорят» животные","Собака лает 汪汪, кошка мяукает 喵: звукоподражания и что они говорят о фонетике."),
- ("idiomy-kitayskogo-yazyka","Идиомы 成语","Четыре знака, за которыми стоит история: как устроены чэнъюй и почему их не переводят буквально."),
- ("vesna-po-kitayski--ieroglif--i-umenie-chuvstvovat-kontekst","Весна по-китайски","Иероглиф 春 и умение чувствовать контекст: слово шире, чем время года."),
-]),
-("ieroglify", "字", "Иероглифы и письменность", [
- ("v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost","Буквы или иероглифы","Из чего на самом деле состоит китайская письменность и что такое пиньинь."),
- ("kakie-bukvy-v-kitayskom-yazyke","Какие буквы в китайском","Почему алфавита нет, откуда взялся миф о «буквах хань» и что учить вместо них."),
- ("logika-kitayskih-kluchey","Значение ключей в иероглифах","Ключ-смысл и фонетик-подсказка: как угадывать значение незнакомого знака."),
- ("logika-kitayskih-kluchey-kak-ustroen-ieroglif-voda","Ключи на примере «воды»","Как устроен 水 и как ключ управляет смыслом десятков других знаков."),
- ("ieroglif-drujba","Иероглиф «дружба» 友","Две руки, направленные в одну сторону: разбор знака и как его запомнить."),
- ("ieroglif-ryba","Иероглиф «рыба» 鱼","От древней пиктограммы к современному знаку и почему 鱼 связан с достатком."),
- ("ieroglif-chetyre","Иероглиф «четыре» 四","Простое числительное с непростой репутацией: созвучие с 死 и суеверия вокруг него."),
-]),
-("kultura", "文", "Культура Китая", [
- ("kitayskiy-tiket-obscheniya-uvajenie-k-starshim-ierarhiya-i-ponyatie-lica","Этикет общения","Уважение к старшим, иерархия и понятие «лица» — то, что считывается сразу."),
- ("znachenie-cvetov-v-kitae","Значение цветов","Красный, белый, зелёный: символика оттенков и почему зелёная шапка — беда."),
- ("jeltyy-cvet-v-kitae","Жёлтый цвет","黄 был цветом императора: как менялась символика от знака власти до наших дней."),
- ("fioletovyy-cvet-v-kitae","Фиолетовый цвет","紫 — цвет благородства и доброго знака: откуда взялось 紫气东来."),
- ("nacionalnoe-jivotnoe-kitaya-bolshaya-panda","Большая панда","Национальное животное Китая: символ, дипломатия и лексика вокруг 熊猫."),
-]),
-("postuplenie", "学", "Учёба и поступление в Китае", [
- ("kak-postupit-v-kitay-na-budjet","Как поступить на бюджет","Пять путей к оплаченному месту, что покрывает стипендия и что решает при отборе."),
- ("besplatnoe-obrazovanie-v-kitae","Бесплатное образование","Что стоит за словом «бесплатно»: расходы до подачи, до вылета и в первый месяц."),
- ("stipendiya-csc-v-kitae-polnyy-gayd-po-polucheniu-dlya-studentov","Стипендия CSC","Полный гайд: каналы подачи Type A, B и C, учебный план и интервью."),
- ("stipendii-v-kitae-dlya-inostrancev","Стипендии для иностранцев","Правительственные, университетские и провинциальные: что покрывают и кому дают."),
- ("kak-vyigrat-grant-na-obuchenie-v-kitae","Как выиграть грант","Четыре типа грантов, документы, стратегия подачи и нужен ли посредник."),
- ("bakalavriat-v-kitae","Бакалавриат 本科","Сколько длится, чем программы на китайском отличаются от английских и зачем 预科."),
- ("magistratura-v-kitae-leksicheskiy-navigator","Магистратура: язык вуза","Лексика университетской среды — от деканата до защиты проекта."),
- ("est-li-v-kitae-kolledji","Есть ли в Китае колледжи","Среднее профессиональное образование: как устроено и кому подходит."),
- ("kak-postupit-v-kitay-posle-kolledzha","Поступление после колледжа","Засчитывается ли диплом, что такое «3+2» и какие пути реально открыты."),
- ("distancionnoe-obuchenie-v-kitae-chto-realno-dostupno","Дистанционное обучение","Что действительно доступно из России, а что завязано на присутствие в стране."),
-]),
-("zhizn", "活", "Жизнь в Китае", [
- ("rabota-v-kitae-dlya-inostranca","Работа для иностранца","Виза Z, требования, востребованные сферы и путь от оффера до вида на жительство."),
- ("dorogo-li-v-kitae","Дорого ли в Китае","Реальные цены на жильё, еду и транспорт — с расчётами по разным городам."),
- ("skolko-stoit-metro-v-kitae","Сколько стоит метро","Как устроена оплата проезда, тарифы по городам и способы платить."),
- ("detskie-sady-v-kitae","Детские сады","Возраст и группы, три типа садов с ценами, распорядок дня и обязательный сон."),
- ("chto-vzyat-s-soboy-v-kitay","Что взять с собой","Переходник, наличные, приложения и лекарства: что везти и что лучше оставить дома."),
- ("kakie-lekarstva-vzyat-s-soboy-v-kitay","Аптечка в поездку","Что положить с собой, что купить на месте и как объясниться в аптеке."),
-]),
-("business", "商", "Китайский для работы и бизнеса", [
- ("kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna","Китайский для бизнеса","Другой регистр: обороты для переговоров, вежливый отказ и ошибка с 万 и 亿."),
- ("biznes-tiket-v-kitae-5-pravil-kotorye-reshaut-vse","Бизнес-этикет","Пять правил, которые решают исход переговоров: от визитки до застолья."),
- ("kak-obrashchatsya-k-kitaycam-v-delovom-pisme","Обращение в деловом письме","Почему обращаются по должности, а не по имени, и как не нарушить иерархию."),
- ("korporativnyy-kitayskiy-zachem-kompanii-vkladyvautsya-v-obuchenie","Корпоративный китайский","Зачем компании учат сотрудников языку и как выстроить такую программу."),
-]),
-("oyazyke", "汉", "О языке и обучении", [
- ("slojno-li-uchit-kitayskiy-s-nulya","Сложно ли учить с нуля","Что действительно трудно, что проще русского и где бывает плато."),
- ("tapy-izucheniya-kitayskogo","Этапы изучения языка","Маршрут по шагам: пиньинь и тоны, иероглифика, грамматика, чтение и речь."),
- ("za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya","За сколько выучить с нуля","Сроки по уровням HSK, ориентир FSI и реально ли выучить за год."),
- ("za-kakoe-vremya-realno-vyuchit-kitayskiy","За какое время: статистика часов","Что говорят методики и цифры: сколько часов уходит на каждый уровень."),
- ("gruppovye-zanyatiya-po-kitayskomu-yazyku-kak-ustroen-urok","Групповые занятия","Как устроен урок, где успевает высказаться каждый, и о чём спросить школу."),
- ("kitayskiy-dlya-malyshey-kak-nachat","Китайский для малышей","Как знакомить дошкольника с языком через игры, песни и мультфильмы."),
- ("kursy-po-ieroglifike-kak-vybrat-programmu","Курсы по иероглифике","Как разложить сложный знак на графемы и на что смотреть в программе."),
- ("kursy-dlya-prepodavateley-kitayskogo-yazyka-chek-list","Курсы для преподавателей","Чек-лист по выбору программы: произношение, иероглифика и методика."),
- ("kak-razgovarivaut-v-kitae","Как разговаривают в Китае","Путунхуа и семь диалектных групп: почему письменность остаётся общей."),
- ("interesnye-fakty-o-kitayskom-yazyke","Интересные факты о языке","Тоны, десятки тысяч знаков и три тысячи для газеты: проверенные факты."),
- ("zachem-uchit-kitayskiy-yazyk","Зачем учить китайский","Карьера, наука, культура и неожиданные бонусы для мозга."),
-]),
-]
-
-def plural(n):
-    if 11 <= n % 100 <= 14: return "статей"
-    d = n % 10
-    if d == 1: return "статья"
-    if d in (2, 3, 4): return "статьи"
-    return "статей"
-
-total = sum(len(s[3]) for s in SECTIONS)
-
-STYLE = """<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
-
-#ks-cat{
-  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
-  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
-  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;
-  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
-  --r-md:16px;--r-lg:22px;--r-pill:999px;
-  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
-  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
-  max-width:1120px;margin:0 auto;padding:32px 22px 56px;background:var(--cream);
-  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+# раздел: (слаг, заголовок карточки, описание)
+NEW = {
+ "hsk": [
+  ("sdat-hsk-kak-prohodit-den-kzamena", "Как проходит день экзамена",
+   "Что взять с собой, как устроен зал и где теряют баллы на формате, а не на языке."),
+ ],
+ "hskk": [
+  ("sdat-yct-kzamenacionnaya-leksika", "YCT: экзаменационная лексика",
+   "Слова-подсказки в заданиях и знаки, которые дети путают чаще всего."),
+ ],
+ "grammar": [
+  ("kak-sostavlyat-predlozheniya-na-kitajskom", "Как составлять предложения",
+   "Базовая схема и шесть позиций: почему порядок слов здесь работает за падежи."),
+  ("konstrukciya--v-kitajskom", "Конструкция 把",
+   "Зачем она нужна и четыре условия, без которых предложение не соберётся."),
+  ("passivnyy-zalog-v-kitayskom", "Пассивный залог с 被",
+   "Схема конструкции, оттенок неприятного и три замены, из-за которых 被 звучит реже."),
+  ("poryadok-opredeleniy-v-kitayskom", "Порядок определений",
+   "Пять мест перед существительным и правила частицы 的, которая меняет смысл."),
+  ("narechiya-v-kitayskom", "Наречия: 很, 也, 都",
+   "Почему их место в предложении строго фиксировано и что идёт раньше отрицания."),
+  ("mestoimeniya-v-kitayskom-yazyke", "Местоимения",
+   "我, 你, 他 без падежей, множественное число через 们 и вежливое 您."),
+  ("schetnye-slova-v-kitayskom-yazyke", "Счётные слова 量词",
+   "Зачем нужны классификаторы, как они закреплены за предметами и пятнадцать частых."),
+  ("poryadkovye-chislitelnye-v-kitayskom-yazyke", "Порядковые числительные",
+   "第一, 第二 и случаи, где 第 не ставят вовсе."),
+ ],
+ "lexika": [
+  ("kurs-po-fonetike-kitajskogo-yazyka-tony-pinin", "Курс по фонетике",
+   "Тоны, пиньинь и как перестать говорить по-русски китайскими словами."),
+  ("iniciali-v-kitajskom-yazyke", "Инициали и финали",
+   "21 инициаль, 35 финалей и правила, по которым собирается слог."),
+  ("kitayskie-slova-dlya-nachinauschih", "70 слов первого месяца",
+   "Вежливые формы, служебный костяк и десять глаголов — с иероглифом и пиньинем."),
+  ("kitayskie-slova-na-russkom-proiznoshenii", "Китайские слова русскими буквами",
+   "Где кириллица искажает звучание и как пользоваться такой записью без вреда."),
+  ("privet-po-kitajski", "«Привет» по-китайски",
+   "Как пишется 你好 и почему отдельного иероглифа «здравствуйте» нет."),
+  ("sdobroe-utro-po-kitajski", "«Доброе утро»",
+   "早上好, короткое 早 и чем от них отличается 早安."),
+  ("ya-tebya-lublu-po-kitayski", "«Я тебя люблю»",
+   "我爱你, его тоны и более сдержанные способы сказать то же самое."),
+  ("udacha-po-kitajski", "«Удача» по-китайски",
+   "好运, 运气 и почему 福 на двери не переворачивают."),
+  ("krasivye-slova-na-kitajskom", "Красивые слова",
+   "Выражения, в которых виден образ, а не только значение."),
+  ("napitki-na-kitayskom", "Напитки",
+   "Вода, чай, кофе и молочный чай: как называются и как их заказать."),
+  ("siniy-na-kitayskom", "Синий цвет",
+   "蓝 и его оттенки, а ещё 蓝图 и 蓝领 — слова, где цвет уже не про цвет."),
+  ("chernyy-na-kitayskom", "Чёрный цвет",
+   "Иероглиф 黑, слова от 黑板 до 黑马 и значение «незаконный», которого нет в русском."),
+  ("seryj-po-kitajski", "Серый цвет",
+   "灰色 huīsè: чтение, написание и случаи, где это слово не подходит."),
+  ("mesyacy-na-kitayskom", "Месяцы",
+   "Почему их не нужно запоминать по отдельности и где прячется исключение."),
+  ("nol-po-kitayski", "Ноль по-китайски",
+   "Иероглиф 零, кружок 〇 и почему этот знак значит «мелочь»."),
+  ("kitayskaya-sistema-schisleniya", "Система счисления",
+   "Разряды 百, 千, 万 и 亿, группы по четыре нуля и запись больших чисел."),
+  ("drobi-v-kitayskom-yazyke", "Дроби и проценты",
+   "Формула 分之, где знаменатель идёт первым, и скидки, которые считают наоборот."),
+ ],
+ "ieroglify": [
+  ("poryadok-chert-v-kitayskih-ieroglifah", "Порядок черт",
+   "Восемь базовых черт и правила, по которым собирается любой знак."),
+  ("chto-oznachaut-kitayskie-ieroglify", "Что означают иероглифы",
+   "Как узнать значение знака и почему у одного иероглифа их несколько."),
+  ("kto-pridumal-kitayskie-ieroglify", "Кто придумал иероглифы",
+   "Легенда о Цан Цзе и то, что на самом деле говорит наука."),
+  ("ogon-na-kitayskom-ieroglif", "Иероглиф «огонь» 火",
+   "Четыре точки внизу и слова, которые из этого знака выросли."),
+  ("kakoj-kitajskij-uchit", "Упрощённые или традиционные",
+   "Какой китайский учить и когда выбор действительно есть."),
+  ("istoriya-kitajskoj-kalligrafii", "История каллиграфии",
+   "Как письмо стало искусством наравне с живописью."),
+ ],
+ "kultura": [
+  ("kitayskie-tradicionnye-prazdniki", "Традиционные праздники",
+   "Календарь главных дат, легенды и обычаи — от Нового года до середины осени."),
+  ("prazdnik-fonarey", "Праздник фонарей",
+   "Чем завершается новогодний цикл, как устроены загадки на фонарях и чем 汤圆 отличается от 元宵."),
+  ("krasnyy-cvet-v-kitayskoy-kulture", "Красный цвет",
+   "От свадебных конвертов до слов с корнем 红 и случаев, где красный неуместен."),
+  ("kitayskaya-numerologiya", "Числовая символика",
+   "Почему 8 приносит богатство, а 4 пугает: значения цифр держатся на созвучии."),
+  ("neschastlivoe-chislo-v-kitae", "Несчастливое число",
+   "Четвёрка, её двузначные усиления и числа, о которых говорят реже."),
+  ("kitajskie-primety-i-sueveriya-tri-mekhanizma", "Приметы и суеверия",
+   "Три механизма, новогодние запреты и год своего знака."),
+  ("pochemu-kitay-nazyvaut-podnebesnoy", "Почему Китай — Поднебесная",
+   "中国 — название страны, 天下 — картина мира, а «Поднебесная» — слово русское."),
+  ("kakaya-religiya-v-kitae", "Какая религия в Китае",
+   "Конфуцианство, буддизм, даосизм и понятие «трёх учений»."),
+  ("kitajskie-poslovicy-i-pogovorki", "Пословицы и поговорки",
+   "Народная мудрость в нескольких иероглифах и чем она отличается от чэнъюй."),
+  ("luchshie-kitajskie-knigi", "Китайские книги",
+   "От классических романов до современной прозы: с чего начинать читать."),
+  ("kak-nazyvaetsya-tradicionnoe-kitajskoe-plate", "Традиционное платье",
+   "Ципао, ханьфу и чем они различаются."),
+  ("kak-zdorovayutsya-kitajcy-zhesty-poklony", "Как здороваются китайцы",
+   "Жесты, поклоны и почему рукопожатие здесь молодое."),
+  ("kak-obrashchatsya-k-kitajcam-po-imeni-ili-familii", "Имя или фамилия",
+   "Как обратиться к китайцу, чтобы не показаться невежливым."),
+  ("rechevoj-ehtiket-v-kitae", "Речевой этикет",
+   "Формулы вежливости и слова, которыми лучше не злоупотреблять."),
+  ("kak-obshchatsya-v-kitae", "Как общаться в Китае",
+   "Почему здесь слушают ситуацию, а не слова."),
+ ],
+ "postuplenie": [
+  ("dokumenty-dlya-postupleniya-v-kitaj", "Документы для поступления",
+   "Полный список и логика подготовки: что заказывать первым из-за сроков."),
+  ("skolko-stoit-uchyoba-v-kitae", "Сколько стоит учёба",
+   "Цены на обучение и проживание и расходы, о которых не пишут в брошюре."),
+  ("stipendiya-pravitelstva-knr-dlya-rossiyan", "Стипендия правительства КНР",
+   "Отдельный канал для россиян: двойная подача и две ступени отбора."),
+  ("kitajskie-vuzy-dlya-russkikh-studentov-bez-znaniya-yazyka", "Вузы без знания языка",
+   "Какие программы идут на английском и чем за это приходится платить."),
+  ("medicinskoe-obrazovanie-v-kitae", "Медицинское образование",
+   "Сколько учиться на врача и признают ли диплом дома."),
+  ("obuchenie-v-kitae-posle-9-klassa-chto-realno-vozmozhno", "После 9 класса",
+   "Что реально возможно в 15–16 лет и чем занять два года до поступления."),
+  ("kak-postupit-na-yazykovye-kursy-v-kitaj-kalendar-podachi", "Языковые курсы: подача",
+   "Календарь подачи, деньги на входе и что приходит в ответ."),
+  ("yazykovoy-god-v-kitae-leksika-kampusa", "Языковой год: лексика кампуса",
+   "Беглая речь и что делать, когда учебник перестаёт помогать."),
+ ],
+ "zhizn": [
+  ("kak-uchatsya-kitajskie-shkolniki", "Как учатся школьники",
+   "Предметы, языки, учебный год и нагрузка по неделям."),
+  ("pravila-v-kitayskih-shkolah", "Правила в школах",
+   "Три слоя правил: государственный свод, указания и распорядок самой школы."),
+  ("kak-stavyat-ocenki-v-kitae", "Как ставят оценки",
+   "Стобалльная система, запрет на рейтинги и культ результата."),
+  ("mozhno-li-studentam-rabotat-v-kitae", "Работа для студентов",
+   "Что разрешает виза и где проходят границы."),
+ ],
+ "business": [
+  ("kursy-delovogo-kitajskogo-yazyka-kak-vybrat-programmu", "Курсы делового китайского",
+   "Как выбрать программу под свою задачу и не бросить на полпути."),
+  ("kurs-po-ehkonomicheskomu-kitajskomu-chek-list", "Экономический китайский",
+   "Чек-лист по выбору программы и чем он отличается от делового."),
+  ("kak-pisat-pismo-na-kitajskom", "Письмо на китайском",
+   "Шесть частей, формулы вежливости и отличия от русской традиции."),
+ ],
+ "oyazyke": [
+  ("stoit-li-uchit-kitajskij-yazyk", "Стоит ли учить китайский",
+   "Как принять решение до оплаты курса и когда честный ответ — нет."),
+  ("kak-izuchit-kitajskij-yazyk-samostoyatelno-iz-chego-sostoit-zanyatie",
+   "Самостоятельно: из чего состоит занятие",
+   "Как устроить неделю, чтобы заниматься без преподавателя и не встать."),
+  ("kak-kitaycy-uchat-svoy-yazyk", "Как китайцы учат свой язык",
+   "Пиньинь в первом классе, прописи в клетку и шесть языков на выбор в гаокао."),
+  ("razgovornyy-klub-s-nositelem-yazyka-kak-ustroeny", "Разговорный клуб",
+   "Как устроены встречи, кому подходит и что говорить, чтобы не молчать."),
+  ("samoe-dlinnoe-slovo-v-kitajskom-yazyke", "Самое длинное слово",
+   "Существует ли оно и как вообще считать длину там, где нет пробелов."),
+ ],
 }
-#ks-cat *{box-sizing:border-box}
-#ks-cat .cat-head{margin:0 0 30px}
-#ks-cat .cat-eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
-#ks-cat h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.08;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 12px}
-#ks-cat .cat-lead{font-size:18px;color:var(--ink-2);max-width:60ch;margin:0}
 
-#ks-cat .cat-nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 8px;padding:18px 0 0;border-top:1px solid var(--hairline)}
-#ks-cat .cat-nav a{font-family:var(--fs)!important;font-size:13.5px;font-weight:500;color:var(--ink)!important;text-decoration:none;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:7px 15px;transition:.15s}
-#ks-cat .cat-nav a:hover{background:var(--brick)!important;color:#fff!important;border-color:var(--brick)}
-
-#ks-cat .cat-sec{margin-top:46px;scroll-margin-top:90px}
-#ks-cat .cat-sec-h{display:flex;align-items:center;gap:14px;margin:0 0 20px;padding-bottom:14px;border-bottom:2px solid var(--brick-soft)}
-#ks-cat .cat-sec-h .ic{flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:var(--brick);color:#fff;font-family:var(--fh)!important;font-weight:700;font-size:26px;display:flex;align-items:center;justify-content:center}
-#ks-cat .cat-sec-h h2{font-family:var(--fd)!important;font-weight:600;font-size:29px;line-height:1.1;color:var(--ink)!important;margin:0}
-#ks-cat .cat-sec-h .cnt{font-family:var(--fs)!important;font-size:13px;font-weight:600;color:var(--taupe)!important;margin-left:auto;white-space:nowrap}
-
-#ks-cat .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
-#ks-cat a.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;text-decoration:none;box-shadow:var(--shadow-card);transition:.16s;position:relative}
-#ks-cat a.card:hover{border-color:var(--brick);box-shadow:0 8px 26px rgba(164,30,58,.13);transform:translateY(-2px)}
-#ks-cat a.card .t{font-family:var(--fd)!important;font-weight:600;font-size:20px;line-height:1.2;color:var(--ink)!important;margin:0 0 8px}
-#ks-cat a.card:hover .t{color:var(--brick)!important}
-#ks-cat a.card .d{font-family:var(--fs)!important;font-size:14px;line-height:1.5;color:var(--ink-2)!important;margin:0 0 14px;flex:1 1 auto}
-#ks-cat a.card .go{font-family:var(--fs)!important;font-size:13.5px;font-weight:600;color:var(--brick)!important;display:inline-flex;align-items:center;gap:6px}
-#ks-cat a.card .go:after{content:"\\2192";display:inline-block;font-size:15px;line-height:1;transition:transform .16s}
-#ks-cat a.card:hover .go:after{transform:translateX(3px)}
-
-#ks-cat .cat-foot{margin-top:50px;padding:26px 30px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);box-shadow:var(--shadow-card);text-align:center}
-#ks-cat .cat-foot p{margin:0 0 14px;color:var(--ink-2)!important;font-family:var(--fs)!important}
-#ks-cat .cat-foot .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border-radius:14px!important;padding:13px 28px!important}
-#ks-cat .cat-foot .btn:hover{background:var(--brick-deep)!important}
-
-@media(max-width:600px){
-  #ks-cat{padding:24px 14px 44px}
-  #ks-cat h1{font-size:32px}
-  #ks-cat .cat-grid{grid-template-columns:1fr}
-  #ks-cat .cat-sec-h h2{font-size:24px}
+DUP = {
+    "hsk-1-kak-sdat-pervyj-uroven-s-pervogo-raza":
+        "дубль hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza",
+    "kak-zdorovayutsya-kitajcy":
+        "дубль kak-zdorovayutsya-kitajcy-zhesty-poklony",
 }
-</style>"""
 
-o = io.StringIO()
-w = o.write
+src = open(SRC, encoding="utf-8").read()
+было = len(re.findall(r'class="card"', src))
 
-w('\n<div id="ks-cat">\n\n')
-w('<div class="cat-head">\n')
-w('  <p class="cat-eyebrow">Блог Kitai School</p>\n')
-w('  <h1>Все статьи по темам</h1>\n')
-w('  <p class="cat-lead">Экзамены HSK, HSKK, YCT и CSCA, грамматика и лексика, иероглифы, культура Китая, '
-  'учёба, работа и жизнь в стране — %d %s в одном месте. Выбирайте тему и читайте.</p>\n' % (total, plural(total)))
-w('</div>\n\n')
+# адреса, которые уже стоят в каталоге
+in_cat = set(re.findall(r'href="https://kitai-school\.ru/article/([^"]+)"', src))
+for sec, items in NEW.items():
+    for slug, _, _ in items:
+        assert slug not in in_cat, "уже в каталоге: %s" % slug
 
-w('<nav class="cat-nav">\n')
-for sid, ic, name, items in SECTIONS:
-    w('  <a href="#%s">%s</a>\n' % (sid, name))
-w('</nav>\n')
+# все новые адреса есть в выгрузке
+have = {l.split("\t")[1] for l in open("../adresa-sayta.tsv", encoding="utf-8")
+        if l.startswith("article\t")}
+for sec, items in NEW.items():
+    for slug, _, _ in items:
+        assert slug in have, "нет в выгрузке: %s" % slug
 
-for sid, ic, name, items in SECTIONS:
-    w('\n<!-- %s -->\n' % name.upper())
-    w('<section class="cat-sec" id="%s">\n' % sid)
-    w('  <div class="cat-sec-h"><span class="ic">%s</span><h2>%s</h2><span class="cnt">%d %s</span></div>\n'
-      % (ic, name, len(items), plural(len(items))))
-    w('  <div class="cat-grid">\n')
-    for slug, t, d in items:
-        w('    <a class="card" href="%s%s" target="_blank" rel="noopener">'
-          '<span class="t">%s</span><span class="d">%s</span>'
-          '<span class="go">Читать</span></a>\n' % (B, slug, t, d))
-    w('  </div>\n')
-    w('</section>\n')
 
-w('\n<div class="cat-foot">\n')
-w('  <p>Не нашли нужную тему или хотите разобрать её с преподавателем? Приходите на бесплатный пробный урок — подберём программу под вашу цель.</p>\n')
-w('  <a class="btn" href="#popup:zayavka">Записаться на пробный урок →</a>\n')
-w('</div>\n\n')
-w('</div>\n')
+def card(slug, title, desc):
+    return ('    <a class="card" href="%s%s" target="_blank" rel="noopener">'
+            '<span class="t">%s</span><span class="d">%s</span>'
+            '<span class="go">Читать</span></a>\n' % (U, slug, title, desc))
 
-body = o.getvalue()
-tilda = STYLE + body
 
-D = "/home/user/Kitai-Shool/content/blog/"
-open(D + "_katalog-statej.TILDA.html", "w", encoding="utf-8").write(tilda)
+out = src
+for sec, items in NEW.items():
+    m = re.search(r'(<section class="cat-sec" id="%s">.*?</div>\s*\n)(\s*</section>)'
+                  % sec, out, re.S)
+    assert m, "раздел не найден: %s" % sec
+    block = m.group(0)
+    add = "".join(card(*i) for i in items)
+    # вставляем перед закрытием .cat-grid
+    tail = re.search(r'\n(\s*)</div>\s*\n\s*</section>', block)
+    assert tail, "конец сетки не найден: %s" % sec
+    new_block = block[:tail.start()] + "\n" + add.rstrip("\n") + block[tail.start():]
+    out = out.replace(block, new_block)
 
-page = ('<!DOCTYPE html>\n<html lang="ru">\n<head>\n<meta charset="utf-8">\n'
-        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-        '<title>Все статьи Kitai School — каталог по темам</title>\n'
-        '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
-        '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-        + STYLE + '\n</head>\n<body>\n' + body + '\n</body>\n</html>\n')
-open(D + "_katalog-statej.html", "w", encoding="utf-8").write(page)
+# пересчитываем подписи
+TOTAL = 0
+for sec in re.findall(r'<section class="cat-sec" id="([^"]+)">', out):
+    blk = re.search(r'<section class="cat-sec" id="%s">.*?</section>' % sec, out, re.S).group(0)
+    n = len(re.findall(r'class="card"', blk))
+    TOTAL += n
+    word = "статья" if n % 10 == 1 and n % 100 != 11 else \
+           "статьи" if n % 10 in (2, 3, 4) and n % 100 not in (12, 13, 14) else "статей"
+    new_blk = re.sub(r'(<span class="cnt">)[^<]*(</span>)',
+                     r'\g<1>%d %s\g<2>' % (n, word), blk, count=1)
+    out = out.replace(blk, new_blk)
 
-# --- проверки ---
-slugs = [s for _, _, _, its in SECTIONS for s, _, _ in its]
-print("всего статей:", total, "| уникальных ссылок:", len(set(slugs)))
-print("разделов:", len(SECTIONS))
-print("TILDA chars:", len(tilda))
-print("div:", tilda.count("<div"), "/", tilda.count("</div>"))
-print("section:", tilda.count("<section"), "/", tilda.count("</section>"))
-print("прямых кавычек в тексте:", len(re.findall(r'>[^<]*"[^<]*<', body)))
-ids = re.findall(r'<section class="cat-sec" id="([^"]+)"', body)
-navs = re.findall(r'<a href="#([^"]+)">', body)
-print("якоря совпадают:", ids == navs)
+out = out.replace("119 статей в одном месте", "%d статей в одном месте" % TOTAL)
+
+open(SRC, "w", encoding="utf-8").write(out)
+
+# блок для Tilda — от <style> до конца #ks-cat
+i = out.index("<style>")
+j = out.index("</body>")
+block = out[i:j].rstrip()
+assert block.endswith("</div>"), "блок обрывается не на закрытии #ks-cat"
+open("_katalog-statej.TILDA.html", "w", encoding="utf-8").write(block + "\n")
+
+стало = len(re.findall(r'class="card"', out))
+print("карточек было", было, "стало", стало, "| добавлено", стало - было)
+print("в подписи разделов и в лиде:", TOTAL)
+print("пропущены как дубли:", len(DUP))
+for s, why in DUP.items():
+    print("   ", s, "—", why)
+print("размер блока T123:", len(block))
+
+# ---- блок T123 не влезает в лимит ~50 000, режем на два ----------------------
+LIMIT = 50000
+PART1 = ("hsk", "hskk", "csca", "grammar", "lexika", "ieroglify")
+
+secs = {m.group(1): m.group(0) for m in
+        re.finditer(r'<section class="cat-sec" id="([^"]+)">.*?</section>', block, re.S)}
+style = block[:block.index("</style>") + 8]
+head = block[block.index('<div id="ks-cat">'):block.index("<section")]
+foot = block[block.rindex('<div class="cat-foot">'):block.rindex("</div>")]
+
+p1 = style + "\n" + head + "\n".join(secs[s] for s in PART1) + "\n\n</div>\n"
+p2 = ('<div id="ks-cat" style="padding-top:0">\n\n'
+      + "\n".join(secs[s] for s in secs if s not in PART1)
+      + "\n\n" + foot + "\n</div>\n")
+
+assert len(p1) < LIMIT and len(p2) < LIMIT, "часть не влезла в лимит"
+assert len(re.findall(r'class="card"', p1 + p2)) == стало, "карточки потерялись при делении"
+open("_katalog-statej.TILDA-1.html", "w", encoding="utf-8").write(p1)
+open("_katalog-statej.TILDA-2.html", "w", encoding="utf-8").write(p2)
+print("часть 1:", len(p1), "| часть 2:", len(p2), "| лимит", LIMIT)
