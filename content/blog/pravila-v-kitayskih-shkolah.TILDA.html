@@ -1,0 +1,466 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/pravila-v-kitayskih-shkolah#article",
+      "headline": "Правила в китайских школах: дисциплина, форма и распорядок, удивляющий иностранцев",
+      "description": "Правила китайской школы по трём слоям: государственный свод 中小学生守则, ведомственные указания (например, про телефоны) и внутренний распорядок каждой школы — форма 校服, требования к причёске и внешнему виду, обувь. Как устроено начало дня: линейка 升旗仪式 и утреннее чтение 早读. Как оформляют опоздания и пропуски через 请假. Отдельная таблица школьной лексики: 校服, 班主任, 值日生, 升旗仪式, 早读, 晚自习, 迟到, 请假, 家长会. Всё описанное относится к обычной городской государственной школе.",
+      "image": "https://static.tildacdn.com/tila6436-3162-4337-b736-356166386633/shk-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-14",
+      "dateModified": "2026-11-14",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/pravila-v-kitayskih-shkolah",
+      "about": {
+        "@type": "Thing",
+        "name": "Школьные правила в Китае"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/pravila-v-kitayskih-shkolah#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какие правила действуют в китайских школах?", "acceptedAnswer": {"@type": "Answer", "text": "Их удобно делить на три слоя. Первый — короткий государственный свод 中小学生守则, одинаковый для всей страны. Второй — ведомственные указания, например про телефоны. Третий — внутренний распорядок конкретной школы: форма, причёска, обувь, начало дня. Больше всего неожиданностей даёт именно третий слой, потому что он у каждой школы свой."}},
+        {"@type": "Question", "name": "Обязательна ли школьная форма в Китае?", "acceptedAnswer": {"@type": "Answer", "text": "В обычной государственной школе — да, и носят её каждый учебный день. Форма 校服 (xiàofú) чаще спортивного кроя, одинаковая для мальчиков и девочек, у многих школ есть комплект на тёплое время и на холодное. Конкретный вид формы школа выбирает сама, поэтому в соседних школах он разный."}},
+        {"@type": "Question", "name": "Можно ли в китайскую школу с телефоном?", "acceptedAnswer": {"@type": "Answer", "text": "По действующему ведомственному указанию телефоны в школу приносить не полагается, а если ученик всё же принёс, аппарат сдают на хранение до конца занятий. Школа при этом должна оставить родителям способ связаться с ребёнком. На практике строгость разнится: где-то телефоны собирают в начале дня, где-то просто требуют не доставать их на уроке."}},
+        {"@type": "Question", "name": "Что такое 中小学生守则?", "acceptedAnswer": {"@type": "Answer", "text": "Это короткий свод правил для учащихся начальной и средней школы, утверждённый министерством образования. Лист с ним висит в школах на видном месте. Документ устроен очень компактно: девять коротких строк по семь знаков каждая, от любви к родине до бережного отношения к своему здоровью. Дословно я его здесь не привожу — ручаться за формулировку каждого пункта до знака не могу."}},
+        {"@type": "Question", "name": "Правда ли, что в китайских школах следят за причёской?", "acceptedAnswer": {"@type": "Answer", "text": "Во многих — да, но это правило школы, а не страны. Типичные требования: простая причёска, без окрашивания и завивки, у мальчиков часто короткая стрижка. Туда же обычно попадают украшения и косметика. В соседней школе набор требований может отличаться, а в частной и международной — отличаться сильно."}},
+        {"@type": "Question", "name": "Эти правила одинаковы по всей стране?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, и это главное, что стоит запомнить. Одинаков только государственный свод; указания применяются по-разному, а внутренний распорядок каждая школа пишет себе сама. Всё описанное здесь относится к обычной городской государственной школе: частные и международные живут иначе."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/pravila-v-kitayskih-shkolah#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Правила в китайских школах: дисциплина, форма и распорядок, удивляющий иностранцев", "item": "https://kitai-school.ru/article/pravila-v-kitayskih-shkolah"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Образование</p>
+<h1>Правила в китайских школах: <span class="italic">дисциплина, форма и распорядок, удивляющий иностранцев</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-14">14 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila6436-3162-4337-b736-356166386633/shk-hero.png" alt="Тёмно-синяя школьная куртка спортивного кроя на вешалке и бирка 校服 xiàofú «школьная форма»" width="1200" height="630"></figure>
+
+<p class="passport">Про китайскую школу обычно говорят одним словом — строгая. Слово верное, но бесполезное: из него не понять, что именно нельзя и кто это установил. <b>А правила там разного веса:</b> одни одинаковы почти по всей стране, другие придумала конкретная школа. Разберём их по слоям, а заодно дадим слова, которыми обо всём этом говорят.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Три слоя:</b> государственный свод 中小学生守则, ведомственные указания и распорядок самой школы. <b>Форма</b> 校服 — каждый учебный день. <b>Телефон</b> в школу не приносят. <b>Причёска и украшения</b> — это уже правило школы, а не страны. <b>Всё описанное</b> — про обычную городскую государственную школу.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">три слоя правил</span></h2>
+
+<p>Половина удивления иностранцев берётся из того, что правила разного происхождения принимают за одно целое.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Откуда берутся школьные правила.</caption>
+  <thead><tr><th>Слой</th><th>Кто устанавливает</th><th>Пример</th><th>Насколько одинаково</th></tr></thead>
+  <tbody>
+    <tr><td><b>Государственный свод</b></td><td>министерство образования</td><td>中小学生守则</td><td>одинаков для всей страны</td></tr>
+    <tr><td><b>Ведомственные указания</b></td><td>министерство и управления образования</td><td>правило про телефоны</td><td>одинаковы, но применяются по-разному</td></tr>
+    <tr><td><b>Распорядок школы</b></td><td>сама школа</td><td>причёска, обувь, сумки</td><td>у каждой школы свой</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Больше всего неожиданностей даёт третий слой.</b> Именно о нём чаще всего спрашивают родители: почему в одной школе требуют одно, а в соседней другое. Ответ простой — потому что это решение школы, а не страны.</p>
+
+<p>Распорядок дня, зарядка и дежурства — отдельная тема, и разобрана она у нас отдельно: <a href="https://kitai-school.ru/article/fakty-o-kitajskikh-shkolakh" target="_blank" rel="noopener">факты о китайских школах</a>. Здесь мы говорим не про то, как устроен день, а про то, что можно и чего нельзя.</p>
+
+<p>И сразу оговорка, которая действует на всю статью: <b>речь об обычной городской государственной школе</b>. Частная и международная школа — это уже другой разговор: там и требования другие, и отношение к ним.</p>
+
+<h2>Форма: <span class="italic">校服 каждый день</span></h2>
+
+<p>Самое заметное правило и первое, что видно на улице у школьных ворот.</p>
+
+<p><b>校服 (xiàofú) — школьная форма.</b> Чаще всего это спортивный костюм: куртка на молнии и брюки, одинаковые для мальчиков и девочек. Не пиджаки и не юбки, как представляют себе многие по фильмам.</p>
+
+<p>Носят её каждый учебный день. У большинства школ есть комплект на тёплое время и комплект на холодное, и переход между ними объявляют отдельно.</p>
+
+<p>Конкретный вид формы выбирает школа, поэтому в соседних школах он разный: цвет, полоски, эмблема. По форме местный житель обычно сразу определяет, из какой школы ребёнок.</p>
+
+<p><b>Зачем она одинаковая.</b> Объяснение, которое дают сами школы, практическое: одинаковая одежда снимает разговоры о том, кто во что одет. Добавлю от себя: спортивный крой ещё и заметно дешевле.</p>
+
+<p>В начальной школе к форме добавляется красный галстук: его носят члены детской организации, и это тоже часть ежедневного вида.</p>
+
+<h2>Свод 中小学生守则: <span class="italic">что это за лист</span></h2>
+
+<p>Теперь про документ, который висит в школах на видном месте и который почти никто из родителей-иностранцев не читал.</p>
+
+<p><b>中小学生守则 — правила для учащихся начальной и средней школы</b>, утверждённые министерством образования. Это короткий текст, общий для всей страны.</p>
+
+<p>Устроен он компактно: <b>девять коротких строк, по семь знаков каждая</b>. Темы — от любви к родине и уважения к старшим до честности, самостоятельности и бережного отношения к собственному здоровью.</p>
+
+<p><b>Дословно я его здесь не привожу, и скажу почему.</b> Документ короткий и известный, но ручаться за формулировку каждого из девяти пунктов до знака я не могу, а приводить по памяти текст, который висит в школах на стене, — плохая идея. Поэтому описываю устройство, а не содержание построчно.</p>
+
+<p>Читать свод стоит хотя бы раз — не ради правил, а ради тона. По нему видно, чего школа ждёт от ученика в принципе: не только прилежания, но и честности, самостоятельности, уважения к старшим. Распорядок потом ложится на эту рамку.</p>
+
+<p>Для понимания школы важнее другое: свод задаёт рамку, а не распорядок. В нём нет ни слова про длину волос, обувь или телефоны — всё это приходит из других слоёв.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila6664-3538-4434-b765-363561333936/shk-info.png" alt="Лист свода 中小学生守则 с девятью пустыми строками по семь плашек и шесть карточек правил с метками «почти везде», «по указанию», «часто», «решает школа»" width="1200" height="700"><figcaption>Слева — устройство свода без текста, справа — правила, с которыми сталкиваются каждый день.</figcaption></figure>
+
+<h2>Телефоны <span class="italic">и то, что в школу не носят</span></h2>
+
+<p>Правило, о котором чаще всего спрашивают и которое чаще всего понимают неправильно.</p>
+
+<p><b>Действует ведомственное указание:</b> телефоны в школу приносить не полагается. Если ученик всё же принёс, аппарат сдают на хранение до конца занятий. Школа при этом обязана оставить родителям способ связаться с ребёнком — через учителя или школьный телефон.</p>
+
+<p>Года я здесь намеренно не называю: сказать точно, когда указание вышло, я не могу, а выдумывать дату не стану.</p>
+
+<p><b>На практике строгость разнится.</b> Где-то телефоны собирают в начале дня в общий ящик, где-то достаточно, чтобы аппарат лежал в сумке и не появлялся на уроке. Это уже третий слой — решение школы.</p>
+
+<p>Заодно в список «не носить» у многих школ попадают игровые приставки, украшения и крупные суммы наличных. Логика везде одна: в школе не должно быть того, что отвлекает или вызывает сравнение.</p>
+
+<h2>Внешний вид: <span class="italic">где кончается общее правило</span></h2>
+
+<p>А вот здесь начинается то, чего нет ни в своде, ни в указаниях.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Типичные требования к внешнему виду. Это практика школ, а не общая норма.</caption>
+  <thead><tr><th>Что</th><th>Как обычно требуют</th></tr></thead>
+  <tbody>
+    <tr><td><b>Причёска</b></td><td>простая, без окрашивания и завивки; у мальчиков часто короткая</td></tr>
+    <tr><td><b>Украшения</b></td><td>обычно не носят вовсе</td></tr>
+    <tr><td><b>Косметика</b></td><td>в школу не приходят накрашенными</td></tr>
+    <tr><td><b>Обувь</b></td><td>спортивная, под форму; иногда оговорён цвет</td></tr>
+    <tr><td><b>Форма</b></td><td>каждый учебный день, у многих два комплекта на сезон</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Подчеркну ещё раз: это типичная картина, а не закон.</b> Набор требований пишет сама школа, и в соседней он может отличаться — в одну сторону или в другую.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Родители ученика переехали на год и отдали ребёнка в обычную городскую школу. На второй неделе пришло замечание — из-за причёски.</p>
+  <p>Родители восприняли это как придирку к иностранцу. Основания были: в документах, которые им выдали при зачислении, про длину волос не говорилось ни слова, и они решили, что правило придумали на ходу.</p>
+  <p><b>Разобрались, когда стали вместе читать школьный чат.</b> Требование там было, только не в тех бумагах: оно шло из внутреннего распорядка этой самой школы и действовало для всех одинаково.</p>
+  <p>Дальше стало проще. Нашли в чате сам список, перевели его на занятии целиком и заодно разобрали слова, которыми в нём всё это описано. Вопросов к школе больше не возникало.</p>
+</div>
+
+<p>Отсюда и частое недоразумение. Родитель читает государственный свод, не находит там ни слова про причёску и делает вывод, что требование незаконно. На самом деле оно просто из другого слоя.</p>
+
+<p>Где искать этот слой: в документах при зачислении, в объявлениях на стенде и — чаще всего — в родительском чате. Чат в китайской школе давно стал основным каналом, через который до семей доходит почти всё.</p>
+
+<h2>Начало дня: <span class="italic">линейка и 早读</span></h2>
+
+<p>Два правила, которые задают тон всему дню и которых у нас почти нет.</p>
+
+<p><b>升旗仪式 (shēngqí yíshì) — линейка с поднятием флага.</b> Проводится в начале недели: ученики выстраиваются во дворе, поднимают флаг и поют гимн, затем бывает короткое выступление. Это общешкольное мероприятие, на нём присутствуют все.</p>
+
+<p>Стоит ли подстраиваться под линейку, если семья только приехала, — вопрос, который задают почти все. Ответ простой: выбора тут нет, это общешкольное мероприятие, и присутствие на нём обязательно. Зато оно же быстрее всего встраивает ребёнка в класс: к концу первого месяца он знает порядок действий не хуже остальных.</p>
+
+<p><b>早读 (zǎodú) — утреннее чтение.</b> Перед первым уроком отводится время, когда класс читает вслух: тексты по родному языку, слова по английскому, иногда заданное наизусть. Читают именно вслух и хором, и со стороны это слышно во всей школе.</p>
+
+<p>Смысл у обоих правил одинаковый: день начинается не с того, что дети постепенно подтягиваются, а с общего действия в одно и то же время. <b>Приходить к 早读 — значит приходить раньше первого урока</b>, и это стоит иметь в виду, прикидывая, во сколько вставать.</p>
+
+<h2>Опоздания, пропуски <span class="italic">и 请假</span></h2>
+
+<p>Раз день начинается рано и с общего сбора, опоздание заметно сразу.</p>
+
+<p><b>迟到 (chídào) — опоздать.</b> Что за этим следует, зависит от школы: где-то запись в журнал и сообщение родителям, где-то разговор с классным руководителем. Общей нормы здесь нет, и перечислять меры я не стану — они разнятся.</p>
+
+<p><b>请假 (qǐngjià) — отпроситься.</b> Пропуск оформляют заранее: родители пишут записку или сообщение классному руководителю, с причиной. Просто не прийти и объяснить назавтра не получится.</p>
+
+<p>Полезно заранее уточнить и то, как школа относится к пропускам по болезни: где-то достаточно сообщения в чат, где-то просят справку. Это снова третий слой, и узнать его можно только у самой школы.</p>
+
+<p>Через классного руководителя проходит почти всё, что касается класса, — это ключевая фигура китайской школы, и подробно о ней мы говорили в разборе по ссылке выше.</p>
+
+<p>Отдельно про 家长会 (jiāzhǎnghuì) — родительское собрание. Ходить на него принято, и отсутствие замечают: школа рассчитывает на то, что семья участвует в учебном процессе постоянно, а не только по итогам года.</p>
+
+<h2>Школьные слова: <span class="italic">таблица</span></h2>
+
+<p>Девять слов, без которых не прочитать ни объявление, ни сообщение в чате.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Лексика школьной жизни.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Перевод</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">校服</span></td><td><i>xiàofú</i></td><td>школьная форма</td></tr>
+    <tr><td><span class="han">班主任</span></td><td><i>bānzhǔrèn</i></td><td>классный руководитель</td></tr>
+    <tr><td><span class="han">值日生</span></td><td><i>zhírìshēng</i></td><td>дежурный по классу</td></tr>
+    <tr><td><span class="han">升旗仪式</span></td><td><i>shēngqí yíshì</i></td><td>линейка с поднятием флага</td></tr>
+    <tr><td><span class="han">早读</span></td><td><i>zǎodú</i></td><td>утреннее чтение вслух</td></tr>
+    <tr><td><span class="han">晚自习</span></td><td><i>wǎn zìxí</i></td><td>вечерняя самоподготовка</td></tr>
+    <tr><td><span class="han">迟到</span></td><td><i>chídào</i></td><td>опоздать</td></tr>
+    <tr><td><span class="han">请假</span></td><td><i>qǐngjià</i></td><td>отпроситься, оформить пропуск</td></tr>
+    <tr><td><span class="han">家长会</span></td><td><i>jiāzhǎnghuì</i></td><td>родительское собрание</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Три из них стоит запомнить первыми:</b> 班主任, 请假 и 家长会. Именно эти слова чаще всего встречаются в сообщениях, адресованных родителям.</p>
+
+<p>Слово 晚自习 — вечерняя самоподготовка — касается в основном старшей школы: учеников оставляют заниматься в школе после уроков. Для младших классов оно не нужно, но в объявлениях попадается.</p>
+
+<p>Если ребёнок учит китайский, школьные слова полезно разобрать до переезда, а не после: это тот запас, который понадобится в первую же неделю.</p>
+
+<h2>Что стоит знать <span class="italic">родителю</span></h2>
+
+<p>Короткий свод, если вы думаете о китайской школе или уже в ней.</p>
+
+<ul>
+  <li><b>Спрашивайте про распорядок школы, а не про правила вообще.</b> Общие нормы вы найдёте и без школы; различается как раз внутренний распорядок.</li>
+  <li><b>Читайте родительский чат.</b> Основная часть требований живёт там, а не в бумагах при зачислении.</li>
+  <li><b>Не считайте требования придиркой к иностранцу.</b> Почти всегда они действуют для всех одинаково.</li>
+  <li><b>Форму и обувь уточняйте до начала учёбы:</b> комплекты сезонные, и их обычно заказывают через школу.</li>
+  <li><b>Имейте в виду раннее начало дня.</b> Утреннее чтение идёт до первого урока, и расписание семьи придётся подстроить.</li>
+  <li><b>Про международные школы спрашивайте отдельно.</b> Там и правила, и подход к ним другие.</li>
+</ul>
+
+<p>Если решение о переезде ещё не принято, полезно посмотреть на соседние ступени: как устроен день в <a href="https://kitai-school.ru/article/detskie-sady-v-kitae" target="_blank" rel="noopener">детских садах в Китае</a> и что считается бесплатным в китайском образовании — <a href="https://kitai-school.ru/article/besplatnoe-obrazovanie-v-kitae" target="_blank" rel="noopener">бесплатное образование в Китае</a>. А тем, кто смотрит дальше школы, пригодится разбор про <a href="https://kitai-school.ru/article/obuchenie-v-kitae-dlya-russkikh-posle-11-klassa" target="_blank" rel="noopener">обучение в Китае после 11 класса</a>.</p>
+
+<div class="cta">
+  <p>Школьные слова и объявления из чата мы разбираем на занятиях вместе с языком — чтобы читать их самому, а не через переводчик: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие правила действуют в китайских школах?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Их удобно делить на три слоя. Первый — короткий государственный свод 中小学生守则, одинаковый для всей страны. Второй — ведомственные указания, например про телефоны. Третий — внутренний распорядок конкретной школы: форма, причёска, обувь, начало дня. Больше всего неожиданностей даёт именно третий слой, потому что он у каждой школы свой.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Обязательна ли школьная форма в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В обычной государственной школе — да, и носят её каждый учебный день. Форма 校服 (xiàofú) чаще спортивного кроя, одинаковая для мальчиков и девочек, у многих школ есть комплект на тёплое время и на холодное. Конкретный вид формы школа выбирает сама, поэтому в соседних школах он разный.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли в китайскую школу с телефоном?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По действующему ведомственному указанию телефоны в школу приносить не полагается, а если ученик всё же принёс, аппарат сдают на хранение до конца занятий. Школа при этом должна оставить родителям способ связаться с ребёнком. На практике строгость разнится: где-то телефоны собирают в начале дня, где-то просто требуют не доставать их на уроке.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое 中小学生守则?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это короткий свод правил для учащихся начальной и средней школы, утверждённый министерством образования. Лист с ним висит в школах на видном месте. Документ устроен очень компактно: девять коротких строк по семь знаков каждая, от любви к родине до бережного отношения к своему здоровью. Дословно я его здесь не привожу — ручаться за формулировку каждого пункта до знака не могу.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что в китайских школах следят за причёской?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Во многих — да, но это правило школы, а не страны. Типичные требования: простая причёска, без окрашивания и завивки, у мальчиков часто короткая стрижка. Туда же обычно попадают украшения и косметика. В соседней школе набор требований может отличаться, а в частной и международной — отличаться сильно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Эти правила одинаковы по всей стране?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и это главное, что стоит запомнить. Одинаков только государственный свод; указания применяются по-разному, а внутренний распорядок каждая школа пишет себе сама. Всё описанное здесь относится к обычной городской государственной школе: частные и международные живут иначе.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть правила будут понятными заранее! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Деление на три слоя</b> — государственный свод, ведомственные указания и внутренний распорядок школы — дано как рабочая схема, которая объясняет, почему требования различаются от школы к школе.</li>
+    <li><b>校服</b> описана по наблюдаемой практике: спортивный крой, ежедневное ношение, сезонные комплекты, вид формы на усмотрение школы.</li>
+    <li><b>中小学生守则</b> назван по его устройству: девять коротких строк по семь знаков. <b>Дословно свод не цитируется:</b> ручаться за формулировку каждого пункта до знака я не могу, и в тексте это сказано прямо. На инфографике строки показаны пустыми плашками по той же причине.</li>
+    <li><b>Правило про телефоны</b> приведено как действующее ведомственное указание. <b>Года выхода в статье нет:</b> точной датой я не ручаюсь.</li>
+    <li><b>升旗仪式 и 早读</b> описаны по практике обычных государственных школ.</li>
+    <li><b>Требования к внешнему виду</b> поданы как <b>типичная картина, а не закон</b>: их устанавливает школа, и наборы различаются.</li>
+    <li><b>Меры за опоздание не перечислены:</b> они разнятся от школы к школе, и общих норм я не знаю.</li>
+    <li><b>Доля школ с теми или иными правилами нигде не указана:</b> проверяемых подсчётов я не нашла, и поэтому цифр здесь нет.</li>
+    <li><b>Чего в статье нет намеренно:</b> распорядка дня, зарядки, дневного перерыва, гимнастики для глаз и дежурных — это соседняя статья; экзаменов и реформы нагрузки — там же; предметов, часов и учебного года — отдельный разбор; частных и международных школ, про которые сказано только, что они живут иначе.</li>
+    <li>Практика Kitai School: разборы с семьями учеников, в том числе случай с замечанием из-за причёски.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Часть школьных правил одинакова почти по всей стране, часть устанавливает сама школа. Это две разные вещи, и путать их не стоит</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
