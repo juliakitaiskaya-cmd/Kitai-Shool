@@ -1,0 +1,460 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/pochemu-kitay-nazyvayut-podnebesnoy#article",
+      "headline": "Почему Китай называют Поднебесной: смысл слова 天下 и древняя картина мира",
+      "description": "Разбор трёх слов, которые постоянно путают: 中国 (Zhōngguó) — «срединное государство», обычное название страны; 天下 (tiānxià) — «всё, что под небом», понятие картины мира, а не имя государства; «Поднебесная» — русская книжная калька с 天下, которой в китайском языке не соответствует никакое самоназвание. Как 中国 из «срединных владений» стало названием страны, что такое 天子 «Сын Неба» и 天命 «Мандат Неба», где 天下 живо сегодня (天下第一, 走遍天下), другие имена — 中华, 华夏, 中原 — и откуда взялись русское «Китай» и английское China.",
+      "image": "https://static.tildacdn.com/tila3936-3262-4762-b030-613939386465/pod-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-13",
+      "dateModified": "2026-11-13",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/pochemu-kitay-nazyvayut-podnebesnoy",
+      "about": {
+        "@type": "Thing",
+        "name": "Самоназвания Китая и понятие 天下"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/pochemu-kitay-nazyvayut-podnebesnoy#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Почему Китай называют Поднебесной?", "acceptedAnswer": {"@type": "Answer", "text": "Так его называем мы, по-русски. «Поднебесная» — книжная калька с китайского 天下 (tiānxià), «то, что под небом»: в старой картине мира это весь обитаемый свет, а не отдельная страна. В русском языке слово прижилось как красивое имя Китая и живёт в публицистике, а в китайском такого употребления нет."}},
+        {"@type": "Question", "name": "Что значит слово 天下?", "acceptedAnswer": {"@type": "Answer", "text": "Буквально «под небом». 天 — небо, 下 — низ, под. Это понятие, обозначавшее весь мир под небом, а не название государства. Сегодня 天下 живо в устойчивых выражениях: 天下第一 «первый во всём свете», 走遍天下 «объехать весь свет»."}},
+        {"@type": "Question", "name": "Как China называется по-китайски?", "acceptedAnswer": {"@type": "Answer", "text": "中国 (Zhōngguó). Знак 中 значит «середина», 国 — «государство», вместе «срединное государство». Полное официальное название — 中华人民共和国 (Zhōnghuá Rénmín Gònghéguó). В высоком стиле и в официальных названиях встречается 中华 (Zhōnghuá)."}},
+        {"@type": "Question", "name": "Китайцы сами называют свою страну Поднебесной?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Китаец скажет 中国, и это обычное повседневное слово. 天下 он тоже знает, но как понятие о мире и как часть устойчивых выражений, а не как имя страны. Переводить «Поднебесную» обратно на китайский не нужно: получится непонятно."}},
+        {"@type": "Question", "name": "Почему по-русски Китай называется «Китай»?", "acceptedAnswer": {"@type": "Answer", "text": "По устоявшейся версии название восходит к киданям — народу, который правил землями к северу от Китая и был хорошо известен соседям на западе. Через посредников это имя дошло до Руси и закрепилось за всей страной. В Европе прижилось другое слово — China, его обычно связывают с династией Цинь (秦)."}},
+        {"@type": "Question", "name": "Что такое Сын Неба и Мандат Неба?", "acceptedAnswer": {"@type": "Answer", "text": "天子 (tiānzǐ), «Сын Неба», — титул правителя: он считался тем, через кого небо управляет всем, что под ним. 天命 (tiānmìng), «Мандат Неба», — понятие о праве на власть, которое небо даёт и может отнять. Обе идеи связаны с 天下 и объясняют, почему слово «небо» в китайской культуре стоит так высоко."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/pochemu-kitay-nazyvayut-podnebesnoy#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Почему Китай называют Поднебесной: смысл слова 天下 и древняя картина мира", "item": "https://kitai-school.ru/article/pochemu-kitay-nazyvayut-podnebesnoy"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Культура</p>
+<h1>Почему Китай называют Поднебесной: <span class="italic">смысл слова 天下 и древняя картина мира</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-13">13 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila3936-3262-4762-b030-613939386465/pod-hero.png" alt="Бронзовый ритуальный сосуд с надписью 中国 на поясе и карточка с увеличением: 中国 Zhōngguó «срединное государство»" width="1200" height="630"></figure>
+
+<p class="passport">Ответ на этот вопрос почти всегда дают неточный. Говорят, что китайцы зовут свою страну Поднебесной, потому что считали её центром мира. <b>Половина этой фразы верна, половина — нет.</b> Страну китайцы называют 中国, «срединное государство». А «Поднебесная» — слово русское, и вот откуда оно взялось.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>中国</b> (Zhōngguó) — «срединное государство», обычное название страны. <b>天下</b> (tiānxià) — «всё, что под небом», понятие о мире, а не имя. <b>«Поднебесная»</b> — русская книжная калька с 天下. <b>Китайцы так свою страну не называют.</b> Сегодня 天下 живёт в выражениях вроде 天下第一.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">кто кого так называет</span></h2>
+
+<p>Три слова, которые постоянно смешивают, стоит сразу развести.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Три слова, которые путают чаще всего.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Что значит</th><th>Что это вообще</th><th>Главное</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">中国</span></td><td><i>Zhōngguó</i></td><td><b>срединное государство</b></td><td>название страны</td><td>Так Китай называют китайцы</td></tr>
+    <tr><td><span class="han">天下</span></td><td><i>tiānxià</i></td><td><b>всё, что под небом</b></td><td>понятие о мире</td><td>Страной это слово не называют</td></tr>
+    <tr><td><span class="han">Поднебесная</span></td><td><i>—</i></td><td><b>калька с 天下</b></td><td>русское книжное слово</td><td>По-китайски так не говорят</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Отсюда и честный ответ на вопрос заголовка:</b> Поднебесной Китай называют у нас. Это русское книжное слово, калька с 天下, и живёт оно в нашей публицистике, а не в китайской речи.</p>
+
+<p>Само понятие 天下 при этом настоящее, древнее и важное. Просто оно означает не страну, а всё, что лежит под небом, — весь обитаемый свет, как его представляли.</p>
+
+<p>Дальше разберём каждое слово отдельно: сначала 中国 и его знаки, потом 天下 и картину мира, которая за ним стоит, а в конце — откуда в русском языке взялось само слово «Китай».</p>
+
+<h2>中国: <span class="italic">середина и государство</span></h2>
+
+<p>Начнём с самоназвания, потому что оно самое употребительное: именно это слово китаец скажет вам в разговоре.</p>
+
+<p><b>中 (zhōng) — «середина».</b> Знак устроен наглядно: вертикальная черта проходит через середину прямоугольника. Его же вы встретите в словах «центр» и «внутри», и значение везде одно.</p>
+
+<p><b>国 (guó) — «государство».</b> Здесь ограда 囗, а внутри неё в упрощённом написании стоит 玉 «яшма». Сразу оговорюсь: это решение упрощения письменности, а не древняя этимология — в полном написании внутри ограды стоит другой элемент. О том, как вообще устроены китайские знаки, у нас есть отдельный разбор: <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost" target="_blank" rel="noopener">из чего состоит китайская письменность</a>.</p>
+
+<p>Вместе выходит «срединное государство». Самое раннее известное написание сочетания 中国 сохранилось на бронзовом сосуде эпохи Западная Чжоу — то есть слово это очень старое, и точнее я скажу вряд ли: датировок, в которых я уверена, у меня нет.</p>
+
+<p>А вот что важнее даты: <b>тогда это сочетание значило не «Китай».</b> Речь шла о срединных владениях — землях вокруг столицы, в отличие от окраин. Государства в нынешнем смысле за этим словом не стояло.</p>
+
+<h2>Как 中国 <span class="italic">стало названием страны</span></h2>
+
+<p>Значение сдвигалось долго, и проследить этот путь по шагам в рамках статьи честно не получится. Но направление видно ясно.</p>
+
+<p>Сначала 中国 — это центр против окраин. Потом — общее имя для земель, которые считали своими и устроенными по одним правилам. И только затем, уже в новое время, слово закрепилось как название государства, каким мы его знаем сегодня.</p>
+
+<p><b>Логика во всех трёх случаях одна:</b> середина противопоставлена тому, что вокруг. Менялось только то, насколько широко понимали эту середину.</p>
+
+<p>Полезно держать в голове, что так ведут себя многие названия. Слово «город» когда-то значило огороженное место, а не город в нынешнем смысле; 中国 прошло похожий путь, только дольше и заметнее.</p>
+
+<p>Здесь же видно, почему 中国 и 天下 — слова разного порядка. 中国 — это середина внутри чего-то большего. 天下 — это и есть то большее: всё, что под небом, вместе с окраинами.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila3563-6331-4564-a437-316635333666/pod-info.png" alt="Дуга неба с знаком 天, под ней подпись «天下 — всё, что под ним», в середине плашка 中国, ниже три карточки: 中国, 天下 и «Поднебесная»" width="1200" height="700"><figcaption>Середина и всё остальное — это не два названия одного, а две разные вещи.</figcaption></figure>
+
+<h2>天下: <span class="italic">всё, что под небом</span></h2>
+
+<p>Теперь к слову, с которого начался весь разговор.</p>
+
+<p><b>天 (tiān) — «небо».</b> Знак объясняют через фигуру человека с чертой над головой: то, что сверху. Объяснение это общепринятое, и в нашем <a href="https://kitai-school.ru/article/kurs-po-ehtimologii-kitajskogo-yazyka-chto-v-istoriyakh" target="_blank" rel="noopener">курсе по этимологии китайского языка</a> мы отдельно разбираем, где подобные истории про знаки проверяемы, а где это позднейшие догадки.</p>
+
+<p><b>下 (xià) — «низ, под».</b> Вместе получается «под небом» — и это надо понимать буквально.</p>
+
+<p>Небо в этой картине — не божество с именем и биографией, а высший порядок: то, что над всем и чему всё подчиняется. А 天下 — пространство под ним, то есть весь обитаемый свет.</p>
+
+<p><b>Вот почему это не имя страны.</b> Назвать страну «всем, что под небом» означало бы, что ничего другого под небом нет. Китай в этой картине — середина, 中国, а 天下 включает и его, и окраины, и всё остальное.</p>
+
+<p>Русское слово «Поднебесная» переводит 天下 буквально и точно. Неточным становится только его употребление: у нас им называют страну, а в языке-источнике оно страну не называет.</p>
+
+<h2>Сын Неба <span class="italic">и Мандат Неба</span></h2>
+
+<p>Понятие 天下 не висит в воздухе: рядом с ним стоят ещё два, и вместе они составляют цельную картину.</p>
+
+<p><b>天子 (tiānzǐ) — «Сын Неба».</b> Так называли правителя: он считался тем, через кого небо управляет всем, что под ним. Не владельцем земель, а посредником.</p>
+
+<p><b>天命 (tiānmìng) — «Мандат Неба».</b> Это понятие о праве на власть: небо его даёт и может отнять. Если правление идёт плохо, значит, мандат утрачен, — и такая логика объясняла смену власти.</p>
+
+<p>Как именно эту идею применяли в конкретные эпохи, я здесь не разбираю: это история, а не язык, и пересказывать её на слух я не стану. Важно другое — <b>три слова связаны в одну систему</b>: небо наверху, его сын на земле, и всё, что под небом, вокруг.</p>
+
+<p>Из этой же системы, кстати, растёт особое отношение к жёлтому цвету как к цвету правителя — про него у нас отдельный разбор: <a href="https://kitai-school.ru/article/jeltyy-cvet-v-kitae" target="_blank" rel="noopener">жёлтый цвет в Китае</a>.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица готовила презентацию для партнёров и написала на слайде, что китайцы называют свою страну Поднебесной. Фразу она взяла из русской статьи и не усомнилась — звучит красиво и как будто бы со знанием дела.</p>
+  <p>Разобрали на занятии. По-китайски так не говорят, и коллега, увидев перевод этого слайда, в лучшем случае не понял бы, о чём речь: 天下 для него не имя страны, а слово из совсем другого ряда.</p>
+  <p><b>Слайд переписали.</b> 中国 оставили как самоназвание, а про 天下 рассказали отдельно — как про понятие, с переводом «всё, что под небом».</p>
+  <p>Получилось точнее и, неожиданно, интереснее. Разница между названием страны и картиной мира оказалась сильнее красивого штампа: партнёры задали два вопроса именно по этому слайду.</p>
+</div>
+
+<h2>天下 <span class="italic">в живом языке сегодня</span></h2>
+
+<p>Слово никуда не делось. Просто живёт оно не как название, а внутри устойчивых выражений.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>天下 в современных выражениях.</caption>
+  <thead><tr><th>Выражение</th><th>Чтение</th><th>Смысл</th><th>Когда говорят</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">天下第一</span></td><td><i>tiānxià dì yī</i></td><td><b>первый во всём свете</b></td><td>о лучшем в своём роде</td></tr>
+    <tr><td><span class="han">天下无双</span></td><td><i>tiānxià wúshuāng</i></td><td><b>второго такого нет</b></td><td>о редком и единственном</td></tr>
+    <tr><td><span class="han">走遍天下</span></td><td><i>zǒubiàn tiānxià</i></td><td><b>объехать весь свет</b></td><td>о путешествиях</td></tr>
+    <tr><td><span class="han">天下太平</span></td><td><i>tiānxià tàipíng</i></td><td><b>всюду мир и покой</b></td><td>о спокойных временах</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Во всех четырёх 天下 означает «весь свет», а не «Китай».</b> 天下第一 — это «первый во всём свете», а не «первый в стране», и разница тут не формальная.</p>
+
+<p>Проверить это легко на любом из выражений. Подставьте вместо «всего света» слово «Китай» — и смысл поедет: 走遍天下 превратится в «объехать Китай», хотя говорящий имел в виду весь мир. Именно по таким подстановкам и видно, что 天下 страной не называется.</p>
+
+<p>Такие сочетания из четырёх знаков — отдельный пласт языка со своей логикой. Как они устроены и почему их нельзя переводить по словам, разобрано здесь: <a href="https://kitai-school.ru/article/idiomy-kitayskogo-yazyka" target="_blank" rel="noopener">идиомы китайского языка</a>.</p>
+
+<p>Встречается 天下 и в книжном обороте 普天之下 — «под всем небом». В разговоре он не нужен, но узнавать его полезно: смысл тот же.</p>
+
+<h2>Другие имена: <span class="italic">中华, 华夏, 中原</span></h2>
+
+<p>У страны есть не одно самоназвание, и путать их тоже легко.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Как Китай называет себя сам.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Что значит</th><th>Где встречается</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">中国</span></td><td><i>Zhōngguó</i></td><td><b>срединное государство</b></td><td>обычное название страны</td></tr>
+    <tr><td><span class="han">中华</span></td><td><i>Zhōnghuá</i></td><td><b>срединное и цветущее</b></td><td>в официальных названиях и в высоком стиле</td></tr>
+    <tr><td><span class="han">华夏</span></td><td><i>Huáxià</i></td><td><b>старое самоназвание</b></td><td>в книжной и торжественной речи</td></tr>
+    <tr><td><span class="han">中原</span></td><td><i>Zhōngyuán</i></td><td><b>центральная равнина</b></td><td>о географической области, не о стране</td></tr>
+    <tr><td><span class="han">中华人民共和国</span></td><td><i>Zhōnghuá Rénmín Gònghéguó</i></td><td><b>полное официальное название</b></td><td>в документах</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Разница между 中国 и 中华 примерно как между «Россия» и «Отечество»: первое называют в любом разговоре, второе звучит в торжественной речи и в официальных именах. Полное название государства как раз начинается с 中华, а не с 中国.</p>
+
+<p><b>Главное различие практическое.</b> 中国 — слово на каждый день. 中华 и 华夏 — для высокого стиля, официальных названий и торжественных случаев. А 中原 вообще не про страну: это название области, центральной равнины.</p>
+
+<p>Отдельно стоит сказать про 中原. Это слово иногда принимают за ещё одно имя страны, но оно обозначает область — центральную равнину, откуда пошло многое в китайской культуре. Страну им не называют, и в современной речи оно встречается в основном в историческом и географическом контексте.</p>
+
+<p>Ни одно из них не переводится как «Поднебесная», и ни одно не означает «центр мира». Во всех есть идея середины, но середины среди соседей, а не середины вселенной.</p>
+
+<h2>Откуда «Китай» <span class="italic">и откуда «China»</span></h2>
+
+<p>Остался последний поворот: страна называет себя 中国, а мы зовём её Китаем, англичане — China. Ни то ни другое на самоназвание не похоже.</p>
+
+<p>Так бывает чаще, чем кажется: страна называет себя одним словом, а соседи зовут её другим, подхваченным у третьих. Своё имя при этом никуда не девается — просто за пределами языка им никто не пользуется.</p>
+
+<p><b>Русское «Китай»</b> по устоявшейся версии восходит к киданям — народу, который правил землями к северу от собственно Китая и был хорошо известен соседям. Через посредников имя дошло до Руси и закрепилось за всей страной, хотя сами кидани Китаем не были.</p>
+
+<p><b>Английское China</b> обычно связывают с династией Цинь (秦): имя шло на запад через Индию и дальше. Оговорюсь прямо: <b>это общепринятая, но не единственная версия</b>, и спор о ней не закрыт. Поэтому я говорю «связывают», а не «происходит».</p>
+
+<p>Выходит забавная картина: у страны есть собственное имя, которым пользуются её жители, и два набора чужих имён, которыми пользуются все остальные. «Поднебесная» в этом ряду — третий случай: имя, собранное соседями из её собственного слова, но употреблённое по-своему.</p>
+
+<h2>Как говорить, <span class="italic">чтобы не ошибиться</span></h2>
+
+<p>Короткий свод, если нужно сказать или написать правильно.</p>
+
+<ul>
+  <li><b>По-русски «Поднебесная» — нормально.</b> Это живое слово нашего языка, и запрещать его незачем; просто это наше слово.</li>
+  <li><b>В переводе на китайский её не оставляют.</b> Если в русском тексте «Поднебесная» значит «Китай», по-китайски будет 中国, и никак иначе.</li>
+  <li><b>Не приписывайте китайцам нашу формулу.</b> Фраза «китайцы называют свою страну Поднебесной» неверна, и в разговоре с носителем она удивит.</li>
+  <li><b>天下 переводите по смыслу:</b> «весь свет», «весь мир» — в зависимости от выражения. «Поднебесная» годится там, где нужен книжный оттенок.</li>
+  <li><b>В официальном тексте берите полное название:</b> 中华人民共和国. В обычном — 中国.</li>
+</ul>
+
+<p>И отдельно про сам вопрос «центра мира». Идея середины в самоназвании есть, спорить не с чем. Но выводить из неё характер целого народа я бы не стала: это слово, а не диагноз, и у соседних культур найдутся свои похожие самоназвания.</p>
+
+<div class="cta">
+  <p>Такие вещи лучше всего укладываются в голове вместе с языком — когда за словом сразу видно знак и его смысл: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему Китай называют Поднебесной?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Так его называем мы, по-русски. «Поднебесная» — книжная калька с китайского 天下 (tiānxià), «то, что под небом»: в старой картине мира это весь обитаемый свет, а не отдельная страна. В русском языке слово прижилось как красивое имя Китая и живёт в публицистике, а в китайском такого употребления нет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что значит слово 天下?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Буквально «под небом». 天 — небо, 下 — низ, под. Это понятие, обозначавшее весь мир под небом, а не название государства. Сегодня 天下 живо в устойчивых выражениях: 天下第一 «первый во всём свете», 走遍天下 «объехать весь свет».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как China называется по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>中国 (Zhōngguó). Знак 中 значит «середина», 国 — «государство», вместе «срединное государство». Полное официальное название — 中华人民共和国 (Zhōnghuá Rénmín Gònghéguó). В высоком стиле и в официальных названиях встречается 中华 (Zhōnghuá).</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Китайцы сами называют свою страну Поднебесной?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. Китаец скажет 中国, и это обычное повседневное слово. 天下 он тоже знает, но как понятие о мире и как часть устойчивых выражений, а не как имя страны. Переводить «Поднебесную» обратно на китайский не нужно: получится непонятно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему по-русски Китай называется «Китай»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По устоявшейся версии название восходит к киданям — народу, который правил землями к северу от Китая и был хорошо известен соседям на западе. Через посредников это имя дошло до Руси и закрепилось за всей страной. В Европе прижилось другое слово — China, его обычно связывают с династией Цинь (秦).</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое Сын Неба и Мандат Неба?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>天子 (tiānzǐ), «Сын Неба», — титул правителя: он считался тем, через кого небо управляет всем, что под ним. 天命 (tiānmìng), «Мандат Неба», — понятие о праве на власть, которое небо даёт и может отнять. Обе идеи связаны с 天下 и объясняют, почему слово «небо» в китайской культуре стоит так высоко.</p></div>
+  </details>
+</div>
+
+<p class="sign">Точных вам слов! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>中国</b> разобрано по знакам: 中 «середина» и 国 «государство». Отмечено, что 玉 внутри ограды в упрощённом написании — решение упрощения письменности, а не древняя этимология.</li>
+    <li><b>Самое раннее известное написание 中国</b> на бронзе эпохи Западная Чжоу названо одной строкой. <b>Точных датировок в статье нет:</b> тех, в которых я уверена, у меня не было.</li>
+    <li><b>Сдвиг значения</b> от «срединных владений» к названию государства описан по направлению, а не по шагам: пошагово проследить его в объёме статьи честно нельзя, и об этом сказано прямо.</li>
+    <li><b>天下</b> разобрано буквально: 天 «небо» и 下 «низ, под». Объяснение знака 天 через фигуру человека с чертой над головой названо общепринятым.</li>
+    <li><b>天子 и 天命</b> даны как понятия. <b>Историю их применения по эпохам мы не пересказываем:</b> это история, а не язык.</li>
+    <li><b>Выражения</b> 天下第一, 天下无双, 走遍天下, 天下太平 и книжное 普天之下 приведены по употреблению.</li>
+    <li><b>Самоназвания</b> 中华, 华夏, 中原 и полное 中华人民共和国 приведены с указанием, где какое встречается.</li>
+    <li><b>Русское «Китай»</b> от названия киданей — устоявшаяся версия, так и подана. <b>Английское China</b> связывают с 秦, и это <b>общепринятая, но не единственная версия</b>: в статье сказано «связывают», а не «происходит».</li>
+    <li><b>Чего в статье нет намеренно:</b> дат появления слов; истории династий; цитат из классических текстов, которые я не могу проверить; круглых чисел про древность; выводов о характере народа из этимологии; ссылок на словари и труды, которых у меня нет на руках.</li>
+    <li>Практика Kitai School: разборы с учениками, в том числе слайд презентации с неверной формулой про Поднебесную.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Китай по-китайски — 中国, «срединное государство». Поднебесной эту страну называем мы, по-русски</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
