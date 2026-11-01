@@ -1,0 +1,469 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/predlogi-v-kitayskom-yazyke#article",
+      "headline": "Предлоги в китайском: 在, 给, 对 и почему многие из них — бывшие глаголы",
+      "description": "Предлоги китайского языка (介词): предложная группа стоит между подлежащим и глаголом, и справа от глагола ей места нет. Таблица двенадцати частотных предлогов — 在, 给, 对, 跟, 和, 从, 到, 离, 用, 为, 向, 往 — со чтением, значением и примером. Почему многие предлоги совпадают по форме с глаголами и сохраняют их значение: 在 «находиться», 给 «дать», 到 «прибыть», 跟 «следовать». Разведение 对 и 给, трёх знаков 从, 到 и 离, место отрицания 不 и 没 перед предлогом и рабочий приём, по которому предлог отличают от глагола.",
+      "image": "https://static.tildacdn.com/tila3565-6163-4937-b863-356230626533/prd-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/predlogi-v-kitayskom-yazyke",
+      "about": {
+        "@type": "Thing",
+        "name": "Предлоги в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/predlogi-v-kitayskom-yazyke#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Где в китайском предложении стоит предлог?", "acceptedAnswer": {"@type": "Answer", "text": "Между подлежащим и глаголом. Предлог идёт не один, а вместе со своим словом: 我给妈妈打电话 — «я звоню маме», где 给妈妈 стоит перед глаголом 打. Переставить эту группу за глагол нельзя — фраза перестанет читаться."}},
+        {"@type": "Question", "name": "Какие предлоги нужно выучить первыми?", "acceptedAnswer": {"@type": "Answer", "text": "Пять: 在 (где), 给 (кому), 跟 (с кем), 从 (откуда) и 到 (докуда). Они закрывают большую часть бытовых фраз. Следом идут 对, 离, 用 и 为. Полного списка предлогов здесь нет и быть не может: в разных описаниях он разный, и спорных случаев хватает."}},
+        {"@type": "Question", "name": "Почему 在 — то предлог, то глагол?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что это один и тот же знак в разных работах. 他在家 — «он дома», здесь 在 сказуемое. 他在家吃饭 — «он ест дома», здесь 在家 предложная группа перед глаголом 吃. А в 他在吃饭 «он сейчас ест» 在 вообще не предлог: оно показывает, что действие идёт прямо сейчас."}},
+        {"@type": "Question", "name": "Чем 对 отличается от 给?", "acceptedAnswer": {"@type": "Answer", "text": "给 вводит того, кто получает: 给我打电话 «позвони мне», 给朋友写信 «написать письмо другу». 对 вводит того, к кому обращено отношение или речь: 对我很好 «хорошо ко мне относится», 对他说 «сказать ему». Если можно спросить «кому досталось» — это 给; если «в чью сторону» — это 对."}},
+        {"@type": "Question", "name": "Где ставить отрицание, если есть предлог?", "acceptedAnswer": {"@type": "Answer", "text": "Перед предлогом, а не перед глаголом. 我不给他打电话 — «я ему не звоню». Вариант 我给他不打电话 неверен. То же с 没: 我没跟他说 — «я ему не говорил». Это одна из самых частых ошибок у русскоязычных, потому что по-русски отрицание липнет к глаголу."}},
+        {"@type": "Question", "name": "Чем 从 отличается от 离?", "acceptedAnswer": {"@type": "Answer", "text": "从 — про начало пути или отсчёта: 我从北京来 «я приехал из Пекина». 离 — про расстояние между двумя точками, и движения в нём нет: 我家离学校很近 «мой дом близко от школы». Если можно подставить «вышел откуда-то» — нужно 从; если «находится на таком-то удалении» — 离."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/predlogi-v-kitayskom-yazyke#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Предлоги в китайском: 在, 给, 对 и почему многие из них — бывшие глаголы", "item": "https://kitai-school.ru/article/predlogi-v-kitayskom-yazyke"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Грамматика</p>
+<h1>Предлоги в китайском: <span class="italic">在, 给, 对 и почему многие из них — бывшие глаголы</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-16">16 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila3565-6163-4937-b863-356230626533/prd-hero.png" alt="Фраза 我给妈妈打电话 в рамке видоискателя с подписями «кто», «кому», «что делает» под знаками" width="1200" height="630"></figure>
+
+<p class="passport">Предлоги в китайском устроены иначе, чем в русском, и сложностей с ними две. Первая — <b>место: предложная группа стоит до глагола, а не после</b>. Вторая — тот же знак часто оказывается ещё и глаголом, и нужно понимать, в какой работе он здесь. Разберём обе, дадим таблицу частотных и покажем, где русская привычка подводит.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Место:</b> подлежащее — предлог со своим словом — глагол. <b>Первые пять:</b> 在, 给, 跟, 从, 到. <b>Отрицание</b> ставится перед предлогом: 我不给他打电话. <b>Двойная роль:</b> 在, 给, 到, 跟 бывают и глаголами. <b>Приём:</b> есть второй глагол — значит, перед вами предлог.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">где стоит предлог</span></h2>
+
+<p>Предлог в китайском не ходит один: он всегда стоит со своим словом и образует с ним группу. Эта группа занимает место между подлежащим и глаголом.</p>
+
+<p>我给妈妈打电话 — «я звоню маме». Разложим: 我 «я», 给妈妈 «маме», 打电话 «звонить». <b>Сначала кому, потом что делает</b> — и поменять эти части местами нельзя.</p>
+
+<p>Русский делает наоборот: «звоню маме», «пишу другу», «говорю тебе». Отсюда и самая частая ошибка, с которой приходят на занятия, — адресат уезжает за глагол.</p>
+
+<p>Про саму ленту позиций в предложении у нас есть отдельный разбор, там же разобрано, почему место действия не ставят справа: <a href="https://kitai-school.ru/article/kak-sostavlyat-predlozheniya-na-kitajskom" target="_blank" rel="noopener">как составлять предложения на китайском</a>. Здесь мы берём из него один факт и идём дальше — к самим предлогам.</p>
+
+<h2>Почему их называют <span class="italic">бывшими глаголами</span></h2>
+
+<p>Теперь к тому, что сбивает сильнее всего. Откройте словарь на 给 — и увидите «дать». Откройте на 到 — «прибыть». Это не ошибка словаря.</p>
+
+<p><b>Многие китайские предлоги совпадают по форме с глаголами</b>, и значение глагола в них просматривается. 给 как предлог значит «кому» — и это естественное продолжение «дать». 到 значит «до» — продолжение «прибыть».</p>
+
+<p>Сразу оговорюсь, чтобы не сказать лишнего: <b>как именно и когда глагол становился предлогом, я здесь не разбираю</b>. Описывают его по-разному, надёжных датировок у меня на руках нет, и выдавать реконструкцию за установленный факт я не буду. След прежнего значения — вещь наблюдаемая, этого достаточно.</p>
+
+<p>Практический вывод из этого простой и приятный: <b>значения предлогов не нужно зубрить отдельно</b>. Если вы знаете глагол, вы наполовину знаете предлог.</p>
+
+<h2>Таблица <span class="italic">частотных предлогов</span></h2>
+
+<p>Двенадцать знаков, которые покрывают большую часть бытовых фраз.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Частотные предлоги китайского языка.</caption>
+  <thead><tr><th>Знак</th><th>Чтение</th><th>Что вводит</th><th>Пример</th><th>Перевод</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">在</span></td><td><i>zài</i></td><td><b>в, на — где происходит</b></td><td><span class="han">在学校学习</span></td><td>учиться в школе</td></tr>
+    <tr><td><span class="han">给</span></td><td><i>gěi</i></td><td><b>кому — адресат</b></td><td><span class="han">给朋友写信</span></td><td>написать письмо другу</td></tr>
+    <tr><td><span class="han">对</span></td><td><i>duì</i></td><td><b>к кому, по отношению к</b></td><td><span class="han">对我很好</span></td><td>хорошо ко мне относится</td></tr>
+    <tr><td><span class="han">跟</span></td><td><i>gēn</i></td><td><b>с кем — вместе или кому</b></td><td><span class="han">跟朋友一起去</span></td><td>пойти вместе с другом</td></tr>
+    <tr><td><span class="han">和</span></td><td><i>hé</i></td><td><b>и, с — соединяет</b></td><td><span class="han">我和他</span></td><td>я и он</td></tr>
+    <tr><td><span class="han">从</span></td><td><i>cóng</i></td><td><b>от, из — откуда началось</b></td><td><span class="han">从北京来</span></td><td>приехать из Пекина</td></tr>
+    <tr><td><span class="han">到</span></td><td><i>dào</i></td><td><b>до, в — предел</b></td><td><span class="han">到上海去</span></td><td>поехать в Шанхай</td></tr>
+    <tr><td><span class="han">离</span></td><td><i>lí</i></td><td><b>от — на каком расстоянии</b></td><td><span class="han">离学校很近</span></td><td>близко от школы</td></tr>
+    <tr><td><span class="han">用</span></td><td><i>yòng</i></td><td><b>чем — чем сделано</b></td><td><span class="han">用筷子吃饭</span></td><td>есть палочками</td></tr>
+    <tr><td><span class="han">为</span></td><td><i>wèi</i></td><td><b>для, ради кого</b></td><td><span class="han">为你高兴</span></td><td>рад за тебя</td></tr>
+    <tr><td><span class="han">向</span></td><td><i>xiàng</i></td><td><b>к, у — в чью сторону</b></td><td><span class="han">向他学习</span></td><td>учиться у него</td></tr>
+    <tr><td><span class="han">往</span></td><td><i>wǎng</i></td><td><b>в сторону — куда двигаться</b></td><td><span class="han">往前走</span></td><td>идти вперёд</td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila6134-3639-4363-b263-613562303836/prd-info.png" alt="Схема 我 / 给妈妈 / 打 / 电话 и четыре карточки: 在, 给, 到, 跟 в роли глагола и в роли предлога" width="1200" height="600"><figcaption>Сначала место предложной группы, потом четыре знака в двух работах сразу.</figcaption></figure>
+
+<p><b>Оговорка про полноту.</b> Это не весь список: предлогов больше, и в разных описаниях их набор отличается — часть слов относят то к предлогам, то к глаголам, то к союзам. Я взяла те, что нужны раньше остальных.</p>
+
+<p>Отдельно стоят 把 и 被: их тоже называют предлогами, но работают они иначе и заслуживают отдельного разговора. Про первый у нас есть <a href="https://kitai-school.ru/article/konstrukciya--v-kitajskom" target="_blank" rel="noopener">разбор конструкции 把</a>, про второй — <a href="https://kitai-school.ru/article/passivnyy-zalog-v-kitayskom" target="_blank" rel="noopener">пассивный залог с 被</a>.</p>
+
+<h2>Один знак — <span class="italic">две работы</span></h2>
+
+<p>Вернёмся к двойной роли и разложим её на примерах.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Одни и те же знаки в роли глагола и в роли предлога.</caption>
+  <thead><tr><th>Знак</th><th>Чтение</th><th>Как глагол</th><th>Как предлог</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">在</span></td><td><i>zài</i></td><td>находиться: <span class="han">他在家</span> — он дома</td><td><span class="han">在学校</span> — в школе</td></tr>
+    <tr><td><span class="han">给</span></td><td><i>gěi</i></td><td>дать: <span class="han">给我一本书</span> — дай мне книгу</td><td><span class="han">给我打电话</span> — позвони мне</td></tr>
+    <tr><td><span class="han">到</span></td><td><i>dào</i></td><td>прибыть: <span class="han">我到了</span> — я на месте</td><td><span class="han">从一点到三点</span> — с часа до трёх</td></tr>
+    <tr><td><span class="han">跟</span></td><td><i>gēn</i></td><td>следовать: <span class="han">跟我来</span> — идите за мной</td><td><span class="han">跟他说</span> — сказать ему</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Разница видна по тому, есть ли в предложении другой глагол.</b> 他在家 — других глаголов нет, значит, 在 здесь и есть сказуемое. 他在家吃饭 — появился 吃, и 在家 отошло в предложную группу.</p>
+
+<p>У 给 то же самое: 给我一本书 — «дай мне книгу», 给 работает глаголом. 给我打电话 — появился 打电话, и 给我 стало «мне».</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик писал поздравление коллеге и перевёл «я хочу сказать тебе спасибо» так, как оно звучит по-русски: сначала «сказать», потом «тебе».</p>
+  <p>Коллега прочитал фразу дважды и переспросил. Не из-за ошибки в словах — слова были верные, — а потому что адресат оказался там, где его не ждут.</p>
+  <p><b>Разобрали на занятии.</b> «Кому» в китайском называется до глагола и требует предлога: 对 или 跟, смотря что именно говорится. Собрали фразу заново, и она сразу прочиталась с первого раза.</p>
+  <p>Потом проверили ещё четыре его обычных оборота — те, которые он пишет каждую неделю. В трёх из них адресат стоял не на месте. Исправили все, и больше эта ошибка не возвращалась.</p>
+</div>
+
+<h2>在: <span class="italic">место и не только</span></h2>
+
+<p>Самый частый предлог и самый многоликий — у него работ не две, а три.</p>
+
+<p><b>Первая: глагол «находиться».</b> 他在家 — «он дома». 老师在吗？ — «учитель на месте?»</p>
+
+<p><b>Вторая: предлог места.</b> 他在家吃饭 — «он ест дома». Группа 在家 отвечает на вопрос «где это происходит» и стоит до глагола.</p>
+
+<p><b>Третья, которую пропускают:</b> 在 перед глаголом без указания места показывает, что действие идёт прямо сейчас. 他在吃饭 — «он сейчас ест». Здесь нет ни глагола «находиться», ни места — только время действия.</p>
+
+<p>Отличить вторую от третьей просто: <b>во второй после 在 стоит место</b>, в третьей — сразу глагол. 他在家吃饭 и 他在吃饭 отличаются одним знаком, а значат разное.</p>
+
+<p>Запомнить это проще всего парой: 他在家 и 他在吃饭. В первой фразе после 在 стоит дом, то есть место, — и 在 работает сказуемым. Во второй сразу идёт глагол, и 在 говорит только о том, что человек занят этим прямо сейчас.</p>
+
+<p>Есть и случай, когда место всё же оказывается справа от глагола, — с небольшой группой глаголов вроде «жить» и «класть». Он разобран в статье про порядок слов, и повторять его здесь я не буду.</p>
+
+<h2>给 и 对: <span class="italic">кому и к кому</span></h2>
+
+<p>Два предлога, которые русскоязычные путают чаще всего, потому что по-русски оба переводятся дательным падежом.</p>
+
+<p><b>给 вводит того, кто получает.</b> 给我打电话 — «позвони мне». 给朋友写信 — «написать письмо другу». Что-то движется от говорящего к адресату: звонок, письмо, подарок.</p>
+
+<p><b>对 вводит того, к кому обращено отношение или речь.</b> 对我很好 — «хорошо ко мне относится». 对他说 — «сказать ему». Здесь ничего не передаётся, здесь направленность.</p>
+
+<p>Проверка на один вопрос. <b>Можно спросить «кому досталось» — ставьте 给. Можно спросить «в чью сторону» — ставьте 对.</b></p>
+
+<p>Полезно помнить и то, что 给 умеет присоединяться прямо к глаголу: 寄给我 «пришли мне», 还给他 «верни ему». Здесь 给 стоит после глагола и работает уже не предлогом, а его второй частью — но смысл адресата сохраняется.</p>
+
+<p>Есть у 对 и оборот, который стоит запомнить целиком: 对我来说 — «что касается меня, с моей точки зрения». Он открывает фразу и к адресату отношения не имеет.</p>
+
+<h2>从, 到 и 离: <span class="italic">откуда, докуда и как далеко</span></h2>
+
+<p>Три знака, которые тоже сливаются в голове, пока их не развести по смыслу.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Начало, конец и расстояние.</caption>
+  <thead><tr><th>Знак</th><th>Чтение</th><th>Что обозначает</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">从</span></td><td><i>cóng</i></td><td><b>начало пути или отсчёта</b></td><td><span class="han">我从家走到学校</span> — я иду из дома до школы</td></tr>
+    <tr><td><span class="han">到</span></td><td><i>dào</i></td><td><b>конец пути или отсчёта</b></td><td><span class="han">从星期一到星期五</span> — с понедельника по пятницу</td></tr>
+    <tr><td><span class="han">离</span></td><td><i>lí</i></td><td><b>расстояние между двумя точками</b></td><td><span class="han">我家离地铁站不远</span> — мой дом недалеко от метро</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>从 и 到 работают парой</b> и часто стоят в одной фразе: 从星期一到星期五 — «с понедельника по пятницу». Пара годится и для времени, и для пространства.</p>
+
+<p><b>离 стоит особняком:</b> в нём нет движения. Это расстояние между двумя точками, и рядом с ним обычно стоят 近 «близко» или 远 «далеко». 我家离地铁站不远 — «мой дом недалеко от метро».</p>
+
+<p>У 离 есть ещё одна особенность: он часто открывает фразу вместе с точкой отсчёта. 离考试还有三天 — «до экзамена ещё три дня». Здесь речь не о пространстве, а о времени, и устроено всё так же: расстояние между двумя точками.</p>
+
+<p>Ошибка, которую делают почти все: ставят 从 там, где нужно 离. «Мой дом далеко от школы» — это не «из школы», никто никуда не выходит. Значит, 离.</p>
+
+<h2>Где ставится <span class="italic">отрицание</span></h2>
+
+<p>Короткое правило, которое экономит много исправлений.</p>
+
+<p><b>Отрицание ставится перед предлогом, а не перед глаголом.</b> 我不给他打电话 — «я ему не звоню». Вариант 我给他不打电话 неверен, хотя по-русски отрицание липнет именно к глаголу.</p>
+
+<p>С 没 то же самое: 我没跟他说 — «я ему не говорил». И здесь 没 стоит перед 跟, а не перед 说.</p>
+
+<p>Объяснение простое: <b>отрицается всё действие целиком вместе с его обстоятельствами</b>, а не отдельно взятый глагол. Предложная группа входит в то, что отрицается, поэтому 不 встаёт перед ней.</p>
+
+<p>Из этого же следует проверка для самопроверки на письме: найдите в своей фразе предложную группу и посмотрите, что стоит слева от неё. Если там глагол, а отрицание прицепилось к нему, фразу нужно пересобрать.</p>
+
+<p>Про место наречий и отрицаний в предложении у нас есть отдельный разбор, он хорошо ложится рядом с этой темой: <a href="https://kitai-school.ru/article/narechiya-v-kitayskom" target="_blank" rel="noopener">наречия в китайском</a>.</p>
+
+<h2>Как отличить предлог <span class="italic">от глагола</span></h2>
+
+<p>Соберём приём, которым пользуюсь сама и который даю ученикам.</p>
+
+<ul>
+  <li><b>Посмотрите, есть ли в предложении второй глагол.</b> Если есть — спорный знак, скорее всего, предлог, а сказуемое то, второе.</li>
+  <li><b>Посмотрите, что стоит сразу после знака.</b> После предлога идёт существительное или местоимение: 给我, 在学校, 跟他.</li>
+  <li><b>Попробуйте убрать группу целиком.</b> Предложная группа убирается, и предложение остаётся целым: из 他在家吃饭 выйдет 他吃饭. Сказуемое так не уберёшь.</li>
+  <li><b>Проверьте отрицание.</b> Если 不 естественно встаёт перед знаком, а не перед следующим словом, — это предлог.</li>
+</ul>
+
+<p>Четвёртая проверка работает не всегда: с 没 она надёжнее, чем с 不, потому что 不 в некоторых случаях встаёт и перед глаголом тоже. Поэтому опираться лучше на первые три, а отрицание использовать как подсказку.</p>
+
+<p>И последнее, что экономит время: предлогов, которые нужны в обычной речи, немного. Выучите пять первых как следует — и остальные встанут на место сами, потому что работают они по одной схеме.</p>
+
+<p><b>Приём не закон, и границы у него есть.</b> Случай 他在吃饭 под него не подходит: второй глагол есть, но 在 здесь не предлог, а показатель того, что действие идёт сейчас. Таких исключений немного, но знать о них стоит.</p>
+
+<p>Отработать всё это проще всего на обычных глаголах: берёте знакомый глагол и достраиваете к нему обстоятельства по одному. Базовый список у нас есть: <a href="https://kitai-school.ru/article/top-50-bazovyh-glagolov-kitayskogo-yazyka-s-primerami" target="_blank" rel="noopener">топ-50 базовых глаголов</a>. А если путаются ещё и раздельно-сочетаемые глаголы, их ловушка разобрана отдельно: <a href="https://kitai-school.ru/article/razdelno-sochetaemye-glagoly" target="_blank" rel="noopener">раздельно-сочетаемые глаголы</a>.</p>
+
+<div class="cta">
+  <p>Такие вещи быстрее всего ставятся на ваших же фразах — тех, которые вы пишете и говорите каждую неделю: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где в китайском предложении стоит предлог?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Между подлежащим и глаголом. Предлог идёт не один, а вместе со своим словом: 我给妈妈打电话 — «я звоню маме», где 给妈妈 стоит перед глаголом 打. Переставить эту группу за глагол нельзя — фраза перестанет читаться.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие предлоги нужно выучить первыми?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Пять: 在 (где), 给 (кому), 跟 (с кем), 从 (откуда) и 到 (докуда). Они закрывают большую часть бытовых фраз. Следом идут 对, 离, 用 и 为. Полного списка предлогов здесь нет и быть не может: в разных описаниях он разный, и спорных случаев хватает.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему 在 — то предлог, то глагол?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что это один и тот же знак в разных работах. 他在家 — «он дома», здесь 在 сказуемое. 他在家吃饭 — «он ест дома», здесь 在家 предложная группа перед глаголом 吃. А в 他在吃饭 «он сейчас ест» 在 вообще не предлог: оно показывает, что действие идёт прямо сейчас.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 对 отличается от 给?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>给 вводит того, кто получает: 给我打电话 «позвони мне», 给朋友写信 «написать письмо другу». 对 вводит того, к кому обращено отношение или речь: 对我很好 «хорошо ко мне относится», 对他说 «сказать ему». Если можно спросить «кому досталось» — это 给; если «в чью сторону» — это 对.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где ставить отрицание, если есть предлог?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Перед предлогом, а не перед глаголом. 我不给他打电话 — «я ему не звоню». Вариант 我给他不打电话 неверен. То же с 没: 我没跟他说 — «я ему не говорил». Это одна из самых частых ошибок у русскоязычных, потому что по-русски отрицание липнет к глаголу.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 从 отличается от 离?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>从 — про начало пути или отсчёта: 我从北京来 «я приехал из Пекина». 离 — про расстояние между двумя точками, и движения в нём нет: 我家离学校很近 «мой дом близко от школы». Если можно подставить «вышел откуда-то» — нужно 从; если «находится на таком-то удалении» — 离.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть каждое «кому» стоит на своём месте! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Позиция предложной группы</b> — между подлежащим и глаголом — дана как правило и показана на разборе 我给妈妈打电话.</li>
+    <li><b>Совпадение предлогов с глаголами</b> описано как наблюдаемое свойство языка. <b>Исторических датировок в статье нет:</b> процесс описывают по-разному, и реконструкцию я не привожу.</li>
+    <li><b>Таблица двенадцати предлогов</b> составлена по частотности употребления. <b>Полнота не заявляется:</b> прямо сказано, что список не исчерпывающий и что состав класса в разных описаниях различается.</li>
+    <li><b>Двойная роль</b> знаков 在, 给, 到 и 跟 показана парами примеров; те же четыре знака стоят и на инфографике.</li>
+    <li><b>Три работы 在</b> — глагол, предлог места и показатель того, что действие идёт сейчас, — разведены по тому, что стоит после знака.</li>
+    <li><b>Разница 给 и 对</b> дана через проверочный вопрос: «кому досталось» против «в чью сторону».</li>
+    <li><b>从, 到 и 离</b> разведены по наличию движения: 离 обозначает расстояние, и движения в нём нет.</li>
+    <li><b>Место отрицания</b> перед предлогом приведено с объяснением: отрицается действие вместе с обстоятельствами.</li>
+    <li><b>Приём различения назван приёмом, а не правилом</b>, и его исключение — 他在吃饭 — названо прямо.</li>
+    <li><b>Чего в статье нет намеренно:</b> ленты позиций в предложении и глаголов с 在 справа — это соседняя статья; разбора 把 и 被 — у каждого свой материал; сравнения с 比; статистики частотности, которой я не нашла.</li>
+    <li>Практика Kitai School: разборы с учениками, в том числе случай с адресатом в деловом поздравлении.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Кому, где, чем и откуда — всё это в китайском называется до глагола. Справа от глагола предложной группе места нет</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
