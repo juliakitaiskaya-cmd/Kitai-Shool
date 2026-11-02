@@ -1,0 +1,462 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/samye-izvestnye-kitayskie-pisateli#article",
+      "headline": "Самые известные китайские писатели: от Лу Синя до нобелиата Мо Яня",
+      "description": "Восемь имён китайской литературы и то, чем важно каждое: Лу Синь 鲁迅, перешедший со старого книжного языка на живой, Лао Шэ 老舍, Ба Цзинь 巴金 и Чжан Айлин 张爱玲, нобелевские лауреаты Гао Синцзянь 高行健 и Мо Янь 莫言, Юй Хуа 余华 и фантаст Лю Цысинь 刘慈欣. Разбираем, в чём была языковая реформа, почему лауреатов двое, а называют одного, и что из этого следует для читателя. Годов жизни и рейтингов в статье нет намеренно.",
+      "image": "HERO_PLACEHOLDER",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-21",
+      "dateModified": "2026-11-21",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/samye-izvestnye-kitayskie-pisateli",
+      "about": {
+        "@type": "Thing",
+        "name": "Китайская литература XX–XXI веков"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/samye-izvestnye-kitayskie-pisateli#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Кто самый известный китайский писатель?", "acceptedAnswer": {"@type": "Answer", "text": "Однозначного ответа нет, и ранжировать писателей я не берусь. Если говорить о том, кого в Китае знает каждый, это Лу Синь: его тексты входят в школьную программу. Если о международной известности — Мо Янь с Нобелевской премией и Лю Цысинь с «Задачей трёх тел». Это разные виды известности, и складывать их в один рейтинг бессмысленно."}},
+        {"@type": "Question", "name": "Сколько у Китая нобелевских лауреатов по литературе?", "acceptedAnswer": {"@type": "Answer", "text": "Двое, и в этом вся путаница. Гао Синцзянь получил премию в 2000 году, но к тому времени был уже гражданином Франции. Мо Янь получил её в 2012 году, и именно поэтому его называют первым китайским гражданином с этой наградой. Формулировки в источниках расходятся как раз из-за этого различия, а не из-за ошибки."}},
+        {"@type": "Question", "name": "Почему Лу Синя называют реформатором?", "acceptedAnswer": {"@type": "Answer", "text": "Не из-за сюжетов, а из-за языка. До него серьёзную прозу писали на старом книжном языке, на котором никто не разговаривал: его нужно было отдельно учить. Лу Синь стал писать на живом языке, и за ним пошли остальные. Это изменило не одну литературу, а то, кто вообще может читать книги."}},
+        {"@type": "Question", "name": "С какой книги начать знакомство с китайской литературой?", "acceptedAnswer": {"@type": "Answer", "text": "Чаще всего советуют короткую прозу Юй Хуа: язык там простой до аскетизма, а объём небольшой, и книгу реально дочитать. Подробный разбор того, что читать в переводе, а что в оригинале, и как выбирать издание, у нас есть отдельно."}},
+        {"@type": "Question", "name": "Чем Лю Цысинь важен за пределами фантастики?", "acceptedAnswer": {"@type": "Answer", "text": "Тем, что китайская проза с ним впервые дошла до массового зарубежного читателя не как страноведение, а как обычное чтение. «Задачу трёх тел» берут в руки не потому, что она китайская, а потому, что это фантастика, — и это новый для китайской литературы способ попасть к читателю."}},
+        {"@type": "Question", "name": "Почему в списках китайских писателей так мало женщин?", "acceptedAnswer": {"@type": "Answer", "text": "В подборках действительно чаще называют мужчин, и это заметно. Из женских имён в первом ряду стоят Чжан Айлин и Сяо Хун. Объяснять причины неравного внимания я не возьмусь: для этого нужны исследования, которых я не могу проверить, а рассуждать наугад о таком не стоит."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/samye-izvestnye-kitayskie-pisateli#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Самые известные китайские писатели: от Лу Синя до нобелиата Мо Яня", "item": "https://kitai-school.ru/article/samye-izvestnye-kitayskie-pisateli"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Литература</p>
+<h1>Самые известные китайские писатели: <span class="italic">от Лу Синя до нобелиата Мо Яня</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-21">21 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="HERO_PLACEHOLDER" alt="Книжный разворот: слева фраза книжным языком столбцами, справа та же мысль живым языком строками" width="1200" height="630"></figure>
+
+<p class="passport">Эта статья — про людей, а не про книги: книги у нас разобраны отдельно. И сразу оговорю ограничение, потому что оно видно по всему тексту: <b>годов жизни я не называю ни у кого</b>. Биографические датировки я не могу сверить по первоисточнику из рабочей среды, а ставить их наугад в статью о реальных людях нельзя. Поэтому время обозначено словами — «начало века», «середина», «наши дни», — и единственные даты здесь это три года премий.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Перелом:</b> <span class="han">鲁迅</span> Лу Синь перешёл со старого книжного языка на живой. <b>Середина века:</b> <span class="han">老舍</span>, <span class="han">巴金</span>, <span class="han">张爱玲</span>. <b>Лауреатов двое:</b> <span class="han">高行健</span> Гао Синцзянь — 2000 год, <span class="han">莫言</span> Мо Янь — 2012. <b>К мировому читателю:</b> <span class="han">刘慈欣</span> Лю Цысинь, премия 2015 года. <b>Чего нет:</b> годов жизни, рейтингов и пересказа сюжетов.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">восемь имён</span></h2>
+
+<p>Сначала таблица целиком, дальше разберём каждое имя.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Восемь имён китайской литературы.</caption>
+  <thead><tr><th>Имя</th><th>По-русски</th><th>Книга</th><th>Чем важен</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">鲁迅</b></td><td><b>Лу Синь</b></td><td>«Подлинная история А-Кью»</td><td>перешёл на живой язык, и за ним пошли остальные</td></tr>
+    <tr><td><b class="han">老舍</b></td><td><b>Лао Шэ</b></td><td>«Рикша»</td><td>человек и город, который сильнее его</td></tr>
+    <tr><td><b class="han">巴金</b></td><td><b>Ба Цзинь</b></td><td>«Семья»</td><td>распад большой семьи старого образца</td></tr>
+    <tr><td><b class="han">张爱玲</b></td><td><b>Чжан Айлин</b></td><td>«Красная роза и белая роза»</td><td>частная жизнь на фоне большой истории</td></tr>
+    <tr><td><b class="han">高行健</b></td><td><b>Гао Синцзянь</b></td><td>灵山</td><td>премия 2000 года, к тому времени гражданин Франции</td></tr>
+    <tr><td><b class="han">莫言</b></td><td><b>Мо Янь</b></td><td>«Красный гаолян»</td><td>премия 2012 года, первый китайский гражданин</td></tr>
+    <tr><td><b class="han">余华</b></td><td><b>Юй Хуа</b></td><td>«Жить»</td><td>короткая книга простым языком</td></tr>
+    <tr><td><b class="han">刘慈欣</b></td><td><b>Лю Цысинь</b></td><td>«Задача трёх тел»</td><td>премия 2015 года, выход к мировому читателю</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Книга у каждого названа одна</b> — та, с которой обычно начинают, а не главная из возможных. Выбирать «главную» книгу автора я не стану: это оценка, а не факт.</p>
+
+<p>Обратите внимание на первую строку: Лу Синь стоит отдельно не по заслугам, а потому, что до него и после него писали на разных языках. С этого и начнём.</p>
+
+<h2>Лу Синь: человек, <span class="italic">сменивший язык литературы</span></h2>
+
+<p>Чтобы понять, в чём реформа, нужно знать одну вещь про китайский до двадцатого века.</p>
+
+<p><b>Серьёзные тексты писали не на том языке, на котором говорили.</b> Существовал отдельный книжный язык — сжатый, с другой грамматикой и другим словарём. Разговорная речь к тому времени ушла от него далеко, и читать книги мог только тот, кто этот язык отдельно выучил.</p>
+
+<p>Представьте, что все книги написаны языком, которому надо учиться отдельно и годами: круг читателей при таком устройстве очерчен заранее и очень узко.</p>
+
+<p><b>Лу Синь стал писать прозу на живом языке.</b> Не упростил книжный, а взял тот, на котором разговаривают, — и оказалось, что на нём можно писать всерьёз. За ним пошли остальные, и в течение одного поколения серьёзная литература сменила язык целиком.</p>
+
+<p>В школьную программу Китая входят и «Дневник сумасшедшего», и «Подлинная история А-Кью». Для нас важнее другое: это первые образцы серьёзной прозы на живом языке.</p>
+
+<p>Отсюда видно, почему вопрос «кто самый известный китайский писатель» плохо устроен: Лу Синя в Китае знает каждый школьник, но за пределами страны его читают несравнимо меньше, чем Лю Цысиня. Это две разные известности.</p>
+
+<p>Если любопытно, как в китайском вообще расходятся письменная и устная речь, а заодно путунхуа и местные говоры, об этом у нас написано тут — <a href="https://kitai-school.ru/article/kak-razgovarivaut-v-kitae" target="_blank" rel="noopener">как разговаривают в Китае</a>.</p>
+
+<h2>Поколение, писавшее <span class="italic">на живом языке</span></h2>
+
+<p>Дальше пришли те, для кого живой язык в прозе был уже нормой, а не заявлением.</p>
+
+<p><b>Лао Шэ</b> писал о городе и о человеке, которому город не оставляет выхода. «Рикша» — о том, как упорный труд не вытягивает, потому что устройство вокруг сильнее отдельного старания. Он писал и для сцены, и это заметно по диалогу.</p>
+
+<p><b>Ба Цзинь</b> взялся за большую семью старого образца, где всё решает старший. В «Семье» видно, как такой порядок разваливается изнутри, и показано это не памфлетом, а домашними сценами.</p>
+
+<p><b>Чжан Айлин</b> писала о частной жизни на фоне большой истории: о влюблённостях, расчётах и браках в то время, когда вокруг шла война. Её проза не про эпоху, а про людей внутри неё.</p>
+
+<figure class="ks-fig"><img src="FIG_PLACEHOLDER" alt="Лента времени тремя волнами с карточками восьми китайских писателей и тремя метками премий" width="1200" height="566"><figcaption>Три волны и восемь имён. Годов жизни на ленте нет — только три года премий.</figcaption></figure>
+
+<p>Про Чжан Айлин добавлю одну вещь про язык: её фраза про лунный свет у кровати со временем стала ходовым сетевым словом — об этом есть разбор: <a href="https://kitai-school.ru/article/krasivye-slova-na-kitajskom" target="_blank" rel="noopener">красивые слова на китайском</a>.</p>
+
+<h2>Мо Янь: <span class="italic">премия 2012 года</span></h2>
+
+<p>Самое громкое имя из современных — и самое неудобное для короткого описания.</p>
+
+<p><b>Мо Янь получил Нобелевскую премию по литературе в 2012 году.</b> У него деревенские предания идут вперемешку с историей века, а действие почти всегда разворачивается в одном вымышленном уезде, который он выстраивал от книги к книге.</p>
+
+<p>«Красный гаолян» — то, с чего его обычно начинают. Предупрежу сразу: лёгким чтением это не назовёшь, там хватает жестокости и физиологии, и это не приём ради приёма.</p>
+
+<p><b>Сам псевдоним стоит перевода:</b> <span class="han">莫言</span> значит «молчи», «не говори». Для человека, который зарабатывает словами, выбор имени говорящий.</p>
+
+<h2>Второй лауреат, <span class="italic">о котором забывают</span></h2>
+
+<p>Теперь то, из-за чего в подборках постоянно путаница.</p>
+
+<p><b>Нобелевских лауреатов, пишущих по-китайски, двое.</b> Гао Синцзянь получил премию в 2000 году — на двенадцать лет раньше Мо Яня. Но к тому времени он был уже гражданином Франции, и поэтому про Мо Яня пишут «первый китайский гражданин», а не «первый китайский писатель».</p>
+
+<p>Отсюда и расхождение формулировок, которое выглядит как ошибка, хотя ошибки нет: <b>разные источники считают разное</b> — одни гражданство на момент награждения, другие язык книг.</p>
+
+<p>Практический вывод для читателя простой. Если вам встретилось «первый китайский нобелиат по литературе» без уточнений, стоит посмотреть, о ком речь: формулировка сама по себе не говорит, учтён ли Гао Синцзянь.</p>
+
+<p>Главная его книга — <span class="han">灵山</span>. Русское название я намеренно не привожу: устоявшийся вариант перевода мне не сверить, а придумывать его самой нельзя. Подробностей биографии по той же причине не даю.</p>
+
+<h2>Юй Хуа: книга, <span class="italic">которую читают первой</span></h2>
+
+<p>Самое практичное имя в списке, особенно если вы учите язык.</p>
+
+<p><b>«Жить» — короткая книга, написанная простым языком.</b> Не упрощённым нарочно, а таким, где нет ни одного лишнего слова: жизнь героя пересказана почти сухо, и именно от этой сухости она и работает.</p>
+
+<p>Для изучающего это редкое сочетание: настоящая проза — и текст, который не отпугивает с первой страницы. Поэтому её часто берут первой.</p>
+
+<p>Правда, лёгкой её не назовёшь: простой там язык, а не содержание.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица сказала, что хочет читать китайскую литературу, и назвала единственное имя, которое знала. Я составила ей список — имена, книги, порядок.</p>
+  <p>Через месяц выяснилось, что она не открыла ни одной книги. Список оказался не планом, а обязанностью: каждая строчка в нём означала «это надо прочитать», и начинать с такого не хочется.</p>
+  <p><b>Переделали иначе.</b> Выбрали одну короткую книгу с простым языком — такую, которую реально закончить за неделю, — и больше ничего не планировали.</p>
+  <p>Она её дочитала, и дальше пошла сама: от этой книги к другой того же автора, потом к тем, на кого он ссылался. Список, который сложился у неё за полгода, с моим первоначальным почти не совпал.</p>
+</div>
+
+<h2>Лю Цысинь: фантастика, <span class="italic">вышедшая к миру</span></h2>
+
+<p>И последнее имя, с которым китайская литература попала к массовому зарубежному читателю.</p>
+
+<p><b>«Задача трёх тел» получила премию «Хьюго» в 2015 году.</b> Это главная награда в фантастике, и вручили её переводу — что само по себе редкость.</p>
+
+<p>Важна здесь не награда, а способ попадания к читателю. <b>Эту книгу берут в руки не потому, что она китайская</b>, а потому, что это фантастика. До неё китайскую прозу читали как страноведение — чтобы узнать про Китай; тут впервые получилось иначе.</p>
+
+<p>Автор долго писал параллельно с работой инженера, и это заметно по тексту: физика у него не фон, а то, из чего собран сюжет.</p>
+
+<p>Стоит сказать и то, что «Задача трёх тел» — первая часть трилогии, а не отдельный роман. Многие останавливаются на ней и считают, что прочитали всё; на деле прочитана завязка, и дальше масштаб только растёт.</p>
+
+<p>И ещё одно, что обычно упускают: <b>фантастика в Китае не возникла с этой книгой</b>. Она писалась и печаталась задолго до неё, просто за пределы страны почти не выходила. Так что речь не о появлении жанра, а о том, что его наконец заметили снаружи.</p>
+
+<p>С переводами этой книги связана отдельная история — про то, почему русское издание отличается от китайского по порядку глав. Она разобрана у нас в статье про книги: <a href="https://kitai-school.ru/article/luchshie-kitajskie-knigi" target="_blank" rel="noopener">лучшие китайские книги</a>, и повторять её здесь я не буду.</p>
+
+<h2>Что общего <span class="italic">у этих восьми</span></h2>
+
+<p>Если смотреть на список целиком, видно одну вещь, которая объясняет его лучше любых биографий.</p>
+
+<p><b>Все восемь пишут о людях, у которых прежний порядок перестаёт работать.</b> У Лу Синя вместе со старым языком уходит и старое устройство жизни, у Лао Шэ исчезает надежда на то, что труд вытянет, у Ба Цзиня распадается большая семья, у Чжан Айлин война достаёт до частной жизни. У современных то же самое, только обстоятельства другие: деревня, которой больше нет, история, которая не спрашивает, и, у Лю Цысиня, привычная картина мира целиком.</p>
+
+<p>Добавлю, что обстоятельства у каждого свои и мерить их друг против друга не нужно: тяжесть книги не говорит о её качестве. Ни один из восьми, замечу, не писал об этом как о катастрофе — для его героев это просто обстановка, в которой приходится жить. Это не совпадение и не замысел составителя списка. Двадцатый век в Китае был устроен так, что иначе и не писали: литература, которая делала вид, что ничего не происходит, просто не запомнилась.</p>
+
+<p><b>Для читателя отсюда следует практический вывод.</b> Если вы ждёте от китайской прозы уюта и ровного течения, список стоит собирать другой — эти книги почти все тяжёлые. Зато если вам интересно, как человек держится, когда вокруг всё меняется, здесь на этот вопрос отвечают восемь раз подряд и по-разному.</p>
+
+<p>И второе наблюдение, уже про язык. <b>Почти все они писали короткими фразами</b> — не из-за моды, а потому, что живой язык, на который перешла литература, сам короче книжного. Длинный период, нормальный для старой прозы, на нём просто не держится.</p>
+
+<p>Поэтому китайская проза двадцатого века читается в переводе иначе, чем европейская того же времени: она суше и быстрее, и первое впечатление бывает такое, будто текст недописан. Это свойство не переводчиков, а того перелома, с которого мы начали.</p>
+
+<h2>Чего в этой статье нет <span class="italic">и почему</span></h2>
+
+<p>Соберу ограничения в одном месте, чтобы они не выглядели как пробелы.</p>
+
+<ul>
+  <li><b>Годов жизни нет ни у кого.</b> Сверить биографические датировки по первоисточнику я не могу, а в статье о реальных людях выдуманные годы недопустимы.</li>
+  <li><b>Нет рейтинга.</b> Оценочных определений я тут не ставлю ни одному автору: такой порядок — дело вкуса, а не справки.</li>
+  <li><b>Нет пересказа сюжетов.</b> Названа одна книга у каждого и то, о чём она, — не больше.</li>
+  <li><b>Нет классических романов.</b> Знаменитая четвёрка — другая эпоха и другая статья.</li>
+  <li><b>Нет поэзии.</b> Классическая поэзия — отдельная большая тема, и в один список с прозаиками она не складывается.</li>
+  <li><b>Нет имён переводчиков и советов по изданиям.</b> Это разобрано в статье про книги, там же сказано, какие сведения удалось подтвердить, а какие нет.</li>
+  <li><b>Нет политических оценок.</b> Отношения авторов с властью — тема, где каждая фраза требует источника, а источников у меня сейчас нет.</li>
+</ul>
+
+<p>Если коротко: это разбор восьми имён и того, чем каждое важно, а не энциклопедическая справка. За справкой идти нужно в справочник, и это нормально.</p>
+
+<p><b>И ещё об одном пробеле скажу прямо, потому что он виден.</b> Восемь имён — это немного, и за их пределами осталось куда больше, чем вошло: Шэнь Цунвэнь, Сяо Хун, Су Тун и другие. Я не делаю вид, что список полный; он собран так, чтобы по нему было видно устройство, а не чтобы закрыть тему.</p>
+
+<p>Так же честно скажу и про женские имена. В подборках китайской литературы их заметно меньше, и в моём списке их тоже меньше. Называть причины этого я не берусь: тут нужны исследования, которых я проверить не могу.</p>
+
+<h2>Как пользоваться <span class="italic">этим списком</span></h2>
+
+<p>Напоследок — то, ради чего всё это писалось, потому что список имён сам по себе бесполезен.</p>
+
+<p><b>Не читайте по порядку.</b> Хронология хороша для понимания устройства, но как план чтения она работает плохо: первое имя в ней — самое трудное для неподготовленного читателя, потому что за текстом Лу Синя стоит контекст, которого у вас пока нет.</p>
+
+<p><b>Начинайте с того, что короче.</b> Это звучит приземлённо, но решает почти всё: дочитанная тонкая книга даёт больше, чем три брошенные толстые. У вас появляется собственное мнение, а с ним и желание взять следующую.</p>
+
+<p><b>Одного автора читайте подряд, а не вперемешку.</b> У каждого из восьми свой способ строить фразу, и когда вы прочитали у человека две книги, третья идёт заметно легче. Перескакивая между авторами, вы каждый раз начинаете заново.</p>
+
+<p>И последнее, уже про язык. <b>Если вы учите китайский, не начинайте чтение в оригинале с этих книг.</b> Соблазн велик — имена известные, тексты классические, — но литературный язык устроен сложнее бытового, и первые страницы почти наверняка отобьют желание. Сначала стоит набрать уверенность на простом, а классику оставить на потом.</p>
+
+<p>Чтение в переводе при этом никак не мешает изучению языка, а помогает: когда вы потом встречаете того же автора в оригинале, вы уже знаете, о чём там речь, и это сильно облегчает дело.</p>
+
+<p>Что стоит добавить к чтению: в китайской литературе много идиом, и без них часть смысла проходит мимо. Как они устроены, мы разбирали тут — <a href="https://kitai-school.ru/article/idiomy-kitayskogo-yazyka" target="_blank" rel="noopener">идиомы китайского языка</a>. А как сами китайцы читают и учат эти тексты в школе, разобрано здесь: <a href="https://kitai-school.ru/article/kak-kitaycy-uchat-svoy-yazyk" target="_blank" rel="noopener">как китайцы учат свой язык</a>.</p>
+
+<div class="cta">
+  <p>Читать этих авторов в оригинале — отдельное удовольствие, и начинается оно с языка: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Кто самый известный китайский писатель?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Однозначного ответа нет, и ранжировать писателей я не берусь. Если говорить о том, кого в Китае знает каждый, это Лу Синь: его тексты входят в школьную программу. Если о международной известности — Мо Янь с Нобелевской премией и Лю Цысинь с «Задачей трёх тел». Это разные виды известности, и складывать их в один рейтинг бессмысленно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько у Китая нобелевских лауреатов по литературе?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Двое, и в этом вся путаница. Гао Синцзянь получил премию в 2000 году, но к тому времени был уже гражданином Франции. Мо Янь получил её в 2012 году, и именно поэтому его называют первым китайским гражданином с этой наградой. Формулировки в источниках расходятся как раз из-за этого различия, а не из-за ошибки.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему Лу Синя называют реформатором?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Не из-за сюжетов, а из-за языка. До него серьёзную прозу писали на старом книжном языке, на котором никто не разговаривал: его нужно было отдельно учить. Лу Синь стал писать на живом языке, и за ним пошли остальные. Это изменило не одну литературу, а то, кто вообще может читать книги.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С какой книги начать знакомство с китайской литературой?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Чаще всего советуют короткую прозу Юй Хуа: язык там простой до аскетизма, а объём небольшой, и книгу реально дочитать. Подробный разбор того, что читать в переводе, а что в оригинале, и как выбирать издание, у нас есть отдельно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем Лю Цысинь важен за пределами фантастики?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Тем, что китайская проза с ним впервые дошла до массового зарубежного читателя не как страноведение, а как обычное чтение. «Задачу трёх тел» берут в руки не потому, что она китайская, а потому, что это фантастика, — и это новый для китайской литературы способ попасть к читателю.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему в списках китайских писателей так мало женщин?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В подборках действительно чаще называют мужчин, и это заметно. Из женских имён в первом ряду стоят Чжан Айлин и Сяо Хун. Объяснять причины неравного внимания я не возьмусь: для этого нужны исследования, которых я не могу проверить, а рассуждать наугад о таком не стоит.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть первая прочитанная книга окажется дочитанной! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Состав списка</b> — восемь имён с иероглификой, по одной книге у каждого — собран из одного набора данных; таблица статьи и инфографика берут его целиком, и совпадение проверяется ассертами при сборке страницы.</li>
+    <li><b>Годов жизни в статье нет ни одного.</b> Это главное ограничение, и названо оно в первом же абзаце: биографические датировки я не могу сверить по первоисточнику из рабочей среды. Проверка при сборке следит, чтобы в текст не попало ни одного четырёхзначного числа сверх трёх годов премий.</li>
+    <li><b>Три даты премий</b> — 2000, 2012 и 2015 — приведены как единичные, широко засвидетельствованные события. Две из них уже стоят в нашей статье про книги, так что расхождений внутри блога нет.</li>
+    <li><b>Различие формулировок про первого нобелиата</b> объяснено через гражданство на момент награждения: Гао Синцзянь к 2000 году был гражданином Франции. Это и есть причина, по которой про Мо Яня пишут «первый китайский гражданин».</li>
+    <li><b>Смена письменного языка</b> приведена как общее место истории китайской литературы: до двадцатого века серьёзную прозу писали на книжном языке, отличном от разговорного. <b>Датировок и имён реформаторов, кроме Лу Синя, я не называю.</b></li>
+    <li><b>Значение псевдонима</b> <span class="han">莫言</span> дано по словарным значениям знаков.</li>
+    <li><b>Пересказа сюжетов, имён переводчиков и советов по изданиям нет:</b> это соседняя статья про книги, на неё стоит ссылка.</li>
+    <li><b>Классических романов и поэзии нет намеренно:</b> первые разобраны соседом, вторые — отдельная тема.</li>
+    <li><b>Оценок и рейтингов нет.</b> Запрос, по которому эту страницу ищут, предполагает порядок по значимости — такого порядка я не выстраиваю, и в тексте это сказано прямо.</li>
+    <li>Практика Kitai School: работа с учениками, читающими в оригинале, в том числе случай со списком, который так и не был открыт.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Главный перелом в китайской литературе случился не в сюжетах, а в том, на каком языке пишут: книжный сменился живым</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
