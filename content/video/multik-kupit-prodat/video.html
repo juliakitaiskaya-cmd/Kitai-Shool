@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Купить или продать — мультик</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --brick:#A41E3A; --ink:#2C2420; --ink-2:#5A4F45; --taupe:#8B7D6B;
+    --cream:#FAF7F2; --hairline:#EAE3D8;
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-sans:'Inter',Arial,sans-serif;
+    --font-han:'Noto Serif SC',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#000}
+  #stage{position:relative; width:1080px; height:1920px; overflow:hidden; background:var(--cream); color:var(--ink);
+    font-family:var(--font-sans); -webkit-font-smoothing:antialiased}
+  .scene{position:absolute; left:0; top:0; width:1080px; height:1240px; overflow:hidden; opacity:0}
+  .scene svg.bg{position:absolute; left:0; top:0}
+  .ch{position:absolute; width:300px; height:420px; transform-origin:0 0}
+  .ch svg{display:block; overflow:visible}
+
+  .brandbar{position:absolute; left:40px; right:40px; top:44px; z-index:30; display:flex; align-items:center; justify-content:space-between;
+    background:rgba(250,247,242,.92); border-radius:22px; padding:12px 26px}
+  .brandbar img{height:50px}
+  .brandbar .site{font-size:22px; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe); font-weight:600}
+
+  .bubble{position:absolute; z-index:12; opacity:0; background:#fff; border-radius:36px; padding:26px 38px 24px; text-align:center;
+    box-shadow:0 18px 44px rgba(44,36,32,.22); border:3px solid var(--ink)}
+  .bubble::after{content:''; position:absolute; bottom:-30px; left:var(--tail,50%); width:40px; height:40px; background:#fff;
+    border-right:3px solid var(--ink); border-bottom:3px solid var(--ink); transform:translateX(-50%) rotate(45deg); border-radius:0 0 8px 0}
+  .bubble .han{font-family:var(--font-han); font-weight:700; font-size:72px; line-height:1.1; color:var(--ink); white-space:nowrap}
+  .bubble .py{font-size:32px; font-weight:600; color:var(--brick); margin-top:6px; white-space:nowrap}
+
+  .card{position:absolute; left:60px; right:60px; top:1280px; z-index:20; opacity:0; background:#fff; border:1px solid var(--hairline);
+    border-radius:32px; padding:30px 40px 34px; box-shadow:0 22px 56px rgba(44,36,32,.16)}
+  .card .who{display:inline-block; font-size:22px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#fff;
+    background:var(--brick); border-radius:999px; padding:7px 20px; margin-bottom:16px}
+  .card .txt{font-size:44px; line-height:1.28; font-weight:700; color:var(--ink)}
+  .card .txt small{display:block; font-size:28px; font-weight:500; color:var(--taupe); margin-top:10px}
+
+  .wipe{position:absolute; top:-100px; bottom:-100px; width:1500px; background:var(--brick); z-index:40; transform:skewX(-14deg); left:-1700px}
+  .wipe::after{content:''; position:absolute; top:0; bottom:0; right:-90px; width:60px; background:#F4C95D}
+
+  .final{position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:10; opacity:0; background:var(--cream)}
+  .final .ghost{position:absolute; right:-80px; top:330px; font-family:var(--font-han); font-weight:700; font-size:700px; line-height:.8; color:var(--ink); opacity:.04}
+  .final .ttl{position:absolute; left:80px; right:80px; top:250px; font-family:var(--font-display); font-style:italic; font-weight:700; font-size:104px; line-height:1.02}
+  .final .ttl em{color:var(--brick)}
+  .final .rows{position:absolute; left:80px; right:80px; top:640px}
+  .final .row{display:flex; align-items:center; gap:36px; background:#fff; border:1px solid var(--hairline); border-radius:40px;
+    padding:44px 44px; margin-bottom:40px; box-shadow:0 22px 56px rgba(44,36,32,.10)}
+  .final .row .h{font-family:var(--font-han); font-weight:700; font-size:170px; line-height:1; color:var(--ink); width:200px; text-align:center}
+  .final .row .m{flex:1}
+  .final .row .p{font-size:58px; font-weight:800; color:var(--brick)}
+  .final .row .r{font-size:38px; font-weight:600; color:var(--ink); margin-top:6px}
+  .final .row .tn{font-size:28px; color:var(--taupe); margin-top:6px; font-weight:600}
+  .final .row svg{flex:none}
+  .final .note{position:absolute; left:80px; right:80px; top:1400px; font-size:42px; line-height:1.35; color:var(--ink-2); font-weight:500}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="brandbar"><img src="../../../design-system/assets/kitai-logo.svg" alt="Kitai School"><div class="site">kitai-school.ru</div></div>
+
+  <!-- РЫНОК -->
+  <div class="scene" id="sc-market">
+    <svg class="bg" width="1080" height="1240" viewBox="0 0 1080 1240">
+      <defs>
+        <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F9E6C9"/><stop offset="1" stop-color="#F2CFA8"/></linearGradient>
+        <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B9794A"/><stop offset="1" stop-color="#8E552F"/></linearGradient>
+      </defs>
+      <rect width="1080" height="1240" fill="url(#wall)"/>
+      <!-- окно-ставни -->
+      <rect x="60" y="300" width="230" height="260" rx="14" fill="#E9C79B"/><rect x="76" y="316" width="198" height="228" rx="8" fill="#D8AE78"/>
+      <rect x="800" y="300" width="230" height="260" rx="14" fill="#E9C79B"/><rect x="816" y="316" width="198" height="228" rx="8" fill="#D8AE78"/>
+      <!-- навес -->
+      <g id="awn"></g>
+      <!-- фонарики -->
+      <g id="lan"></g>
+      <rect x="0" y="1000" width="1080" height="240" fill="#C8A57E"/>
+    </svg>
+    <div class="ch" id="seller"></div>
+    <svg class="bg" id="burst" width="1080" height="1240" viewBox="0 0 1080 1240" style="opacity:0;z-index:2"></svg>
+    <svg class="bg" width="1080" height="1240" viewBox="0 0 1080 1240" style="z-index:3">
+      <rect x="470" y="880" width="610" height="360" fill="url(#wood)"/>
+      <rect x="470" y="880" width="610" height="26" fill="#C98D5A"/>
+      <g id="apples"></g>
+      <text x="775" y="1070" text-anchor="middle" font-family="Noto Serif SC" font-weight="700" font-size="120" fill="#F9E6C9">水果</text>
+      <text x="775" y="1130" text-anchor="middle" font-family="Inter" font-weight="700" font-size="30" letter-spacing="6" fill="#F9E6C9">ФРУКТЫ</text>
+    </svg>
+    <div class="ch" id="dad" style="z-index:4"></div>
+    <div class="ch" id="sonya" style="z-index:5"></div>
+
+    <div class="bubble" id="b-dad" style="left:70px; top:250px; --tail:40%"><div class="han">我要卖苹果！</div><div class="py">wǒ yào mài píngguǒ!</div></div>
+    <div class="bubble" id="b-sel" style="left:430px; top:250px; --tail:66%"><div class="han">你要卖苹果？</div><div class="py">nǐ yào mài píngguǒ?</div></div>
+  </div>
+
+  <!-- КЛАСС -->
+  <div class="scene" id="sc-class">
+    <svg class="bg" width="1080" height="1240" viewBox="0 0 1080 1240">
+      <rect width="1080" height="1240" fill="#E8DCC8"/>
+      <rect y="1000" width="1080" height="240" fill="#C9B590"/>
+      <rect x="50" y="150" width="980" height="640" rx="26" fill="#9A6A3F"/>
+      <rect x="76" y="176" width="928" height="588" rx="12" fill="#2F5D50"/>
+      <rect x="60" y="780" width="960" height="26" rx="8" fill="#7C522F"/>
+      <g id="boardA"></g><g id="boardB"></g>
+    </svg>
+    <div class="ch" id="teacher" style="z-index:4"></div>
+    <div class="ch" id="sonya2" style="z-index:5"></div>
+  </div>
+
+  <!-- ФИНАЛ -->
+  <div class="final" id="final">
+    <div class="ghost">调</div>
+    <div class="ttl">Тон меняет<br><em>слово</em></div>
+    <div class="rows">
+      <div class="row"><div class="h">买</div><div class="m"><div class="p">mǎi</div><div class="r">купить</div><div class="tn">третий тон: вниз и вверх</div></div><svg id="tone-a" width="170" height="120" viewBox="0 0 170 120"></svg></div>
+      <div class="row"><div class="h">卖</div><div class="m"><div class="p">mài</div><div class="r">продать</div><div class="tn">четвёртый тон: резко вниз</div></div><svg id="tone-b" width="170" height="120" viewBox="0 0 170 120"></svg></div>
+    </div>
+    <div class="note">Слог один, а слова разные. Поэтому тоны учат вместе со словами, а не отдельно.</div>
+  </div>
+
+  <div id="cards"></div>
+  <div class="wipe" id="wipe"></div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const seg = (t, s, d) => clamp((t - s) / d, 0, 1);
+const win = (t, a, b, f = 0.4) => easeInOut(seg(t, a, f)) * (1 - easeInOut(seg(t, b - f, f)));
+
+/* ---------- персонаж ---------- */
+const INK = '#2C2420', SKIN = '#F6D5B5';
+function hair(kind){
+  if (kind === 'dad') return `<path d="M64 140 C58 56 108 36 150 36 C200 36 244 58 236 140 C226 100 190 84 150 84 C110 84 78 100 64 140Z" fill="#2A211C"/>`;
+  if (kind === 'girl') return `<circle cx="244" cy="92" r="32" fill="#2A211C"/><path d="M64 140 C58 56 108 36 150 36 C200 36 244 58 236 140 C228 108 196 92 150 96 C112 96 76 108 64 140Z" fill="#2A211C"/>
+     <path d="M214 62 l-28 -14 l6 30 z M214 62 l30 -6 l-14 28 z" fill="#E8789A"/><circle cx="214" cy="64" r="8" fill="#C94F78"/>`;
+  if (kind === 'seller') return `<path d="M66 108 C62 34 238 34 234 108 Z" fill="#2A211C"/><rect x="58" y="100" width="184" height="16" rx="8" fill="#171210"/><circle cx="150" cy="36" r="9" fill="#C0392B"/>`;
+  return `<path d="M58 170 C46 50 118 28 150 28 C188 28 258 50 242 170 L252 232 L206 232 L208 132 C180 108 122 108 92 132 L94 232 L48 232Z" fill="#5B3A2A"/>`;
+}
+function person(o, f){
+  const shirt = o.shirt, kind = o.hair;
+  let eyes, brows, mouth, extra = '';
+  const e = f.eyes || 'open';
+  eyes = e === 'blink' ? `<path d="M104 152 h28 M168 152 h28" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`
+    : e === 'happy' ? `<path d="M104 158 q14 -18 28 0 M168 158 q14 -18 28 0" stroke="${INK}" stroke-width="6" fill="none" stroke-linecap="round"/>`
+    : e === 'wide' ? `<circle cx="118" cy="150" r="23" fill="#fff" stroke="${INK}" stroke-width="4"/><circle cx="182" cy="150" r="23" fill="#fff" stroke="${INK}" stroke-width="4"/><circle cx="118" cy="152" r="7" fill="${INK}"/><circle cx="182" cy="152" r="7" fill="${INK}"/>`
+    : `<circle cx="118" cy="152" r="11" fill="${INK}"/><circle cx="182" cy="152" r="11" fill="${INK}"/><circle cx="122" cy="148" r="3.5" fill="#fff"/><circle cx="186" cy="148" r="3.5" fill="#fff"/>`;
+  const b = f.brows || 'neutral';
+  const bp = { neutral: ['M96 124 Q116 114 136 122','M164 122 Q184 114 204 124'], up: ['M96 112 Q116 100 136 108','M164 108 Q184 100 204 112'],
+    worry: ['M98 126 L134 110','M166 110 L202 126'], angry: ['M98 110 L134 126','M166 126 L202 110'] }[b];
+  brows = `<path d="${bp[0]} M0 0" stroke="${INK}" stroke-width="7" fill="none" stroke-linecap="round"/><path d="${bp[1]}" stroke="${INK}" stroke-width="7" fill="none" stroke-linecap="round"/>`;
+  const m = f.mouth || 'smile', k = f.m || 0;
+  mouth = m === 'smile' ? `<path d="M124 202 q26 24 52 0" stroke="${INK}" stroke-width="6" fill="none" stroke-linecap="round"/>`
+    : m === 'talk' ? `<ellipse cx="150" cy="${208 + 4 * k}" rx="${16 + 4 * k}" ry="${5 + 15 * k}" fill="#7A2230"/>`
+    : m === 'o' ? `<ellipse cx="150" cy="212" rx="15" ry="20" fill="#7A2230"/>`
+    : m === 'grin' ? `<path d="M118 198 q32 46 64 0 Z" fill="#7A2230" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>`
+    : `<path d="M126 216 q24 -18 48 0" stroke="${INK}" stroke-width="6" fill="none" stroke-linecap="round"/>`;
+  if (f.sweat) extra += `<path d="M250 110 q-16 26 0 36 q16 -10 0 -36Z" fill="#7EC8F0" stroke="#3A8CC0" stroke-width="3"/>`;
+  const glasses = o.glasses ? `<circle cx="118" cy="152" r="31" fill="none" stroke="${INK}" stroke-width="6"/><circle cx="182" cy="152" r="31" fill="none" stroke="${INK}" stroke-width="6"/><path d="M149 150 h2" stroke="${INK}" stroke-width="6"/>` : '';
+  const stache = kind === 'seller' ? `<path d="M118 188 q32 -20 64 0 q-12 14 -32 6 q-20 8 -32 -6Z" fill="#2A211C"/>` : '';
+  const collar = o.collar || '';
+  return `<svg width="300" height="420" viewBox="0 0 300 420">
+    <path d="M36 420 C36 300 80 262 150 262 C220 262 264 300 264 420 Z" fill="${shirt}"/>${collar}
+    <rect x="126" y="212" width="48" height="62" fill="${SKIN}"/>
+    <circle cx="64" cy="162" r="15" fill="${SKIN}"/><circle cx="236" cy="162" r="15" fill="${SKIN}"/>
+    ${kind === 'teacher' ? hair('teacher') : ''}
+    <ellipse cx="150" cy="150" rx="86" ry="92" fill="${SKIN}"/>
+    ${kind !== 'teacher' ? hair(kind) : `<path d="M62 150 C62 60 120 56 150 56 C190 56 238 62 238 150 C220 100 184 92 150 92 C116 92 80 100 62 150Z" fill="#5B3A2A"/>`}
+    <ellipse cx="96" cy="188" rx="19" ry="12" fill="#F0A59C" opacity=".65"/><ellipse cx="204" cy="188" rx="19" ry="12" fill="#F0A59C" opacity=".65"/>
+    ${eyes}${glasses}${brows}
+    <path d="M146 168 q-7 16 5 18" stroke="#D9A98A" stroke-width="4" fill="none" stroke-linecap="round"/>
+    ${stache}${mouth}${extra}</svg>`;
+}
+const LOOK = {
+  dad:    { hair: 'dad', shirt: '#3E6A9C', glasses: true, collar: '<path d="M110 266 L150 316 L190 266Z" fill="#F4EEE4"/>' },
+  sonya:  { hair: 'girl', shirt: '#C73E4E', collar: '' },
+  sonya2: { hair: 'girl', shirt: '#C73E4E', collar: '' },
+  seller: { hair: 'seller', shirt: '#E4B24A', collar: '<path d="M100 270 Q150 340 200 270 L200 420 L100 420Z" fill="#C0392B"/>' },
+  teacher:{ hair: 'teacher', shirt: '#4E8B6A', glasses: true, collar: '<path d="M110 266 L150 330 L190 266Z" fill="#F4EEE4"/>' }
+};
+function face(id, t, st){
+  const talking = st.talk && t >= st.talk[0] && t < st.talk[1];
+  const per = 3.4, off = (id.charCodeAt(0) * 0.37) % per;
+  const blinking = ((t + off) % per) < 0.13;
+  const f = { eyes: st.eyes || (blinking ? 'blink' : 'open'), brows: st.brows, mouth: talking ? 'talk' : (st.mouth || 'smile'),
+    m: talking ? Math.abs(Math.sin(t * 13 + id.length)) : 0, sweat: st.sweat };
+  if (!talking && st.eyes === 'wide') f.eyes = 'wide';
+  const el = $(id), bob = Math.sin(t * 2.1 + id.length) * 5;
+  el.innerHTML = person(LOOK[id], f);
+  el.style.transform = `translate(${st.x}px, ${(st.y + bob).toFixed(1)}px) scale(${st.s})`;
+}
+
+/* ---------- декор ---------- */
+(function(){
+  let a = '';
+  for (let i = 0; i < 9; i++) a += `<path d="M${i * 120} 100 h120 v70 a60 60 0 0 1 -120 0 Z" fill="${i % 2 ? '#FAF7F2' : '#A41E3A'}"/>`;
+  $('awn').innerHTML = `<rect x="0" y="90" width="1080" height="24" fill="#7C1530"/>` + a;
+  let l = '';
+  [[200,0],[540,1],[880,0]].forEach(([x,k]) => l += `<line x1="${x}" y1="250" x2="${x}" y2="290" stroke="#7C1530" stroke-width="4"/>
+    <ellipse cx="${x}" cy="326" rx="40" ry="46" fill="#C0392B"/><rect x="${x-18}" y="276" width="36" height="12" fill="#F4C95D"/><rect x="${x-18}" y="364" width="36" height="12" fill="#F4C95D"/>
+    <path d="M${x} 376 v36" stroke="#F4C95D" stroke-width="4"/>`);
+  $('lan').innerHTML = l;
+  let ap = '';
+  for (let r = 0; r < 3; r++) for (let c = 0; c < 8 - r; c++) {
+    const x = 520 + r * 30 + c * 66, y = 870 - r * 50;
+    ap += `<circle cx="${x}" cy="${y}" r="38" fill="${(r + c) % 3 ? '#D9382F' : '#E8553A'}"/><path d="M${x} ${y-36} q4 -16 14 -18" stroke="#4E7A2E" stroke-width="5" fill="none"/>`;
+  }
+  $('apples').innerHTML = ap;
+  let rays = '';
+  for (let i = 0; i < 18; i++) {
+    const ang = i / 18 * Math.PI * 2, a2 = ang + 0.12, r1 = 900;
+    rays += `<polygon points="830,610 ${830 + Math.cos(ang) * r1},${610 + Math.sin(ang) * r1} ${830 + Math.cos(a2) * r1},${610 + Math.sin(a2) * r1}" fill="#F4C95D" opacity=".55"/>`;
+  }
+  $('burst').innerHTML = rays;
+})();
+
+/* доска */
+function toneSvg(type, k, dark){
+  const col = dark ? '#F4E3A5' : '#A41E3A', grid = dark ? 'rgba(255,255,255,.25)' : '#D9CFC0';
+  const path = type === 3 ? 'M12 54 C40 100 70 112 92 96 C120 78 140 40 158 14' : 'M12 12 L158 108';
+  let g = ''; for (let i = 0; i < 5; i++) g += `<line x1="8" x2="162" y1="${12 + i * 24}" y2="${12 + i * 24}" stroke="${grid}" stroke-width="2" stroke-dasharray="4 6"/>`;
+  return g + `<path d="${path}" pathLength="1" stroke="${col}" stroke-width="9" fill="none" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="${(1 - k).toFixed(3)}"/>`;
+}
+function board(han, py, ru, type, k, op){
+  const chalk = '#F4EFE2';
+  return `<g opacity="${op.toFixed(3)}">
+    <text x="330" y="560" text-anchor="middle" font-family="Noto Serif SC" font-weight="700" font-size="400" fill="${chalk}">${han}</text>
+    <text x="330" y="665" text-anchor="middle" font-family="Inter" font-weight="800" font-size="84" fill="#F4C95D">${py}</text>
+    <text x="330" y="728" text-anchor="middle" font-family="Inter" font-weight="600" font-size="40" fill="${chalk}" opacity=".85">${ru}</text>
+    <g transform="translate(600 260) scale(2.4)">${toneSvg(type, k, true)}</g>
+    <text x="800" y="640" text-anchor="middle" font-family="Inter" font-weight="700" font-size="38" fill="${chalk}" opacity=".9">${type === 3 ? 'третий тон' : 'четвёртый тон'}</text>
+  </g>`;
+}
+
+/* ---------- сюжет ---------- */
+const T = { m1:[0,4.8], m2:[4.8,9.8], m3:[9.8,14.4], m4:[14.4,18.8], m5:[18.8,23.4], c1:[24.2,29.6], c2:[29.6,34.6], fin:[34.6,40.0] };
+window.VIDEO_DURATION = 40.0;
+const CARDS = [
+  { id:'m1', who:'Рассказчик', txt:'Рынок в Китае. Папа хочет купить яблок. Дочка Соня полгода учит китайский.' },
+  { id:'m2', who:'Папа', txt:'«Хочу купить яблок!»', sub:'Так он думает. Сказал он другое.' },
+  { id:'m3', who:'Продавец', txt:'«Вы хотите продать яблоки?»' },
+  { id:'m4', who:'Папа', txt:'«Продать? Я хотел купить!»' },
+  { id:'m5', who:'Соня', txt:'«Пап, ты сказал „продать“. Тут всё решает тон.»' },
+  { id:'c1', who:'Преподаватель', txt:'Купить — 买 mǎi. Третий тон: голос идёт вниз и поднимается.' },
+  { id:'c2', who:'Преподаватель', txt:'Продать — 卖 mài. Четвёртый тон: сразу вниз, как «стоп».' }
+];
+CARDS.forEach(c => {
+  const d = document.createElement('div'); d.className = 'card'; d.id = 'card-' + c.id;
+  d.innerHTML = `<div class="who">${c.who}</div><div class="txt">${c.txt}${c.sub ? `<small>${c.sub}</small>` : ''}</div>`;
+  $('cards').appendChild(d);
+});
+
+window.setTime = function(t){
+  const inT = (k) => t >= T[k][0] && t < T[k][1];
+  // карточки
+  CARDS.forEach(c => {
+    const [a, b] = T[c.id], el = $('card-' + c.id);
+    const p = (t >= a && t < b) ? win(t, a + 0.1, b, 0.35) : 0;
+    el.style.opacity = p.toFixed(3);
+    el.style.transform = `translateY(${Math.round(24 * (1 - p))}px)`;
+  });
+
+  // сцены
+  const market = t < 23.8, cls = t >= 23.8 && t < 34.6, fin = t >= 34.6;
+  $('sc-market').style.opacity = market ? 1 : 0;
+  $('sc-class').style.opacity = cls ? 1 : 0;
+  $('final').style.opacity = fin ? easeOut(seg(t, 34.6, 0.7)).toFixed(3) : 0;
+  $('cards').style.display = fin ? 'none' : 'block';
+
+  // ---- рынок
+  const sp = { dad: {x:70, y:430, s:1.5}, sonya: {x:430, y:610, s:1.0}, seller: {x:700, y:390, s:1.3} };
+  let st = { dad:{...sp.dad}, sonya:{...sp.sonya}, seller:{...sp.seller} };
+  if (inT('m2')) { st.dad.talk = [5.3, 8.6]; st.dad.mouth = 'smile'; }
+  if (inT('m3')) { Object.assign(st.seller, { eyes:'wide', brows:'up', mouth:'o', sweat:true, talk:[10.6, 13.2] }); Object.assign(st.dad, { eyes:'wide', brows:'worry', mouth:'o' }); }
+  if (inT('m4')) { Object.assign(st.dad, { eyes:'wide', brows:'worry', talk:[15.0, 17.6] }); Object.assign(st.seller, { brows:'worry', mouth:'flat' }); Object.assign(st.sonya, { eyes:'happy', mouth:'grin' }); }
+  if (inT('m5')) { Object.assign(st.sonya, { brows:'up', talk:[19.4, 22.4] }); Object.assign(st.dad, { brows:'worry', mouth:'flat' }); Object.assign(st.seller, { mouth:'smile' }); }
+  if (t >= 4.8 && t < 9.8) Object.assign(st.seller, { brows:'neutral' });
+  face('dad', t, st.dad); face('sonya', t, st.sonya); face('seller', t, st.seller);
+  const bd = win(t, 5.0, 9.8, 0.35), bs = win(t, 10.0, 14.4, 0.35);
+  $('b-dad').style.opacity = bd.toFixed(3); $('b-dad').style.transform = `translateY(${Math.round(20 * (1 - bd))}px)`;
+  $('b-sel').style.opacity = bs.toFixed(3); $('b-sel').style.transform = `translateY(${Math.round(20 * (1 - bs))}px)`;
+  const bu = t >= 9.8 && t < 11.6 ? (1 - seg(t, 9.8 + 0.9, 0.8)) * easeOut(seg(t, 9.8, 0.15)) : 0;
+  $('burst').style.opacity = bu.toFixed(3);
+
+  // ---- класс
+  const ct = { teacher: {x:560, y:760, s:1.35}, sonya2: {x:110, y:850, s:1.05} };
+  const tcl = { ...ct.teacher, talk: inT('c1') ? [24.8, 28.8] : inT('c2') ? [30.2, 33.8] : null };
+  const scl = { ...ct.sonya2, eyes: (t > 24.2 ? 'open' : 'open'), mouth: inT('c2') ? 'o' : 'smile', brows: inT('c2') ? 'up' : 'neutral' };
+  face('teacher', t, tcl); face('sonya2', t, scl);
+  $('boardA').innerHTML = board('买', 'mǎi', 'купить', 3, easeInOut(seg(t, 25.4, 2.4)), win(t, 24.2, 29.6, 0.5));
+  $('boardB').innerHTML = board('卖', 'mài', 'продать', 4, easeInOut(seg(t, 30.6, 1.6)), win(t, 29.6, 34.6, 0.5));
+
+  // ---- финал
+  $('tone-a').innerHTML = toneSvg(3, easeInOut(seg(t, 35.6, 1.2)), false);
+  $('tone-b').innerHTML = toneSvg(4, easeInOut(seg(t, 36.6, 1.0)), false);
+  const rows = document.querySelectorAll('#final .row');
+  rows.forEach((r, i) => { const p = easeOut(seg(t, 35.0 + i * 0.5, 0.6)); r.style.opacity = p.toFixed(3); r.style.transform = `translateY(${Math.round(30 * (1 - p))}px)`; });
+  const np = easeOut(seg(t, 37.4, 0.7)); document.querySelector('#final .note').style.opacity = np.toFixed(3);
+  document.querySelector('#final .ttl').style.opacity = easeOut(seg(t, 34.8, 0.6)).toFixed(3);
+
+  // ---- переход: кирпичная полоса
+  const w = seg(t, 23.0, 1.5), wx = -1700 + easeInOut(w) * 3500;
+  $('wipe').style.left = wx + 'px';
+};
+window.setTime(0);
+</script>
+</body>
+</html>
