@@ -1,0 +1,466 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/skolko-deystvuet-sertifikat-hsk#article",
+      "headline": "Сколько действует сертификат HSK: срок годности и что он значит на практике",
+      "description": "Результат HSK действителен два года, и отсчёт идёт от даты экзамена, а не от дня, когда результат пришёл на руки. Разбираем, что именно ограничено сроком, а что остаётся у вас навсегда; почему несколько недель ожидания результата уже входят в эти два года; как считать от дедлайна подачи назад, а не от удобной даты вперёд; что делать, если срок вышел, и где двухлетнее правило вообще не работает — в резюме и в собственном уровне языка. Проходных баллов в статье нет: это соседняя тема.",
+      "image": "assets/srok-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-24",
+      "dateModified": "2026-11-24",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/skolko-deystvuet-sertifikat-hsk",
+      "about": {
+        "@type": "Thing",
+        "name": "Срок действия результата HSK"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/skolko-deystvuet-sertifikat-hsk#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Сколько действует сертификат HSK?", "acceptedAnswer": {"@type": "Answer", "text": "Результат экзамена действителен два года. Отсчёт идёт от даты самого экзамена, а не от дня, когда вы получили результат на руки, — это важно, потому что несколько недель между этими датами уже входят в срок. Сам документ при этом остаётся у вас и после истечения двух лет: он подтверждает, что экзамен был сдан."}},
+        {"@type": "Question", "name": "Срок считается от даты экзамена или от получения результата?", "acceptedAnswer": {"@type": "Answer", "text": "От даты экзамена. Это самая частая ошибка в расчётах: человек считает два года от дня, когда увидел баллы, и оказывается, что на деле срок истёк раньше. Между экзаменом и результатом проходит несколько недель, и это время уже идёт в зачёт."}},
+        {"@type": "Question", "name": "Что делать, если срок уже вышел?", "acceptedAnswer": {"@type": "Answer", "text": "Сдавать заново, если результат нужен для подачи документов. Другого способа продлить действие у вас нет: ни доплаты, ни продления не предусмотрено. Если же документ нужен только для резюме или для себя, пересдавать незачем — он остаётся подтверждением того, что экзамен был сдан."}},
+        {"@type": "Question", "name": "Можно ли подать просроченный результат в вуз?", "acceptedAnswer": {"@type": "Answer", "text": "Обычно нет, и рассчитывать на исключение я бы не стала. Требование к сроку указано в условиях приёма, и его проверяют до рассмотрения заявки. Если до дедлайна остаётся время, надёжнее сдать заново, чем пытаться договориться."}},
+        {"@type": "Question", "name": "Нужно ли пересдавать HSK, если сертификат нужен только для резюме?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. В резюме строка о сданном экзамене читается как факт биографии, а не как действующая справка. Пересдача имеет смысл в двух случаях: если вы хотите показать более высокий уровень или если результат понадобился для подачи документов."}},
+        {"@type": "Question", "name": "Действует ли то же правило для HSKK?", "acceptedAnswer": {"@type": "Answer", "text": "У устного экзамена свой сертификат и свой результат, и срок у него считается так же — от даты сдачи. Если программа требует оба экзамена, следите за двумя датами сразу: сданные в разное время, они и заканчиваются в разное время."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/skolko-deystvuet-sertifikat-hsk#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Сколько действует сертификат HSK: срок годности и что он значит на практике", "item": "https://kitai-school.ru/article/skolko-deystvuet-sertifikat-hsk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамены</p>
+<h1>Сколько действует сертификат HSK: <span class="italic">срок годности и что он значит на практике</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-24">24 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/srok-hero.png" alt="Два бланка рядом: на одном штамп «действителен два года», на другом «остаётся у вас»" width="1200" height="630"></figure>
+
+<p class="passport">Вопрос выглядит справочным, и ответ на него короткий. Но за ним прячется вторая половина, из-за которой люди и попадают впросак: мало знать длину срока, нужно знать, с какого дня он идёт. Здесь ошибаются чаще всего — и обнаруживают ошибку в тот момент, когда менять уже поздно. Разберём обе половины: сначала сам срок, потом точку отсчёта, а дальше — как от этого считать свой календарь подачи.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Результат действителен два года.</b> Отсчёт идёт <b>от даты экзамена</b>, а не от дня, когда вы получили баллы на руки. Несколько недель ожидания результата уже входят в этот срок. <b>Сам документ остаётся у вас</b> и после — он подтверждает факт сдачи. Считать нужно <b>от дедлайна подачи назад</b>, а не от удобной даты вперёд.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">два года</span></h2>
+
+<p>Начну с цифры, за которой вы пришли.</p>
+
+<p><b>Результат экзамена HSK действителен два года.</b> Это общее правило, и оно одинаково для всех уровней: срок не зависит от того, сдавали вы начальный уровень или высший.</p>
+
+<p>И сразу вторая половина ответа, без которой первая бесполезна. <b>Два года отсчитываются от даты экзамена.</b> Не от дня, когда пришёл результат, не от дня, когда вы получили документ, и не от дня, когда вы его распечатали, — от дня, когда вы сидели в аудитории.</p>
+
+<p>Разница кажется мелочью, но она отнимает первые недели срока ещё до того, как вы узнали свои баллы. Человек, который считает от дня получения результата, ошибается в свою пользу — и это самая неприятная сторона ошибки, потому что обнаруживается она в последний момент.</p>
+
+<p><b>Почему срок именно двухлетний, я объяснить не могу.</b> Это решение организаторов экзамена, и проверяемого обоснования у меня нет. Говорить «потому что за два года язык забывается» было бы догадкой, а догадки в справочной статье неуместны. Поэтому дальше я разбираю, как срок работает, а не почему он выбран.</p>
+
+<p>Подробный разбор самого экзамена — что он подтверждает, как устроены уровни и как проходит сдача — у нас в отдельной статье: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK</a>. Здесь только про срок, зато до конца.</p>
+
+<h2>Что действует два года, <span class="italic">а что остаётся</span></h2>
+
+<p>Теперь важное различение, из-за которого возникает половина споров.</p>
+
+<p><b>Сертификат и результат — не одно и то же, хотя лежат на одном листе.</b> Срок стоит на результате: на баллах, которые смотрят в приёмной комиссии. Сам факт того, что вы сдавали экзамен и сдали его, никуда не девается.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Что ограничено двумя годами, а что нет.</caption>
+  <thead><tr><th>О чём речь</th><th>Срок</th><th>Пояснение</th></tr></thead>
+  <tbody>
+    <tr><td><b>Результат экзамена — баллы по разделам</b></td><td><b>два года</b></td><td>именно его смотрят в вузе и в стипендиальной программе</td></tr>
+    <tr><td><b>Сам документ на руках</b></td><td>остаётся у вас</td><td>подтверждает, что вы сдавали экзамен и с каким результатом</td></tr>
+    <tr><td><b>Строка в резюме</b></td><td>срока нет</td><td>работодатель читает её как факт биографии, а не как справку</td></tr>
+    <tr><td><b>Ваш собственный уровень языка</b></td><td>срока нет</td><td>но он меняется сам — и вверх, и вниз, безо всякого документа</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Из таблицы видно, что двухлетнее правило касается ровно одной строки. Всё остальное этому правилу не подчиняется, и путать одно с другим не стоит.</p>
+
+<p><b>Называть документ бессрочным я не буду</b>, хотя так иногда пишут. Он остаётся у вас — это я утверждать могу. А «бессрочный» — слово из другого разговора: оно означает, что документ принимают без ограничения по времени, и вот этого про сертификат HSK сказать нельзя.</p>
+
+<p>Правильная формулировка проще: <b>документ остаётся подтверждением того, что экзамен был сдан</b> — и в этом качестве он не устаревает. А вот подтверждением вашего сегодняшнего уровня он перестаёт быть ровно через два года.</p>
+
+<p><b>Путаницы добавляет и само слово «сертификат».</b> В обиходе им называют и лист с баллами, и факт сдачи, и уровень, который человек подтвердил, — три разные вещи под одним словом. Отсюда и вопросы вроде «а сертификат у меня сгорит?»: сгореть может только одно из трёх.</p>
+
+<p>Чтобы не запутаться, держите в голове простую подстановку: там, где речь о сроке, читайте не «сертификат», а <b>«результат»</b>. Сразу становится видно, о чём именно идёт речь и что именно заканчивается через два года.</p>
+
+<p>Разница видна на простом примере. Человек сдал экзамен три года назад. Сказать «я сдавал HSK и получил такой-то результат» он может честно и всегда. Подать этот результат в вуз — уже нет.</p>
+
+<h2>От какой даты <span class="italic">считать</span></h2>
+
+<p>Это главный раздел статьи, и если вы читаете по диагонали, остановитесь здесь.</p>
+
+<p><b>Отсчёт начинается в день экзамена.</b> В тот самый день, когда вы пришли в центр, сели за парту и сдали работу. С этого дня отсчёт и идёт.</p>
+
+<figure class="ks-fig"><img src="assets/srok-info.png" alt="Шкала в двадцать четыре месяца: день экзамена, участок ожидания результата, окно подачи и метка дедлайна" width="1200" height="568"><figcaption>Весь срок — двадцать четыре месяца от дня экзамена. Месяцы на шкале показаны для наглядности, это не норматив.</figcaption></figure>
+
+<p>Посмотрите на левый край шкалы. Первый участок заштрихован: это время, пока результат ещё идёт к вам. Вы в эти недели ничего не можете подать, потому что подавать пока нечего, — <b>но срок уже тратится</b>.</p>
+
+<p>Дальше идёт та часть, ради которой всё и затевалось: результат есть, он действителен, его принимают. А в конце шкалы стоит отметка, после которой документ перестаёт годиться для подачи.</p>
+
+<p><b>Теперь про красную метку.</b> Она не привязана к шкале намертво — её место зависит от вас. Это ваш дедлайн подачи, и в зависимости от программы он может стоять где угодно. От него и нужно считать, причём назад.</p>
+
+<p>Почему именно назад, а не вперёд. <b>Дата экзамена — это то, чем вы управляете.</b> Дедлайн подачи вам назначили, и подвинуть его нельзя. Поэтому единственный разумный порядок действий — взять неподвижное и отсчитать от него к подвижному.</p>
+
+<p>Люди делают наоборот: смотрят, когда ближайшая удобная сессия, идут и сдают. А потом подгоняют к этому свои планы — и выясняется, что срок кончается на полгода раньше, чем нужно.</p>
+
+<p>Отдельно стоит проверить, <b>на какую дату результат должен быть действительным</b>. Это не всегда день подачи заявки. Бывает, что требуется действительный результат на день зачисления или на день начала занятий, а это уже на несколько месяцев позже. Читайте условия программы внимательно: в них эта дата названа.</p>
+
+<p>Именно на этом месте и ошибся мой ученик — история дальше.</p>
+
+<h2>Обратный отсчёт: <span class="italic">когда сдавать</span></h2>
+
+<p>Соберём всё сказанное в порядок действий. Он простой и считается в пять шагов.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Как посчитать свою дату экзамена, отталкиваясь от дедлайна.</caption>
+  <thead><tr><th>Шаг</th><th>Что делаем</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td><b>1</b></td><td>Последний день, когда результат должен быть действителен</td><td>это и есть ваша точка отсчёта — и это не всегда день подачи</td></tr>
+    <tr><td><b>2</b></td><td>Минус два года</td><td>получаем самую раннюю дату экзамена, которая ещё годится</td></tr>
+    <tr><td><b>3</b></td><td>Минус запас на получение результата</td><td>несколько недель после экзамена результат ещё идёт</td></tr>
+    <tr><td><b>4</b></td><td>Минус запас на пересдачу</td><td>если с первого раза не хватит, нужна ещё одна сессия</td></tr>
+    <tr><td><b>5</b></td><td>Получаем окно, в котором стоит сдавать</td><td>не «когда удобно», а «не раньше этой даты и не позже той»</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик сдал экзамен сильно заранее — просто чтобы был. До подачи документов оставалось около полутора лет, и он рассудил разумно: язык сейчас в хорошей форме, время есть, зачем откладывать.</p>
+  <p>Через полтора года выяснилось неприятное. До конца срока оставалось меньше трёх месяцев, а программа требовала, чтобы результат был действителен не на день подачи, а на день зачисления — а это ещё несколько месяцев вперёд.</p>
+  <p><b>Пришлось сдавать второй раз</b>, в спешке, подгадывая под ближайшую сессию и за свои деньги. Языку это ничего не добавило: он и так знал материал. Деньги и нервы ушли на календарь.</p>
+  <p>Разобрали на занятии, как считать правильно. Не «когда мне удобно сдать», а «до какого дня результат должен быть живым» — и от этого дня назад.</p>
+  <p>С тех пор я спрашиваю об этом первым делом. Сдать заранее про запас — самая дорогая из возможных ошибок, потому что срок начинает идти сразу, а не тогда, когда документ понадобился.</p>
+</div>
+
+<p>Эту историю я пересказываю почти всем, кто спрашивает про срок, потому что ошибка в ней не редкая и не глупая. <b>Человек рассуждал логично</b> — просто считал не от того конца.</p>
+
+<p>И обратите внимание на деталь, которая всё решила: <b>требовался действительный результат на день зачисления</b>, а не на день подачи. Если бы он прочитал это условие заранее, два года хватило бы с запасом.</p>
+
+<h2>Результат приходит <span class="italic">не сразу</span></h2>
+
+<p>Вернёмся к третьему шагу таблицы — к запасу на ожидание. Это следствие точки отсчёта, и упускают его почти все.</p>
+
+<p><b>Между экзаменом и результатом проходит время.</b> Не день и не два: нужно проверить работы, свести баллы, опубликовать. И это время целиком лежит внутри ваших двух лет.</p>
+
+<p>Точных сроков я называть не стану. Они зависят от сессии, от формата сдачи и от центра, и мои цифры могут разойтись с вашей действительностью. Скажу так: <b>на ожидание закладывайте несколько недель</b>, а точную дату смотрите у центра, где регистрировались.</p>
+
+<p>Что из этого следует практически. Если вы сдаёте экзамен впритык к дедлайну подачи, вы рискуете не сроком действия, а <b>противоположной стороной календаря</b>: результат может просто не успеть прийти. Это другая ошибка, но попадают в неё так же часто.</p>
+
+<p>Получается ограничение с двух сторон. Слишком рано — срок кончится раньше дедлайна. Слишком поздно — результат не придёт вовремя. <b>Между этими двумя краями и лежит ваше окно.</b></p>
+
+<p>Хорошая новость: окно это не такое уж узкое. При двухлетнем сроке и нескольких неделях ожидания у вас остаётся больше полутора лет, в которые сдавать можно спокойно. Плохая новость: попасть мимо такого окна всё равно умудряются — именно потому, что считают не от того края.</p>
+
+<p>Расписание сессий и сроки регистрации — в отдельной статье: <a href="https://kitai-school.ru/article/daty-sdachi-hsk-raspisanie-sessiy" target="_blank" rel="noopener">даты сдачи HSK</a>. Там же видно, насколько заранее нужно записываться: место на ближайшую сессию не всегда есть.</p>
+
+<p><b>Про четвёртый шаг скажу отдельно.</b> Запас на пересдачу закладывают редко, а зря: это самая дешёвая страховка из возможных. Если результата не хватило, у вас должно остаться время на ещё одну сессию — иначе одна неудачная попытка оставляет вас без запасной даты.</p>
+
+<p>Сколько именно закладывать, зависит от расписания сессий: между ними проходит некоторое время, и подгадать «в тот же месяц» не выйдет. Посмотрите календарь на год вперёд и возьмите две соседние даты — вот ваш запас.</p>
+
+<h2>Если срок <span class="italic">истёк</span></h2>
+
+<p>Теперь неприятный случай: два года прошли, а результат нужен.</p>
+
+<p><b>Продлить действие нельзя.</b> Ни доплатой, ни заявлением, ни обращением в центр. Такой возможности просто не предусмотрено, и искать обходные пути не стоит — их нет.</p>
+
+<p>Значит, остаётся одно: <b>сдавать заново</b>. Для многих это звучит хуже, чем есть на самом деле, и вот почему.</p>
+
+<p>Если вы занимались языком все эти два года, вы сдаёте тот же уровень увереннее прежнего, а чаще — берёте следующий. Пересдача в этом случае не потеря, а обновление: результат будет лучше старого.</p>
+
+<p>Если же языком вы не занимались, пересдача покажет честную картину — и это тоже полезно, пусть и неприятно. <b>Срок в данном случае работает как напоминание:</b> документ двухлетней давности мог давно перестать совпадать с тем, что вы знаете сегодня.</p>
+
+<p><b>Но пересдавать нужно не всегда.</b> Если результат нужен был только для себя или для строчки в резюме, тратить деньги и время не на что: об этом в следующем разделе.</p>
+
+<p>И последнее про истёкший срок. <b>Старый документ не нужно выбрасывать и не нужно прятать.</b> Он остаётся подтверждением того, что экзамен был сдан, и в разговоре с работодателем это вполне уместная строка. Негодным он становится только для подачи документов.</p>
+
+<h2>Где два года <span class="italic">не работают</span></h2>
+
+<p>Правило о сроке применяют шире, чем следует, и из-за этого нервничают на пустом месте.</p>
+
+<p><b>Первое: резюме.</b> Строка «сдавал HSK, такой-то результат» — это факт биографии. Работодатель не приёмная комиссия, он не проверяет действительность справки, а смотрит, что человек учил язык и дошёл до проверяемого результата.</p>
+
+<p>Если спросят, когда именно вы сдавали, назовите год честно — и добавьте, чем занимались с тех пор. Это гораздо убедительнее свежего документа без продолжения.</p>
+
+<p><b>Второе: ваш собственный уровень.</b> Он не истекает по календарю — он меняется сам. Два года занятий поднимут его без всякого экзамена, два года без языка опустят, и документ тут ни при чём.</p>
+
+<p>Отсюда неочевидный вывод: <b>срок действия — это не срок годности ваших знаний</b>, а срок, в течение которого организация готова принимать эту бумагу как основание. Вещи разного порядка, и путать их не надо.</p>
+
+<p><b>Третье: внутренние проверки.</b> Если вы сдавали пробный тест или проходили срез в школе, никакого двухлетнего правила там нет. Такие результаты вообще не сертификаты — они нужны вам, а не организации.</p>
+
+<p>А вот где два года работают строго: <b>поступление и стипендиальные программы</b>. Там требование к сроку стоит в условиях и проверяется формально. Что покрывают стипендии и какие они бывают, разобрано отдельно: <a href="https://kitai-school.ru/article/stipendii-v-kitae-dlya-inostrancev" target="_blank" rel="noopener">стипендии в Китае для иностранцев</a>, а календарь подачи на бюджетные места — здесь: <a href="https://kitai-school.ru/article/kak-postupit-v-kitay-na-budjet" target="_blank" rel="noopener">как поступить в Китай на бюджет</a>.</p>
+
+<h2>Отдельные случаи: <span class="italic">HSKK и HSK 3.0</span></h2>
+
+<p>Две оговорки, без которых картина была бы неполной.</p>
+
+<p><b>Устный экзамен HSKK — отдельный экзамен.</b> У него свой сертификат, свой результат и своя дата сдачи. Правило срока для него устроено так же, но отсчёт идёт от его собственной даты.</p>
+
+<p>Это важно, когда программа требует оба результата. Сданные в разное время, они и заканчиваются в разное время, и ограничением окажется тот, который сдавали раньше. <b>Следите за обеими датами, а не за одной.</b> Как готовиться к устной части, разобрано отдельно: <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">устный экзамен HSKK</a>.</p>
+
+<p><b>Вторая оговорка — переход экзамена на HSK 3.0.</b> Система уровней перестраивается, и порядок в деталях может меняться. Что уже известно про новое устройство уровней, мы собрали в статье про сам сертификат.</p>
+
+<p>Как это скажется на сроках, я предсказывать не стану: у меня нет оснований утверждать ни что срок изменится, ни что останется прежним. <b>Разумная привычка тут одна:</b> перед подачей свериться с актуальными условиями программы и центра, а не полагаться на то, что было два года назад.</p>
+
+<p>И общий принцип, который из этого следует. <b>Любые правила вокруг экзамена пересматриваются</b>, и статья — не замена условиям, которые публикует принимающая сторона. Я разбираю логику расчёта, а конкретные требования вашей программы читайте у неё.</p>
+
+<p>Что брать с собой на экзамен и как вообще проходит день сдачи — тоже отдельная тема: <a href="https://kitai-school.ru/article/sdat-hsk-kak-prohodit-den-kzamena" target="_blank" rel="noopener">как проходит день экзамена</a>.</p>
+
+<div class="cta">
+  <p>Считать сроки проще, когда экзамен не висит угрозой: с подготовкой это обычная задача с датами — <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько действует сертификат HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Результат экзамена действителен два года. Отсчёт идёт от даты самого экзамена, а не от дня, когда вы получили результат на руки, — это важно, потому что несколько недель между этими датами уже входят в срок. Сам документ при этом остаётся у вас и после истечения двух лет: он подтверждает, что экзамен был сдан.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Срок считается от даты экзамена или от получения результата?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>От даты экзамена. Это самая частая ошибка в расчётах: человек считает два года от дня, когда увидел баллы, и оказывается, что на деле срок истёк раньше. Между экзаменом и результатом проходит несколько недель, и это время уже идёт в зачёт.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что делать, если срок уже вышел?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сдавать заново, если результат нужен для подачи документов. Другого способа продлить действие у вас нет: ни доплаты, ни продления не предусмотрено. Если же документ нужен только для резюме или для себя, пересдавать незачем — он остаётся подтверждением того, что экзамен был сдан.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли подать просроченный результат в вуз?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Обычно нет, и рассчитывать на исключение я бы не стала. Требование к сроку указано в условиях приёма, и его проверяют до рассмотрения заявки. Если до дедлайна остаётся время, надёжнее сдать заново, чем пытаться договориться.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли пересдавать HSK, если сертификат нужен только для резюме?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. В резюме строка о сданном экзамене читается как факт биографии, а не как действующая справка. Пересдача имеет смысл в двух случаях: если вы хотите показать более высокий уровень или если результат понадобился для подачи документов.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Действует ли то же правило для HSKK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>У устного экзамена свой сертификат и свой результат, и срок у него считается так же — от даты сдачи. Если программа требует оба экзамена, следите за двумя датами сразу: сданные в разное время, они и заканчиваются в разное время.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть ваш календарь считается от правильного края! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Двухлетний срок действия результата</b> приведён как общее правило экзамена; тот же срок указан в наших статьях про сертификат HSK и про подачу документов.</li>
+    <li><b>Точка отсчёта — дата экзамена</b>, а не дата получения результата. Это ключевое утверждение статьи, и именно из него выведен весь порядок расчёта.</li>
+    <li><b>Длина шкалы на схеме и положение отметок</b> посчитаны из одного числа — двадцати четырёх месяцев. Если бы отметки встали не по порядку, картинка не собралась бы.</li>
+    <li><b>Обоснования двухлетнего срока в статье нет намеренно.</b> Это решение организаторов экзамена, проверяемого объяснения у меня нет, и выдумывать его я не стала.</li>
+    <li><b>Точных сроков получения результата нет намеренно:</b> они зависят от сессии и центра, сверить их по первоисточнику я не могу. В тексте только «несколько недель» и совет смотреть у своего центра.</li>
+    <li><b>Проходных баллов и порогов в статье нет</b> — это предмет отдельной страницы, и дублировать её здесь незачем.</li>
+    <li><b>Слово «бессрочный» о документе не употребляется:</b> сертификат остаётся у вас, но это не то же самое, что приём документа без ограничения по времени.</li>
+    <li><b>Про HSK 3.0 сказано только то, что переход идёт</b>, без прогнозов о сроках: оснований для них нет.</li>
+    <li>Случай с экзаменом, сданным заранее, — из занятий Kitai School; имя, город и название программы не называю намеренно.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Два года отсчитывают от дня экзамена, а не от дня, когда результат пришёл к вам на руки</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
