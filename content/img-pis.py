@@ -199,23 +199,23 @@ h2 i{font-style:italic;color:var(--brick)}
   <div class="top">
     <div>
       <div class="eyebrow">Восемь имён</div>
-      <h2>Три волны — <i>и ни одного года жизни</i></h2>
+      <h2>Три поколения — <i>и восемь имён</i></h2>
     </div>
-    <div class="hint">Отрезки подписаны словами, а не датами: <b>биографические датировки я сверить не могу</b>, а премии — события единичные.</div>
+    <div class="hint">Читается слева направо: <b>от тех, с кого началась современная китайская проза, к тем, кого читают сейчас.</b></div>
   </div>
 
-  <div class="prizes"><span class="plead">Единственные даты на этой картинке — годы премий, и все три пришлись на последнюю волну:</span>%(prizes)s</div>
+  <div class="prizes"><span class="plead">Три главные награды — и все три у авторов последнего поколения:</span>%(prizes)s</div>
 
   <div class="line">
     <div class="waves">%(waves)s</div>
   </div>
 
   <div class="foot">
-    <div class="msg">Книга у каждого названа <b>одна — та, с которой начинают</b>, а не главная из возможных: ранжировать авторов и их книги я не берусь</div>
+    <div class="msg">У каждого названа <b>одна книга — та, с которой обычно начинают знакомство</b>, а не единственная важная</div>
     <div class="brand"><span class="dot2"></span><b>Kitai School</b><span>&middot; kitai-school.ru</span></div>
   </div>
 </div>
-</body></html>""" % dict(fonts=FONTS, vars=VARS, h=566, waves=waves, prizes=prizes)
+</body></html>""" % dict(fonts=FONTS, vars=VARS, h=540, waves=waves, prizes=prizes)
 
 open(S + "pis-info.html", "w", encoding="utf-8").write(info)
 
