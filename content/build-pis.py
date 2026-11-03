@@ -8,7 +8,7 @@ SLUG = "samye-izvestnye-kitayskie-pisateli"
 U = "https://kitai-school.ru/article/"
 
 HERO = "HERO_PLACEHOLDER"
-FIG = "FIG_PLACEHOLDER"
+FIG = "https://static.tildacdn.com/tila6466-3138-4439-b835-653634343330/pis-info.png"
 HERO_ALT = ("Книжный разворот: слева фраза книжным языком столбцами, справа та же мысль "
             "живым языком строками")
 FIG_ALT = ("Лента времени: три поколения китайских писателей, восемь имён с книгами и три "
