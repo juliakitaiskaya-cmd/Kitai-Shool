@@ -1,0 +1,463 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/simvol-deneg-v-kitae#article",
+      "headline": "Символ денег в Китае: иероглиф 钱, знак валюты и образы богатства в культуре",
+      "description": "Знак 钱 qián «деньги» и ключ 贝 bèi «раковина», вокруг которого собрана целая семья знаков: 财 богатство, 账 счёт, 购 закупать, 赚 зарабатывать, 贴 доплата, 贫 бедный, 费 плата, 贸 торговать. Разбираем устройство этих знаков, валютную лексику — 人民币, письменные 元 и 角 против разговорных 块 и 毛, — а также образы достатка: 财神, 招财进宝, 金蟾 и 招财猫, которая на самом деле пришла из Японии. Цен, сумм и курсов в статье нет намеренно.",
+      "image": "https://static.tildacdn.com/tila3762-3563-4366-a134-313431326534/den-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/simvol-deneg-v-kitae",
+      "about": {
+        "@type": "Thing",
+        "name": "Лексика денег и символы достатка в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/simvol-deneg-v-kitae#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какой иероглиф означает деньги в Китае?", "acceptedAnswer": {"@type": "Answer", "text": "钱 (qián). Это обычное повседневное слово: оно стоит в вопросе 多少钱 «сколько стоит» и в 赚钱 «зарабатывать деньги». Рядом с ним работает 财 (cái) — но это уже не деньги как таковые, а имущество и состояние."}},
+        {"@type": "Question", "name": "Чем 钱 отличается от 财?", "acceptedAnswer": {"@type": "Answer", "text": "钱 — это деньги, которыми расплачиваются: конкретные, считаемые, в кошельке. 财 — имущество и достаток вообще, то, чем человек владеет. Поэтому в пожеланиях и на праздничных надписях стоит именно 财, а не 钱: желают не наличных, а состояния."}},
+        {"@type": "Question", "name": "Почему в знаках про деньги стоит «раковина»?", "acceptedAnswer": {"@type": "Answer", "text": "Ключ 贝 (bèi) изображает раковину, и общепринятое объяснение простое: раковины служили деньгами, а знак остался меткой всего, что связано с имуществом и расчётами. Поэтому он виден в 财 «богатство», 账 «счёт», 购 «закупать», 费 «плата», 贸 «торговать» и других."}},
+        {"@type": "Question", "name": "Как называется китайская валюта и чем 元 отличается от 块?", "acceptedAnswer": {"@type": "Answer", "text": "Валюта называется 人民币 (rénmínbì). Её основная единица — 元 (yuán), и это письменная форма: она стоит на купюрах, в ценниках и документах. В разговоре вместо неё говорят 块 (kuài). Так же устроена и десятая часть: пишут 角 (jiǎo), говорят 毛 (máo)."}},
+        {"@type": "Question", "name": "Что означает 招财进宝?", "acceptedAnswer": {"@type": "Answer", "text": "«Призвать богатство, привлечь сокровища» — пожелание достатка, которое часто встречается в праздничном оформлении. Его нередко пишут не четырьмя отдельными знаками, а одной связкой, где знаки сведены в общий рисунок: получается похоже на один большой иероглиф, хотя читается по-прежнему в четыре слога."}},
+        {"@type": "Question", "name": "Правда ли, что кошка с поднятой лапой — китайский символ богатства?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, фигурка пришла из Японии, хотя в китайских лавках и ресторанах встречается повсеместно и имеет китайское название 招财猫. Это обычное заимствование, и ничего плохого в нём нет — просто если вам нужен именно китайский образ достатка, то это 财神 или 金蟾."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/simvol-deneg-v-kitae#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Символ денег в Китае: иероглиф 钱, знак валюты и образы богатства в культуре", "item": "https://kitai-school.ru/article/simvol-deneg-v-kitae"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Символ денег в Китае: <span class="italic">иероглиф 钱, знак валюты и образы богатства в культуре</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-22">22 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila3762-3563-4366-a134-313431326534/den-hero.png" alt="Четыре монеты с квадратным отверстием, на них знаки 钱, 财, 账 и 赚 с чтением" width="1200" height="630"></figure>
+
+<p class="passport">Если искать «символ денег в Китае», ответов окажется два, и они про разное. Есть знак <span class="han">钱</span> — обычное слово «деньги», которое вы произнесёте в первый же день на рынке. И есть целая семья знаков, собранных вокруг одной детали — ключа <span class="han">贝</span>, который изображает раковину. Разберём оба, добавим валютную лексику и образы достатка — и сразу оговорю: <b>ни одной цены и ни одного курса здесь не будет</b>, для этого есть отдельная страница.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Деньги:</b> <span class="han">钱</span> (qián), и ключ в нём — <span class="han">钅</span> «металл». <b>Богатство:</b> <span class="han">财</span> (cái), и ключ в нём — <span class="han">贝</span> «раковина». <b>Ключ 贝</b> стоит в знаках про имущество, цену и расчёт. <b>Валюта:</b> <span class="han">人民币</span>, пишут <span class="han">元</span>, говорят <span class="han">块</span>. <b>Образы достатка:</b> <span class="han">财神</span>, <span class="han">招财进宝</span>, <span class="han">金蟾</span>. <b>Поправка:</b> кошка с лапой — японская.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">какой знак отвечает за деньги</span></h2>
+
+<p>Знаков два, и путать их не стоит.</p>
+
+<p><b><span class="han">钱</span> (qián) — деньги</b> в самом обычном смысле: те, которыми расплачиваются. Это слово вы услышите в первом же разговоре о покупке и произнесёте в вопросе <span class="han">多少钱</span> — «сколько стоит».</p>
+
+<p><b><span class="han">财</span> (cái) — имущество и достаток</b>, то, чем человек владеет вообще. Это слово не про кошелёк, а про состояние, и в повседневной речи оно встречается заметно реже.</p>
+
+<p>Разница видна по употреблению. На праздничных надписях стоит <span class="han">财</span>, а не <span class="han">钱</span>: желают не наличных, а достатка как положения дел. Попросить <span class="han">钱</span> можно, пожелать — звучит странно.</p>
+
+<h2>Как устроен <span class="italic">знак 钱</span></h2>
+
+<p>Начнём с самого слова «деньги», и тут есть неожиданность.</p>
+
+<p><b>В знаке <span class="han">钱</span> ключ — <span class="han">钅</span> «металл».</b> Не раковина, а именно металл: знак указывает на монету, на металлические деньги. Это сразу отделяет его от всей остальной семьи, о которой пойдёт речь дальше.</p>
+
+<p>Ключ <span class="han">钅</span> — сокращённый вид знака <span class="han">金</span> «золото, металл», и стоит он во множестве знаков про металлы. Про то, как ключи работают вообще и чего от них ждать, у нас есть разбор — <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey" target="_blank" rel="noopener">значение ключей в китайских иероглифах</a>.</p>
+
+<p>Отсюда полезный вывод для чтения: <b>знаки про деньги разделены на две группы.</b> Одна идёт через металл — это про монеты и наличные. Вторая через раковину — и она гораздо многочисленнее.</p>
+
+<h2>Ключ 贝: <span class="italic">раковина, с которой всё началось</span></h2>
+
+<p>Теперь к главному, ради чего стоит читать эту статью.</p>
+
+<p><b>Ключ <span class="han">贝</span> (bèi) изображает раковину.</b> Объяснение, почему он стал меткой денег, общепринятое и простое: раковины служили деньгами. Это не наша находка — то же самое объяснение приведено в нашем разборе слова «друг», знак которого восходит к связкам раковин: <a href="https://kitai-school.ru/article/ieroglif-drujba" target="_blank" rel="noopener">дружба по-китайски</a>.</p>
+
+<p>Дальше происходит вот что. Деньги давно перестали быть раковинами, а знак остался — и теперь стоит в словах про имущество, цену, долг, покупку, расход и торговлю. То есть <b>в письме сохранилась память о том, чем расплачивались</b>, хотя в речи от неё не осталось ничего.</p>
+
+<p>Для изучающего это один из самых полезных ключей вообще. <b>Увидели в незнакомом знаке <span class="han">贝</span> — речь почти наверняка про деньги или имущество.</b> Точного значения он не даёт, но область подсказывает надёжно.</p>
+
+<p>Обратите внимание на расположение: в половине знаков <span class="han">贝</span> стоит слева, в другой половине — внизу. <b>Положение меняется, а ключ остаётся узнаваемым</b> — к этому и нужно привыкнуть при чтении.</p>
+
+<h2>Семья знаков <span class="italic">с 贝</span></h2>
+
+<p>Соберём восемь знаков в таблицу — с чтением, значением и словом на каждый.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Знаки с ключом 贝 и слова с ними.</caption>
+  <thead><tr><th>Знак</th><th>Чтение</th><th>Значение</th><th>Слово</th><th>Где ключ</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">财</b></td><td>cái</td><td>богатство, имущество</td><td><b class="han">财富</b> — богатство</td><td>слева</td></tr>
+    <tr><td><b class="han">账</b></td><td>zhàng</td><td>счёт, долг</td><td><b class="han">账单</b> — счёт к оплате</td><td>слева</td></tr>
+    <tr><td><b class="han">购</b></td><td>gòu</td><td>закупать</td><td><b class="han">购物</b> — покупки</td><td>слева</td></tr>
+    <tr><td><b class="han">赚</b></td><td>zhuàn</td><td>зарабатывать</td><td><b class="han">赚钱</b> — зарабатывать деньги</td><td>слева</td></tr>
+    <tr><td><b class="han">贷</b></td><td>dài</td><td>давать в долг, ссуда</td><td><b class="han">贷款</b> — кредит</td><td>снизу</td></tr>
+    <tr><td><b class="han">贫</b></td><td>pín</td><td>бедный</td><td><b class="han">贫穷</b> — бедность</td><td>снизу</td></tr>
+    <tr><td><b class="han">费</b></td><td>fèi</td><td>плата, расход</td><td><b class="han">学费</b> — плата за учёбу</td><td>снизу</td></tr>
+    <tr><td><b class="han">贸</b></td><td>mào</td><td>торговать</td><td><b class="han">贸易</b> — торговля</td><td>снизу</td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila6565-6364-4232-b833-313831386239/den-info.png" alt="Восемь разложений вида «ключ 贝 плюс вторая часть равно знак» с выровненной колонкой ключа" width="1200" height="712"><figcaption>Одна и та же деталь в восьми знаках: у половины слева, у половины снизу.</figcaption></figure>
+
+<p>Это не весь список: знаков с <span class="han">贝</span> заметно больше. Я взяла те, что попадаются раньше всего.</p>
+
+<p>Знак <span class="han">贵</span> «дорогой» тоже из этой семьи, и встретите вы его очень рано — в вопросе о цене. В разложении я его не привожу: состав у него спорный, а неточная схема хуже отсутствующей.</p>
+
+<p>И ещё: <b>ключ подсказывает область, а не смысл.</b> Раковина в знаке не обещает ничего хорошего: <span class="han">贫</span> «бедный» оттуда же. Область та же, а знак про нехватку.</p>
+
+<h2>Валютная лексика: <span class="italic">как пишут и как говорят</span></h2>
+
+<p>Самая практичная часть — и с ловушкой, на которую попадаются почти все.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Денежные единицы: письменная форма и разговорная.</caption>
+  <thead><tr><th>Пишут</th><th>Чтение</th><th>Говорят</th><th>Чтение</th><th>Что это</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">人民币</b></td><td>rénmínbì</td><td><b class="han">—</b></td><td>—</td><td>название валюты целиком</td></tr>
+    <tr><td><b class="han">元</b></td><td>yuán</td><td><b class="han">块</b></td><td>kuài</td><td>основная единица</td></tr>
+    <tr><td><b class="han">角</b></td><td>jiǎo</td><td><b class="han">毛</b></td><td>máo</td><td>десятая часть единицы</td></tr>
+    <tr><td><b class="han">分</b></td><td>fēn</td><td><b class="han">—</b></td><td>—</td><td>сотая часть единицы</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Валюта целиком называется <span class="han">人民币</span></b> (rénmínbì) — это название денежной системы, а не единицы счёта. В международных обозначениях встречается сокращение CNY, в ценниках и переписке — знак ¥.</p>
+
+<p>А дальше начинается то, из-за чего учебник расходится с рынком. <b>Единица пишется <span class="han">元</span>, а в разговоре звучит как <span class="han">块</span>.</b> Это не два слова и не ошибка: письменная и устная формы одного и того же.</p>
+
+<p>Так же устроена десятая часть: <b>пишут <span class="han">角</span>, говорят <span class="han">毛</span></b>. Сотая — <span class="han">分</span>, сегодня почти не используется, но в учебниках и банковских документах встречается.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик на втором месяце занятий уверенно спрашивал <span class="han">多少钱</span> — «сколько стоит». Фраза отработана, произношение чистое, всё хорошо.</p>
+  <p>На рынке он растерялся. Продавец назвал цену, употребив <span class="han">块</span> и <span class="han">毛</span>, — и ни одного из этих слов ученик не знал: в учебнике стояли <span class="han">元</span> и <span class="han">角</span>.</p>
+  <p><b>Разобрали на занятии.</b> У денежных единиц две формы: одна для написанного, другая для разговора. В речи вы почти всегда услышите вторую, а в учебнике почти всегда увидите первую.</p>
+  <p>Выписали обе пары рядом, одну под другой, и проблема больше не возвращалась. Заняло это пять минут — но только потому, что мы знали, что искать.</p>
+</div>
+
+<h2>财 и слова <span class="italic">достатка</span></h2>
+
+<p>Вернёмся к <span class="han">财</span> и посмотрим, из чего складываются слова вокруг него.</p>
+
+<p><b><span class="han">财富</span></b> (cáifù) — «богатство» как понятие: то, что обсуждают в статьях и книгах, а не в разговоре о покупках. Второй знак здесь тоже про достаток, и вместе они дают слово заметно более книжное, чем <span class="han">钱</span>.</p>
+
+<p><b><span class="han">财产</span></b> (cáichǎn) — «имущество» в юридическом смысле: то, чем владеют и что можно перечислить. Это слово из документов, и в бытовой речи оно звучит официально.</p>
+
+<p><b><span class="han">理财</span></b> (lǐcái) — «управлять своими деньгами»: то, что по-русски называют личными финансами. Слово ходовое и современное, его видно в названиях приложений и банковских услуг.</p>
+
+<p><b><span class="han">财经</span></b> (cáijīng) — «финансы и экономика» как область: так называют разделы новостей, факультеты и специальные издания. Второй знак здесь — из слова «экономика», и вместе получается вполне официальное название области.</p>
+
+<p>Обратите внимание, что все четыре — с <span class="han">财</span>, и ни одного с <span class="han">钱</span>. <b>Там, где речь о состоянии и управлении им, работает именно этот знак</b>, и это хорошая проверка на понимание разницы.</p>
+
+<p>Отдельно про пожелания. Новогодние формулы с <span class="han">财</span> — тема соседней статьи, и повторять её я не буду: разбор того, как желают достатка и чем это отличается от пожелания удачи, у нас есть здесь — <a href="https://kitai-school.ru/article/udacha-po-kitajski" target="_blank" rel="noopener">«удача» по-китайски</a>.</p>
+
+<h2>Образы богатства <span class="italic">в декоре</span></h2>
+
+<p>Теперь то, что видно глазами в лавках, ресторанах и на праздничном оформлении.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Четыре образа достатка и что они собой представляют.</caption>
+  <thead><tr><th>Название</th><th>Чтение</th><th>Что это</th><th>Где встречается</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">财神</b></td><td>cáishén</td><td><b>бог богатства</b></td><td>фигурка или изображение; чаще всего встречается под Новый год</td></tr>
+    <tr><td><b class="han">招财进宝</b></td><td>zhāocái jìnbǎo</td><td><b>пожелание достатка</b></td><td>четыре знака, которые часто пишут слитно, одной связкой</td></tr>
+    <tr><td><b class="han">金蟾</b></td><td>jīnchán</td><td><b>трёхлапая жаба с монетой</b></td><td>распространённый образ достатка в лавках и интерьерах</td></tr>
+    <tr><td><b class="han">招财猫</b></td><td>zhāocái māo</td><td><b>кошка с поднятой лапой</b></td><td>фигурка пришла из Японии, хотя встречается повсеместно</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Бог богатства <span class="han">财神</span> — самый прямой из этих образов: это именно персонаж, которого изображают, а не отвлечённый символ. Изображения появляются в лавках и домах под Новый год, и тогда же о нём чаще вспоминают.</p>
+
+<p><b>Про <span class="han">招财进宝</span> стоит сказать подробнее</b>, потому что это языковая редкость. Четыре знака часто пишут не по отдельности, а сводят в одну связку: общие черты объединяют, и получается рисунок, похожий на один большой иероглиф. Читается он при этом по-прежнему в четыре слога.</p>
+
+<p>Такие связки — не отдельные иероглифы и в словарях их нет. Это <b>декоративный приём</b>, и встречается он почти исключительно в праздничном оформлении.</p>
+
+<p>Для изучающего тут есть практический вывод: <b>не всякое красивое начертание нужно уметь читать как знак</b>. Если вы видите на красном фоне нечто сложное и незнакомое, прежде чем искать это в словаре, стоит проверить, не связка ли это из нескольких знаков — словарь на такое ответа не даст.</p>
+
+<p><b>Теперь поправка, ради которой стоило писать этот раздел.</b> Кошка с поднятой лапой, которую у нас почти всегда называют китайской, <b>пришла из Японии</b>. В Китае она прижилась, получила название <span class="han">招财猫</span> и стоит в витринах повсеместно — но происхождение у неё японское.</p>
+
+<p>Ничего дурного в заимствовании нет, и поправка нужна не для того, чтобы кого-то уличить. Просто <b>если вам нужен именно китайский образ достатка</b>, то это <span class="han">财神</span> или <span class="han">金蟾</span>, а не кошка.</p>
+
+<p>А вот происхождение самих образов — почему жаба трёхлапая и откуда она взялась — я пересказывать не стану. Это предания, они существуют в нескольких несовпадающих версиях, и проверить их по первоисточнику я не могу. Как вообще устроены китайские приметы и на каких механизмах они держатся, разобрано отдельно: <a href="https://kitai-school.ru/article/kitajskie-primety-i-sueveriya-tri-mekhanizma" target="_blank" rel="noopener">китайские приметы и суеверия</a>.</p>
+
+<h2>Что осталось <span class="italic">за рамками</span></h2>
+
+<p>Перечислю, чего в тексте нет, — каждый пропуск тут обдуман, а не случаен.</p>
+
+<ul>
+  <li><b>Нет цен, сумм и курсов.</b> Они устаревают быстрее всего, и для них есть отдельная страница: <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли в Китае</a>.</li>
+  <li><b>Нет разбора знака счастья</b> и того, почему его вешают на дверь: у него свой разбор, и повторять его незачем.</li>
+  <li><b>Нет счастливых чисел.</b> Почему одни цифры в Китае ценят, а другие избегают, разобрано здесь: <a href="https://kitai-school.ru/article/kitayskaya-numerologiya" target="_blank" rel="noopener">китайская нумерология</a>.</li>
+  <li><b>Нет датировок.</b> Когда появились монеты с отверстием и когда раковины перестали быть деньгами, я не называю: проверить это по первоисточнику из рабочей среды у меня нет возможности, а приблизительные века тут только запутают.</li>
+  <li><b>Нет преданий об образах достатка</b> — только то, чем они являются и где встречаются. Версии происхождения не совпадают между собой, и выбирать из них наугад я не стану.</li>
+  <li><b>Нет обещаний.</b> Статья про язык и про то, что означают знаки, а не про то, что сработает.</li>
+  <li><b>Нет разбора банковских и деловых слов.</b> Финансовая лексика — отдельная область со своим словарём, и в обзор про символы денег она не помещается.</li>
+</ul>
+
+<p>Добавлю и про состав списка знаков. Восемь — это выборка, а не полный перечень: с ключом <span class="han">贝</span> в словаре стоят десятки знаков, и часть из них вам не встретится никогда. Я брала те, что попадаются в обиходных словах, и честно говорю, что отбор тут мой.</p>
+
+<p>И последнее, что стоит сказать прямо. <b>Знаки и фигурки не делятся на «работающие» и «нет»</b> — они значат то, что значат, и этим интересны. Разбираться в них стоит ради понимания языка и того, что написано вокруг вас, а не ради результата.</p>
+
+<p>И ещё одно, что стоит держать в голове при чтении вывесок. <b>Знак сам по себе редко стоит отдельно:</b> почти всё, что вы увидите написанным, — это слова из двух знаков и больше. Поэтому разобрать ключ полезно, но останавливаться на этом не стоит: смысл задаёт соседний знак, а не ключ.</p>
+
+<p>Зато практическая польза тут есть, и вполне измеримая: <b>ключ <span class="han">贝</span> экономит время при чтении</b>. Встретив незнакомый знак с раковиной в вывеске, объявлении или договоре, вы сразу знаете область, о которой речь, — и это уже половина понимания.</p>
+
+<div class="cta">
+  <p>Разбирать знаки по частям — обычная работа на занятиях, и после неё незнакомые иероглифы перестают быть набором черт: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой иероглиф означает деньги в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>钱 (qián). Это обычное повседневное слово: оно стоит в вопросе 多少钱 «сколько стоит» и в 赚钱 «зарабатывать деньги». Рядом с ним работает 财 (cái) — но это уже не деньги как таковые, а имущество и состояние.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 钱 отличается от 财?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>钱 — это деньги, которыми расплачиваются: конкретные, считаемые, в кошельке. 财 — имущество и достаток вообще, то, чем человек владеет. Поэтому в пожеланиях и на праздничных надписях стоит именно 财, а не 钱: желают не наличных, а состояния.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему в знаках про деньги стоит «раковина»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Ключ 贝 (bèi) изображает раковину, и общепринятое объяснение простое: раковины служили деньгами, а знак остался меткой всего, что связано с имуществом и расчётами. Поэтому он виден в 财 «богатство», 账 «счёт», 购 «закупать», 费 «плата», 贸 «торговать» и других.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как называется китайская валюта и чем 元 отличается от 块?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Валюта называется 人民币 (rénmínbì). Её основная единица — 元 (yuán), и это письменная форма: она стоит на купюрах, в ценниках и документах. В разговоре вместо неё говорят 块 (kuài). Так же устроена и десятая часть: пишут 角 (jiǎo), говорят 毛 (máo).</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что означает 招财进宝?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>«Призвать богатство, привлечь сокровища» — пожелание достатка, которое часто встречается в праздничном оформлении. Его нередко пишут не четырьмя отдельными знаками, а одной связкой, где знаки сведены в общий рисунок: получается похоже на один большой иероглиф, хотя читается по-прежнему в четыре слога.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что кошка с поднятой лапой — китайский символ богатства?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, фигурка пришла из Японии, хотя в китайских лавках и ресторанах встречается повсеместно и имеет китайское название 招财猫. Это обычное заимствование, и ничего плохого в нём нет — просто если вам нужен именно китайский образ достатка, то это 财神 или 金蟾.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть незнакомый знак с раковиной больше не пугает! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Состав восьми знаков</b> — ключ, вторая часть и положение ключа — указан явно и проверяется при сборке страницы. Проверить наличие ключа поиском по тексту нельзя: иероглиф не раскладывается на части средствами текста, поэтому состав задан как данные, а ассерты следят за его согласованностью с картинкой.</li>
+    <li><b>Ключ <span class="han">贝</span> как метка имущества и расчётов</b> приведён по составу самих знаков: это наблюдаемый факт, а не толкование.</li>
+    <li><b>Объяснение через раковины-деньги</b> названо общепринятым, а не нашей находкой. Оно уже приведено в нашем разборе слова «друг», так что расхождений внутри блога нет. <b>Датировок я не называю.</b></li>
+    <li><b>Ключ <span class="han">钅</span> в знаке <span class="han">钱</span></b> проверен отдельно: на обложке об этом сказано прямо, потому что иначе подпись «общая деталь» была бы неверной.</li>
+    <li><b>Валютная лексика</b> — <span class="han">人民币</span>, пара <span class="han">元</span> и <span class="han">块</span>, пара <span class="han">角</span> и <span class="han">毛</span>, <span class="han">分</span> — приведена по употреблению: письменная форма против разговорной.</li>
+    <li><b>Цен, сумм и курсов в статье нет намеренно</b> — ни одной цифры: они устаревают, и для них есть соседняя страница.</li>
+    <li><b>Образы достатка</b> названы образами. <b>Преданий о их происхождении нет:</b> версии не совпадают между собой, и проверить их я не могу.</li>
+    <li><b>Японское происхождение <span class="han">招财猫</span></b> приведено как поправка к распространённому заблуждению.</li>
+    <li><b>Знак <span class="han">贵</span> не разложен на части:</b> состав у него спорный, и неточная схема хуже отсутствующей. В таблице он поэтому не стоит.</li>
+    <li><b>Отбор восьми знаков — мой</b>, и в тексте это сказано: с ключом <span class="han">贝</span> в словаре стоят десятки знаков, я взяла те, что встречаются в обиходных словах.</li>
+    <li>Практика Kitai School: занятия с учениками, в том числе случай на рынке с незнакомыми разговорными названиями денежных единиц.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Увидели в знаке ключ 贝 «раковина» — речь почти наверняка про имущество, цену или расчёт</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
