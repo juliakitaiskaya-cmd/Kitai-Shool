@@ -1,0 +1,451 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/simvoly-kitayskoy-kultury#article",
+      "headline": "Символы китайской культуры: дракон, панда, инь-ян и смыслы, которые они несут",
+      "description": "Шесть символов китайской культуры разобраны подробно: дракон 龙 как образ власти и благой силы, феникс 凤凰 как парный ему образ, знак тайцзи 太极, в котором соединены инь и ян, благовещий цилинь 麒麟, черепаха 龟 и журавль 鹤 как образы долголетия. Объясняем, почему китайский дракон и европейский — разные существа, совпавшие в переводе, и почему инь и ян не добро и зло. Панда, цвета, числа и знак счастья разобраны у нас отдельно и здесь только названы. Порядка по важности в статье нет: назначать главный символ — дело вкуса, а не справки.",
+      "image": "https://static.tildacdn.com/tila3364-3264-4064-a231-613735393430/sim-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/simvoly-kitayskoy-kultury",
+      "about": {
+        "@type": "Thing",
+        "name": "Символика китайской культуры"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/simvoly-kitayskoy-kultury#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какие символы считаются главными в китайской культуре?", "acceptedAnswer": {"@type": "Answer", "text": "Устоявшегося списка нет, и назначать главный символ я не возьмусь: это дело вкуса, а не справки. В обиходе чаще других называют дракона, инь и ян, панду, красный цвет и знак счастья — но порядок между ними каждый выстраивает сам."}},
+        {"@type": "Question", "name": "Почему китайский дракон не злой?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что это другое существо, а не другой взгляд на то же самое. В европейской традиции дракон — противник, которого побеждают. В китайской 龙 связан с водой, дождём и властью, и в этой роли он благой. Совпало только русское слово, которым оба переведены."}},
+        {"@type": "Question", "name": "Что означает инь-ян?", "acceptedAnswer": {"@type": "Answer", "text": "Две стороны одного целого, а не добро и зло. Знак, в котором они соединены, называется 太极 (tàijí). Важная деталь: внутри светлой половины есть тёмная точка, а внутри тёмной — светлая, и это часть смысла: ни одна сторона не бывает чистой."}},
+        {"@type": "Question", "name": "Что символизирует феникс в Китае?", "acceptedAnswer": {"@type": "Answer", "text": "Благополучие и гармонию, и чаще всего он идёт в паре с драконом: сочетание 龙凤 встречается в свадебной символике. Это не та птица, что возрождается из пепла, — европейский феникс и китайский 凤凰 опять совпали только в переводе."}},
+        {"@type": "Question", "name": "Правда ли, что панда — национальный символ Китая?", "acceptedAnswer": {"@type": "Answer", "text": "Да, и у нас об этом есть отдельная статья: там и про то, почему выбрали именно её, и про панда-дипломатию. Здесь я её не пересказываю, чтобы не повторять уже написанное."}},
+        {"@type": "Question", "name": "Можно ли использовать китайские символы в татуировке?", "acceptedAnswer": {"@type": "Answer", "text": "Запрещать тут нечего, и советовать я не стану. Скажу одно: узнайте значение там, откуда берёте образ, а не по подборке в интернете. Чаще всего выясняется, что знакомая картинка означает не совсем то, что вы думали, — и лучше это понять заранее."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/simvoly-kitayskoy-kultury#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Символы китайской культуры: дракон, панда, инь-ян и смыслы, которые они несут", "item": "https://kitai-school.ru/article/simvoly-kitayskoy-kultury"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Культура</p>
+<h1>Символы китайской культуры: <span class="italic">дракон, панда, инь-ян и смыслы, которые они несут</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-23">23 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila3364-3264-4064-a231-613735393430/sim-hero.png" alt="Круг тайцзи с подписями 阳 и 阴 по сторонам" width="1200" height="630"></figure>
+
+<p class="passport">Про китайские символы обычно знают по картинкам, и это нормально — пока не выясняется, что картинка означает не то, что казалось. Дракон тут не противник, инь и ян не борются, а феникс не возрождается из пепла. Разберём шесть образов подробно и ещё четыре назовём со ссылками: про них у нас есть отдельные разборы, и пересказывать их здесь незачем. <b>Порядка по важности в статье не будет</b> — назначать главный символ дело вкуса, а не справки.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Дракон</b> <span class="han">龙</span> — власть и благая сила, не противник. <b>Феникс</b> <span class="han">凤凰</span> — пара дракону. <b>Тайцзи</b> <span class="han">太极</span> — знак, в котором соединены инь и ян, и это не борьба. <b>Долголетие:</b> <span class="han">龟</span> и <span class="han">鹤</span>. <b>Цилинь</b> <span class="han">麒麟</span> — благовещее существо. <b>Отдельно разобраны:</b> панда, цвета, числа и знак счастья.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">шесть символов и четыре ссылки</span></h2>
+
+<p>Сначала сводка, дальше разберём каждый.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Шесть символов, которые разбираем здесь.</caption>
+  <thead><tr><th>Знак</th><th>Чтение</th><th>Название</th><th>Что означает</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">龙</b></td><td>lóng</td><td><b>Дракон</b></td><td>власть и благая сила, связан с водой</td></tr>
+    <tr><td><b class="han">凤凰</b></td><td>fènghuáng</td><td><b>Феникс</b></td><td>парный дракону образ</td></tr>
+    <tr><td><b class="han">太极</b></td><td>tàijí</td><td><b>Тайцзи</b></td><td>знак, в котором соединены инь и ян</td></tr>
+    <tr><td><b class="han">麒麟</b></td><td>qílín</td><td><b>Цилинь</b></td><td>благовещее существо</td></tr>
+    <tr><td><b class="han">龟</b></td><td>guī</td><td><b>Черепаха</b></td><td>долголетие и устойчивость</td></tr>
+    <tr><td><b class="han">鹤</b></td><td>hè</td><td><b>Журавль</b></td><td>долголетие, часто в паре с сосной</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Обратите внимание, что в таблице нет панды, цветов и чисел, хотя их спрашивают чаще всего. <b>Они не забыты</b>: у каждого свой разбор, и в конце статьи я соберу ссылки в одном месте.</p>
+
+<p>И сразу главное, что объединяет первые два имени в списке. <b>Дракон и феникс — это не те существа, которые известны у нас под теми же словами.</b> Совпали переводы, а образы разные, и дальше мы это разберём подробно.</p>
+
+<h2>Дракон: <span class="italic">власть, вода и благая сила</span></h2>
+
+<p>Начнём с самого известного — и самого неверно понимаемого.</p>
+
+<p><b>Китайский дракон <span class="han">龙</span> не противник.</b> В европейской традиции дракона побеждают: он стережёт сокровище, нападает, его убивает герой. В китайской побеждать его незачем, потому что он не враждебен.</p>
+
+<p>За ним закреплены две области. <b>Первая — вода:</b> дождь, реки, водная стихия вообще. <b>Вторая — власть:</b> образ связывали с правителем, и это видно хотя бы по названию парадного одеяния — <span class="han">龙袍</span>, «драконий халат».</p>
+
+<p>Отсюда и то, почему дракон встречается всюду: на праздниках, в названиях, в узорах. Это не изображение опасности, а пожелание благополучия.</p>
+
+<p>Язык это подтверждает лучше любых объяснений. <b>В словах с <span class="han">龙</span> нет ничего угрожающего:</b> <span class="han">龙门</span> «драконьи врата» — образ успеха на испытании, а выражение <span class="han">望子成龙</span> буквально «надеяться, что сын станет драконом» означает родительское желание, чтобы ребёнок преуспел. Попробуйте подставить сюда европейского дракона — получится бессмыслица.</p>
+
+<p>Дракон стоит и в двенадцатилетнем круге, где каждому году соответствует животное. Это единственное место в круге, занятое существом, которого не бывает, — и никого это не смущает.</p>
+
+<p><b>Чего я делать не стану</b> — так это рассказывать, откуда взялся образ и когда. Версий несколько, и они между собой не сходятся. Поэтому говорю о том, что дракон значит, а не о том, как он появился.</p>
+
+<h2>Феникс: <span class="italic">пара дракону</span></h2>
+
+<p>Второй образ почти всегда идёт рядом с первым.</p>
+
+<p><b><span class="han">凤凰</span> — не та птица, что сгорает и возрождается.</b> Это снова случай, когда русское слово «феникс» подставлено к другому существу. Китайский образ не про смерть и возрождение, а про благополучие и согласие.</p>
+
+<p><b>Главное тут — парность.</b> Сочетание <span class="han">龙凤</span> «дракон и феникс» встречается в свадебной символике и означает согласие двоих. Один образ без другого в этом сочетании не работает.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila3866-6264-4966-b564-346633353833/sim-info.png" alt="Шесть красных печатей со знаками символов: дракон, феникс, тайцзи, цилинь, черепаха и журавль" width="1200" height="742"><figcaption>Шесть символов и то, что за ними стоит. Порядка по важности тут нет.</figcaption></figure>
+
+<p>Парность вообще важна для китайской символики, и дальше вы увидите её ещё дважды: у инь и ян и у пары образов долголетия. <b>Символы здесь чаще ходят парами, чем поодиночке</b>, и это не случайность, а способ устройства.</p>
+
+<p>Для читателя отсюда следует практический вывод: <b>встретив один образ, стоит поискать второй</b>. Если дракон вышит на одной половине свадебного наряда, на другой почти наверняка феникс, и вместе они означают не два пожелания, а одно.</p>
+
+<h2>Инь и ян: <span class="italic">не борьба, а две стороны</span></h2>
+
+<p>Теперь главное недоразумение темы, и оно стоит подробного разбора.</p>
+
+<p><b>Инь и ян — не добро и зло.</b> Это две стороны одного целого: тёмное и светлое, холодное и тёплое, покой и движение. Ни одна из сторон не «хорошая» и не «плохая», и побеждать друг друга им незачем.</p>
+
+<p>Сам знак, который все узнают, называется <span class="han">太极</span> (tàijí). Посмотрите на него внимательно — там есть деталь, которую обычно не замечают.</p>
+
+<p><b>Внутри светлой половины стоит тёмная точка, а внутри тёмной — светлая.</b> Это не украшение: смысл в том, что ни одна сторона не бывает чистой, в каждой есть часть другой. Уберите точки — и знак будет означать разделение, а не равновесие.</p>
+
+<p>Вторая деталь — граница между половинами изогнута, а не проведена прямо. Стороны не отрезаны друг от друга, а переходят одна в другую: там, где одной больше всего, другая уже начинается.</p>
+
+<p><b>Эта пара работает и в языке</b>, причём буднично. Пасмурный день — <span class="han">阴天</span>, и это обычное слово из прогноза погоды. Второй знак стоит в <span class="han">太阳</span> «солнце» и <span class="han">阳光</span> «солнечный свет». Никакой философии тут нет, а знаки те же самые.</p>
+
+<p>Отсюда полезное для изучающего: <b>встретив <span class="han">阴</span> или <span class="han">阳</span> в тексте, не спешите видеть там учение</b>. Чаще всего речь просто о тени и солнце, о холодном и тёплом.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица собиралась сделать татуировку с драконом и перед этим спросила, что он означает. Вопрос хороший, и задают его, к сожалению, редко.</p>
+  <p>Разобрали. В европейской традиции дракон — противник, которого побеждают: он стережёт, нападает, его убивают. В китайской это благая сила, связанная с водой и властью, и побеждать её незачем.</p>
+  <p><b>Она удивилась больше всего тому</b>, что это два разных существа с одним русским названием. Не разные взгляды на одно, а именно разные образы, которые у нас случайно совпали в переводе.</p>
+  <p>В итоге она передумала — не потому, что значение плохое, а потому, что поняла: рисунок несёт смысл, которого она не имела в виду.</p>
+</div>
+
+<h2>Долголетие: <span class="italic">черепаха и журавль</span></h2>
+
+<p>Ещё одна пара, и с ней всё проще: оба образа про одно.</p>
+
+<p><b>Черепаха <span class="han">龟</span></b> — долголетие и устойчивость. Образ понятный без объяснений: животное живёт долго и его не так просто сдвинуть с места.</p>
+
+<p><b>Журавль <span class="han">鹤</span></b> — тоже долголетие, и его часто изображают рядом с сосной, которая означает то же самое. Получается усиление: два образа одного смысла в одной картине.</p>
+
+<p>Здесь стоит сказать и о том, чего в русской традиции нет. <b>У нас пожелание долгих лет — это слова, у них ещё и изображение.</b> Подарок с журавлём или черепахой — само по себе пожелание, и произносить его не нужно.</p>
+
+<p>Отсюда практическое замечание: получив такой подарок, вы получили не просто предмет с рисунком. Благодарить стоит за пожелание, а не только за вещь.</p>
+
+<p>И обратная сторона того же правила, о которой стоит знать заранее. <b>Если изображение что-то означает, то и неудачное изображение тоже означает</b> — просто не то, что вы хотели. Выбирая подарок с рисунком, стоит сначала узнать, что на нём, и только потом смотреть, красиво ли.</p>
+
+<h2>Цилинь: <span class="italic">существо, которого не бывает</span></h2>
+
+<p>Последний из шести и самый непривычный для нас.</p>
+
+<p><b><span class="han">麒麟</span> — существо благовещее:</b> его появление считают добрым знаком. В европейской традиции аналога нет, и подбирать его я не буду — ближайшие сравнения только запутывают.</p>
+
+<p>Выглядит он не как одно животное, а как сочетание нескольких, и это нормально для таких образов: цилинь не портрет зверя, а знак.</p>
+
+<p>Встречается он заметно реже остальных пяти, и это тоже стоит сказать: <b>не все символы одинаково на виду</b>. Дракона вы увидите в первый же день, цилиня можете не встретить вовсе — но в ряду образов он стоит на своём месте.</p>
+
+<p><b>И здесь стоит сказать прямо.</b> Цилинь и дракон — существа вымышленные, и это не мешает им быть полноценными символами. Значение образа не зависит от того, можно ли встретить его в природе.</p>
+
+<h2>Что разобрано <span class="italic">отдельно</span></h2>
+
+<p>Теперь обещанные четыре ссылки — по каждой у нас есть свой разбор.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Символы, о которых у нас написано отдельно.</caption>
+  <thead><tr><th>Что</th><th>Где смотреть</th><th>Что там разобрано</th></tr></thead>
+  <tbody>
+    <tr><td><b>Панда</b></td><td><a href="https://kitai-school.ru/article/nacionalnoe-jivotnoe-kitaya-bolshaya-panda" target="_blank" rel="noopener">национальное животное Китая</a></td><td>почему именно она стала символом и что такое панда-дипломатия</td></tr>
+    <tr><td><b>Цвета</b></td><td><a href="https://kitai-school.ru/article/znachenie-cvetov-v-kitae" target="_blank" rel="noopener">значение цветов в Китае</a></td><td>красный, жёлтый, фиолетовый и остальные со своими значениями</td></tr>
+    <tr><td><b>Числа</b></td><td><a href="https://kitai-school.ru/article/kitayskaya-numerologiya" target="_blank" rel="noopener">китайская нумерология</a></td><td>какие цифры в Китае ценят, а каких избегают</td></tr>
+    <tr><td><b>Знак счастья</b></td><td><a href="https://kitai-school.ru/article/udacha-po-kitajski" target="_blank" rel="noopener">«удача» по-китайски</a></td><td>что он значит и как его на самом деле вешают</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Про знак счастья оговорюсь отдельно</b>, потому что с ним связано самое живучее заблуждение. Коротко: вешают его не так, как обычно показывают на картинках, и в соседнем разборе объяснено, почему. Здесь я эту тему не трогаю.</p>
+
+<p>То же и с цветами: красный, жёлтый и остальные — большая тема со своими значениями, и у каждого цвета свой разбор. Сводка по всем сразу собрана отдельно — ссылка в таблице выше.</p>
+
+<p><b>Почему я вообще развожу это по разным страницам</b>, а не собираю всё в один большой обзор. Потому что обзор, в котором каждому символу отведено по три строки, не отвечает ни на один вопрос: он только перечисляет. А о панде или о красном цвете есть что сказать на целую статью — и лучше сказать там, чем упомянуть здесь.</p>
+
+<p>Поэтому эта страница устроена так: шесть образов разобраны подробно, потому что отдельных разборов у них нет, а четыре названы со ссылками, потому что разборы есть. Это честнее, чем делать вид, что всё укладывается в один список.</p>
+
+<h2>Что осталось <span class="italic">за рамками</span></h2>
+
+<p>Перечислю, чего в статье нет, — всё это решения, а не забывчивость.</p>
+
+<ul>
+  <li><b>Нет «главного символа».</b> Ранжировать образы я не стала: устоявшегося порядка нет, и любой список был бы моим личным.</li>
+  <li><b>Нет датировок и династий.</b> Когда появился тот или иной образ, я не называю: проверить это по первоисточнику я не могу.</li>
+  <li><b>Нет пересказа преданий.</b> У каждого образа несколько несовпадающих версий происхождения, и выбирать из них наугад не стану.</li>
+  <li><b>Нет советов по фэншуй.</b> Что и куда вешать — не предмет этой статьи.</li>
+  <li><b>Нет обещаний.</b> Символ означает, а не действует; про «работает или нет» здесь ничего не сказано.</li>
+  <li><b>Нет растений.</b> Пион, мэйхуа и спор о главном цветке разобраны отдельно: <a href="https://kitai-school.ru/article/nacionalnye-cvety-kitaya" target="_blank" rel="noopener">национальные цветы Китая</a>.</li>
+  <li><b>Нет праздничных обычаев.</b> Что делают в какие даты, собрано здесь: <a href="https://kitai-school.ru/article/kitayskie-tradicionnye-prazdniki" target="_blank" rel="noopener">китайские традиционные праздники</a>.</li>
+</ul>
+
+<p>И общее замечание, ради которого стоило писать эту статью. <b>Почти каждый китайский символ, попадая к нам, теряет часть смысла</b> — не по злому умыслу, а потому, что переводится одним словом, за которым у нас стоит другой образ. Дракон, феникс, инь и ян — все три случая устроены одинаково.</p>
+
+<p>Поэтому самый полезный навык тут не запоминание списка, а привычка спрашивать: <b>что этот образ значит там, откуда он взят.</b> Ответ почти всегда оказывается интереснее картинки.</p>
+
+<p>И последнее, что стоит сказать про саму идею «символов культуры». <b>Это не свод правил и не система, которую кто-то однажды выстроил.</b> Образы складывались по отдельности, в разное время и по разным причинам, а в один список их собрали уже мы — для удобства.</p>
+
+<p>Поэтому не стоит искать между ними стройную связь: дракон и журавль не части одной схемы, а два отдельных образа, которые оказались рядом в нашем перечне. Связь внутри пар — дракон с фениксом, инь с ян — настоящая, а связь всего списка целиком придумана ради удобства изложения.</p>
+
+<div class="cta">
+  <p>Понимать культуру без языка можно, но с языком получается точнее — слова и образы в китайском связаны плотнее, чем кажется: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие символы считаются главными в китайской культуре?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Устоявшегося списка нет, и назначать главный символ я не возьмусь: это дело вкуса, а не справки. В обиходе чаще других называют дракона, инь и ян, панду, красный цвет и знак счастья — но порядок между ними каждый выстраивает сам.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему китайский дракон не злой?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что это другое существо, а не другой взгляд на то же самое. В европейской традиции дракон — противник, которого побеждают. В китайской 龙 связан с водой, дождём и властью, и в этой роли он благой. Совпало только русское слово, которым оба переведены.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что означает инь-ян?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Две стороны одного целого, а не добро и зло. Знак, в котором они соединены, называется 太极 (tàijí). Важная деталь: внутри светлой половины есть тёмная точка, а внутри тёмной — светлая, и это часть смысла: ни одна сторона не бывает чистой.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что символизирует феникс в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Благополучие и гармонию, и чаще всего он идёт в паре с драконом: сочетание 龙凤 встречается в свадебной символике. Это не та птица, что возрождается из пепла, — европейский феникс и китайский 凤凰 опять совпали только в переводе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что панда — национальный символ Китая?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, и у нас об этом есть отдельная статья: там и про то, почему выбрали именно её, и про панда-дипломатию. Здесь я её не пересказываю, чтобы не повторять уже написанное.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли использовать китайские символы в татуировке?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Запрещать тут нечего, и советовать я не стану. Скажу одно: узнайте значение там, откуда берёте образ, а не по подборке в интернете. Чаще всего выясняется, что знакомая картинка означает не совсем то, что вы думали, — и лучше это понять заранее.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть за каждой картинкой откроется её смысл! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Состав шести символов</b> — знак, чтение, название и строка значения — задан один раз и оттуда попадает и в текст, и на картинку. Если бы они разошлись, сборка страницы не прошла бы.</li>
+    <li><b>Значения образов</b> приведены по их устойчивому употреблению: дракон как благая сила, связанная с водой и властью; феникс как парный ему образ; черепаха и журавль как образы долголетия; цилинь как благовещее существо.</li>
+    <li><b>Различие китайского и европейского дракона</b> и то же самое для феникса — это утверждение о двух разных традициях, совпавших в русском переводе, а не оценка.</li>
+    <li><b>Устройство знака тайцзи</b> — точки внутри половин и изогнутая граница — описано по самому изображению: это наблюдаемая деталь.</li>
+    <li><b>Датировок и династий в статье нет намеренно.</b> Когда сложился тот или иной образ — вопрос, на который у меня нет проверяемого ответа, а называть век наугад в такой теме нельзя.</li>
+    <li><b>Преданий о происхождении образов нет:</b> версии не совпадают между собой, и выбирать из них наугад недопустимо.</li>
+    <li><b>Порядка по важности нет.</b> Ключевой запрос подразумевает список «главных», но устоявшегося порядка не существует, и в тексте это сказано прямо.</li>
+    <li><b>Панда, цвета, числа и знак счастья здесь только названы:</b> по каждому у нас есть отдельная статья, и пересказывать их значило бы дублировать собственные страницы.</li>
+    <li><b>Советов по фэншуй и утверждений о действии символов нет</b> — статья объясняет значения.</li>
+    <li>Практика Kitai School: занятия с учениками, в том числе разговор о татуировке с драконом.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Инь и ян — не добро и зло и не борьба: это две стороны одного, и внутри каждой есть часть другой</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
