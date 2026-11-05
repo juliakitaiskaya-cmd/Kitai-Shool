@@ -7,8 +7,8 @@ OUT = "srednyaya-zarplata-v-kitae.html"
 SLUG = "srednyaya-zarplata-v-kitae"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/zp-hero.png"
-FIG = "assets/zp-info.png"
+HERO = "https://static.tildacdn.com/tila3966-6435-4365-b365-353463356631/zp-hero.png"
+FIG = "https://static.tildacdn.com/tila3162-6163-4830-b839-616337366630/zp-info.png"
 HERO_ALT = ("Расчётный лист со строками 税前, 底薪, 奖金, 社保, 公积金, 个税 и итогом 税后")
 FIG_ALT = ("Три столбца трёх официальных средних зарплат в Китае за 2025 год: 129 441, "
            "106 080 и 71 590 юаней в год")
