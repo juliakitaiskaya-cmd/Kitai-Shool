@@ -1,0 +1,453 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/skolko-dlitsya-kzamen-hsk#article",
+      "headline": "Сколько длится экзамен HSK: тайминг по уровням и почему время — отдельное испытание",
+      "description": "Сводка времени по пяти уровням HSK в одной таблице: от примерно сорока минут на первом уровне до примерно ста двадцати пяти на пятом. Разбираем, из чего складывается общая цифра и почему она больше суммы разделов; почему аудирование идёт в темпе записи, а распоряжаться временем можно только на чтении и письме; сколько секунд приходится на один вопрос на каждом уровне и почему эта величина почти не меняется, хотя экзамен удлиняется втрое. Проходных баллов в статье нет, разбор заданий и подготовки остаётся на страницах уровней.",
+      "image": "assets/dlit-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/skolko-dlitsya-kzamen-hsk",
+      "about": {
+        "@type": "Thing",
+        "name": "Продолжительность экзамена HSK"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/skolko-dlitsya-kzamen-hsk#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Сколько длится экзамен HSK?", "acceptedAnswer": {"@type": "Answer", "text": "От примерно сорока минут на первом уровне до примерно ста двадцати пяти минут на пятом — то есть разница между крайними уровнями примерно втрое. В это время входят все разделы подряд, без перерывов между ними, плюс заполнение анкеты и работа с бланком. Время по разделам примерное и приведено по действующей редакции HSK 2.0."}},
+        {"@type": "Question", "name": "Сколько длится HSK 1?", "acceptedAnswer": {"@type": "Answer", "text": "Около сорока минут вместе с анкетой. Разделов два — аудирование примерно пятнадцать минут и чтение примерно семнадцать; письменной части на первом уровне нет. Подробный разбор самого уровня — заданий, слов и подготовки — у нас на отдельной странице."}},
+        {"@type": "Question", "name": "Сколько длится HSK 3?", "acceptedAnswer": {"@type": "Answer", "text": "Около девяноста минут вместе с анкетой. Здесь впервые появляется письмо: аудирование примерно тридцать пять минут, чтение примерно тридцать, письмо примерно пятнадцать. Третий уровень разобран у нас отдельно — там и про исчезающий пиньинь."}},
+        {"@type": "Question", "name": "Есть ли перерывы между частями экзамена?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, экзамен идёт подряд: разделы сменяют друг друга без пауз. Выйти из аудитории в середине нельзя, и это стоит учитывать заранее — особенно на старших уровнях, где всё вместе занимает около двух часов."}},
+        {"@type": "Question", "name": "Входит ли заполнение бланка в общее время?", "acceptedAnswer": {"@type": "Answer", "text": "Да, и это часть разницы между суммой разделов и итоговой цифрой. На младших уровнях на анкету закладывают около пяти минут сверх заданий. Отдельно стоит знать, что на HSK 5 запаса времени на перенос ответов в конце разделов не дают — вносить их нужно сразу."}},
+        {"@type": "Question", "name": "Сколько длится устный экзамен HSKK?", "acceptedAnswer": {"@type": "Answer", "text": "Около двадцати минут вместе с подготовкой, и говорите вы далеко не всё это время. Это отдельный экзамен со своим сертификатом, и считается он отдельно от письменного — подробности у нас на странице про устную часть."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/skolko-dlitsya-kzamen-hsk#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Сколько длится экзамен HSK: тайминг по уровням и почему время — отдельное испытание", "item": "https://kitai-school.ru/article/skolko-dlitsya-kzamen-hsk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамены</p>
+<h1>Сколько длится экзамен HSK: <span class="italic">тайминг по уровням и почему время — отдельное испытание</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-05">5 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/dlit-hero.png" alt="Два циферблата: сорок минут на HSK 1 и сто двадцать пять минут на HSK 5 на общей шкале" width="1200" height="630"></figure>
+
+<p class="passport">Вопрос задают по двум причинам. Первая простая: надо спланировать день и понять, на сколько отпрашиваться с работы. Вторая куда важнее: от длины экзамена зависит, как к нему готовиться, потому что баллы теряют не только на незнании слов. Соберём минуты по всем уровням в одну таблицу — такой сводки у нас до сих пор не было, она разбросана по пяти страницам, — а потом разберём, где время кончается раньше, чем задания.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>HSK 1 — около сорока минут, HSK 5 — около ста двадцати пяти.</b> Разделы идут подряд, <b>перерывов между ними нет</b>. В общее время входит заполнение анкеты и работа с бланком, поэтому итог больше суммы разделов. Время по разделам примерное, по действующей редакции HSK 2.0.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">от сорока минут до двух часов</span></h2>
+
+<p>Сводка по всем уровням сразу — и дальше разберём, что за ней стоит.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Время по уровням HSK. Время по разделам примерное, по действующей редакции HSK 2.0.</caption>
+  <thead><tr><th>Уровень</th><th>Вопросов</th><th>Аудирование</th><th>Чтение</th><th>Письмо</th><th>Итого</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>40</td><td>≈ 15</td><td>≈ 17</td><td>—</td><td><b>40 мин</b></td></tr>
+    <tr><td><b>HSK 2</b></td><td>60</td><td>≈ 25</td><td>≈ 22</td><td>—</td><td><b>55 мин</b></td></tr>
+    <tr><td><b>HSK 3</b></td><td>80</td><td>≈ 35</td><td>≈ 30</td><td>≈ 15</td><td><b>90 мин</b></td></tr>
+    <tr><td><b>HSK 4</b></td><td>100</td><td>≈ 30</td><td>40</td><td>25</td><td><b>105 мин</b></td></tr>
+    <tr><td><b>HSK 5</b></td><td>100</td><td>≈ 30</td><td>40</td><td>40</td><td><b>125 мин</b></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Первое, что видно из таблицы: <b>рост не плавный</b>. Между вторым и третьим уровнем экзамен удлиняется сразу примерно на полчаса, а между четвёртым и пятым прибавка куда скромнее, хотя сложность растёт заметно.</p>
+
+<p>Причина у этого скачка одна. <b>На третьем уровне появляется письмо</b> — третий раздел, которого на первых двух нет вовсе. Дальше состав разделов уже не меняется, растёт только их наполнение.</p>
+
+<p>Второе, что стоит заметить: на четвёртом и пятом уровне вопросов поровну — по сотне, — а времени на пятом больше. Это не щедрость: задания там длиннее, и на каждое его просто нужно больше.</p>
+
+<p>Разбор самих уровней — какие задания, сколько слов, как готовиться — остаётся на отдельных страницах: <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1</a>, <a href="https://kitai-school.ru/article/hsk-2-sdaem-vtoroy-uroven-bez-stressa" target="_blank" rel="noopener">HSK 2</a>, <a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">HSK 3</a>, <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4</a> и <a href="https://kitai-school.ru/article/hsk-5-kak-sdat-universitetskiy-kzamen" target="_blank" rel="noopener">HSK 5</a>. Здесь я говорю только про минуты.</p>
+
+<h2>Из чего складывается <span class="italic">общее время</span></h2>
+
+<p>Если сложить разделы в любой строке таблицы, сумма окажется меньше итога. Это не опечатка.</p>
+
+<p><b>В общее время входят не только задания.</b> Перед работой заполняют анкету, в конце разделов переносят ответы в бланк, и всё это занимает минуты, которые вы на решение задач потратить не можете.</p>
+
+<p>На младших уровнях на анкету закладывают около пяти минут сверх заданий. Величина небольшая, но важная для понимания: <b>«экзамен сорок минут» не означает «сорок минут на вопросы»</b>.</p>
+
+<p><b>И отдельная оговорка про перенос ответов.</b> На младших уровнях в конце раздела дают немного времени, чтобы перенести отмеченное в бланк. На HSK 5 такого запаса нет — вносить ответы нужно сразу по ходу. Привычка «отмечу в черновике, потом перепишу» там стоит дорого.</p>
+
+<p>Ещё одно, о чём спрашивают постоянно: <b>перерывов между разделами нет</b>. Экзамен идёт подряд от первого задания до последнего, и выйти в середине нельзя. На старших уровнях это значит около двух часов без пауз — и к этому стоит подготовиться отдельно от языка.</p>
+
+<h2>Аудирование: <span class="italic">время, которым вы не управляете</span></h2>
+
+<p>Теперь главное деление, которое объясняет, почему время на экзамене ведёт себя не так, как на занятиях.</p>
+
+<p><b>Разделы устроены по-разному.</b> В аудировании темп задаёт запись: она идёт сама, пауз по вашему желанию в ней нет, и ускорить или замедлить её вы не можете. Сколько отведено, столько и будет.</p>
+
+<figure class="ks-fig"><img src="assets/dlit-info.png" alt="Пять составных полос по уровням HSK: доли аудирования, чтения, письма и работы с бланком, общее время и секунды на один вопрос" width="1200" height="640"><figcaption>Длина полосы — всё время экзамена, внутри доли разделов. Справа — сколько секунд приходится на один вопрос.</figcaption></figure>
+
+<p>Посмотрите на красную часть полос. <b>На первых двух уровнях она занимает около половины всего экзамена</b>, и это время полностью продиктовано записью. Выходит, половиной экзамена вы не распоряжаетесь вовсе.</p>
+
+<p>Отсюда первый практический вывод. Готовиться к аудированию «с запасом времени» бессмысленно: <b>запаса там не бывает</b>. Либо вы успеваете за записью, либо нет, и третьего варианта формат не предусматривает.</p>
+
+<p>Что в этом разделе действительно можно сделать — это использовать паузы между заданиями, чтобы заранее прочитать варианты ответа. Тогда к моменту, когда начнётся запись, вы уже знаете, что именно слушать.</p>
+
+<p>И вторая сторона того же: <b>упущенное в аудировании не догоняется</b>. Запись не отматывают, повторно не включают. Потерянный вопрос остаётся потерянным, и спорить с этим бесполезно — лучше сразу перейти к следующему, чем пытаться восстановить предыдущий.</p>
+
+<h2>Чтение и письмо: <span class="italic">здесь минуты ваши</span></h2>
+
+<p>Зелёная и жёлтая части полос устроены иначе — и именно там решается, хватит вам времени или нет.</p>
+
+<p><b>В чтении и письме вы распоряжаетесь временем сами.</b> Можно задержаться на трудном тексте, можно пропустить его и вернуться, можно решать не по порядку. Свобода есть — и она же создаёт проблему.</p>
+
+<p>Самая частая потеря выглядит так: человек берётся за трудный вопрос и не отступает, пока не решит. Вопрос один, а минут на него уходит как на три. <b>Остальные вопросы при этом никуда не делись</b> и ждут в конце.</p>
+
+<p>Второе место по потерям — порядок работы с бланком. Если ответы переносят не сразу, а копят, на это уходят минуты, которых потом не хватает. В истории ниже как раз такой случай.</p>
+
+<p>Третье — чтение подряд там, где нужно искать. В длинных текстах ответ обычно привязан к конкретному месту, и читать весь текст от начала до конца, чтобы ответить на один вопрос, — самый дорогой способ.</p>
+
+<p><b>Письмо стоит отдельно.</b> Оно появляется с третьего уровня, и это единственный раздел, где вы пишете сами, а не выбираете из готового. Времени на него дают меньше, чем на чтение, и начинающие обычно недооценивают, сколько уходит на то, чтобы просто вывести иероглифы от руки.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица готовилась к HSK 4 и на занятиях решала всё верно. А на каждом пробнике не успевала — и не на один-два вопроса, а заметно.</p>
+  <p>Сначала мы искали причину там, где её обычно ищут: в скорости чтения, в незнакомых словах, в сложных заданиях. Ничего не сходилось: те же тексты без таймера она разбирала спокойно.</p>
+  <p><b>Нашли случайно</b>, когда я попросила её решать при мне. Она отмечала ответ в черновике, а потом переносила его в бланк — после каждого задания отдельно. Сто раз за экзамен.</p>
+  <p>Каждый такой перенос стоил нескольких секунд. Вместе за сто заданий они и составляли те минуты, которых потом не хватало на последние тексты.</p>
+  <p>Поменяли порядок: отмечать сразу в бланк. И перестали засекать раздел целиком — стали ставить точки внутри него, чтобы видеть отставание не в конце, а на середине.</p>
+  <p>На экзамене время сошлось, причём с запасом. Самое обидное в этой истории то, что на занятиях привычка не стоила ничего и потому ни разу не попалась нам на глаза.</p>
+</div>
+
+<p>Эту историю я рассказываю всем, кто жалуется, что не успевает. <b>Причина редко бывает в скорости чтения</b> — чаще в порядке действий, который на занятиях ничего не стоит и потому не заметен.</p>
+
+<p>Отсюда и совет, с которого стоит начинать: прежде чем учиться читать быстрее, посмотрите, на что уходит время, которое у вас уже есть. Как проходит сам день экзамена и что берут с собой, разобрано отдельно: <a href="https://kitai-school.ru/article/sdat-hsk-kak-prohodit-den-kzamena" target="_blank" rel="noopener">как проходит день экзамена</a>.</p>
+
+<h2>Сколько времени приходится <span class="italic">на один вопрос</span></h2>
+
+<p>Теперь посчитаем то, что из этой истории следует, — и получится не то, чего ждёшь.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Время заданий без анкеты, делённое на число вопросов. Величина грубая и нужна для сравнения уровней между собой, а не как норматив.</caption>
+  <thead><tr><th>Уровень</th><th>Вопросов</th><th>Время заданий</th><th>На один вопрос</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>40</td><td>32 мин</td><td><b>48 с</b></td></tr>
+    <tr><td><b>HSK 2</b></td><td>60</td><td>47 мин</td><td><b>47 с</b></td></tr>
+    <tr><td><b>HSK 3</b></td><td>80</td><td>80 мин</td><td><b>60 с</b></td></tr>
+    <tr><td><b>HSK 4</b></td><td>100</td><td>95 мин</td><td><b>57 с</b></td></tr>
+    <tr><td><b>HSK 5</b></td><td>100</td><td>110 мин</td><td><b>66 с</b></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Экзамен удлиняется втрое, а время на вопрос держится около минуты.</b> Разброс между уровнями — считанные секунды, и это при том, что на пятом уровне задания несравнимо сложнее, чем на первом.</p>
+
+<p>Отсюда вывод, ради которого и стоило считать. <b>Старшие уровни тяжелее не потому, что времени дают меньше</b>, а потому, что за ту же минуту нужно успеть несравнимо больше: прочитать длиннее, понять сложнее, выбрать из более близких вариантов.</p>
+
+<p>Это меняет и подход к подготовке. Бессмысленно учиться «решать быстрее» вообще — <b>нужно учиться укладываться в минуту на том материале, который будет на вашем уровне</b>. Скорость на простых текстах ничего не говорит о скорости на сложных.</p>
+
+<p>И честная оговорка про сам счёт. Он грубый: время по разделам примерное, а вопросы внутри раздела неравноценны — одни берутся за двадцать секунд, другие требуют двух минут. <b>Эта величина нужна для сравнения уровней между собой</b>, а не как указание, сколько сидеть над заданием.</p>
+
+<h2>Почему два часа <span class="italic">тянутся дольше, чем сумма минут</span></h2>
+
+<p>Есть сторона экзамена, которую не видно ни в какой таблице.</p>
+
+<p><b>Два часа непрерывной работы — это нагрузка сама по себе</b>, отдельно от языка. К середине чтения внимание держится хуже, чем в начале, и ошибки начинаются там, где на занятии их не было.</p>
+
+<p>Проверить это просто: решать по разделу в день и решать весь экзамен подряд — разный опыт, и результат получается разный. Именно поэтому пробник имеет смысл хотя бы раз написать целиком, а не по частям.</p>
+
+<p>И не забудьте про мелочь, которая на занятиях не встречается: <b>выйти в середине нельзя</b>. Воду, еду и всё остальное планируют до начала, а не по ходу.</p>
+
+<h2>Если <span class="italic">не успеваете</span></h2>
+
+<p>Несколько решений, которые принимают прямо в аудитории. Все они про одно: не терять больше, чем уже потеряли.</p>
+
+<ul>
+  <li><b>Отмечайте хоть что-нибудь.</b> Пустой ответ не даст ничего, отмеченный наугад — может дать. Перед тем как идти дальше, поставьте любой вариант.</li>
+  <li><b>Не возвращайтесь мысленно.</b> Вопрос, оставленный позади, отвлекает внимание, пока вы решаете следующий. Оставили — значит оставили.</li>
+  <li><b>Следите за серединой, а не за концом.</b> Отставание видно на половине раздела; если ждать конца, исправлять будет уже нечего.</li>
+  <li><b>Не копите ответы.</b> Переносите их в бланк сразу — и на старших уровнях это не совет, а необходимость.</li>
+  <li><b>Начинайте с того, что даётся.</b> Порядок внутри раздела ваш, и нет смысла идти подряд, если первое задание самое трудное.</li>
+</ul>
+
+<p><b>И то, чего делать не стоит.</b> Не просите продлить время и не рассчитывайте, что его продлят: формат этого не предусматривает. Не пытайтесь дописывать после команды закончить — это другая история, и заканчивается она плохо.</p>
+
+<h2>Устный экзамен <span class="italic">считается отдельно</span></h2>
+
+<p>Коротко, потому что это отдельная тема со своей страницей.</p>
+
+<p><b>HSKK — самостоятельный экзамен</b>, и к письменному его время отношения не имеет. Вместе с подготовкой он занимает около двадцати минут, причём говорите вы далеко не всё это время: часть уходит на то, чтобы собраться с мыслями перед ответом.</p>
+
+<p>Если программа требует оба экзамена, планируйте два отдельных события, а не одно длинное. Как устроена устная часть и как к ней готовиться — здесь: <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">устный экзамен HSKK</a>.</p>
+
+<h2>Что <span class="italic">может измениться</span></h2>
+
+<p>Три оговорки, без которых статья была бы слишком уверенной.</p>
+
+<p><b>Первое: редакция экзамена.</b> Все цифры выше приведены по действующей редакции HSK 2.0. Экзамен переходит на HSK 3.0, система уровней перестраивается, и тайминг в деталях может измениться. Предсказывать, как именно, я не стану — оснований нет.</p>
+
+<p><b>Второе: HSK 6.</b> Его в таблице нет намеренно. Подтверждённых цифр по шестому уровню у меня нет, а называть минуты наугад в справочной статье нельзя. Появятся проверенные — добавлю.</p>
+
+<p><b>Третье: центр и формат.</b> Порядок частей и их длительность зависят от вашего центра и от уровня, а на компьютерном формате ход работы устроен иначе, чем на бумажном. Утверждать, что времени там столько же, я не берусь: это стоит уточнять там, где вы регистрируетесь. Расписание сессий и сроки записи — отдельно: <a href="https://kitai-school.ru/article/daty-sdachi-hsk-raspisanie-sessiy" target="_blank" rel="noopener">даты сдачи HSK</a>.</p>
+
+<p>Общий принцип тут тот же, что и со всеми правилами вокруг экзамена. <b>Статья объясняет, как устроено время и на что оно уходит</b>, а точные условия вашей сессии публикует принимающая сторона — их и стоит смотреть перед подачей. Что вообще подтверждает сертификат и как устроены уровни, разобрано здесь: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK</a>.</p>
+
+<div class="cta">
+  <p>Укладываться в минуту на вопрос учатся так же, как слова: с подготовкой под свой уровень — <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько длится экзамен HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>От примерно сорока минут на первом уровне до примерно ста двадцати пяти минут на пятом — то есть разница между крайними уровнями примерно втрое. В это время входят все разделы подряд, без перерывов между ними, плюс заполнение анкеты и работа с бланком. Время по разделам примерное и приведено по действующей редакции HSK 2.0.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько длится HSK 1?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Около сорока минут вместе с анкетой. Разделов два — аудирование примерно пятнадцать минут и чтение примерно семнадцать; письменной части на первом уровне нет. Подробный разбор самого уровня — заданий, слов и подготовки — у нас на отдельной странице.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько длится HSK 3?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Около девяноста минут вместе с анкетой. Здесь впервые появляется письмо: аудирование примерно тридцать пять минут, чтение примерно тридцать, письмо примерно пятнадцать. Третий уровень разобран у нас отдельно — там и про исчезающий пиньинь.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Есть ли перерывы между частями экзамена?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, экзамен идёт подряд: разделы сменяют друг друга без пауз. Выйти из аудитории в середине нельзя, и это стоит учитывать заранее — особенно на старших уровнях, где всё вместе занимает около двух часов.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Входит ли заполнение бланка в общее время?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, и это часть разницы между суммой разделов и итоговой цифрой. На младших уровнях на анкету закладывают около пяти минут сверх заданий. Отдельно стоит знать, что на HSK 5 запаса времени на перенос ответов в конце разделов не дают — вносить их нужно сразу.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько длится устный экзамен HSKK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Около двадцати минут вместе с подготовкой, и говорите вы далеко не всё это время. Это отдельный экзамен со своим сертификатом, и считается он отдельно от письменного — подробности у нас на странице про устную часть.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть минут хватит на всё, что вы знаете! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Все минуты взяты с наших страниц уровней HSK 1–5</b>, где они опубликованы с пометкой «по действующей редакции HSK 2.0» и «время по разделам примерное». Чужие цифры я не уточняла и не округляла.</li>
+    <li><b>Таблица уровней задана в сборке один раз</b> и оттуда попадает и в текст, и на обе картинки. Проверки при сборке следят, чтобы сумма разделов не превышала общего времени, чтобы письмо стояло только с третьего уровня и чтобы время росло от уровня к уровню.</li>
+    <li><b>Счёт «на один вопрос»</b> получен делением времени заданий без анкеты на число вопросов. Величина грубая, и в тексте это сказано: она нужна для сравнения уровней, а не как норматив.</li>
+    <li><b>Отсутствие перерывов между разделами</b> приведено по нашей же статье о том, как проходит день экзамена.</li>
+    <li><b>Про отсутствие запаса на перенос ответов на HSK 5</b> — по нашей статье о пробном тесте пятого уровня.</li>
+    <li><b>Время HSKK</b> — около двадцати минут вместе с подготовкой — по нашим страницам устного экзамена.</li>
+    <li><b>HSK 6 в таблицу не включён намеренно:</b> подтверждённых цифр по нему у меня нет.</li>
+    <li><b>Про компьютерный формат не утверждается ничего о длительности:</b> проверить это я не могу, и в тексте стоит совет уточнять у своего центра.</li>
+    <li><b>Проходных баллов в статье нет</b> — это предмет отдельной страницы.</li>
+    <li>Случай с переносом ответов в бланк — из занятий Kitai School; имени, города и результата в баллах не называю.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Время на один вопрос почти не меняется от уровня к уровню — меняется длина самого вопроса</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
