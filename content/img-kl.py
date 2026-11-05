@@ -18,8 +18,8 @@ STAGES = [
     ("初中", "chūzhōng", "Средняя школа", 3, 12, True),
     ("高中", "gāozhōng", "Старшая школа", 3, 15, False),
 ]
-EXAMS = {9: ("中考", "zhōngkǎo", "после девятого класса"),
-         12: ("高考", "gāokǎo", "в конце школы")}
+EXAMS = {9: ("中考", "zhōngkǎo", "экзамен в конце девятого класса: по нему решают, кто пойдёт в старшую школу"),
+         12: ("高考", "gāokǎo", "выпускной экзамен, по нему поступают в вузы")}
 
 # ── проверки данных
 assert len(STAGES) == 3, "ступеней должно быть три"
@@ -164,7 +164,7 @@ h2 i{font-style:italic;color:var(--brick)}
 .lbl .nm{display:block;font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
 .lbl .yy{display:block;font-size:12.5px;color:var(--taupe);margin-top:2px}
 
-.exam{flex:0 0 94px;display:flex;flex-direction:column;align-items:center;padding-top:6px}
+.exam{flex:0 0 138px;display:flex;flex-direction:column;align-items:center;padding-top:6px}
 .exam .zh{font-family:'Noto Serif SC',serif;font-weight:700;font-size:21px;color:#fff;background:var(--ink);padding:6px 10px;border-radius:9px}
 .exam .py{font-size:11.5px;color:var(--taupe);margin-top:5px}
 .exam .cm{font-size:11.5px;color:var(--ink-2);margin-top:4px;text-align:center;line-height:1.26}
@@ -192,10 +192,10 @@ h2 i{font-style:italic;color:var(--brick)}
 <div class="wrap">
   <div class="top">
     <div>
-      <div class="eyebrow">Двенадцать классов</div>
-      <h2>Весь путь по годам — <i>и развилка посередине</i></h2>
+      <div class="eyebrow">Школа в Китае</div>
+      <h2>Двенадцать классов — <i>и выбор после девятого</i></h2>
     </div>
-    <div class="hint">В клетке — номер класса и возраст, в котором его обычно начинают. <b>После девятого класса дорога раздваивается.</b></div>
+    <div class="hint">В клетке — номер класса и возраст, в котором его обычно начинают. <b>После девятого класса обязательная школа заканчивается</b>: дальше идут либо в старшую школу, либо в профучилище.</div>
   </div>
 
   <div class="road">%(cells)s</div>
@@ -212,7 +212,7 @@ h2 i{font-style:italic;color:var(--brick)}
     <div class="brand"><span class="dot2"></span><b>Kitai School</b><span>&middot; kitai-school.ru</span></div>
   </div>
 </div>
-</body></html>""" % dict(fonts=FONTS, vars=VARS, h=576, cells=cells, stats=stat_rows)
+</body></html>""" % dict(fonts=FONTS, vars=VARS, h=628, cells=cells, stats=stat_rows)
 
 open(S + "kl-info.html", "w", encoding="utf-8").write(info)
 
