@@ -7,8 +7,8 @@ OUT = "skolko-zarabatyvayut-perevodchiki-v-kitae.html"
 SLUG = "skolko-zarabatyvayut-perevodchiki-v-kitae"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/per-hero.png"
-FIG = "assets/per-info.png"
+HERO = "https://static.tildacdn.com/tila6233-3135-4530-b330-656434636134/per-hero.png"
+FIG = "https://static.tildacdn.com/tila6430-3234-4539-b966-303962373031/per-info.png"
 HERO_ALT = ("Три бирки форматов перевода: письменный, последовательный и синхронный, "
             "без сумм")
 FIG_ALT = ("Пять карточек источников с цифрами о доходах переводчиков и пометками, почему "
