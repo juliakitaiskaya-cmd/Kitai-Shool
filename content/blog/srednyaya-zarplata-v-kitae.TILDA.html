@@ -1,0 +1,449 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/srednyaya-zarplata-v-kitae#article",
+      "headline": "Средняя зарплата в Китае: сколько реально платят и насколько это зависит от города",
+      "description": "Разбор того, почему на вопрос о средней зарплате в Китае есть сразу несколько верных ответов. Три официальных показателя за 2025 год отличаются почти вдвое, потому что охватывают разный круг работников; все суммы публикуются до вычетов, а индивидуальные предприниматели и самозанятые в статистику не входят. Объясняем разницу между средним и медианой, порядок разрыва между столичными городами и остальной страной, почему пересчёт в рубли бессмысленен, и даём лексику о зарплате: 工资, 月薪, 年薪, 税前, 税后, 底薪, 提成, 年终奖. Цифр по отраслям и по провинциям в статье нет: источники расходятся.",
+      "image": "assets/zp-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/srednyaya-zarplata-v-kitae",
+      "about": {
+        "@type": "Thing",
+        "name": "Заработная плата в Китае"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/srednyaya-zarplata-v-kitae#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какая средняя зарплата в Китае?", "acceptedAnswer": {"@type": "Answer", "text": "Официальных показателей сразу три, и они отличаются почти вдвое. За 2025 год: в городских негосударственных единицах — 129 441 юань в год, на предприятиях выше установленного статистического размера — 106 080, в городских частных единицах — 71 590. Разница не в ошибке, а в охвате: каждый показатель считает свой круг работников. Все суммы — до вычетов."}},
+        {"@type": "Question", "name": "Сколько это в месяц?", "acceptedAnswer": {"@type": "Answer", "text": "Если разделить годовые цифры на двенадцать, получится примерно 10 787, 8 840 и 5 966 юаней соответственно. Это арифметика, а не отдельный показатель: премии и переменная часть по месяцам распределяются неравномерно, поэтому в конкретном месяце сумма может быть и больше, и меньше."}},
+        {"@type": "Question", "name": "Почему в разных источниках разные цифры?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что считают разное. Один показатель охватывает только крупные предприятия, другой — частный сектор, третий — городские организации с пятью и более работниками. Добавьте к этому цифры до вычетов и после, городские показатели по разным охватам и разные годы — и получится тот самый разброс, который видно в поиске."}},
+        {"@type": "Question", "name": "Какая зарплата в Пекине и Шанхае?", "acceptedAnswer": {"@type": "Answer", "text": "Заметно выше общенациональной — по порядку величины примерно вдвое. Точного числа я здесь не привожу: городские показатели публикуются по разным охватам, и цифры из разных рядов между собой несопоставимы. Если нужна конкретная цифра, смотрите публикацию по нужному городу и обязательно сверяйте, какой круг работников в неё входит."}},
+        {"@type": "Question", "name": "Сколько это в рублях?", "acceptedAnswer": {"@type": "Answer", "text": "Пересчёт я намеренно не делаю: курс меняется, и число в рублях устареет быстрее, чем сама статья. Посчитать несложно самому — возьмите сумму в юанях и умножьте на текущий курс юаня. Важнее другое: сравнивать зарплату имеет смысл не с рублёвой суммой, а с местными ценами."}},
+        {"@type": "Question", "name": "Сколько получают в Китае иностранцы?", "acceptedAnswer": {"@type": "Answer", "text": "Единой цифры нет, и приводить её было бы выдумкой: доход зависит от визы, сферы, города и конкретного договора. Что можно сказать точно: работать в Китае законно получится только с рабочей визой, а знание китайского заметно расширяет круг вакансий. Подробности — в нашей статье про работу в Китае."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/srednyaya-zarplata-v-kitae#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Средняя зарплата в Китае: сколько реально платят и насколько это зависит от города", "item": "https://kitai-school.ru/article/srednyaya-zarplata-v-kitae"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Китай · работа</p>
+<h1>Средняя зарплата в Китае: <span class="italic">сколько реально платят и насколько это зависит от города</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-05">5 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/zp-hero.png" alt="Расчётный лист со строками 税前, 底薪, 奖金, 社保, 公积金, 个税 и итогом 税后" width="1200" height="630"></figure>
+
+<p class="passport">Если вы уже искали ответ, то видели пять разных цифр и ни одного объяснения, почему они не сходятся. Объяснение простое, и с него стоит начать: официальных «средних» в Китае не одна, а несколько, и считают они разные круги работников. Дальше разберём каждую, посмотрим, насколько средняя расходится с тем, что получает большинство, и закончим словами, без которых разговор о зарплате по-китайски не складывается.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>За 2025 год: 129 441 юань в год</b> в городских негосударственных единицах, <b>106 080</b> на крупных предприятиях, <b>71 590</b> в городском частном секторе. Все суммы — <b>до вычетов</b>. Медианный доход на душу составляет <b>83,5 % от среднего</b>: половина получает меньше. В Пекине и Шанхае порядок примерно вдвое выше общенационального.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">сразу три «средние»</span></h2>
+
+<p>Начну с цифр, а объяснение — сразу под таблицей.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Средние зарплаты в Китае за 2025 год по данным Национального бюро статистики КНР. Суммы до вычетов.</caption>
+  <thead><tr><th>Показатель</th><th>В год</th><th>Примерно в месяц</th><th>Кого считает</th></tr></thead>
+  <tbody>
+    <tr><td><b>Городские негосударственные единицы</b></td><td><b>129 441 ¥</b></td><td>10 787 ¥</td><td>самый цитируемый показатель: именно его обычно и называют средней зарплатой в Китае</td></tr>
+    <tr><td><b>Предприятия выше установленного статистического размера</b></td><td><b>106 080 ¥</b></td><td>8 840 ¥</td><td>только достаточно крупные предприятия</td></tr>
+    <tr><td><b>Городские частные единицы</b></td><td><b>71 590 ¥</b></td><td>5 966 ¥</td><td>частный сектор в городах</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Между крайними строками разница почти вдвое</b> — и это не разные источники, а один и тот же. Просто показатели охватывают разный круг работников, и каждый из них по-своему верен.</p>
+
+<p>Первая строка — та самая цифра, которую обычно и называют средней зарплатой в Китае. Рост к прошлому году — 4,3 % номинально.</p>
+
+<p>Вторая и третья строки нужны для сравнения. Они показывают, что цифра зависит не от источника, а от того, кого в неё включили: стоит сузить круг до крупных предприятий или расширить до всего городского частного сектора — и «средняя по стране» сдвигается на десятки тысяч юаней в год.</p>
+
+<p>Месячные суммы в третьей колонке — простое деление на двенадцать, а не отдельный показатель. Реальные выплаты по месяцам распределяются неровно: премии и переменная часть приходят не каждый месяц.</p>
+
+<h2>Почему одна цифра <span class="italic">не отвечает на вопрос</span></h2>
+
+<p>Теперь то, из-за чего цифры в поиске не сходятся между собой.</p>
+
+<p><b>Первое: разный охват.</b> Статистика считает работников организаций с пятью и более сотрудниками в городах. Индивидуальные предприниматели и самозанятые в неё не входят — а это заметная часть занятых.</p>
+
+<p><b>Второе: суммы приводятся до вычетов.</b> На счёт приходит меньше: удерживают взносы и подоходный налог. Разговор о зарплате в Китае почти всегда начинается с уточнения, о какой сумме речь — об этом ниже, в разделе про слова.</p>
+
+<p><b>Третье: это средняя, а не типичная.</b> Среднее поднимают высокие доходы, и большинство получает меньше. Насколько — в следующем разделе.</p>
+
+<p><b>И отдельно — цифры с сайтов вакансий.</b> Их тоже называют средними, но считают они совсем другое: не всех работников страны, а тех, кого ищут работодатели через конкретную площадку. Вакансия почти всегда называет вилку, а не одно число, и верхняя граница в ней — предложение для лучшего кандидата, а не типичная выплата.</p>
+
+<p>Поэтому зарплатные обзоры кадровых сайтов и государственная статистика расходятся закономерно, а не по ошибке. <b>Первые показывают рынок найма прямо сейчас</b>, вторые — всех, кто уже работает, включая тех, кто сидит на одном месте десять лет и работу не ищет.</p>
+
+<p><b>Четвёртое: год публикации.</b> Данные за год выходят с задержкой, и в поиске запросто соседствуют цифры за разные годы. Всегда смотрите, к какому году относится число.</p>
+
+<p>Отсюда правило, которое экономит время: <b>прежде чем сравнивать две цифры, посмотрите, что именно каждая из них считает.</b> Чаще всего выясняется, что сравнивать их нельзя вовсе.</p>
+
+<h2>Среднее и медиана: <span class="italic">почему большинство получает меньше</span></h2>
+
+<p>Это главное, что стоит понять про любую среднюю зарплату — хоть китайскую, хоть какую.</p>
+
+<figure class="ks-fig"><img src="assets/zp-info.png" alt="Три столбца трёх официальных средних зарплат в Китае за 2025 год: 129 441, 106 080 и 71 590 юаней в год" width="1200" height="716"><figcaption>Три официальные «средние» за 2025 год и то, как к ним относится медиана.</figcaption></figure>
+
+<p><b>Медианный располагаемый доход на душу населения составляет 83,5 % от среднего.</b> Медиана — это середина: половина получает больше, половина меньше. И она заметно ниже средней.</p>
+
+<p>Сразу оговорюсь, чтобы не путать показатели. <b>Доход на душу населения и зарплата — разные вещи:</b> первый считается на человека, включая тех, кто не работает, и учитывает не только зарплату. Я привожу его здесь только ради одного — показать разрыв между серединой и средним.</p>
+
+<p>Почему так выходит. Среднее чувствительно к высоким значениям: несколько очень больших доходов тянут его вверх, а медиану — нет. Поэтому <b>средняя зарплата почти всегда выше той, которую получает типичный работник</b>.</p>
+
+<p>Практический вывод для читателя. Увидев цифру средней зарплаты, не примеряйте её на себя как ориентир: <b>это не та сумма, которую получает большинство</b>. Ближе к действительности окажется медиана, а ещё ближе — цифры по вашему городу и вашей сфере.</p>
+
+<h2>Город решает <span class="italic">больше, чем профессия</span></h2>
+
+<p>Разрыв между регионами в Китае больше, чем разрыв между многими профессиями внутри одного города.</p>
+
+<p><b>В Пекине и Шанхае средняя выше общенациональной примерно вдвое.</b> Это порядок величины, и дальше я намеренно не уточняю.</p>
+
+<p>Почему не уточняю. Городские показатели публикуются по разным охватам: один город даёт цифру по негосударственным единицам, другой — по всем сразу. <b>Эти ряды несопоставимы между собой</b>, и поставить их в одну таблицу значило бы сравнить разное.</p>
+
+<p>То же и с провинциями. Полного сопоставимого ряда за год в доступных мне публикациях нет: часть регионов отчитывается позже, методики смешаны. <b>Таблицы по провинциям в этой статье не будет</b> — вместо красивой картинки с цифрами, которым нельзя доверять.</p>
+
+<p>Что можно сказать уверенно: <b>разрыв между городами первого ряда и остальной страной существенный</b>, и он не сводится к зарплате. Вместе с доходом растут и расходы, прежде всего на жильё, — и об этом стоит думать одновременно.</p>
+
+<p>И ещё одно, что теряется за любой средней цифрой: <b>сумму в договоре называет не статистика, а живой разговор</b> — и в нём легко разойтись с собеседником на ровном месте.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик готовился к собеседованию в китайскую компанию и принёс на занятие вопрос, который считал простым: как сказать, сколько он хочет получать.</p>
+  <p>Фразу он уже составил. В ней была сумма — и больше ничего. Ни <span class="han">月薪</span> это или <span class="han">年薪</span>, ни <span class="han">税前</span> или <span class="han">税后</span>.</p>
+  <p><b>А разница тут не стилистическая.</b> Назвать годовую сумму вместо месячной — разойтись с собеседником в двенадцать раз. Не уточнить про вычеты — договориться о цифре, которой он не увидит на счёте.</p>
+  <p>Отработали три хода: назвать вилку, а не одно число; уточнить, идёт ли речь о сумме до вычетов; спросить про годовую премию отдельно, потому что её в месячную сумму не кладут.</p>
+  <p>На собеседовании всё это заняло полминуты. Но без этих полминуты он бы вёл разговор вслепую — и узнал бы настоящую цифру только с первой выплатой.</p>
+</div>
+
+<p>Эта история не про язык даже, а про привычку уточнять. <b>В китайской практике сумму почти всегда проговаривают с уточнением</b> — месячная или годовая, до вычетов или после, — и вопрос об этом никого не удивляет.</p>
+
+<h2>Почему я не перевожу <span class="italic">в рубли</span></h2>
+
+<p>Вернёмся к цифрам — и к вопросу, который задают первым. Ответ на него будет не тот, которого ждут.</p>
+
+<p><b>Пересчёта в рубли в статье нет, и это решение, а не забывчивость.</b> Курс меняется, а статья остаётся: число, посчитанное сегодня, завтра окажется неверным, и читатель об этом не узнает.</p>
+
+<p>Посчитать самому несложно: возьмите сумму в юанях и умножьте на текущий курс. Минута работы — зато цифра будет сегодняшней, а не прошлогодней.</p>
+
+<p><b>Но главное не в этом.</b> Сравнивать китайскую зарплату с рублёвой суммой мало что даёт: тратиться она будет в Китае и по китайским ценам.</p>
+
+<h2>Сумма сама по себе <span class="italic">ничего не значит</span></h2>
+
+<p>Отсюда вытекает то, ради чего вообще стоит смотреть на эти цифры.</p>
+
+<p><b>Зарплата имеет смысл только рядом с ценами.</b> Одна и та же сумма в Шанхае и в небольшом городе провинции — это два разных уровня жизни, и разница заметнее, чем кажется по цифрам дохода.</p>
+
+<p>Главная статья расходов, которая съедает разницу, — жильё. Именно аренда в городах первого ряда отличается от провинции сильнее всего, и именно она решает, что останется от зарплаты.</p>
+
+<p>Что сколько стоит в Китае — еда, транспорт, жильё — у нас разобрано отдельно: <a href="https://kitai-school.ru/article/dorogo-li-v-kitae" target="_blank" rel="noopener">дорого ли в Китае</a>. Эту статью и стоит читать вместе с этой: доходы и расходы по отдельности мало о чём говорят.</p>
+
+<h2>Как говорят о зарплате <span class="italic">по-китайски</span></h2>
+
+<p>Восемь слов, которые закрывают почти любой разговор о деньгах на работе.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Лексика о зарплате: слово, чтение и то, как оно употребляется.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Перевод</th><th>Как употребляется</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">工资</b></td><td>gōngzī</td><td><b>зарплата</b></td><td>общее слово, подходит почти всегда</td></tr>
+    <tr><td><b class="han">月薪</b></td><td>yuèxīn</td><td><b>месячная зарплата</b></td><td>о сумме за месяц</td></tr>
+    <tr><td><b class="han">年薪</b></td><td>niánxīn</td><td><b>годовая зарплата</b></td><td>о сумме за год — в вакансиях встречается часто</td></tr>
+    <tr><td><b class="han">税前</b></td><td>shuìqián</td><td><b>до вычетов</b></td><td>сумма начислена, но ещё не выдана</td></tr>
+    <tr><td><b class="han">税后</b></td><td>shuìhòu</td><td><b>после вычетов</b></td><td>то, что приходит на счёт</td></tr>
+    <tr><td><b class="han">底薪</b></td><td>dǐxīn</td><td><b>оклад</b></td><td>постоянная часть, без премий и процентов</td></tr>
+    <tr><td><b class="han">提成</b></td><td>tíchéng</td><td><b>процент с продаж</b></td><td>переменная часть у продавцов и менеджеров</td></tr>
+    <tr><td><b class="han">年终奖</b></td><td>niánzhōngjiǎng</td><td><b>годовая премия</b></td><td>выплата в конце года, её размер оговаривают отдельно</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Главная пара здесь — <span class="han">税前</span> и <span class="han">税后</span>.</b> Все публикуемые цифры, включая те, что в таблице выше, — это <span class="han">税前</span>. На счёт приходит <span class="han">税后</span>, и разница заметная.</p>
+
+<p>Вторая по важности пара — <span class="han">月薪</span> и <span class="han">年薪</span>. В вакансиях встречается и то, и другое, и перепутать их легко: разница между месячной и годовой суммой — двенадцатикратная.</p>
+
+<p><b>И отдельно про <span class="han">年终奖</span>.</b> Годовая премия в месячную сумму не входит, и её размер оговаривают отдельно. Если о ней не спросили — считайте, что в разговоре осталась неназванная часть дохода.</p>
+
+<p>Про обязательные взносы и социальный пакет у нас сказано в статье о работе в Китае: <a href="https://kitai-school.ru/article/rabota-v-kitae-dlya-inostranca" target="_blank" rel="noopener">работа в Китае для иностранца</a>. Там же про визу, без которой работать нельзя, и про то, какие сферы открыты иностранцам. Что до студентов, подработка при учёбе разобрана отдельно: <a href="https://kitai-school.ru/article/mozhno-li-studentam-rabotat-v-kitae" target="_blank" rel="noopener">можно ли студентам работать в Китае</a>.</p>
+
+<p>Если деньги и переговоры — ваша рабочая тема, лексика шире обычного курса собрана здесь: <a href="https://kitai-school.ru/article/kitayskiy-yazyk-dlya-biznesa-kakaya-leksika-nujna" target="_blank" rel="noopener">китайский язык для бизнеса</a>.</p>
+
+<h2>Чего в статье <span class="italic">нет намеренно</span></h2>
+
+<p>Перечислю прямо — это решения, а не пробелы.</p>
+
+<ul>
+  <li><b>Нет цифр по отраслям.</b> В доступных публикациях они расходятся почти вдвое по одной и той же отрасли, и выбрать из двух чисел наугад я не могу.</li>
+  <li><b>Нет точных цифр по Пекину и Шанхаю.</b> Городские ряды считаются по разным охватам и между собой несопоставимы.</li>
+  <li><b>Нет таблицы по провинциям.</b> Полного сопоставимого ряда за год нет.</li>
+  <li><b>Нет сумм в рублях и долларах.</b> Курс меняется быстрее, чем обновляется статья.</li>
+  <li><b>Нет прогнозов.</b> Что будет с зарплатами дальше, я не знаю, и гадать не стану.</li>
+  <li><b>Нет обещаний заработка</b> — ни иностранцам, ни тем, кто выучит язык. Язык расширяет выбор вакансий, но не назначает сумму в договоре.</li>
+</ul>
+
+<p>И общее замечание о том, как вообще читать такие цифры. <b>Любая средняя зарплата — это ответ на вопрос статистика, а не на ваш.</b> Статистик спрашивает, сколько в среднем платят в стране; вы спрашиваете, сколько будут платить вам. Это разные вопросы, и первая цифра на второй не отвечает.</p>
+
+<p>Что действительно помогает: смотреть вакансии в своём городе и в своей сфере, сравнивать их с местной арендой и держать в голове, что опубликованная сумма — до вычетов. Это скучнее одной красивой цифры, зато ближе к правде.</p>
+
+<div class="cta">
+  <p>Разговор о работе и деньгах — отдельный пласт языка, и начинается он раньше, чем кажется: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какая средняя зарплата в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Официальных показателей сразу три, и они отличаются почти вдвое. За 2025 год: в городских негосударственных единицах — 129 441 юань в год, на предприятиях выше установленного статистического размера — 106 080, в городских частных единицах — 71 590. Разница не в ошибке, а в охвате: каждый показатель считает свой круг работников. Все суммы — до вычетов.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько это в месяц?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Если разделить годовые цифры на двенадцать, получится примерно 10 787, 8 840 и 5 966 юаней соответственно. Это арифметика, а не отдельный показатель: премии и переменная часть по месяцам распределяются неравномерно, поэтому в конкретном месяце сумма может быть и больше, и меньше.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему в разных источниках разные цифры?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что считают разное. Один показатель охватывает только крупные предприятия, другой — частный сектор, третий — городские организации с пятью и более работниками. Добавьте к этому цифры до вычетов и после, городские показатели по разным охватам и разные годы — и получится тот самый разброс, который видно в поиске.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какая зарплата в Пекине и Шанхае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Заметно выше общенациональной — по порядку величины примерно вдвое. Точного числа я здесь не привожу: городские показатели публикуются по разным охватам, и цифры из разных рядов между собой несопоставимы. Если нужна конкретная цифра, смотрите публикацию по нужному городу и обязательно сверяйте, какой круг работников в неё входит.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько это в рублях?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Пересчёт я намеренно не делаю: курс меняется, и число в рублях устареет быстрее, чем сама статья. Посчитать несложно самому — возьмите сумму в юанях и умножьте на текущий курс юаня. Важнее другое: сравнивать зарплату имеет смысл не с рублёвой суммой, а с местными ценами.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько получают в Китае иностранцы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Единой цифры нет, и приводить её было бы выдумкой: доход зависит от визы, сферы, города и конкретного договора. Что можно сказать точно: работать в Китае законно получится только с рабочей визой, а знание китайского заметно расширяет круг вакансий. Подробности — в нашей статье про работу в Китае.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть цифра в договоре будет понятной до подписи! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Национальное бюро статистики КНР</b>, публикация о средних зарплатах работников городских организаций за 2025 год: 129 441 юаня в год в негосударственных единицах, 71 590 в частных, 106 080 на предприятиях выше установленного статистического размера, рост первого показателя 4,3 % номинально. Адрес публикации — stats.gov.cn, раздел пресс-релизов.</li>
+    <li><b>Сайт первоисточника из рабочей среды мне недоступен</b> — домен закрыт сетевыми настройками. Поэтому цифры сверены по нескольким независимым публикациям, которые их приводят, и совпали. Перед тем как ссылаться на них в важном разговоре, сверьтесь с самим бюро.</li>
+    <li><b>Охват показателей</b> — организации с пятью и более работниками в городах, оплата труда до вычета налогов; индивидуальные предприниматели и самозанятые не учитываются.</li>
+    <li><b>Медианный располагаемый доход на душу населения</b> — 83,5 % от среднего. Это показатель другого рода, чем зарплата, и в тексте это сказано прямо.</li>
+    <li><b>Цифр по отраслям в статье нет:</b> в доступных источниках по одной и той же отрасли приводятся значения, расходящиеся почти вдвое.</li>
+    <li><b>Точных городских и провинциальных цифр нет:</b> ряды публикуются по разным охватам и несопоставимы между собой.</li>
+    <li><b>Пересчёта в рубли и доллары нет</b> — курс меняется, и число устареет быстрее статьи.</li>
+    <li><b>Три показателя прописаны в сборке страницы одним списком</b>, из которого строятся и таблица, и столбцы на картинке. Сборка не пройдёт, если порядок величин нарушится или месячная сумма разойдётся с годовой.</li>
+    <li>Случай с собеседованием — из занятий Kitai School; имени, города, компании и сумм не называю.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Официальных «средних» в Китае сразу три, и отличаются они почти вдвое — потому что считают разный круг работников</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
