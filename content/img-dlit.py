@@ -178,7 +178,7 @@ h2 i{font-style:italic;color:var(--brick)}
   <div class="top">
     <div>
       <div class="eyebrow">Пять уровней подряд</div>
-      <h2>Время растёт, <i>а минута на вопрос — почти нет</i></h2>
+      <h2>Время растёт, <i>а минут на вопрос — почти нет</i></h2>
     </div>
     <div class="hint">Длина полосы — всё время экзамена. Справа — <b>сколько секунд приходится на один вопрос</b>: разница между уровнями меньше, чем кажется.</div>
   </div>
@@ -199,7 +199,7 @@ h2 i{font-style:italic;color:var(--brick)}
     <div class="brand"><span class="dot2"></span><b>Kitai School</b><span>&middot; kitai-school.ru</span></div>
   </div>
 </div>
-</body></html>""" % dict(fonts=FONTS, vars=VARS, h=640, bars=bars)
+</body></html>""" % dict(fonts=FONTS, vars=VARS, h=596, bars=bars)
 
 open(S + "dlit-info.html", "w", encoding="utf-8").write(info)
 
