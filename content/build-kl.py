@@ -7,8 +7,8 @@ OUT = "skolko-klassov-uchatsya-v-kitae.html"
 SLUG = "skolko-klassov-uchatsya-v-kitae"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/kl-hero.png"
-FIG = "assets/kl-info.png"
+HERO = "https://static.tildacdn.com/tila3830-3262-4735-a635-333663393038/kl-hero_1.png"
+FIG = "https://static.tildacdn.com/tila3734-3732-4261-a331-353137393239/kl-info.png"
 HERO_ALT = ("Три плитки ступеней китайской школы: 小学 шесть лет, 初中 три года, 高中 три года")
 FIG_ALT = ("Двенадцать классов по годам с возрастами, экзаменом 中考 после девятого класса "
            "и числами школ по ступеням")
