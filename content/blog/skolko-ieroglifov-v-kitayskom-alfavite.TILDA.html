@@ -1,0 +1,445 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/skolko-ieroglifov-v-kitayskom-alfavite#article",
+      "headline": "Сколько иероглифов в китайском «алфавите»: сколько знаков насчитали словари и почему точного числа нет",
+      "description": "Разбор вопроса о числе иероглифов: у китайского нет алфавита, а точного количества знаков не существует. Словарь 说文解字 начала нашей эры насчитывает 9 353 знака, 康熙字典 1716 года — около 47 тысяч, 中华字海 1994 года — 85 568, тайваньский словарь вариантов 2004 года — свыше 106 тысяч вместе с вариантами написания; в Юникоде закодировано около 98 тысяч ханьских знаков. Объясняем, почему цифры расходятся даже по одному своду, откуда берутся новые знаки и почему для чтения хватает около трёх тысяч.",
+      "image": "assets/alf-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/skolko-ieroglifov-v-kitayskom-alfavite",
+      "about": {
+        "@type": "Thing",
+        "name": "Китайская письменность"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/skolko-ieroglifov-v-kitayskom-alfavite#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Сколько иероглифов в китайском алфавите?", "acceptedAnswer": {"@type": "Answer", "text": "Алфавита у китайского языка нет — и это не придирка к слову: письменность устроена принципиально иначе, знак передаёт не звук, а значение со слогом. Если же вопрос в том, сколько всего существует иероглифов, точного числа тоже не существует: своды разных эпох насчитывают от девяти тысяч знаков до ста тысяч с лишним."}},
+        {"@type": "Question", "name": "Сколько всего иероглифов существует?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от того, какой свод открыть. В словаре начала нашей эры 说文解字 — 9 353 знака, в словаре 康熙字典 1716 года — около 47 тысяч, в своде 中华字海 1994 года — 85 568, а в тайваньском словаре вариантов 2004 года — свыше 106 тысяч, но там знаки посчитаны вместе с вариантами написания."}},
+        {"@type": "Question", "name": "Сколько иероглифов нужно знать, чтобы читать?", "acceptedAnswer": {"@type": "Answer", "text": "Несравнимо меньше: около трёх тысяч знаков покрывают основную массу обычного текста. Подробный разбор с цифрами по уровням и спискам у нас в отдельной статье об интересных фактах о языке — здесь я эту таблицу не повторяю."}},
+        {"@type": "Question", "name": "Почему у разных словарей разные цифры?", "acceptedAnswer": {"@type": "Answer", "text": "Своды собраны по разным правилам. Во-первых, в них включён разный материал: поздние берут и древние, и диалектные, и вышедшие из употребления знаки. Во-вторых, расходится сам счёт: варианты написания одного знака можно считать за один знак, а можно за несколько. Для словаря 1716 года, например, встречаются и 47 035, и 46 933."}},
+        {"@type": "Question", "name": "Пиньинь — это алфавит?", "acceptedAnswer": {"@type": "Answer", "text": "Пиньинь — это запись звучания латинскими буквами, а не письменность: тексты им не пишут, он нужен для чтения вслух, словарей и ввода с клавиатуры. Подробный разбор, включая названия букв и другие системы записи, у нас на отдельной странице."}},
+        {"@type": "Question", "name": "Появляются ли новые иероглифы?", "acceptedAnswer": {"@type": "Answer", "text": "Да, хотя и редко. Знаки добавляют для научных терминов — так в своё время появились названия химических элементов, — а в именах людей иногда встречаются редкие и старые написания, которые приходится отдельно поддерживать в компьютерных шрифтах."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/skolko-ieroglifov-v-kitayskom-alfavite#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Сколько иероглифов в китайском «алфавите»: сколько знаков насчитали словари и почему точного числа нет", "item": "https://kitai-school.ru/article/skolko-ieroglifov-v-kitayskom-alfavite"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Письменность</p>
+<h1>Сколько иероглифов в китайском «алфавите»: <span class="italic">сколько знаков насчитали словари и почему точного числа нет</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-05">5 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/alf-hero.png" alt="Карточка «вопрос — ответ»: сколько иероглифов в китайском алфавите и почему точного числа нет" width="1200" height="630"></figure>
+
+<p class="passport">В поиске на этот вопрос отвечают цифрами от пятидесяти тысяч до ста, и обычно без объяснений, откуда они взялись. Объяснение есть, и оно интереснее самой цифры: число знаков зависит от того, какой свод открыть и что в нём считать отдельным знаком. Соберём цифры по эпохам, посмотрим, сколько знаков умещается в компьютере, и честно скажем, сколько из них живых.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Алфавита у китайского нет</b> — есть знаки. <b>Точного числа тоже нет:</b> в словаре около 100 года — 9 353 знака, в словаре 1716 года — около 47 тысяч, в самом полном современном своде — 85 568, а с вариантами написания — свыше 106 тысяч. В Юникоде закодировано около 98 тысяч. <b>Для чтения хватает около трёх тысяч.</b></p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">точного числа нет</span></h2>
+
+<p>Начну с того, что выглядит как уход от вопроса, но им не является.</p>
+
+<p><b>Ни одна цифра здесь не будет окончательной.</b> И дело не в том, что знаки плохо посчитали, а в том, что считать их можно по-разному, и каждый способ даёт свой результат.</p>
+
+<p>Если нужен один короткий ответ, он такой: <b>знаков десятки тысяч, а в самых полных сводах — больше ста тысяч.</b> Всё остальное в этой статье — объяснение, почему этих цифр несколько и какая из них для чего годится.</p>
+
+<p>Разброс не маленький: между самым ранним сводом и самым поздним разница более чем в десять раз. При этом оба числа верны — просто отвечают на разные вопросы.</p>
+
+<p><b>Откуда тогда берутся «пятьдесят тысяч» и «восемьдесят тысяч»</b>, которые попадаются в сети. Это не выдумка: каждая такая цифра взята из конкретного свода, просто без указания, из какого именно. Стоит добавить название словаря — и спор о «правильном» числе исчезает.</p>
+
+<p>От чего зависит результат, можно свести к трём вопросам. <b>Первый: считать ли варианты написания</b> одного знака отдельными знаками. Второй: <b>включать ли вышедшие из употребления</b> — те, что встречаются только в древних текстах. Третий: <b>брать ли диалектные</b>, которые за пределами своей местности не используются.</p>
+
+<p>Ответьте на эти три вопроса «нет» — получите несколько тысяч. Ответьте «да» — получите шестизначное число. Оба подсчёта честные, и в обоих посчитано ровно то, что заявлено.</p>
+
+<p>Поэтому правильный ответ состоит из двух частей. <b>Сколько существует</b> — десятки тысяч, и точнее сказать нельзя. <b>Сколько живых</b> — несколько тысяч, и вот эта цифра устойчива.</p>
+
+<h2>Слово «алфавит» <span class="italic">здесь не работает</span></h2>
+
+<p>Короткая остановка на самом слове, потому что оно стоит в вопросе.</p>
+
+<p><b>Алфавит — это набор букв, каждая из которых передаёт звук.</b> Китайская письменность устроена иначе: знак записывает слог вместе со значением, и набора «букв» в ней нет.</p>
+
+<p>Отсюда и невозможность посчитать знаки, как считают буквы. Букв в алфавите всегда ровно столько, сколько решено: их список закрыт. <b>Список иероглифов открыт</b>, и именно поэтому он у каждого свода свой.</p>
+
+<p>Есть и вторая причина, по которой счёт знаков не похож на счёт букв. <b>Знак может выйти из употребления, но не исчезнуть:</b> он остаётся в старых текстах и в словарях, и составитель нового свода решает сам, включать его или нет. Буква так не устаревает — её либо убирают из алфавита решением, либо она остаётся.</p>
+
+<p>Подробный разбор того, из чего состоит письменность и почему пиньинь не алфавит, у нас в двух отдельных статьях: <a href="https://kitai-school.ru/article/v-kitae-bukvy-ili-ieroglify-iz-chego-sostoit-kitayskaya-pismennost" target="_blank" rel="noopener">в Китае буквы или иероглифы</a> и <a href="https://kitai-school.ru/article/kakie-bukvy-v-kitayskom-yazyke" target="_blank" rel="noopener">какие буквы в китайском языке</a>. Здесь я на этом не останавливаюсь — дальше только про числа.</p>
+
+<h2>Сколько знаков <span class="italic">насчитывали словари</span></h2>
+
+<p>Теперь цифры по эпохам — от первого свода до современных.</p>
+
+<p>Смотреть их стоит именно подряд: по одной цифре спорить бессмысленно, а в ряду видно само движение — и то, что рост числа знаков не означает усложнения языка.</p>
+
+
+
+<figure class="ks-fig"><img src="assets/alf-info.png" alt="Четыре словаря разных эпох столбцами: 说文解字 — 9 353 знака, 康熙字典 — 47 035, 中华字海 — 85 568, словарь вариантов — 106 230" width="1200" height="742"><figcaption>Четыре свода разных эпох. Чем позже словарь, тем больше в нём знаков.</figcaption></figure>
+
+<div class="table-wrap">
+<table>
+  <caption>Сколько знаков в сводах разных эпох.</caption>
+  <thead><tr><th>Свод</th><th>Название</th><th>Когда</th><th>Знаков</th><th>Что это</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">说文解字</b></td><td>Шовэнь цзецзы</td><td>около 100 года</td><td><b>9 353</b></td><td>первый разбор знаков по составу</td></tr>
+    <tr><td><b class="han">康熙字典</b></td><td>Словарь Канси</td><td>1716 год</td><td><b>47 035</b></td><td>свод, собранный по указу императора</td></tr>
+    <tr><td><b class="han">中华字海</b></td><td>Чжунхуа цзыхай</td><td>1994 год</td><td><b>85 568</b></td><td>самый полный современный свод</td></tr>
+    <tr><td><b class="han">異體字字典</b></td><td>Словарь вариантов</td><td>2004 год</td><td><b>106 230</b></td><td>знаки вместе с вариантами написания</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Первая строка — самый ранний полный разбор знаков.</b> Девять с лишним тысяч знаков для начала нашей эры — цифра огромная, и она показывает, что письменность к тому моменту уже сложилась.</p>
+
+<p>Дальше — полтора тысячелетия, за которые число выросло впятеро. Словарь 1716 года собирали по указу императора, и он надолго стал главным сводом: на него ссылались и по нему проверяли написание.</p>
+
+<h2>Сколько из них <span class="italic">живые</span></h2>
+
+<p>А теперь единственная цифра из этой статьи, которая нужна изучающему язык.</p>
+
+<p><b>Для чтения хватает около трёх тысяч знаков.</b> Этого достаточно, чтобы читать обычные тексты, и разрыв с сотней тысяч из таблицы выше впечатляет сильнее любых объяснений.</p>
+
+<p>Подробный разбор — сколько знаков в госстандарте, сколько требуется на экзаменах и сколько учат в китайской школе — у нас разнесён по отдельным статьям: <a href="https://kitai-school.ru/article/interesnye-fakty-o-kitayskom-yazyke" target="_blank" rel="noopener">интересные факты о китайском языке</a> и <a href="https://kitai-school.ru/article/kak-kitaycy-uchat-svoy-yazyk" target="_blank" rel="noopener">как китайцы учат свой язык</a>. Повторять их таблицы здесь я не стану.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик на первом занятии спросил, сколько всего иероглифов. Я ответила честно: десятки тысяч. И по лицу стало понятно, что отвечать так не стоило.</p>
+  <p>Он посчитал, что язык ему не по силам: учить такое количество знаков за жизнь невозможно, а значит, и начинать незачем.</p>
+  <p><b>Сравнение нашлось быстро.</b> В словаре русского языка сотни тысяч слов. Никто из нас их не учил и даже не видел большую часть — но читать это не мешает.</p>
+  <p>Потом мы посчитали, сколько знаков он узнаёт после двух месяцев занятий. Вышло заметно больше, чем он думал: он просто никогда их не пересчитывал.</p>
+  <p>С тех пор на этот вопрос я отвечаю иначе: сначала говорю, сколько нужно, и только потом — сколько существует. Второе число отвечает совсем на другой вопрос.</p>
+</div>
+
+<p>Эта история про то, как большое число мешает начать. <b>Оно и правда большое — просто отвечает не на тот вопрос</b>, который задаёт человек, решающий, браться ли за язык.</p>
+
+<h2>Почему цифры расходятся <span class="italic">даже внутри одного свода</span></h2>
+
+<p>Вернёмся к таблице сводов — и к тому, что в ней самое любопытное. Посмотрите на один и тот же словарь в разных источниках.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Одни и те же своды в разных публикациях: два числа вместо одного.</caption>
+  <thead><tr><th>Свод</th><th>Одно число</th><th>Другое число</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">说文解字</b></td><td>9 353</td><td>9 516</td></tr>
+    <tr><td><b class="han">康熙字典</b></td><td>47 035</td><td>46 933</td></tr>
+    <tr><td><b class="han">異體字字典</b></td><td>106 230</td><td>106 330</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Последняя строка — не рекорд, а другой способ счёта.</b> Свыше ста тысяч получается, когда к знакам прибавляют варианты написания: разные начертания одного и того же знака посчитаны отдельно.</p>
+
+<p>Между ним и современными сводами есть ещё один: <span class="han">中华大字典</span> (Чжунхуа да цзыдянь) 1915 года, более 48 000 знаков. Я привожу его отдельной строкой, чтобы было видно: рост шёл не скачком, а постепенно.</p>
+
+<p><b>Разница здесь не в небрежности.</b> Она в том, что считать отдельной единицей: сам знак, его вариант написания, повторную запись того же знака в другом разделе.</p>
+
+<p>Для раннего свода, например, составитель назвал одно число в собственном послесловии, а при позднейшем пересчёте по изданию получается другое. Оба числа честные — они про разное.</p>
+
+<p>Отсюда правило, полезное не только для китайского: <b>встретив точную цифру, спросите, что именно в неё включили</b>. В этой теме ответ на такой вопрос меняет результат на тысячи.</p>
+
+<h2>Сколько знаков <span class="italic">в компьютере</span></h2>
+
+<p>Есть ещё один способ посчитать знаки, и он самый новый.</p>
+
+<p><b>В Юникоде — единой таблице символов для всех языков — отведено около 97 680 позиций под ханьские знаки.</b> Это те иероглифы, которые можно набрать и отобразить на любом современном устройстве.</p>
+
+<p>Цифра и тут не одна: в одной публикации стандарта называют 97 680, в базе данных по тем же знакам — 97 058. Разница — в том, что считать: некоторые позиции отведены под совместимость со старыми кодировками.</p>
+
+<p>Важно понимать, что это <b>не ответ на вопрос «сколько знаков существует»</b>. Кодировка включает далеко не всё: редкие знаки из диалектов и старых имён добавляют постепенно, и часть их до сих пор ждёт своей очереди.</p>
+
+<p>Зато эта цифра отвечает на другой, вполне практический вопрос: сколько знаков вы в принципе можете встретить в электронном тексте. И она уже сопоставима с объёмом самых полных словарей.</p>
+
+<h2>Почему число <span class="italic">всё ещё растёт</span></h2>
+
+<p>Казалось бы, письменность давно сложилась — откуда новые знаки?</p>
+
+<p><b>Первый источник — наука.</b> Для новых понятий иногда создают новые знаки: так в своё время появились иероглифы для химических элементов, собранные по понятному принципу из ключа и фонетической части.</p>
+
+<p><b>Второй — имена.</b> В личных именах встречаются редкие и старые написания, и каждый такой знак нужно поддерживать в шрифтах и базах, иначе человека невозможно записать в документе.</p>
+
+<p>Стоит оговориться: новые знаки — явление редкое, и счёт тут идёт на единицы, а не на сотни. Для сравнения: основная масса того, что добавляется в словари, — это давно существующие знаки, которые просто раньше в них не попадали.</p>
+
+<p><b>Третий — диалекты.</b> Местные слова записывают знаками, которых нет в общем употреблении, и часть из них постепенно попадает в словари и кодировки.</p>
+
+<p>При этом в обратную сторону процесс тоже идёт: знаки выходят из употребления и остаются только в сводах. <b>Число в словаре растёт, а число живых знаков держится примерно на одном уровне</b> — и это, пожалуй, главное, что стоит вынести из всей арифметики.</p>
+
+<h2>Чего в статье <span class="italic">нет намеренно</span></h2>
+
+<p>Перечислю прямо, чтобы не искали.</p>
+
+<ul>
+  <li><b>Нет разбора, как устроен иероглиф.</b> Ключи, фонетики и состав знака — отдельная тема: <a href="https://kitai-school.ru/article/logika-kitayskih-kluchey" target="_blank" rel="noopener">значение ключей в китайских иероглифах</a>.</li>
+  <li><b>Нет таблицы «сколько нужно знать».</b> Она у нас есть, но в другой статье, и дублировать её незачем.</li>
+  <li><b>Нет школьных нормативов и уровней экзамена</b> — по тем же причинам.</li>
+  <li><b>Нет разбора пиньиня и чжуиня</b> — это соседние страницы.</li>
+  <li><b>Нет истории появления письменности</b> и споров о первых знаках: об этом здесь — <a href="https://kitai-school.ru/article/kto-pridumal-kitayskie-ieroglify" target="_blank" rel="noopener">кто придумал китайские иероглифы</a>.</li>
+  <li><b>Нет одного «правильного» числа.</b> Я не стала выбирать из шести цифр одну, чтобы статья выглядела увереннее.</li>
+</ul>
+
+<p>И общий вывод, ради которого всё это считалось. <b>Вопрос «сколько иероглифов» звучит как вопрос о количестве, а на деле это вопрос о границах:</b> где заканчивается знак и начинается его вариант, считать ли мёртвые знаки, включать ли диалектные. Как ответишь на эти три вопроса — такое число и получишь.</p>
+
+<p>Для изучающего язык из этого следует простое. <b>Не ориентируйтесь на большие числа вовсе:</b> они описывают письменность как свод, а не как рабочий инструмент. Инструмент — это несколько тысяч знаков, и они набираются чтением, а не подсчётом.</p>
+
+<div class="cta">
+  <p>Иероглифы перестают пугать, когда появляется система: от ключей к словам и к чтению — <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько иероглифов в китайском алфавите?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Алфавита у китайского языка нет — и это не придирка к слову: письменность устроена принципиально иначе, знак передаёт не звук, а значение со слогом. Если же вопрос в том, сколько всего существует иероглифов, точного числа тоже не существует: своды разных эпох насчитывают от девяти тысяч знаков до ста тысяч с лишним.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько всего иероглифов существует?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Зависит от того, какой свод открыть. В словаре начала нашей эры 说文解字 — 9 353 знака, в словаре 康熙字典 1716 года — около 47 тысяч, в своде 中华字海 1994 года — 85 568, а в тайваньском словаре вариантов 2004 года — свыше 106 тысяч, но там знаки посчитаны вместе с вариантами написания.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько иероглифов нужно знать, чтобы читать?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Несравнимо меньше: около трёх тысяч знаков покрывают основную массу обычного текста. Подробный разбор с цифрами по уровням и спискам у нас в отдельной статье об интересных фактах о языке — здесь я эту таблицу не повторяю.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему у разных словарей разные цифры?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Своды собраны по разным правилам. Во-первых, в них включён разный материал: поздние берут и древние, и диалектные, и вышедшие из употребления знаки. Во-вторых, расходится сам счёт: варианты написания одного знака можно считать за один знак, а можно за несколько. Для словаря 1716 года, например, встречаются и 47 035, и 46 933.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Пиньинь — это алфавит?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Пиньинь — это запись звучания латинскими буквами, а не письменность: тексты им не пишут, он нужен для чтения вслух, словарей и ввода с клавиатуры. Подробный разбор, включая названия букв и другие системы записи, у нас на отдельной странице.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Появляются ли новые иероглифы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, хотя и редко. Знаки добавляют для научных терминов — так в своё время появились названия химических элементов, — а в именах людей иногда встречаются редкие и старые написания, которые приходится отдельно поддерживать в компьютерных шрифтах.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть знаков будет ровно столько, сколько вам нужно! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Числа по сводам</b> сверены по нескольким независимым публикациям: 说文解字 — 9 353 знака по счёту самого составителя, 康熙字典 — 47 035, 中华字海 — 85 568, тайваньский словарь вариантов 2004 года — 106 230 знаков вместе с вариантами написания.</li>
+    <li><b>Расхождения названы числами, а не словом «примерно»:</b> для 说文解字 встречается и 9 516, для 康熙字典 — 46 933, для словаря вариантов — 106 330. Это и есть содержательная часть ответа.</li>
+    <li><b>Свод 中华大字典 1915 года</b> приведён как промежуточная ступень: более 48 000 знаков.</li>
+    <li><b>Юникод:</b> в тексте стандарта версии 16.0 указано 97 680 ханьских знаков, в базе Unihan по тем же знакам — 97 058.</li>
+    <li><b>Число 汉语大字典 не приводится:</b> подтвердить его ни в одном доступном источнике я не смогла, а называть наугад не стану.</li>
+    <li><b>«Около трёх тысяч для чтения»</b> — по нашей же статье об интересных фактах о языке, где эта тема разобрана подробно с таблицей.</li>
+    <li><b>Ряд словарей задан в сборке страницы один раз</b> и оттуда попадает и в таблицу, и на картинку. Сборка не пройдёт, если годы или числа перестанут расти согласованно.</li>
+    <li><b>Устройство письменности, пиньинь и чжуинь в статье не разбираются</b> — по каждой теме у нас есть своя страница, и ссылки на них стоят в тексте.</li>
+    <li>Случай с учеником, испугавшимся большого числа, — из занятий Kitai School; имени и города не называю.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Алфавита у китайского нет, а число знаков зависит от того, какой свод открыть: от девяти тысяч до ста</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
