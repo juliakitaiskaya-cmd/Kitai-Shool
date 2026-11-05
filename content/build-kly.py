@@ -10,8 +10,8 @@ OUT = "skolko-klyuchey-v-kitayskom-yazyke.html"
 SLUG = "skolko-klyuchey-v-kitayskom-yazyke"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/kly-hero.png"
-FIG = "assets/kly-info.png"
+HERO = "https://static.tildacdn.com/tila6335-6536-4238-b532-396331333735/kly-hero.png"
+FIG = "https://static.tildacdn.com/tila6463-3738-4736-b563-306565643464/kly-info.png"
 HERO_ALT = ("Словарная карточка ключа номер 85: знак 水, четыре черты, значение «вода»")
 FIG_ALT = ("Столбики по числу черт: сколько из 214 ключей приходится на каждую группу, "
            "от одной черты до двадцати трёх")
