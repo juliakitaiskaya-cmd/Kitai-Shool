@@ -7,8 +7,8 @@ OUT = "socialnyy-reyting-v-kitae.html"
 SLUG = "socialnyy-reyting-v-kitae"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/rey-hero.png"
-FIG = "assets/rey-info.png"
+HERO = "https://static.tildacdn.com/tila6365-3264-4333-b535-633430336632/rey-hero.png"
+FIG = "https://static.tildacdn.com/tila6362-6333-4636-a165-353634376666/rey-info.png"
 HERO_ALT = ("Две колонки: как тему обычно пересказывают и что подтверждается по документам")
 FIG_ALT = ("Три системы по одинаковым признакам: судебный список должников, корпоративный "
            "кредит и рейтинг в платёжном приложении")
