@@ -174,12 +174,12 @@
   font-style: normal;
   font-weight: 500;
   src: url(fonts/noto-serif-sc-500-sc.woff2) format('woff2');
-  unicode-range: U+4eca, U+5b66, U+7a97, U+7ec3, U+8bcd, U+8bf4;
+  unicode-range: U+4eca, U+5b66, U+7a97, U+7ec3, U+8bcd, U+95ee;
 }
 @font-face {
   font-family: 'Noto Serif SC';
   font-style: normal;
   font-weight: 700;
   src: url(fonts/noto-serif-sc-700-sc.woff2) format('woff2');
-  unicode-range: U+4eca, U+5b66, U+7a97, U+7ec3, U+8bcd, U+8bf4;
+  unicode-range: U+4eca, U+5b66, U+7a97, U+7ec3, U+8bcd, U+95ee;
 }
