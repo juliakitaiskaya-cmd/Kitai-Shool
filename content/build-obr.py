@@ -7,8 +7,8 @@ OUT = "sravnenie-obrazovaniya-rossii-i-kitaya.html"
 SLUG = "sravnenie-obrazovaniya-rossii-i-kitaya"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/obr-hero.png"
-FIG = "assets/obr-info.png"
+HERO = "https://static.tildacdn.com/tila6666-3034-4231-b436-396262333431/obr-hero.png"
+FIG = "https://static.tildacdn.com/tila6163-3262-4935-a530-356331626662/obr-info.png"
 HERO_ALT = ("Две траектории на общей оси лет: российская школа на одиннадцать лет и китайская на "
             "двенадцать, обязательная часть кончается у обеих на девятом году")
 FIG_ALT = ("Три корзины сопоставления: что совпадает, что расходится и что сопоставить не "
