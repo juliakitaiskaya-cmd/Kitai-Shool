@@ -10,8 +10,8 @@ OUT = "proba-stil-soyuz.html"
 SLUG = "soyuz-i-v-kitayskom-yazyke"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/soyuz-hero.png"
-FIG = "assets/soyuz-info.png"
+HERO = "https://static.tildacdn.com/tila3739-3235-4137-b465-303864663238/soyuz-hero.png"
+FIG = "https://static.tildacdn.com/tila6461-3135-4261-a663-366462396237/soyuz-info.png"
 HERO_ALT = ("Одно гнездо и один знак 和 в двух сборках: между двумя существительными связка "
             "держится, между двумя частями со своими сказуемыми — нет")
 FIG_ALT = ("Полоса от разговорной речи к книжной с пятью засечками: 跟, 和, 及, 以及, 与 — что "
