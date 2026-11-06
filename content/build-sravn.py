@@ -7,8 +7,8 @@ OUT = "sravnenie-v-kitayskom-yazyke.html"
 SLUG = "sravnenie-v-kitayskom-yazyke"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/sravn-hero.png"
-FIG = "assets/sravn-info.png"
+HERO = "https://static.tildacdn.com/tila6438-3933-4738-b638-376234336139/sravn-hero.png"
+FIG = "https://static.tildacdn.com/tila6532-3963-4333-b630-383035343334/sravn-info.png"
 HERO_ALT = ("Мерная рейка с двумя метками и подписанной разницей, рядом фраза 我比他高两公分, "
             "разобранная по частям")
 FIG_ALT = ("Четыре конструкции сравнения по одинаковым колонкам: кто, связка, с кем, качество, "
