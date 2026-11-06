@@ -1,0 +1,485 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/soyuz-i-v-kitayskom-yazyke#article",
+      "headline": "Союз «и» в китайском: почему 和 соединяет не всё подряд",
+      "description": "Разбор соединительного «и» в китайском языке. Под русским союзом «и» в китайском стоят пять разных слов: разговорное 跟, нейтральное 和, книжные 及 и 以及 и официальное 与. Все они соединяют существительные и именные группы, различаются речью, в которой встречаются, и ни одно из них не соединяет части фразы со своими сказуемыми. В статье: что соединяет 和, почему его нельзя поставить между двумя предложениями, как перечислять три предмета и больше и когда русское «и» не переводится вовсе.",
+      "image": "assets/soyuz-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-06",
+      "dateModified": "2026-11-06",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/soyuz-i-v-kitayskom-yazyke",
+      "about": {
+        "@type": "Thing",
+        "name": "Соединительные союзы китайского языка"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/soyuz-i-v-kitayskom-yazyke#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как сказать «и» на китайском?", "acceptedAnswer": {"@type": "Answer", "text": "Одного слова для этого нет: есть пять, и выбирают из них по тому, что соединяется и в какой это речи. 和 — нейтральное, годится и в разговоре, и в письме. 跟 — разговорное. 与 — книжное, встречается в документах и названиях. 及 и 以及 — тоже книжные, и чаще всего они стоят в перечислениях. Все пять соединяют существительные."}},
+        {"@type": "Question", "name": "Можно ли соединить через 和 два предложения?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. 和 соединяет существительные и именные группы, а не части фразы со своими сказуемыми. Фразу вроде «я закончила учёбу 和 хочу работать» носитель не построит: такие части либо ставятся рядом через запятую, либо соединяются другими средствами — наречиями и парными конструкциями, у которых свои правила места в предложении."}},
+        {"@type": "Question", "name": "Чем 跟 отличается от 和?", "acceptedAnswer": {"@type": "Answer", "text": "Значением — ничем, речью — заметно. 跟 звучит разговорно, 和 нейтрально. В письме, а тем более в официальном тексте, обычно стоит 和 или книжное 与. Отдельно стоит помнить, что у 跟 есть и другая работа — предлог со значением «с кем», и там оно соединительным союзом уже не является."}},
+        {"@type": "Question", "name": "Когда нужно 与, а не 和?", "acceptedAnswer": {"@type": "Answer", "text": "Когда текст книжный: документ, статья, официальное название. 与 стоит, например, в названиях школьных предметов — 体育与健康, «физкультура и здоровье». В разговоре оно звучит литературно, поэтому в бытовой речи его обычно не берут."}},
+        {"@type": "Question", "name": "Как перечислить три предмета и больше?", "acceptedAnswer": {"@type": "Answer", "text": "Между всеми элементами ставится знак 、, а перед последним — 和. Схема такая: первый、второй和третий. Повторять 和 между каждой парой не нужно: достаточно одного раза, в самом конце ряда. Сам знак 、 и его отличие от обычной запятой — отдельная тема, она разобрана в статье о пунктуации."}},
+        {"@type": "Question", "name": "Что ставить вместо «и» между действиями?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от того, что именно связывается. Два признака одного предмета берут конструкцию 又…又. Последовательные действия обычно просто идут друг за другом, без связки. А для частей фразы со своими сказуемыми есть наречия и парные конструкции — и у каждой свой порядок слов, потому что часть из них вообще не союзы."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/soyuz-i-v-kitayskom-yazyke#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Союз «и» в китайском: почему 和 соединяет не всё подряд", "item": "https://kitai-school.ru/article/soyuz-i-v-kitayskom-yazyke"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Письменность и грамматика</p>
+<h1>Союз «и» в китайском: <span class="italic">почему <span class="han">和</span> соединяет не всё подряд</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-06">6 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/soyuz-hero.png" alt="Одно гнездо и один знак 和 в двух сборках: между двумя существительными связка держится, между двумя частями со своими сказуемыми — нет" width="1200" height="630"></figure>
+
+<p class="passport">Вы выучили, что «и» — это <span class="han">和</span>. Проверили в словаре, запомнили, пользуетесь. Пишете первое письмо на китайском: «я закончила курс <span class="han">和</span> хочу учиться дальше». А в ответ приходит правка, где <span class="han">和</span> просто вычеркнули. Разберём, где оно на месте, где вместо него нужно другое слово и где связка не нужна вовсе.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b><span class="han">和</span> соединяет слова, а не части фразы.</b> Под русским «и» в китайском стоят пять разных слов: разговорное <span class="han">跟</span>, нейтральное <span class="han">和</span>, книжные <span class="han">及</span> и <span class="han">以及</span>, официальное <span class="han">与</span>. Все пять соединяют существительные, различаются они речью, в которой встречаются.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">和 соединяет слова, а не фразы</span></h2>
+
+<p>Дело не в том, что вы плохо выучили слово. Дело в том, что русское «и» и китайское <span class="han">和</span> совпадают только наполовину.</p>
+
+<p>Русское «и» умеет две работы сразу: соединять слова и соединять части предложения. «Яблоко и груша» — слова. «Я пришёл и лёг спать» — части. Одно слово тянет оба случая.</p>
+
+<p><b>Китайское <span class="han">和</span> умеет только первую работу.</b> Между существительными оно стоит, между двумя частями со своими сказуемыми — нет. Вторую работу делают другие средства, и устроены они иначе.</p>
+
+<p>Дальше разберём обе ситуации по отдельности, а потом посмотрим на остальные четыре слова со значением «и»: они отличаются от <span class="han">和</span> не смыслом, а речью, в которой встречаются.</p>
+
+<h2>Что именно <span class="italic">соединяет 和</span></h2>
+
+<p>Начнём с хорошего: половина случаев работает ровно так, как вы думаете.</p>
+
+<p>Два существительных рядом — ставьте <span class="han">和</span>, и всё будет верно.</p>
+
+<ul>
+  <li><span class="han">我和他是同学</span> — «мы с ним однокурсники», буквально «я и он — однокурсники».</li>
+  <li><span class="han">爸爸和妈妈都在家</span> — «папа и мама оба дома».</li>
+  <li><span class="han">我学中文和日文</span> — «я учу китайский и японский».</li>
+</ul>
+
+<p>Подлежащее, дополнение, перечисление предметов — везде одно и то же условие.</p>
+
+<p><b>С обеих сторон от <span class="han">和</span> должны стоять однородные существительные.</b> Не части фразы, не глаголы, не признаки. Существительные.</p>
+
+<p>Запомнили? Отлично, половину темы вы уже знаете. Вторая половина — про то, что происходит, когда это условие нарушается.</p>
+
+<h2>Почему <span class="italic">和 не ставят между частями фразы</span></h2>
+
+<p>Возьмём русское предложение: «я закончила университет и начала работать».</p>
+
+<p>Два сказуемых, одно подлежащее, посередине «и». Собранная по-русски китайская версия выглядела бы так: <span class="han">我毕业了和我开始工作</span>.</p>
+
+<p>Носитель такую фразу не построит. Никогда.</p>
+
+<p>И вот что он скажет вместо этого — вариантов три, и выбор зависит от смысла.</p>
+
+<ul>
+  <li><b>Просто поставит части рядом.</b> <span class="han">我毕业了，开始工作</span>. Запятая, второе подлежащее опускается как лишнее. Самый частый вариант в живой речи.</li>
+  <li><b>Возьмёт наречие.</b> <span class="han">也</span> «тоже», <span class="han">还</span> «ещё», <span class="han">又</span> «опять» — они стоят после подлежащего и перед сказуемым, а не в начале части. Про их место в предложении у нас есть отдельный разбор: <a href="https://kitai-school.ru/article/narechiya-v-kitayskom" target="_blank" rel="noopener">наречия в китайском</a>.</li>
+  <li><b>Возьмёт парную конструкцию.</b> Для причины, уступки, условия есть пары вроде <span class="han">因为……所以</span>. Половина из них — не союзы, а наречия, и место у них другое: это разобрано в <a href="https://kitai-school.ru/article/kurs-po-soyuzam-kitajskogo-yazyka" target="_blank" rel="noopener">курсе по союзам китайского языка</a>.</li>
+</ul>
+
+<p>Заметили, чего нет ни в одном из трёх вариантов?</p>
+
+<p><span class="han">和</span> там не появляется вообще. Не потому, что это менее удачный выбор, а потому, что такой работы у него просто нет.</p>
+
+<p><b>Как проверить себя за две секунды.</b> Посмотрите, что стоит справа и слева от вашего «и». Существительные с обеих сторон — берите <span class="han">和</span>. Хотя бы с одной стороны часть со своим сказуемым — <span class="han">和</span> не подходит, выбирайте из трёх вариантов выше.</p>
+
+<h2>Пять слов со значением «и»: <span class="italic">сводка</span></h2>
+
+<p>Теперь вторая новость. <span class="han">和</span> — не единственное слово со значением «и». Их пять.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Пять слов со значением «и»: что соединяет каждое и в какой речи встречается.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Соединяет</th><th>Встречается</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">跟</b></td><td>gēn</td><td>существительные и местоимения</td><td>разговорная речь</td></tr>
+    <tr><td><b class="han">和</b></td><td>hé</td><td>существительные и именные группы</td><td>и в речи, и в письме</td></tr>
+    <tr><td><b class="han">及</b></td><td>jí</td><td>однородные существительные</td><td>книжные перечисления</td></tr>
+    <tr><td><b class="han">以及</b></td><td>yǐjí</td><td>последний элемент перечисления</td><td>письменный и официальный текст</td></tr>
+    <tr><td><b class="han">与</b></td><td>yǔ</td><td>существительные и названия</td><td>документы и названия</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Посмотрите на третий столбец. Он почти одинаковый у всех пяти: везде существительные.</p>
+
+<p>А теперь на четвёртый. Вот там и вся разница.</p>
+
+<figure class="ks-fig"><img src="assets/soyuz-info.png" alt="Полоса от разговорной речи к книжной с пятью засечками: 跟, 和, 及, 以及, 与 — что каждое соединяет и где встречается" width="1200" height="620"><figcaption>Пять слов на полосе от разговорной речи к книжной: значение одно, место в речи разное.</figcaption></figure>
+
+<p>Слева — то, что уместно в сообщении приятелю. Справа — то, что стоит в документах и названиях.</p>
+
+<p><b>Середина полосы — это <span class="han">和</span>.</b> Поэтому его и берут по умолчанию: оно не выбивается ни в одну сторону.</p>
+
+<p>Если сомневаетесь, какое из пяти взять, ответ почти всегда <span class="han">和</span>. Ошибкой это не будет нигде, кроме очень официального текста, где ожидается <span class="han">与</span>.</p>
+
+<h2>跟 и 与: <span class="italic">тот же смысл, другая речь</span></h2>
+
+<p>Эти два стоят на противоположных концах полосы — и перепутать их заметнее всего.</p>
+
+<p><b><span class="han">跟</span> — разговорное.</b> <span class="han">我跟他</span> и <span class="han">我和他</span> значат одно и то же. Но первое звучит как живая речь, а второе нейтрально. В сообщении приятелю <span class="han">跟</span> уместно, в заявлении — уже нет.</p>
+
+<p><b><span class="han">与</span> — книжное.</b> Его видно в названиях и документах: школьные предметы в Китае называются <span class="han">体育与健康</span> «физкультура и здоровье» и <span class="han">道德与法治</span> «мораль и право». В обоих случаях стоит именно <span class="han">与</span>.</p>
+
+<p>В разговоре оно звучит примерно как «сие» вместо «это».</p>
+
+<p>Отсюда практический вывод. <b>Выбор между ними — это выбор не значения, а речи.</b> Сначала решаете, что соединяете, потом — где это будет сказано или написано.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Студентка писала письмо в университет и принесла его на проверку.</p>
+  <p>В середине стояла фраза, собранная по-русски: «я закончила бакалавриат <span class="han">和</span> хочу продолжить учёбу».</p>
+  <p>Слева от <span class="han">和</span> — законченная часть со своим сказуемым. Справа — другая, тоже со своим. Соединять их этим словом нельзя.</p>
+  <p><b>Исправление вышло короче исходника:</b> части разделились запятой, второе подлежащее ушло как лишнее — <span class="han">我毕业了，想继续读书</span>.</p>
+  <p>А дальше нашлась вторая ошибка. В перечислении предметов стояло разговорное <span class="han">跟</span> — в письме в университет оно выглядело примерно как «короче» в заявлении. Поменяли на книжное <span class="han">与</span>.</p>
+  <p>С тех пор я начинаю эту тему с одного вопроса: что именно вы соединяете — два слова или две части фразы?</p>
+</div>
+
+<p>Обе ошибки в этой истории — одного рода. Слово подставлялось по словарному значению, без вопроса о том, что оно соединяет и в каком тексте стоит.</p>
+
+<h2>Две тонкости, <span class="italic">о которых спрашивают</span></h2>
+
+<p>Обе всплывают на занятиях постоянно — проще разобрать их сразу.</p>
+
+<p><b>Первая: а как же <span class="han">研究和开发</span>?</b> Да, в формальном письменном тексте <span class="han">和</span> изредка соединяет два глагола с общим дополнением: «исследование и разработка». Такие сочетания устойчивы и работают как единое название. Строить по этому образцу свои фразы не стоит: это редкий книжный случай, а не общее правило.</p>
+
+<p><b>Вторая: союз или предлог?</b> В позиции подлежащего <span class="han">和</span> работает союзом, а в других местах фразы может быть предлогом со значением «с»: <span class="han">我和他说</span> — это уже «я говорю с ним», а не «я и он». Разница видна по тому, где во фразе стоит группа: перед сказуемым в роли подлежащего — союз, перед глаголом в роли обстоятельства — предлог. Предложная работа этого знака и соседнего <span class="han">跟</span> — отдельная тема, она разобрана в статье о предлогах.</p>
+
+<h2>及 и 以及: <span class="italic">книжное перечисление</span></h2>
+
+<p>Эти два вы вряд ли услышите в разговоре. Зато увидите в тексте.</p>
+
+<p><b><span class="han">及</span></b> соединяет однородные существительные в книжных перечислениях: заголовки, оглавления, деловые тексты.</p>
+
+<p><b><span class="han">以及</span></b> обычно закрывает перечисление: ставит последний элемент ряда. Несколько элементов подряд — а перед последним <span class="han">以及</span>.</p>
+
+<p><b>А теперь честно о том, чего я вам не скажу.</b> Разборы расходятся в том, чем именно <span class="han">及</span> отличается от <span class="han">以及</span> в деталях: одни говорят о степени книжности, другие о разной тесноте связи между элементами. Единого описания я не нашла — поэтому привожу только то, в чём источники сходятся.</p>
+
+<p>Для практики этого достаточно. Узнавать их при чтении нужно, а в своей речи на первых порах спокойно обходитесь одним <span class="han">和</span>.</p>
+
+<h2>Перечисление <span class="italic">из трёх и более</span></h2>
+
+<p>Здесь есть правило, которого в русском нет вовсе.</p>
+
+<p>По-русски мы говорим «я, он и она»: запятые, и «и» перед последним. По-китайски похоже — но запятая другая.</p>
+
+<p><b>Между элементами ряда ставится знак <span class="han">、</span></b>, а перед последним элементом — <span class="han">和</span>. Схема: первый<span class="han">、</span>второй<span class="han">和</span>третий. Например: <span class="han">我、他和她都去</span> — «я, он и она все идём».</p>
+
+<p>Типичная ошибка — повторять <span class="han">和</span> между каждой парой: <span class="han">我和他和她</span>. Так не делают. Одного раза в конце ряда достаточно, как и в русском.</p>
+
+<p>Сам знак <span class="han">、</span> к союзам отношения не имеет: это пунктуация, и правила у него свои. Разобран он отдельно: <a href="https://kitai-school.ru/article/kurs-po-punktuacii-kitajskogo-yazyka-vse-znaki-glavnye-pravila" target="_blank" rel="noopener">пунктуация китайского языка</a>.</p>
+
+<h2>Когда русское «и» <span class="italic">не переводится вовсе</span></h2>
+
+<p>Самое неожиданное: иногда связки в китайской фразе нет, а по-русски «и» стоит.</p>
+
+<p><b>Два признака одного предмета.</b> «Он высокий и худой» — по-русски через «и». По-китайски: <span class="han">他又高又瘦</span>. Два <span class="han">又</span>, и никакого <span class="han">和</span>.</p>
+
+<p><b>Последовательные действия.</b> «Я встал и пошёл на работу» — части просто идут друг за другом: <span class="han">我起床去上班</span>. Связка не нужна, порядок сам показывает последовательность.</p>
+
+<p><b>Добавление в разговоре.</b> Там, где по-русски говорят «а ещё», по-китайски часто звучит <span class="han">还有</span>. Это не союз в строгом смысле: им начинают новую мысль, а не соединяют две старые.</p>
+
+<p>Отсюда общий принцип, который экономит много сил. <b>Не ищите, чем перевести «и», — посмотрите, что вы соединяете.</b> Часто окажется, что соединять ничем не нужно: китайская фраза собирается иначе.</p>
+
+<p>Как китайская фраза собирается вообще, разобрано здесь: <a href="https://kitai-school.ru/article/kak-sostavlyat-predlozheniya-na-kitajskom" target="_blank" rel="noopener">как составлять предложения на китайском</a>.</p>
+
+<h2>Частые ошибки <span class="italic">русскоязычных</span></h2>
+
+<p>Проверьте себя: половину из них вы, скорее всего, уже узнаёте.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Слева — как собирают по-русски, справа — как говорят по-китайски.</caption>
+  <thead><tr><th>Как собирают</th><th>Как надо</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">我喜欢中文和我学习中文</b></td><td><b class="han">我喜欢中文，也学习中文</b></td><td>Две части со своими сказуемыми соединены через 和. Части либо ставятся рядом, либо берут наречие вроде 也.</td></tr>
+    <tr><td><b class="han">他很高和很瘦</b></td><td><b class="han">他又高又瘦</b></td><td>Два признака одного человека. Для них есть своя конструкция 又…又.</td></tr>
+    <tr><td><b class="han">我和他和她都去</b></td><td><b class="han">我、他和她都去</b></td><td>Три элемента подряд через 和. Между первыми стоит знак 、, и только перед последним — 和.</td></tr>
+    <tr><td><b class="han">我和你说一下</b></td><td><b class="han">我跟你说一下</b></td><td>Здесь «и» нет вовсе: нужен смысл «с тобой». В разговоре это 跟, и работает оно уже не союзом.</td></tr>
+    <tr><td><b class="han">语言与我喜欢</b></td><td><b class="han">我喜欢语言与文学</b></td><td>Книжное 与 поставлено между существительным и целой частью. Оно соединяет такие же существительные, как и 和, только в книжном тексте.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Четыре из пяти — одна и та же ошибка по природе. Слово берётся по словарному значению «и», без вопроса о том, что стоит с двух сторон.</p>
+
+<p>Поэтому и проверка одна: посмотрите налево и направо.</p>
+
+<h2>Чего в статье <span class="italic">нет намеренно</span></h2>
+
+<ul>
+  <li><b>Нет разбора парных конструкций</b> вроде <span class="han">因为……所以</span> — у них своя статья.</li>
+  <li><b>Нет разбора знака <span class="han">、</span></b> как пунктуации: он разобран там, где разобраны остальные знаки.</li>
+  <li><b>Нет предложной работы <span class="han">跟</span></b> — «с кем», «кому»: здесь взята только соединительная роль.</li>
+  <li><b>Нет <span class="han">还</span> в списке союзов:</b> это наречие, и место у него в предложении другое.</li>
+  <li><b>Нет цифр частотности:</b> корпусных данных, на которые можно сослаться, я не нашла.</li>
+  <li><b>Нет деталей различия <span class="han">及</span> и <span class="han">以及</span></b> — источники расходятся, и выдумывать разницу я не стала.</li>
+</ul>
+
+<p>И главный вывод, ради которого всё раскладывалось. <b>«И» в словаре одно, а в китайском на его месте стоит выбор</b> — сначала из того, что вы соединяете, и только потом из пяти слов.</p>
+
+<p>Польза простая: дальше вы будете собирать фразы с «и» заметно увереннее — и перестанете ставить <span class="han">和</span> там, где китайская фраза прекрасно обходится без всякой связки.</p>
+
+<div class="cta">
+  <p>Такие вещи разбираются быстрее на своих фразах, чем на чужих примерах: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сказать «и» на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Одного слова для этого нет: есть пять, и выбирают из них по тому, что соединяется и в какой это речи. 和 — нейтральное, годится и в разговоре, и в письме. 跟 — разговорное. 与 — книжное, встречается в документах и названиях. 及 и 以及 — тоже книжные, и чаще всего они стоят в перечислениях. Все пять соединяют существительные.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли соединить через 和 два предложения?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. 和 соединяет существительные и именные группы, а не части фразы со своими сказуемыми. Фразу вроде «я закончила учёбу 和 хочу работать» носитель не построит: такие части либо ставятся рядом через запятую, либо соединяются другими средствами — наречиями и парными конструкциями, у которых свои правила места в предложении.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 跟 отличается от 和?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Значением — ничем, речью — заметно. 跟 звучит разговорно, 和 нейтрально. В письме, а тем более в официальном тексте, обычно стоит 和 или книжное 与. Отдельно стоит помнить, что у 跟 есть и другая работа — предлог со значением «с кем», и там оно соединительным союзом уже не является.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Когда нужно 与, а не 和?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Когда текст книжный: документ, статья, официальное название. 与 стоит, например, в названиях школьных предметов — 体育与健康, «физкультура и здоровье». В разговоре оно звучит литературно, поэтому в бытовой речи его обычно не берут.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как перечислить три предмета и больше?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Между всеми элементами ставится знак 、, а перед последним — 和. Схема такая: первый、второй和третий. Повторять 和 между каждой парой не нужно: достаточно одного раза, в самом конце ряда. Сам знак 、 и его отличие от обычной запятой — отдельная тема, она разобрана в статье о пунктуации.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что ставить вместо «и» между действиями?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Зависит от того, что именно связывается. Два признака одного предмета берут конструкцию 又…又. Последовательные действия обычно просто идут друг за другом, без связки. А для частей фразы со своими сказуемыми есть наречия и парные конструкции — и у каждой свой порядок слов, потому что часть из них вообще не союзы.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть «и» ставится там, где ему место! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Соединительная работа <span class="han">和</span> и то, что оно связывает существительные и именные группы, а не части фразы</b> — по разборам китайской грамматики.</li>
+    <li><b>Разговорность <span class="han">跟</span> и книжность <span class="han">与</span></b> — оттуда же; <span class="han">与</span> как часть официальных названий сверено по названиям школьных предметов <span class="han">体育与健康</span> и <span class="han">道德与法治</span>.</li>
+    <li><b>Книжность <span class="han">及</span> и <span class="han">以及</span></b> и то, что <span class="han">以及</span> закрывает перечисление, — по тем же разборам. Детали их взаимного различия не приводятся: источники расходятся, и в статье это сказано прямо.</li>
+    <li><b>Правило перечисления</b> — знак <span class="han">、</span> между элементами и <span class="han">和</span> перед последним — по разборам грамматики и пунктуации.</li>
+    <li><b>Соединение двух глаголов с общим дополнением</b> вроде <span class="han">研究和开发</span> приведено как редкий книжный случай, с прямой пометкой об этом.</li>
+    <li><b>Цифр частотности в статье нет:</b> корпусных данных, на которые можно сослаться, найти не удалось.</li>
+    <li>Случай с письмом в университет — из занятий Kitai School; имени и названия университета не называю.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Пять слов со значением «и» соединяют существительные, но не части фразы — и различаются речью, в которой встречаются</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
