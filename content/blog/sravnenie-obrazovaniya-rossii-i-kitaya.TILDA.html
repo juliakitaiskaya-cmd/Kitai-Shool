@@ -1,0 +1,452 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/sravnenie-obrazovaniya-rossii-i-kitaya#article",
+      "headline": "Образование в России и Китае: чем системы похожи и где принципиально расходятся",
+      "description": "Сопоставление российской и китайской школы по одинаковым параметрам. Российская школа длится одиннадцать лет по схеме 4+5+2, китайская двенадцать по схеме 6+3+3, но обязательная часть у обеих заканчивается на девятом году. Экзамен после девятого класса есть в обеих системах, однако ОГЭ аттестует за основную школу, а 中考 распределяет в старшую школу или профессиональное училище. Выпускные экзамены приходятся на начало лета: ЕГЭ с двумя обязательными предметами и стобалльной шкалой, гаокао на 750 баллов в модели 3+1+2. Отдельно названы параметры, которые сопоставить не удалось, и причина по каждому.",
+      "image": "assets/obr-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-06",
+      "dateModified": "2026-11-06",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/sravnenie-obrazovaniya-rossii-i-kitaya",
+      "about": {
+        "@type": "Thing",
+        "name": "Школьное образование в России и Китае"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/sravnenie-obrazovaniya-rossii-i-kitaya#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Сколько лет учатся в школе в России и Китае?", "acceptedAnswer": {"@type": "Answer", "text": "В России одиннадцать лет: начальная школа с первого по четвёртый класс, основная с пятого по девятый и старшая десятый с одиннадцатым. В Китае двенадцать: шесть лет начальной, три средней и три старшей — схему записывают как 6+3+3. Разница в один год приходится на начальную школу: в Китае она длиннее."}},
+        {"@type": "Question", "name": "Где заканчивается обязательное образование в каждой стране?", "acceptedAnswer": {"@type": "Answer", "text": "В обеих — после девятого года обучения. В России обязательным является основное общее образование, то есть девять классов. В Китае обязательные первые девять лет называются 义务教育, а старшая школа в них не входит. Это, пожалуй, самое точное совпадение между системами."}},
+        {"@type": "Question", "name": "Что решает экзамен после девятого класса?", "acceptedAnswer": {"@type": "Answer", "text": "Здесь системы расходятся. В России ОГЭ — это государственная итоговая аттестация за основную школу; после него ученик может пойти в десятый класс или в колледж. В Китае 中考 распределяет: по его результатам ученика направляют либо в старшую школу, либо в профессиональное училище, и этот выбор сделать заново сложно."}},
+        {"@type": "Question", "name": "Чем гаокао отличается от ЕГЭ?", "acceptedAnswer": {"@type": "Answer", "text": "Набором и шкалой. В ЕГЭ два обязательных предмета — русский язык и математика, остальные сдают по выбору, и каждый предмет оценивается по стобалльной шкале. Гаокао считается суммарно: 750 баллов в модели 3+1+2. Сроки при этом похожи: основной период ЕГЭ приходится на конец мая и июнь, гаокао обычно сдают в начале июня."}},
+        {"@type": "Question", "name": "Как в Китае ставят оценки?", "acceptedAnswer": {"@type": "Answer", "text": "Шкала там стобалльная, 百分制: максимум за предмет сто, а чертой считается шестьдесят. Рядом с числом обычно стоит и словесная ступень, их пять. Отдельно стоит знать, что с 2021 года в обязательной школе запрещено публиковать результаты и составлять рейтинги учеников. Устройство этой шкалы у нас разобрано в отдельной статье."}},
+        {"@type": "Question", "name": "Где нагрузка выше?", "acceptedAnswer": {"@type": "Answer", "text": "Ответа в числах я не даю. По китайской школе есть государственный стандарт с годовыми часами: 910 часов в первом и втором классах, 1050 в третьем — шестом. Российских данных в том же виде, чтобы положить рядом и сравнить, я не нашла, а сопоставлять часы с недельными уроками некорректно."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/sravnenie-obrazovaniya-rossii-i-kitaya#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Образование в России и Китае: чем системы похожи и где принципиально расходятся", "item": "https://kitai-school.ru/article/sravnenie-obrazovaniya-rossii-i-kitaya"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Школа</p>
+<h1>Образование в России и Китае: <span class="italic">чем системы похожи и где принципиально расходятся</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-06">6 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/obr-hero.png" alt="Две траектории на общей оси лет: российская школа на одиннадцать лет и китайская на двенадцать, обязательная часть кончается у обеих на девятом году" width="1200" height="630"></figure>
+
+<p class="passport">Оговорю рамки сразу. Оценивать системы и отвечать, где учиться выгоднее, я не берусь: для таких выводов нужны данные, которых у меня нет. Задача другая — положить рядом проверяемые числа по одинаковым параметрам и показать, где они совпадают, где расходятся и где сравнение не получилось. Последнее тоже результат, и я его не прячу.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Обязательная часть у обеих школ кончается на девятом году.</b> Дальше расходится: российская школа длится одиннадцать лет, китайская — двенадцать, а экзамен после девятого класса в России аттестует, в Китае — распределяет. Из 10 параметров совпали 3, разошлись 5, а 2 сопоставить не удалось.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">ступени похожи, развилки — нет</span></h2>
+
+<p>Если положить две схемы рядом, первое впечатление будет обманчивым.</p>
+
+<p>Обе системы делятся на три ступени. В обеих есть экзамен после девятого года и выпускной экзамен в конце. В обеих обязательная часть заканчивается на одном и том же месте — после девятого класса.</p>
+
+<p><b>А дальше начинаются различия, и они не в числах, а в том, что эти числа значат.</b> Экзамен после девятого класса в России открывает выбор, в Китае — его сужает. Выпускной экзамен в России складывается из предметов по выбору, в Китае считается одной суммой на 750 баллов.</p>
+
+<p>Дальше разберём по параметрам, и начнём с самого простого — со счёта лет.</p>
+
+<h2>Сколько лет <span class="italic">длится школа</span></h2>
+
+<p>Одиннадцать и двенадцать — вот всё различие в итоговом числе.</p>
+
+<p><b>В России три уровня общего образования:</b> начальное с первого по четвёртый класс, основное с пятого по девятый и среднее — десятый с одиннадцатым. Схему можно записать как 4+5+2.</p>
+
+<p><b>В Китае двенадцать лет по схеме 6+3+3:</b> шесть лет начальной школы, три средней и три старшей. Лишний год приходится на начальную школу — она длиннее российской на два года, а основная, наоборот, короче.</p>
+
+<p>Отсюда любопытное следствие: <b>к концу девятого года обучения дети в обеих странах примерно одного возраста</b>, хотя распределены по ступеням по-разному.</p>
+
+<p>Возраст приёма тоже близок, но правила сформулированы по-разному. В России в первый класс принимают с шести лет шести месяцев и не позже восьми, а вне этих границ нужно разрешение учредителя школы. В Китае закон требует шести полных лет к первому сентября, с возможной отсрочкой.</p>
+
+<h2>Где заканчивается <span class="italic">обязательная часть</span></h2>
+
+<p>Это самое точное совпадение из всех, что мне удалось найти.</p>
+
+<p><b>В России обязательным является основное общее образование — девять классов.</b> Десятый и одиннадцатый классы в обязательную часть не входят.</p>
+
+<p><b>В Китае обязательные первые девять лет называются <span class="han">义务教育</span></b>, и старшая школа <span class="han">高中</span> в них тоже не входит.</p>
+
+<p>То есть обе системы устроили границу в одном и том же месте: девять лет учат всех, дальше начинается выбор. Подробный разбор китайских ступеней — в нашей отдельной статье о том, сколько классов учатся в Китае.</p>
+
+<p>Но за одинаковой границей стоят разные механизмы перехода, и вот это уже принципиально.</p>
+
+<h2>Сопоставление по параметрам: <span class="italic">сводка</span></h2>
+
+<p>Соберём всё, что удалось проверить, в одну таблицу.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Параметры с обеих сторон и результат сопоставления по каждому.</caption>
+  <thead><tr><th>Параметр</th><th>Россия</th><th>Китай</th><th>Результат</th></tr></thead>
+  <tbody>
+    <tr><td><b>Обязательная часть</b></td><td>9 классов</td><td>9 лет 义务教育</td><td>совпадает</td></tr>
+    <tr><td><b>Экзамен после девятого</b></td><td>ОГЭ</td><td>中考</td><td>совпадает</td></tr>
+    <tr><td><b>Время выпускного экзамена</b></td><td>конец мая — июнь</td><td>обычно начало июня</td><td>совпадает</td></tr>
+    <tr><td><b>Длина школы</b></td><td>11 лет: 4+5+2</td><td>12 лет: 6+3+3</td><td>расходится</td></tr>
+    <tr><td><b>Что решает экзамен после девятого</b></td><td>аттестует за основную школу</td><td>распределяет в старшую школу или училище</td><td>расходится</td></tr>
+    <tr><td><b>Выпускной экзамен</b></td><td>2 обязательных предмета плюс выбор, 100 баллов</td><td>750 баллов, модель 3+1+2</td><td>расходится</td></tr>
+    <tr><td><b>Возраст приёма</b></td><td>6 лет 6 месяцев — 8 лет</td><td>6 полных лет к 1 сентября</td><td>расходится</td></tr>
+    <tr><td><b>Школьная шкала оценок</b></td><td>пятибалльная практика</td><td>стобалльная, порог 60</td><td>расходится</td></tr>
+    <tr><td><b>Годовая нагрузка в часах</b></td><td>сопоставимых цифр не нашла</td><td>910 и 1050 часов</td><td>сравнить не удалось: нет российских данных в том же виде</td></tr>
+    <tr><td><b>Публикация результатов</b></td><td>правил не нашла</td><td>запрет на рейтинги с 2021 года</td><td>сравнить не удалось: сравнение вышло бы односторонним</td></tr>  </tbody>
+</table>
+</div>
+
+<p>Последний столбец и есть устройство статьи: 3 параметра совпали, 5 разошлись, 2 сравнить не вышло.</p>
+
+<figure class="ks-fig"><img src="assets/obr-info.png" alt="Три корзины сопоставления: что совпадает, что расходится и что сопоставить не удалось, с причиной у каждого пункта" width="1200" height="800"><figcaption>Те же параметры по трём группам: третья колонка — то, что сопоставить не удалось, с причиной по каждому пункту.</figcaption></figure>
+
+<p>Обратите внимание на среднюю колонку: она самая длинная. <b>Совпадений меньше, чем различий</b>, и это при том, что внешне схемы выглядят похоже.</p>
+
+<p>А правая колонка — честная часть работы. Там два параметра, по которым я нашла данные только с одной стороны, и выдавать это за сравнение не стала.</p>
+
+<h2>Экзамен после девятого: <span class="italic">ОГЭ и 中考</span></h2>
+
+<p>Оба экзамена стоят в одной точке пути, но делают разное.</p>
+
+<p><b>ОГЭ — это государственная итоговая аттестация за основную школу.</b> Он подтверждает, что девять классов пройдены. После него ученик может остаться в школе и пойти в десятый класс или уйти в колледж.</p>
+
+<p><b><span class="han">中考</span> распределяет.</b> По его результатам ученика направляют либо в старшую школу <span class="han">高中</span>, либо в профессиональное училище. Это не формальность в конце ступени, а момент, который определяет следующие три года.</p>
+
+<p>Отсюда и разное отношение к этому возрасту. <b>В российской школе девятый класс — промежуточная точка</b>, после которой большинство остаётся учиться дальше. В китайской это развилка, к которой готовятся заранее.</p>
+
+<p>Для семьи, которая переезжает, разница существенная: если подростку четырнадцать, в Китае он попадает в год перед экзаменом, а не в спокойную середину школы.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Семья переезжала в Китай, и родителей волновал один вопрос: в какой класс пойдёт сын.</p>
+  <p>Мальчику четырнадцать, в России он закончил седьмой. По годам всё сходилось: в Китае он идёт в восьмой, то есть во второй год средней школы <span class="han">初中</span>.</p>
+  <p>А дальше выяснилось главное. <b>Через год ему предстоит <span class="han">中考</span></b> — экзамен после девятого класса, от которого зависит, попадёт ли он в старшую школу.</p>
+  <p>В российской школе этот возраст родители воспринимали как спокойный: до выпускных экзаменов далеко, можно спокойно учиться. Здесь он оказался годом перед развилкой.</p>
+  <p>Пришлось перестраивать не класс, а планы: подтягивать язык не «вообще», а под предметы, которые будут на экзамене.</p>
+  <p>С тех пор я советую семьям с переездом смотреть не только на то, в какой класс попадает ребёнок, но и на то, что в этом классе происходит.</p>
+</div>
+
+<p>Эта история — лучшая иллюстрация к тому, зачем вообще сравнивать системы. <b>Совпадение по годам не означает совпадения по тому, что в эти годы происходит.</b></p>
+
+<h2>Экзамен на выходе: <span class="italic">ЕГЭ и 高考</span></h2>
+
+<p>Здесь различается почти всё, кроме времени года.</p>
+
+<p><b>ЕГЭ собирается из предметов.</b> Два обязательных — русский язык и математика, остальные сдают по выбору, в зависимости от того, куда поступают. Каждый предмет оценивается отдельно по стобалльной шкале.</p>
+
+<p><b>Гаокао считается одной суммой.</b> Максимум — 750 баллов, и собираются они по модели 3+1+2: три обязательных предмета, один по выбору из двух направлений и два дополнительных. Подробный разбор того, как эти баллы складываются и пересчитываются, у нас есть отдельно: <a href="https://kitai-school.ru/article/kak-stavyat-ocenki-v-kitae" target="_blank" rel="noopener">как ставят оценки в Китае</a>.</p>
+
+<p>Сроки при этом похожи: основной период ЕГЭ приходится на конец мая и июнь, гаокао обычно сдают в начале июня. Правда, порядок проведения гаокао различается по провинциям — единого для всей страны расписания предметов нет.</p>
+
+<p><b>Чего я не привожу:</b> минимальных баллов и точных дат. Они меняются каждый год, последние найденные относятся к две тысячи двадцать пятому году и уже устарели. Для актуальных цифр нужно смотреть официальные документы текущего года.</p>
+
+<h2>Оценки и <span class="italic">публикация результатов</span></h2>
+
+<p>Параметр, по которому сравнение получилось наполовину.</p>
+
+<p><b>В Китае школьная шкала стобалльная</b> — <span class="han">百分制</span>. Максимум за предмет сто, чертой считается шестьдесят, и рядом с числом обычно стоит словесная ступень: их пять, от высшей до неудовлетворительной.</p>
+
+<p><b>В России привычна пятибалльная.</b> Здесь нужна оговорка: федерального требования к самой шкале оценивания я не нашла, поэтому говорю о сложившейся практике, а не о норме.</p>
+
+<p>И отдельно про рейтинги. <b>С 2021 года в китайской обязательной школе запрещено публиковать результаты и составлять рейтинги учеников.</b> По российской школе правил публикации я не нашла, поэтому сравнивать здесь не с чем — параметр попал в третью корзину.</p>
+
+<p>О том, как устроены школьные правила в Китае вообще — форма, распорядок, что можно приносить, — у нас есть отдельный разбор: <a href="https://kitai-school.ru/article/pravila-v-kitayskih-shkolah" target="_blank" rel="noopener">правила в китайских школах</a>.</p>
+
+<h2>Нагрузка: <span class="italic">что удалось сопоставить, а что нет</span></h2>
+
+<p>Самый спрашиваемый параметр — и самый трудный для честного сравнения.</p>
+
+<p><b>По китайской школе цифры есть.</b> Государственный стандарт задаёт годовые часы: 910 часов в первом и втором классах, 1050 в третьем — шестом, всего 9522 часа за девять лет обязательной школы.</p>
+
+<p><b>По российской школе сопоставимых цифр я не нашла.</b> Есть данные о недельной нагрузке, но положить их рядом с годовыми часами без пересчёта нельзя, а пересчитывать самой — значит получить число, за которое никто не отвечает.</p>
+
+<p>Поэтому ответа «где нагрузка выше» в этой статье нет. <b>Есть одна сторона с числами и вторая без них</b>, и выдавать это за сравнение я не буду.</p>
+
+<p>То же касается и домашних заданий, и дополнительных занятий: сопоставимых данных по обеим странам найти не удалось.</p>
+
+<h2>Что из этого следует <span class="italic">для семьи с переездом</span></h2>
+
+<p>Три практических вывода, которые следуют прямо из таблицы.</p>
+
+<ul>
+  <li><b>Считайте не класс, а расстояние до развилки.</b> Ребёнок попадает в класс по возрасту, но важнее, сколько лет остаётся до <span class="han">中考</span>.</li>
+  <li><b>Учитывайте лишний год.</b> Китайская школа на год длиннее, и выпускается ребёнок на год позже, чем выпустился бы дома.</li>
+  <li><b>Язык нужен не «вообще», а под предметы.</b> Если до экзамена остаётся год или два, учить придётся лексику школьных дисциплин, а не бытовую речь.</li>
+</ul>
+
+<p>Что делать подростку, который заканчивает девятый или одиннадцатый класс в России и смотрит в сторону Китая, у нас разобрано отдельно: <a href="https://kitai-school.ru/article/obuchenie-v-kitae-posle-9-klassa-chto-realno-vozmozhno" target="_blank" rel="noopener">обучение в Китае после 9 класса</a> и <a href="https://kitai-school.ru/article/obuchenie-v-kitae-dlya-russkikh-posle-11-klassa" target="_blank" rel="noopener">обучение в Китае после 11 класса</a>.</p>
+
+<h2>Чего в статье <span class="italic">нет намеренно</span></h2>
+
+<ul>
+  <li><b>Нет оценок «лучше» и «хуже».</b> Ни одна из систем здесь не названа удачнее другой: статья сопоставляет устройство.</li>
+  <li><b>Нет выводов о качестве образования</b> и сравнений результатов: это отдельная тема, требующая данных, которых у меня нет.</li>
+  <li><b>Нет российских годовых часов</b> — сопоставимых цифр найти не удалось, и параметр остался несравнённым.</li>
+  <li><b>Нет минимальных баллов и точных дат экзаменов:</b> они меняются ежегодно.</li>
+  <li><b>Нет реконструкции «логики каждой системы»</b> — объяснять, почему устроено именно так, значило бы домысливать.</li>
+  <li><b>Нет подробностей китайской части</b> — устройство ступеней, пересчёт баллов, доли часов по предметам разобраны в отдельных статьях, на которые стоят ссылки.</li>
+</ul>
+
+<p>И главный вывод, ради которого всё раскладывалось. <b>Похожими системы делает внешняя схема, разными — то, что происходит в точках перехода.</b></p>
+
+<p>Польза простая: дальше, встретив утверждение вроде «в Китае учатся на год дольше» или «там всё решает один экзамен», вы сможете проверить его по таблице — и увидеть, что стоит за словами.</p>
+
+<div class="cta">
+  <p>Если в планах переезд или учёба в Китае, язык лучше начинать заранее — и сразу под задачу: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать нам в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько лет учатся в школе в России и Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В России одиннадцать лет: начальная школа с первого по четвёртый класс, основная с пятого по девятый и старшая десятый с одиннадцатым. В Китае двенадцать: шесть лет начальной, три средней и три старшей — схему записывают как 6+3+3. Разница в один год приходится на начальную школу: в Китае она длиннее.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где заканчивается обязательное образование в каждой стране?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В обеих — после девятого года обучения. В России обязательным является основное общее образование, то есть девять классов. В Китае обязательные первые девять лет называются 义务教育, а старшая школа в них не входит. Это, пожалуй, самое точное совпадение между системами.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что решает экзамен после девятого класса?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Здесь системы расходятся. В России ОГЭ — это государственная итоговая аттестация за основную школу; после него ученик может пойти в десятый класс или в колледж. В Китае 中考 распределяет: по его результатам ученика направляют либо в старшую школу, либо в профессиональное училище, и этот выбор сделать заново сложно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем гаокао отличается от ЕГЭ?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Набором и шкалой. В ЕГЭ два обязательных предмета — русский язык и математика, остальные сдают по выбору, и каждый предмет оценивается по стобалльной шкале. Гаокао считается суммарно: 750 баллов в модели 3+1+2. Сроки при этом похожи: основной период ЕГЭ приходится на конец мая и июнь, гаокао обычно сдают в начале июня.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как в Китае ставят оценки?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Шкала там стобалльная, 百分制: максимум за предмет сто, а чертой считается шестьдесят. Рядом с числом обычно стоит и словесная ступень, их пять. Отдельно стоит знать, что с 2021 года в обязательной школе запрещено публиковать результаты и составлять рейтинги учеников. Устройство этой шкалы у нас разобрано в отдельной статье.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где нагрузка выше?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Ответа в числах я не даю. По китайской школе есть государственный стандарт с годовыми часами: 910 часов в первом и втором классах, 1050 в третьем — шестом. Российских данных в том же виде, чтобы положить рядом и сравнить, я не нашла, а сопоставлять часы с недельными уроками некорректно.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть решение принимается по числам, а не по пересказам! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Уровни общего образования в России</b> — начальное, основное и среднее — и обязательность основного общего образования: по закону «Об образовании в Российской Федерации» № 273-ФЗ.</li>
+    <li><b>Возраст приёма в первый класс</b> — с шести лет шести месяцев и не позже восьми, вне этих границ с разрешения учредителя: там же, статья 67, и порядок приёма Минпросвещения.</li>
+    <li><b>Состав ЕГЭ</b> — два обязательных предмета, остальные по выбору, стобалльная шкала — и основной период в конце мая и июне: по открытым описаниям порядка аттестации.</li>
+    <li><b>Китайские ступени 6+3+3, обязательные девять лет <span class="han">义务教育</span> и <span class="han">中考</span></b> как распределяющий экзамен — по нашему разбору китайских классов, сверенному при его написании.</li>
+    <li><b>Состав гаокао</b> — 750 баллов в модели 3+1+2 — и школьная стобалльная шкала с порогом 60, а также запрет на публикацию результатов и рейтингов с 2021 года: по нашему разбору китайских оценок.</li>
+    <li><b>Годовые часы китайской школы</b> — 910, 1050 и 9522 за девять лет — по государственному стандарту, разобранному в нашей статье о том, как учатся китайские школьники.</li>
+    <li><b>Сроки гаокао</b> — обычно начало июня, порядок различается по провинциям — оттуда же.</li>
+    <li><b>Российские годовые часы по предметам и правила публикации оценок не приводятся:</b> сопоставимых данных найти не удалось, и оба параметра прямо названы несравнёнными.</li>
+    <li><b>Минимальные баллы и точные даты экзаменов не приводятся:</b> они меняются ежегодно.</li>
+    <li>Случай с переездом — из занятий Kitai School; имени и города не называю.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Обязательная часть кончается у обеих школ на девятом году, а дальше пути расходятся — и по длине, и по тому, что решает экзамен</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
