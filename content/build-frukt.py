@@ -7,8 +7,8 @@ OUT = "schetnoe-slovo-dlya-fruktov-v-kitayskom.html"
 SLUG = "schetnoe-slovo-dlya-fruktov-v-kitayskom"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/frukt-hero.png"
-FIG = "assets/frukt-info.png"
+HERO = "https://static.tildacdn.com/tila3336-6134-4164-b162-306534346462/frukt-hero.png"
+FIG = "https://static.tildacdn.com/tila3463-3135-4061-b034-643432393732/frukt-info.png"
 HERO_ALT = ("Четыре ценника с разными единицами счёта: 个 для яблока, 串 для грозди винограда, "
             "颗 для виноградины, 粒 для зёрнышка риса")
 FIG_ALT = ("Один виноград в трёх видах: целая гроздь 串, отдельная ягода 颗, порция на тарелке "
