@@ -1,0 +1,453 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/schastye-na-kitayskom-yazyke#article",
+      "headline": "Счастье на китайском: 幸福 и 快乐 — почему это разные слова",
+      "description": "Разбор слов о счастье в китайском языке. Русскому «счастью» соответствует не одно слово, а несколько, и различаются они не силой чувства, а размером отрезка жизни: 幸福 — состояние, в котором живут, и его говорят о жизни и семье; 快乐 — радость события, и именно оно стоит в поздравлениях 生日快乐 и 新年快乐; 开心 и 高兴 описывают настроение в моменте, причём 高兴 закреплено за формулой знакомства 很高兴认识你. В статье: как сказать «я счастлив», почему 生日幸福 не говорят, пять частых ошибок русскоязычных и почему знак 福 в этот ряд не встаёт.",
+      "image": "https://static.tildacdn.com/tila3064-3138-4535-b331-356463653134/schastye-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-09",
+      "dateModified": "2026-11-09",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/schastye-na-kitayskom-yazyke",
+      "about": {
+        "@type": "Thing",
+        "name": "Слова о счастье в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/schastye-na-kitayskom-yazyke#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как будет «счастье» на китайском?", "acceptedAnswer": {"@type": "Answer", "text": "Одним словом не переводится. Чаще всего нужны 幸福 (xìngfú) — счастье как состояние, в котором живут, и 快乐 (kuàilè) — радость события, которую желают. Рядом стоят 开心 (kāixīn) и 高兴 (gāoxìng) — это уже про настроение в моменте. Выбирают между ними не по силе чувства, а по тому, о каком отрезке жизни идёт речь."}},
+        {"@type": "Question", "name": "Чем 幸福 отличается от 快乐?", "acceptedAnswer": {"@type": "Answer", "text": "Размером отрезка. 幸福 говорят о жизни целиком: 家庭幸福 — «счастливая семья». 快乐 привязано к событию или поводу, поэтому именно оно стоит в поздравлениях: 生日快乐, 新年快乐. Поменять их местами не получится — 生日幸福 звучит странно, а 家庭快乐 китаец не скажет."}},
+        {"@type": "Question", "name": "Как сказать «я счастлив»?", "acceptedAnswer": {"@type": "Answer", "text": "Если речь о жизни в целом — 我很幸福 (wǒ hěn xìngfú). Если о настроении прямо сейчас — 我很开心 (wǒ hěn kāixīn). Обратите внимание на 很: связка 是 с качеством не ставится, поэтому 我是幸福 неверно. А существительное от 幸福 — 幸福感, «ощущение счастья»."}},
+        {"@type": "Question", "name": "Почему нельзя сказать 生日幸福?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что пожелание привязано к дате, а 幸福 описывает состояние жизни, а не день. В поздравлениях с датой и праздником по-китайски стоит 快乐: 生日快乐, 新年快乐. Это не вопрос вежливости или силы — просто слово закреплено за другим масштабом."}},
+        {"@type": "Question", "name": "Чем 开心 отличается от 高兴?", "acceptedAnswer": {"@type": "Answer", "text": "Оба про настроение в моменте, но 高兴 чаще описывает реакцию на конкретный случай и закреплено в формуле знакомства: 很高兴认识你 — «рад познакомиться». 开心 ближе к общему хорошему настроению: 我很开心 — «мне радостно». В формуле знакомства 开心 не используют."}},
+        {"@type": "Question", "name": "Что означает иероглиф 福 и при чём тут счастье?", "acceptedAnswer": {"@type": "Answer", "text": "福 (fú) — это благополучие и пожелание, а не чувство. Его вешают на двери и клеят на окна, он стоит в новогодних пожеланиях, и в ряд со словами о счастье как о состоянии он не встаёт. Подробный разбор знака — что он значит, куда его вешают и где переворачивают — у нас есть в отдельной статье про удачу."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/schastye-na-kitayskom-yazyke#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Счастье на китайском: 幸福 и 快乐 — почему это разные слова", "item": "https://kitai-school.ru/article/schastye-na-kitayskom-yazyke"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Счастье на китайском: <span class="italic"><span class="han">幸福</span> и <span class="han">快乐</span> — почему это разные слова</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-09">9 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila3064-3138-4535-b331-356463653134/schastye-hero.png" alt="Две верные фразы 家庭幸福 и 生日快乐 и две перечёркнутые замены крест-накрест: 家庭快乐 и 生日幸福" width="1200" height="630"></figure>
+
+<p class="passport">Вы открываете словарь на слове «счастье» и находите там сразу несколько вариантов. Берёте первый попавшийся, вставляете в поздравление — и получаете вежливое недоумение в ответ. Так происходит потому, что выбор между этими словами зависит не от оттенка чувства, а от того, о каком отрезке жизни вы говорите.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b><span class="han">幸福</span> — счастье, в котором живут</b>: о жизни целиком, о семье. <b><span class="han">快乐</span> — радость события</b>, и именно оно стоит в поздравлениях: <span class="han">生日快乐</span>, <span class="han">新年快乐</span>. Настроение прямо сейчас — это <span class="han">开心</span> и <span class="han">高兴</span>. А знак <span class="han">福</span> в этот ряд не встаёт: он не о чувстве.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">одного слова нет</span></h2>
+
+<p>Русское «счастье» покрывает сразу несколько состояний.</p>
+
+<p>«Счастливая семья» и «счастлив познакомиться» — по-русски одно слово, и никого это не смущает. По-китайски это два разных слова, и перепутать их заметно.</p>
+
+<p><b>Выбирают не по силе чувства.</b> Это первое, что приходится переучивать: кажется, будто есть слова «посильнее» и «послабее», и для важного повода нужно взять то, что крупнее.</p>
+
+<p>На самом деле слова различаются размером отрезка, о котором идёт речь: жизнь целиком, отдельное событие или настроение в эту минуту. Разберём каждое.</p>
+
+<h2>幸福: <span class="italic">счастье, в котором живут</span></h2>
+
+<p>Это слово о состоянии, а не о моменте.</p>
+
+<p><b><span class="han">幸福</span> (xìngfú) говорят о жизни в целом</b>: о том, как человек живёт, как устроена его семья, доволен ли он тем, что имеет. Самое частое сочетание — <span class="han">家庭幸福</span>, «счастливая семья».</p>
+
+<p>Про себя скажут <span class="han">我很幸福</span> — и это будет не про сегодняшний день, а про положение дел вообще.</p>
+
+<p>От него образуется и отвлечённое существительное: <b><span class="han">幸福感</span></b>, буквально «ощущение счастья». Оно встречается в текстах о качестве жизни и о том, насколько люди довольны.</p>
+
+<p><b>Чего с этим словом не делают:</b> им не поздравляют с датой. Подробнее об этом дальше — именно здесь ошибается большинство начинающих.</p>
+
+<h2>快乐: <span class="italic">счастье, которого желают</span></h2>
+
+<p>А это слово привязано к поводу.</p>
+
+<p><b><span class="han">快乐</span> (kuàilè) — стандартное слово пожеланий.</b> <span class="han">生日快乐</span> «с днём рождения», <span class="han">新年快乐</span> «с Новым годом», <span class="han">节日快乐</span> «с праздником». Везде одна схема: название даты плюс <span class="han">快乐</span>.</p>
+
+<p>Оно же описывает радость от происходящего: <span class="han">我们玩得很快乐</span> — «мы хорошо провели время».</p>
+
+<p><b>Разница с <span class="han">幸福</span> видна по вопросу «о чём речь».</b> Если о том, как складывается жизнь, — <span class="han">幸福</span>. Если о дне, празднике или случае — <span class="han">快乐</span>.</p>
+
+<p>Кстати, о том, какие праздники в Китае отмечают и что говорят в каждый из них, у нас есть отдельный разбор: <a href="https://kitai-school.ru/article/kitayskie-tradicionnye-prazdniki" target="_blank" rel="noopener">китайские традиционные праздники</a>.</p>
+
+<h2>Четыре слова рядом: <span class="italic">сводка</span></h2>
+
+<p>Положим их в одну таблицу — так разница видна сразу.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Четыре слова о счастье: чем различаются и с чем употребляются.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Отрезок</th><th>О чём речь</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">幸福</b></td><td>xìngfú</td><td>жизнь целиком</td><td>о жизни целиком</td><td><span class="han">家庭幸福</span> — счастливая семья</td></tr>
+    <tr><td><b class="han">快乐</b></td><td>kuàilè</td><td>событие и повод</td><td>о событии и поводе</td><td><span class="han">生日快乐</span> — с днём рождения</td></tr>
+    <tr><td><b class="han">开心</b></td><td>kāixīn</td><td>момент</td><td>о настроении сейчас</td><td><span class="han">我很开心</span> — мне радостно</td></tr>
+    <tr><td><b class="han">高兴</b></td><td>gāoxìng</td><td>момент</td><td>о реакции на случай</td><td><span class="han">很高兴认识你</span> — рад познакомиться</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Третий столбец и есть ответ на вопрос, который чаще всего задают: слова выстроены не по силе, а по размеру отрезка.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila3433-3434-4863-a239-663863333639/schastye-info.png" alt="Вложенные круги охвата: 幸福 — жизнь целиком, 快乐 — событие и повод, 开心 и 高兴 — момент" width="1200" height="660"><figcaption>Те же слова кольцами: от жизни целиком до одной минуты. Чем меньше отрезок, тем будничнее слово.</figcaption></figure>
+
+<p>Обратите внимание: кольца вложены друг в друга, а не стоят рядом. <b>Момент входит в событие, событие — в жизнь</b>, и каждое следующее слово описывает отрезок покрупнее.</p>
+
+<p>Отсюда простое правило выбора. Спросите себя, о каком куске времени вы говорите, — и слово найдётся само.</p>
+
+<h2>开心 и 高兴: <span class="italic">настроение прямо сейчас</span></h2>
+
+<p>Два слова внутреннего кольца. Они близки, но закреплены по-разному.</p>
+
+<p><b><span class="han">开心</span> (kāixīn) — про хорошее настроение.</b> <span class="han">我很开心</span> — «мне радостно», «я доволен». Это про то, как человеку сейчас, без привязки к конкретной причине.</p>
+
+<p><b><span class="han">高兴</span> (gāoxìng) чаще описывает реакцию на случай</b> — и закреплено в формуле знакомства: <span class="han">很高兴认识你</span>, «рад познакомиться». Это устойчивое выражение, и <span class="han">开心</span> в нём не используют.</p>
+
+<p>На практике разница небольшая, и в разговоре их часто ставят почти одинаково. <b>Но формулу знакомства стоит запомнить целиком</b> — там вариантов нет.</p>
+
+<p>Есть и практическая подсказка: если сомневаетесь между этими двумя в обычном разговоре, берите <span class="han">开心</span>. Оно уместно шире, а <span class="han">高兴</span> чаще звучит там, где есть конкретная причина радоваться.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица поздравляла китайскую подругу с днём рождения и написала <span class="han">生日幸福</span>.</p>
+  <p>Логика понятная: по-русски «счастья в день рождения» звучит совершенно естественно. Подруга ответила вежливо, но переспросила, что именно имелось в виду.</p>
+  <p>Разобрали на занятии. <b><span class="han">幸福</span> — про жизнь целиком</b>, а в пожелании к дате ставят <span class="han">快乐</span>, потому что оно привязано к поводу.</p>
+  <p>Дальше выяснилось неожиданное. Ученица думала, что выбирает между словами по силе: раз день рождения — событие важное, значит и слово нужно «посильнее».</p>
+  <p>Но сила тут ни при чём. Выбор зависит от того, о каком отрезке жизни идёт речь — об одном дне или обо всей жизни сразу.</p>
+  <p>После этого разбора ошибки с поздравлениями у неё закончились: достаточно было один раз спросить себя, что именно желаешь — хороший день или хорошую жизнь.</p>
+</div>
+
+<p>История про силу чувства — самое частое заблуждение в этой теме. <b>Слова различаются не тем, насколько сильно, а тем, насколько долго.</b></p>
+
+<h2>Как сказать <span class="italic">«я счастлив»</span></h2>
+
+<p>Зависит от того, что именно вы хотите сказать.</p>
+
+<ul>
+  <li><b>О жизни в целом:</b> <span class="han">我很幸福</span> — «я счастлив», в смысле «у меня всё хорошо устроено».</li>
+  <li><b>О настроении сейчас:</b> <span class="han">我很开心</span> — «мне радостно».</li>
+  <li><b>О реакции на событие:</b> <span class="han">我很高兴</span> — «я рад».</li>
+</ul>
+
+<p><b>Во всех трёх стоит <span class="han">很</span>, и это не случайность.</b> Перед качеством в китайском нужно наречие степени, а связка <span class="han">是</span> с ним не ставится: <span class="han">我是幸福</span> — ошибка.</p>
+
+<p>Если нужно спросить, говорят так же просто: <span class="han">你幸福吗</span> «ты счастлив?» — о жизни, и <span class="han">你开心吗</span> «тебе весело?» — о настроении.</p>
+
+<p><b>Отдельно про отрицание.</b> Оно ставится перед качеством и вытесняет <span class="han">很</span>: <span class="han">我不开心</span> — «мне невесело». Сказать <span class="han">我很不开心</span> тоже можно, но это уже сильнее: «мне совсем нехорошо».</p>
+
+<p>И про пожелания другому человеку. Самое частое — <span class="han">祝你幸福</span>, «желаю тебе счастья»: здесь как раз уместно слово о жизни целиком, потому что желают не одного дня, а того, как всё сложится дальше.</p>
+
+<p>В поздравлении же с конкретной датой эта формула не работает: там снова нужно <span class="han">快乐</span>. Разница та же самая — желаете жизнь или желаете день.</p>
+
+<h2>Почему 福 <span class="italic">в этот ряд не встаёт</span></h2>
+
+<p>Знак, с которым тему обычно и связывают, здесь оказывается не у дел.</p>
+
+<p><b><span class="han">福</span> (fú) — это благополучие и пожелание, а не чувство.</b> Его клеят на двери и окна, он стоит в новогодних украшениях и в устойчивых выражениях. Сказать «я чувствую 福» нельзя: слово устроено иначе.</p>
+
+<p>Поэтому в кольцах его нет: кольца про то, что человек испытывает, а <span class="han">福</span> — про то, чего желают.</p>
+
+<p>Разбирать его подробно я здесь не буду, потому что у нас есть отдельная статья, где он разобран целиком — что значит, куда его вешают, где переворачивают, а где нет: <a href="https://kitai-school.ru/article/udacha-po-kitajski" target="_blank" rel="noopener">«Удача» по-китайски</a>. Там же разведены <span class="han">好运</span> и <span class="han">运气</span>, то есть удача и везение.</p>
+
+<p>А про красный цвет, на котором этот знак обычно и написан, есть свой разбор: <a href="https://kitai-school.ru/article/krasnyy-cvet-v-kitayskoy-kulture" target="_blank" rel="noopener">красный цвет в китайской культуре</a>.</p>
+
+<h2>Частые ошибки <span class="italic">русскоязычных</span></h2>
+
+<p>Пять штук, и четыре из них — одна и та же по природе.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Пять ошибок со словами о счастье и причина каждой.</caption>
+  <thead><tr><th>Как пишут</th><th>Как надо</th><th>В чём дело</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">生日幸福</b></td><td><b class="han">生日快乐</b></td><td>Пожелание привязано к поводу, а 幸福 говорят о жизни целиком.</td></tr>
+    <tr><td><b class="han">我很幸福今天</b></td><td><b class="han">我今天很开心</b></td><td>О настроении одного дня берут 开心, а не 幸福.</td></tr>
+    <tr><td><b class="han">很幸福认识你</b></td><td><b class="han">很高兴认识你</b></td><td>Формула знакомства закреплена за 高兴 и не меняется.</td></tr>
+    <tr><td><b class="han">新年幸福</b></td><td><b class="han">新年快乐</b></td><td>В новогоднем поздравлении тоже стоит 快乐: это пожелание к дате.</td></tr>
+    <tr><td><b class="han">我是幸福</b></td><td><b class="han">我很幸福</b></td><td>Связка 是 с качеством не ставится, нужно наречие степени.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Общая причина первых четырёх:</b> слово выбирается по словарному значению, без вопроса о том, какой отрезок времени имеется в виду.</p>
+
+<p>Пятая стоит особняком — это ошибка не в выборе слова, а в сборке фразы: качество в китайском не требует связки.</p>
+
+<h2>Чего в статье <span class="italic">нет намеренно</span></h2>
+
+<ul>
+  <li><b>Нет разбора знака <span class="han">福</span></b> — что он значит, где его переворачивают, что такое <span class="han">五福</span>: всё это в отдельной статье, на неё стоит ссылка.</li>
+  <li><b>Нет <span class="han">好运</span> и <span class="han">运气</span></b> — это про удачу и везение, у них своя страница.</li>
+  <li><b>Нет <span class="han">美满</span> и <span class="han">满足</span>:</b> подтверждений их употребления я не нашла и гадать не стала.</li>
+  <li><b>Нет шкалы силы чувства.</b> Часть разборов называет <span class="han">幸福</span> более глубоким словом, другие считают эти слова почти равными; единого описания нет, и выстраивать шкалу я не буду.</li>
+  <li><b>Нет цифр частотности:</b> корпусных подсчётов по этим словам найти не удалось.</li>
+  <li><b>Нет рассуждений о китайском понимании счастья</b> — это философия, а не лексика.</li>
+</ul>
+
+<p>И главный вывод. <b>Выбор слова о счастье — это выбор масштаба, а не силы</b>: день, событие или жизнь.</p>
+
+<p>Польза простая: дальше, поздравляя китайского друга, вы не задумаетесь ни на секунду — потому что будете спрашивать себя не «насколько сильно», а «о чём именно».</p>
+
+<div class="cta">
+  <p>Такие различия быстрее всего укладываются в голове на живых примерах с преподавателем: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать нам в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как будет «счастье» на китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Одним словом не переводится. Чаще всего нужны 幸福 (xìngfú) — счастье как состояние, в котором живут, и 快乐 (kuàilè) — радость события, которую желают. Рядом стоят 开心 (kāixīn) и 高兴 (gāoxìng) — это уже про настроение в моменте. Выбирают между ними не по силе чувства, а по тому, о каком отрезке жизни идёт речь.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 幸福 отличается от 快乐?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Размером отрезка. 幸福 говорят о жизни целиком: 家庭幸福 — «счастливая семья». 快乐 привязано к событию или поводу, поэтому именно оно стоит в поздравлениях: 生日快乐, 新年快乐. Поменять их местами не получится — 生日幸福 звучит странно, а 家庭快乐 китаец не скажет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сказать «я счастлив»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Если речь о жизни в целом — 我很幸福 (wǒ hěn xìngfú). Если о настроении прямо сейчас — 我很开心 (wǒ hěn kāixīn). Обратите внимание на 很: связка 是 с качеством не ставится, поэтому 我是幸福 неверно. А существительное от 幸福 — 幸福感, «ощущение счастья».</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему нельзя сказать 生日幸福?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что пожелание привязано к дате, а 幸福 описывает состояние жизни, а не день. В поздравлениях с датой и праздником по-китайски стоит 快乐: 生日快乐, 新年快乐. Это не вопрос вежливости или силы — просто слово закреплено за другим масштабом.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 开心 отличается от 高兴?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Оба про настроение в моменте, но 高兴 чаще описывает реакцию на конкретный случай и закреплено в формуле знакомства: 很高兴认识你 — «рад познакомиться». 开心 ближе к общему хорошему настроению: 我很开心 — «мне радостно». В формуле знакомства 开心 не используют.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что означает иероглиф 福 и при чём тут счастье?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>福 (fú) — это благополучие и пожелание, а не чувство. Его вешают на двери и клеят на окна, он стоит в новогодних пожеланиях, и в ряд со словами о счастье как о состоянии он не встаёт. Подробный разбор знака — что он значит, куда его вешают и где переворачивают — у нас есть в отдельной статье про удачу.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть поздравления попадают точно в повод! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b><span class="han">幸福</span> как длительное состояние</b>, а не чувство в моменте, и его сочетание с темой семьи — по разборам китайской лексики.</li>
+    <li><b>То, что в поздравлении с днём рождения <span class="han">幸福</span> не используется</b>, названо в тех же разборах прямо.</li>
+    <li><b><span class="han">快乐</span> как стандартное слово пожеланий</b> и его привязка к событию — оттуда же.</li>
+    <li><b><span class="han">开心</span> и <span class="han">高兴</span> как слова о настроении в моменте</b> и закреплённость <span class="han">高兴</span> за формулой <span class="han">很高兴认识你</span> — по тем же источникам.</li>
+    <li><b><span class="han">幸福感</span> как отвлечённое существительное</b> — там же.</li>
+    <li><b>Шкала силы чувства не приводится:</b> часть разборов называет <span class="han">幸福</span> более глубоким, другие считают слова почти равными. Расхождение названо в тексте.</li>
+    <li><b><span class="han">美满</span> и <span class="han">满足</span> не разбираются:</b> подтверждений их употребления найти не удалось.</li>
+    <li><b>Цифр частотности нет:</b> корпусных подсчётов по этим словам я не нашла.</li>
+    <li><b>Знак <span class="han">福</span> разобран в отдельной статье</b>, здесь он только назван; <span class="han">好运</span> и <span class="han">运气</span> тоже остаются там.</li>
+    <li>Случай с поздравлением — из занятий Kitai School; имени не называю.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">幸福 — счастье как состояние жизни, 快乐 — радость события. Подставить одно вместо другого не получится</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
