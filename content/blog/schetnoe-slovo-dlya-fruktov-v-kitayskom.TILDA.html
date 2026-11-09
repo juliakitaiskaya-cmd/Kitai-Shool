@@ -1,0 +1,462 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/schetnoe-slovo-dlya-fruktov-v-kitayskom#article",
+      "headline": "Счётное слово для фруктов: 个 для яблока, 串 для винограда, 颗 для мелких",
+      "description": "Разбор счётных слов для фруктов в китайском языке. Единого слова нет: выбор зависит от того, что именно берут. Целый плод считают через 个, гроздь винограда — через 串, отдельную мелкую ягоду вроде виноградины, черешни или личи — через 颗, совсем крошечное зёрнышко — через 粒, а порцию на тарелке — через 盘. Показано, как у одного и того же винограда меняется слово вместе с тем, что держат в руках, и назван спорный случай: по клубнике источники расходятся между 颗 и 个.",
+      "image": "assets/frukt-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-09",
+      "dateModified": "2026-11-09",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/schetnoe-slovo-dlya-fruktov-v-kitayskom",
+      "about": {
+        "@type": "Thing",
+        "name": "Счётные слова для фруктов в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/schetnoe-slovo-dlya-fruktov-v-kitayskom#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какое счётное слово для фруктов в китайском?", "acceptedAnswer": {"@type": "Answer", "text": "Единого нет: слово зависит от того, что именно вы считаете. Целый плод — 个: 一个苹果 «яблоко». Гроздь — 串: 一串葡萄. Отдельная мелкая ягода — 颗: 一颗葡萄. Совсем крошечное вроде зёрнышка — 粒. Порция на тарелке — 盘: 一盘水果."}},
+        {"@type": "Question", "name": "Как сказать «два яблока»?", "acceptedAnswer": {"@type": "Answer", "text": "两个苹果 (liǎng gè píngguǒ). Здесь важны две вещи сразу: без классификатора между числом и предметом обязателен, пропустить его нельзя, и «два» перед ним передаётся знаком 两, а не 二. Так же считают грушу, апельсин и другие фрукты, которые берут целиком."}},
+        {"@type": "Question", "name": "Как считают виноград?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от того, что вы держите в руках. Гроздь — 一串葡萄, отдельная ягода — 一颗葡萄. Это не стилистическая тонкость: если попросить 两个葡萄, вам могут дать две виноградины вместо двух гроздей. Нарезанный виноград на тарелке — уже 一盘葡萄."}},
+        {"@type": "Question", "name": "Чем 颗 отличается от 粒?", "acceptedAnswer": {"@type": "Answer", "text": "Размером того, что считают. 颗 берут для мелких круглых предметов — виноградины, черешни, личи; это же слово употребляют с жемчугом и зубами. 粒 — для совсем крошечного: 一粒米 «зёрнышко риса». Границы жёсткой между ними нет, и одну виноградину называют и так, и так."}},
+        {"@type": "Question", "name": "Как попросить тарелку фруктов?", "acceptedAnswer": {"@type": "Answer", "text": "一盘水果 (yī pán shuǐguǒ). Здесь считают не плоды, а порцию: 盘 — это «тарелка» как ёмкость. Так же устроены 一杯 «стакан» и 一碗 «миска»: слово называет не продукт, а то, во что он положен."}},
+        {"@type": "Question", "name": "Можно ли везде говорить 个?", "acceptedAnswer": {"@type": "Answer", "text": "С целыми плодами — да, и это будет верно. С гроздью, зёрнышком или порцией 个 не подойдёт: там речь не о плоде, а о другой единице. Как вообще устроено универсальное 个 и почему классификатор нельзя пропускать, у нас разобрано в отдельной статье про счётные слова."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/schetnoe-slovo-dlya-fruktov-v-kitayskom#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Счётное слово для фруктов: 个 для яблока, 串 для винограда, 颗 для мелких", "item": "https://kitai-school.ru/article/schetnoe-slovo-dlya-fruktov-v-kitayskom"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Счётное слово для фруктов: <span class="italic"><span class="han">个</span> для яблока, <span class="han">串</span> для винограда, <span class="han">颗</span> для мелких</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-09">9 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/frukt-hero.png" alt="Четыре ценника с разными единицами счёта: 个 для яблока, 串 для грозди винограда, 颗 для виноградины, 粒 для зёрнышка риса" width="1200" height="630"></figure>
+
+<p class="passport">С фруктами счётные слова ведут себя не так, как с остальными предметами. У книги классификатор один, у стула один, а у винограда их сразу несколько — и выбор между ними меняет не стиль фразы, а её смысл. Разберём, от чего зависит слово и почему на рынке это важнее, чем в учебнике.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Слово зависит не от фрукта, а от того, что вы берёте.</b> Целый плод — <span class="han">个</span>: <span class="han">一个苹果</span>. Гроздь — <span class="han">串</span>: <span class="han">一串葡萄</span>. Отдельная мелкая ягода — <span class="han">颗</span>. Совсем крошечное зёрнышко — <span class="han">粒</span>. Порция на тарелке — <span class="han">盘</span>.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">зависит от того, что считаете</span></h2>
+
+<p>Начну с того, что отличает эту тему от остальных.</p>
+
+<p>У большинства предметов классификатор закреплён намертво: книга — всегда <span class="han">本</span>, стул — всегда <span class="han">把</span>. С фруктами иначе.</p>
+
+<p><b>Один и тот же виноград можно сосчитать тремя способами</b>, и все три будут верными: гроздь, ягода, тарелка. Разница не в том, какое слово грамотнее, а в том, о чём вы говорите.</p>
+
+<p>Поэтому вопрос «какое счётное слово у винограда» поставлен неточно. Правильный вопрос — что именно вы держите в руках.</p>
+
+<h2>个: <span class="italic">яблоко, груша, апельсин</span></h2>
+
+<p>Самый частый случай, и здесь всё просто.</p>
+
+<p><b>Целые плоды считают через <span class="han">个</span>:</b> <span class="han">一个苹果</span> «яблоко», <span class="han">两个梨</span> «две груши», <span class="han">三个橙子</span> «три апельсина».</p>
+
+<p>Это то самое универсальное <span class="han">个</span>, которое подходит к большинству предметов вообще. С фруктами оно работает не как запасной вариант, а как основной: у яблока собственного классификатора нет.</p>
+
+<p>Как устроено само <span class="han">个</span> и почему классификатор нельзя пропускать между числом и предметом, у нас разобрано отдельно: <a href="https://kitai-school.ru/article/schetnye-slova-v-kitayskom-yazyke" target="_blank" rel="noopener">счётные слова в китайском языке</a>. Здесь задерживаться на этом не буду.</p>
+
+<h2>串: <span class="italic">гроздь и связка</span></h2>
+
+<p>Первое слово, которого в учебниках для начинающих обычно нет.</p>
+
+<p><b><span class="han">串</span> (chuàn) считает то, что растёт или нанизано гроздью:</b> <span class="han">一串葡萄</span> «гроздь винограда», <span class="han">一串香蕉</span> «связка бананов».</p>
+
+<p>За пределами фруктов тот же классификатор берут для всего нанизанного: шашлычков на палочке, бус, связки ключей. Общий признак — несколько предметов, собранных в одно целое.</p>
+
+<p><b>Именно здесь чаще всего ошибаются.</b> Привычка ставить <span class="han">个</span> ко всему подряд даёт фразу, где вместо грозди просят ягоду, — и это уже не стилистика.</p>
+
+<p>На рынке это слово пригодится сразу: виноград и бананы там продают именно связками, и просить их поштучно никому не приходит в голову.</p>
+
+<h2>Один виноград, четыре слова: <span class="italic">сводка</span></h2>
+
+<p>Соберём способы счёта в одну таблицу.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Пять единиц счёта и то, что каждая называет.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Что считает</th><th>Пример продукта</th><th>Как говорят</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">个</b></td><td>gè</td><td>плод целиком</td><td>яблоко</td><td><span class="han">两个苹果</span> — два яблока</td></tr>
+    <tr><td><b class="han">串</b></td><td>chuàn</td><td>гроздь</td><td>виноград</td><td><span class="han">一串葡萄</span> — гроздь винограда</td></tr>
+    <tr><td><b class="han">颗</b></td><td>kē</td><td>отдельная ягода</td><td>виноград</td><td><span class="han">一颗葡萄</span> — одна виноградина</td></tr>
+    <tr><td><b class="han">粒</b></td><td>lì</td><td>зёрнышко</td><td>рис</td><td><span class="han">一粒米</span> — зёрнышко риса</td></tr>
+    <tr><td><b class="han">盘</b></td><td>pán</td><td>порция на тарелке</td><td>фрукты</td><td><span class="han">一盘水果</span> — тарелка фруктов</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Обратите внимание на третий столбец. <b>В нём ни разу не названы фрукты</b> — только то, в каком виде продукт берут: плод, гроздь, ягода, зёрнышко, порция.</p>
+
+<figure class="ks-fig"><img src="assets/frukt-info.png" alt="Один виноград в трёх видах: целая гроздь 串, отдельная ягода 颗, порция на тарелке 盘; сбоку спорный случай с клубникой" width="1200" height="556"><figcaption>Один и тот же виноград в трёх видах: от целой грозди до порции на тарелке.</figcaption></figure>
+
+<p>Картинка показывает то же самое на одном продукте. <b>Виноград остаётся виноградом, а слово меняется три раза</b> — вместе с тем, что оказывается в руках.</p>
+
+<p>Отсюда и способ проверки, который я советую: перед тем как выбрать слово, представьте себе предмет целиком. Гроздь? Ягода? Тарелка?</p>
+
+<h2>颗: <span class="italic">мелкое и круглое</span></h2>
+
+<p>Второе слово, которое стоит знать всем, кто ходит на рынок.</p>
+
+<p><b><span class="han">颗</span> (kē) считает мелкие круглые предметы:</b> <span class="han">一颗葡萄</span> «одна виноградина», <span class="han">一颗樱桃</span> «одна черешня», <span class="han">一颗荔枝</span> «одно личи».</p>
+
+<p>За пределами фруктов им считают жемчужины, зубы, звёзды — всё мелкое и округлое. То есть признак у слова не «фрукт», а форма и размер.</p>
+
+<p><b>С гроздью это слово уживается без всякого противоречия.</b> Гроздь состоит из ягод: целое называют через <span class="han">串</span>, отдельную часть — через <span class="han">颗</span>. Одна фраза про виноград может содержать оба слова сразу.</p>
+
+<p>Отсюда и практический приём для рынка: если нужна именно гроздь, называйте её вслух, а не показывайте пальцем. Продавец ориентируется на слово, а не на жест.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик писал мне с рынка: хотел купить две грозди винограда и собрал фразу как <span class="han">两个葡萄</span>.</p>
+  <p>Продавец его понял по-своему — и отсыпал две ягоды.</p>
+  <p><b>Разобрали вечером на занятии.</b> <span class="han">个</span> для винограда работает плохо: гроздь — это <span class="han">串</span>, а отдельная ягода — <span class="han">颗</span>.</p>
+  <p>Ученик удивился не правилу, а последствиям: он привык, что ошибка в классификаторе — это вопрос красоты речи, а тут она поменяла смысл просьбы.</p>
+  <p>И это, пожалуй, главное отличие фруктов от других групп. <b>С книгой или стулом неверное слово просто режет слух. С виноградом вы получите не то, что просили.</b></p>
+  <p>В следующий раз он сказал <span class="han">两串葡萄</span> — и принёс домой две грозди.</p>
+</div>
+
+<p>История показательна тем, что ошибка оказалась не в вежливости, а в деле. <b>Классификатор здесь работает частью смысла</b>, а не украшением.</p>
+
+<h2>粒: <span class="italic">то, что ещё мельче</span></h2>
+
+<p>Третье слово — для совсем крошечного.</p>
+
+<p><b><span class="han">粒</span> (lì) считает зёрна и крупинки:</b> <span class="han">一粒米</span> «зёрнышко риса», <span class="han">一粒豆子</span> «одна фасолина».</p>
+
+<p>С фруктами оно встречается реже, но встречается: мелкую ягоду вроде виноградины называют и <span class="han">颗</span>, и <span class="han">粒</span>. <b>Жёсткой границы между ними нет</b>, и оба варианта в разборах приводятся как возможные.</p>
+
+<p>Практическая разница такая: <span class="han">颗</span> звучит естественнее для того, что едят по одной штуке, <span class="han">粒</span> — для того, что считают только в принципе, а едят горстями.</p>
+
+<p>Запоминается это слово легко по самому знаку: слева в нём стоит элемент, связанный с рисом и зерном. Так что подсказка видна прямо в написании.</p>
+
+<p>За пределами еды <span class="han">粒</span> встречается с таблетками и песчинками — то есть везде, где речь о единичной крупинке чего-то сыпучего.</p>
+
+<h2>盘: <span class="italic">когда считают не плоды, а порцию</span></h2>
+
+<p>Четвёртый случай выпадает из ряда: здесь считают вообще не фрукты.</p>
+
+<p><b><span class="han">盘</span> (pán) — это «тарелка» как ёмкость:</b> <span class="han">一盘水果</span> «тарелка фруктов», <span class="han">一盘葡萄</span> «тарелка винограда».</p>
+
+<p>Так же устроены <span class="han">一杯</span> «стакан» и <span class="han">一碗</span> «миска». Слово называет не продукт, а то, во что он положен, и поэтому подходит к чему угодно.</p>
+
+<p>В кафе и в гостях это самая частая форма: порциями фрукты подают чаще, чем поштучно.</p>
+
+<p><b>Полезно помнить и об обратной стороне.</b> Такие слова считают не количество плодов, а количество тарелок: <span class="han">两盘水果</span> — это две тарелки, сколько бы фруктов на них ни лежало.</p>
+
+<h2>Где источники <span class="italic">расходятся</span></h2>
+
+<p>Теперь честно о том, чего я не стану утверждать.</p>
+
+<p><b>Клубника.</b> Одни разборы относят её к мелким круглым и дают <span class="han">颗</span>, другие приводят обычное <span class="han">个</span>. Единого ответа я не нашла, и выбирать за источники не буду.</p>
+
+<p>На практике это значит, что оба варианта вы услышите, и ни один не будет грубой ошибкой.</p>
+
+<p>Такие расхождения в теме классификаторов не редкость. Язык здесь живой: предметы, появившиеся недавно или попадающие сразу в две группы по признакам, разными источниками описываются по-разному.</p>
+
+<p>Проще всего относиться к этому так: там, где источники сходятся, запоминаем слово, а там, где расходятся, выбираем любое из названных и не тратим силы на поиск единственно верного.</p>
+
+<p><b>Чего я не привожу вовсе:</b> классификаторов для долек и для корзины. Они упоминаются в брифах и подборках, но подтверждений их употребления я не нашла, а выдумывать не стану.</p>
+
+<h2>Частые ошибки <span class="italic">русскоязычных</span></h2>
+
+<p>Пять пар: слева собранное по привычке, справа то, что скажет продавец.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Где слово выбрано не по тому признаку.</caption>
+  <thead><tr><th>Как говорят</th><th>Как надо</th><th>В чём дело</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">两个葡萄</b></td><td><b class="han">两串葡萄</b></td><td>Так просят две ягоды, а не две грозди: у грозди своё слово — 串.</td></tr>
+    <tr><td><b class="han">一颗苹果</b></td><td><b class="han">一个苹果</b></td><td>颗 берут для мелких круглых, а яблоко считают целым плодом.</td></tr>
+    <tr><td><b class="han">一个米</b></td><td><b class="han">一粒米</b></td><td>Зёрнышко риса слишком мелкое для 个: для такого есть 粒.</td></tr>
+    <tr><td><b class="han">三水果</b></td><td><b class="han">三盘水果</b></td><td>Классификатор пропускать нельзя: между числом и предметом он обязателен.</td></tr>
+    <tr><td><b class="han">二个苹果</b></td><td><b class="han">两个苹果</b></td><td>Перед счётным словом «два» передаётся знаком 两, а не 二.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Первая ошибка стоит особняком:</b> это единственный случай в теме классификаторов, где неверное слово меняет не впечатление, а результат.</p>
+
+<p>Остальные четыре — обычные: неподходящий признак, пропущенный классификатор, <span class="han">二</span> вместо <span class="han">两</span>. Почему в китайском две двойки, разобрано тут: <a href="https://kitai-school.ru/article/cifry-ot-0-do-10-na-kitayskom" target="_blank" rel="noopener">цифры от 0 до 10 на китайском</a>.</p>
+
+<p>На этом с ошибками всё: остальное в теме фруктов держится на одном вопросе про форму.</p>
+
+<h2>Чего в статье <span class="italic">нет намеренно</span></h2>
+
+<ul>
+  <li><b>Нет разбора универсального <span class="han">个</span></b> и объяснения, почему классификатор нельзя пропускать: это в отдельной статье про счётные слова.</li>
+  <li><b>Нет классификатора для магазинов</b> — <span class="han">家</span>: он назван там же, и отдельной страницы не требует.</li>
+  <li><b>Нет слов для долек и корзины:</b> подтверждений их употребления найти не удалось.</li>
+  <li><b>Нет однозначного ответа по клубнике</b> — источники расходятся, и это сказано прямо.</li>
+  <li><b>Нет названий фруктов как темы:</b> лексика еды у нас разобрана отдельно, здесь только счёт. Сами названия — здесь: <a href="https://kitai-school.ru/article/eda-na-kitayskom" target="_blank" rel="noopener">еда на китайском</a>.</li>
+  <li><b>Нет сведений о том, какое слово употребляется чаще:</b> корпусных подсчётов нет.</li>
+</ul>
+
+<p>И главный вывод. <b>Счётное слово называет не фрукт, а форму, в которой вы его берёте</b> — поэтому у винограда их несколько, а у яблока одно.</p>
+
+<p>Польза простая: на рынке вы попросите именно то, что хотели, — гроздь, а не ягоду.</p>
+
+<div class="cta">
+  <p>Такие вещи отрабатываются за пару занятий, если сразу проговаривать их вслух на своих примерах: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать нам в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какое счётное слово для фруктов в китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Единого нет: слово зависит от того, что именно вы считаете. Целый плод — 个: 一个苹果 «яблоко». Гроздь — 串: 一串葡萄. Отдельная мелкая ягода — 颗: 一颗葡萄. Совсем крошечное вроде зёрнышка — 粒. Порция на тарелке — 盘: 一盘水果.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сказать «два яблока»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>两个苹果 (liǎng gè píngguǒ). Здесь важны две вещи сразу: без классификатора между числом и предметом обязателен, пропустить его нельзя, и «два» перед ним передаётся знаком 两, а не 二. Так же считают грушу, апельсин и другие фрукты, которые берут целиком.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как считают виноград?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Зависит от того, что вы держите в руках. Гроздь — 一串葡萄, отдельная ягода — 一颗葡萄. Это не стилистическая тонкость: если попросить 两个葡萄, вам могут дать две виноградины вместо двух гроздей. Нарезанный виноград на тарелке — уже 一盘葡萄.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 颗 отличается от 粒?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Размером того, что считают. 颗 берут для мелких круглых предметов — виноградины, черешни, личи; это же слово употребляют с жемчугом и зубами. 粒 — для совсем крошечного: 一粒米 «зёрнышко риса». Границы жёсткой между ними нет, и одну виноградину называют и так, и так.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как попросить тарелку фруктов?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>一盘水果 (yī pán shuǐguǒ). Здесь считают не плоды, а порцию: 盘 — это «тарелка» как ёмкость. Так же устроены 一杯 «стакан» и 一碗 «миска»: слово называет не продукт, а то, во что он положен.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли везде говорить 个?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>С целыми плодами — да, и это будет верно. С гроздью, зёрнышком или порцией 个 не подойдёт: там речь не о плоде, а о другой единице. Как вообще устроено универсальное 个 и почему классификатор нельзя пропускать, у нас разобрано в отдельной статье про счётные слова.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть с рынка приносится ровно то, что просили! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b><span class="han">个</span> как основной вариант для целых плодов</b> — яблоко, апельсин, груша — по разборам классификаторов.</li>
+    <li><b><span class="han">串</span> для грозди и связки</b> — там же, с примером <span class="han">一串葡萄</span>.</li>
+    <li><b><span class="han">颗</span> для мелких круглых</b> — виноград, черешня, личи — по тем же источникам; там же отмечено, что это слово употребляют и с жемчугом, и с зубами.</li>
+    <li><b><span class="han">粒</span> для совсем мелкого</b> — пример <span class="han">一粒米</span> приводится как стандартный.</li>
+    <li><b>То, что одну виноградину называют и <span class="han">颗</span>, и <span class="han">粒</span></b>, названо в разборах прямо, оба варианта приведены как возможные.</li>
+    <li><b><span class="han">盘</span> как счёт порции</b> — <span class="han">一盘水果</span> — по тем же источникам, как ёмкость, а не как слово для плода.</li>
+    <li><b>По клубнике источники расходятся:</b> встречается и <span class="han">颗</span>, и <span class="han">个</span>. Единый вариант не приводится.</li>
+    <li><b>Классификаторы для долек и для корзины не приводятся:</b> подтверждений их употребления найти не удалось.</li>
+    <li><b>Насколько часто встречается каждое из этих слов, я не пишу:</b> подсчётов по корпусу нет.</li>
+    <li>Случай с рынком — из занятий Kitai School; имени и города не называю.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">У винограда два счётных слова: 一串葡萄 — гроздь, 一颗葡萄 — ягода. Выбор зависит от того, что считают</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
