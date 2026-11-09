@@ -1,0 +1,464 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/tradicii-kitaycev#article",
+      "headline": "Традиции китайцев: семья, старшие и обычаи, которые держатся в современном быту",
+      "description": "Разбор традиций китайцев с опорой на отношения по старшинству: понятие 孝, забота о пожилых родителях вплоть до закона 2013 года, след политики одного ребёнка и схема 4-2-1, прописка 户口, возвращение домой на Новый год, родовые книги и общий знак поколения в именах, двенадцать знаков 生肖 вместо вопроса о возрасте и 风水 как бытовая практика. Сохранение лица, конфуцианство, культ предков, приметы и годовой круг праздников разобраны в отдельных статьях.",
+      "image": "assets/trad-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-09",
+      "dateModified": "2026-11-09",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/tradicii-kitaycev",
+      "about": {
+        "@type": "Thing",
+        "name": "Традиции и обычаи Китая"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/tradicii-kitaycev#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какие традиции у китайцев главные?", "acceptedAnswer": {"@type": "Answer", "text": "Если свести к основе, их три: старшинство, семья и возвращение домой. Отношения внутри семьи строятся по возрасту и поколению, забота о пожилых родителях считается обязанностью взрослых детей, а главный праздник года — приезд к родителям."}},
+        {"@type": "Question", "name": "Что такое 孝?", "acceptedAnswer": {"@type": "Answer", "text": "孝 (xiào) — почтение к родителям и старшим в семье. Часто встречается в виде 孝顺 (xiàoshùn), где второй знак означает «послушный». Это не чувство, а поведение: навещать, содержать, советоваться, не спорить при посторонних. Последствия видны и сегодня: забота о пожилых родителях записана в законе."}},
+        {"@type": "Question", "name": "Правда ли, что в Китае по закону надо навещать родителей?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Закон о защите прав пожилых людей действует с 1 июля 2013 года и обязывает живущих отдельно членов семьи навещать пожилых родителей или хотя бы справляться о них. При этом частота визитов в нём не названа, а наказания за нарушение нет, поэтому норму называют скорее заявленной, чем работающей."}},
+        {"@type": "Question", "name": "Политика одного ребёнка ещё действует?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Ограничения начались в 1979 году, в октябре 2015-го было принято решение разрешить второго ребёнка всем семьям — оно вступило в силу с 1 января 2016 года, — а 31 мая 2021 года разрешили третьего и отменили прежние штрафы. След остался в структуре семьи: поколение, выросшее единственными детьми, содержит по двое родителей и четверо стариков."}},
+        {"@type": "Question", "name": "Почему китайцы спрашивают про знак года, а не про возраст?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что 生肖 (shēngxiào), двенадцать знаков по годам, позволяет узнать возраст, не спрашивая о нём прямо: знак повторяется раз в двенадцать лет, и собеседнику обычно понятно, о каком круге речь."}},
+        {"@type": "Question", "name": "Сохранились ли традиции в современном Китае?", "acceptedAnswer": {"@type": "Answer", "text": "Сохранились, но неровно. В городах от многих обычаев осталась форма: поездка к родителям на Новый год, подарки, обращение по старшинству. В деревне держится прежний порядок — общие дела рода и родственные связи как опора. Разрыв между городом и деревней здесь заметнее, чем разрыв между поколениями."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/tradicii-kitaycev#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Традиции китайцев: семья, старшие и обычаи, которые держатся в современном быту", "item": "https://kitai-school.ru/article/tradicii-kitaycev"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Культура</p>
+<h1>Традиции китайцев: <span class="italic">семья, старшие и обычаи, которые держатся в современном быту</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-09">9 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/trad-hero.png" alt="Стена с рамками в три ряда по поколениям: в каждом ряду подписан общий знак поколения, места имён оставлены пустыми" width="1200" height="630"></figure>
+
+<p class="passport">Про традиции китайцев обычно рассказывают списком: красные конверты, палочки, фонари. Список запоминается плохо и не помогает понять, почему люди поступают так, а не иначе. Опор здесь немного, и все они про семью: кто старше, кто за кого отвечает и куда человек возвращается. Из этого вырастает и обязанность навещать родителей, записанная в законе, и очередь за билетами домой перед Новым годом, и общий знак в именах двоюродных братьев. Разберём эти опоры по порядку.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Традиции китайцев держатся на старшинстве и семье.</b> Почтение к старшим называется <span class="han">孝</span>, и из него следует обязанность содержать и навещать пожилых родителей — с 2013 года это записано в законе. <b>Политика одного ребёнка</b> изменила состав семьи: на одного ребёнка приходятся двое родителей и четверо стариков. Прописка <span class="han">户口</span> держит человека у места рождения, а на Новый год страна едет домой. <b>Сохранение лица, конфуцианство и праздники разобраны отдельно</b> — ссылки по ходу текста.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">на чём всё держится</span></h2>
+
+<p>Если сводить к основе, опор три, и все они связаны между собой.</p>
+
+<ul>
+  <li><b>Старшинство.</b> Отношения в семье выстроены по возрасту и поколению, и это видно даже в словах: у старшего и младшего брата разные названия.</li>
+  <li><b>Семья как единица.</b> Решения, деньги и обязательства считаются общими чаще, чем в привычном нам укладе, и взрослые дети остаются частью этого счёта.</li>
+  <li><b>Место.</b> У человека есть дом, куда он возвращается: с местом связаны прописка, школа для детей и ежегодная поездка к родителям.</li>
+</ul>
+
+<p>Дальше в статье — что из этих опор следует на практике. Сразу скажу, чего здесь не будет, чтобы вы не искали: <b>разбора сохранения лица</b> — про него есть отдельная статья <a href="https://kitai-school.ru/article/kak-obshchayutsya-kitajcy" target="_blank" rel="noopener">как общаются китайцы</a>; <b>конфуцианства и культа предков</b> — это <a href="https://kitai-school.ru/article/kakaya-religiya-v-kitae" target="_blank" rel="noopener">какая религия в Китае</a>; <b>праздников</b> — <a href="https://kitai-school.ru/article/kitayskie-tradicionnye-prazdniki" target="_blank" rel="noopener">китайские традиционные праздники</a>; <b>примет и запретов</b> — <a href="https://kitai-school.ru/article/kitajskie-primety-i-sueveriya-tri-mekhanizma" target="_blank" rel="noopener">китайские приметы и суеверия</a>.</p>
+
+<h2><span class="han">孝</span>: почтение <span class="italic">к старшим</span></h2>
+
+<p>Понятие, с которого всё начинается, записывается одним знаком — <span class="han">孝</span> (xiào). Переводят его обычно как «сыновняя почтительность», но в разговоре чаще встречается слово <span class="han">孝顺</span> (xiàoshùn), где второй знак значит «послушный».</p>
+
+<p><b>Это не чувство, а поведение.</b> Быть <span class="han">孝顺</span> означает делать: навещать, содержать, спрашивать совета, не спорить при посторонних, приезжать, когда зовут. Обязанность здесь в действиях, и оценивают именно их.</p>
+
+<p>Отсюда вещи, которые иностранцу кажутся несвязанными. Почему взрослый человек советуется с родителями о работе. Почему деньги отправляют домой, даже когда родители не бедствуют. Почему вопрос «когда женишься» не считается грубым.</p>
+
+<h2>Забота о стариках: <span class="italic">от обычая к закону</span></h2>
+
+<p>Самое неожиданное следствие <span class="han">孝</span> для иностранца — то, что почтение к старшим в Китае записано не только в книгах.</p>
+
+<p><b>Закон о защите прав пожилых людей действует с 1 июля 2013 года.</b> Среди прочего он обязывает членов семьи, живущих отдельно, навещать пожилых родителей или хотя бы справляться о них. В китайском языке эту норму называют коротко, по строчке из известной песни: «почаще приезжай домой».</p>
+
+<p>Сразу три оговорки, без которых получится неправда.</p>
+
+<ul>
+  <li><b>Частота в законе не названа.</b> Там нет ни «раз в месяц», ни «раз в год» — сказано только, что навещать нужно.</li>
+  <li><b>Наказания за нарушение нет.</b> Штрафов или иных санкций норма не предусматривает, поэтому её называют скорее заявленной, чем работающей.</li>
+  <li><b>Частоту иногда назначает суд.</b> В отдельных делах по искам родителей суды устанавливали конкретный порядок — раз в два месяца, дважды в месяц. Это единичные решения, а не общее правило.</li>
+</ul>
+
+<p>Спорят об этой норме и в самом Китае: трудовому мигранту, который видит родителей раз в год, предписать визиты нельзя. <b>Но сам факт, что обязанность навещать родителей попала в закон, говорит о традиции больше любого списка обычаев.</b></p>
+
+<h2>Один ребёнок: <span class="italic">что это сделало с семьёй</span></h2>
+
+<p>Второе, без чего сегодняшние традиции китайцев не понять, — ограничение рождаемости. Это не обычай, а политика, но на устройство семьи она повлияла сильнее многих обычаев.</p>
+
+<div class="table-wrap">
+<table class="ks-fam">
+  <caption>Как менялся состав семьи: сколько человек старшего, среднего и младшего поколений приходилось друг на друга.</caption>
+  <thead><tr><th>Период</th><th>Стариков</th><th>Родителей</th><th>Детей</th><th>Что это значит</th></tr></thead>
+  <tbody>
+    <tr><td><b>до ограничений</b></td><td class="dig">4</td><td class="dig">2</td><td class="dig">4</td><td>детей в семье обычно несколько</td></tr>
+    <tr><td><b>при одном ребёнке</b></td><td class="dig">4</td><td class="dig">2</td><td class="dig">1</td><td>схема 4-2-1: шестеро взрослых на одного</td></tr>
+    <tr><td><b>после разрешения трёх</b></td><td class="dig">4</td><td class="dig">2</td><td class="dig">3</td><td>разрешено до трёх, но решают семьи</td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="assets/trad-info.png" alt="Три состава семьи по периодам: до ограничений, схема 4-2-1 при одном ребёнке и положение после разрешения трёх детей" width="1200" height="560"><figcaption>Три состава семьи по периодам: до ограничений, схема 4-2-1 и положение после разрешения трёх детей.</figcaption></figure>
+
+<p>Даты такие. <b>Ограничения начались в 1979 году.</b> В октябре 2015-го приняли решение разрешить второго ребёнка всем семьям, и оно вступило в силу с 1 января 2016 года. <b>31 мая 2021 года разрешили третьего</b> и отменили прежние штрафы за детей сверх нормы.</p>
+
+<p>След остался в составе семьи, и у него есть короткое имя — <b>схема 4-2-1</b>. Единственный ребёнок вырастает, и на нём оказываются двое родителей и четверо бабушек и дедушек: шестеро взрослых, за которых по традиции отвечает он один.</p>
+
+<p><b>Отсюда многое в сегодняшнем быту.</b> Почему у молодой пары часто есть квартира, купленная родителями. И почему разговор о переезде в другой город — это разговор не о работе, а о том, кто останется со стариками.</p>
+
+<p>Цифр по рождаемости и старению не привожу: подсчёты расходятся, а без разбора методики такие числа только путают.</p>
+
+<h2><span class="han">家谱</span> и поколения <span class="italic">в именах</span></h2>
+
+<p>Традиция, которую почти не замечают со стороны, а попадается она каждому, кто работает с китайскими именами.</p>
+
+<p><span class="han">家谱</span> (jiāpǔ) — родовая книга: записи о том, кто от кого произошёл, с именами по поколениям. Вели их веками, и в некоторых местах ведут до сих пор.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица работала в китайской компании и заметила странность: у двух её ровесников-коллег в именах стоял один и тот же знак, хотя родственниками они не были. Она решила, что это вроде нашего распространённого имени, и спросила об этом меня.</p>
+  <p>Оказалось, дело не в моде. Раньше знак в имени задавался не родителями, а родом: для каждого поколения он был записан заранее, и все двоюродные братья и сёстры получали в имя одну и ту же часть. По ней было видно, кто кому ровесник по счёту поколений, даже если люди виделись впервые.</p>
+  <p><b>Совпадение у разных семей объясняется просто:</b> набор знаков для такого места в имени небольшой, и берут их из благопожелательных. Поэтому один и тот же знак встречается у однофамильцев и у людей из разных родов.</p>
+  <p>Мы разобрали это на занятии как раз по визиткам коллег — и дальше она читала китайские имена иначе: не как набор звуков, а как запись, в которой иногда видно место человека в семье.</p>
+  <p><b>Вывод, который я из этого делаю:</b> традиция редко исчезает целиком. Родовые книги почти никто не ведёт, а знак поколения в имени дожил до визитки.</p>
+</div>
+
+<p>Устроено это так. У каждого поколения рода был свой знак, записанный заранее, — <span class="han">字辈</span> (zìbèi). Его ставили в имя всем детям одного поколения, и по имени было видно, кто кому ровесник по счёту родства. Само старшинство по поколению называется <span class="han">辈分</span> (bèifen), и слово это живое: его употребляют и сейчас, когда объясняют, кто кого должен называть старшим.</p>
+
+<div class="table-wrap">
+<table class="ks-gen">
+  <caption>Как устроен ряд поколений: у каждого свой знак, который попадает в имена всех детей этого поколения.</caption>
+  <thead><tr><th>Кто</th><th>Знак поколения</th><th>Значение</th><th>Ряд</th></tr></thead>
+  <tbody>
+    <tr><td>дед и бабушка</td><td><span class="han">福</span> fú</td><td>благополучие</td><td>старшее поколение</td></tr>
+    <tr><td>отец и мать</td><td><span class="han">德</span> dé</td><td>достоинство</td><td>среднее поколение</td></tr>
+    <tr><td>дети</td><td><span class="han">文</span> wén</td><td>учёность</td><td>младшее поколение</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Знаки в таблице условные:</b> это пример устройства, а не чья-то родословная. Имён и фамилий я не придумываю.</p>
+
+<p>Сегодня книги ведут редко, а знак поколения в именах встречается. Если у двух китайских коллег одного возраста совпадает средний знак имени, это либо родня, либо совпадение из небольшого набора благопожелательных знаков.</p>
+
+<h2><span class="han">户口</span>: человек <span class="italic">привязан к месту</span></h2>
+
+<p>Третья опора — место. И здесь традиция усилена устройством государства.</p>
+
+<p><span class="han">户口</span> (hùkǒu) — прописка, запись человека по месту. Она не похожа на нашу регистрацию: от неё зависят школа для ребёнка и часть услуг, а меняется она трудно. Поэтому человек, уехавший работать в большой город, во многих отношениях остаётся человеком того места, где записан.</p>
+
+<p><b>На семью это влияет прямо.</b> Ребёнок часто идёт в школу там, где прописка, а не там, где работают родители; отсюда и практика, когда дети остаются с бабушкой и дедушкой в родном городе. Как прописка влияет на запись в детский сад: <a href="https://kitai-school.ru/article/detskie-sady-v-kitae" target="_blank" rel="noopener">детские сады в Китае</a>.</p>
+
+<h2><span class="han">春运</span>: почему на Новый год <span class="italic">едут домой</span></h2>
+
+<p>Раз в год страна приходит в движение: перед Новым годом по лунному календарю люди едут из городов в родные места. У этого периода есть название — <span class="han">春运</span> (chūnyùn).</p>
+
+<p><b>Это не каникулы и не туризм.</b> Поездка домой считается обязанностью: приехать к родителям, сесть за стол, показать детей. Отпуск берут именно для этого, билеты покупают заранее, а невозможность приехать огорчает всю семью.</p>
+
+<p>Сколько поездок приходится на этот период, не называю: подсчёты разнятся год от года. Важнее другое — <b>направление движения</b>: люди едут не отдыхать, а возвращаться, и этим Новый год в Китае отличается от нашего.</p>
+
+<h2><span class="han">生肖</span>: двенадцать знаков <span class="italic">вместо возраста</span></h2>
+
+<p>Традиция, с которой сталкиваются быстрее прочих: спрашивают не «сколько вам лет», а «какой у вас знак».</p>
+
+<p><span class="han">生肖</span> (shēngxiào) — двенадцать знаков, по одному на год: крыса, бык, тигр, кролик, дракон, змея, лошадь, коза, обезьяна, петух, собака, свинья. Круг замыкается и начинается снова: знак повторяется раз в двенадцать лет.</p>
+
+<p><b>Зачем спрашивают именно так.</b> Возраст в разговоре нужен: от него зависит, кто кого называет старшим. Но спрашивать о нём прямо не всегда удобно. Вопрос о знаке решает задачу: собеседники обычно и так понимают, о каком круге речь, а разница в двенадцать лет видна по человеку.</p>
+
+<p>Знак года здесь не гороскоп, а <b>бытовой способ договориться о старшинстве</b>. Про год своего знака и приметы мы писали отдельно: <a href="https://kitai-school.ru/article/kitajskie-primety-i-sueveriya-tri-mekhanizma" target="_blank" rel="noopener">китайские приметы и суеверия</a>.</p>
+
+<h2><span class="han">风水</span>: что это <span class="italic">на практике</span></h2>
+
+<p>Слово знакомо всем, а что за ним в быту — обычно нет.</p>
+
+<p><span class="han">风水</span> (fēngshuǐ) — свод правил о том, как располагать дом, вход, окна и мебель относительно сторон света и воды. В быту он проявляется буднично: о планировке спрашивают при покупке квартиры, на расположение входа смотрят при аренде помещения под магазин, а для переезда выбирают день.</p>
+
+<p><b>Сразу оговорю, чего я не утверждаю.</b> Я не говорю, что это работает, и не разбираю, почему одни правила противоречат другим. Это практика, а не проверяемый эффект, и для понимания традиций важно лишь то, что <b>люди её учитывают</b> — так же, как у нас учитывают примету не здороваться через порог.</p>
+
+<p>Вывод для иностранца один: если партнёр или арендодатель всерьёз обсуждает расположение двери, объяснять, что это предрассудок, не нужно. Для него это такая же часть решения, как цена.</p>
+
+<h2>Что держится, <span class="italic">а что меняется</span></h2>
+
+<p>Главная ошибка в разговоре о традициях — считать страну одинаковой. Разрыв между городом и деревней здесь заметнее, чем между поколениями.</p>
+
+<p><b>Что держится почти везде:</b> поездка к родителям на Новый год, обращение к старшим по старшинству, участие семьи в крупных решениях, помощь родителей с жильём для молодой пары.</p>
+
+<p><b>Что держится в деревне сильнее:</b> общие дела рода, уход за могилами, выбор дня для важных событий, родня как главная опора в трудной ситуации.</p>
+
+<p><b>Что заметно поменялось:</b> в больших городах молодые семьи живут отдельно, откладывают свадьбу и детей, а обязанность содержать родителей всё чаще превращается в помощь деньгами на расстоянии.</p>
+
+<h2>Частые ошибки <span class="italic">иностранцев</span></h2>
+
+<ul>
+  <li><b>Считать семью личным делом.</b> Вопросы о родителях, браке и детях задают не из любопытства, и уклончивый ответ понимают как нежелание сближаться.</li>
+  <li><b>Обращаться ко всем одинаково.</b> Старшинство требует разных слов и разного тона; ровесник начальника и его подчинённый — не одно и то же даже в переписке.</li>
+  <li><b>Спорить со старшим при других.</b> Возражение наедине воспринимают спокойно, при посторонних — как упрёк. Как устроен такой разговор: <a href="https://kitai-school.ru/article/kak-obshchayutsya-kitajcy" target="_blank" rel="noopener">как общаются китайцы</a>.</li>
+  <li><b>Объяснять, что приметы и <span class="han">风水</span> — ерунда.</b> Переубедить не получится, а разговор испортится. Проще принять как условие.</li>
+  <li><b>Переносить свой счёт возраста.</b> Вопрос о знаке года — вежливость, а не праздный интерес; отказ отвечать выглядит странно.</li>
+</ul>
+
+<h2>Чего в статье <span class="italic">нет намеренно</span></h2>
+
+<ul>
+  <li><b>Нет разбора сохранения лица</b> и непрямой речи — это отдельная статья, и пересказывать её незачем.</li>
+  <li><b>Нет конфуцианства как учения</b> и культа предков: про «три учения» у нас написано отдельно.</li>
+  <li><b>Нет годового круга праздников</b> — даты, легенды и еда разобраны в своей статье.</li>
+  <li><b>Нет примет, запретов и года своего знака</b>: им посвящена отдельная страница.</li>
+  <li><b>Нет дракона, феникса и инь с ян</b> — это статья о символах.</li>
+  <li><b>Нет цифр</b> по новогодним поездкам, рождаемости и старению: подсчёты расходятся.</li>
+  <li><b>Нет утверждений, что <span class="han">风水</span> действует</b>, и нет номера статьи закона: построчно текст я не сверяла.</li>
+</ul>
+
+<p>И общее. <b>Традиции китайцев удобнее понимать не как список обычаев, а как ответ на вопрос «кто за кого отвечает».</b> С этим вопросом в голове большая часть непонятного становится предсказуемой — от разговора о семье на первой встрече до очереди за билетами в январе.</p>
+
+<div class="cta">
+  <p>Разбирать культуру удобнее вместе с языком — на занятиях это идёт одним курсом: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие традиции у китайцев главные?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Если свести к основе, их три: старшинство, семья и возвращение домой. Отношения внутри семьи строятся по возрасту и поколению, забота о пожилых родителях считается обязанностью взрослых детей, а главный праздник года — приезд к родителям.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое 孝?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>孝 (xiào) — почтение к родителям и старшим в семье. Часто встречается в виде 孝顺 (xiàoshùn), где второй знак означает «послушный». Это не чувство, а поведение: навещать, содержать, советоваться, не спорить при посторонних. Последствия видны и сегодня: забота о пожилых родителях записана в законе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что в Китае по закону надо навещать родителей?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да. Закон о защите прав пожилых людей действует с 1 июля 2013 года и обязывает живущих отдельно членов семьи навещать пожилых родителей или хотя бы справляться о них. При этом частота визитов в нём не названа, а наказания за нарушение нет, поэтому норму называют скорее заявленной, чем работающей.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Политика одного ребёнка ещё действует?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. Ограничения начались в 1979 году, в октябре 2015-го было принято решение разрешить второго ребёнка всем семьям — оно вступило в силу с 1 января 2016 года, — а 31 мая 2021 года разрешили третьего и отменили прежние штрафы. След остался в структуре семьи: поколение, выросшее единственными детьми, содержит по двое родителей и четверо стариков.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему китайцы спрашивают про знак года, а не про возраст?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что 生肖 (shēngxiào), двенадцать знаков по годам, позволяет узнать возраст, не спрашивая о нём прямо: знак повторяется раз в двенадцать лет, и собеседнику обычно понятно, о каком круге речь.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сохранились ли традиции в современном Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сохранились, но неровно. В городах от многих обычаев осталась форма: поездка к родителям на Новый год, подарки, обращение по старшинству. В деревне держится прежний порядок — общие дела рода и родственные связи как опора. Разрыв между городом и деревней здесь заметнее, чем разрыв между поколениями.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть семья будет опорой! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Состав семьи по периодам не набран руками.</b> Годы и числа людей заданы одним списком, из него собираются и таблица в тексте, и схема на картинке. Если список разойдётся с картинкой, страница не соберётся.</li>
+    <li><b>Проверки при сборке:</b> периоды идут по возрастанию года, схема при одном ребёнке даёт именно 4-2-1, рядов поколений ровно три, имён и фамилий в данных нет.</li>
+    <li><b>Закон о защите прав пожилых людей</b> действует с 1 июля 2013 года и обязывает живущих отдельно членов семьи навещать пожилых родителей. Об отсутствии установленной частоты и наказания сказано прямо; на это указывают и китайские, и англоязычные публикации того времени.</li>
+    <li><b>Решения судов о частоте визитов</b> упомянуты как единичные дела по сообщениям китайских СМИ, а не как общая практика. Номера статьи и дословной формулировки закона не привожу: построчно текст я не сверяла.</li>
+    <li><b>Даты по рождаемости:</b> начало ограничений — 1979 год, решение о двух детях для всех — октябрь 2015-го со вступлением в силу с 1 января 2016-го, решение о трёх детях — 31 мая 2021 года с отменой прежних штрафов.</li>
+    <li><b>Схема 4-2-1</b> приведена как общепринятое описание структуры семьи, а не как статистика. Цифр по новогодним поездкам, рождаемости и старению нет: подсчёты расходятся.</li>
+    <li><b>Про <span class="han">风水</span> сказано только то, что практику учитывают;</b> утверждений о её действии в статье нет.</li>
+    <li><b>Знаки поколений в таблице условные,</b> настоящих родословных и фамилий я не называю. Случай с именами коллег — из занятий Kitai School, без имени ученицы и города.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Традиции китайцев держатся не на списке обычаев, а на отношениях по старшинству внутри семьи</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
