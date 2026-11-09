@@ -1,0 +1,466 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/schetnoe-slovo-dlya-zhivotnyh-v-kitayskom#article",
+      "headline": "Счётное слово для животных: почему 只 подходит кошке, но не лошади",
+      "description": "Разбор счётных слов для животных в китайском языке. По умолчанию работает 只 (zhī): оно подходит кошкам, птицам, курам и крупным диким зверям вроде тигра. Три группы выпадают из этого правила: лошадей считают через 匹 (pǐ), хозяйственных животных и слона — через 头 (tóu), длинных и гибких, таких как рыба и змея, — через 条 (tiáo). В статье показано, по каким признакам закреплена каждая группа, почему размер животного не работает как подсказка, что делать с собакой, у которой встречаются оба варианта, и как выбрать нужное слово за три вопроса.",
+      "image": "https://static.tildacdn.com/tila6233-3864-4734-b762-383633626332/zhiv-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-09",
+      "dateModified": "2026-11-09",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/schetnoe-slovo-dlya-zhivotnyh-v-kitayskom",
+      "about": {
+        "@type": "Thing",
+        "name": "Счётные слова для животных в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/schetnoe-slovo-dlya-zhivotnyh-v-kitayskom#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какое счётное слово для животных в китайском?", "acceptedAnswer": {"@type": "Answer", "text": "По умолчанию 只 (zhī): оно подходит кошкам, птицам, курам и даже тиграм. Исключений три: лошадей считают через 匹 (pǐ), хозяйственных животных и слона — через 头 (tóu), а длинных и гибких, вроде рыбы и змеи, — через 条 (tiáo). Если ни одно из трёх не подошло, берите 只 — не ошибётесь."}},
+        {"@type": "Question", "name": "Какое счётное слово для собаки?", "acceptedAnswer": {"@type": "Answer", "text": "Основной вариант — 只: 一只狗 «одна собака», 两只狗 «две собаки». Встречается и 条, особенно в разговорной речи, и это не ошибка: язык здесь допускает оба варианта. Для начала надёжнее держаться 只, потому что оно уместно всегда."}},
+        {"@type": "Question", "name": "Почему лошадь считают через 匹?", "acceptedAnswer": {"@type": "Answer", "text": "Это исключение, которое не выводится ни из размера, ни из формы тела. Лошадь — хозяйственное животное, и по логике ей подошло бы 头, но закреплено за ней именно 匹: 一匹马. Такие случаи просто запоминают — их в этой теме всего ничего."}},
+        {"@type": "Question", "name": "Можно ли везде говорить 个?", "acceptedAnswer": {"@type": "Answer", "text": "В разговоре 个 действительно подставляют почти ко всему, и вас поймут. Но с животными это звучит небрежно: для них есть свои слова, и носитель их использует. На экзамене или в письменной речи 一个猫 будет считаться ошибкой."}},
+        {"@type": "Question", "name": "Чем 头 отличается от 只?", "acceptedAnswer": {"@type": "Answer", "text": "Группой животных, а не их размером. 头 ставят с хозяйственными животными — коровой, свиньёй — и со слоном. 只 подходит всем остальным, включая крупных диких: тигр идёт именно с 只, хотя он больше свиньи. Мерить животных глазами здесь не работает."}},
+        {"@type": "Question", "name": "Как сказать «две кошки» и «три рыбы»?", "acceptedAnswer": {"@type": "Answer", "text": "两只猫 (liǎng zhī māo) и 三条鱼 (sān tiáo yú). Обратите внимание на два момента: классификатор между числом и животным обязателен, пропустить его нельзя, и перед классификатором ставится 两, а не 二."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/schetnoe-slovo-dlya-zhivotnyh-v-kitayskom#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Счётное слово для животных: почему 只 подходит кошке, но не лошади", "item": "https://kitai-school.ru/article/schetnoe-slovo-dlya-zhivotnyh-v-kitayskom"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Письменность и грамматика</p>
+<h1>Счётное слово для животных: <span class="italic">почему <span class="han">只</span> подходит кошке, но не лошади</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-09">9 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila6233-3864-4734-b762-383633626332/zhiv-hero.png" alt="Определитель из трёх вопросов: лошадь — 匹, длинное и гибкое — 条, крупный скот — 头, во всех остальных случаях 只" width="1200" height="630"></figure>
+
+<p class="passport">Вы выучили, что животных в китайском считают через <span class="han">只</span>, и спокойно говорите <span class="han">两只猫</span>. Потом доходите до лошади, пробуете <span class="han">一只马</span> — и оказывается, что так не говорят. Исключений тут немного, всего три группы, и каждая закреплена по своему признаку. Разберём их по порядку.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>По умолчанию <span class="han">只</span></b> — кошки, птицы, куры, даже тигры. Три исключения: <b><span class="han">匹</span></b> для лошадей, <b><span class="han">头</span></b> для хозяйственных животных и слона, <b><span class="han">条</span></b> для длинных и гибких — рыбы и змеи. Размер животного подсказкой не служит: тигр крупнее свиньи, но идёт с <span class="han">只</span>.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">по умолчанию 只</span></h2>
+
+<p>Начну с того, что работает в большинстве случаев.</p>
+
+<p><b><span class="han">只</span> (zhī) — основной классификатор для животных.</b> <span class="han">一只猫</span> «одна кошка», <span class="han">两只鸟</span> «две птицы», <span class="han">三只鸡</span> «три курицы». Если вы не знаете, какое слово поставить, и животное не из трёх особых групп, <span class="han">只</span> будет верным выбором.</p>
+
+<p>Важная деталь, которая снимает половину вопросов: <b><span class="han">只</span> годится не только для мелких</b>. Тигр и панда тоже считаются через него.</p>
+
+<p>Дальше посмотрим на три группы, которые из этого правила выпадают. И сразу предупрежу главное заблуждение: угадать их по размеру не получится.</p>
+
+<h2>只: <span class="italic">кошки, птицы и почти все остальные</span></h2>
+
+<p>Эта группа самая большая, и границы у неё простые.</p>
+
+<ul>
+  <li><span class="han">一只猫</span> — кошка, <span class="han">一只狗</span> — собака.</li>
+  <li><span class="han">一只鸟</span> — птица, <span class="han">一只鸡</span> — курица.</li>
+  <li><span class="han">一只老虎</span> — тигр, <span class="han">一只熊猫</span> — панда.</li>
+</ul>
+
+<p>Обратите внимание на последнюю строку. <b>Тигр — крупное животное, но классификатор у него тот же, что у кошки.</b> Это первое указание на то, что размер здесь ничего не решает.</p>
+
+<p>У <span class="han">只</span> есть и вторая работа, не связанная с животными: им считают один предмет из пары — <span class="han">一只鞋</span> «один ботинок». Про это и про остальные классификаторы у нас есть отдельный разбор: <a href="https://kitai-school.ru/article/schetnye-slova-v-kitayskom-yazyke" target="_blank" rel="noopener">счётные слова в китайском языке</a>.</p>
+
+<h2>头: <span class="italic">хозяйственные животные</span></h2>
+
+<p>Первая группа, которая выпадает из общего правила.</p>
+
+<p><b><span class="han">头</span> (tóu) ставят с хозяйственными животными:</b> <span class="han">一头牛</span> «одна корова», <span class="han">一头猪</span> «одна свинья». Сюда же относят слона — <span class="han">一头大象</span>.</p>
+
+<p>Само слово <span class="han">头</span> означает «голова», и счёт скота по головам в русском устроен так же: «десять голов скота». Но на этом сходство заканчивается — в китайском это полноценный классификатор, а не оборот речи.</p>
+
+<p><b>Где проходит граница.</b> Собака крупнее курицы и иногда крупнее поросёнка, но в эту группу не входит: она идёт с <span class="han">只</span>. Дело не в том, насколько животное велико, а в том, относится ли оно к хозяйственным.</p>
+
+<h2>Четыре группы по признакам: <span class="italic">сводка</span></h2>
+
+<p>Соберём все четыре в одну таблицу.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Четыре классификатора для животных и то, что в каждую группу входит.</caption>
+  <thead><tr><th>Слово</th><th>Чтение</th><th>Признак группы</th><th>Кто входит</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">只</b></td><td>zhī</td><td>почти все животные: некрупные, птицы, дикие звери</td><td><span class="han">猫</span> кошка, <span class="han">鸟</span> птица, <span class="han">鸡</span> курица, <span class="han">老虎</span> тигр, <span class="han">狗</span> собака</td></tr>
+    <tr><td><b class="han">头</b></td><td>tóu</td><td>хозяйственные животные и слон</td><td><span class="han">牛</span> корова, <span class="han">猪</span> свинья, <span class="han">大象</span> слон</td></tr>
+    <tr><td><b class="han">条</b></td><td>tiáo</td><td>длинное и гибкое тело</td><td><span class="han">鱼</span> рыба, <span class="han">蛇</span> змея</td></tr>
+    <tr><td><b class="han">匹</b></td><td>pǐ</td><td>только лошади</td><td><span class="han">马</span> лошадь</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Третий столбец важнее остальных: именно признак, а не список, позволяет разобраться с животным, которого в таблице нет.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila6164-6434-4366-a337-323065306537/zhiv-info.png" alt="Матрица по двум признакам: хозяйственные животные и остальные, обычная форма и длинное тело; лошадь вынесена отдельно с 匹" width="1200" height="600"><figcaption>Два признака, которые работают: хозяйственное животное или нет и какой формы тело. Лошадь из этой разметки выпадает.</figcaption></figure>
+
+<p>Посмотрите на нижнюю правую клетку — она пустая. Длинных и гибких хозяйственных животных в обиходе нет, и клетке просто нечего содержать.</p>
+
+<p><b>А теперь главное наблюдение по этой картинке.</b> Строки делят животных не по размеру, а по тому, держат их в хозяйстве или нет. Когда я собирала эту разметку по размеру, тигр оказался в одной клетке с коровой — и сразу стало видно, что признак выбран неверно.</p>
+
+<h2>条: <span class="italic">длинное и гибкое</span></h2>
+
+<p>Вторая группа-исключение, и она определяется формой тела.</p>
+
+<p><b><span class="han">条</span> (tiáo) ставят с длинными и гибкими:</b> <span class="han">一条鱼</span> «одна рыба», <span class="han">一条蛇</span> «одна змея».</p>
+
+<p>Этот же классификатор работает и за пределами животного мира — с дорогами, реками, брюками, то есть со всем вытянутым. Так что группа запоминается легко: если тело длинное и гнётся, берите <span class="han">条</span>.</p>
+
+<p><b>И отдельный случай, про который чаще всего спрашивают, — собака.</b> Основной вариант у неё <span class="han">只</span>, но в речи встречается и <span class="han">一条狗</span>. Это не ошибка: язык здесь допускает оба варианта. Для начала надёжнее держаться <span class="han">只</span> — оно уместно всегда.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица рассказывала о своей собаке и сказала <span class="han">一头狗</span>.</p>
+  <p>Логика была понятной: на прошлом занятии мы разбирали <span class="han">一头牛</span>, и она решила, что <span class="han">头</span> годится для всех четвероногих покрупнее кошки.</p>
+  <p><b>Разобрали по группам.</b> <span class="han">头</span> закреплено за хозяйственными животными — коровами, свиньями, — а собака идёт с <span class="han">只</span>.</p>
+  <p>Дальше был хороший вопрос: а где проходит граница? Собака ведь крупнее курицы, а иногда и свиньи.</p>
+  <p>Оказалось, что размер тут ни при чём. Тигр крупнее свиньи, но считается через <span class="han">只</span>, а свинья — через <span class="han">头</span>. Дело не в величине, а в том, к какой группе язык относит животное.</p>
+  <p>После этого разбора ошибка не повторялась: достаточно было перестать мерить животных глазами и запомнить три исключения.</p>
+</div>
+
+<p>Случай показательный: ученица выбирала классификатор на глаз, по размеру животного. <b>Именно так эта тема и не работает.</b></p>
+
+<h2>匹: <span class="italic">лошадь, которая стоит особняком</span></h2>
+
+<p>Третье исключение — и единственное, которое ниоткуда не выводится.</p>
+
+<p><b><span class="han">匹</span> (pǐ) закреплено за лошадьми:</b> <span class="han">一匹马</span> «одна лошадь», <span class="han">两匹马</span> «две лошади».</p>
+
+<p>По логике ей подошло бы <span class="han">头</span>: лошадь — животное хозяйственное, держат её рядом с коровами. Но язык распорядился иначе, и своё слово у неё отдельное.</p>
+
+<p><b>Объяснять это происхождением знака я не буду.</b> Версии встречаются разные, подтвердить ни одну мне не удалось, поэтому честнее сказать прямо: это исключение, которое запоминают.</p>
+
+<p>Хорошая новость в том, что оно одно. Запомнить одну пару «лошадь — <span class="han">匹</span>» проще, чем выучить длинный список.</p>
+
+<h2>Как выбрать <span class="italic">за три вопроса</span></h2>
+
+<p>Вот порядок, по которому я советую идти, пока группы не улягутся в голове.</p>
+
+<ul>
+  <li><b>Это лошадь?</b> — тогда <span class="han">匹</span>.</li>
+  <li><b>Длинное и гибкое тело?</b> — тогда <span class="han">条</span>.</li>
+  <li><b>Крупный скот?</b> — тогда <span class="han">头</span>.</li>
+  <li><b>Ни одно не подошло</b> — ставьте <span class="han">只</span>.</li>
+</ul>
+
+<p>Порядок вопросов важен: лошадь стоит первой именно потому, что она исключение и по другим признакам определилась бы неверно.</p>
+
+<p>Вот как это выглядит на знакомых животных.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Одиннадцать животных с их классификаторами и примерами.</caption>
+  <thead><tr><th>Знак</th><th>Чтение</th><th>Перевод</th><th>Как считают</th><th>Пометка</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">猫</b></td><td>māo</td><td>кошка</td><td><span class="han">一只猫</span></td><td>—</td></tr>
+    <tr><td><b class="han">鸟</b></td><td>niǎo</td><td>птица</td><td><span class="han">一只鸟</span></td><td>—</td></tr>
+    <tr><td><b class="han">鸡</b></td><td>jī</td><td>курица</td><td><span class="han">一只鸡</span></td><td>—</td></tr>
+    <tr><td><b class="han">老虎</b></td><td>lǎohǔ</td><td>тигр</td><td><span class="han">一只老虎</span></td><td>—</td></tr>
+    <tr><td><b class="han">狗</b></td><td>gǒu</td><td>собака</td><td><span class="han">一只狗</span></td><td>встречается и 条</td></tr>
+    <tr><td><b class="han">牛</b></td><td>niú</td><td>корова</td><td><span class="han">一头牛</span></td><td>—</td></tr>
+    <tr><td><b class="han">猪</b></td><td>zhū</td><td>свинья</td><td><span class="han">一头猪</span></td><td>—</td></tr>
+    <tr><td><b class="han">大象</b></td><td>dàxiàng</td><td>слон</td><td><span class="han">一头大象</span></td><td>—</td></tr>
+    <tr><td><b class="han">鱼</b></td><td>yú</td><td>рыба</td><td><span class="han">一条鱼</span></td><td>—</td></tr>
+    <tr><td><b class="han">蛇</b></td><td>shé</td><td>змея</td><td><span class="han">一条蛇</span></td><td>—</td></tr>
+    <tr><td><b class="han">马</b></td><td>mǎ</td><td>лошадь</td><td><span class="han">一匹马</span></td><td>исключение</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>И ещё одно, что к животным относится напрямую: <b>перед классификатором «два» — это <span class="han">两</span>, а не <span class="han">二</span></b>. <span class="han">两只猫</span>, а не <span class="han">二只猫</span>. Про числа у нас есть отдельная статья: <a href="https://kitai-school.ru/article/cifry-ot-0-do-10-na-kitayskom" target="_blank" rel="noopener">цифры от 0 до 10 на китайском</a>.</p>
+
+<h2>Частые ошибки <span class="italic">русскоязычных</span></h2>
+
+<p>Соберём те, что встречаются в тетрадях чаще других.</p>
+
+<div class="table-wrap">
+<table>
+  <caption>Пять ошибок со счётными словами для животных и причина каждой.</caption>
+  <thead><tr><th>Как говорят</th><th>Как надо</th><th>В чём дело</th></tr></thead>
+  <tbody>
+    <tr><td><b class="han">一头狗</b></td><td><b class="han">一只狗</b></td><td>头 закреплено за хозяйственными животными, собака идёт с 只.</td></tr>
+    <tr><td><b class="han">一只马</b></td><td><b class="han">一匹马</b></td><td>У лошади собственный классификатор, и заменить его на 只 нельзя.</td></tr>
+    <tr><td><b class="han">一个猫</b></td><td><b class="han">一只猫</b></td><td>Универсальное 个 с животными звучит небрежно: для них есть свои слова.</td></tr>
+    <tr><td><b class="han">一只鱼</b></td><td><b class="han">一条鱼</b></td><td>Рыба попадает в группу длинных и гибких, а там работает 条.</td></tr>
+    <tr><td><b class="han">两牛</b></td><td><b class="han">两头牛</b></td><td>Между числом и животным классификатор обязателен, пропустить его нельзя.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><b>Первые две — попытка вывести слово из размера животного.</b> Третья и четвёртая — подстановка универсального <span class="han">个</span> и выбор по привычному значению.</p>
+
+<p>Пятая стоит особняком: это не выбор не того слова, а пропуск классификатора вообще. Между числом и животным он обязателен, и это правило исключений не знает.</p>
+
+<h2>Чего в статье <span class="italic">нет намеренно</span></h2>
+
+<ul>
+  <li><b>Нет <span class="han">峰</span> для верблюдов:</b> подтверждений этому классификатору я не нашла и приводить его не стала.</li>
+  <li><b>Нет редких классификаторов</b> для отдельных зверей: источники дают их по-разному, а там, где они есть, <span class="han">只</span> обычно подходит.</li>
+  <li><b>Нет этимологии <span class="han">匹</span> и <span class="han">头</span></b> — версии происхождения подтвердить не удалось.</li>
+  <li><b>Нет общей теории классификаторов</b> — зачем они нужны, как устроено универсальное <span class="han">个</span>, что такое глагольные счётные слова: это в отдельной статье, на неё стоит ссылка.</li>
+  <li><b>Нет данных о том, какой классификатор встречается чаще:</b> корпусных подсчётов найти не удалось.</li>
+</ul>
+
+<p>И главный вывод. <b>Классификатор определяется группой, а не размером животного</b>, и групп этих всего четыре.</p>
+
+<p>Польза простая: дальше вы будете выбирать слово за секунду — по трём вопросам, а не по тому, насколько зверь большой на вид.</p>
+
+<div class="cta">
+  <p>Такие вещи быстрее всего закрепляются на своих фразах про своих же питомцев: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать нам в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какое счётное слово для животных в китайском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По умолчанию 只 (zhī): оно подходит кошкам, птицам, курам и даже тиграм. Исключений три: лошадей считают через 匹 (pǐ), хозяйственных животных и слона — через 头 (tóu), а длинных и гибких, вроде рыбы и змеи, — через 条 (tiáo). Если ни одно из трёх не подошло, берите 只 — не ошибётесь.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какое счётное слово для собаки?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Основной вариант — 只: 一只狗 «одна собака», 两只狗 «две собаки». Встречается и 条, особенно в разговорной речи, и это не ошибка: язык здесь допускает оба варианта. Для начала надёжнее держаться 只, потому что оно уместно всегда.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему лошадь считают через 匹?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это исключение, которое не выводится ни из размера, ни из формы тела. Лошадь — хозяйственное животное, и по логике ей подошло бы 头, но закреплено за ней именно 匹: 一匹马. Такие случаи просто запоминают — их в этой теме всего ничего.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли везде говорить 个?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В разговоре 个 действительно подставляют почти ко всему, и вас поймут. Но с животными это звучит небрежно: для них есть свои слова, и носитель их использует. На экзамене или в письменной речи 一个猫 будет считаться ошибкой.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем 头 отличается от 只?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Группой животных, а не их размером. 头 ставят с хозяйственными животными — коровой, свиньёй — и со слоном. 只 подходит всем остальным, включая крупных диких: тигр идёт именно с 只, хотя он больше свиньи. Мерить животных глазами здесь не работает.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сказать «две кошки» и «три рыбы»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>两只猫 (liǎng zhī māo) и 三条鱼 (sān tiáo yú). Обратите внимание на два момента: классификатор между числом и животным обязателен, пропустить его нельзя, и перед классификатором ставится 两, а не 二.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть классификатор находится с первого раза! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b><span class="han">只</span> как основной классификатор для животных</b>, включая птиц и крупных диких зверей вроде тигра и панды, — по разборам китайской грамматики.</li>
+    <li><b><span class="han">匹</span> для лошадей</b> — там же, названо как закреплённое за одним видом.</li>
+    <li><b><span class="han">头</span> для хозяйственных животных и слона</b> — по тем же источникам, где перечислены коровы, свиньи и слоны.</li>
+    <li><b><span class="han">条</span> для длинных и гибких</b> — рыба и змея приводятся как стандартные примеры.</li>
+    <li><b>Собака с двумя вариантами, <span class="han">只</span> и <span class="han">条</span></b>, — оба названы в разборах, и ни один не помечен как ошибочный.</li>
+    <li><b><span class="han">峰</span> для верблюдов не приводится:</b> подтверждений найти не удалось.</li>
+    <li><b>Этимология знаков не приводится:</b> версии происхождения <span class="han">匹</span> и <span class="han">头</span> подтвердить не удалось.</li>
+    <li><b>Сопоставления частоты классификаторов нет:</b> подсчётов по корпусу найти не удалось.</li>
+    <li>Случай с собакой — из занятий Kitai School; имени и клички не называю.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">只 подходит большинству животных, но лошадь считают через 匹, корову через 头, а рыбу через 条</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
