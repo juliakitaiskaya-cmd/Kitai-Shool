@@ -7,8 +7,8 @@ OUT = "schetnoe-slovo-dlya-stulev-v-kitayskom.html"
 SLUG = "schetnoe-slovo-dlya-stulev-v-kitayskom"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/stul-hero.png"
-FIG = "assets/stul-info.png"
+HERO = "https://static.tildacdn.com/tila3136-3763-4465-a336-353761633336/stul-hero.png"
+FIG = "https://static.tildacdn.com/tila6534-3034-4665-b338-386664633939/stul-info.png"
 HERO_ALT = ("Знак 把 и четыре его работы: счётное слово 一把伞, мера 一把米, часть слова 把手 и "
             "грамматическая конструкция")
 FIG_ALT = ("Граница правила: слева предметы с ручкой и 把, справа без ручки и 个, посередине "
