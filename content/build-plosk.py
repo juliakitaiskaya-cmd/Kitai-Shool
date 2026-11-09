@@ -7,8 +7,8 @@ OUT = "schetnoe-slovo-dlya-ploskih-predmetov.html"
 SLUG = "schetnoe-slovo-dlya-ploskih-predmetov"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/plosk-hero.png"
-FIG = "assets/plosk-info.png"
+HERO = "https://static.tildacdn.com/tila3338-3535-4963-b737-623032636338/plosk-hero.png"
+FIG = "https://static.tildacdn.com/tila3463-3735-4834-b239-393435306334/plosk-info.png"
 HERO_ALT = ("Пять плоских предметов с разными счётными словами: лист 张, зеркало 面, картина 幅, "
             "ломтик 片, монета 枚, и отдельно 门 для языков")
 FIG_ALT = ("Каждый классификатор рядом со своим собственным значением: 面 поверхность, 幅 ширина "
