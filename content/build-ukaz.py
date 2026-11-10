@@ -243,7 +243,7 @@ TABLE_ROWS
 
 <p>Запомнить проще, если читать слева направо как уточнение: сначала «вот эти», потом «сколько», потом «чего именно штуки», и только в конце сам предмет. Порядок слов в китайском вообще работает так же, от общего к частному: PREDL_LINK.</p>
 
-<p>Отдельно про <span class="han">两</span> и <span class="han">二</span>: в счёте предметов используется <span class="han">两</span>, а не <span class="han">二</span>, поэтому «две книги» — <span class="han">两本书</span>.</p>
+<p>Отдельно про <span class="han">两</span> и <span class="han">二</span>: в счёте предметов берут <span class="han">两</span>, поэтому «две книги» — <span class="han">两本书</span>.</p>
 
 <figure class="ks-fig"><img src="FIG_SRC" alt="FIG_ALT" width="1200" height="560"><figcaption>Фраза собирается по порядку, и счётное слово в ней не украшение: без него конструкция не держится.</figcaption></figure>
 
