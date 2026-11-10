@@ -10,8 +10,8 @@ OUT = "uvazhitelnye-obrashcheniya-v-kitae.html"
 SLUG = "uvazhitelnye-obrashcheniya-v-kitae"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/obr2-hero.png"
-FIG = "assets/obr2-info.png"
+HERO = "https://static.tildacdn.com/tila3630-3136-4365-b133-363234666161/obr2-hero.png"
+FIG = "https://static.tildacdn.com/tila3136-6635-4766-b666-666639666266/obr2-info.png"
 HERO_ALT = ("Четыре реплики в облачках: обращения 师傅, 老师, 老板 и 阿姨 с подписью, к кому так "
             "обращаются")
 FIG_ALT = ("Карта мест: такси, мастерская, школа, лавка, ресторан, двор — и подходящее обращение "
