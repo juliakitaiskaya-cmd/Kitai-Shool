@@ -1,0 +1,469 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/chastica-de-v-kitayskom-yazyke#article",
+      "headline": "Частица de в китайском языке: 的 для принадлежности и определений, а также 得 и 地",
+      "description": "Разбор частицы 的 в китайском языке: как она выражает принадлежность, присоединяет определение к существительному и заменяет собой существительное, когда её убирают с роднёй и односложными качествами, зачем нужна конструкция 是…的 и чем 的 отличается от созвучных 得 и 地, которые стоят после глагола и перед ним. Порядок определений в именной группе, система местоимений и пассивный залог остаются в отдельных статьях.",
+      "image": "assets/de-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/chastica-de-v-kitayskom-yazyke",
+      "about": {
+        "@type": "Thing",
+        "name": "Служебная частица 的 в китайском языке"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/chastica-de-v-kitayskom-yazyke#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что означает частица 的 в китайском языке?", "acceptedAnswer": {"@type": "Answer", "text": "У неё три работы. Она связывает определение с существительным: 我买的书 — «книга, которую я купил». Она образует принадлежность: 我的书 — «моя книга». И она встаёт на место самого предмета: 我的 значит «моё», а название вещи при этом опускают. Во всех трёх случаях читается одинаково, нейтральным тоном."}},
+        {"@type": "Question", "name": "Чем отличаются 的, 得 и 地?", "acceptedAnswer": {"@type": "Answer", "text": "Местом в предложении. 的 стоит перед существительным и вводит описание предмета. 得 стоит после глагола и вводит оценку действия: 他跑得很快 — «он бегает очень быстро». 地 стоит перед глаголом и описывает способ действия: 他慢慢地走 — «он идёт медленно». Звучат все три одинаково, поэтому на слух их не различают — только по месту."}},
+        {"@type": "Question", "name": "Когда 的 можно не ставить?", "acceptedAnswer": {"@type": "Answer", "text": "С роднёй и со своим близким: 我妈妈 — «моя мама», 我家 — «мой дом». А ещё с односложным качеством: 新书 — «новая книга». Общее правило простое: если два слова и так воспринимаются как одно целое, частица между ними лишняя."}},
+        {"@type": "Question", "name": "Как сказать «мой» по-китайски?", "acceptedAnswer": {"@type": "Answer", "text": "Берём местоимение и добавляем 的: 我的 — «мой», 你的 — «твой», 他的 — «его». С предметами это работает всегда: 我的书 — «моя книга». А вот с роднёй и домом частицу обычно убирают, и выходит 我妈妈, 我家. Разбор самих местоимений у нас в отдельной статье."}},
+        {"@type": "Question", "name": "Что значит 得 после глагола?", "acceptedAnswer": {"@type": "Answer", "text": "Это знак того, что дальше будет оценка действия, а не нового предмета. 说得很好 — «говорит хорошо», 跑得快 — «бегает быстро». Оценивают здесь именно то, как прошло действие, поэтому речь всегда о чём-то уже случившемся или о привычном."}},
+        {"@type": "Question", "name": "Зачем нужна конструкция 是…的?", "acceptedAnswer": {"@type": "Answer", "text": "Она подчёркивает не сам факт, а его обстоятельство. 我是昨天来的 — «я приехал именно вчера»: о том, что приехал, собеседник уже знает, и важна дата. Так же выделяют место и способ. Если убрать 是 и 的, фраза останется верной, но ударение из неё уйдёт."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/chastica-de-v-kitayskom-yazyke#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Частица de в китайском языке: 的 для принадлежности и определений, а также 得 и 地", "item": "https://kitai-school.ru/article/chastica-de-v-kitayskom-yazyke"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Грамматика</p>
+<h1>Частица de в китайском языке: <span class="italic">的 для принадлежности и определений, а также 得 и 地</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-11">11 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/de-hero.png" alt="Три схемы предложения: в каждой подсвечено место частицы — 的 перед существительным, 得 после глагола, 地 перед глаголом" width="1200" height="630"></figure>
+
+<p class="lead">Частицу <span class="han">的</span> встречают на первом же занятии, в слове <span class="han">我的</span>. Выглядит она безобидно, работает часто, а потом выясняется, что таких de в языке три: <span class="han">的</span>, <span class="han">得</span> и <span class="han">地</span>. Звучат одинаково, пишутся по-разному, и в тексте перепутать их легко.</p>
+
+<p>Хорошая новость в том, что различает их не значение и не память, а место в предложении. Разберём сначала саму <span class="han">的</span> и все её работы, потом двух её тёзок, а заодно посмотрим, где частицу не ставят вовсе.</p>
+
+<h2>Короткий ответ: <span class="italic">что делает 的</span></h2>
+
+<p>У <span class="han">的</span> три работы, и все три вы встретите в первый же месяц.</p>
+
+<ul>
+  <li><b>Принадлежность.</b> <span class="han">我的书</span> (wǒ de shū) — «моя книга». Частица стоит между владельцем и предметом.</li>
+  <li><b>Определение.</b> <span class="han">我买的书</span> (wǒ mǎi de shū) — «книга, которую я купил». Частица присоединяет описание к существительному.</li>
+  <li><b>Замена существительного.</b> <span class="han">我的</span> значит просто «моё», <span class="han">红的</span> — «красное»: сам предмет не называют, он и так ясен из разговора.</li>
+</ul>
+
+<p>А ещё есть два знака с тем же чтением: <span class="han">得</span> идёт после глагола и вводит оценку действия, <span class="han">地</span> идёт перед глаголом и говорит, как действие происходит. Всё различие — в позиции, и дальше мы её разложим.</p>
+
+<p>Порядок слов в самой именной группе — отдельная большая тема, и ей у нас посвящена статья про <a href="https://kitai-school.ru/article/poryadok-opredeleniy-v-kitayskom" target="_blank" rel="noopener">порядок определений в китайском</a>. Здесь я беру только частицу.</p>
+
+<h2>Принадлежность: <span class="italic">我的书 и когда частица исчезает</span></h2>
+
+<p>Самое первое, зачем нужна <span class="han">的</span>, — сказать, чьё это. Схема простая: сначала владелец, потом частица, потом предмет.</p>
+
+<p><span class="han">我的书</span> (wǒ de shū) — «моя книга». <span class="han">老师的车</span> (lǎoshī de chē) — «машина преподавателя». <span class="han">朋友的名字</span> (péngyou de míngzi) — «имя друга». Порядок всегда такой, и он не меняется: в китайском нет падежей, которые могли бы взять эту работу на себя, и место слова значит всё.</p>
+
+<p>Притяжательных местоимений как отдельных слов в языке тоже нет. «Мой» — это буквально «я + частица», <span class="han">我的</span>. «Твой» — <span class="han">你的</span>, «его» и «её» — <span class="han">他的</span> и <span class="han">她的</span>. Сами местоимения и их формы разобраны в статье про <a href="https://kitai-school.ru/article/mestoimeniya-v-kitayskom-yazyke" target="_blank" rel="noopener">местоимения в китайском языке</a>.</p>
+
+<p><b>Теперь про исключения.</b> Частица исчезает там, где два слова и так воспринимаются как одно целое. Таких случаев немного, и они запоминаются сразу.</p>
+
+<table class="ks-tab ks-drop">
+  <thead><tr><th>Случай</th><th>Как пишут</th><th>Пиньинь</th><th>Перевод</th></tr></thead>
+  <tbody>
+    <tr><td><b>родня</b></td><td><span class="han">我妈妈</span></td><td>wǒ māma</td><td>моя мама</td></tr>
+    <tr><td><b>своё близкое</b></td><td><span class="han">我家</span></td><td>wǒ jiā</td><td>мой дом</td></tr>
+    <tr><td><b>односложное качество</b></td><td><span class="han">新书</span></td><td>xīn shū</td><td>новая книга</td></tr>
+  </tbody>
+</table>
+
+<p>С роднёй это особенно заметно: <span class="han">我妈妈</span>, <span class="han">我爸爸</span>, <span class="han">我哥哥</span>. Вариант с частицей не ошибка, но звучит отстранённее. Так же ведут себя слова о своём близком: <span class="han">我家</span> — «мой дом», <span class="han">我们学校</span> — «наша школа».</p>
+
+<h2>的 вместо существительного: <span class="italic">我的, 红的, 新的</span></h2>
+
+<p>Третья работа частицы удивляет сильнее всего: <span class="han">的</span> умеет стоять вообще без существительного. Предмет не называют, потому что собеседник его и так держит в голове.</p>
+
+<p>Вопрос: <span class="han">这是谁的书?</span> (zhè shì shéi de shū) — «чья это книга?». Ответ: <span class="han">我的</span> — «моя». Слово «книга» повторять не нужно, оно уже прозвучало.</p>
+
+<p>Так же работает и с качествами. В магазине на вопрос, какую сумку вы берёте, отвечают <span class="han">红的</span> — «красную», <span class="han">大的</span> — «большую», <span class="han">便宜的</span> — «подешевле». Названия предмета в ответе нет, и он не нужен.</p>
+
+<p>Это сильно разгружает речь: там, где по-русски приходится повторять слово или подставлять «эта» и «такая», в китайском хватает качества и частицы. Начинающие договаривают существительное до конца — ошибки нет, но звучит тяжеловеснее.</p>
+
+<p>Есть и обратная сторона: в быстрой речи такие ответы ловятся плохо, потому что уха ждёт существительное, а его не произносят. Это вопрос привычки, и она приходит за несколько недель слушания.</p>
+
+<h2>Три de: <span class="italic">один звук, три знака</span></h2>
+
+<p>Теперь к главной путанице. В китайском есть три служебных знака, которые в нейтральной позиции читаются одинаково — de. На письме они разные, и каждый занимает своё место.</p>
+
+<figure class="ks-fig"><img src="assets/de-info.png" alt="Линейка предложения с тремя отметками: перед существительным стоит 的, после глагола 得, перед глаголом 地, у каждой отметки свой пример с переводом" width="1200" height="540"><figcaption>Знак выбирают не на слух, а по месту: перед существительным стоит одна частица, после глагола другая, перед глаголом третья.</figcaption></figure>
+
+<table class="ks-tab ks-de">
+  <thead><tr><th>Знак</th><th>Место</th><th>Что вводит</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">的</span></td><td>перед существительным</td><td>определение к предмету</td><td><span class="han">我买的书</span><br>wǒ mǎi de shū<br>книга, которую я купил</td></tr>
+    <tr><td><span class="han">得</span></td><td>после глагола</td><td>оценку самого действия</td><td><span class="han">他跑得很快</span><br>tā pǎo de hěn kuài<br>он бегает очень быстро</td></tr>
+    <tr><td><span class="han">地</span></td><td>перед глаголом</td><td>способ действия</td><td><span class="han">他慢慢地走</span><br>tā mànmàn de zǒu<br>он идёт медленно</td></tr>
+  </tbody>
+</table>
+
+<p>Смотреть надо не на знак, а на то, что стоит вокруг. Слева описание, справа предмет — <span class="han">的</span>. Слева глагол, справа оценка — <span class="han">得</span>. Слева описание, справа глагол — <span class="han">地</span>.</p>
+
+<p>В разговоре эти три знака не различают вовсе, и различать не нужно: звучат они одинаково, а смысл держится на порядке слов, который прекрасно слышно. Вся разница живёт на письме.</p>
+
+<h2>得 после глагола: <span class="italic">оценка самого действия</span></h2>
+
+<p><span class="han">得</span> ставят сразу после глагола, и дальше идёт то, как это действие прошло.</p>
+
+<p><span class="han">他跑得很快</span> (tā pǎo de hěn kuài) — «он бегает очень быстро». <span class="han">她说得很好</span> (tā shuō de hěn hǎo) — «она говорит очень хорошо». <span class="han">你写得太小了</span> (nǐ xiě de tài xiǎo le) — «ты пишешь слишком мелко».</p>
+
+<p>Обратите внимание на порядок: сначала действие, потом оценка. По-русски мы говорим наоборот — «быстро бегает», наречие впереди. Отсюда и самая частая ошибка: русскоязычные ставят оценку перед глаголом и получают фразу, которую носитель поймёт, но поправит.</p>
+
+<p>После <span class="han">得</span> почти всегда стоит <span class="han">很</span> или другое слово степени. Голое <span class="han">他跑得快</span> тоже встречается, но звучит так, будто вы сравниваете его с кем-то и фраза оборвалась. Поэтому в учебной речи надёжнее <span class="han">很快</span>. Про сами слова степени и их место у нас есть статья про <a href="https://kitai-school.ru/article/narechiya-v-kitayskom" target="_blank" rel="noopener">наречия в китайском</a>.</p>
+
+<h2>Один вопрос <span class="italic">вместо трёх правил</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица второй месяц писала <span class="han">他跑的很快</span> вместо <span class="han">他跑得很快</span> и каждый раз удивлялась правке. Упрёк её был справедливый: на слух оба варианта одинаковые, а в учебнике про это сказано одной строкой.</p>
+  <p>Мы перестали учить правило и стали задавать один вопрос: <b>к чему относится то, что идёт дальше.</b> Если дальше назван предмет — ставим <span class="han">的</span>. Если дальше оценивают само действие, которое уже случилось, — <span class="han">得</span>. Если дальше описывают, как действие будет происходить, и сам глагол ещё впереди — <span class="han">地</span>.</p>
+  <p>Вопрос этот не про знаки, а про то, что человек хочет сказать. Поэтому он работает и там, где правило не вспоминается: ученица перестала выбирать знак наугад и начала сначала понимать фразу, а потом записывать.</p>
+  <p><b>Через неделю диктантов ошибка ушла</b>, и больше не возвращалась — ни в домашних работах, ни на пробном тесте.</p>
+  <p>Отдельно скажу про слух: различить эти три знака на слух нельзя, и это нормально. В разговоре их и не различают — там всё решает порядок слов, который слышно прекрасно. Знаки нужны на письме, и выбирают их глазами, а не ушами.</p>
+  <p><b>Вывод, который я делаю:</b> три de разводит не память и не таблица, а один вопрос, заданный до того, как рука выбрала знак.</p>
+</div>
+
+<h2>地 перед глаголом: <span class="italic">способ действия</span></h2>
+
+<p>Третий знак, <span class="han">地</span>, стоит перед глаголом и говорит, каким образом действие произойдёт.</p>
+
+<p><span class="han">他慢慢地走</span> (tā mànmàn de zǒu) — «он идёт медленно». <span class="han">她高兴地说</span> (tā gāoxìng de shuō) — «она сказала радостно». <span class="han">认真地学习</span> (rènzhēn de xuéxí) — «заниматься старательно».</p>
+
+<p>Разница с <span class="han">得</span> на первый взгляд тонкая, а на деле простая. <span class="han">得</span> оценивает результат: действие случилось, и мы говорим, как оно вышло. <span class="han">地</span> описывает манеру: мы ещё только подходим к глаголу и сразу говорим, как именно он будет выполнен.</p>
+
+<p>Сравните две фразы. <span class="han">他走得很慢</span> — «он идёт медленно», мы оцениваем его ходьбу. <span class="han">他慢慢地走</span> — «он идёт не спеша», мы описываем манеру. По-русски обе переводятся почти одинаково, и в этом вся сложность: выбирать знак приходится не по переводу, а по тому, что вы хотите сказать.</p>
+
+<p>Практическая подсказка: перед <span class="han">地</span> обычно стоит удвоенное слово вроде <span class="han">慢慢</span> или двусложное качество — <span class="han">认真</span>, <span class="han">高兴</span>.</p>
+
+<p><b>Честно о письме.</b> В сети и в быстрой переписке <span class="han">地</span> иногда заменяют на <span class="han">的</span> — просто потому, что первый вариант предлагает клавиатура. Насколько это частое явление, я измерять не берусь и процентов не приведу. В учебных работах и в экзамене так писать нельзя, а при чтении стоит иметь в виду, что встретиться может.</p>
+
+<h2>得 в других чтениях: <span class="italic">děi и dé</span></h2>
+
+<p><b>У знака 得 есть и другие чтения</b> — это отдельная ловушка словаря.</p>
+
+<table class="ks-tab ks-read">
+  <thead><tr><th>Знак</th><th>Чтение</th><th>Значение</th><th>Пример</th></tr></thead>
+  <tbody>
+    <tr><td><span class="han">得</span></td><td>děi</td><td>нужно, приходится</td><td><span class="han">我得走了</span></td></tr>
+    <tr><td><span class="han">得</span></td><td>dé</td><td>получать</td><td><span class="han">得到</span></td></tr>
+  </tbody>
+</table>
+
+<p>Служебная частица — это нейтральное de без тона. Когда тот же знак читается děi, он значит «нужно, приходится»: <span class="han">我得走了</span> — «мне пора идти». Чтение dé — это уже полноценный глагол «получать». Определять нужное чтение приходится по месту во фразе, и здесь работает то же правило: частица стоит сразу после глагола, а не сама по себе.</p>
+
+<h2>Определения перед словом: <span class="italic">коротко и со ссылкой</span></h2>
+
+<p>Самая объёмная работа <span class="han">的</span> — присоединять к существительному целое описание. Схема та же, что с принадлежностью: сначала описание, потом частица, потом предмет.</p>
+
+<p><span class="han">我买的书</span> — «книга, которую я купил». <span class="han">昨天来的人</span> — «человек, который приходил вчера». <span class="han">很好的朋友</span> — «очень хороший друг». По-русски здесь нужно придаточное предложение, в китайском хватает одного блока перед словом.</p>
+
+<p>Главное, что стоит запомнить сразу: <b>описание всегда идёт перед предметом</b>, каким бы длинным оно ни было. Русская привычка договаривать описание после слова здесь не работает совсем.</p>
+
+<p>Дальше начинаются подробности: сколько описаний можно поставить подряд, в каком порядке они выстраиваются и где частицу между ними убирают. Это отдельная тема, и она подробно разобрана в статье про <a href="https://kitai-school.ru/article/poryadok-opredeleniy-v-kitayskom" target="_blank" rel="noopener">порядок определений в китайском</a> — пересказывать её здесь не буду, чтобы не множить половинчатые объяснения.</p>
+
+<p>Если вы только собираете первые фразы, посмотрите <a href="https://kitai-school.ru/article/kak-sostavlyat-predlozheniya-na-kitajskom" target="_blank" rel="noopener">как составлять предложения на китайском</a>: частица встаёт на место легче, когда виден общий каркас.</p>
+
+<h2>Конструкция 是…的: <span class="italic">обстоятельство важнее факта</span></h2>
+
+<p>Отдельно стоит разобрать конструкцию, где <span class="han">的</span> работает в паре с <span class="han">是</span>. Она выделяет не сам факт, а его обстоятельство.</p>
+
+<p><span class="han">我是昨天来的</span> (wǒ shì zuótiān lái de) — «я приехал именно вчера». Собеседник уже знает, что вы приехали; новое здесь — когда. Так же выделяют место: <span class="han">我是在北京学的</span> — «я учил это именно в Пекине». И способ: <span class="han">我是坐飞机来的</span> — «я прилетел именно самолётом».</p>
+
+<p>Если убрать <span class="han">是</span> и <span class="han">的</span>, фраза останется грамотной, но потеряет ударение. <span class="han">我昨天来</span> — просто «я приехал вчера», без нажима на дату. Разница примерно как между «я приехал вчера» и «я приехал именно вчера».</p>
+
+<p>Похожим образом эта конструкция иногда подменяет пассив, когда важнее обстоятельство, а не действующее лицо. Сам пассив и знак <span class="han">被</span> разобраны в статье про <a href="https://kitai-school.ru/article/passivnyy-zalog-v-kitayskom" target="_blank" rel="noopener">пассивный залог в китайском</a>.</p>
+
+<h2>Где 的 <span class="italic">не ставят</span></h2>
+
+<p>Мы уже видели родню и односложные качества. Соберу все случаи в одном месте, потому что именно лишняя частица выдаёт начинающего быстрее всего.</p>
+
+<ul>
+  <li><b>Родня и своё близкое:</b> <span class="han">我妈妈</span>, <span class="han">我家</span>, <span class="han">我们学校</span>.</li>
+  <li><b>Односложное качество:</b> <span class="han">新书</span> «новая книга», <span class="han">好人</span> «хороший человек», <span class="han">红花</span> «красный цветок».</li>
+  <li><b>Материал и вид:</b> <span class="han">木头桌子</span> «деревянный стол», <span class="han">中国人</span> «китаец».</li>
+  <li><b>Устойчивые сочетания и названия:</b> там, где два слова давно слиплись в одно понятие, частице места нет.</li>
+</ul>
+
+<p>А вот со словом степени частица возвращается: <span class="han">很好的人</span> — «очень хороший человек». Пара <span class="han">好人</span> и <span class="han">很好的人</span> стоит того, чтобы выучить её целиком: она показывает правило лучше любого объяснения.</p>
+
+<p>Общий принцип: <b>чем теснее связаны два слова, тем меньше нужна частица.</b> Связь очевидна — опускают, связь надо показать — ставят.</p>
+
+<h2>Частые ошибки</h2>
+
+<ol>
+  <li><b>Оценка перед глаголом.</b> Пишут <span class="han">他很快跑</span> вместо <span class="han">他跑得很快</span>. Русский порядок слов переносится напрямую, и фраза ломается.</li>
+  <li><b>Лишняя частица с роднёй.</b> <span class="han">我的妈妈</span> не ошибка, но в обычном разговоре так почти не говорят. Для учебной работы лучше <span class="han">我妈妈</span>.</li>
+  <li><b>Пропуск частицы после 很.</b> <span class="han">很好人</span> — так нельзя. Нужно <span class="han">很好的人</span>.</li>
+  <li><b>的 вместо 得 на письме.</b> Самая частая опечатка и самая заметная: в проверочной работе её считают ошибкой, а не описком.</li>
+  <li><b>Описание после слова.</b> Фразу «книга, которую я купил» собирают по-русски, ставя описание в конец. В китайском описание всегда впереди.</li>
+</ol>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Порядка нескольких определений подряд</b> — это тема статьи про <a href="https://kitai-school.ru/article/poryadok-opredeleniy-v-kitayskom" target="_blank" rel="noopener">порядок определений в китайском</a>, и там она разобрана по позициям.</li>
+  <li><b>Системы местоимений</b> с формами множественного числа и вежливым обращением — у нас есть <a href="https://kitai-school.ru/article/mestoimeniya-v-kitayskom-yazyke" target="_blank" rel="noopener">местоимения в китайском языке</a>.</li>
+  <li><b>Пассивного залога и знака 被</b> — это <a href="https://kitai-school.ru/article/passivnyy-zalog-v-kitayskom" target="_blank" rel="noopener">пассивный залог в китайском</a>.</li>
+  <li><b>Цифр частотности.</b> Утверждения вроде «的 составляет столько-то процентов текста» встречаются, но подсчётов, которым я готова доверять, не нашла.</li>
+  <li><b>Истории знаков.</b> Происхождение этих трёх иероглифов я не разбираю: проверяемых данных у меня нет, а пересказывать красивые версии не хочу.</li>
+</ul>
+
+<div class="cta">
+  <p><b>Хотите разобрать это на своих фразах?</b> На занятиях мы берём ваши собственные предложения и разводим три de по местам — обычно на это уходит одно занятие и неделя практики.</p>
+  <p><a href="#popup:zayavka">Записаться на пробное занятие</a> или посмотреть <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что означает частица 的 в китайском языке?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>У неё три работы. Она связывает определение с существительным: 我买的书 — «книга, которую я купил». Она образует принадлежность: 我的书 — «моя книга». И она встаёт на место самого предмета: 我的 значит «моё», а название вещи при этом опускают. Во всех трёх случаях читается одинаково, нейтральным тоном.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем отличаются 的, 得 и 地?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Местом в предложении. 的 стоит перед существительным и вводит описание предмета. 得 стоит после глагола и вводит оценку действия: 他跑得很快 — «он бегает очень быстро». 地 стоит перед глаголом и описывает способ действия: 他慢慢地走 — «он идёт медленно». Звучат все три одинаково, поэтому на слух их не различают — только по месту.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Когда 的 можно не ставить?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>С роднёй и со своим близким: 我妈妈 — «моя мама», 我家 — «мой дом». А ещё с односложным качеством: 新书 — «новая книга». Общее правило простое: если два слова и так воспринимаются как одно целое, частица между ними лишняя.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сказать «мой» по-китайски?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Берём местоимение и добавляем 的: 我的 — «мой», 你的 — «твой», 他的 — «его». С предметами это работает всегда: 我的书 — «моя книга». А вот с роднёй и домом частицу обычно убирают, и выходит 我妈妈, 我家. Разбор самих местоимений у нас в отдельной статье.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что значит 得 после глагола?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это знак того, что дальше будет оценка действия, а не нового предмета. 说得很好 — «говорит хорошо», 跑得快 — «бегает быстро». Оценивают здесь именно то, как прошло действие, поэтому речь всегда о чём-то уже случившемся или о привычном.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Зачем нужна конструкция 是…的?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Она подчёркивает не сам факт, а его обстоятельство. 我是昨天来的 — «я приехал именно вчера»: о том, что приехал, собеседник уже знает, и важна дата. Так же выделяют место и способ. Если убрать 是 и 的, фраза останется верной, но ударение из неё уйдёт.</p></div>
+  </details>
+</div>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li>Роли частицы <span class="han">的</span>, позиции <span class="han">得</span> и <span class="han">地</span> и конструкция <span class="han">是…的</span> даются по базовому описанию грамматики путунхуа; все примеры простые и проверяются по любому учебному курсу начального уровня.</li>
+    <li>Чтения <span class="han">děi</span> и <span class="han">dé</span> приведены по словарным значениям знака <span class="han">得</span>.</li>
+    <li>О смешении <span class="han">地</span> и <span class="han">的</span> в неформальном письме говорю как о наблюдении: <b>частотных подсчётов не привожу</b>, потому что надёжных измерений не нашла.</li>
+    <li><b>Процентов употребительности частицы не называю</b> по той же причине.</li>
+    <li>Происхождение знаков не объясняю: версии встречаются, подтверждений им у меня нет.</li>
+    <li>Порядок определений, система местоимений и пассивный залог вынесены в отдельные материалы блога, ссылки расставлены по тексту.</li>
+    <li>История с диктантами взята из практики Kitai School; имени ученицы не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Три знака звучат одинаково, а выбирают их не на слух, а по месту в предложении</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
