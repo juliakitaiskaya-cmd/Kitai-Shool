@@ -1,0 +1,461 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/v-kakih-stranah-cifra-4-neschastlivaya#article",
+      "headline": "В каких странах цифра 4 означает смерть: Китай, Япония, Корея и общий корень суеверия",
+      "description": "Разбор того, в каких странах четвёрку считают несчастливой и почему: Китай, Япония, Корея и Вьетнам. Показываем, что в японском и корейском слова «четыре» и «смерть» читаются одинаково, а в китайском различаются тоном, где цифру убирают из нумерации этажей, парковок и больничных палат, почему в корейских лифтах на кнопке стоит латинская F, отчего в Японии неудачным считают число 49 и почему во Вьетнаме поверье слабее, а источники о нём расходятся. Разбор самого созвучия 四 и 死, другие китайские числа и нумерация в Китае остаются в отдельных статьях.",
+      "image": "assets/chet-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/v-kakih-stranah-cifra-4-neschastlivaya",
+      "about": {
+        "@type": "Thing",
+        "name": "Несчастливое число четыре в Восточной Азии"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/v-kakih-stranah-cifra-4-neschastlivaya#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "В каких странах цифра 4 означает смерть?", "acceptedAnswer": {"@type": "Answer", "text": "Прежде всего в Китае, Японии и Корее: там слово «четыре» звучит близко к слову «смерть», и число убирают из нумерации. Во Вьетнаме поверье тоже встречается, но заметно слабее — источники об этом расходятся. Общего у всех одно: суеверие пришло вместе с китайской лексикой, а не само по себе."}},
+        {"@type": "Question", "name": "Почему четвёрка стала несчастливой?", "acceptedAnswer": {"@type": "Answer", "text": "Из-за созвучия. В китайском 四 «четыре» звучит похоже на 死 «умереть», хотя тоны у них разные. В японском и корейском совпадение полное: там оба слова читаются одинаково. Подробно механизм созвучий и другие несчастливые числа разобраны в нашей отдельной статье про несчастливое число в Китае."}},
+        {"@type": "Question", "name": "Правда ли, что в лифтах нет четвёртого этажа?", "acceptedAnswer": {"@type": "Answer", "text": "Часто действительно нет: этаж пропускают, и после третьего сразу идёт пятый. Так делают не везде и не всегда, но в больницах и жилых домах это встречается регулярно. В Японии четвёрку пропускают ещё и в нумерации парковочных мест."}},
+        {"@type": "Question", "name": "Что означает F в корейском лифте?", "acceptedAnswer": {"@type": "Answer", "text": "Это латинская буква на месте цифры 4: первая буква английского слова four. Приём простой — этаж остаётся четвёртым, но цифра на кнопке не стоит. Логика та же, что у западных зданий, где тринадцатый этаж обозначают иначе или пропускают."}},
+        {"@type": "Question", "name": "Почему 49 считают плохим числом в Японии?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что сочетание читается близко к словам со значением «страдать и умереть». Это тот же механизм, что и с одиночной четвёркой, только собранный из двух цифр: само число ни при чём, важно, на что похоже его чтение."}},
+        {"@type": "Question", "name": "Опасно ли дарить четыре предмета?", "acceptedAnswer": {"@type": "Answer", "text": "Ничего опасного в этом нет, но в Китае, Японии и Корее лучше выбрать другое количество: набор из пяти или шести предметов. Это та же условность, что у нас с чётным числом цветов — большинство в приметы не верит, а правило соблюдает."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/v-kakih-stranah-cifra-4-neschastlivaya#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "В каких странах цифра 4 означает смерть: Китай, Япония, Корея и общий корень суеверия", "item": "https://kitai-school.ru/article/v-kakih-stranah-cifra-4-neschastlivaya"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Культура</p>
+<h1>В каких странах цифра 4 означает смерть: <span class="italic">Китай, Япония, Корея и общий корень суеверия</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-11">11 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/chet-hero.png" alt="Четыре карточки стран: в каждой слово «четыре» и слово «смерть» местным письмом с чтением и полоса силы поверья" width="1200" height="630"></figure>
+
+<p class="passport">Про нелюбовь к четвёрке обычно говорят как про китайскую особенность, и это неточно: поверье живёт сразу в нескольких странах, а в двух из них звучит даже убедительнее, чем на родине. Причина простая и языковая — слово «четыре» оказалось похоже на слово «смерть», — но степень похожести везде разная, и отсюда разная сила привычки. Разберём по странам: где цифру убирают из нумерации, где вместо неё ставят букву и где поверье почти не работает, хотя слова те же.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Китай, Япония, Корея</b> — три страны, где четвёрку устойчиво связывают со смертью и убирают из нумерации. <b>Во Вьетнаме поверье слабее</b>, и источники о нём расходятся. Причина везде одна: созвучие слова «четыре» со словом «смерть». <b>В японском и корейском совпадение полное</b>, в китайском слова различаются тоном. В корейских лифтах на месте четвёртого этажа встречается <b>латинская буква F</b>, в Японии неудачным считают ещё и <b>49</b>.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">где именно</span></h2>
+
+<p>Стран, где четвёрка считается плохим числом, немного, и все они соседи.</p>
+
+<ul>
+  <li><b>Китай.</b> Исходная точка: отсюда поверье разошлось вместе с языком.</li>
+  <li><b>Япония.</b> Четвёрку пропускают в нумерации квартир, больничных палат и парковочных мест.</li>
+  <li><b>Корея.</b> Этаж чаще не пропускают, но обозначают иначе — буквой вместо цифры.</li>
+  <li><b>Вьетнам.</b> Поверье встречается, но слабее, и единого мнения о нём нет.</li>
+</ul>
+
+<p><b>Что их объединяет:</b> во всех четырёх языках есть слой слов, заимствованных из китайского, и в этом слое «четыре» и «смерть» звучат похоже. Там, где в обиходе прижилось своё слово, поверье заметно слабее — это как раз случай Вьетнама.</p>
+
+<p>Сразу оговорю границы. Речь не про страны целиком и не про всех их жителей: это привычка, которую соблюдают в нумерации и в подарках, а в обычном разговоре число никого не смущает. Примерно как у нас с тринадцатым рядом — его пропускают в залах, но никто не вздрагивает, услышав это число в прогнозе погоды.</p>
+
+<h2>Откуда это <span class="italic">пошло</span></h2>
+
+<p>Механизм языковой, и он разобран у нас подробно, поэтому здесь — в двух абзацах.</p>
+
+<p><b>В китайском «четыре» и «умереть» звучат близко</b>, но не одинаково: слова различаются тоном. Для носителя разница слышна, однако этого хватило, чтобы число вытеснили из нумерации. Как устроен сам механизм созвучий, какие ещё числа попали под него и чем четвёрка отличается от других, разобрано отдельно: <a href="https://kitai-school.ru/article/neschastlivoe-chislo-v-kitae" target="_blank" rel="noopener">несчастливое число в Китае</a>.</p>
+
+<p>Про сам знак и про то, в каких словах четвёрка ведёт себя совершенно спокойно, у нас тоже есть разбор: <a href="https://kitai-school.ru/article/ieroglif-chetyre" target="_blank" rel="noopener">иероглиф «четыре» (四)</a>. А про то, где это видно в китайских ценах, номерах и этажах, написано в материале про нумерологию: <a href="https://kitai-school.ru/article/kitayskaya-numerologiya" target="_blank" rel="noopener">китайская нумерология</a>.</p>
+
+<p><b>Здесь же речь о другом:</b> что произошло, когда эти слова вместе с китайской лексикой попали в соседние языки.</p>
+
+<p>Важно, что заимствовались не сами суеверия, а слова. Китайская лексика веками входила в японский, корейский и вьетнамский так же, как в русский входили греческие и латинские корни: вместе со счётом, терминами и письмом. Созвучие приехало внутри этого груза, незаметно для всех участников.</p>
+
+<p>Поэтому карта поверья совпадает не с политическими границами, а с границами влияния китайской письменности — и это, пожалуй, самое любопытное во всей истории.</p>
+
+<h2>Япония: <span class="italic"><span class="han">四</span> и 49</span></h2>
+
+<p>В японском совпадение полнее, чем в китайском.</p>
+
+<p><b>Знак <span class="han">四</span> читается как shi, и ровно так же читается <span class="han">死</span> — «смерть».</b> Никакой разницы в тоне тут нет: слова звучат одинаково, и различает их только контекст.</p>
+
+<div class="table-wrap">
+<table class="ks-lang">
+  <caption>Четыре страны: как в каждой звучат слова «четыре» и «смерть» и насколько устойчиво поверье.</caption>
+  <thead><tr><th>Страна</th><th>Четыре</th><th>Смерть</th><th>Поверье</th><th>Где видно</th></tr></thead>
+  <tbody>
+    <tr><td><b>Китай</b></td><td><span class="han">四</span> sì</td><td><span class="han">死</span> sǐ</td><td>сильное</td><td>этажи, номера, цены</td></tr>
+    <tr><td><b>Япония</b></td><td><span class="han">四</span> shi</td><td><span class="han">死</span> shi</td><td>сильное</td><td>жилые дома, больницы, парковки</td></tr>
+    <tr><td><b>Корея</b></td><td><span class="han">사</span> sa</td><td><span class="han">死</span> sa</td><td>заметное</td><td>лифты, больницы, похоронные залы</td></tr>
+    <tr><td><b>Вьетнам</b></td><td><span class="han">tư</span> ты</td><td><span class="han">tử</span> ты</td><td>спорное</td><td>встречается пропуск этажа</td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="assets/chet-info.png" alt="Звуковые пары по языкам: слева чтение слова «четыре», справа чтение слова «смерть», между ними отметка, насколько они близки" width="1200" height="620"><figcaption>Там, где чтения совпадают полностью, поверье держится крепче: китайский тон здесь оказывается смягчающим обстоятельством.</figcaption></figure>
+
+<p><b>Что из этого следует на практике.</b> Четвёрку пропускают в нумерации квартир в части жилых домов, в больницах и на парковках. Японцы, которым это важно, просто не выбирают такие номера — примерно как у нас не выбирают тринадцатый ряд, если есть возможность.</p>
+
+<p>Заметнее всего это в подарках: набор из четырёх чашек или тарелок в магазине встретишь редко, стандартом считается пять. Причина ровно та же, и об этом будет отдельная история ниже.</p>
+
+<p><b>Отдельная история — число 49.</b> Его считают неудачным, потому что чтение сочетания близко к словам со значением «созвучно словам «страдать и умереть»». Это тот же механизм, только собранный из двух цифр.</p>
+
+<p>Есть и ещё одно число с похожей репутацией — девятка: её чтение совпадает со словом «страдание». Поэтому в японских больницах нередко избегают обеих цифр сразу.</p>
+
+<p>Стоит добавить, что у четвёрки в японском есть и второе чтение — yon, пришедшее из своего, не заимствованного слоя. Им пользуются как раз тогда, когда хотят избежать неприятного созвучия: в счёте вслух, в датах, в номерах. Язык, получается, сам предлагает обходной путь.</p>
+
+<h2>Корея: <span class="italic">буква вместо цифры</span></h2>
+
+<p>В корейском картина похожа на японскую, а привычка — мягче.</p>
+
+<p><b>Слово «четыре» читается как sa, и так же читается слово со значением «смерть»</b>, записываемое китайским знаком. Совпадение полное, как в японском.</p>
+
+<p><b>При этом поверье слабее.</b> Четвёртый этаж обычно существует, но обозначают его иначе: на кнопке лифта ставят латинскую букву <b>F</b> — первую букву английского слова four. Приём простой и очень наглядный: этаж есть, цифры нет.</p>
+
+<p>Жёстче всего правило работает в больницах и похоронных залах: там четвёртый этаж и палаты с четвёркой чаще просто пропускают. В обычных офисных зданиях на это смотрят спокойнее.</p>
+
+<p>Разница понятная: в больнице число попадает в разговор о здоровье, и совпадение звучит некстати. В бизнес-центре оно остаётся просто номером, и о нём никто не думает.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик собирался отправить подарок японскому партнёру и выбрал хороший чайный сервиз — на четыре персоны, ровно по числу людей в семье. Логика понятная и даже внимательная.</p>
+  <p>Мы разобрали это до отправки. В Японии наборы посуды чаще делают на пять предметов, и причина ровно та же, о которой вся эта статья: четвёрка в подарке читается не как «по числу вас», а как намёк, которого никто не хотел.</p>
+  <p><b>Заменили на набор из пяти</b> и вложили записку с пожеланием. Ответ пришёл тёплый, и никакой неловкости не вышло.</p>
+  <p>Отдельно отмечу: партнёр, скорее всего, и сам не придаёт числам значения. Но подарок — это не разговор, его не переспросят и не уточнят, а предмет останется стоять на полке вместе с первым впечатлением.</p>
+  <p><b>Вывод, который я делаю:</b> поверье почти незаметно в речи и очень заметно там, где вы называете число вслух или кладёте его в подарок. Проверять стоит именно эти места, а не разговор вообще.</p>
+</div>
+
+<h2>Вьетнам: <span class="italic">где поверье слабее</span></h2>
+
+<p>Самый спорный случай из четырёх, и честнее всего сказать об этом прямо.</p>
+
+<p><b>Формально условия те же:</b> во вьетнамском есть слой заимствованной китайской лексики, и в нём слова «четыре» и «смерть» звучат похоже.</p>
+
+<p><b>Но в обиходе используется родное слово.</b> Повседневное «четыре» — это <b>bốn</b>, а заимствованная форма встречается заметно реже и не тянет за собой нужную ассоциацию. Поэтому и поверье получается слабым.</p>
+
+<p><b>Источники расходятся.</b> Часть публикаций пишет, что четвёртый этаж во Вьетнаме пропускают так же, как у соседей; другая часть утверждает, что число избегают редко именно из-за родного слова. Какая из версий точнее, я не берусь судить, и единой картины у меня нет.</p>
+
+<p>Правдоподобнее всего выглядит промежуточный вариант: в городах с плотными связями с Китаем и в новых жилых комплексах привычку перенимают, а в обиходе она остаётся слабой. Но это рассуждение, а не проверенный факт, и подавать его как вывод я не буду.</p>
+
+<p>Зато вьетнамский случай полезен как проверка самой логики: если бы поверье держалось на «восточной культуре вообще», оно работало бы одинаково. Оно работает по-разному — ровно там, где по-разному звучат слова.</p>
+
+<h2>Почему поверье <span class="italic">переехало через границы</span></h2>
+
+<p>Главный вывод этой статьи — не про числа, а про то, как устроены заимствования.</p>
+
+<p><b>Суеверие не переезжает само по себе.</b> Оно держится на созвучии, а созвучие живёт внутри конкретного языка. Поэтому вместе с китайской лексикой в японский и корейский переехала и пара похожих слов — а с ней и привычка.</p>
+
+<p><b>Где слово не прижилось, не прижилось и поверье.</b> Вьетнамский случай показывает это лучше всего: язык в той же культурной орбите, лексика есть, но в быту звучит своё слово — и число остаётся обычным.</p>
+
+<p>Отсюда и ответ на вопрос, который задают чаще всего: дело не в общей «восточной мистике», а в том, какие именно слова оказались рядом в звучании. Другие приметы устроены так же, и мы разбирали их механизмы отдельно: <a href="https://kitai-school.ru/article/kitajskie-primety-i-sueveriya-tri-mekhanizma" target="_blank" rel="noopener">китайские приметы и суеверия</a>.</p>
+
+<h2>Тринадцать на Западе: <span class="italic">тот же механизм</span></h2>
+
+<p>Сравнение, которое снимает ощущение экзотики.</p>
+
+<p><b>Число 13 в Европе и Америке играет ту же роль:</b> его пропускают в нумерации этажей, рядов и номеров, многие относятся к нему с лёгкой опаской, а большинство просто соблюдает условность, не веря в неё.</p>
+
+<p><b>Разница в происхождении.</b> У тринадцати за спиной не созвучие, а предание; у четвёрки — звучание слова. Но работает это одинаково: число перестаёт быть просто числом и начинает что-то значить.</p>
+
+<p>Поэтому, кстати, в зданиях Восточной Азии иногда пропускают и четвёртый этаж, и тринадцатый сразу: одно поверье местное, другое приехало с западной архитектурой.</p>
+
+<p>Любопытно и обратное движение: в западных отелях, рассчитанных на гостей из Азии, четвёртый этаж тоже иногда обозначают иначе. Поверье при этом не становится общим — просто его учитывают как особенность клиента, примерно как вегетарианское меню.</p>
+
+<h2>Что это значит <span class="italic">на практике</span></h2>
+
+<p>Четыре ситуации, в которых об этом стоит помнить, и одна, в которой не стоит.</p>
+
+<ul>
+  <li><b>Подарки.</b> Набор из четырёх предметов лучше заменить на пять или шесть. Это самое заметное место.</li>
+  <li><b>Номера и даты.</b> Если выбираете номер в отеле, место на парковке или дату встречи, четвёрка — не лучший вариант по умолчанию.</li>
+  <li><b>Цены и суммы.</b> В Китае это заметно в ценниках; в Японии и Корее — реже, но встречается.</li>
+  <li><b>Нумерация в документах.</b> Если составляете список для принимающей стороны, не делайте четвёртый пункт самым важным: его прочитают, но осадок останется.</li>
+  <li><b>Разговор.</b> А вот тут бояться нечего: сказать «четыре» в обычной фразе — совершенно нормально, никто не вздрогнет.</li>
+</ul>
+
+<p><b>И общее правило.</b> Это условность, а не запрет. Соблюдать её стоит там, где число выбираете вы, и совершенно незачем — там, где оно просто встретилось.</p>
+
+<p>Если сомневаетесь, работает простая проверка: спросите себя, заметит ли собеседник число. В подарке и в номере — заметит; в количестве страниц отчёта или в числе остановок — нет. Внимания заслуживает только первое.</p>
+
+<h2>Частые ошибки <span class="italic">туриста</span></h2>
+
+<ul>
+  <li><b>Считать это мистикой.</b> За поверьем стоит созвучие, а не вера в потусторонние силы.</li>
+  <li><b>Переносить китайские подробности на соседей.</b> Двузначные сочетания работают в китайском, а в японском своё число — 49.</li>
+  <li><b>Думать, что четвёртого этажа нет нигде.</b> Он часто есть, просто обозначен буквой или цифра опущена только в больнице.</li>
+  <li><b>Обсуждать поверье с собеседником как забавный факт.</b> Для него это бытовая мелочь, а не повод для разговора.</li>
+  <li><b>Переусердствовать.</b> Избегать четвёрки в счёте, в номере автобуса и в числе дней — уже лишнее.</li>
+</ul>
+
+<p>Шестое не ошибка, а наблюдение: <b>чаще всего об этом вспоминают не местные, а приезжие</b>. Для жителей это такая же привычка, как у нас не возвращаться с полдороги, — её соблюдают не задумываясь.</p>
+
+<p>И ещё одно, что стоит держать в голове: молодёжь в больших городах относится к этому заметно спокойнее. Поверье никуда не делось, но держится теперь больше на застройщиках и больницах, чем на самих людях.</p>
+
+<h2>Чего в статье <span class="italic">нет намеренно</span></h2>
+
+<ul>
+  <li><b>Нет разбора китайского созвучия</b> <span class="han">四</span> и <span class="han">死</span> с тоновой оговоркой — он у нас в отдельной статье, и пересказывать его незачем.</li>
+  <li><b>Нет других китайских несчастливых чисел</b>: четырнадцати, двадцати четырёх и прочих — там же.</li>
+  <li><b>Нет этажей, цен и номеров в Китае</b>: это материал про нумерологию.</li>
+  <li><b>Нет датировок</b> вроде «избегают с такого-то века»: встретилось в слабом источнике, подтвердить не удалось.</li>
+  <li><b>Нет процентов</b> зданий без четвёртого этажа: подсчётов нет ни у меня, ни в надёжных источниках.</li>
+  <li><b>Нет медицинского разговора о фобиях:</b> слово «тетрафобия» здесь означает привычку, а не диагноз.</li>
+  <li><b>Нет уверенного ответа по Вьетнаму:</b> источники расходятся, и я показываю обе версии.</li>
+</ul>
+
+<p>И общее. <b>Четвёрка — хороший пример того, как язык формирует быт.</b> Ни в одном из этих языков число ничего плохого не значит; значение ему придало случайное сходство звучаний, и этого оказалось достаточно, чтобы менять нумерацию домов.</p>
+
+<div class="cta">
+  <p>Такие вещи становятся понятными, когда язык учишь вместе с культурой: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>В каких странах цифра 4 означает смерть?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Прежде всего в Китае, Японии и Корее: там слово «четыре» звучит близко к слову «смерть», и число убирают из нумерации. Во Вьетнаме поверье тоже встречается, но заметно слабее — источники об этом расходятся. Общего у всех одно: суеверие пришло вместе с китайской лексикой, а не само по себе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему четвёрка стала несчастливой?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Из-за созвучия. В китайском 四 «четыре» звучит похоже на 死 «умереть», хотя тоны у них разные. В японском и корейском совпадение полное: там оба слова читаются одинаково. Подробно механизм созвучий и другие несчастливые числа разобраны в нашей отдельной статье про несчастливое число в Китае.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Правда ли, что в лифтах нет четвёртого этажа?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Часто действительно нет: этаж пропускают, и после третьего сразу идёт пятый. Так делают не везде и не всегда, но в больницах и жилых домах это встречается регулярно. В Японии четвёрку пропускают ещё и в нумерации парковочных мест.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что означает F в корейском лифте?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Это латинская буква на месте цифры 4: первая буква английского слова four. Приём простой — этаж остаётся четвёртым, но цифра на кнопке не стоит. Логика та же, что у западных зданий, где тринадцатый этаж обозначают иначе или пропускают.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему 49 считают плохим числом в Японии?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что сочетание читается близко к словам со значением «страдать и умереть». Это тот же механизм, что и с одиночной четвёркой, только собранный из двух цифр: само число ни при чём, важно, на что похоже его чтение.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Опасно ли дарить четыре предмета?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Ничего опасного в этом нет, но в Китае, Японии и Корее лучше выбрать другое количество: набор из пяти или шести предметов. Это та же условность, что у нас с чётным числом цветов — большинство в приметы не верит, а правило соблюдает.</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть числа остаются просто числами! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Список стран не набран руками.</b> Страна, оба слова с чтениями, сила поверья и место, где оно заметно, перечислены в отдельном файле данных; из него при сборке читают и таблица статьи, и карточки на обложке, и строки звуковых пар.</li>
+    <li><b>Проверки:</b> стран ровно четыре, у каждой заданы оба слова и оба чтения, сила поверья берётся из закрытого набора значений, спорный случай ровно один и у него стоит пометка о расхождении источников.</li>
+    <li><b>Япония:</b> четвёрку пропускают в части жилых домов, больниц и на парковках; число 49 считают неудачным из-за созвучия со словами «страдать и умереть» — по справочным материалам о тетрафобии.</li>
+    <li><b>Корея:</b> поверье мягче, но в больницах и похоронных залах четвёртый этаж обычно пропускают, а в лифтах на кнопке ставят латинскую букву вместо цифры — там же.</li>
+    <li><b>Вьетнам:</b> источники расходятся. Одни пишут о пропуске четвёртого этажа, другие — что поверье слабое, потому что в обиходе используется родное слово. Своего ответа не даю и обе версии называю.</li>
+    <li><b>Датировок происхождения поверья нет намеренно:</b> встреченные утверждения о ранних веках я не смогла подтвердить по надёжному источнику.</li>
+    <li><b>Процентов и статистики нет:</b> сколько зданий обходится без четвёртого этажа, никто не считал, а оценки «на глаз» я повторять не буду.</li>
+    <li><b>Китайская часть темы</b> — само созвучие, другие несчастливые числа и нумерация в Китае — вынесена в самостоятельные материалы блога, ссылки на них расставлены по тексту.</li>
+    <li>История с сервизом взята из практики Kitai School; ни имени ученика, ни названия компании партнёра не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Поверье держится на созвучии, поэтому оно переехало вместе со словами, а не с границами</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
