@@ -1,0 +1,463 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/urovni-kitayskogo-yazyka-i-ih-opisanie#article",
+      "headline": "Уровни китайского языка и их описание: что вы реально умеете на каждой ступени",
+      "description": "Описание уровней китайского языка через действия: с какой ступени человек заказывает еду и объясняет дорогу, когда читает объявления без пиньиня, с какого уровня ведёт рабочую переписку, читает прессу и слушает лекции, а с какого выступает на переговорах. Отдельно разобраны средний уровень и ощущение плато, разрыв между чтением и речью и способ проверить свой уровень без экзамена. Устройство шкалы HSK, переход на девять уровней, сроки и часы разобраны в отдельных статьях.",
+      "image": "assets/opis-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/urovni-kitayskogo-yazyka-i-ih-opisanie",
+      "about": {
+        "@type": "Thing",
+        "name": "Уровни владения китайским языком"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/urovni-kitayskogo-yazyka-i-ih-opisanie#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что такое средний уровень китайского?", "acceptedAnswer": {"@type": "Answer", "text": "Строгого определения нет: обычно средним называют третий и четвёртый уровни, когда человек уже обходится без пиньиня и справляется с бытом, но ещё не читает прессу. Проблема в том, что «средний» чаще означает не ступень, а ощущение: читаю лучше, чем говорю. Поэтому полезнее описывать себя делами — что получается, а что нет."}},
+        {"@type": "Question", "name": "С какого уровня можно жить в Китае?", "acceptedAnswer": {"@type": "Answer", "text": "Для бытовых задач хватает третьего: с него человек читает объявления и вывески без пиньиня, объясняется в магазине и у врача, снимает жильё. Второго хватит на поездку, но не на жизнь: всё, что сложнее заказа еды и такси, потребует помощи."}},
+        {"@type": "Question", "name": "С какого уровня читают новости?", "acceptedAnswer": {"@type": "Answer", "text": "Обычно с пятого. На четвёртом длинный текст уже не пугает, но газетная лексика и устойчивые обороты встают стеной. На пятом пресса становится посильной, хотя подтекст и ирония чаще проходят мимо — это уже шестой уровень и выше."}},
+        {"@type": "Question", "name": "Почему я читаю лучше, чем говорю?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что это разные навыки, и письменный экзамен проверяет только один из них. Чтение тренируется само: глаза читают быстрее, чем язык выговаривает, и текст можно перечитать. Речь требует скорости и смелости, и её нужно тренировать отдельно — для неё есть отдельный устный экзамен."}},
+        {"@type": "Question", "name": "Как понять свой уровень без экзамена?", "acceptedAnswer": {"@type": "Answer", "text": "Проверить делами. Откройте меню, объявление, новостную заметку и короткое видео без субтитров — и честно отметьте, где вы справились сами, а где полезли в словарь. Такая проверка точнее самооценки и показывает не общий уровень, а то, какой навык отстаёт."}},
+        {"@type": "Question", "name": "Сколько времени занимает путь между уровнями?", "acceptedAnswer": {"@type": "Answer", "text": "Числа тут сильно зависят от метода, интенсивности и того, что считать результатом, поэтому коротко ответить нельзя. У нас есть отдельный разбор с методиками и подсчётом часов — лучше смотреть там, а не ориентироваться на чужие обещания «за полгода до четвёртого»."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/urovni-kitayskogo-yazyka-i-ih-opisanie#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Уровни китайского языка и их описание: что вы реально умеете на каждой ступени", "item": "https://kitai-school.ru/article/urovni-kitayskogo-yazyka-i-ih-opisanie"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Обучение</p>
+<h1>Уровни китайского языка и их описание: <span class="italic">что вы реально умеете на каждой ступени</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-11">11 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/opis-hero.png" alt="Шесть верстовых столбов с номерами уровней: на каждом подпись, что человек умеет начиная с этой отметки" width="1200" height="630"></figure>
+
+<p class="passport">Номер уровня сам по себе почти ничего не сообщает. «Четвёртый» звучит солидно, но не отвечает на вопрос, который волнует на самом деле: смогу ли я заказать еду, понять объявление на двери, написать коллеге, высидеть лекцию. Поэтому уровни полезнее описывать не числом выученных слов, а списком дел, с которыми вы справляетесь, — и отдельно тем, что на этой же ступени пока не получится. Ниже такой разбор по ступеням, с особым вниманием к среднему уровню, на котором чаще всего кажется, что прогресс остановился.</p>
+
+<div class="tldr">
+  <b>Коротко</b>
+  <p><b>Второй уровень</b> — поездка: еда, такси, покупки. <b>Третий</b> — самостоятельная жизнь: объявления и вывески без пиньиня. <b>Четвёртый</b> — рабочий минимум: длинные тексты и переписка. <b>Пятый</b> — пресса и лекции. <b>Шестой</b> — развёрнутое мнение и доклад. <b>Средний уровень чаще означает не ступень, а ощущение</b>: читаю лучше, чем говорю. Как устроена сама шкала и что меняет переход на девять уровней — в отдельной статье.</p>
+</div>
+
+<h2>Короткий ответ: <span class="italic">уровень — это список действий</span></h2>
+
+<p>Удобнее всего описывать уровень так: что человек делает сам, без словаря и без помощи рядом.</p>
+
+<p><b>Почему не через число слов.</b> Выученные слова лежат в памяти неравномерно: одни всплывают в речи, другие узнаются только на бумаге. Два человека с одинаковым словарём могут по-разному справляться с одной и той же ситуацией.</p>
+
+<p><b>Почему не через номер экзамена.</b> Номер говорит, какие задания вы разобрали в конкретный день. Он полезен для вуза и работодателя, но на вопрос «смогу ли я объясниться в аптеке» не отвечает.</p>
+
+<p>Дальше я разбираю ступени парами колонок: что на этой ступени уже получается и что на ней же пока нет. Вторая колонка важнее первой — именно она показывает, куда двигаться, и избавляет от ощущения, что уровень взят, а язык всё равно не слушается.</p>
+
+<p>Про устройство самой шкалы, три ступени и переход с шести уровней на девять у нас есть отдельная статья — здесь я на этом не задерживаюсь и говорю только про практику.</p>
+
+<h2>Выживание: <span class="italic">первый и второй уровни</span></h2>
+
+<p>Самая нижняя ступень — это не «ничего не умею», а вполне определённый набор.</p>
+
+<p><b>Первый уровень.</b> Представиться, назвать знакомые предметы, прочитать короткую фразу, где над знаками стоит пиньинь. Разговор возможен только если собеседник говорит медленно и помогает.</p>
+
+<p><b>Второй уровень.</b> Начинается самостоятельность в поездке: заказать знакомое блюдо, назвать таксисту адрес, спросить цену, купить билет. Фразы короткие, но свои.</p>
+
+<p><b>Чего ещё нет.</b> Любой текст без пиньиня — препятствие, а разговор рассыпается, как только собеседник уходит в сторону от ожидаемого сценария. Понимание на слух отстаёт сильнее всего: речь кажется слитной и быстрой.</p>
+
+<h2>Самостоятельность: <span class="italic">третий уровень</span></h2>
+
+<p>Это первая ступень, после которой человек перестаёт зависеть от сопровождающего.</p>
+
+<p><b>Что появляется.</b> Чтение без пиньиня — объявление на двери подъезда, вывеска, расписание, короткое сообщение. Появляется письмо: вы можете написать знаками, а не только узнать их.</p>
+
+<p><b>Что это даёт в жизни.</b> Снять жильё, объясниться у врача на простом уровне, решить вопрос в банке с помощью сотрудника, понять инструкцию к бытовому прибору.</p>
+
+<p><b>Чего ещё нет.</b> Канцелярские и газетные обороты остаются тёмными, длинный текст читается медленно и с остановками, а на любой неожиданный поворот разговора словарный запас заканчивается.</p>
+
+<p>Именно на третьем уровне у многих появляется обманчивое чувство, что язык уже выучен: бытовые задачи закрыты, и кажется, что дальше только добавлять слова. На деле дальше меняется не объём, а тип текста — и это отдельная работа.</p>
+
+<h2>Рабочий минимум: <span class="italic">четвёртый уровень</span></h2>
+
+<p>Ступень, которую чаще всего называют в требованиях: вузы, стажировки, вакансии со знанием языка.</p>
+
+<p><b>Что появляется.</b> Длинный текст перестаёт пугать: вы читаете его целиком, даже если часть слов незнакома, и схватываете смысл. Бытовая речь идёт свободно, рабочая переписка в мессенджере — тоже.</p>
+
+<div class="table-wrap">
+<table class="ks-scen">
+  <caption>Семь обычных ситуаций и уровень, с которого каждая перестаёт быть проблемой.</caption>
+  <thead><tr><th>Ситуация</th><th>Уровень</th><th>Что получается</th><th>Что ещё нет</th></tr></thead>
+  <tbody>
+    <tr><td>меню в кафе</td><td class="dig">2</td><td>заказать знакомое блюдо и напиток</td><td>незнакомое название всё ещё придётся показывать пальцем</td></tr>
+    <tr><td>такси и дорога</td><td class="dig">2</td><td>назвать адрес и попросить остановить</td><td>подробный разговор с водителем не выйдет</td></tr>
+    <tr><td>объявление на двери</td><td class="dig">3</td><td>понять, что написано, без пиньиня</td><td>канцелярские обороты останутся тёмными</td></tr>
+    <tr><td>переписка с коллегой</td><td class="dig">4</td><td>вести рабочую переписку в мессенджере</td><td>длинное официальное письмо ещё трудно</td></tr>
+    <tr><td>новости и статьи</td><td class="dig">5</td><td>читать прессу и следить за темой</td><td>подтекст и ирония чаще проходят мимо</td></tr>
+    <tr><td>лекция в вузе</td><td class="dig">5</td><td>слушать лекцию и записывать</td><td>спорить с преподавателем на равных пока сложно</td></tr>
+    <tr><td>переговоры и доклад</td><td class="dig">6</td><td>выступать и отстаивать позицию</td><td>шутки и местные отсылки всё ещё теряются</td></tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="ks-fig"><img src="assets/opis-info.png" alt="Карта готовности: строки — бытовые и рабочие ситуации, столбцы — уровни, отмечено, с какого уровня ситуация перестаёт быть проблемой" width="1200" height="560"><figcaption>Одни ситуации становятся посильными раньше, другие позже: быт идёт впереди, работа с текстом отстаёт.</figcaption></figure>
+
+<p><b>Чего ещё нет.</b> Официальное письмо даётся трудно, газетная лексика встаёт стеной, а в быстром разговоре нескольких человек вы теряете нить. Это нормально для четвёртого уровня и не означает, что что-то пошло не так.</p>
+
+<p>Отдельно стоит сказать про речь. Четвёртый уровень по письменному экзамену не обещает, что вы свободно говорите: экзамен этого не измеряет. Люди с одним и тем же результатом говорят очень по-разному, и зависит это от того, сколько они говорили вслух, а не от набранных баллов.</p>
+
+<h2>Средний уровень <span class="italic">и его плато</span></h2>
+
+<p>Словом «средний» обычно называют третий и четвёртый уровни, но строгого определения у него нет.</p>
+
+<p><b>Что происходит на самом деле.</b> Человек уже может почти всё в быту, и новые слова перестают заметно менять картину: вы и раньше понимали объявление, и теперь понимаете, просто чуть быстрее. Прогресс становится незаметным не потому, что его нет, а потому, что он перестаёт выражаться в новых умениях.</p>
+
+<p><b>Отсюда и ощущение остановки.</b> На первых ступенях каждое занятие давало новую возможность: вчера не мог заказать кофе, сегодня могу. На среднем уровне такие скачки заканчиваются, и кажется, что топчешься на месте.</p>
+
+<p>Добавляет и то, что растёт на этом участке в основном пассивный запас: слова узнаются при чтении, но в речь выходят не сразу. Снаружи это выглядит как отсутствие прогресса, хотя на деле просто меняется то, где он накапливается.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица пришла с запросом, который я слышу чаще прочих: «хочу подтянуть китайский, у меня примерно средний уровень». На вопрос, что это значит, ответить не смогла — и это нормально, формулировка ни о чём не говорит.</p>
+  <p>Гадать мы не стали, а разобрали одну её неделю: что она за семь дней прочитала, послушала и сказала по-китайски. Список получился короткий, зато честный.</p>
+  <p><b>Картина вышла неровная.</b> Переписку с коллегами она ведёт свободно и быстро. Сериалы смотрит с субтитрами и без них теряет нить. А на рабочем звонке замолкает, хотя те же слова в переписке набирает не задумываясь.</p>
+  <p>Выяснилось, что «средний уровень» у неё означал не ступень, а ощущение: читает заметно лучше, чем говорит, и от этого кажется, что всё застряло на месте.</p>
+  <p><b>Вывод, который я из этого делаю:</b> пока уровень не разложен на действия, непонятно, что именно подтягивать. Занятия в таком случае идут вслепую — и ощущение остановки только крепнет.</p>
+</div>
+
+<p><b>Что с этим делать.</b> Сменить мерку: следить не за тем, появилось ли новое умение, а за тем, насколько меньше усилий уходит на прежние задачи. Та же статья, которую месяц назад вы читали со словарём, сегодня идёт без него — это и есть прогресс, просто он виден не сразу.</p>
+
+<p>Удобно записывать такие наблюдения коротко: что сегодня далось легче, чем в прошлый раз. Через месяц список покажет движение лучше, чем самоощущение, которое на среднем уровне почти всегда занижено.</p>
+
+<p>И второе: именно на этом участке полезно разделить навыки и подтягивать отстающий отдельно, а не «учить китайский вообще». Чаще всего отстаёт речь — о ней ниже.</p>
+
+<p>Третье, что помогает пройти это место: сменить материал. На бытовых темах средний уровень действительно упирается в потолок, потому что всё бытовое уже разобрано. Новый рост начинается там, где появляется новая область — работа, учёба, своя профессия, — и вместе с ней новый пласт слов.</p>
+
+<h2>Свободная речь: <span class="italic">пятый и шестой</span></h2>
+
+<p>Верхние ступени нынешней шкалы — это работа с текстом и мнением, а не с бытом.</p>
+
+<p><b>Пятый уровень.</b> Пресса становится посильной: вы читаете статью и следите за темой, слушаете лекцию и записываете, разбираете синонимы, которых на четвёртом не различали.</p>
+
+<p><b>Шестой уровень.</b> Развёрнутое высказывание: доклад, спор, отстаивание позиции, сложный текст без подготовки. Это верх нынешней шестиуровневой шкалы.</p>
+
+<p>Разница между пятым и шестым заметна не в словах, а в свободе обращения с темой. На пятом вы понимаете чужую мысль и можете её пересказать. На шестом — спорите с ней, уточняете, приводите свои доводы, и язык перестаёт быть узким местом разговора.</p>
+
+<p><b>Чего может не быть и здесь.</b> Шутки, игра слов и местные отсылки часто проходят мимо: они держатся не на словарном запасе, а на общем опыте. Это не пробел в уровне, а естественная граница языка, выученного взрослым.</p>
+
+<p>Стоит сказать и о том, что выше шестого уровня шкала не заканчивается: в новом стандарте над ним достроены ещё три ступени, рассчитанные на тех, кто работает с языком профессионально. Как устроена эта шкала целиком, разобрано отдельно — здесь я остаюсь в пределах привычных шести.</p>
+
+<h2>Почему читаю лучше, <span class="italic">чем говорю</span></h2>
+
+<p>Самая частая жалоба на среднем уровне — и самое понятное объяснение.</p>
+
+<p><b>Чтение и речь — разные навыки.</b> При чтении текст никуда не денется: можно вернуться к началу, подумать, посмотреть слово. В разговоре времени нет, и работает только то, что вы помните без усилия.</p>
+
+<p><b>Письменный экзамен речь не проверяет.</b> Поэтому высокий уровень по сертификату и молчание на звонке прекрасно уживаются. Устный экзамен существует отдельно: <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK: устный экзамен</a>.</p>
+
+<p><b>Что это значит на практике.</b> Если разрыв есть, подтягивать нужно не «язык», а конкретный навык: больше говорить вслух, даже с самим собой, и меньше надеяться, что речь подтянется сама следом за чтением.</p>
+
+<p>Бывает и обратный перекос, хотя реже. У тех, кто жил в среде и учился на слух, речь идёт свободно, а чтение отстаёт: знаки узнаются плохо, текст читается медленно. Картина другая, а вывод тот же — тренировать надо именно отстающую сторону, и начинать с того, чтобы её признать.</p>
+
+<p>Удобный способ увидеть разрыв — записать себя на диктофон. Прочитайте вслух абзац, который понимаете, а потом перескажите его своими словами и послушайте запись. Разница между чтением и пересказом обычно слышна сразу.</p>
+
+<h2>Как понять свой уровень <span class="italic">без экзамена</span></h2>
+
+<p>Экзамен — не единственный способ, а для самопроверки часто и не самый удобный.</p>
+
+<ul>
+  <li><b>Откройте меню и объявление.</b> Если читаете без пиньиня и понимаете суть — у вас как минимум третий.</li>
+  <li><b>Прочитайте новостную заметку.</b> Понимаете, о чём речь, без словаря — это ближе к пятому.</li>
+  <li><b>Посмотрите короткое видео без субтитров.</b> Если держите нить — слух не отстаёт.</li>
+  <li><b>Расскажите вслух, о чём прочитали.</b> Здесь обычно и обнаруживается разрыв между чтением и речью.</li>
+</ul>
+
+<p><b>Что даёт такая проверка.</b> Не номер ступени, а картину по навыкам: где вы держитесь, а где проваливаетесь. Для занятий это полезнее, чем общий ярлык.</p>
+
+<p>Повторять её стоит не чаще раза в пару месяцев и на похожих материалах: если каждый раз брать новый текст случайной сложности, сравнивать будет не с чем. Удобно держать один и тот же набор — меню, объявление, заметку и короткое видео — и возвращаться к нему.</p>
+
+<p>Если же номер нужен формально — для вуза, визы или работодателя, — тут уже без экзамена не обойтись, и про сам сертификат у нас написано отдельно: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK: что это за экзамен</a>.</p>
+
+<p>И ещё одно наблюдение про самопроверку: она работает лучше, когда делается на материале, который вам интересен по содержанию. На скучном тексте внимание уходит раньше, чем заканчивается запас слов, и результат получается заниженным.</p>
+
+<h2>Частые ошибки <span class="italic">в самооценке</span></h2>
+
+<ul>
+  <li><b>Называть себя по последнему учебнику.</b> Пройденный уровень учебника и подтверждённый уровень — разные вещи.</li>
+  <li><b>Мерить себя числом слов.</b> Слова, которые узнаются глазами, и слова, которые приходят в речь, — разные множества.</li>
+  <li><b>Считать «средний уровень» ступенью.</b> Чаще это описание ощущения, а не места на шкале.</li>
+  <li><b>Ждать, что речь подтянется сама.</b> Чтение растёт быстрее и само по себе речь не вытягивает.</li>
+  <li><b>Сравнивать себя с тем, кто живёт в среде.</b> Там быстрее растут слух и речь, а чтение часто отстаёт — картина просто другая.</li>
+  <li><b>Считать уровень постоянным.</b> Без практики навыки оседают, и прежний результат перестаёт отражать нынешнее положение дел.</li>
+</ul>
+
+<p>Шестое не ошибка, а наблюдение: <b>почти все недооценивают чтение и переоценивают речь</b>. На проверке обычно выясняется, что читают люди лучше, чем думали, а говорят — хуже. Причина простая: про чтение мы судим по удачным случаям, а про речь — по неудачным, которые запоминаются ярче.</p>
+
+<h2>Чего в статье <span class="italic">нет намеренно</span></h2>
+
+<ul>
+  <li><b>Нет устройства шкалы HSK</b> и перехода с шести уровней на девять — об этом у нас отдельная статья, и пересказывать её незачем.</li>
+  <li><b>Нет соответствия с европейской шкалой</b>: спор о нём разобран там же.</li>
+  <li><b>Нет сроков и часов.</b> Сколько занимает путь между уровнями, разобрано в двух материалах с методиками: <a href="https://kitai-school.ru/article/za-kakoe-vremya-realno-vyuchit-kitayskiy" target="_blank" rel="noopener">за какое время реально выучить китайский</a> и <a href="https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya" target="_blank" rel="noopener">за сколько можно выучить китайский с нуля</a>.</li>
+  <li><b>Нет проходных баллов</b> и устройства экзамена: это отдельные статьи.</li>
+  <li><b>Нет словарного минимума по уровням</b> — ему посвящён свой разбор.</li>
+  <li><b>Нет процентов</b> вроде «сколько учеников доходит до шестого уровня»: подсчётов у меня нет.</li>
+  <li><b>Нет обещания, что плато наступает у всех и в одно время:</b> это наблюдение, а не измерение.</li>
+</ul>
+
+<p>И общее. <b>Уровень полезен не как ярлык, а как список дел.</b> Когда вы знаете, что уже получается, а что нет, понятно и чем заниматься дальше; когда в голове только номер, занятия превращаются в движение без ориентира.</p>
+
+<div class="cta">
+  <p>Разобрать свой уровень по навыкам проще на занятии, чем в одиночку: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>. <a href="#popup:zayavka">Оставить заявку</a> или написать в <a href="https://telegram.me/manager_kitai_school" target="_blank" rel="noopener">Telegram</a>.</p>
+</div>
+
+<h2>Частые <span class="italic">вопросы</span> (FAQ)</h2>
+<div class="ksfaq__list">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что такое средний уровень китайского?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Строгого определения нет: обычно средним называют третий и четвёртый уровни, когда человек уже обходится без пиньиня и справляется с бытом, но ещё не читает прессу. Проблема в том, что «средний» чаще означает не ступень, а ощущение: читаю лучше, чем говорю. Поэтому полезнее описывать себя делами — что получается, а что нет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С какого уровня можно жить в Китае?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Для бытовых задач хватает третьего: с него человек читает объявления и вывески без пиньиня, объясняется в магазине и у врача, снимает жильё. Второго хватит на поездку, но не на жизнь: всё, что сложнее заказа еды и такси, потребует помощи.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С какого уровня читают новости?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Обычно с пятого. На четвёртом длинный текст уже не пугает, но газетная лексика и устойчивые обороты встают стеной. На пятом пресса становится посильной, хотя подтекст и ирония чаще проходят мимо — это уже шестой уровень и выше.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему я читаю лучше, чем говорю?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что это разные навыки, и письменный экзамен проверяет только один из них. Чтение тренируется само: глаза читают быстрее, чем язык выговаривает, и текст можно перечитать. Речь требует скорости и смелости, и её нужно тренировать отдельно — для неё есть отдельный устный экзамен.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как понять свой уровень без экзамена?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Проверить делами. Откройте меню, объявление, новостную заметку и короткое видео без субтитров — и честно отметьте, где вы справились сами, а где полезли в словарь. Такая проверка точнее самооценки и показывает не общий уровень, а то, какой навык отстаёт.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько времени занимает путь между уровнями?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Числа тут сильно зависят от метода, интенсивности и того, что считать результатом, поэтому коротко ответить нельзя. У нас есть отдельный разбор с методиками и подсчётом часов — лучше смотреть там, а не ориентироваться на чужие обещания «за полгода до четвёртого».</p></div>
+  </details>
+</div>
+
+<p class="sign">Пусть список умений растёт быстрее номера! <span class="han">加油</span>！</p>
+
+<div class="sources">
+  <h2>Источники</h2>
+  <ol>
+    <li><b>Сценарии и уровни не набраны руками.</b> Ситуация, ступень и то, что на ней получается и чего ещё нет, лежат в отдельном файле; таблица в статье, верстовые столбы на обложке и карта готовности собираются из него при сборке страницы.</li>
+    <li><b>Проверки:</b> каждому сценарию задан уровень внутри шкалы, ситуации не повторяются, сценарии идут по возрастанию уровня, у каждого заполнены обе стороны — что выходит и что нет, а сроки и часы в данные не допускаются.</li>
+    <li><b>Описания ступеней</b> даны по общепринятым характеристикам уровней HSK; привязка ситуаций к ступеням — из практики преподавания, а не из официального документа, и это сказано в тексте.</li>
+    <li><b>Разрыв между чтением и речью</b> описан как обычное положение дел: письменный экзамен речь не измеряет, для неё существует отдельный устный.</li>
+    <li><b>Плато среднего уровня</b> приведено как наблюдение, а не как измеренное явление; сроков его наступления я не называю.</li>
+    <li><b>Сроков и часов здесь нет намеренно:</b> они разобраны в двух отдельных статьях вместе с методиками подсчёта.</li>
+    <li><b>Устройство шкалы, переход на девять уровней, соответствие с европейской шкалой, проходные баллы и словарный минимум</b> вынесены в самостоятельные материалы блога.</li>
+    <li><b>Процентов и статистики нет:</b> подсчётов по ученикам я не веду, а чужие числа без разбора методики не повторяю.</li>
+    <li>История с разбором недели — из практики Kitai School; имени ученицы и места работы не называю.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Уровень удобнее описывать списком дел, с которыми справляетесь, а не числом выученных слов</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
