@@ -10,8 +10,8 @@ OUT = "v-kakih-stranah-cifra-4-neschastlivaya.html"
 SLUG = "v-kakih-stranah-cifra-4-neschastlivaya"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/chet-hero.png"
-FIG = "assets/chet-info.png"
+HERO = "https://static.tildacdn.com/tila6436-6335-4534-b634-386637373033/chet-hero.png"
+FIG = "https://static.tildacdn.com/tila6335-3836-4437-a234-376132323965/chet-info.png"
 HERO_ALT = ("Четыре карточки стран: в каждой слово «четыре» и слово «смерть» местным письмом с "
             "чтением и полоса силы поверья")
 FIG_ALT = ("Звуковые пары по языкам: слева чтение слова «четыре», справа чтение слова «смерть», "
