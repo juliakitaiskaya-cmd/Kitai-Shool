@@ -10,8 +10,8 @@ OUT = "urovni-kitayskogo-yazyka-i-ih-opisanie.html"
 SLUG = "urovni-kitayskogo-yazyka-i-ih-opisanie"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/opis-hero.png"
-FIG = "assets/opis-info.png"
+HERO = "https://static.tildacdn.com/tila3332-6632-4236-b631-356336333134/opis-hero.png"
+FIG = "https://static.tildacdn.com/tila3835-3833-4633-a435-356161353263/opis-info.png"
 HERO_ALT = ("Шесть верстовых столбов с номерами уровней: на каждом подпись, что человек умеет "
             "начиная с этой отметки")
 FIG_ALT = ("Карта готовности: строки — бытовые и рабочие ситуации, столбцы — уровни, отмечено, "
