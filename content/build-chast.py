@@ -10,8 +10,8 @@ OUT = "chasticy-v-kitayskom-yazyke.html"
 SLUG = "chasticy-v-kitayskom-yazyke"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/chast-hero.png"
-FIG = "assets/chast-info.png"
+HERO = "https://static.tildacdn.com/tila6465-6564-4034-a531-616132613734/chast-hero.png"
+FIG = "https://static.tildacdn.com/tila6638-3233-4466-b335-323438303161/chast-info.png"
 HERO_ALT = ("Одна основа фразы и три разные частицы в конце: у каждой свой перевод и подпись — "
             "вопрос, предложение, перемена")
 FIG_ALT = ("Карта четырёх групп частиц: в каждой плитке три частицы группы, что группа делает "
