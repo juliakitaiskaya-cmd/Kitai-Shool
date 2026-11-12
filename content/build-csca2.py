@@ -10,8 +10,8 @@ OUT = "csca-chto-sdavat-i-kak-gotovitsya.html"
 SLUG = "csca-chto-sdavat-i-kak-gotovitsya"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/csca2-hero.png"
-FIG = "assets/csca2-info.png"
+HERO = "https://static.tildacdn.com/tila3838-3664-4534-a636-353534396166/csca2-hero.png"
+FIG = "https://static.tildacdn.com/tila6437-6362-4730-b730-643233393866/csca2-info.png"
 HERO_ALT = ("Матрица «кому что сдавать»: три типа программ по строкам и четыре предмета "
             "экзамена по столбцам, на пересечении отметка или прочерк")
 FIG_ALT = ("Два блока экзамена рядом: языковая часть — восемьдесят вопросов за девяносто "
