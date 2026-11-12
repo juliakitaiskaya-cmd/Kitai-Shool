@@ -1,0 +1,442 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kak-podgotovit-rebenka-k-yct-1#article",
+      "headline": "Как подготовить ребёнка к YCT 1: формат экзамена, восемьдесят слов и план на три месяца",
+      "description": "Разбор первой ступени детского экзамена YCT: тридцать пять заданий — двадцать на аудирование и пятнадцать на чтение, — продолжительность около тридцати пяти минут вместе с заполнением бланка, максимум двести баллов при пороге сто двадцать, объём лексики около восьмидесяти слов, официальный учебный курс и помесячный план подготовки на двенадцать недель. Типы заданий, экзаменационная лексика и порядок записи на экзамен остаются в отдельных статьях блога.",
+      "image": "assets/yct1-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-12",
+      "dateModified": "2026-11-12",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kak-podgotovit-rebenka-k-yct-1",
+      "about": {
+        "@type": "Thing",
+        "name": "Подготовка к первой ступени детского экзамена YCT"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kak-podgotovit-rebenka-k-yct-1#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Сколько заданий в YCT 1?", "acceptedAnswer": {"@type": "Answer", "text": "Тридцать пять: двадцать на аудирование и пятнадцать на чтение. Весь экзамен занимает около тридцати пяти минут, и в это время входит заполнение бланка. Распределение минут по частям в описаниях центров немного расходится, поэтому я называю его приблизительно."}},
+        {"@type": "Question", "name": "Сколько баллов нужно, чтобы сдать YCT 1?", "acceptedAnswer": {"@type": "Answer", "text": "Сто двадцать из двухсот. Аудирование и чтение оцениваются по сто баллов каждое. Нужен ли отдельный минимум по каждой части, источники говорят по-разному, поэтому это стоит уточнить в своём экзаменационном центре."}},
+        {"@type": "Question", "name": "Сколько слов нужно знать для YCT 1?", "acceptedAnswer": {"@type": "Answer", "text": "Около восьмидесяти. Это немного, и в этом главная особенность ступени: дело не в объёме, а в скорости узнавания. Слово должно узнаваться сразу, а не вспоминаться."}},
+        {"@type": "Question", "name": "Нужно ли ребёнку читать иероглифы?", "acceptedAnswer": {"@type": "Answer", "text": "На первой ступени нет: задания сопровождаются пиньинем. Подробно про это написано в нашей статье про YCT как экзамен. Знание знаков не помешает, но готовиться стоит не с него."}},
+        {"@type": "Question", "name": "По какому учебнику готовиться к YCT 1?", "acceptedAnswer": {"@type": "Answer", "text": "Есть официальный учебный курс YCT 标准教程, который выходит томами; к учебнику выпускают рабочую тетрадь, пропись и пособие для учителя. Конкретное издание и год уточняйте при покупке: каталоги расходятся, и я не называю того, чего не проверила."}},
+        {"@type": "Question", "name": "Сколько времени занимает подготовка?", "acceptedAnswer": {"@type": "Answer", "text": "При занятиях два-три раза в неделю я закладываю три месяца: месяц на слова, месяц на формат и месяц на прогоны целиком. Это моя рабочая раскладка, а не норматив: ребёнок, который уже год занимается, пройдёт быстрее."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kak-podgotovit-rebenka-k-yct-1#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Как подготовить ребёнка к YCT 1: формат экзамена, восемьдесят слов и план на три месяца", "item": "https://kitai-school.ru/article/kak-podgotovit-rebenka-k-yct-1"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамены</p>
+<h1>Как подготовить ребёнка к YCT 1: <span class="italic">формат экзамена, восемьдесят слов и план на три месяца</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-12">12 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/yct1-hero.png" alt="Дорожка из двенадцати недель подготовки: три блока по четыре недели, у каждого своя задача и признак готовности" width="1200" height="630"></figure>
+
+<p class="lead">Первая ступень детского экзамена выглядит необязательной: слов мало, задания с картинками, тест короткий. Именно поэтому к ней часто готовятся «между делом» — и получают результат ниже ожидаемого, хотя ребёнок знает всё, что нужно.</p>
+
+<p>Разберём ступень по частям: что на ней спрашивают в цифрах, сколько нужно набрать, что значит «восемьдесят слов» на практике, по чему заниматься и как разложить подготовку по неделям.</p>
+
+<h2>Короткий ответ: <span class="italic">что такое YCT 1</span></h2>
+
+<p>Это первая из четырёх ступеней детского экзамена по китайскому. Объём — около 80 слов, задания идут с картинками, над иероглифами стоит пиньинь, так что читать знаки ребёнку не нужно.</p>
+
+<p>Кому подходит: ребёнку, который занимается китайским несколько месяцев и уже узнаёт на слух простые слова — приветствие, счёт, названия предметов вокруг. <b>Выбирать ступень по возрасту не нужно</b>, и это важная мысль: восьмилетний и двенадцатилетний с одинаковым запасом идут на один уровень.</p>
+
+<p>Что такое YCT вообще, чем он отличается от взрослого экзамена и как выбирать между четырьмя ступенями — в нашей отдельной статье: <a href="https://kitai-school.ru/article/yct-kzamen-po-kitayskomu-dlya-detey" target="_blank" rel="noopener">YCT: экзамен по китайскому для детей</a>.</p>
+
+<p><b>Зачем вообще сдавать первую ступень.</b> Сертификат на этом уровне не нужен ни для поступления, ни для чего-либо ещё формального. Нужен он ребёнку: это первая внешняя проверка, где результат зависит не от настроения учителя и не от домашней работы, а от того, что ребёнок действительно умеет. Для многих детей это первая в жизни ситуация, где они справились сами.</p>
+
+<p>Отсюда и главный принцип выбора ступени: <b>брать ту, где ребёнок почти наверняка победит.</b> Экзамен на вырост даёт обратный результат — ребёнок выходит с ощущением, что китайский слишком трудный, и это ощущение держится дольше, чем любая цифра в сертификате.</p>
+
+<h2>Экзамен в числах: <span class="italic">35 заданий и 35 минут</span></h2>
+
+<p>Вот то, чего обычно не знают до первой пробной попытки.</p>
+
+<p>Экзамен состоит из двух частей: сначала аудирование, потом чтение. Между ними ребёнок не выходит и не отдыхает — это один непрерывный отрезок, и для восьмилетнего это существенно.</p>
+
+<table class="ks-tab ks-part">
+  <thead><tr><th>Часть</th><th>Заданий</th><th>Времени</th><th>Что делает ребёнок</th></tr></thead>
+  <tbody>
+    <tr><td><b>аудирование</b></td><td>20</td><td>около 10 мин</td><td>слушает фразу и выбирает подходящую картинку</td></tr>
+    <tr><td><b>чтение</b></td><td>15</td><td>около 15 мин</td><td>смотрит на картинку с подписью и решает, подходит ли она</td></tr>
+    <tr><td><b>бланк и личные данные</b></td><td>—</td><td>около 10 мин</td><td>вписывает свои данные до начала и переносит ответы после — это тоже экзаменационное время</td></tr>
+  </tbody>
+</table>
+
+<p>Всего заданий 35, всего времени около 35 минут. <b>Распределение минут по частям в описаниях центров немного расходится</b>, поэтому я называю его приблизительно: точные цифры стоит уточнить в своём центре при записи.</p>
+
+<p>Главное, что видно из таблицы: аудирования больше, чем чтения, а работа с бланком занимает заметную часть времени и идёт внутри экзамена, а не до него.</p>
+
+<p><b>Почему аудирования больше.</b> На первой ступени от ребёнка ещё не ждут чтения знаков, и основная проверка ложится на слух: услышал слово — узнал предмет на картинке. Чтение здесь тоже есть, но опирается на пиньинь и картинку, а не на иероглифы.</p>
+
+<p>Для подготовки из этого следует простая вещь: <b>слушать нужно больше, чем смотреть.</b> Родители обычно делают наоборот — показывают карточки, потому что так виднее результат. Карточки закрывают узнавание глазами, а экзамен проверяет узнавание на слух, и это разные навыки.</p>
+
+<p>И ещё одно, что часто упускают: задания идут одно за другим без пауз на размышление. Ребёнок, привыкший думать над каждым словом, теряет не одно задание, а цепочку — пока он обдумывает первое, звучит второе.</p>
+
+<figure class="ks-fig"><img src="assets/yct1-info.png" alt="Экзамен в числах: тридцать пять заданий по двум частям, продолжительность около тридцати пяти минут и шкала баллов с порогом сто двадцать" width="1200" height="575"><figcaption>Весь экзамен укладывается примерно в тридцать пять минут, и заполнение бланка входит в это время.</figcaption></figure>
+
+<h2>Баллы: <span class="italic">200 и порог 120</span></h2>
+
+<p><b>Максимум — 200 баллов</b>, по 100 за аудирование и столько же за чтение. <b>Порог — 120.</b> То есть сдать можно, набрав чуть больше половины.</p>
+
+<p>Это заметно мягче, чем кажется родителям: право на ошибку здесь большое, и одна-две потерянные позиции результата не решают. Ребёнку это стоит сказать вслух до экзамена — тревожность на первой ступени вредит сильнее, чем пробелы в словах.</p>
+
+<p><b>Одна оговорка.</b> Нужен ли отдельный минимум по каждой части, описания говорят по-разному: общий порог в 120 называют все, а требование набрать минимум в каждой половине встречается только в одном источнике. Я не берусь утверждать ни то ни другое — уточните в центре, где будете сдавать.</p>
+
+<h2>Восемьдесят слов: <span class="italic">много это или мало</span></h2>
+
+<p>Объём ступени — около 80 слов. По меркам взрослых экзаменов это очень мало, и отсюда растёт главное заблуждение: раз слов мало, готовиться почти не нужно.</p>
+
+<p>На деле требование другое. <b>Слово должно узнаваться мгновенно, а не вспоминаться.</b> Разница между «ребёнок знает слово» и «ребёнок узнаёт слово за долю секунды» — это и есть разница между половиной баллов и уверенной сдачей.</p>
+
+<p>Проверить это просто. Включите аудиозапись знакомого слова и смотрите на лицо: если ребёнок на мгновение задумывается, слово ещё не закрыто. На экзамене этой доли секунды не будет — запись идёт дальше.</p>
+
+<p><b>Своего списка слов я не даю.</b> Перечни пересматриваются, и выдавать подборку за официальную нечестно: ориентируйтесь на учебник, по которому занимается ребёнок. Про экзаменационную лексику и слова-подсказки в заданиях у нас есть отдельная статья: <a href="https://kitai-school.ru/article/sdat-yct-kzamenacionnaya-leksika" target="_blank" rel="noopener">лексика и задания YCT</a>.</p>
+
+<h2>Три месяца: <span class="italic">как я раскладываю подготовку</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ко мне привели девочку восьми лет за месяц до экзамена. Дома она знала всё: родители показывали карточки, она отвечала без запинки. На пробном прогоне набрала чуть выше половины, и мама была уверена, что дело в словах.</p>
+  <p>Мы разобрали запись прогона по минутам. <b>Слова она узнавала.</b> Теряла на другом: не успевала переносить ответы и один раз сбилась на строку, после чего несколько ответов поехали вниз.</p>
+  <p>Месяц мы занимались не словами, а порядком действий. Услышал — сразу отметил. Не понял — всё равно отметил и слушаешь дальше. Назад не возвращаешься. Сначала это казалось ей странным, потому что в школе учат проверять себя, а здесь проверять некогда.</p>
+  <p><b>Сдала спокойно</b>, и на разборе сама сказала, что главное было не бояться потерять один вопрос.</p>
+  <p>С тех пор я спрашиваю родителей не «сколько слов он знает», а «пробовал ли он делать всё подряд по времени». Первый вопрос обычно вызывает гордость, второй — задумчивость, и именно он важнее.</p>
+  <p><b>Вывод, который я делаю:</b> на первой ступени чаще проваливают не язык, а процедуру, и тренировать её нужно отдельно, как отдельный навык.</p>
+</div>
+
+<h2>Бланк: <span class="italic">навык, о котором забывают</span></h2>
+
+<p>Самая обидная потеря на первой ступени — не слово, а строка.</p>
+
+<p>Ребёнок отмечает ответы в бланке, и это действие само по себе требует привычки: найти нужный номер, попасть в клетку, не перепутать строки. Восьмилетний делает это впервые в жизни, и на экзамене ему приходится совмещать новое действие с чужой речью в наушниках.</p>
+
+<p><b>Что помогает.</b> Несколько прогонов дома с настоящим бланком — распечатанным или нарисованным от руки, это не так важно. Важно, чтобы ребёнок заранее знал: услышал — сразу отметил, не понял — всё равно отметил и слушаешь дальше, назад не возвращаешься.</p>
+
+<p>Правило «не возвращаться» звучит странно для школьника, которого учат проверять себя. Но на аудировании возврат стоит следующего вопроса, и этот размен всегда невыгодный.</p>
+
+<h2>План по месяцам: <span class="italic">что делать и когда остановиться</span></h2>
+
+<p>Вот раскладка, по которой я готовлю детей к первой ступени. <b>Это моя рабочая схема, а не норматив:</b> ребёнок, который занимается год, пройдёт её быстрее.</p>
+
+<table class="ks-tab ks-plan">
+  <thead><tr><th>Блок</th><th>Задача</th><th>Признак, что можно двигаться дальше</th></tr></thead>
+  <tbody>
+    <tr><td><b>Первый месяц</b><br>1–4 недели</td><td>закрыть восемьдесят слов</td><td>ребёнок узнаёт слово за секунду, а не вспоминает</td></tr>
+    <tr><td><b>Второй месяц</b><br>5–8 недели</td><td>привыкнуть к формату заданий</td><td>понимает, что от него хотят, без объяснений взрослого</td></tr>
+    <tr><td><b>Третий месяц</b><br>9–12 недели</td><td>пройти экзамен целиком по времени</td><td>садится и делает все задания подряд, не отвлекаясь</td></tr>
+  </tbody>
+</table>
+
+<p><b>Первый месяц — слова.</b> Никаких заданий, только узнавание: карточки, короткие диалоги, повторы знакомого. Цель — убрать паузу между звуком и пониманием.</p>
+
+<p><b>Второй месяц — формат.</b> Теперь берём задания, но без секундомера. Ребёнок должен понять, чего от него хотят, без объяснений взрослого рядом. Если объяснение требуется каждый раз — формат ещё не усвоен.</p>
+
+<p><b>Третий месяц — целиком по времени.</b> Садимся и проходим весь набор подряд, с бланком и без пауз. Здесь проявляются все процедурные потери, и здесь же они и лечатся.</p>
+
+<p>Двигаться к следующему блоку стоит по признаку из таблицы, а не по календарю. Если слова ещё не узнаются мгновенно, брать задания рано — ребёнок будет тренировать угадывание вместо языка.</p>
+
+<h2>Учебники: <span class="italic">что существует</span></h2>
+
+<p>Вопрос «по какому учебнику готовиться» задают чаще всех остальных, поэтому отвечу по порядку.</p>
+
+<table class="ks-tab ks-book">
+  <thead><tr><th>Что это</th><th>Для чего</th><th>Что учесть</th></tr></thead>
+  <tbody>
+    <tr><td><b>YCT 标准教程</b></td><td>официальный учебный курс</td><td>выходит томами; к учебнику есть рабочая тетрадь, пропись и пособие для учителя</td></tr>
+    <tr><td><b>сборники заданий прошлых лет</b></td><td>тренировка формата</td><td>издаются отдельно от учебника</td></tr>
+  </tbody>
+</table>
+
+<p>Есть официальный учебный курс — <span class="han">YCT 标准教程</span>. Он выходит томами, и к учебнику выпускают рабочую тетрадь, пропись и пособие для учителя. <b>Конкретное издание и год я не называю:</b> каталоги магазинов расходятся, а сайт издателя я не проверяла, и выдавать непроверенное за точное не стану.</p>
+
+<p>Отдельно существуют сборники заданий прошлых лет. Они нужны не для изучения языка, а для третьего месяца подготовки — чтобы ребёнок увидел формат и прошёл его по времени.</p>
+
+<p><b>Как выбирать на практике.</b> Если ребёнок занимается в школе или с преподавателем, учебник уже есть, и менять его ради экзамена не нужно. Добавить стоит только сборник заданий — к последнему месяцу. Если занятий нет, начинать с экзаменационного сборника бессмысленно: по нему не учат язык, по нему проверяют.</p>
+
+<h2>Что делать родителю, <span class="italic">а что не делать</span></h2>
+
+<p>Несколько границ, которые экономят нервы всей семье.</p>
+
+<ul>
+  <li><b>Делать:</b> устроить два-три прогона целиком, с бланком и по времени.</li>
+  <li><b>Делать:</b> проверять скорость узнавания слов, а не их количество.</li>
+  <li><b>Делать:</b> заранее сказать ребёнку, что порог — чуть больше половины, и одна ошибка ничего не решает.</li>
+  <li><b>Не делать:</b> учить иероглифы ради первой ступени — на ней они не требуются.</li>
+  <li><b>Не делать:</b> выбирать ступень повыше «чтобы не мелочиться». Первая победа важнее красивой цифры в сертификате.</li>
+</ul>
+
+<p>Про запись, выбор центра и сам день экзамена — что взять, как он проходит, когда приходят результаты — у нас есть отдельная статья: <a href="https://kitai-school.ru/article/sdat-yct-v-moskve-kak-zapisatsya" target="_blank" rel="noopener">как записаться на YCT</a>.</p>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Разбора типов заданий и экзаменационной лексики</b> — это <a href="https://kitai-school.ru/article/sdat-yct-kzamenacionnaya-leksika" target="_blank" rel="noopener">лексика и задания YCT</a>.</li>
+  <li><b>Сравнения ступеней и выбора уровня</b> — это <a href="https://kitai-school.ru/article/yct-kzamen-po-kitayskomu-dlya-detey" target="_blank" rel="noopener">YCT: экзамен по китайскому для детей</a>.</li>
+  <li><b>Записи на экзамен и дня экзамена</b> — это <a href="https://kitai-school.ru/article/sdat-yct-v-moskve-kak-zapisatsya" target="_blank" rel="noopener">как записаться на YCT</a>.</li>
+  <li><b>Своего списка восьмидесяти слов.</b> Перечни пересматриваются, и подборка из блога не заменит учебник.</li>
+  <li><b>Издания и года учебника.</b> Каталоги расходятся, издателя я не проверяла.</li>
+  <li><b>Ссылки на сайт самого экзамена.</b> Открыть его при подготовке материала не вышло, а давать адрес вслепую я не хочу.</li>
+</ul>
+
+<div class="cta">
+  <p><b>Нужна подготовка с преподавателем?</b> Мы ведём детей к первой ступени по той же схеме: месяц на слова, месяц на формат, месяц на прогоны целиком — и обязательно с бланком.</p>
+  <p><a href="#popup:zayavka">Запишите ребёнка на пробное занятие</a>, а форматы и расписание — здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько заданий в YCT 1?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Тридцать пять: двадцать на аудирование и пятнадцать на чтение. Весь экзамен занимает около тридцати пяти минут, и в это время входит заполнение бланка. Распределение минут по частям в описаниях центров немного расходится, поэтому я называю его приблизительно.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько баллов нужно, чтобы сдать YCT 1?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сто двадцать из двухсот. Аудирование и чтение оцениваются по сто баллов каждое. Нужен ли отдельный минимум по каждой части, источники говорят по-разному, поэтому это стоит уточнить в своём экзаменационном центре.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько слов нужно знать для YCT 1?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Около восьмидесяти. Это немного, и в этом главная особенность ступени: дело не в объёме, а в скорости узнавания. Слово должно узнаваться сразу, а не вспоминаться.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли ребёнку читать иероглифы?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На первой ступени нет: задания сопровождаются пиньинем. Подробно про это написано в нашей статье про YCT как экзамен. Знание знаков не помешает, но готовиться стоит не с него.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>По какому учебнику готовиться к YCT 1?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Есть официальный учебный курс YCT 标准教程, который выходит томами; к учебнику выпускают рабочую тетрадь, пропись и пособие для учителя. Конкретное издание и год уточняйте при покупке: каталоги расходятся, и я не называю того, чего не проверила.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько времени занимает подготовка?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>При занятиях два-три раза в неделю я закладываю три месяца: месяц на слова, месяц на формат и месяц на прогоны целиком. Это моя рабочая раскладка, а не норматив: ребёнок, который уже год занимается, пройдёт быстрее.</p></div>
+  </details>
+</div>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li>Число заданий, продолжительность, максимум в двести баллов и порог в сто двадцать приведены по описаниям первой ступени, которые публикуют экзаменационные центры.</li>
+    <li>Объём лексики около восьмидесяти слов назван по описаниям уровня.</li>
+    <li><b>Распределение минут по частям даю приблизительно:</b> описания центров расходятся в мелочах.</li>
+    <li><b>Про отдельный минимум по каждой части не утверждаю ничего:</b> общий порог называют все источники, требование набрать минимум в каждой половине — только один.</li>
+    <li>Название официального учебного курса приведено по каталогам издателей и магазинов. <b>Издание, год и цену не называю</b> — сайт издателя я не проверяла.</li>
+    <li><b>Своего списка слов не привожу:</b> перечни пересматриваются, и ориентироваться нужно на учебник ребёнка.</li>
+    <li><b>Адрес сайта экзамена в статье не приводится</b> — страницу я не открывала и ручаться за неё не могу.</li>
+    <li>План на три месяца — <b>моя рабочая методика</b>, а не чьё-то требование; в тексте это сказано прямо.</li>
+    <li>Про типы заданий, лексику и запись на экзамен у нас написано отдельно — эти страницы перечислены выше по тексту.</li>
+    <li>Случай с пробным прогоном взят из занятий Kitai School; имя ребёнка не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">На первой ступени чаще проваливают не язык, а процедуру: порядок действий тренируют отдельно</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
