@@ -10,8 +10,8 @@ OUT = "chastica-le-v-kitayskom-yazyke.html"
 SLUG = "chastica-le-v-kitayskom-yazyke"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/le-hero.png"
-FIG = "assets/le-info.png"
+HERO = "https://static.tildacdn.com/tila3330-3264-4862-a235-343837333831/le-hero.png"
+FIG = "https://static.tildacdn.com/tila6462-3431-4635-b839-656634363061/le-info.png"
 HERO_ALT = ("Три пары фраз: слева фраза без частицы 了 и её перевод, справа та же фраза с "
             "частицей и новый перевод")
 FIG_ALT = ("Ось времени с тремя точками — вчера, сейчас и завтра: в каждой стоит фраза с "
