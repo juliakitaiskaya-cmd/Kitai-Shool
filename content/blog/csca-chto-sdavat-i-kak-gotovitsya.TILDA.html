@@ -1,0 +1,448 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/csca-chto-sdavat-i-kak-gotovitsya#article",
+      "headline": "CSCA для поступления в Китай: что сдавать и как готовиться",
+      "description": "Практический разбор подготовки к CSCA: какой набор предметов требуется при программе на китайском в технической и гуманитарной области и при программе на английском, кто освобождён от экзамена целиком и кто только от языковой части, чем формат профессионального китайского отличается от формата математики, физики и химии по числу вопросов и времени на один вопрос, в каком порядке выстраивать подготовку и где искать материалы. История экзамена и предметная лексика разобраны в отдельных статьях блога.",
+      "image": "assets/csca2-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-12",
+      "dateModified": "2026-11-12",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/csca-chto-sdavat-i-kak-gotovitsya",
+      "about": {
+        "@type": "Thing",
+        "name": "Подготовка к вступительному экзамену CSCA"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/csca-chto-sdavat-i-kak-gotovitsya#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какие предметы входят в CSCA?", "acceptedAnswer": {"@type": "Answer", "text": "Четыре: профессиональный китайский, математика, физика и химия. Но сдают не все четыре: набор зависит от программы. На программах на китайском языковая часть обязательна, математика нужна почти всем, физику и химию спрашивают там, где этого требует специальность."}},
+        {"@type": "Question", "name": "Нужно ли сдавать CSCA на английской программе?", "acceptedAnswer": {"@type": "Answer", "text": "Сам экзамен нужен, а вот языковую часть на англоязычных программах не сдают. Остаются математика и, если требует специальность, физика или химия. При этом вуз обычно просит подтвердить английский отдельно — это уже не CSCA."}},
+        {"@type": "Question", "name": "Чем формат языковой части отличается от предметной?", "acceptedAnswer": {"@type": "Answer", "text": "Объёмом и плотностью. В языковой части около восьмидесяти вопросов за девяносто минут, в каждом предмете — сорок восемь за шестьдесят. Получается, что на один вопрос языковой части приходится меньше времени, чем на вопрос по математике."}},
+        {"@type": "Question", "name": "Можно ли сдавать математику на английском?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Математику, физику и химию сдают на китайском или на английском — на выбор. Языковая часть идёт только на китайском, и выбора там нет по определению."}},
+        {"@type": "Question", "name": "Кто освобождён от экзамена?", "acceptedAnswer": {"@type": "Answer", "text": "Выпускники подготовительных факультетов при вузах, участвующих в программе правительственных стипендий, экзамен не сдают. Абитуриентов на китайскую филологию и смежные специальности от языковой части тоже могут освободить, но условия в открытых описаниях не раскрыты — это стоит уточнить в вузе."}},
+        {"@type": "Question", "name": "С чего начинать подготовку?", "acceptedAnswer": {"@type": "Answer", "text": "С языковой части, даже если вы идёте на инженерную специальность. Предмет вы знаете со школы и будете повторять, а язык формулировок придётся осваивать с нуля — и это дольше."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/csca-chto-sdavat-i-kak-gotovitsya#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "CSCA для поступления в Китай: что сдавать и как готовиться", "item": "https://kitai-school.ru/article/csca-chto-sdavat-i-kak-gotovitsya"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Поступление</p>
+<h1>CSCA для поступления в Китай: <span class="italic">что сдавать и как готовиться</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-12">12 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/csca2-hero.png" alt="Матрица «кому что сдавать»: три типа программ по строкам и четыре предмета экзамена по столбцам, на пересечении отметка или прочерк" width="1200" height="630"></figure>
+
+<p class="lead">Первый вопрос абитуриента звучит обычно так: «сколько предметов сдавать». Правильный вопрос другой — <b>какие предметы требует именно ваша программа</b>, потому что набор определяется ею, а не вашим выбором. И есть случаи, когда экзамен не сдают вовсе.</p>
+
+<p>Разберём по порядку: кто освобождён, какой набор предметов у каждого типа программ, чем языковая часть отличается от предметных и в каком порядке всё это готовить. Что представляет собой сам экзамен и зачем он введён — в нашей отдельной статье: <a href="https://kitai-school.ru/article/csca-glavnyy-kzamen-dlya-postupleniya-v-vuzy-kitaya" target="_blank" rel="noopener">что такое CSCA</a>.</p>
+
+<h2>Короткий ответ: <span class="italic">что сдавать именно вам</span></h2>
+
+<p>Три типичные ситуации, и наборы в них разные.</p>
+
+<table class="ks-tab ks-track">
+  <thead><tr><th>Ваша программа</th><th>Что сдаёте</th></tr></thead>
+  <tbody>
+    <tr><td><b>программа на китайском, STEM</b></td><td><span class="han">专业汉语 — направление STEM</span> · <span class="han">数学</span> · <span class="han">物理 или 化学 — по требованию вуза</span></td></tr>
+    <tr><td><b>программа на китайском, гуманитарная</b></td><td><span class="han">专业汉语 — гуманитарное направление</span> · <span class="han">数学</span></td></tr>
+    <tr><td><b>программа на английском</b></td><td><span class="han">数学</span> · <span class="han">物理 или 化学 — по требованию вуза</span></td></tr>
+  </tbody>
+</table>
+
+<p><b>Главное из таблицы:</b> языковая часть нужна только тем, кто поступает на программу на китайском. Математика требуется почти всем. Физику и химию спрашивают там, где этого требует специальность, — и решает это вуз, а не вы.</p>
+
+<p>Отсюда первое практическое действие, с которого стоит начинать: <b>выяснить набор у конкретного вуза и конкретной специальности.</b> Пока набор неизвестен, план подготовки составить нельзя — можно только потратить время не на то.</p>
+
+<h2>Кто освобождён — <span class="italic">от экзамена и от языка</span></h2>
+
+<p>Освобождения существуют, и о них знают далеко не все.</p>
+
+<table class="ks-tab ks-ex">
+  <thead><tr><th>Кто</th><th>От чего освобождён</th><th>Насколько это подтверждено</th></tr></thead>
+  <tbody>
+    <tr><td><b>программы на английском</b></td><td>языковую часть не сдают</td><td>подтверждено</td></tr>
+    <tr><td><b>выпускники подготовительных факультетов при вузах — участниках программы правительственных стипендий</b></td><td>экзамен не сдают вовсе</td><td>подтверждено</td></tr>
+    <tr><td><b>абитуриенты на китайскую филологию и смежные специальности</b></td><td>от языковой части могут освободить</td><td>условия в описаниях не раскрыты</td></tr>
+  </tbody>
+</table>
+
+<p><b>Выпускники подготовительных факультетов</b> при вузах, которые участвуют в программе правительственных стипендий, экзамен не сдают вовсе. Это самый весомый случай: год на подготовительном отделении закрывает вопрос целиком.</p>
+
+<p><b>Абитуриенты англоязычных программ</b> не сдают языковую часть — она просто не входит в их набор. Но английский при этом обычно подтверждают отдельно, и это уже другой экзамен, не CSCA.</p>
+
+<p><b>Как проверить своё освобождение.</b> Опираться на форумы здесь нельзя: освобождение подтверждает вуз, и подтверждение это нужно получить до того, как закончится регистрация на экзамен. Если выяснится, что вы всё-таки сдаёте, а срок записи прошёл, ждать придётся следующей сессии — и это может стоить года.</p>
+
+<p>Поэтому вопрос в приёмную комиссию формулируйте не «нужен ли мне CSCA», а конкретнее: какая программа, на каком языке преподавание, какая специальность, есть ли подготовительный факультет за плечами. На общий вопрос вам ответят общими словами.</p>
+
+<p><b>Третий случай сложнее.</b> От языковой части могут освободить тех, кто поступает на китайскую филологию и смежные специальности. Условия в открытых описаниях не раскрыты, и я не стану их домысливать: если это ваш случай, спрашивайте в приёмной комиссии вуза напрямую.</p>
+
+<h2>Формат: <span class="italic">80 вопросов против 48</span></h2>
+
+<p>Вот место, где абитуриенты чаще всего ошибаются в оценке нагрузки. Языковую часть принято считать лёгкой половиной экзамена — ведь это «просто язык», в отличие от задач. Цифры говорят обратное.</p>
+
+<figure class="ks-fig"><img src="assets/csca2-info.png" alt="Два блока экзамена рядом: языковая часть — восемьдесят вопросов за девяносто минут, предметная — сорок восемь за шестьдесят, с подсчётом секунд на вопрос" width="1200" height="520"><figcaption>Языковая часть больше предметной и по числу вопросов, и по длительности — но времени на один вопрос там остаётся меньше.</figcaption></figure>
+
+<table class="ks-tab ks-subj">
+  <thead><tr><th>Предмет</th><th>Вопросов</th><th>Времени</th><th>На вопрос</th><th>Язык сдачи</th></tr></thead>
+  <tbody>
+    <tr><td><b>Профессиональный китайский</b><br><span class="han">专业汉语</span></td><td>80</td><td>90 мин</td><td>68 с</td><td>только китайский</td></tr>
+    <tr><td><b>Математика</b><br><span class="han">数学</span></td><td>48</td><td>60 мин</td><td>75 с</td><td>китайский или английский</td></tr>
+    <tr><td><b>Физика</b><br><span class="han">物理</span></td><td>48</td><td>60 мин</td><td>75 с</td><td>китайский или английский</td></tr>
+    <tr><td><b>Химия</b><br><span class="han">化学</span></td><td>48</td><td>60 мин</td><td>75 с</td><td>китайский или английский</td></tr>
+  </tbody>
+</table>
+
+<p>Задания везде с выбором ответа, сочинений и развёрнутых решений нет. Шкала — 100 баллов за предмет.</p>
+
+<p><b>Одна оговорка про цифры.</b> Число вопросов в языковой части: в большинстве описаний 80, в отдельных — около ста. Я беру восемьдесят, потому что так говорит большинство описаний, включая официальные справочные материалы, но точную цифру стоит сверить перед регистрацией.</p>
+
+<h2>Плотность: <span class="italic">сколько секунд на вопрос</span></h2>
+
+<p>Поделите минуты на вопросы — и получите то, что не видно из описания экзамена.</p>
+
+<p>В языковой части на вопрос приходится около 68 секунд. В математике, физике и химии — около 75. Разница небольшая на бумаге и очень заметная на экзамене, потому что вопрос по языку требует прочитать текст, а вопрос по математике — узнать знакомый тип задачи.</p>
+
+<p><b>Что из этого следует.</b> Языковую часть нельзя «дочитать внимательнее»: времени на это нет. Там нужна та же автоматичность, что на слуховых заданиях любого языкового экзамена, — узнал конструкцию, пошёл дальше.</p>
+
+<p>И обратное: в предметах время на вопрос больше, но и действий больше — прочитать условие, понять, посчитать. Поэтому «сэкономить» на предметной части за счёт языковой не выйдет: это разные виды нагрузки.</p>
+
+<h2>С чего начинать <span class="italic">подготовку</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик готовился на инженерную специальность и полгода учил математическую лексику. Логика была простая: математика — главный предмет, её и надо закрывать. Языковую часть он оставил «на потом», потому что китайский у него был неплохой.</p>
+  <p>За два месяца до экзамена мы сели за пробный языковой блок, и выяснились две вещи. <b>Первая: времени на вопрос там меньше</b>, чем на математике, хотя по ощущениям языковая часть «проще». Вторая оказалась важнее: лексика в ней другая. Не формулы и не термины, а то, как устроен текст о специальности — связки, обороты, формулировки задания.</p>
+  <p>Перестроили план: половину занятий отдали языковой части, оставшееся — поддержанию математики, которую он и так знал. Математику при этом не бросили: она требовала не изучения, а повторения.</p>
+  <p><b>Сдал оба предмета</b> и потом сказал, что на языковом блоке впервые пожалел о потраченных полугодах — не потому, что математика не нужна, а потому, что порядок был неверный.</p>
+  <p>С тех пор я начинаю подготовку с языковой части, даже когда абитуриент идёт на инженерную специальность. Предмет можно знать и повторить. Чужой язык в формулировке задания не повторишь за неделю.</p>
+  <p><b>Вывод, который я делаю:</b> предметы кажутся страшнее, а проваливаются чаще на языковой части, потому что к ней садятся в последнюю очередь.</p>
+</div>
+
+<h2>Профессиональный китайский: <span class="italic">два направления</span></h2>
+
+<p>Языковая часть делится на два направления — гуманитарное и техническое. Сдают то, которое соответствует будущей специальности.</p>
+
+<p>Разница не в уровне сложности, а в материале. В техническом направлении тексты и формулировки идут вокруг естественнонаучных и инженерных тем, в гуманитарном — вокруг общественных и гуманитарных. Общая грамматика и общая лексика у них одни.</p>
+
+<p><b>Что это значит для подготовки.</b> Заниматься «вообще китайским» для этой части недостаточно: нужна привычка к текстам своей области. Это не то же самое, что знать термины, — термины вы выучите по предметным материалам. Здесь важнее то, как устроены сами формулировки: что считается вопросом, как даются условия, какие обороты повторяются.</p>
+
+<p>Если направление ещё не выбрано окончательно, начинать стоит с общей части: она одинакова у обоих направлений, и потраченное время не пропадёт при смене специальности.</p>
+
+<h2>Предметы: <span class="italic">язык сдачи на выбор</span></h2>
+
+<p>Для трёх предметных блоков язык сдачи выбирает сам абитуриент — китайский либо английский. Поблажка серьёзная, и распорядиться ею стоит осознанно.</p>
+
+<p><b>Когда выбирать английский:</b> если ваш английский заметно сильнее китайского и специальность не требует китайской терминологии с первого курса. <b>Когда выбирать китайский:</b> если вы идёте на программу на китайском — тогда терминологию всё равно придётся осваивать, и экзамен станет первым рабочим применением.</p>
+
+<p>Разбор того, как читать условия и какая лексика нужна по каждому предмету, у нас вынесен в отдельные статьи: <a href="https://kitai-school.ru/article/matematika-na-csca-kak-ponimat-usloviya-zadach" target="_blank" rel="noopener">математика на CSCA</a>, <a href="https://kitai-school.ru/article/fizika-na-csca-kak-vyuchit-fizicheskuu-terminologiu-na-kitayskom" target="_blank" rel="noopener">физика на CSCA</a> и <a href="https://kitai-school.ru/article/himiya-na-csca-kak-vyuchit-kitayskuu-himicheskuu-terminologiu" target="_blank" rel="noopener">химия на CSCA</a>. Повторять их здесь не буду.</p>
+
+<h2>Порядок подготовки <span class="italic">по этапам</span></h2>
+
+<p>Схема, по которой я веду абитуриентов.</p>
+
+<ol>
+  <li><b>Выяснить набор.</b> Специальность, вуз, требования — до всякой подготовки. Иначе рискуете учить химию, которая не нужна.</li>
+  <li><b>Начать с языковой части.</b> Общая часть одинакова для обоих направлений, так что её можно начинать, даже если специальность не выбрана.</li>
+  <li><b>Подключить профильные тексты.</b> Когда направление известно — читать тексты своей области, а не учебник вообще.</li>
+  <li><b>Подтянуть предметы на языке сдачи.</b> Если сдаёте на китайском, учить предмет и его лексику вместе, а не по очереди.</li>
+  <li><b>Пройти всё по времени.</b> Хотя бы дважды, с секундомером, в том же порядке, в каком будет на экзамене.</li>
+</ol>
+
+<p>Последний пункт пропускают чаще всего, а он и показывает реальную готовность. Знание предмета и умение показать его за шестьдесят минут — разные вещи.</p>
+
+<h2>Где брать <span class="italic">материалы</span></h2>
+
+<p>Здесь я отвечу честно, а не бодро.</p>
+
+<p><b>Что есть.</b> Официальный сайт экзамена с описанием структуры и примерами формата — его и стоит считать первым источником. Требования конкретных вузов на их собственных страницах для иностранных абитуриентов. Школьные учебники по предметам на китайском — для терминологии.</p>
+
+<p><b>Чего нет.</b> Устоявшегося рынка готовых пособий, как у HSK, где учебники выпускаются годами. Экзамен новый, и материалы появляются быстрее, чем успевают устареть обзоры на них.</p>
+
+<p><b>Чего я не делаю.</b> Не привожу здесь ссылок на официальный портал экзамена: из рабочей среды он у меня не открылся, а давать адрес вслепую — значит отправить вас неизвестно куда. Найти его несложно по названию экзамена, и лучше сделать это самостоятельно, чем довериться моей памяти.</p>
+
+<p><b>Что работает лучше всего на практике.</b> Школьные учебники по вашему предмету на китайском — не ради решения задач, а ради формулировок: условия в них написаны тем же языком, что и в экзаменационных заданиях. Для языковой части так же работают любые тексты вашей области: научно-популярные статьи, вводные главы вузовских пособий.</p>
+
+<p>Не называю я и дат сессий со стоимостью: описания расходятся, а параметры меняются от года к году. Это ровно тот случай, когда единственный правильный источник — сайт экзамена и приёмная комиссия.</p>
+
+<h2>Частые ошибки <span class="italic">абитуриентов</span></h2>
+
+<ol>
+  <li><b>Готовиться, не узнав набор.</b> Половина потраченного времени уходит на предмет, которого не будет.</li>
+  <li><b>Оставлять языковую часть на конец.</b> Она плотнее предметной, и наверстать её за месяц не выйдет.</li>
+  <li><b>Учить термины вместо текстов.</b> Термины спрашивают в предметах, а языковая часть проверяет, как вы читаете формулировки.</li>
+  <li><b>Выбирать английский «на всякий случай».</b> Если программа на китайском, терминологию всё равно учить — лучше сразу.</li>
+  <li><b>Не проходить экзамен по времени.</b> Самая частая и самая обидная ошибка: предмет знают, но не успевают.</li>
+</ol>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Истории экзамена и причин, по которым он введён</b> — это <a href="https://kitai-school.ru/article/csca-glavnyy-kzamen-dlya-postupleniya-v-vuzy-kitaya" target="_blank" rel="noopener">что такое CSCA</a>.</li>
+  <li><b>Лексики по математике, физике и химии</b> — три отдельные статьи, ссылки выше.</li>
+  <li><b>Дат сессий и стоимости.</b> Меняются, и описания расходятся.</li>
+  <li><b>Проходных баллов.</b> Единого порога в описаниях нет: требования ставит вуз.</li>
+  <li><b>Требований конкретных университетов.</b> У каждого свои, и проверять их нужно у них.</li>
+  <li><b>Списка документов для поступления</b> — он у нас разобран отдельно: <a href="https://kitai-school.ru/article/dokumenty-dlya-postupleniya-v-kitaj" target="_blank" rel="noopener">документы для поступления в Китай</a>.</li>
+</ul>
+
+<div class="cta">
+  <p><b>Нужна языковая часть?</b> Мы готовим к ней отдельно: разбираем формулировки заданий и тексты вашей области, а не абстрактный китайский. Предметную лексику подключаем к тому же материалу.</p>
+  <p><a href="#popup:zayavka">Запишитесь на пробное занятие</a> — что входит в программу, смотрите здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какие предметы входят в CSCA?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Четыре: профессиональный китайский, математика, физика и химия. Но сдают не все четыре: набор зависит от программы. На программах на китайском языковая часть обязательна, математика нужна почти всем, физику и химию спрашивают там, где этого требует специальность.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Нужно ли сдавать CSCA на английской программе?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сам экзамен нужен, а вот языковую часть на англоязычных программах не сдают. Остаются математика и, если требует специальность, физика или химия. При этом вуз обычно просит подтвердить английский отдельно — это уже не CSCA.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем формат языковой части отличается от предметной?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Объёмом и плотностью. В языковой части около восьмидесяти вопросов за девяносто минут, в каждом предмете — сорок восемь за шестьдесят. Получается, что на один вопрос языковой части приходится меньше времени, чем на вопрос по математике.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли сдавать математику на английском?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да. Математику, физику и химию сдают на китайском или на английском — на выбор. Языковая часть идёт только на китайском, и выбора там нет по определению.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Кто освобождён от экзамена?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Выпускники подготовительных факультетов при вузах, участвующих в программе правительственных стипендий, экзамен не сдают. Абитуриентов на китайскую филологию и смежные специальности от языковой части тоже могут освободить, но условия в открытых описаниях не раскрыты — это стоит уточнить в вузе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С чего начинать подготовку?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>С языковой части, даже если вы идёте на инженерную специальность. Предмет вы знаете со школы и будете повторять, а язык формулировок придётся осваивать с нуля — и это дольше.</p></div>
+  </details>
+</div>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li>Состав предметов, формат заданий, длительность и стобалльная шкала приведены по описаниям экзамена, включая справочные материалы образовательных органов.</li>
+    <li>Освобождение абитуриентов англоязычных программ от языковой части и освобождение выпускников подготовительных факультетов названы по тем же описаниям.</li>
+    <li><b>Число вопросов языковой части даю с оговоркой:</b> большинство описаний называет восемьдесят, отдельные — около ста.</li>
+    <li><b>Условия освобождения для китайской филологии не раскрываю:</b> в открытых описаниях они не приведены, и домысливать я не стану.</li>
+    <li><b>Секунды на вопрос посчитаны мной</b> из числа вопросов и длительности — это арифметика, а не чья-то публикация.</li>
+    <li><b>Дат сессий и стоимости не называю:</b> параметры меняются, а описания расходятся.</li>
+    <li><b>Проходных баллов не называю:</b> единого порога в описаниях нет.</li>
+    <li><b>Адрес официального портала в статье не приводится</b> — открыть его при подготовке материала не вышло.</li>
+    <li>История экзамена и предметная лексика разобраны в других материалах блога; ссылки стоят по тексту.</li>
+    <li>Случай с перестроенным планом подготовки взят из занятий Kitai School; имя ученика не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Набор предметов определяет программа, а не желание абитуриента: сначала выясните свой</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
