@@ -11,8 +11,8 @@ OUT = "kak-podgotovit-rebenka-k-yct-1.html"
 SLUG = "kak-podgotovit-rebenka-k-yct-1"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/yct1-hero.png"
-FIG = "assets/yct1-info.png"
+HERO = "https://static.tildacdn.com/tila3437-6438-4336-b836-356562613535/yct1-hero.png"
+FIG = "https://static.tildacdn.com/tila6538-6166-4833-b361-636366383832/yct1-info.png"
 HERO_ALT = ("Дорожка из двенадцати недель подготовки: три блока по четыре недели, у каждого "
             "своя задача и признак готовности")
 FIG_ALT = ("Экзамен в числах: тридцать пять заданий по двум частям, продолжительность около "
