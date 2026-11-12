@@ -11,8 +11,8 @@ OUT = "bally-hskk.html"
 SLUG = "bally-hskk"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/bally-hero.png"
-FIG = "assets/bally-info.png"
+HERO = "https://static.tildacdn.com/tila3530-3739-4034-b063-376565353833/bally-hero.png"
+FIG = "https://static.tildacdn.com/tila6666-3832-4130-b263-353431336131/bally-info.png"
 HERO_ALT = ("Шкала от нуля до ста с отметкой на шестидесяти: порог одинаков на всех трёх "
             "уровнях устного экзамена")
 FIG_ALT = ("Состав экзамена по уровням: блоки заданий каждого типа, общее число заданий, "
