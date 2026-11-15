@@ -11,8 +11,8 @@ OUT = "uchebniki-hsk-3-0.html"
 SLUG = "uchebniki-hsk-3-0"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/uch-hero.png"
-FIG = "assets/uch-info.png"
+HERO = "https://static.tildacdn.com/tila6362-6664-4362-a436-376265623266/uch-hero.png"
+FIG = "https://static.tildacdn.com/tila6161-3336-4635-a465-346533373966/uch-info.png"
 HERO_ALT = ("Две книжные полки рядом: корешки новой серии под стандарт 3.0 и корешки прежней "
             "серии, с подписями о составе комплекта")
 FIG_ALT = ("Комплектность по девяти уровням: на младших пара «учебник и рабочая тетрадь», на "
