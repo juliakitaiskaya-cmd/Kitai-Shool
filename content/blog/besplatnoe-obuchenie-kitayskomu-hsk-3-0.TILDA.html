@@ -1,0 +1,455 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/besplatnoe-obuchenie-kitayskomu-hsk-3-0#article",
+      "headline": "Бесплатное обучение китайскому под HSK 3.0: что реально даётся даром, а за что придётся платить",
+      "description": "Честный разбор того, какую часть подготовки к экзамену по китайскому можно закрыть бесплатно: лексику и чтение почти целиком, аудирование и работу с форматом частично, а письменную часть и произношение не выйдет. Разбираем четыре места, где заплатить придётся в любом случае, как отличить официальный список лексики от народного, сколько часов стоит бесплатный путь и как построить подготовку, если денег хватает на редкие встречи с преподавателем.",
+      "image": "assets/besp-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-15",
+      "dateModified": "2026-11-15",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/besplatnoe-obuchenie-kitayskomu-hsk-3-0",
+      "about": {
+        "@type": "Thing",
+        "name": "Самостоятельная подготовка к экзамену по китайскому языку"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/besplatnoe-obuchenie-kitayskomu-hsk-3-0#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Можно ли подготовиться к HSK 3.0 бесплатно?", "acceptedAnswer": {"@type": "Answer", "text": "Подготовиться — в значительной части да, сдать — нет. Регистрация на экзамен платная в любом случае, и обойти это нельзя. А вот лексику, чтение и работу с форматом действительно можно закрыть самостоятельно и без денег."}},
+        {"@type": "Question", "name": "За что придётся заплатить обязательно?", "acceptedAnswer": {"@type": "Answer", "text": "За регистрацию на экзамен и, если не набрали порог, за пересдачу — она оплачивается заново. Ещё деньги понадобятся там, где нужен человек: поставить произношение и проверить письменную работу самому не выйдет."}},
+        {"@type": "Question", "name": "Что из подготовки закрывается даром полностью?", "acceptedAnswer": {"@type": "Answer", "text": "Лексика и чтение. У обоих есть эталон, с которым вы сверяетесь сами: у слова — обратная сторона карточки, у текста — перевод и словарь. Там, где есть с чем сверить себя, преподаватель не обязателен."}},
+        {"@type": "Question", "name": "Почему письменную часть нельзя проверить самому?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что эталона нет. Вы можете сверить отдельное слово или конструкцию, но не целый текст: в нём оценивается связность, уместность и то, что вы не сказали. Чужую проверенную работу посмотреть полезно, но своя остаётся непроверенной."}},
+        {"@type": "Question", "name": "Как отличить официальный список лексики от народного?", "acceptedAnswer": {"@type": "Answer", "text": "Смотрите, кто его собрал и что об этом написано. Составители народных списков обычно честно предупреждают, что список неофициальный. Если источник не указан вовсе — это повод насторожиться и сверить список с описанием уровня."}},
+        {"@type": "Question", "name": "Сколько времени занимает бесплатная подготовка?", "acceptedAnswer": {"@type": "Answer", "text": "По моему опыту она занимает заметно больше часов, чем подготовка с преподавателем: время уходит на поиск материалов и на самопроверку. Это честный размен — вы платите временем вместо денег, и для многих он оправдан."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/besplatnoe-obuchenie-kitayskomu-hsk-3-0#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Бесплатное обучение китайскому под HSK 3.0: что реально даётся даром, а за что придётся платить", "item": "https://kitai-school.ru/article/besplatnoe-obuchenie-kitayskomu-hsk-3-0"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Подготовка</p>
+<h1>Бесплатное обучение китайскому под HSK 3.0: <span class="italic">что реально даётся даром, а за что придётся платить</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-15">15 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/besp-hero.png" alt="Путь от начала подготовки до сертификата: отрезки, которые проходятся даром, и отмеченные на дороге места, где заплатить придётся" width="1200" height="630"></figure>
+
+<p class="lead">Начну с того, о чём обычно умалчивают страницы с таким заголовком. <b>Сдать экзамен бесплатно нельзя:</b> регистрация платная, и это не обходится никак. Всё остальное — вопрос того, какую часть подготовки вы готовы вытянуть сами.</p>
+
+<p>А часть эта большая. Ниже разберём по навыкам: что закрывается даром целиком, что наполовину и что не закрывается вовсе, — и сколько такой путь стоит в часах.</p>
+
+<h2>Короткий ответ: <span class="italic">совсем бесплатно не выйдет</span></h2>
+
+<p>Деление простое и держится на одном признаке. <b>Там, где есть эталон, с которым вы сверяете себя, преподаватель не обязателен.</b> Там, где эталоном служит другой человек, бесплатное заканчивается.</p>
+
+<p>У слова эталон — обратная сторона карточки. У текста — словарь и перевод. У задания из образца — ключ с ответами. А вот у вашего собственного произношения эталона нет: вы слышите то, что хотели сказать, а не то, что произнесли. Эту границу подробно разбирает соседняя статья: <a href="https://kitai-school.ru/article/izuchenie-kitajskogo-yazyka-s-nulya-s-chego-nachat" target="_blank" rel="noopener">что можно выучить самому, а что нет</a>.</p>
+
+<h2>Четыре места, <span class="italic">где придётся заплатить</span></h2>
+
+<p>Соберу их сразу, чтобы дальше говорить только о бесплатном.</p>
+
+<table class="ks-tab ks-gate">
+  <thead><tr><th>Что</th><th>Почему платно</th><th>Можно ли обойти</th></tr></thead>
+  <tbody>
+    <tr><td><b>регистрация на экзамен</b></td><td>платная всегда</td><td>обойти нельзя</td></tr>
+    <tr><td><b>пересдача</b></td><td>оплачивается заново</td><td>обойти нельзя</td></tr>
+    <tr><td><b>проверка письменной части до экзамена</b></td><td>нужен человек</td><td>можно заменить обменом работами</td></tr>
+    <tr><td><b>постановка звука</b></td><td>нужен человек</td><td>обойти нельзя</td></tr>
+  </tbody>
+</table>
+
+<p><b>Регистрация и пересдача</b> не обходятся ничем: это взнос за сам экзамен. Сумму я здесь не называю — она зависит от центра и года, и устаревшая цифра в статье хуже, чем её отсутствие.</p>
+
+<p><b>Постановка звука</b> — единственный пункт, где я не вижу бесплатной замены вообще. Запись себя на диктофон помогает наполовину: вы слушаете её тем же ухом, которое и не услышало ошибку в первый раз.</p>
+
+<p><b>А вот проверку письменной работы</b> частично заменить можно — обменом с другим изучающим. Это хуже проверки преподавателем, но лучше, чем ничего: чужой текст вы читаете трезвее, чем свой, и наоборот.</p>
+
+<h2>Что закрывается <span class="italic">даром полностью</span></h2>
+
+<p>Два навыка из шести вытягиваются самостоятельно почти целиком, и это ровно та часть, на которую уходит больше всего времени.</p>
+
+<p><b>Лексика.</b> Списки слов, карточки, повторение по расписанию — всё это не требует ни денег, ни собеседника. Слово либо узнаётся мгновенно, либо нет, и это видно вам самому лучше, чем кому-либо.</p>
+
+<p><b>Чтение.</b> Тексты своего уровня и разбор со словарём. Единственное, во что упирается самостоятельное чтение, — скорость: без замера легко застрять на комфортном темпе и не заметить этого. Лечится секундомером.</p>
+
+<p>Вместе эти два навыка — большая часть подготовки к любому уровню. Если вы закрываете их сами, оплачивать остаётся немного.</p>
+
+<p><b>Почему это работает именно здесь.</b> И лексика, и чтение устроены так, что ошибка видна сразу: слово либо вспомнилось, либо нет, предложение либо сложилось, либо осталось набором знаков. Обратная связь приходит в ту же секунду и не требует посредника.</p>
+
+<p>С остальными навыками не так. В аудировании вы не всегда понимаете, что именно не расслышали — слово, которого не знаете, или знакомое слово в беглой речи. В письме ошибка может быть не в том, что написано неверно, а в том, что написано не то. Такую разницу сам себе не объяснишь.</p>
+
+<p><b>Отсюда рабочее правило распределения денег.</b> Если бюджет ограничен, его не стоит размазывать на регулярные занятия по всему. Полезнее оставить себе всё, где есть эталон, и купить только то, где его нет.</p>
+
+<h2>Докуда дотягивает <span class="italic">бесплатное</span></h2>
+
+<p>Вот как это выглядит по всем шести навыкам сразу.</p>
+
+<figure class="ks-fig"><img src="assets/besp-info.png" alt="Полосы по навыкам: насколько далеко уводит самостоятельная бесплатная работа и где она упирается" width="1200" height="720"><figcaption>Длина полосы — та часть навыка, которую вытягивает самостоятельная работа; дальше начинается то, что нужно проверять со стороны.</figcaption></figure>
+
+<table class="ks-tab ks-skill">
+  <thead><tr><th>Навык</th><th>Закрывается даром</th><th>Чем именно</th><th>Где упирается</th></tr></thead>
+  <tbody>
+    <tr><td><b>Лексика</b></td><td>полностью</td><td>списки слов, карточки, повторение по расписанию</td><td>почти ни во что: слово либо узнаётся, либо нет, и это видно самому</td></tr>
+    <tr><td><b>Чтение</b></td><td>полностью</td><td>тексты своего уровня и разбор со словарём</td><td>в скорость: без замера легко застрять на комфортном темпе</td></tr>
+    <tr><td><b>Аудирование</b></td><td>частично</td><td>записи, подкасты, повторное прослушивание знакомого</td><td>в разбор ошибки: непонятое место сам себе не объяснишь</td></tr>
+    <tr><td><b>Формат экзамена</b></td><td>частично</td><td>образцы заданий и прогоны по времени</td><td>в количество: образцов меньше, чем нужно для привыкания</td></tr>
+    <tr><td><b>Письменная часть</b></td><td>нет</td><td>образцы и чужие проверенные работы</td><td>в проверку: свою письменную работу оценить самому нельзя</td></tr>
+    <tr><td><b>Произношение</b></td><td>нет</td><td>запись себя на диктофон и сравнение с эталоном</td><td>в собственное ухо: вы слышите то, что хотели сказать</td></tr>
+  </tbody>
+</table>
+
+<p>Доли на полосах — <b>моя оценка по опыту занятий</b>, а не чьё-то измерение. Я привожу их не как точные числа, а чтобы показать порядок: разница между лексикой и произношением здесь принципиальная, а между аудированием и форматом — нет.</p>
+
+<h2>Где оно <span class="italic">упирается</span></h2>
+
+<p>Два навыка в самом низу списка и дают ту самую границу.</p>
+
+<p><b>Письменная часть.</b> Отдельное слово или конструкцию вы сверите. Целый текст — нет: в нём оценивается связность, уместность и то, чего вы не написали. Образцы чужих проверенных работ помогают понять планку, но собственная работа остаётся неоценённой.</p>
+
+<p><b>Произношение.</b> Здесь бесплатного решения просто нет: диктофон даёт половину, потому что запись вы слушаете тем же ухом.</p>
+
+<h2>Чем я заменяю платное, <span class="italic">когда денег нет</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица пришла с необычной просьбой: не занятий, а проверки. Денег хватало на одну встречу в месяц, и тратить её на объяснение грамматики, которую можно прочитать самой, она не хотела.</p>
+  <p>Мы построили работу так. Три недели она занималась бесплатно и одна: набирала лексику, читала тексты своего уровня, проходила образцы заданий по секундомеру. Всё это не требует ни денег, ни собеседника — у каждого такого упражнения есть эталон, с которым можно сверить себя.</p>
+  <p><b>Встречу раз в месяц мы тратили только на то, что она проверить не могла:</b> письменную работу и звук. Она приносила тексты, написанные за месяц, и читала вслух; я правила.</p>
+  <p>За полгода она закрыла уровень. Потратила при этом меньше, чем стоит месяц обычных занятий, — и, что важнее, не потратила ни одной оплаченной минуты на то, что умела делать сама.</p>
+  <p>Оговорюсь честно: так получается не у всех. Схема требует дисциплины, которой у большинства нет, — три недели подряд работать одному, без расписания и без человека, который ждёт домашнее задание. Половина тех, кому я это предлагала, возвращались к обычным занятиям именно по этой причине, а не из-за языка.</p>
+  <p><b>Вывод, который я делаю:</b> бесплатное закрывает ту часть подготовки, где есть эталон для сверки, и не закрывает ту, где эталоном служит другой человек.</p>
+</div>
+
+<h2>Списки лексики: <span class="italic">официальный против народного</span></h2>
+
+<p>Главная ловушка бесплатных материалов выглядит безобидно: вы скачиваете список слов и учите его полгода.</p>
+
+<table class="ks-tab ks-caut">
+  <thead><tr><th>На что смотреть</th><th>В чём дело</th><th>Что делать</th></tr></thead>
+  <tbody>
+    <tr><td><b>списки лексики из сети</b></td><td>встречаются народные версии, собранные читателями</td><td>сверять с официальным описанием уровня</td></tr>
+    <tr><td><b>готовые «полные» наборы заданий</b></td><td>их авторство обычно не указано</td><td>использовать как тренажёр, а не как эталон</td></tr>
+    <tr><td><b>курсы «бесплатно навсегда»</b></td><td>обычно бесплатна только первая часть</td><td>смотреть, где начинается оплата</td></tr>
+  </tbody>
+</table>
+
+<p><b>Как отличить.</b> Составители народных списков обычно честно пишут, что список собран читателями и официальным не является. Настораживать должно обратное — когда источник не указан вовсе, а список подан как единственно верный.</p>
+
+<p>Проверять стоит не весь список, а его края: несколько слов из начала и несколько из конца сверить с официальным описанием уровня. Если расхождений нет, списком можно пользоваться как рабочим.</p>
+
+<p>И ещё: словники пересматриваются. Список, выложенный пару лет назад, мог устареть целиком — это отдельная причина сверять, а не доверять.</p>
+
+<h2>Образцы заданий: <span class="italic">сколько их и чего в них нет</span></h2>
+
+<p>Образцы заданий центр тестирования публикует — это нормальная практика для любого экзамена. Сколько их сейчас выложено и в каком виде, я утверждать не берусь: <b>портал экзамена из моей рабочей среды не открывается</b>, а пересказывать чужие описания как свою проверку нечестно.</p>
+
+<p>Что я могу сказать уверенно: <b>официальных образцов всегда меньше, чем нужно для привыкания к формату.</b> Их хватает, чтобы понять устройство заданий, и не хватает, чтобы натренировать скорость.</p>
+
+<p>Дальше начинаются сборники, собранные кем угодно. Пользоваться ими можно — как тренажёром, но не как эталоном: расхождение с настоящим экзаменом вы заметите только на экзамене.</p>
+
+<h2>Сколько времени стоит <span class="italic">бесплатная подготовка</span></h2>
+
+<p>Это честный размен, и считать его нужно в часах.</p>
+
+<p>Самостоятельная подготовка занимает заметно больше времени, чем та же подготовка с преподавателем, и уходит оно не на язык. Уходит на поиск материалов, на проверку того, что нашли, на самопроверку и на возвращение к тому, что сделали неправильно месяц назад.</p>
+
+<p><b>Точных цифр я не назову</b> — они слишком зависят от человека. Но порядок такой: там, где с преподавателем уходит час, самостоятельно уходит полтора-два, и это нормально, а не признак неспособности.</p>
+
+<p>Есть и обратная сторона, о которой стоит сказать. Эти лишние часы тратятся не впустую: разбираясь сам, человек запоминает прочнее, чем когда ему объяснили. Самостоятельная работа медленнее, но то, что в ней усвоено, держится дольше.</p>
+
+<p>Вопрос поэтому не в том, дешевле ли бесплатное. Вопрос в том, <b>есть ли у вас эти лишние часы</b> — и дисциплина, чтобы проводить их за столом без человека, который ждёт домашнее задание.</p>
+
+<h2>План бесплатной подготовки</h2>
+
+<ol>
+  <li><b>Узнать свой уровень и порог.</b> Без этого не ясно, сколько слов набирать. Пороги у нас разобраны отдельно: <a href="https://kitai-school.ru/article/sistema-ocenki-hsk-4" target="_blank" rel="noopener">система оценки HSK</a>.</li>
+  <li><b>Взять список лексики и проверить его края.</b> Полдня работы, которая экономит месяцы.</li>
+  <li><b>Набирать слова ежедневно, маленькими порциями.</b> Это та часть, где бесплатное работает лучше всего.</li>
+  <li><b>Читать тексты своего уровня с секундомером.</b> Раз в две недели замерять скорость на одном и том же тексте.</li>
+  <li><b>Пройти официальные образцы по времени.</b> Не для баллов, а чтобы снять удивление от формата.</li>
+  <li><b>Найти проверку для письма и звука.</b> Обмен с другим изучающим, редкие платные встречи — но не пропускать совсем.</li>
+</ol>
+
+<p><b>Если денег мало, тратить их нужно не на объяснения, а на проверку.</b> Грамматику можно прочитать самому, а вот услышать свою ошибку — нет.</p>
+
+<p>Шестой пункт и отличает подготовку от имитации подготовки. Первые пять можно делать годами и не узнать, что произношение не разбирают носители.</p>
+
+<h2>Частые ошибки</h2>
+
+<ol>
+  <li><b>Считать, что бесплатно — значит полностью.</b> Регистрация платная, и это выясняется в самый неподходящий момент.</li>
+  <li><b>Учить список, не проверив его.</b> Народный словник может разойтись с официальным настолько, что часть работы пропадёт.</li>
+  <li><b>Тратить редкие платные встречи на грамматику.</b> Её можно прочитать. Проверку — нельзя.</li>
+  <li><b>Не замерять скорость чтения.</b> Самая незаметная потеря: кажется, что читаешь, а темп стоит на месте.</li>
+  <li><b>Откладывать звук «на потом».</b> Переучивать произношение дороже, чем поставить сразу. Что именно ставят на занятиях по звуку, у нас разобрано отдельно — ссылка есть в статье про самостоятельное изучение: <a href="https://kitai-school.ru/article/kak-izuchit-kitajskij-yazyk-samostoyatelno-iz-chego-sostoit-zanyatie" target="_blank" rel="noopener">как изучить китайский самостоятельно</a>.</li>
+</ol>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Названий сайтов, приложений и каналов.</b> Мы не ставим внешних ссылок, а рекомендовать то, что я не проверила лично, не стану.</li>
+  <li><b>Стоимости экзамена.</b> Зависит от центра и года; устаревшая цифра хуже её отсутствия.</li>
+  <li><b>Утверждения, что официальные образцы лежат там-то.</b> Портал из рабочей среды не открылся.</li>
+  <li><b>Даты публикации нового словника.</b> Описания расходятся, и уверенно я её не назову.</li>
+  <li><b>Разбора уровней 3.0.</b> Девять уровней, переход и сроки — в статье про <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK</a>.</li>
+  <li><b>Методики самостоятельного занятия.</b> Как устроить неделю и из чего состоит одно занятие — здесь: <a href="https://kitai-school.ru/article/kak-izuchit-kitajskij-yazyk-samostoyatelno-iz-chego-sostoit-zanyatie" target="_blank" rel="noopener">как изучить китайский самостоятельно</a>.</li>
+</ul>
+
+<div class="cta">
+  <p><b>Если нужна именно проверка, а не занятия</b> — так тоже можно. Мы разбираем письменные работы и звук точечно, не заставляя оплачивать то, что вы делаете сами.</p>
+  <p><a href="#popup:zayavka">Приходите на пробное занятие</a> — посмотреть форматы можно здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли подготовиться к HSK 3.0 бесплатно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Подготовиться — в значительной части да, сдать — нет. Регистрация на экзамен платная в любом случае, и обойти это нельзя. А вот лексику, чтение и работу с форматом действительно можно закрыть самостоятельно и без денег.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>За что придётся заплатить обязательно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>За регистрацию на экзамен и, если не набрали порог, за пересдачу — она оплачивается заново. Ещё деньги понадобятся там, где нужен человек: поставить произношение и проверить письменную работу самому не выйдет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что из подготовки закрывается даром полностью?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Лексика и чтение. У обоих есть эталон, с которым вы сверяетесь сами: у слова — обратная сторона карточки, у текста — перевод и словарь. Там, где есть с чем сверить себя, преподаватель не обязателен.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему письменную часть нельзя проверить самому?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что эталона нет. Вы можете сверить отдельное слово или конструкцию, но не целый текст: в нём оценивается связность, уместность и то, что вы не сказали. Чужую проверенную работу посмотреть полезно, но своя остаётся непроверенной.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как отличить официальный список лексики от народного?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Смотрите, кто его собрал и что об этом написано. Составители народных списков обычно честно предупреждают, что список неофициальный. Если источник не указан вовсе — это повод насторожиться и сверить список с описанием уровня.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько времени занимает бесплатная подготовка?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По моему опыту она занимает заметно больше часов, чем подготовка с преподавателем: время уходит на поиск материалов и на самопроверку. Это честный размен — вы платите временем вместо денег, и для многих он оправдан.</p></div>
+  </details>
+</div>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li>Платность регистрации и пересдачи — общее правило экзамена, подтверждается описаниями центров.</li>
+    <li>О том, что собственное произношение не проверяется самостоятельно, у нас написано отдельно; здесь я на это опираюсь и ссылаюсь.</li>
+    <li><b>Доли на полосах — моя оценка по опыту занятий</b>, а не измерение; в тексте это сказано прямо.</li>
+    <li><b>Названий сторонних ресурсов не привожу:</b> рекомендовать непроверенное я не стану, а внешних ссылок блог не ставит.</li>
+    <li><b>Стоимость экзамена не называю:</b> зависит от центра и года.</li>
+    <li><b>Что именно сейчас выложено на портале экзамена, не утверждаю:</b> открыть его при подготовке материала не вышло.</li>
+    <li><b>Дату публикации нового словника не называю:</b> описания расходятся между собой.</li>
+    <li>Разбор уровней и порогов вынесен в другие материалы блога; ссылки стоят по тексту.</li>
+    <li>Случай с подготовкой за одну встречу в месяц взят из занятий Kitai School; имя ученицы не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Бесплатное закрывает то, что можно сверить с эталоном, и не закрывает то, где эталон — человек</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
