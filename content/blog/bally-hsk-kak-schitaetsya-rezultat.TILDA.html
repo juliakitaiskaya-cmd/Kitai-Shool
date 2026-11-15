@@ -1,0 +1,485 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/bally-hsk-kak-schitaetsya-rezultat#article",
+      "headline": "Баллы HSK: как считается результат, какой проходной балл и что значит ваша оценка",
+      "description": "Разбор того, как из верных ответов получается балл на экзамене по китайскому языку: сколько вопросов в аудировании, чтении и письме на каждом из шести уровней, сколько баллов весит один ответ и почему он дешевеет от уровня к уровню, как в три шага прикинуть результат пробника и почему письменную часть в этой прикидке честнее оставить пустой, что показывает отчёт о результате и почему точного счётчика баллов не существует.",
+      "image": "https://static.tildacdn.com/tila3161-3032-4661-b565-373566323736/ballhsk-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-15",
+      "dateModified": "2026-11-15",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/bally-hsk-kak-schitaetsya-rezultat",
+      "about": {
+        "@type": "Thing",
+        "name": "Подсчёт баллов на экзамене по китайскому языку"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/bally-hsk-kak-schitaetsya-rezultat#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какой максимальный балл за китайский экзамен?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от уровня. На первом и втором разделов два — аудирование и чтение, каждый по сто баллов, то есть максимум двести. С третьего уровня добавляется письмо, и максимум становится триста. Каждый раздел всегда оценивается в сто баллов, сколько бы вопросов в нём ни было."}},
+        {"@type": "Question", "name": "Какой проходной балл на HSK 1 и HSK 2?", "acceptedAnswer": {"@type": "Answer", "text": "Сто двадцать из двухсот. На уровнях с письмом порог выше — сто восемьдесят из трёхсот. В обоих случаях это одна и та же доля: три пятых от максимума. Подробнее про пороги и про то, как собирается итоговая сумма, разобрано в статье про систему оценки четвёртого уровня."}},
+        {"@type": "Question", "name": "Сколько баллов стоит один вопрос?", "acceptedAnswer": {"@type": "Answer", "text": "Сто баллов раздела, поделённые на число вопросов в нём. На первом уровне в аудировании двадцать вопросов, значит один ответ весит пять баллов. На шестом вопросов пятьдесят, и один ответ весит два балла. Это наш расчёт, а не официальная шкала: он показывает цену ошибки, а не способ начисления баллов."}},
+        {"@type": "Question", "name": "Как посчитать баллы пробника?", "acceptedAnswer": {"@type": "Answer", "text": "В три шага. Сначала по каждому разделу умножьте число верных ответов на цену вопроса. Потом сложите то, что получилось. Потом сравните с порогом и посмотрите, сколько осталось добрать. Письмо в прикидку не включайте: его балл ставит проверяющий."}},
+        {"@type": "Question", "name": "Есть ли точный счётчик баллов онлайн?", "acceptedAnswer": {"@type": "Answer", "text": "Точного нет и быть не может. Любой калькулятор считает ровно то же, что считаете вы: верные ответы на цену вопроса. Письменную часть он оценить не может, а официальная обработка результата идёт по своей шкале, которая не публикуется."}},
+        {"@type": "Question", "name": "Какой минимум на устном экзамене?", "acceptedAnswer": {"@type": "Answer", "text": "Устный экзамен считают по другой системе, и его баллы с письменным не складываются — это отдельный результат и отдельный сертификат. Как устроена подготовка к устной части, разобрано в отдельной статье блога."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/bally-hsk-kak-schitaetsya-rezultat#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Баллы HSK: как считается результат, какой проходной балл и что значит ваша оценка", "item": "https://kitai-school.ru/article/bally-hsk-kak-schitaetsya-rezultat"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамен</p>
+<h1>Баллы HSK: <span class="italic">как считается результат, какой проходной балл и что значит ваша оценка</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-15">15 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila3161-3032-4661-b565-373566323736/ballhsk-hero.png" alt="Шесть столбцов от HSK 1 к HSK 6: сколько баллов весит один вопрос аудирования на каждом уровне и сколько вопросов в разделе" width="1200" height="630"></figure>
+
+<p class="lead">Почти все, кто готовится к экзамену, знают проходной балл и не знают цену одной ошибки. А это разные вещи: <b>на первом уровне один неверный ответ в аудировании стоит пять баллов, на шестом — два</b>. Разница в два с половиной раза, и она меняет то, как стоит писать тест.</p>
+
+<p>Разберём, из чего складывается результат: сколько вопросов в каждом разделе, сколько весит один ответ, как в три шага прикинуть результат пробника и почему к письменной части эта прикидка неприменима.</p>
+
+<h2>Короткий ответ: <span class="italic">две суммы и один порог</span></h2>
+
+<p>Устройство простое. <b>Каждый раздел оценивается в сто баллов</b>, сколько бы вопросов в нём ни было. Разделов либо два, либо три.</p>
+
+<p>На первом и втором уровнях их два — аудирование и чтение. Максимум двести, порог сто двадцать. С третьего уровня добавляется письмо: максимум триста, порог сто восемьдесят.</p>
+
+<p>Порог в обоих случаях одна и та же доля — три пятых от максимума. Подробный разбор порогов и того, как собирается итоговая сумма, у нас есть отдельно: <a href="https://kitai-school.ru/article/sistema-ocenki-hsk-4" target="_blank" rel="noopener">система оценки HSK 4</a>. Здесь я о другом — о том, что происходит внутри ста баллов раздела.</p>
+
+<h2>Сколько вопросов <span class="italic">в каждом разделе</span></h2>
+
+<p>Число вопросов растёт с уровнем, а сто баллов за раздел остаются теми же. Отсюда всё остальное.</p>
+
+<table class="ks-tab ks-q">
+  <thead><tr><th>Уровень</th><th>Аудирование</th><th>Чтение</th><th>Письмо</th><th>Всего</th><th>Максимум</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>20</td><td>20</td><td>—</td><td>40</td><td>200</td><td>120</td></tr>
+    <tr><td><b>HSK 2</b></td><td>35</td><td>25</td><td>—</td><td>60</td><td>200</td><td>120</td></tr>
+    <tr><td><b>HSK 3</b></td><td>40</td><td>30</td><td>10</td><td>80</td><td>300</td><td>180</td></tr>
+    <tr><td><b>HSK 4</b></td><td>45</td><td>40</td><td>15</td><td>100</td><td>300</td><td>180</td></tr>
+    <tr><td><b>HSK 5</b></td><td>45</td><td>45</td><td>10</td><td>100</td><td>300</td><td>180</td></tr>
+    <tr><td><b>HSK 6</b></td><td>50</td><td>50</td><td>1</td><td>101</td><td>300</td><td>180</td></tr>
+  </tbody>
+</table>
+
+<p>Обратите внимание на последнюю строку: <b>на шестом уровне письменная часть — это одно задание</b>. Не десять и не пятнадцать, а одно. К нему вернёмся отдельно, потому что оно меняет всю стратегию подготовки на этом уровне.</p>
+
+<p>И ещё одно наблюдение из таблицы. Между вторым и третьим уровнем число вопросов растёт с шестидесяти до восьмидесяти, но вместе с ними добавляется целый раздел и сто баллов максимума. Переход со второго на третий — самый заметный скачок во всей линейке, и готовиться к нему как к следующему шагу той же лестницы не стоит.</p>
+
+<h2>Сколько стоит <span class="italic">один вопрос</span></h2>
+
+<p>Считается это делением: сто баллов раздела на число вопросов в нём.</p>
+
+<table class="ks-tab ks-p">
+  <thead><tr><th>Уровень</th><th>Аудирование</th><th>Чтение</th><th>Письмо</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>5,0</td><td>5,0</td><td>—</td></tr>
+    <tr><td><b>HSK 2</b></td><td>2,9</td><td>4,0</td><td>—</td></tr>
+    <tr><td><b>HSK 3</b></td><td>2,5</td><td>3,3</td><td>10,0</td></tr>
+    <tr><td><b>HSK 4</b></td><td>2,2</td><td>2,5</td><td>6,7</td></tr>
+    <tr><td><b>HSK 5</b></td><td>2,2</td><td>2,2</td><td>10,0</td></tr>
+    <tr><td><b>HSK 6</b></td><td>2,0</td><td>2,0</td><td>100,0</td></tr>
+  </tbody>
+</table>
+
+<p><b>Сразу оговорюсь, что это такое.</b> Это наш расчёт, а не опубликованная шкала. Официальная обработка результата устроена сложнее, и методику её никто не публикует. Деление ста баллов на число вопросов показывает цену ошибки — то есть насколько дорого обходится каждый промах, — и для подготовки этого достаточно.</p>
+
+<p>Что видно из таблицы. На первом уровне один ответ весит 5,0 балла, на шестом — 2,0. Дальше цена падает: на втором — 2,9, на третьем — 2,5, на четвёртом и пятом — 2,2, на шестом — 2,0.</p>
+
+<p>Отдельная строка — письмо на шестом уровне. Там задание одно, и стоит оно все сто баллов раздела.</p>
+
+<h2>Почему вопрос <span class="italic">дешевеет с уровнем</span></h2>
+
+<p>Причина арифметическая: вопросов становится больше, а сто баллов не меняются. Но следствия из этого вполне практические.</p>
+
+<p><b>На младших уровнях ошибка дорогая.</b> Четыре промаха в аудировании первого уровня — это двадцать баллов из ста, пятая часть раздела. На шестом те же четыре промаха стоят восемь баллов. Поэтому на первом и втором уровнях аккуратность важнее скорости: перепроверить ответ полезнее, чем успеть всё.</p>
+
+<p><b>На старших уровнях дорого время.</b> Там вопросов вдвое больше, каждый стоит мало, и главный риск не ошибиться, а не дойти до конца. Незаполненный ответ и неверный ответ стоят одинаково, но незаполненных в конце бланка обычно набирается больше, чем ошибок по невнимательности.</p>
+
+<p>Отсюда простое правило, которое я повторяю всем, кто сдаёт пятый и шестой: <b>лучше ответить наугад, чем оставить пустым</b>. За неверный ответ ничего не вычитают, а вероятность угадать в вопросе с выбором отличается от нуля.</p>
+
+<p>На первом и втором уровнях это правило тоже работает, но там оно почти не нужно: вопросов мало, времени хватает, и до конца доходят все.</p>
+
+<h2>Как посчитать пробник: <span class="italic">три шага</span></h2>
+
+<p>Порядок простой, и он одинаковый на всех уровнях.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila3465-6365-4031-a330-383461613333/ballhsk-info.png" alt="Прикидка результата пробника в три шага: верные ответы умножаются на цену вопроса, складываются два раздела, отмечен порог и остаток, который нужно взять письмом" width="1200" height="520"><figcaption>Прикидка результата пробника: верные ответы умножаются на цену вопроса, складываются два раздела, остаток до порога остаётся на письмо.</figcaption></figure>
+
+<p><b>Шаг первый: по каждому разделу.</b> Число верных ответов умножьте на цену вопроса из таблицы выше. Возьмём пробник 4 уровня:</p>
+
+<ul>
+  <li><b>Аудирование:</b> 31 верных из 45, умножаем на 2,2 — получается <b>69</b>.</li>
+  <li><b>Чтение:</b> 28 верных из 40, умножаем на 2,5 — получается <b>70</b>.</li>
+</ul>
+
+<p><b>Шаг второй: сложить.</b> 69 плюс 70 — 139 из 300 возможных. Это сумма двух разделов из трёх, и сравнивать её с порогом пока рано.</p>
+
+<p><b>Шаг третий: посмотреть остаток.</b> Порог 180. Значит, письмом нужно взять 41 из ста возможных. Вот это и есть результат прикидки — не оценка, а запас.</p>
+
+<p>Такая цифра полезнее итоговой суммы. Она отвечает на вопрос, который действительно стоит перед человеком перед экзаменом: насколько сильным должно быть письмо, чтобы набрать порог, и реально ли это сейчас.</p>
+
+<p><b>Округление.</b> Цена вопроса почти нигде не делится нацело, и результат получается с запятой. Округляйте в меньшую сторону: прикидка должна быть осторожной, а не бодрой.</p>
+
+<h2>Как я считаю пробник <span class="italic">ученику</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица принесла на занятие пробник пятого уровня и свой подсчёт: вышло сто девяносто пять, порог сто восемьдесят, и она пришла довольная. Я попросила показать, как считала.</p>
+  <p>Аудирование и чтение были посчитаны верно, здесь всё сошлось. <b>А вот письменную часть она оценила себе сама</b> — поставила почти полный балл за два текста, которых никто, кроме неё, не читал.</p>
+  <p>Мы пересчитали. Без письма у неё выходило сто двадцать восемь из двухсот возможных по двум разделам: честный результат, с которым можно работать. Если добавить к нему реалистичную оценку за письмо, выходило около ста семидесяти — то есть ниже порога, а не выше.</p>
+  <p><b>Вся разница между её подсчётом и моим лежала в той части, которую нельзя оценить самому.</b> Аудирование и чтение проверяются по ключу: ответ либо совпал, либо нет. Письмо проверяет человек, и ученик, который только что его написал, почти всегда ставит себе больше.</p>
+  <p>Объяснение здесь простое и не обидное: когда вы перечитываете собственный текст, вы читаете не то, что написано, а то, что хотели сказать. Пропущенный иероглиф достраивается в голове, кривая конструкция кажется понятной, потому что замысел известен заранее. Проверяющий этого замысла не знает.</p>
+  <p>С тех пор я прошу считать пробник до письма и останавливаться. Две цифры: сколько набрано по аудированию и чтению и сколько осталось до порога. Вторая цифра и есть вся полезная информация: она показывает, насколько сильным должно быть письмо, чтобы набрать порог.</p>
+  <p><b>Вывод, который я делаю:</b> прикидка по аудированию и чтению честная, а балл за письмо в самоподсчёте почти всегда завышен. Считайте то, что проверяется по ключу, а остальное оставляйте пустым — так пробник показывает запас, а не желаемое.</p>
+</div>
+
+<h2>HSK 1 и HSK 2: <span class="italic">подсчёт без письма</span></h2>
+
+<p>На этих уровнях прикидка работает лучше всего, потому что считать можно всё.</p>
+
+<p>Разделов два, оба проверяются по ключу, письма нет. <b>Это единственный случай, когда ваш подсчёт близок к настоящему результату</b> — пропущенной части просто нет.</p>
+
+<p>Считается так же: верные ответы на цену вопроса, потом сложить. На первом уровне цена одна и та же в обоих разделах — по двадцать вопросов в каждом. На втором разделы разные: тридцать пять вопросов в аудировании и двадцать пять в чтении, поэтому и цена ответа разная.</p>
+
+<p>Из этого выходит неочевидная вещь: <b>на втором уровне одна ошибка в чтении стоит дороже, чем одна ошибка в аудировании</b>. Вопросов в чтении меньше, а раздел стоит те же сто баллов. Это стоит помнить, распределяя время: экономить минуту на чтении, чтобы перепроверить аудирование, невыгодно.</p>
+
+<p>Как устроены сами пробные тесты и как с ними работать, у нас разобрано по уровням — например, <a href="https://kitai-school.ru/article/hsk-5-probnyy-test" target="_blank" rel="noopener">пробный тест HSK 5</a>.</p>
+
+<h2>HSK 3 и HSK 5: <span class="italic">где прикидка ломается</span></h2>
+
+<p>На уровнях с письмом подсчёт перестаёт быть точным, и важно понимать, в каком месте.</p>
+
+<p>Аудирование и чтение считаются как прежде — по ключу. <b>Письмо не считается никак</b>, потому что его оценивает человек, а не ключ. Никакого способа узнать свой балл за письменную часть до результата не существует.</p>
+
+<p>Соблазн поставить себе оценку самому велик, и почти все ему поддаются. Выходит завышение, причём предсказуемое: свой текст всегда кажется понятнее, чем он есть, потому что замысел известен автору заранее.</p>
+
+<p><b>Что делать вместо этого.</b> Считайте два раздела, фиксируйте остаток до порога и смотрите на него трезво. Если до порога не хватает двадцати баллов — письма почти наверняка хватит. Если не хватает шестидесяти — не хватит, и готовиться нужно не к письму, а к тем разделам, где баллов меньше всего.</p>
+
+<p>Третий уровень здесь в особом положении: письменных заданий там десять, и каждое весит по десять баллов. Провал одного стоит немного. На пятом заданий тоже десять, но и уровень требований другой — впрочем, считать свой балл там так же нельзя.</p>
+
+<h2>HSK 6: <span class="italic">всё письмо в одном задании</span></h2>
+
+<p>Этот случай стоит разобрать отдельно, потому что он устроен не как остальные.</p>
+
+<p>На третьем, четвёртом и пятом уровнях письменных заданий несколько, и провал одного из них стоит части раздела. <b>На шестом задание одно — и оно стоит весь раздел целиком</b>, то есть сто баллов из трёхсот возможных.</p>
+
+<p>Треть результата зависит от одного текста. Если он не написан или написан плохо, из трёхсот остаётся максимум двести, а порог — сто восемьдесят. Запас почти исчезает: придётся взять девяносто процентов от двух оставшихся разделов.</p>
+
+<p><b>Что из этого следует для подготовки.</b> На шестом уровне нельзя готовиться «в целом» и рассчитывать, что чтение покроет недостачу. Письменное задание придётся тренировать отдельно и регулярно, потому что заменить его нечем.</p>
+
+<p>И обратная сторона: хорошо написанный текст на шестом даёт такой запас, какого не даст ни один другой раздел. Сто баллов за одну работу — это больше, чем можно выиграть аккуратностью в аудировании.</p>
+
+<h2>«Счётчик баллов онлайн»: <span class="italic">почему точного нет</span></h2>
+
+<p>Запрос популярный, и ответ на него разочаровывающий.</p>
+
+<p><b>Любой калькулятор считает ровно то же, что считаете вы:</b> верные ответы на цену вопроса. Больше ему взять неоткуда. Он не видел вашей письменной работы и не знает официальной шкалы обработки.</p>
+
+<p>Поэтому разница между счётчиком и листом бумаги только в удобстве. Если вам приятнее вбить числа в форму — пожалуйста, но считайте, что вы сделали ту же прикидку вручную, и относитесь к результату так же.</p>
+
+<p><b>Чего точно не стоит делать</b> — искать калькулятор, который «учитывает письмо». Такой расчёт может быть только выдуманным: данных для него не существует ни у кого, кроме проверяющего.</p>
+
+<p>И ещё одно. Иногда счётчик показывает результат, который сильно расходится с вашим ощущением от теста. Доверять в этом случае стоит не цифре и не ощущению, а пересчёту вручную: чаще всего расхождение объясняется тем, что в форму попало не то число вопросов.</p>
+
+<h2>Что написано <span class="italic">в отчёте о результате</span></h2>
+
+<p>Отчёт устроен по той же логике, что и подсчёт: в нём стоят баллы по каждому разделу отдельно и сумма.</p>
+
+<p>Читать его стоит именно по разделам, а не по сумме. <b>Сумма говорит, сдали вы или нет, а разделы говорят, что делать дальше.</b> Два человека с одинаковой суммой могут нуждаться в совершенно разной подготовке: у одного провалено аудирование, у другого письмо.</p>
+
+<p>На что смотреть в первую очередь — на самый низкий раздел. Именно он ограничивает результат, и именно в нём рост даётся быстрее всего, потому что расти есть куда.</p>
+
+<p><b>Чего в отчёте нет.</b> Раскладки по отдельным заданиям там не приводят: вы не узнаете, какой именно вопрос был засчитан, а какой нет. Поэтому разбирать ошибки нужно сразу после пробника, по своим записям, а не ждать официального результата.</p>
+
+<p>Про сам сертификат, его срок и то, что он подтверждает, у нас написано отдельно: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK</a>.</p>
+
+<h2>Устный экзамен <span class="italic">считают иначе</span></h2>
+
+<p>Здесь возникает самая частая путаница, и её стоит развести прямо.</p>
+
+<p><b>Устный экзамен — отдельное испытание с отдельным результатом и отдельным сертификатом.</b> Его баллы не складываются с письменным и не влияют на него. Сдать письменный и не сдать устный — обычная ситуация, и наоборот тоже.</p>
+
+<p>Путаница берётся из нумерации: уровни устного экзамена обозначаются своими цифрами, и человек, читающий «третий уровень», не всегда понимает, о каком экзамене речь. Проверять нужно по названию, а не по цифре.</p>
+
+<p>Как устроена подготовка к устной части и чем она отличается от письменной, разобрано отдельно: <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">как подготовиться к устному экзамену</a>.</p>
+
+<h2>Частые ошибки <span class="italic">в самоподсчёте</span></h2>
+
+<ol>
+  <li><b>Ставить себе балл за письмо.</b> Самая дорогая ошибка: завышает результат на десятки баллов и создаёт ложное спокойствие.</li>
+  <li><b>Считать в процентах от числа вопросов.</b> Доля верных ответов и балл — не одно и то же, когда разделов несколько и вопросов в них разное число.</li>
+  <li><b>Складывать баллы письменного и устного экзаменов.</b> Это разные результаты, и суммы у них не бывает.</li>
+  <li><b>Округлять в большую сторону.</b> Прикидка должна быть осторожной: округление вверх на трёх разделах легко даёт лишние пять баллов.</li>
+  <li><b>Сравнивать сумму двух разделов с полным порогом.</b> Пока письмо не учтено, сравнивать не с чем — смотреть нужно на остаток.</li>
+</ol>
+
+<div class="cta">
+  <p><b>Посчитали пробник и не понимаете, что делать с результатом?</b> На пробном занятии мы смотрим не на сумму, а на самый низкий раздел — именно он решает, сдадите вы или нет.</p>
+  <p><a href="#popup:zayavka">Приходите на пробное занятие</a>, форматы и программа — здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Официальной шкалы обработки результата.</b> Она не публикуется, и выдумывать её я не стану.</li>
+  <li><b>Раскладки баллов по отдельным заданиям.</b> Таких данных в открытых описаниях нет.</li>
+  <li><b>Критериев, по которым проверяют письмо.</b> Подробной шкалы проверяющего в открытом доступе я не нашла.</li>
+  <li><b>Порогов для нового стандарта.</b> Цифр, которым можно доверять, пока не встретила.</li>
+  <li><b>Подробного разбора подсчёта четвёртого уровня.</b> Он разобран отдельно: <a href="https://kitai-school.ru/article/sistema-ocenki-hsk-4" target="_blank" rel="noopener">как посчитать результат HSK 4</a>.</li>
+  <li><b>Названий сторонних счётчиков и приложений.</b> Блог на них не ссылается.</li>
+</ul>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой максимальный балл за китайский экзамен?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Зависит от уровня. На первом и втором разделов два — аудирование и чтение, каждый по сто баллов, то есть максимум двести. С третьего уровня добавляется письмо, и максимум становится триста. Каждый раздел всегда оценивается в сто баллов, сколько бы вопросов в нём ни было.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой проходной балл на HSK 1 и HSK 2?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сто двадцать из двухсот. На уровнях с письмом порог выше — сто восемьдесят из трёхсот. В обоих случаях это одна и та же доля: три пятых от максимума. Подробнее про пороги и про то, как собирается итоговая сумма, разобрано в статье про систему оценки четвёртого уровня.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько баллов стоит один вопрос?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сто баллов раздела, поделённые на число вопросов в нём. На первом уровне в аудировании двадцать вопросов, значит один ответ весит пять баллов. На шестом вопросов пятьдесят, и один ответ весит два балла. Это наш расчёт, а не официальная шкала: он показывает цену ошибки, а не способ начисления баллов.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как посчитать баллы пробника?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В три шага. Сначала по каждому разделу умножьте число верных ответов на цену вопроса. Потом сложите то, что получилось. Потом сравните с порогом и посмотрите, сколько осталось добрать. Письмо в прикидку не включайте: его балл ставит проверяющий.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Есть ли точный счётчик баллов онлайн?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Точного нет и быть не может. Любой калькулятор считает ровно то же, что считаете вы: верные ответы на цену вопроса. Письменную часть он оценить не может, а официальная обработка результата идёт по своей шкале, которая не публикуется.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой минимум на устном экзамене?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Устный экзамен считают по другой системе, и его баллы с письменным не складываются — это отдельный результат и отдельный сертификат. Как устроена подготовка к устной части, разобрано в отдельной статье блога.</p></div>
+  </details>
+</div>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li>Число вопросов по разделам для всех шести уровней приведено по описаниям структуры экзамена, совпавшим между собой.</li>
+    <li>Оценка каждого раздела в сто баллов, суммы двести и триста и пороги сто двадцать и сто восемьдесят — по тем же описаниям.</li>
+    <li><b>Цена одного вопроса — наш расчёт:</b> сто баллов раздела делятся на число вопросов в нём. Это не опубликованная шкала.</li>
+    <li><b>Официальной методики обработки результата не привожу:</b> она не публикуется.</li>
+    <li><b>Критериев проверки письменной части не называю</b> — подробной шкалы в открытом доступе найти не удалось.</li>
+    <li><b>Порогов нового стандарта не называю:</b> надёжных цифр пока нет.</li>
+    <li><b>Времени экзамена по уровням не указываю</b> — описания расходятся.</li>
+    <li><b>Сторонних сайтов и счётчиков не называю</b> и ссылок на них не ставлю.</li>
+    <li>Случай с подсчётом пробника взят из занятий Kitai School; имя ученицы не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Раздел всегда стоит сто баллов, а вопросов в нём разное число — отсюда и цена одного ответа</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
