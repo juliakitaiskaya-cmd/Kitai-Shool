@@ -40,6 +40,19 @@ for lvl, a, r, w in EXAMS:
 # пример расчёта: уровень, верных в каждом разделе
 EXAMPLE = (4, 31, 28, None)
 
+# расчёт примера — считается, а не вписывается
+_lvl, _ok_a, _ok_r, _ok_w = EXAMPLE
+_row = dict((e[0], e) for e in EXAMS)[_lvl]
+EX_LEVEL = _lvl
+EX_STEPS = [
+    ("аудирование", _ok_a, _row[1], round(_ok_a * SECTION_MAX / _row[1])),
+    ("чтение", _ok_r, _row[2], round(_ok_r * SECTION_MAX / _row[2])),
+]
+EX_TWO = sum(s[3] for s in EX_STEPS)          # сумма двух разделов
+EX_PASS = PASS[_lvl]                          # порог уровня
+EX_NEED = EX_PASS - EX_TWO                    # сколько добрать письмом
+EX_WRITE_MAX = SECTION_MAX
+
 # ----------------------------------------------------------------- проверки
 assert len(EXAMS) == 6, "уровней шесть"
 assert [e[0] for e in EXAMS] == list(range(1, 7)), "уровни идут подряд"
@@ -70,3 +83,11 @@ assert PRICE[6]["письмо"] == 100.0, "это задание весит ве
 assert all(PRICE[lvl]["письмо"] is None for lvl in NO_WRITING), "без письма цены нет"
 assert EXAMPLE[0] in WITH_WRITING and EXAMPLE[3] is None, \
     "в примере письмо считается отдельно, а не угадывается"
+
+assert len(EX_STEPS) == 2, "в примере считаются два раздела из трёх"
+assert all(0 < ok < total for name, ok, total, ball in EX_STEPS), \
+    "верных меньше, чем вопросов, и больше нуля"
+assert all(0 < ball < SECTION_MAX for name, ok, total, ball in EX_STEPS), \
+    "балл раздела внутри ста"
+assert EX_TWO < EX_PASS, "двух разделов на порог не хватает — в этом смысл примера"
+assert 0 < EX_NEED < EX_WRITE_MAX, "добрать письмом нужно, и это выполнимо"
