@@ -1,0 +1,452 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/uchebniki-hsk-3-0#article",
+      "headline": "Учебники HSK 3.0: какая серия официальная, чем она отличается от старого курса и как по ней заниматься",
+      "description": "Разбор учебных материалов под новый стандарт экзамена по китайскому: какая серия выпущена официально и кто её издал, почему серии под названием «Стандартный курс 3.0» не существует и откуда берётся эта путаница при покупке, как устроен комплект на каждом из девяти уровней — учебник с рабочей тетрадью на младших и отдельные тома по четырём навыкам на старших, что лежит внутри тетради и стоит ли менять учебники прежней серии. Разбор самих уровней, сроки перехода и пороги баллов остаются в отдельных статьях блога.",
+      "image": "assets/uch-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-15",
+      "dateModified": "2026-11-15",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/uchebniki-hsk-3-0",
+      "about": {
+        "@type": "Thing",
+        "name": "Учебные материалы для подготовки к экзамену по китайскому языку"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/uchebniki-hsk-3-0#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "По какому учебнику готовиться к HSK 3.0?", "acceptedAnswer": {"@type": "Answer", "text": "Под новый стандарт выпущена отдельная серия — New HSK Course, по-китайски 新HSK教程. Её выпустило издательство иностранных языков и научных исследований совместно с центром языкового образования. Это и есть официальный курс нового образца."}},
+        {"@type": "Question", "name": "Существует ли «Стандартный курс 3.0»?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. HSK Standard Course — серия предыдущего поколения, сделанная под прежний стандарт, и версии «3.0» у неё не выходило. Если в описании товара стоит такое название, скорее всего продавец перепутал серии: проверьте, что именно вам предлагают."}},
+        {"@type": "Question", "name": "Что входит в комплект на каждом уровне?", "acceptedAnswer": {"@type": "Answer", "text": "На уровнях с первого по шестой — учебник и рабочая тетрадь к нему. На седьмом, восьмом и девятом устройство другое: там отдельные тома по четырём навыкам — аудирование, говорение, чтение и письмо."}},
+        {"@type": "Question", "name": "Что внутри рабочей тетради?", "acceptedAnswer": {"@type": "Answer", "text": "Три части: разбор к уроку учебника, упражнения в формате экзамена и проверочные работы. Это по описанию тетради первого уровня — других томов я не смотрела и обобщать не буду."}},
+        {"@type": "Question", "name": "Выбрасывать ли старые учебники?", "acceptedAnswer": {"@type": "Answer", "text": "Не стоит. Лексика младших уровней почти не изменилась, и тексты с упражнениями работают как работали. Разойтись может формат заданий в тетради, но это добирается отдельными прогонами по новым образцам. Менять серию посреди уровня я не советую."}},
+        {"@type": "Question", "name": "Сколько слов в учебнике первого уровня?", "acceptedAnswer": {"@type": "Answer", "text": "Около трёхсот, и в нём пятнадцать уроков. В томе третьего уровня — восемнадцать уроков и около пятисот слов. По остальным томам точных цифр я не приводила: они выходят постепенно, и описания расходятся."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/uchebniki-hsk-3-0#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Учебники HSK 3.0: какая серия официальная, чем она отличается от старого курса и как по ней заниматься", "item": "https://kitai-school.ru/article/uchebniki-hsk-3-0"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Подготовка</p>
+<h1>Учебники HSK 3.0: <span class="italic">какая серия официальная, чем она отличается от старого курса и как по ней заниматься</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-15">15 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/uch-hero.png" alt="Две книжные полки рядом: корешки новой серии под стандарт 3.0 и корешки прежней серии, с подписями о составе комплекта" width="1200" height="630"></figure>
+
+<p class="lead">Самая частая ошибка при покупке выглядит безобидно: человек ищет «стандартный курс 3.0», находит товар с похожим названием и покупает учебник под прежний стандарт. <b>Серии с таким названием не существует</b> — и это стоит знать до оплаты, а не после.</p>
+
+<p>Разберём, какая серия выпущена под новый стандарт, как устроен комплект на каждом уровне, что лежит внутри тетради и что делать тем, у кого уже есть старые учебники.</p>
+
+<h2>Короткий ответ: <span class="italic">официальная серия одна</span></h2>
+
+<p>Под новый стандарт выпущена отдельная серия — <b>New HSK Course</b>, по-китайски <span class="han">新HSK教程</span>. Издало её издательство иностранных языков и научных исследований совместно с центром языкового образования.</p>
+
+<p>Это новая серия, а не обновлённое издание прежней. Прежняя — <b>HSK Standard Course</b>, <span class="han">HSK标准教程</span> — сделана под старый стандарт и под него же и остаётся.</p>
+
+<p><b>Сразу оговорюсь об источниках.</b> Всё, что я здесь привожу, собрано по описаниям магазинов и справочных материалов. Страницу самого издательства я не открывала, поэтому издания, тиражи и даты выхода отдельных томов не называю — только то, что совпало в нескольких независимых описаниях.</p>
+
+<h2>«Стандартный курс 3.0»: <span class="italic">серия, которой нет</span></h2>
+
+<p>«Стандартный курс 3.0» — серии с таким названием не существует: «Стандартный курс» сделан под прежний стандарт, а под 3.0 выпущена другая серия.</p>
+
+<p>Путаница возникает естественно. Прежняя серия много лет была основной, её название знают все, и когда появился новый стандарт, продавцы стали приписывать «3.0» к привычному имени — иногда по невнимательности, иногда чтобы товар находился по новому запросу.</p>
+
+<p><b>Как проверить перед покупкой.</b> Смотрите не на цифру в описании, а на само название серии и на то, что написано на обложке. Если это «Стандартный курс», вы держите в руках пособие под прежний стандарт, каким бы ни был заголовок объявления.</p>
+
+<p>Это не значит, что покупка бесполезна — к старой серии мы ещё вернёмся. Это значит, что вы покупаете не то, что искали.</p>
+
+<p><b>Второй источник путаницы — переводные названия.</b> Обе серии продаются под английскими именами, и в русских описаниях их переводят кто во что горазд: «новый курс», «стандартный курс», «официальный учебник». По переводу различить серии нельзя вовсе, поэтому смотреть нужно на оригинальное название.</p>
+
+<p>Проще всего ориентироваться по китайскому написанию на обложке: у новой серии и у прежней они разные, и перепутать их, держа книгу в руках, невозможно. В объявлении без фотографии обложки такой проверки нет — это повод попросить снимок.</p>
+
+<h2>Что входит в комплект <span class="italic">на каждом уровне</span></h2>
+
+<p>Устройство серии меняется на середине, и это важно понимать заранее.</p>
+
+<p><b>Уровни с первого по шестой</b> собраны привычно: учебник и рабочая тетрадь к нему. <b>Уровни с седьмого по девятый</b> устроены иначе — там отдельные тома по четырём навыкам: аудирование, говорение, чтение и письмо.</p>
+
+<p>Логика понятная. На старших уровнях нет смысла в едином учебнике «на всё»: задачи по навыкам расходятся слишком далеко, и человеку, которому нужно письмо, незачем покупать том по говорению.</p>
+
+<p><b>Что это меняет на практике.</b> До шестого уровня вы покупаете две книги и работаете по ним подряд: учебник задаёт порядок, тетрадь закрепляет. С седьмого набор собирается под задачу — и это первый момент, когда придётся решать, что именно вам нужно.</p>
+
+<p>Решение зависит от цели. Если готовитесь к экзамену целиком, нужны все четыре тома, и это заметная покупка. Если язык нужен для работы с документами, можно начать с чтения и письма, отложив говорение. На младших уровнях такого выбора нет и быть не может: там ещё нечего разделять.</p>
+
+<h2>Две серии <span class="italic">рядом</span></h2>
+
+<p>Соберу различия в одном месте.</p>
+
+<figure class="ks-fig"><img src="assets/uch-info.png" alt="Комплектность по девяти уровням: на младших пара «учебник и рабочая тетрадь», на старших четыре отдельных тома по навыкам" width="1200" height="500"><figcaption>На младших уровнях комплект состоит из двух книг, на старших — из четырёх отдельных томов по навыкам.</figcaption></figure>
+
+<table class="ks-tab ks-ser">
+  <thead><tr><th>Серия</th><th>Под какой стандарт</th><th>Статус</th><th>Что в комплекте</th></tr></thead>
+  <tbody>
+    <tr><td><b>New HSK Course</b><br><span class="han">新HSK教程</span></td><td>под стандарт 3.0</td><td>официальная серия нового образца</td><td>учебник и рабочая тетрадь на уровнях с первого по шестой, отдельные тома по навыкам на старших</td></tr>
+    <tr><td><b>HSK Standard Course</b><br><span class="han">HSK标准教程</span></td><td>под прежний стандарт</td><td>серия предыдущего поколения</td><td>учебник, рабочая тетрадь и пособие для учителя</td></tr>
+  </tbody>
+</table>
+
+<p>Сравнивать серии по методике я не берусь: <b>прямого сопоставления в источниках нет</b>, а выдавать свои впечатления за установленный факт неправильно. Что различается достоверно — это стандарт, под который сделан каждый курс, и устройство комплекта на старших уровнях.</p>
+
+<h2>Что внутри <span class="italic">рабочей тетради</span></h2>
+
+<p>Тетрадь в новой серии состоит из трёх частей, и это устройство стоит знать, чтобы не использовать её как простой задачник.</p>
+
+<ul>
+  <li><b>Разбор к уроку учебника.</b></li>
+  <li><b>Упражнения в формате экзамена.</b></li>
+  <li><b>Проверочные работы.</b></li>
+</ul>
+
+<p>Первая часть возвращает к уроку учебника, вторая тренирует формат экзамена, третья проверяет результат. <b>Это описание тетради первого уровня</b> — другие тома я не смотрела и обобщать на всю серию не стану.</p>
+
+<p>Практический вывод из такого устройства один: тетрадь не заменяет учебник и не идёт параллельно ему. Она идёт следом, и браться за её вторую часть имеет смысл, когда урок уже разобран.</p>
+
+<h2>Если вы уже занимаетесь <span class="italic">по старой серии</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик пришёл с полным комплектом старой серии, купленным за полгода до того, и единственным вопросом: выбрасывать ли. Он прочитал где-то, что учебники устарели, и расстроился — комплект обошёлся недёшево.</p>
+  <p>Я предложила не выбрасывать, а открыть и посмотреть, что внутри. <b>Лексика младших уровней почти не изменилась:</b> слова, которыми описывают семью, день и дорогу, те же самые, какой бы стандарт ни был на обложке. Тексты и упражнения работали ровно так же, как работали месяц назад.</p>
+  <p>Разошлось другое — формат части заданий в тетради. Но это касалось подготовки к экзамену, а не изучения языка, и решалось отдельными прогонами по новым образцам.</p>
+  <p><b>Он доучился по старому комплекту до конца своего уровня</b> и купил том новой серии только на следующий. Так вышло и дешевле, и спокойнее: менять учебник посреди уровня — значит заново привыкать к подаче, к порядку тем и к тому, как устроены упражнения.</p>
+  <p>Отдельно скажу, почему я вообще об этом говорю. Смена стандарта всегда поднимает волну советов «срочно обновить всё», и на этой волне люди выбрасывают рабочие вещи. Учебник младшего уровня устаревает медленнее, чем кажется: язык в нём не меняется.</p>
+  <p><b>Вывод, который я делаю:</b> учебник учит языку, а экзаменационный формат добирается отдельно. Менять серию посреди уровня — потерять больше, чем выиграть.</p>
+</div>
+
+<h2>Сколько уроков и слов <span class="italic">в томе</span></h2>
+
+<p>Точные цифры я нашла по двум томам, и привожу только их.</p>
+
+<table class="ks-tab ks-vol">
+  <thead><tr><th>Том</th><th>Уроков</th><th>Словарь</th></tr></thead>
+  <tbody>
+    <tr><td><b>Уровень 1</b></td><td>15</td><td>около 300 слов</td></tr>
+    <tr><td><b>Уровень 3</b></td><td>18</td><td>около 500 слов</td></tr>
+  </tbody>
+</table>
+
+<p>Цифры совпадают с объёмом словаря на этих уровнях по стандарту — то есть учебник не добавляет лексику сверх требований и не урезает её. Для планирования это удобно: один том закрывает один уровень целиком.</p>
+
+<p><b>По остальным томам точных данных я не привожу.</b> Серия выходит постепенно, описания расходятся, и называть числа, которых не проверила, не стану.</p>
+
+<h2>Как выбрать том <span class="italic">под свой уровень</span></h2>
+
+<p>Самый частый способ выбора — по номеру уровня, который собираетесь сдавать, — работает плохо. Номер говорит о цели, а учебник нужен под текущее состояние.</p>
+
+<p><b>Выбирайте по словарю.</b> Откройте список слов тома и посмотрите, какую долю вы узнаёте мгновенно. Если почти все — том пройден, берите следующий. Если меньше половины — рано, вернитесь на уровень назад.</p>
+
+<p>Нормальное состояние для начала тома: вы узнаёте примерно половину слов, остальное предстоит набрать. Тогда книга работает как учебник, а не как словарь, по которому вы продираетесь с переводчиком.</p>
+
+<p>Отдельно про старшие уровни: там, где тома идут по навыкам, выбирать нужно не только уровень, но и навык. Начинать стоит с того, который слабее, а не с того, который приятнее.</p>
+
+<p><b>Как понять, какой навык слабее.</b> Самый простой способ — посмотреть, чем вы занимаетесь добровольно. Почти все изучающие читают охотнее, чем пишут, и слушают охотнее, чем говорят, — именно потому, что чтение и слушание не требуют производить язык, а только узнавать его. Слабым обычно оказывается то, что откладывается.</p>
+
+<p>Второй способ надёжнее, но требует честности: пройдите по одному заданию каждого типа и засеките, где вы остановились дольше всего. Это и будет ваш том.</p>
+
+<h2>Чего я <span class="italic">не берусь утверждать</span></h2>
+
+<p>Честный список того, что осталось за пределами проверки.</p>
+
+<table class="ks-tab ks-uns">
+  <thead><tr><th>Что</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td><b>точное число томов во всей серии</b></td><td>в описаниях называют около двух десятков</td></tr>
+    <tr><td><b>даты выхода отдельных томов</b></td><td>выходят постепенно, и описания расходятся</td></tr>
+    <tr><td><b>наличие тетрадей к старшим уровням</b></td><td>часть пособий выходит позже учебников</td></tr>
+  </tbody>
+</table>
+
+<p>Всё это выясняется в одном месте — у продавца перед покупкой. Спрашивать стоит не «есть ли новый учебник», а конкретно: какая серия, какой уровень, есть ли к нему тетрадь.</p>
+
+<h2>Как заниматься по учебнику, <span class="italic">чтобы он работал</span></h2>
+
+<p>Учебник сам по себе не учит: он задаёт порядок. Как устроено одно занятие и как собрать из него неделю, у нас разобрано отдельно: <a href="https://kitai-school.ru/article/kak-izuchit-kitajskij-yazyk-samostoyatelno-iz-chego-sostoit-zanyatie" target="_blank" rel="noopener">как изучить китайский самостоятельно</a>.</p>
+
+<p>Здесь скажу только то, что относится к этой серии. <b>Не пропускайте тетрадь.</b> Её вторая часть — почти единственное место, где формат заданий встречается в учебном виде, а не на экзамене, и пропустив её, вы придёте на экзамен с незнакомым форматом.</p>
+
+<p>И не берите два тома сразу «для темпа». Том рассчитан на уровень целиком, и пройти его наполовину, перескочив на следующий, — верный способ получить дыры, которые всплывут на экзамене.</p>
+
+<p><b>Последнее, о чём стоит сказать.</b> Учебник задаёт порядок тем, но не заставляет говорить. Всё, что в нём есть, можно пройти молча — прочитать тексты, сделать упражнения, закрыть книгу. Такое прохождение выглядит как работа и даёт очень мало: язык, который ни разу не был произнесён вслух, на экзамене не появится.</p>
+
+<p>Поэтому к каждому уроку я добавляю одно действие, которого в книге нет: прочитать текст вслух целиком и пересказать его двумя-тремя фразами, не подглядывая. Это занимает несколько минут и отличает пройденный урок от просмотренного.</p>
+
+<h2>Частые ошибки <span class="italic">при покупке</span></h2>
+
+<ol>
+  <li><b>Искать «Стандартный курс 3.0».</b> Такой серии нет; по этому запросу вам продадут пособие под прежний стандарт.</li>
+  <li><b>Брать том по номеру цели, а не по своему словарю.</b> Книга окажется либо пройденной, либо непосильной.</li>
+  <li><b>Покупать учебник без тетради.</b> Формат заданий остаётся неотработанным.</li>
+  <li><b>Выбрасывать старые учебники.</b> Лексика младших уровней почти та же; выбрасывать рано.</li>
+  <li><b>Покупать сразу всю линейку.</b> Серия выходит постепенно, и часть томов может ещё не быть доступна.</li>
+</ol>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Разбора девяти уровней и сроков перехода.</b> Это тема статьи про <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK и девять уровней</a>.</li>
+  <li><b>Цен и магазинов.</b> Устаревает быстрее, чем выходит статья.</li>
+  <li><b>Точного числа томов в серии.</b> Называют около двух десятков, но подтвердить цифру я не смогла.</li>
+  <li><b>Сравнения методик двух серий.</b> Прямых источников нет, а своё впечатление я фактом не назову.</li>
+  <li><b>Разбора заданий HSK 4.</b> Форматы и ловушки — здесь: <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4 в 2026</a>.</li>
+  <li><b>Бесплатных материалов и списков лексики из сети.</b> Им посвящена отдельная статья.</li>
+</ul>
+
+<div class="cta">
+  <p><b>Не уверены, какой том ваш?</b> На пробном занятии мы смотрим не на номер уровня, а на то, какую долю словаря вы узнаёте, — и подбираем том по текущему состоянию.</p>
+  <p><a href="#popup:zayavka">Приходите на пробное занятие</a>, форматы и программа — здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>По какому учебнику готовиться к HSK 3.0?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Под новый стандарт выпущена отдельная серия — New HSK Course, по-китайски 新HSK教程. Её выпустило издательство иностранных языков и научных исследований совместно с центром языкового образования. Это и есть официальный курс нового образца.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Существует ли «Стандартный курс 3.0»?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. HSK Standard Course — серия предыдущего поколения, сделанная под прежний стандарт, и версии «3.0» у неё не выходило. Если в описании товара стоит такое название, скорее всего продавец перепутал серии: проверьте, что именно вам предлагают.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что входит в комплект на каждом уровне?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На уровнях с первого по шестой — учебник и рабочая тетрадь к нему. На седьмом, восьмом и девятом устройство другое: там отдельные тома по четырём навыкам — аудирование, говорение, чтение и письмо.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что внутри рабочей тетради?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Три части: разбор к уроку учебника, упражнения в формате экзамена и проверочные работы. Это по описанию тетради первого уровня — других томов я не смотрела и обобщать не буду.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Выбрасывать ли старые учебники?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Не стоит. Лексика младших уровней почти не изменилась, и тексты с упражнениями работают как работали. Разойтись может формат заданий в тетради, но это добирается отдельными прогонами по новым образцам. Менять серию посреди уровня я не советую.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько слов в учебнике первого уровня?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Около трёхсот, и в нём пятнадцать уроков. В томе третьего уровня — восемнадцать уроков и около пятисот слов. По остальным томам точных цифр я не приводила: они выходят постепенно, и описания расходятся.</p></div>
+  </details>
+</div>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li>Название официальной серии, издатель, устройство комплекта по уровням и состав рабочей тетради приведены по описаниям магазинов и справочных материалов, совпавшим между собой.</li>
+    <li>Число уроков и объём словаря названы по двум томам — первого и третьего уровней.</li>
+    <li><b>Страницу издательства я не открывала:</b> издания, тиражи и даты выхода отдельных томов не называю.</li>
+    <li><b>Точное число томов в серии не привожу</b> — встречается цифра около двух десятков, подтвердить её не удалось.</li>
+    <li><b>Наличие тетрадей к старшим уровням не утверждаю:</b> часть пособий выходит позже учебников.</li>
+    <li><b>Методики двух серий не сравниваю:</b> прямого сопоставления в источниках нет.</li>
+    <li><b>Цен и магазинов не называю</b> — это устаревает быстрее, чем статья выходит.</li>
+    <li>Разбор уровней, сроки перехода и пороги баллов вынесены в другие материалы блога; ссылки стоят по тексту.</li>
+    <li>Случай с комплектом старой серии взят из занятий Kitai School; имя ученика не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Под новый стандарт выпущена отдельная серия, и называется она не «Стандартным курсом»</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
