@@ -45,6 +45,11 @@ def steps(table):
 OLD_STEPS = steps(OLD)
 NEW_STEPS = steps(NEW)
 
+# недельная норма: прибавка уровня, разложенная на полгода занятий
+import math
+WEEKS = 26
+PER_WEEK = {lvl: math.ceil(add / WEEKS) for lvl, total, add in NEW_STEPS}
+
 DRAFT_D = dict(DRAFT)
 DRAFT_GAP = {lvl: DRAFT_D[lvl] - NEW_D[lvl] for lvl, w in DRAFT}
 
@@ -74,3 +79,9 @@ assert DRAFT_GAP[2] > DRAFT_GAP[1], "расхождение с черновик�
 assert len(STALE_SIGNS) == 3 and all(a and b for a, b in STALE_SIGNS), \
     "у каждого признака устаревшего списка названа действующая цифра"
 assert FINAL_WHEN.startswith("ноябре"), "в тексте дата стоит в предложном падеже"
+
+assert WEEKS == 26, "норма считается на полгода занятий"
+assert all(v > 0 for v in PER_WEEK.values()), "недельная норма везде положительная"
+assert PER_WEEK[2] < PER_WEEK[1], "на втором уровне норма ниже, чем на первом"
+assert PER_WEEK[6] == max(PER_WEEK.values()), "самая тяжёлая неделя — на шестом уровне"
+assert PER_WEEK[6] > 3 * PER_WEEK[1], "к шестому уровню норма вырастает в разы"

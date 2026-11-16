@@ -1,0 +1,457 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/spisok-slov-hsk#article",
+      "headline": "Список слов HSK по уровням: сколько слов нужно на каждом уровне и как отличить устаревший список от актуального",
+      "description": "Разбор требований к словарному запасу на экзамене по китайскому языку: сколько слов нужно знать к концу каждого из шести уровней по действующему словнику и сколько требовал прежний стандарт, почему прибавка распределилась неравномерно и где она оказалась самой тяжёлой, чем отличаются цифры черновика, по которому собрана часть списков в сети, как за полминуты проверить найденный список и сколько слов в неделю выходит, если разложить прибавку уровня на полгода занятий.",
+      "image": "https://static.tildacdn.com/tila6565-3462-4663-a439-393862623861/slova-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/spisok-slov-hsk",
+      "about": {
+        "@type": "Thing",
+        "name": "Требования к словарному запасу на экзамене по китайскому языку"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/spisok-slov-hsk#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Сколько слов нужно знать на HSK 1?", "acceptedAnswer": {"@type": "Answer", "text": "Триста по действующему словнику. Это накопительная цифра: столько слов нужно знать к концу уровня. В прежнем стандарте на первом уровне было полтораста, то есть требования выросли ровно вдвое."}},
+        {"@type": "Question", "name": "Сколько слов на каждом уровне HSK?", "acceptedAnswer": {"@type": "Answer", "text": "Накопительно по действующему словнику: триста на первом уровне, пятьсот на втором, тысяча на третьем, две тысячи на четвёртом, три тысячи шестьсот на пятом и пять тысяч четыреста на шестом. Верхняя ступень, уровни с седьмого по девятый, идёт одной полосой — около одиннадцати тысяч слов."}},
+        {"@type": "Question", "name": "Почему в разных списках разные цифры?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что часть списков собрана по черновику двадцать первого года, а он требовал больше: пятьсот слов на первом уровне, тысячу двести семьдесят два на втором и две тысячи двести сорок пять на третьем. Действующий словник опубликован позже и требования младших уровней снизил."}},
+        {"@type": "Question", "name": "Где взять официальный список слов?", "acceptedAnswer": {"@type": "Answer", "text": "Он публикуется вместе с описанием экзамена. Ссылок на сторонние площадки мы не ставим и сами словники не перепечатываем — это тысячи позиций. Любой найденный список стоит проверить по числу слов в нём: оно должно совпадать с цифрой уровня."}},
+        {"@type": "Question", "name": "Сколько слов учить в неделю?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от уровня. Если раскладывать прибавку уровня на полгода занятий, выходит около двенадцати слов в неделю на первом уровне, двадцати на третьем, тридцати девяти на четвёртом и семидесяти на шестом. Это наш расчёт, а не норматив."}},
+        {"@type": "Question", "name": "Сколько иероглифов нужно знать?", "acceptedAnswer": {"@type": "Answer", "text": "Слова и знаки — разные величины: одно слово часто состоит из двух знаков, а один знак встречается в десятке слов. Поэтому число знаков всегда меньше числа слов, и считать их нужно отдельно. Разбор этой разницы есть в блоге отдельной статьёй."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/spisok-slov-hsk#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Список слов HSK по уровням: сколько слов нужно на каждом уровне и как отличить устаревший список от актуального", "item": "https://kitai-school.ru/article/spisok-slov-hsk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Список слов HSK по уровням: <span class="italic">сколько слов нужно на каждом уровне и как отличить устаревший список от актуального</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-16">16 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila6565-3462-4663-a439-393862623861/slova-hero.png" alt="Парные столбцы по шести уровням: прежний словник рядом с действующим и коэффициент роста под каждой парой" width="1200" height="630"></figure>
+
+<p class="lead">Человек скачивает список слов первого уровня, видит в нём пятьсот позиций и считает, что столько и нужно. <b>В действующем словнике их триста.</b> Разница в двести слов берётся не из воздуха: часть списков в сети собрана по черновику, который потом пересмотрели.</p>
+
+<p>Разберём, сколько слов нужно на каждом уровне сейчас, сколько требовал прежний стандарт и как за полминуты проверить найденный список.</p>
+
+<h2>Короткий ответ: <span class="italic">сколько слов на каждом уровне</span></h2>
+
+<p>Цифры накопительные: столько слов нужно знать к концу уровня, а не столько добавляется на нём. Прибавку я вынесла в отдельный столбец, потому что считать удобнее именно по ней.</p>
+
+<table class="ks-tab ks-new">
+  <thead><tr><th>Уровень</th><th>Всего слов</th><th>Прибавка</th><th>В неделю за полгода</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>300</td><td>+300</td><td>12</td></tr>
+    <tr><td><b>HSK 2</b></td><td>500</td><td>+200</td><td>8</td></tr>
+    <tr><td><b>HSK 3</b></td><td>1 000</td><td>+500</td><td>20</td></tr>
+    <tr><td><b>HSK 4</b></td><td>2 000</td><td>+1 000</td><td>39</td></tr>
+    <tr><td><b>HSK 5</b></td><td>3 600</td><td>+1 600</td><td>62</td></tr>
+    <tr><td><b>HSK 6</b></td><td>5 400</td><td>+1 800</td><td>70</td></tr>
+  </tbody>
+</table>
+
+<p>Последний столбец — наш расчёт, а не норматив: прибавка уровня, разложенная на 26 недель занятий. Он нужен, чтобы прикинуть срок, а не чтобы отчитываться по нему.</p>
+
+<p><b>Выше шестого уровня счёт другой.</b> Уровни с седьмого по девятый идут одной полосой: на все три вместе — около 11 000 слов. Отдельных цифр по каждому из них нет, потому что и экзамен там один на три уровня.</p>
+
+<p>Ещё одна оговорка про накопительность. Цифра уровня включает всё, что было ниже: на третьем уровне тысяча слов — это не тысяча новых, а тысяча всего, вместе с лексикой первых двух. Списки, собранные «по уровням», иногда дают только новые слова уровня, и тогда их длина с таблицей не совпадёт — это не ошибка списка, а другой способ счёта.</p>
+
+<h2>Прежний стандарт <span class="italic">и действующий рядом</span></h2>
+
+<p>Старые цифры многие помнят наизусть, и расхождение сбивает с толку. Соберу обе шкалы в одну таблицу.</p>
+
+<table class="ks-tab ks-both">
+  <thead><tr><th>Уровень</th><th>Прежний стандарт</th><th>Действующий словник</th><th>Во сколько раз</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>150</td><td>300</td><td>×2</td></tr>
+    <tr><td><b>HSK 2</b></td><td>300</td><td>500</td><td>×1,67</td></tr>
+    <tr><td><b>HSK 3</b></td><td>600</td><td>1 000</td><td>×1,67</td></tr>
+    <tr><td><b>HSK 4</b></td><td>1 200</td><td>2 000</td><td>×1,67</td></tr>
+    <tr><td><b>HSK 5</b></td><td>2 500</td><td>3 600</td><td>×1,44</td></tr>
+    <tr><td><b>HSK 6</b></td><td>5 000</td><td>5 400</td><td>×1,08</td></tr>
+  </tbody>
+</table>
+
+<p>Требования выросли на каждом уровне — но очень по-разному. На первом стало <b>ровно вдвое</b> больше, на шестом — всего в 1,08 раза.</p>
+
+<h2>Где требования <span class="italic">выросли сильнее всего</span></h2>
+
+<p>Вся прибавка пришлась на начало пути, и это меняет расчёт сроков для тех, кто только начинает.</p>
+
+<p>Смотрите на последний столбец предыдущей таблицы: ×2 — ×1,67 — ×1,67 — ×1,67 — ×1,44 — 1,08. Коэффициент падает от уровня к уровню, то есть <b>чем выше уровень, тем меньше он изменился</b>.</p>
+
+<p>Объяснение простое. Верхние уровни и раньше требовали многого, а нижние были слишком лёгкими: с полутораста словами говорить почти не о чем. Планку подняли там, где она стояла низко.</p>
+
+<p>Есть и вторая причина, более техническая. Новая шкала растянута на девять уровней вместо шести, и нижние ступени в ней должны были стать содержательнее — иначе первые три уровня оказались бы почти неразличимы между собой.</p>
+
+<p><b>Что это значит на практике.</b> Если вы шли к первому уровню по старым прикидкам и рассчитывали на полтораста слов, срок удвоится. Если вы готовитесь к шестому, пересчитывать почти нечего.</p>
+
+<h2>Почему на втором уровне <span class="italic">прибавка меньше, чем на первом</span></h2>
+
+<p>В таблице есть строка, которая выглядит ошибкой, но ошибкой не является. На первом уровне прибавка 300 слов, на втором — 200. Это единственное место во всей шкале, где шаг уменьшается.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila3766-3332-4135-b137-306438653933/slova-info.png" alt="Три младших уровня, по каждому три цифры: перечёркнутый черновик 2021 года, действующий словник и прежний стандарт" width="1200" height="556"><figcaption>Цифры черновика, действующего словника и прежнего стандарта на трёх младших уровнях.</figcaption></figure>
+
+<p>Причина в том, что первый уровень набирается с нуля: все 300 слов для человека новые. На втором к ним добавляется 200 — меньше, но поверх уже выученного, и ощущается это тяжелее, чем выглядит.</p>
+
+<p><b>Ошибка, которую я вижу постоянно.</b> Человек смотрит на цифры 300 и 500, решает, что второй уровень легче первого, и расслабляется. А лексика второго уровня абстрактнее: там кончаются предметы, которые можно показать пальцем, и начинаются отношения между ними.</p>
+
+<h2>Цифры из черновика, <span class="italic">которые до сих пор ходят по сети</span></h2>
+
+<p>Теперь к главной путанице. Черновик 2021 года требовал заметно большего, и многие списки собраны именно по нему.</p>
+
+<table class="ks-tab ks-dr">
+  <thead><tr><th>Уровень</th><th>Черновик</th><th>Действующий словник</th><th>Лишних слов</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>500</td><td>300</td><td>200</td></tr>
+    <tr><td><b>HSK 2</b></td><td>1 272</td><td>500</td><td>772</td></tr>
+    <tr><td><b>HSK 3</b></td><td>2 245</td><td>1 000</td><td>1 245</td></tr>
+  </tbody>
+</table>
+
+<p>Действующий словник опубликован в ноябре 2025 года и требования младших уровней снизил. Черновик при этом никуда не делся: он разошёлся по сайтам и приложениям, и обновляют их не все.</p>
+
+<p><b>Почему это не мелочь.</b> На третьем уровне расхождение — 1 245 слов, то есть больше, чем весь первый уровень целиком. Человек, который учит по черновику, тратит лишний месяц и при этом не знает, что тратит.</p>
+
+<h2>Как я проверяю список <span class="italic">ученику</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик принёс распечатку и спросил, успеет ли выучить её за месяц. На первой странице стояло «Список слов HSK 1», в списке было пятьсот позиций.</p>
+  <p><b>В действующем словнике на первом уровне триста слов.</b> Двести лишних он учил бы не впустую — слова нормальные, пригодятся, — но не к тому экзамену, к которому готовился, и не в тот срок.</p>
+  <p>Мы проверили список по краям: взяли десяток слов из конца и сверили с описанием уровня. Половина оказалась из второго. Это и есть самый быстрый способ проверки: начало списков обычно совпадает у всех, расходятся они в хвосте.</p>
+  <p>Откуда он взялся, выяснилось сразу. Список был собран по черновику, который ходит по сети с двадцать первого года, — тогда требования к младшим уровням были выше, и потом их снизили.</p>
+  <p><b>Что мы сделали дальше.</b> Отрезали хвост, оставили триста слов и разложили их на месяц. Получилось около семидесяти пяти слов в неделю — втрое больше спокойной нормы, но на одном уровне это выполнимо, если других дел нет.</p>
+  <p>Важнее оказалось другое: он перестал считать себя отстающим. До проверки выходило, что он не успевает по собственному плану; после — что план был чужой и завышенный.</p>
+  <p><b>Вывод, который я делаю:</b> прежде чем учить список, посчитайте в нём позиции и сравните с цифрой своего уровня. Это тридцать секунд, и они экономят недели.</p>
+</div>
+
+<h2>Три признака <span class="italic">устаревшего списка</span></h2>
+
+<p>Проверять список целиком не нужно. Достаточно посмотреть на число позиций.</p>
+
+<ul>
+  <li><b>Первый уровень на 500 слов.</b> В действующем словнике их 300.</li>
+  <li><b>Второй уровень за тысячу.</b> Действующая цифра — 500.</li>
+  <li><b>Третий уровень за две тысячи.</b> Действующая цифра — 1000.</li>
+</ul>
+
+<p><b>Второй способ — проверка по хвосту.</b> Возьмите десяток слов из конца списка и посмотрите, похожи ли они на лексику вашего уровня. Начало у всех списков почти одинаковое, расходятся они в конце.</p>
+
+<p>И третий: посмотрите на дату. Список, выложенный до ноябре 2025 года, почти наверняка считает по черновику — не потому, что составитель схитрил, а потому, что другой цифры тогда не было.</p>
+
+<h2>Сколько слов учить в неделю, <span class="italic">чтобы успеть</span></h2>
+
+<p>Из прибавки и срока получается понятная цифра. Возьмём полгода занятий, 26 недель.</p>
+
+<p>На первом уровне выходит 12 слов в неделю, на третьем 20, на четвёртом 39, на шестом 70. <b>Разброс почти в шесть раз</b>, и это главная причина, по которой темп подготовки нельзя переносить с уровня на уровень.</p>
+
+<p><b>Как этим пользоваться.</b> Если ваша норма выходит больше тридцати слов в неделю, срок стоит увеличить: на такой скорости слова набираются, но не удерживаются. Если меньше десяти — можно идти быстрее.</p>
+
+<p>Отдельно про верхние уровни. Семьдесят слов в неделю на шестом — цифра, которая выглядит невыполнимой, и во многом так и есть: за полгода шестой уровень с нуля не берут. Но и лексика там набирается иначе: значительная часть новых слов собрана из уже знакомых знаков, и узнавание идёт быстрее, чем на младших уровнях.</p>
+
+<p><b>Что делать, если норма не вытягивается.</b> Сначала проверьте, не считаете ли вы её от нуля. Если вы уже знаете половину словаря уровня, прибавку нужно брать не из таблицы, а из разницы между тем, что знаете, и цифрой уровня — она обычно заметно меньше.</p>
+
+<p>Приёмы запоминания я здесь не пересказываю, им посвящена отдельная статья: <a href="https://kitai-school.ru/article/kak-zapominat-ieroglify" target="_blank" rel="noopener">как запоминать иероглифы</a>. Скажу лишь, что норма считается по словам, а не по знакам, и это разные величины.</p>
+
+<h2>Слова и иероглифы — <span class="italic">разные величины</span></h2>
+
+<p>Путаница частая и дорогая. <b>Одно слово обычно состоит из двух знаков</b>, а один знак встречается в десятке слов. Поэтому знаков всегда меньше, чем слов.</p>
+
+<p>Считать их нужно отдельно, и требования по ним тоже разные. Подробный разбор этой разницы есть в блоге: <a href="https://kitai-school.ru/article/ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu" target="_blank" rel="noopener">как меняются требования к числу слов и знаков</a>.</p>
+
+<p>Здесь важно одно: когда вам обещают «список слов», в нём именно слова. Если в списке вперемешку слова и отдельные знаки, это ещё один повод усомниться в его происхождении.</p>
+
+<p>Проверить это легко. Пролистайте список и посмотрите, сколько в нём позиций из одного знака. Односложные слова в языке есть, и их немало, но если такими оказывается больше половины списка — перед вами перечень знаков, а не словарь уровня.</p>
+
+<p>Разница важна для планирования. Знаков на уровне меньше, чем слов, и выучив все знаки, вы не закроете словарь: сочетания придётся осваивать отдельно, и именно они дают большую часть новой лексики на старших уровнях.</p>
+
+<h2>Частые ошибки</h2>
+
+<ol>
+  <li><b>Учить список, не посчитав в нём позиции.</b> Тридцать секунд проверки экономят недели.</li>
+  <li><b>Считать, что второй уровень легче первого.</b> Прибавка меньше, но лексика абстрактнее.</li>
+  <li><b>Переносить темп с уровня на уровень.</b> Недельная норма отличается почти в шесть раз.</li>
+  <li><b>Путать слова и знаки.</b> Это разные величины, и считают их отдельно.</li>
+  <li><b>Доверять списку без даты.</b> Если неизвестно, когда он собран, неизвестно и по какой шкале.</li>
+  <li><b>Учить список целиком, не отделяя новое от знакомого.</b> Половина позиций младшего уровня обычно уже известна, и время уходит на повторение вместо набора.</li>
+</ol>
+
+<p>Последняя ошибка объясняет, почему два человека с одинаковым планом приходят к разному результату. Один честно отмечает, что уже знает, и учит только остаток; второй идёт по списку подряд, тратит половину занятий на знакомое и считает, что работает вдвое усерднее.</p>
+
+<p><b>Как отделить одно от другого.</b> Пройдите по списку один раз, отмечая слова, которые узнаёте мгновенно, без паузы. Пауза в секунду — это уже не знание, а припоминание, и такое слово лучше оставить в работе. Остаток и будет вашим настоящим объёмом на уровень.</p>
+
+<div class="cta">
+  <p><b>Не знаете, сколько слов вам осталось до уровня?</b> На пробном занятии мы смотрим, какую долю словаря вы узнаёте, и считаем срок от текущего состояния, а не от нуля.</p>
+  <p><a href="#popup:zayavka">Приходите на пробное занятие</a>, форматы и программа — здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Самих списков слов.</b> Это тысячи позиций официального словника, и блог их не перепечатывает.</li>
+  <li><b>Названий сервисов с карточками.</b> Блог не ставит внешних ссылок.</li>
+  <li><b>Числа знаков по уровням действующего стандарта.</b> Источники расходятся, сходится только словарь.</li>
+  <li><b>Приёмов запоминания и тематических подборок.</b> Им посвящены отдельные статьи блога.</li>
+  <li><b>Даты первого экзамена по новому стандарту.</b> Источники называют разные.</li>
+</ul>
+
+<p>Если вы только начинаете и хотите готовый набор первых слов, он разобран отдельно: <a href="https://kitai-school.ru/article/kitayskie-slova-dlya-nachinauschih" target="_blank" rel="noopener">китайские слова для начинающих</a>. А общий разбор экзамена — здесь: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK</a>.</p>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько слов нужно знать на HSK 1?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Триста по действующему словнику. Это накопительная цифра: столько слов нужно знать к концу уровня. В прежнем стандарте на первом уровне было полтораста, то есть требования выросли ровно вдвое.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько слов на каждом уровне HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Накопительно по действующему словнику: триста на первом уровне, пятьсот на втором, тысяча на третьем, две тысячи на четвёртом, три тысячи шестьсот на пятом и пять тысяч четыреста на шестом. Верхняя ступень, уровни с седьмого по девятый, идёт одной полосой — около одиннадцати тысяч слов.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему в разных списках разные цифры?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что часть списков собрана по черновику двадцать первого года, а он требовал больше: пятьсот слов на первом уровне, тысячу двести семьдесят два на втором и две тысячи двести сорок пять на третьем. Действующий словник опубликован позже и требования младших уровней снизил.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где взять официальный список слов?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Он публикуется вместе с описанием экзамена. Ссылок на сторонние площадки мы не ставим и сами словники не перепечатываем — это тысячи позиций. Любой найденный список стоит проверить по числу слов в нём: оно должно совпадать с цифрой уровня.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько слов учить в неделю?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Зависит от уровня. Если раскладывать прибавку уровня на полгода занятий, выходит около двенадцати слов в неделю на первом уровне, двадцати на третьем, тридцати девяти на четвёртом и семидесяти на шестом. Это наш расчёт, а не норматив.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько иероглифов нужно знать?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Слова и знаки — разные величины: одно слово часто состоит из двух знаков, а один знак встречается в десятке слов. Поэтому число знаков всегда меньше числа слов, и считать их нужно отдельно. Разбор этой разницы есть в блоге отдельной статьёй.</p></div>
+  </details>
+</div>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li>Цифры действующего словника по шести уровням и объём верхней ступени приведены по описаниям, совпавшим в двух независимых проверках.</li>
+    <li>Дата публикации действующего словника и то, что требования младших уровней были снижены, подтверждены теми же проверками.</li>
+    <li>Цифры черновика 2021 года приведены по его описаниям.</li>
+    <li>Прежний стандарт назван по описаниям уровней, частью уже разобранным в блоге.</li>
+    <li><b>Коэффициенты роста, прибавки и недельная норма — наш расчёт</b> из этих чисел, а не опубликованные величины.</li>
+    <li><b>Самих списков слов не привожу:</b> это тысячи позиций официального словника.</li>
+    <li><b>Названий сервисов с карточками не называю</b> и ссылок на них не ставлю.</li>
+    <li><b>Числа знаков по уровням действующего стандарта не привожу</b> — источники расходятся.</li>
+    <li>Случай со списком на пятьсот слов взят из занятий Kitai School; имя ученика не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Цифры в списках из сети часто взяты из черновика: на первом уровне там 500 слов вместо 300</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
