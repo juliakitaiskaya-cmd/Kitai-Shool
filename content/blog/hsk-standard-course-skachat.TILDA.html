@@ -1,0 +1,456 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/hsk-standard-course-skachat#article",
+      "headline": "HSK Standard Course скачать: что из комплекта доступно официально, чего в свободном доступе нет и чем это заменить",
+      "description": "Разбор того, что из учебного комплекта по китайскому языку существует в электронном виде: почему официально доступен только звук и как его получают по коду с обложки, что делать, если код не сработал или книга досталась без него, чем найденная в сети копия подводит на занятиях — от потерянной буквы тома до подменённых распознаванием иероглифов, — и чем заниматься в те недели, пока книга ещё не пришла.",
+      "image": "https://static.tildacdn.com/tila6362-3962-4239-a536-393538663263/elmat-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/hsk-standard-course-skachat",
+      "about": {
+        "@type": "Thing",
+        "name": "Электронные материалы к учебникам китайского языка"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/hsk-standard-course-skachat#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Можно ли скачать учебник HSK официально?", "acceptedAnswer": {"@type": "Answer", "text": "Подтверждения этому я не нашла. Ни одного официального предложения электронной версии учебника или рабочей тетради мне не встретилось, а издательство открыто требует убирать копии своих книг из сети. Я не утверждаю, что цифрового издания не существует вовсе, — говорю лишь, что подтвердить его не смогла."}},
+        {"@type": "Question", "name": "Как получить аудио к учебнику?", "acceptedAnswer": {"@type": "Answer", "text": "По коду на задней обложке. Это официальный способ: код ведёт к записи, которая сделана именно к вашему изданию. В более ранних изданиях вместо кода в комплект входил диск."}},
+        {"@type": "Question", "name": "Что делать, если код не сработал?", "acceptedAnswer": {"@type": "Answer", "text": "Сначала проверьте, не повреждён ли сам код и не закрыта ли часть наклейкой магазина. Если код в порядке, а доступа нет, пишите продавцу: это вопрос к тому, у кого вы покупали книгу, а не к издательству. Покупая книгу с рук, спрашивайте про код до оплаты."}},
+        {"@type": "Question", "name": "Чем плоха копия из сети?", "acceptedAnswer": {"@type": "Answer", "text": "Практическими вещами, а не только правовыми. В ней нет рабочего кода на звук, по скану не видно год издания, буква тома на старших уровнях часто обрезана, рабочая тетрадь попадается заметно реже учебника, а распознавание местами подменяет иероглифы — и подмену заучивают как правильное написание."}},
+        {"@type": "Question", "name": "Чем заниматься, пока книга не пришла?", "acceptedAnswer": {"@type": "Answer", "text": "Тем, что не зависит от учебника: произношением, порядком черт, счётом, числами и датами, базовыми конструкциями. Этого хватает на две-три недели занятий, а в учебник вы войдёте уже подготовленным, и первые уроки пройдут быстрее."}},
+        {"@type": "Question", "name": "Есть ли аудио к рабочей тетради?", "acceptedAnswer": {"@type": "Answer", "text": "Да, в изданиях последних лет оно открывается тем же кодом, что и запись к учебнику. Это стоит проверить при покупке: именно в тетради лежат задания на слух, ради которых звук и нужен."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/hsk-standard-course-skachat#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "HSK Standard Course скачать: что из комплекта доступно официально, чего в свободном доступе нет и чем это заменить", "item": "https://kitai-school.ru/article/hsk-standard-course-skachat"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Учебники</p>
+<h1>HSK Standard Course скачать: <span class="italic">что из комплекта доступно официально, чего в свободном доступе нет и чем это заменить</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-16">16 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila6362-3962-4239-a536-393538663263/elmat-hero.png" alt="Две колонки: слева звук к учебнику и тетради, который открывается кодом с обложки, справа три книги комплекта без официальной цифровой версии" width="1200" height="630"></figure>
+
+<p class="lead">Запрос понятный: книга идёт долго, стоит денег, а заниматься хочется сегодня. Отвечу честно и сразу: <b>из комплекта официально в электронном виде существует только звук</b>, и берётся он по коду, напечатанному на задней обложке купленного экземпляра.</p>
+
+<p>Разберём, что именно доступно, как устроен этот код и что делать, если он не сработал. И отдельно — чем копия из сети подводит на занятиях: не с точки зрения правил, а с точки зрения того, чему вы по ней научитесь.</p>
+
+<h2>Короткий ответ: <span class="italic">официально в цифре только звук</span></h2>
+
+<p>В комплект тома входят три книги, и ни для одной из них я не нашла официальной электронной версии. Что нашла — это звук: записи к учебнику и к рабочей тетради.</p>
+
+<p><b>Сразу оговорюсь о точности формулировки.</b> Я не утверждаю, что цифрового издания не существует вовсе: доказать отсутствие нельзя. Я говорю, что искала и подтверждения не нашла ни одного.</p>
+
+<p>Отдельно скажу про сайт издательства. Из моей рабочей среды он не открывается, поэтому состав его разделов я не проверяла и утверждать, что там есть или чего там нет, не стану.</p>
+
+<p><b>И сразу про слово «официально».</b> Оно здесь означает одно: материал выложен тем, кто имеет на это право, — издателем или по его разрешению. Файл, который кто-то отсканировал и выложил, может быть сколь угодно удобным, но официальным он от этого не становится, и отвечать за его содержание некому.</p>
+
+<h2>Что из комплекта <span class="italic">бывает в электронном виде</span></h2>
+
+<p>Соберу в одну таблицу, чтобы не возвращаться.</p>
+
+<table class="ks-tab ks-pt">
+  <thead><tr><th>Часть комплекта</th><th>Есть в цифре</th><th>Как получают</th></tr></thead>
+  <tbody>
+    <tr><td><b>Звук к учебнику</b></td><td>да</td><td>По коду на задней обложке</td></tr>
+    <tr><td><b>Звук к рабочей тетради</b></td><td>да</td><td>Тем же кодом, в изданиях последних лет</td></tr>
+    <tr><td><b>Учебник целиком</b></td><td>нет</td><td>официальной цифровой версии я не нашла</td></tr>
+    <tr><td><b>Рабочая тетрадь целиком</b></td><td>нет</td><td>официальной цифровой версии я не нашла</td></tr>
+    <tr><td><b>Книга для преподавателя</b></td><td>нет</td><td>официальной цифровой версии я не нашла</td></tr>
+  </tbody>
+</table>
+
+<p>Закономерность простая: <b>в цифре есть то, что и так звучит</b>. Книги остаются на бумаге, запись к ним — нет, потому что иначе ею невозможно пользоваться.</p>
+
+<p>Это не причуда издателя. Аудирование нужно слушать с телефона в дороге, а не с диска за столом, и запись делают доступной именно поэтому.</p>
+
+<p>Из таблицы видно и другое: <b>книга для преподавателя стоит в том же ряду, что учебник и тетрадь</b>. Её иногда ищут отдельно, рассчитывая найти ключи, — отдельной электронной версии у неё тоже нет.</p>
+
+<h2>Как получить звук <span class="italic">по коду</span></h2>
+
+<p>Код напечатан на задней обложке. Он открывает запись, сделанную к вашему изданию, — и это важнее, чем кажется.</p>
+
+<p><b>Почему привязка к изданию имеет значение.</b> Тексты уроков между изданиями меняются: что-то переписано, что-то переставлено. Запись, скачанная отдельно от книги, может не совпасть с вашим текстом, и вы будете слушать не тот диалог, который читаете.</p>
+
+<p>Порядок действий простой: взять книгу, найти код на задней обложке, открыть запись по нему. Никаких дополнительных покупок для этого не нужно — звук входит в стоимость книги.</p>
+
+<p>В изданиях последних лет тем же кодом открывается и запись к рабочей тетради. Это стоит проверить при покупке: именно в тетради лежат задания на слух.</p>
+
+<p><b>Как понять заранее, какое у вас издание.</b> Проще всего — попросить у продавца снимок задней обложки. Если на ней есть код, запись открывается им; если кода нет, в комплекте предполагался диск, и его наличие нужно уточнять отдельно.</p>
+
+<h2>Почему книг нет <span class="italic">в легальном доступе</span></h2>
+
+<p>Причина не загадочная: учебники защищены авторским правом, и издательство публично требует убирать копии своих книг из сети.</p>
+
+<p>Но я хочу поговорить не об этом, а о практической стороне. <b>Копия подводит ровно там, где вам нужна точность</b> — а в языке точность нужна почти везде.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila6161-3338-4234-a337-383435383731/elmat-info.png" alt="Пять различий копии из сети и купленного комплекта: признак, что с ним у копии и чем это оборачивается на занятиях" width="1200" height="680"><figcaption>Пять различий копии и комплекта: в правом столбце — чем каждое оборачивается на занятиях.</figcaption></figure>
+
+<h2>Чем копия подводит <span class="italic">на занятиях</span></h2>
+
+<p>Разберу каждое различие отдельно.</p>
+
+<table class="ks-tab ks-df">
+  <thead><tr><th>Признак</th><th>Что с ним у копии</th><th>Чем оборачивается</th></tr></thead>
+  <tbody>
+    <tr><td><b>Звук</b></td><td>кода на сканированной обложке нет или он уже погашен</td><td>аудирование приходится искать отдельно и подбирать на слух к урокам</td></tr>
+    <tr><td><b>Издание</b></td><td>по скану не видно, какого года издание</td><td>часть заданий может быть из прежней редакции</td></tr>
+    <tr><td><b>Метка тома</b></td><td>буква A или B на скане теряется или обрезается</td><td>на старших уровнях легко взять вторую половину вместо первой</td></tr>
+    <tr><td><b>Тетрадь</b></td><td>в сеть попадает учебник, тетрадь — заметно реже</td><td>самостоятельная работа остаётся без упражнений</td></tr>
+    <tr><td><b>Распознавание</b></td><td>иероглифы в тексте местами слиты или подменены</td><td>ошибку принимают за незнакомое написание и заучивают её</td></tr>
+  </tbody>
+</table>
+
+<p><b>Самое дорогое здесь — последняя строка.</b> Остальные неудобства заметны сразу: нет звука, нет тетради, непонятно издание. А подменённый иероглиф не заметен вообще: он выглядит как обычное незнакомое слово, и вы его учите.</p>
+
+<p>Про букву тома скажу отдельно, потому что это свежая для многих вещь. На старших уровнях том делится на две части, и метка стоит на обложке. На скане обложка часто обрезана или отсутствует — и вы не знаете, первая у вас половина или вторая.</p>
+
+<h2>Как это выглядит <span class="italic">на занятии</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученица занималась по файлу, найденному в сети, и на занятии написала иероглиф с лишней чертой. Я поправила, она переписала — и через неделю написала так же.</p>
+  <p>На третий раз я попросила показать её текст урока. <b>В файле знак был напечатан именно так, с лишней чертой:</b> распознавание подменило его похожим, и в учебном тексте это выглядело совершенно обычно.</p>
+  <p>Обнаружить такое самому почти невозможно. Когда вы учите язык, незнакомое написание для вас и есть норма: проверять нечем, сравнивать не с чем, а текст выглядит напечатанным, то есть заведомо правильным.</p>
+  <p>Переучивать оказалось дольше, чем учить с нуля. <b>Рука уже запомнила порядок черт</b>, и при письме от руки знак выходил неправильным даже тогда, когда ученица помнила, как надо.</p>
+  <p>Мы нашли в том же файле ещё четыре подмены — все в словах, которые она успела выучить. Это был не единичный сбой, а свойство источника: текст прогнали через распознавание, и часть знаков разошлась с оригиналом.</p>
+  <p>Теперь я прошу проверять написание не по тексту урока, а по словарю — там знак набран, а не распознан. Это десять секунд на новое слово и единственная защита от такой ошибки.</p>
+  <p><b>Вывод, который я делаю:</b> ошибка в источнике обходится дороже денег, сэкономленных на книге. Экономия видна сразу, а её цена — через месяц, когда переучивать приходится вместе с привычкой.</p>
+</div>
+
+<h2>Чем заниматься, <span class="italic">пока книга не пришла</span></h2>
+
+<p>Это самая полезная часть статьи для того, кто пришёл сюда за файлом. Книга идёт две-три недели, и эти недели не обязаны пропадать.</p>
+
+<p><b>Что не зависит от учебника вообще:</b></p>
+
+<ul>
+  <li><b>Произношение и тоны.</b> Ставятся отдельно от любого учебника и занимают первые недели в любом случае.</li>
+  <li><b>Порядок черт.</b> Правила общие, и выучить их заранее — значит не тратить на это время потом.</li>
+  <li><b>Счёт, числа, даты.</b> Закрытая тема, которая нужна с первого урока и не меняется от книги к книге.</li>
+  <li><b>Приветствия и простые вопросы.</b> Те самые фразы, с которых начинается любой первый урок.</li>
+</ul>
+
+<p>Этого хватает на две-три недели занятий. Когда книга придёт, вы войдёте в неё подготовленным, и первые уроки пройдут быстрее обычного — а не так, как бывает у тех, кто ждал посылку, ничего не делая.</p>
+
+<p><b>Чего в эти недели делать не стоит</b> — набирать лексику наугад. Списки слов привязаны к урокам, и выученное вне порядка чаще всего приходится переучивать в сочетаниях: слово само по себе запоминается плохо, а в фразе из учебника — хорошо.</p>
+
+<p>Исключение — числа и даты: они не зависят от урока, встречаются с первого занятия и остаются одинаковыми в любом курсе. С них и стоит начать, если руки тянутся к словам.</p>
+
+<p>Как устроено одно занятие и как собрать из него неделю, разобрано отдельно: <a href="https://kitai-school.ru/article/kak-izuchit-kitajskij-yazyk-samostoyatelno-iz-chego-sostoit-zanyatie" target="_blank" rel="noopener">как изучить китайский самостоятельно</a>.</p>
+
+<h2>Что делать, <span class="italic">если звук не скачивается</span></h2>
+
+<p>Случаи разные, и решения у них разные.</p>
+
+<ol>
+  <li><b>Код повреждён или заклеен.</b> Магазины иногда клеят свои наклейки поверх. Снимать осторожно; если код испорчен, вопрос к продавцу.</li>
+  <li><b>Код уже использован.</b> Так бывает с книгой, купленной с рук. Спрашивать про звук нужно до оплаты, а не после.</li>
+  <li><b>Издание старое, кода нет вовсе.</b> Тогда в комплекте был диск, и если диска нет, звука к этому экземпляру у вас не будет.</li>
+</ol>
+
+<p><b>К кому обращаться.</b> К продавцу, у которого вы покупали книгу. Это его товар и его ответственность за комплектность, а не вопрос к издательству.</p>
+
+<p>И одно практическое замечание. Проверять код стоит в первый же день, а не перед тем уроком, где понадобится аудирование. Если с ним что-то не так, у вас будет время решить вопрос с продавцом, пока свежа покупка.</p>
+
+<h2>Если книга досталась <span class="italic">без кода</span></h2>
+
+<p>Такое бывает чаще, чем хотелось бы: книги передают, покупают с рук, берут у знакомых.</p>
+
+<p>Честных вариантов здесь два, и оба я назову прямо. <b>Первый</b> — заниматься без записи, заменив аудирование другим материалом: подкастами, диалогами из занятий, любыми звучащими источниками своего уровня. Урок при этом работает, но задания на слух из тетради придётся пропускать.</p>
+
+<p><b>Второй</b> — купить новый экземпляр того тома, на котором вы сейчас, а старый оставить как запасной. На младших уровнях это обычно один том, и покупка разовая.</p>
+
+<p>Чего я советовать не стану — искать запись где попало. Звук, найденный отдельно, не привязан к вашему изданию, и расхождение с текстом вы заметите не сразу, а на том уроке, где диалог окажется другим.</p>
+
+<p><b>Как отличить расхождение от собственного непонимания.</b> Если диалог на записи звучит знакомо, но слова идут в другом порядке или появляются незнакомые — скорее всего, это другая редакция, а не пробел в ваших знаниях. Сверьте первую фразу урока слово в слово: совпала — запись ваша, не совпала — чужая.</p>
+
+<p>Этот способ выручает и в обратную сторону. Ученики часто винят себя в том, что «не слышат», тогда как слушают не тот текст, — и напрасно теряют уверенность там, где нужна была простая сверка.</p>
+
+<h2>Частые ошибки</h2>
+
+<ol>
+  <li><b>Считать, что файл заменяет комплект.</b> Без тетради и звука остаётся только половина работы.</li>
+  <li><b>Не проверять написание по словарю.</b> Единственная защита от подмены знаков в распознанном тексте.</li>
+  <li><b>Покупать книгу с рук, не спросив про код.</b> Звук может оказаться уже недоступен.</li>
+  <li><b>Ждать посылку, ничего не делая.</b> Две-три недели закрывают произношение и порядок черт.</li>
+  <li><b>Брать запись отдельно от книги.</b> Она может не совпасть с текстами вашего издания.</li>
+  <li><b>Учить слова по списку из файла, не сверяя написание.</b> Распознанный текст тиражирует свои ошибки в вашей тетради.</li>
+</ol>
+
+<p>Последняя ошибка коварнее остальных тем, что обнаруживается поздно. Неудобство от отсутствия звука вы почувствуете на первой же неделе и как-то решите, а неверное написание проживёт до того дня, когда его исправит преподаватель или экзаменатор.</p>
+
+<div class="cta">
+  <p><b>Не хотите терять недели на ожидание книги?</b> На пробном занятии мы ставим произношение и разбираем, с чего начать, — для этого учебник не нужен.</p>
+  <p><a href="#popup:zayavka">Приходите на пробное занятие</a>, форматы и программа — здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Названий и адресов площадок с копиями.</b> Блог не ставит внешних ссылок и не подсказывает нелегальные источники.</li>
+  <li><b>Утверждения, что цифрового издания не существует.</b> Я лишь не нашла подтверждения.</li>
+  <li><b>Состава разделов на сайте издательства.</b> Сайт из моей рабочей среды не открывается.</li>
+  <li><b>Разбора устройства серии и числа томов.</b> Это отдельная статья блога.</li>
+  <li><b>Списков лексики и образцов заданий.</b> Им посвящён отдельный материал.</li>
+  <li><b>Стоимости книг и названий магазинов.</b> Такие сведения устаревают за недели.</li>
+</ul>
+
+<p>Про сам экзамен, его уровни и срок действия результата у нас написано отдельно: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK</a>.</p>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли скачать учебник HSK официально?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Подтверждения этому я не нашла. Ни одного официального предложения электронной версии учебника или рабочей тетради мне не встретилось, а издательство открыто требует убирать копии своих книг из сети. Я не утверждаю, что цифрового издания не существует вовсе, — говорю лишь, что подтвердить его не смогла.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как получить аудио к учебнику?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По коду на задней обложке. Это официальный способ: код ведёт к записи, которая сделана именно к вашему изданию. В более ранних изданиях вместо кода в комплект входил диск.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что делать, если код не сработал?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Сначала проверьте, не повреждён ли сам код и не закрыта ли часть наклейкой магазина. Если код в порядке, а доступа нет, пишите продавцу: это вопрос к тому, у кого вы покупали книгу, а не к издательству. Покупая книгу с рук, спрашивайте про код до оплаты.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем плоха копия из сети?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Практическими вещами, а не только правовыми. В ней нет рабочего кода на звук, по скану не видно год издания, буква тома на старших уровнях часто обрезана, рабочая тетрадь попадается заметно реже учебника, а распознавание местами подменяет иероглифы — и подмену заучивают как правильное написание.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем заниматься, пока книга не пришла?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Тем, что не зависит от учебника: произношением, порядком черт, счётом, числами и датами, базовыми конструкциями. Этого хватает на две-три недели занятий, а в учебник вы войдёте уже подготовленным, и первые уроки пройдут быстрее.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Есть ли аудио к рабочей тетради?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, в изданиях последних лет оно открывается тем же кодом, что и запись к учебнику. Это стоит проверить при покупке: именно в тетради лежат задания на слух, ради которых звук и нужен.</p></div>
+  </details>
+</div>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li>Способ получить звук по коду с задней обложки и наличие диска в более ранних изданиях названы по описаниям, совпавшим между собой.</li>
+    <li>Требование издательства убирать нелегальные копии его книг приведено по публичному обращению его представителя.</li>
+    <li><b>Официальной электронной версии учебника и тетради я не нашла</b> — именно так это и сформулировано: отсутствие подтверждения, а не доказанное отсутствие.</li>
+    <li><b>Состав разделов на сайте издательства не проверяла:</b> сайт из моей рабочей среды не открывается.</li>
+    <li><b>Пять различий копии и комплекта — наблюдение из занятий</b>, а не данные исследования.</li>
+    <li><b>Названий площадок с копиями не привожу</b> и ссылок на них не ставлю.</li>
+    <li><b>Стоимость книг и названия магазинов опущены намеренно</b> — они меняются быстрее, чем обновляется статья.</li>
+    <li>Устройство серии и число томов вынесены в отдельный материал блога.</li>
+    <li>Случай с подменённым иероглифом взят из занятий Kitai School; имя ученицы не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Из комплекта в цифре официально есть только звук — и берётся он по коду с обложки</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
