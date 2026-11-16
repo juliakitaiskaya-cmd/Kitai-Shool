@@ -16,6 +16,7 @@ NEW_TOP = ("7–9", 11000)          # верхняя ступень считае
 DRAFT = [(1, 500), (2, 1272), (3, 2245)]
 DRAFT_YEAR = 2021
 FINAL_MONTH = "ноябрь 2025"
+FINAL_WHEN = "ноябре 2025 года"   # предложный падеж для текста
 
 # признаки списка, собранного по устаревшему черновику
 STALE_SIGNS = [
@@ -72,3 +73,4 @@ assert all(DRAFT_D[lvl] > NEW_D[lvl] for lvl, w in DRAFT), \
 assert DRAFT_GAP[2] > DRAFT_GAP[1], "расхождение с черновиком растёт ко второму уровню"
 assert len(STALE_SIGNS) == 3 and all(a and b for a, b in STALE_SIGNS), \
     "у каждого признака устаревшего списка названа действующая цифра"
+assert FINAL_WHEN.startswith("ноябре"), "в тексте дата стоит в предложном падеже"
