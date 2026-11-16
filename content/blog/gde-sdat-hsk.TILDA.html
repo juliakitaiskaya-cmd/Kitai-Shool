@@ -1,0 +1,448 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/gde-sdat-hsk#article",
+      "headline": "Где сдать HSK: можно ли сдать онлайн, что делать без центра в городе и чем экзамен отличается от тренажёра",
+      "description": "Разбор того, где сдают экзамен по китайскому языку и что скрывается за словом «онлайн»: чем компьютерный формат в центре тестирования отличается от домашнего с наблюдением через камеру, почему онлайн-тренажёр показывает баллы, но не даёт сертификата, что делать человеку, в городе которого центра тестирования нет, и чего в этой ситуации сделать нельзя, как бы ни хотелось.",
+      "image": "https://static.tildacdn.com/tila6465-6466-4239-b438-396230636136/gdesdat-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/gde-sdat-hsk",
+      "about": {
+        "@type": "Thing",
+        "name": "Форматы сдачи экзамена по китайскому языку"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/gde-sdat-hsk#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Можно ли сдать HSK онлайн?", "acceptedAnswer": {"@type": "Answer", "text": "Смотря что называть словом «онлайн». Компьютерный формат — настоящий экзамен, но проходит он в центре тестирования, а не дома. Домашний формат с наблюдением через камеру существует, но доступен не везде. А онлайн-тренажёр, который чаще всего находят по этому запросу, экзаменом не является вовсе."}},
+        {"@type": "Question", "name": "Можно ли сдать HSK из дома?", "acceptedAnswer": {"@type": "Answer", "text": "По описаниям, домашний формат с наблюдением существует в некоторых регионах и может быть ограничен уровнями. Подтверждения, что он доступен в России, я не нашла, поэтому рассчитывать на него заранее не советую: спросите в центре до того, как строить планы."}},
+        {"@type": "Question", "name": "Даёт ли онлайн-тест сертификат?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Тренажёр показывает баллы и помогает понять свой уровень, но он не связан с экзаменом: результат нигде не регистрируется и документа по нему не выдают. Это полезный инструмент подготовки и бесполезный способ получить сертификат."}},
+        {"@type": "Question", "name": "Что делать, если в городе нет центра?", "acceptedAnswer": {"@type": "Answer", "text": "Три варианта. Съездить в ближайший город — экзамен идёт в один день по всей стране, и дата известна заранее. Поискать центр с компьютерным форматом: он бывает там, где бумажный не проводят. Или спросить про домашний формат, но заранее, а не накануне записи."}},
+        {"@type": "Question", "name": "Чем компьютерный формат отличается от домашнего?", "acceptedAnswer": {"@type": "Answer", "text": "Прежде всего местом. Компьютерный проходит в центре тестирования: там проверяют документы и отвечают за результат. Домашний проходит дома, под наблюдением через камеру, и доступен он не везде. Разница в самих заданиях между форматами разобрана в отдельной статье блога."}},
+        {"@type": "Question", "name": "Где смотреть даты и сроки записи?", "acceptedAnswer": {"@type": "Answer", "text": "Расписание сессий общее, а окна регистрации у каждого центра свои и расходятся в разы. Про это у нас есть отдельная статья с разбором, почему дату можно узнать откуда угодно, а срок записи — только в своём центре."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/gde-sdat-hsk#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Где сдать HSK: можно ли сдать онлайн, что делать без центра в городе и чем экзамен отличается от тренажёра", "item": "https://kitai-school.ru/article/gde-sdat-hsk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамен</p>
+<h1>Где сдать HSK: <span class="italic">можно ли сдать онлайн, что делать без центра в городе и чем экзамен отличается от тренажёра</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-16">16 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="https://static.tildacdn.com/tila6465-6466-4239-b438-396230636136/gdesdat-hero.png" alt="Три карточки: компьютерный формат и домашний помечены как экзамен, онлайн-тренажёр — как не экзамен, под ними строка запретов" width="1200" height="630"></figure>
+
+<p class="lead">Запрос «сдать HSK онлайн» приводит к трём разным вещам, и <b>только две из них экзамен</b>. Третья — тренажёр: он честно показывает баллы и не даёт ничего, кроме них.</p>
+
+<p>Разберём, где экзамен проходит на самом деле, что известно про домашний формат и что делать, если центра тестирования в вашем городе нет.</p>
+
+<h2>Короткий ответ: <span class="italic">где сдают и что значит «онлайн»</span></h2>
+
+<p>Экзамен принимают центры тестирования. <b>Компьютерный формат — это тоже «в центре»</b>: разница с бумажным в том, как вы отвечаете, а не в том, откуда.</p>
+
+<p>Слово «онлайн» в объявлениях означает что угодно. Иногда компьютерный формат в центре, иногда домашний с наблюдением, а чаще всего — тренажёр, который к экзамену отношения не имеет.</p>
+
+<p>Путаница эта не чья-то злая воля. Продавцы курсов и владельцы тренажёров пишут «онлайн», потому что по этому слову их ищут, а человек подставляет в него собственное ожидание: сдать, не выходя из дома.</p>
+
+<p><b>Что проверять перед тем, как планировать.</b> Один вопрос: выдают ли по результату официальный сертификат. Если нет — перед вами тренировка, какой бы похожей на экзамен она ни выглядела.</p>
+
+<p>Этот вопрос стоит задавать прямо и до оплаты, если она предполагается. Формулировка «вы получите результат» ответом не является: результат показывает и тренажёр. Спрашивать нужно именно про документ, который признают при поступлении или на работе.</p>
+
+<h2>Три вещи, <span class="italic">которые называют словом «онлайн»</span></h2>
+
+<p>Соберу в таблицу, чтобы различия были видны сразу.</p>
+
+<table class="ks-tab ks-wy">
+  <thead><tr><th>Что это</th><th>Где проходит</th><th>Что даёт</th><th>Источник</th></tr></thead>
+  <tbody>
+    <tr><td><b>Компьютерный формат</b></td><td>В центре тестирования</td><td>настоящий экзамен и официальный сертификат</td><td>подтверждено</td></tr>
+    <tr><td><b>Домашний формат с наблюдением</b></td><td>Дома, под камерой</td><td>настоящий экзамен, но доступен не везде и не на всех уровнях</td><td>по описаниям</td></tr>
+    <tr><td><b>Онлайн-тренажёр</b></td><td>Где угодно</td><td>тренировка без всякого статуса: сертификата не даёт</td><td>подтверждено</td></tr>
+  </tbody>
+</table>
+
+<p>Две строки подтверждены, одна — нет, и это домашний формат. О нём отдельный разговор ниже.</p>
+
+<p>Обратите внимание на средний столбец: <b>место проведения различает эти три вещи лучше всего</b>. Если вам предлагают сдать «где угодно и когда угодно», речь почти наверняка о тренажёре: у настоящего экзамена есть и место, и дата, назначенные не вами.</p>
+
+<h2>Онлайн-тренажёр: <span class="italic">почему это не экзамен</span></h2>
+
+<p>Скажу прямо, без смягчений: <b>сертификата за него не дают и дать не могут.</b></p>
+
+<p>Причина не в качестве заданий — они бывают сделаны добросовестно и близко к настоящим. Причина в процедуре: экзамен — это не набор вопросов, а проверка личности, условия проведения и регистрация результата. Ничего из этого тренажёр не обеспечивает.</p>
+
+<p><b>При этом он полезен</b>, и отговаривать я не стану. Тренажёр показывает, на каком вы уровне, помогает выбрать, к чему готовиться, и привыкнуть к формату заданий. Как с ним работать, разобрано отдельно: <a href="https://kitai-school.ru/article/hsk-1-probnyy-test-kak-ispolzovat-onlayn-trenajer" target="_blank" rel="noopener">пробный тест HSK 1</a>.</p>
+
+<p>Вред начинается только в одном случае: когда человек принимает его за экзамен и перестаёт искать настоящий. Эту ошибку я вижу чаще всего у тех, кто живёт далеко от центров.</p>
+
+<p>Отличить одно от другого можно по трём признакам: у экзамена есть назначенная дата, проверка личности и срок регистрации, который закрывается. Если ничего из этого нет, перед вами тренировка.</p>
+
+<h2>Компьютерный формат: <span class="italic">это тоже «в центре»</span></h2>
+
+<p>Самая частая путаница, и разводится она одной фразой: компьютерный формат отличается от бумажного способом ответа, а не местом.</p>
+
+<figure class="ks-fig"><img src="https://static.tildacdn.com/tila3165-6261-4561-b562-626431393739/gdesdat-info.png" alt="Развилка от вопроса о сертификате: слева два пути с настоящим экзаменом, справа тренажёр, снизу три варианта при отсутствии центра в городе" width="1200" height="700"><figcaption>Если сертификат нужен, путей два, и оба проводит центр тестирования.</figcaption></figure>
+
+<p>Вы так же приезжаете в центр, так же предъявляете документы, так же сидите в аудитории. Отличается то, что перед вами экран, а не бланк.</p>
+
+<p><b>Чем компьютерный формат бывает удобнее.</b> Он есть в городах, где бумажный не проводят, и выбор дат у него иногда шире. Для человека без центра поблизости это первое, что стоит проверить.</p>
+
+<p>Чем различаются сами задания в двух форматах и что из-за этого приходится тренировать по-разному, разобрано в отдельной статье: <a href="https://kitai-school.ru/article/daty-sdachi-hsk-raspisanie-sessiy" target="_blank" rel="noopener">даты сдачи HSK</a>.</p>
+
+<h2>Домашний формат: <span class="italic">что о нём известно</span></h2>
+
+<p>Здесь я обязана быть осторожной, и объясню почему.</p>
+
+<p>В описаниях встречается домашний формат с наблюдением: экзамен сдают дома, под камерой, с программой, которая следит за происходящим. <b>Официального подтверждения, что он доступен в России, я не нашла.</b></p>
+
+<p>Что про него говорят: он есть не во всех регионах, может быть ограничен уровнями и требует установки программы наблюдения заранее. Всё это — сторонние описания, а не объявление экзамена.</p>
+
+<p><b>Как с этим быть.</b> Не стройте план вокруг домашнего формата, пока не получили подтверждения от конкретного центра. Спросить стоит до того, как выбрана дата: если ответ окажется отрицательным, времени на запасной вариант останется больше.</p>
+
+<h2>Как я отвечаю на вопрос <span class="italic">«можно ли сдать из дома»</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик из города, где центра тестирования нет, полгода откладывал экзамен. Каждый раз находилась причина, и каждый раз он говорил, что ищет способ сдать дистанционно.</p>
+  <p>В какой-то момент он сказал, что нашёл: сайт с онлайн-тестом, где после прохождения показывают баллы по разделам. Решил, набрал проходной, обрадовался.</p>
+  <p><b>Это был тренажёр.</b> Баллы он показал честно — задания были похожи на экзаменационные, — но сертификата за него не дают и дать не могут: к экзамену такие сайты отношения не имеют.</p>
+  <p>Разочарование было сильным, и я понимаю почему. Он не искал обходного пути и никого не пытался обмануть: он просто поверил названию, в котором стояло «HSK» и «тест».</p>
+  <p>Когда разобрались, выяснилось, что всё решалось проще, чем казалось. Ближайший центр был в семи часах езды, <b>а дата экзамена известна за месяцы</b> — поездку можно было спланировать заранее, взять выходной и съездить.</p>
+  <p>Он так и сделал через сессию. Сказал потом, что самым трудным оказалось не шесть часов в автобусе, а признаться себе, что полгода ушли на поиск несуществующего способа.</p>
+  <p><b>Вывод, который я делаю:</b> сначала выясните, что именно вы собираетесь сдавать и даёт ли это сертификат, и только потом стройте план. Иначе план может оказаться планом не того события.</p>
+</div>
+
+<h2>Если центра <span class="italic">в вашем городе нет</span></h2>
+
+<p>Положение решаемое, и вариантов три.</p>
+
+<ol>
+  <li><b>Съездить в ближайший город.</b> Экзамен идёт в один день по всей стране, и дата известна заранее.</li>
+  <li><b>Выбрать центр с компьютерным форматом.</b> Он бывает там, где бумажный не проводят.</li>
+  <li><b>Спросить про домашний формат.</b> Его дают не все центры, и уточнять нужно до записи.</li>
+</ol>
+
+<p><b>Первый вариант недооценивают.</b> Экзамен идёт в один день по всей стране, дата известна заранее, и поездка планируется как обычная командировка: билеты, ночёвка, выходной. Это дешевле и проще, чем кажется, особенно если считать не деньги, а потерянные полгода.</p>
+
+<p>Второй стоит проверять всегда: компьютерный формат бывает там, где бумажного нет. Третий — тоже, но с поправкой на то, что подтверждения по нему мало.</p>
+
+<p><b>Как считать расходы на поездку.</b> Дорога и ночёвка обычно стоят меньше, чем кажется при первом взгляде, особенно если ехать ночным поездом или автобусом и возвращаться в тот же день. Сравнивать их стоит не с нулём, а с ценой ещё одного полугодия подготовки без результата.</p>
+
+<p>И одно практическое соображение про саму поездку: приезжайте накануне, а не утром в день экзамена. Задержка транспорта в этом случае стоит не нервов, а сессии — следующая будет через месяцы.</p>
+
+<h2>Чего сделать <span class="italic">нельзя</span></h2>
+
+<p>Честный список, чтобы не тратить время на невозможное.</p>
+
+<ul>
+  <li><b>Сдать экзамен самому себе дома без наблюдения.</b> Результат не будет засчитан.</li>
+  <li><b>Получить сертификат за онлайн-тренажёр.</b> Он не связан с экзаменом.</li>
+  <li><b>Записаться после закрытия регистрации.</b> Сроки у каждого центра свои.</li>
+</ul>
+
+<p>Про последний пункт скажу отдельно, потому что с ним сталкиваются чаще всего. Сроки записи у каждого центра свои и расходятся сильно: пока один ещё принимает заявки, другой уже закрылся. Разбор этого есть в отдельной статье блога.</p>
+
+<p>Отсюда правило, которое экономит больше всего нервов: <b>смотрите срок записи в том центре, куда собираетесь</b>, а не в соседнем и не в статье со сводной таблицей. Дата экзамена общая, а окно регистрации — нет.</p>
+
+<p>И не откладывайте запись на последний день окна. Технические сбои в этот день случаются чаще обычного просто потому, что заявки подают все сразу, а времени на вторую попытку уже не остаётся.</p>
+
+<h2>Как выбрать центр, <span class="italic">если их несколько</span></h2>
+
+<p>В крупных городах центров бывает больше одного, и они не одинаковы.</p>
+
+<p><b>На что смотреть.</b> Какие форматы проводит — бумажный, компьютерный или оба. Какие экзамены принимает в эту сессию: устная часть и детский экзамен идут не везде и не всегда. И какое у него окно регистрации — оно своё.</p>
+
+<p>Названий и адресов центров я здесь не привожу: блог не ставит внешних ссылок, а список меняется. Узнавать это нужно напрямую в том центре, который вы рассматриваете.</p>
+
+<p>И ещё одно, о чём редко думают заранее: уточните, как добираться и сколько времени занимает дорога. Опоздание к началу не компенсируется ничем, а на незнакомый адрес в чужом районе времени уходит больше, чем кажется по карте.</p>
+
+<p><b>Если центров в городе два и условия похожи</b>, выбирайте тот, где проводят оба формата. Это оставляет возможность поменять решение: иногда после первого пробника становится понятно, что писать от руки вы не успеваете, и компьютерный формат подходит лучше.</p>
+
+<p>А если выбора нет вовсе — он и не нужен. Формат влияет на подготовку, но не определяет результат: человек, который знает язык на свой уровень, сдаёт и так и так.</p>
+
+<div class="cta">
+  <p><b>Не знаете, какой формат вам подходит?</b> На пробном занятии мы смотрим на ваш уровень и на то, что доступно в вашем городе, — и собираем план от реальной даты, а не от желаемой.</p>
+  <p><a href="#popup:zayavka">Приходите на пробное занятие</a>, форматы и программа — здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Перечня городов и расписания сессий.</b> Этому посвящена отдельная статья блога.</li>
+  <li><b>Названий центров и их контактов.</b> Блог не ставит внешних ссылок, а список меняется.</li>
+  <li><b>Сроков регистрации в цифрах.</b> Они закрываются быстрее, чем живёт статья.</li>
+  <li><b>Утверждения, что домашний формат доступен в России.</b> Подтверждения я не нашла.</li>
+  <li><b>Сравнения заданий в бумажном и компьютерном форматах.</b> Это разобрано отдельно.</li>
+</ul>
+
+<p>Отдельно отмечу, чего в статье нет по другой причине. Я не обсуждаю, честно ли искать способ сдать полегче: люди ищут не лазейку, а выход из положения, когда до ближайшего центра день пути. Поэтому разговор здесь про то, что работает, а не про то, кто виноват.</p>
+
+<p>Что подтверждает сертификат и кому он нужен, разобрано здесь: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK</a>.</p>
+
+<h2>Частые ошибки</h2>
+
+<ol>
+  <li><b>Принимать тренажёр за экзамен.</b> Самая дорогая ошибка: она стоит месяцев ожидания.</li>
+  <li><b>Думать, что компьютерный формат сдают из дома.</b> Он тоже проходит в центре.</li>
+  <li><b>Планировать вокруг домашнего формата без подтверждения.</b> Его может не оказаться.</li>
+  <li><b>Откладывать поездку, не посмотрев дату.</b> Она известна за месяцы вперёд.</li>
+  <li><b>Смотреть сроки записи у чужого центра.</b> У каждого они свои.</li>
+  <li><b>Выбирать формат в последний момент.</b> От него зависит, что тренировать, и решать стоит до начала подготовки.</li>
+</ol>
+
+<p>Последняя ошибка обходится дороже всех остальных вместе: человек готовится вообще, а потом обнаруживает, что на экзамене с него спрашивают не то, что он отрабатывал. Формат — это не строка в заявке, а условие, под которое собирается весь план.</p>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли сдать HSK онлайн?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Смотря что называть словом «онлайн». Компьютерный формат — настоящий экзамен, но проходит он в центре тестирования, а не дома. Домашний формат с наблюдением через камеру существует, но доступен не везде. А онлайн-тренажёр, который чаще всего находят по этому запросу, экзаменом не является вовсе.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли сдать HSK из дома?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По описаниям, домашний формат с наблюдением существует в некоторых регионах и может быть ограничен уровнями. Подтверждения, что он доступен в России, я не нашла, поэтому рассчитывать на него заранее не советую: спросите в центре до того, как строить планы.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Даёт ли онлайн-тест сертификат?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. Тренажёр показывает баллы и помогает понять свой уровень, но он не связан с экзаменом: результат нигде не регистрируется и документа по нему не выдают. Это полезный инструмент подготовки и бесполезный способ получить сертификат.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что делать, если в городе нет центра?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Три варианта. Съездить в ближайший город — экзамен идёт в один день по всей стране, и дата известна заранее. Поискать центр с компьютерным форматом: он бывает там, где бумажный не проводят. Или спросить про домашний формат, но заранее, а не накануне записи.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем компьютерный формат отличается от домашнего?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Прежде всего местом. Компьютерный проходит в центре тестирования: там проверяют документы и отвечают за результат. Домашний проходит дома, под наблюдением через камеру, и доступен он не везде. Разница в самих заданиях между форматами разобрана в отдельной статье блога.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где смотреть даты и сроки записи?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Расписание сессий общее, а окна регистрации у каждого центра свои и расходятся в разы. Про это у нас есть отдельная статья с разбором, почему дату можно узнать откуда угодно, а срок записи — только в своём центре.</p></div>
+  </details>
+</div>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li>То, что компьютерный формат проводится в центре тестирования и даёт обычный сертификат, подтверждено описаниями, совпавшими между собой.</li>
+    <li>То, что онлайн-тренажёр не связан с экзаменом и документа не даёт, следует из самой процедуры: результат нигде не регистрируется.</li>
+    <li><b>Существование домашнего формата с наблюдением приведено по сторонним описаниям.</b> Подтвердить его доступность в России мне не удалось.</li>
+    <li><b>Ограничения домашнего формата по уровням и требование программы наблюдения</b> названы оттуда же и с той же оговоркой.</li>
+    <li><b>Названий центров и площадок не привожу</b> и ссылок на них не ставлю.</li>
+    <li><b>Сроков регистрации в цифрах не называю</b> — они устаревают быстрее, чем выходит статья.</li>
+    <li>Расписание сессий и сравнение форматов по заданиям вынесены в другие материалы блога.</li>
+    <li>Случай с учеником, принявшим тренажёр за экзамен, взят из занятий Kitai School; имя не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Компьютерный формат — это тоже «в центре»: из дома его не сдают</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
