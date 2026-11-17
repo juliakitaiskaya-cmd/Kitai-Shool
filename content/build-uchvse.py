@@ -13,11 +13,11 @@ SLUG = "hsk-standard-course-uchebniki"
 U = "https://kitai-school.ru/article/"
 
 HERO = "https://static.tildacdn.com/tila3563-3531-4362-b438-313039393933/uchvse-hero.png"
-FIG = "https://static.tildacdn.com/tila3433-3664-4331-a537-346530653738/uchvse-info.png"
+FIG = "https://static.tildacdn.com/tila3765-3536-4337-b737-643031666165/uchvse-info_1.png"
 HERO_ALT = ("Три ряда счёта: шесть уровней серии, девять томов с метками от первого до "
             "шестого B и двадцать семь книг комплекта")
-FIG_ALT = ("Девять томов серии в ряд: у четырёх указан объём словаря, у пяти поле помечено "
-           "пунктиром как неподтверждённое, ниже три книги комплекта тома")
+FIG_ALT = ("Разворот двух книг комплекта: слева учебник с текстами, словами и грамматикой, "
+           "справа рабочая тетрадь с упражнениями, ниже книга для преподавателя")
 
 src = open(SRC, encoding="utf-8").read()
 css = re.search(r'<link rel="preconnect".*?</style>', src, re.S).group(0)
@@ -276,7 +276,7 @@ KIT_LI
 
 <p>Ученику нужны две: учебник и тетрадь. Ниже разберу, чем они отличаются, потому что на этом чаще всего экономят — и зря.</p>
 
-<figure class="ks-fig"><img src="FIG_SRC" alt="FIG_ALT" width="1200" height="570"><figcaption>Объём словаря подтверждён по четырём томам из девяти; у остальных поле оставлено пустым намеренно.</figcaption></figure>
+<figure class="ks-fig"><img src="FIG_SRC" alt="FIG_ALT" width="1200" height="600"><figcaption>Учебник и тетрадь делят работу: в первом лежит новое, во второй — только упражнения к нему.</figcaption></figure>
 
 <h2>Учебник и рабочая тетрадь: <span class="italic">что в каждом</span></h2>
 
