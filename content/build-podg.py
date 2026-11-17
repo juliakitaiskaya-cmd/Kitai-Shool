@@ -11,8 +11,8 @@ OUT = "podgotovka-k-hsk-materialy.html"
 SLUG = "podgotovka-k-hsk-materialy"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/podg-hero.png"
-FIG = "assets/podg-info.png"
+HERO = "https://static.tildacdn.com/tila6361-3838-4332-b561-356534353939/podg-hero_1.png"
+FIG = "https://static.tildacdn.com/tila3038-3265-4538-a666-613233653437/podg-info_1.png"
 HERO_ALT = ("Четыре части набора для подготовки: книга, записи, колода карточек и пробник, "
             "у каждой подписано, что она закрывает и чего не закрывает")
 FIG_ALT = ("Три прохода по одной записи: первый без расшифровки, второй с расшифровкой, "
