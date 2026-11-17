@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Картинки к статье «HSK Standard Course: учебники по уровням»
 # Обложка     — три ступени счёта: шесть уровней, девять томов, двадцать семь книг
-# Инфографика — девять томов в ряд: у четырёх словарь подтверждён, у пяти поле пустое
+# Инфографика — разбор комплекта: что лежит в учебнике, тетради и книге преподавателя
 import sys
 sys.path.insert(0, "/home/user/Kitai-Shool/content")
-from uch_vse import (VOLUMES, KIT, LEVELS, VOLS_PER_LEVEL, ONE_VOLUME, TWO_VOLUMES,
+from uch_vse import (VOLUMES, KIT, INSIDE, HOW, LEVELS, VOLS_PER_LEVEL, ONE_VOLUME, TWO_VOLUMES,
                      TOTAL_VOLUMES, BOOKS_PER_VOLUME, TOTAL_BOOKS, KNOWN, UNKNOWN,
                      SERIES_NAME, SERIES_CN)
 
@@ -107,27 +107,29 @@ h1 i{font-style:italic;color:var(--brick)}
 assert "%%" not in hero, "в разметке остались двойные проценты"
 open(S + "uchvse-hero.html", "w", encoding="utf-8").write(hero)
 
-# ─────────── инфографика: девять томов, словарь известен по четырём ───────────
-TOP_W = max(v[3] for v in KNOWN)
-MAXH, MINH = 176, 42
-cols = ""
-for lvl, tag, les, w in VOLUMES:
-    if w:
-        h = round(MINH + (MAXH - MINH) * w / TOP_W)
-        inner = ('<div class="bar on" style="height:%dpx"><span>%d</span></div>'
-                 '<div class="les">%d уроков</div>' % (h, w, les))
-    else:
-        inner = ('<div class="bar off"><span>нет<br>данных</span></div>'
-                 '<div class="les">%s</div>' % ("%d уроков" % les if les else "—"))
-    cols += '<div class="cl%s"><div class="tag">%s</div>%s</div>' % (
-        "" if w else " dim", tag, inner)
-assert cols.count('class="bar on"') == len(KNOWN) == 4
-assert cols.count('class="bar off"') == len(UNKNOWN) == 5
+# ─────────── инфографика: что лежит в каждой книге комплекта ───────────
+NEED = [b for b in INSIDE if b[2]]
+EXTRA = [b for b in INSIDE if not b[2]]
+assert len(NEED) == 2 and len(EXTRA) == 1
 
-kit_items = "".join(
-    '<div class="ki%s"><b>%s</b><span>%s</span></div>'
-    % ("" if need else " no", name, what) for name, what, need in KIT)
-assert kit_items.count('class="ki no"') == 1, "одна книга из трёх ученику не нужна"
+HOW_D = dict((n, (verb, note)) for n, verb, note in HOW)
+
+pages = ""
+for name, parts, need in NEED:
+    verb, note = HOW_D[name]
+    items = "".join('<li>%s</li>' % p for p in parts)
+    pages += ("""<div class="pg">
+  <div class="ph"><b>%(name)s</b><i>%(verb)s</i></div>
+  <ul class="pl">%(items)s</ul>
+  <div class="pn">%(note)s</div>
+</div>""" % dict(name=name.capitalize(), verb=verb, items=items, note=note[0].upper() + note[1:]))
+assert pages.count('class="pg"') == 2
+assert pages.count("<li>") == sum(len(p) for n, p, need in NEED)
+
+ename, eparts, _ = EXTRA[0]
+extra = ('<div class="ex"><div class="eh"><b>%s</b><i>не для ученика</i></div>'
+         '<div class="el">%s</div></div>'
+         % (ename.capitalize(), " · ".join(eparts)))
 
 info = """<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">
 %(fonts)s
@@ -138,29 +140,28 @@ info = """<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">
 .wrap:before{content:"";position:absolute;left:0;right:0;top:0;height:9px;background:var(--brick)}
 .top{display:flex;align-items:flex-end;justify-content:space-between;gap:34px;margin-bottom:20px}
 .eyebrow{color:var(--brick);font-weight:700;font-size:15.5px;letter-spacing:.19em;text-transform:uppercase;margin-bottom:7px}
-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;line-height:1.08;color:var(--ink);max-width:25ch}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;line-height:1.08;color:var(--ink);max-width:24ch}
 h2 i{font-style:italic;color:var(--brick)}
-.hint0{flex:0 0 346px;background:var(--surface);border:1px solid var(--hair);border-left:4px solid var(--brick);border-radius:13px;padding:11px 17px;font-size:14px;color:var(--ink-2);line-height:1.35}
+.hint0{flex:0 0 348px;background:var(--surface);border:1px solid var(--hair);border-left:4px solid var(--brick);border-radius:13px;padding:11px 17px;font-size:14px;color:var(--ink-2);line-height:1.35}
 .hint0 b{color:var(--ink)}
 
-.grid{flex:1 1 auto;min-height:0;display:flex;align-items:flex-end;gap:10px}
-.cl{flex:1 1 0;display:flex;flex-direction:column;align-items:center}
-.tag{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
-.cl.dim .tag{color:var(--taupe)}
-.bar{width:100%%;border-radius:10px;display:flex;align-items:flex-start;justify-content:center;padding-top:10px}
-.bar.on{background:var(--brick-soft);border:1px solid var(--brick)}
-.bar.on span{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:27px;color:var(--brick-d);line-height:1}
-.bar.off{height:70px;background:transparent;border:2px dashed var(--hair);align-items:center;padding-top:0}
-.bar.off span{font-size:12.5px;color:var(--taupe);text-align:center;line-height:1.25}
-.les{margin-top:8px;font-size:12.5px;color:var(--ink-2)}
-.cl.dim .les{color:var(--taupe)}
+.spread{flex:1 1 auto;min-height:0;display:flex;align-items:stretch;position:relative;background:var(--surface);border:1px solid var(--brick);border-radius:16px;overflow:hidden}
+.spread:before{content:"";position:absolute;left:50%%;top:16px;bottom:16px;width:2px;background:var(--hair);transform:translateX(-50%%)}
+.pg{flex:1 1 0;padding:20px 26px;display:flex;flex-direction:column}
+.ph{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.ph b{font-size:21px;color:var(--ink)}
+.ph i{font-style:normal;font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#fff;background:var(--brick);border-radius:7px;padding:4px 11px}
+.pl{list-style:none;padding:0;margin:0}
+.pl li{position:relative;padding:9px 0 9px 24px;font-size:16px;color:var(--ink-2);border-bottom:1px dashed var(--hair)}
+.pl li:last-child{border-bottom:none}
+.pl li:before{content:"";position:absolute;left:4px;top:17px;width:8px;height:8px;border-radius:50%%;background:var(--brick-soft);border:1px solid var(--brick)}
+.pn{margin-top:auto;padding-top:14px;font-size:14px;color:var(--brick-d);font-weight:600}
 
-.kit{margin-top:16px;flex:0 0 auto;display:flex;gap:10px}
-.ki{flex:1 1 0;background:var(--surface);border:1px solid var(--brick);border-radius:12px;padding:10px 16px}
-.ki.no{border-color:var(--hair);border-style:dashed;background:transparent}
-.ki b{display:block;font-size:15px;color:var(--ink);margin-bottom:3px}
-.ki.no b{color:var(--taupe)}
-.ki span{font-size:13px;color:var(--ink-2);line-height:1.3}
+.ex{margin-top:14px;flex:0 0 auto;background:transparent;border:1px dashed var(--grey);border-radius:13px;padding:12px 22px;display:flex;align-items:center;gap:18px}
+.eh{display:flex;align-items:baseline;gap:11px;flex:0 0 auto}
+.eh b{font-size:16.5px;color:var(--taupe)}
+.eh i{font-style:normal;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grey)}
+.el{font-size:14px;color:var(--ink-2)}
 
 .foot{margin-top:14px;flex:0 0 auto;display:flex;align-items:center;gap:18px}
 .foot .msg{flex:1 1 auto;background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:11px 20px;font-size:14.5px;color:var(--ink);line-height:1.34}
@@ -173,25 +174,25 @@ h2 i{font-style:italic;color:var(--brick)}
 <div class="wrap">
   <div class="top">
     <div>
-      <div class="eyebrow">Девять томов</div>
-      <h2>Словарь известен <i>по четырём томам из девяти</i></h2>
+      <div class="eyebrow">Комплект тома</div>
+      <h2>Учебник читают, <i>тетрадь делают</i></h2>
     </div>
-    <div class="hint0">Цифра — сколько слов в томе. <b>Пунктиром отмечены тома, по которым подтверждённых данных нет: ни по одному второму тому цифры не нашлось.</b></div>
+    <div class="hint0">Это разные книги с разными задачами. <b>Нового материала в тетради нет — она целиком про то, чтобы выученное закрепилось.</b></div>
   </div>
 
-  <div class="grid">%(cols)s</div>
+  <div class="spread">%(pages)s</div>
 
-  <div class="kit">%(kit)s</div>
+  %(extra)s
 
   <div class="foot">
-    <div class="msg">На старших уровнях <b>номер на обложке называет уровень, а не объём</b>: проверяйте букву рядом с цифрой</div>
+    <div class="msg">Если выбирать приходится из-за денег, берите <b>том целиком уровнем ниже</b>, а не учебник без тетради на своём</div>
     <div class="brand"><span class="dot2"></span><b>Kitai School</b><span>&middot; kitai-school.ru</span></div>
   </div>
 </div>
-</body></html>""" % dict(fonts=FONTS, vars=VARS, h=570, cols=cols, kit=kit_items)
+</body></html>""" % dict(fonts=FONTS, vars=VARS, h=600, pages=pages, extra=extra)
 
 assert "%%" not in info, "в разметке остались двойные проценты"
 open(S + "uchvse-info.html", "w", encoding="utf-8").write(info)
 
-print("ok | томов:", TOTAL_VOLUMES, "| книг:", TOTAL_BOOKS,
-      "| с цифрой:", [v[1] for v in KNOWN], "| без:", [v[1] for v in UNKNOWN])
+print("ok | нужных книг:", len(NEED), "| пунктов:", sum(len(p) for n, p, need in INSIDE),
+      "| лишняя:", EXTRA[0][0])
