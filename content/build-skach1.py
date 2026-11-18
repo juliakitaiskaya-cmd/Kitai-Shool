@@ -11,8 +11,8 @@ OUT = "skachat-uchebnik-hsk-1.html"
 SLUG = "skachat-uchebnik-hsk-1"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/sk1-hero.png"
-FIG = "assets/sk1-info.png"
+HERO = "https://static.tildacdn.com/tila6337-3630-4765-b265-373537643339/sk1-hero.png"
+FIG = "https://static.tildacdn.com/tila6635-6434-4431-b132-383162393162/sk1-info.png"
 HERO_ALT = ("Три карточки-вердикта по запросу «скачать учебник HSK 1»: учебник — нет, "
             "рабочая тетрадь — нет, аудио к урокам — да, по коду из книги")
 FIG_ALT = ("Четыре строки того, что по первому уровню есть в электронном виде законно, с "
