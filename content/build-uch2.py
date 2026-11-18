@@ -12,8 +12,8 @@ OUT = "uchebnik-hsk-2.html"
 SLUG = "uchebnik-hsk-2"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/uch2-hero.png"
-FIG = "assets/uch2-info.png"
+HERO = "https://static.tildacdn.com/tila6662-6138-4435-a139-663335386535/uch2-hero.png"
+FIG = "https://static.tildacdn.com/tila3061-3036-4662-a163-333263653130/uch2-info.png"
 HERO_ALT = ("Три плитки с числами второго уровня: пятьсот слов действующего словника, триста "
             "прежнего и пустая плитка с вопросительным знаком вместо числа уроков в томе")
 FIG_ALT = ("Три добора после учебника: слова, письмо от руки и чтение без пиньиня, у каждого "
