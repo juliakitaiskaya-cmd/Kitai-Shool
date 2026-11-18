@@ -12,8 +12,8 @@ OUT = "uchebnik-hsk-1.html"
 SLUG = "uchebnik-hsk-1"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/uch1-hero.png"
-FIG = "assets/uch1-info.png"
+HERO = "https://static.tildacdn.com/tila3962-6361-4737-b730-363265313931/uch1-hero.png"
+FIG = "https://static.tildacdn.com/tila3365-6233-4135-b764-373364656632/uch1-info.png"
 HERO_ALT = ("Шкала словаря первого уровня: закрашенная половина — слова из тома учебника, "
             "пустая половина — сколько остаётся добрать после него")
 FIG_ALT = ("Один урок, разложенный на четыре подхода: слова, текст на слух, текст глазами и "
