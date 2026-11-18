@@ -34,7 +34,7 @@ def L(sl, t):
     return '<a href="%s%s" target="_blank" rel="noopener">%s</a>' % (U, sl, t)
 
 
-TITLE = ("Учебник HSK 4: почему одной книги мало даже вдвоём")
+TITLE = ("Учебник HSK 4: почему двух томов мало и сколько добирать")
 DESC_M = ("Сколько слов даёт том 4A, почему два тома вместе закрывают только три пятых "
           "прибавки уровня, что делать, если куплена одна книга, и где взять аудио.")
 OGD = ("Один том четвёртого уровня закрывает меньше трети прибавки, оба вместе — три пятых.")
@@ -189,7 +189,7 @@ BODY = """<body>
 <main id="ks-art">
 <article>
 <p class="eyebrow">Экзамен</p>
-<h1>Учебник HSK 4: <span class="italic">почему одной книги мало даже вдвоём</span></h1>
+<h1>Учебник HSK 4: <span class="italic">почему двух томов мало и сколько добирать</span></h1>
 
 <div class="byline">
   <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
