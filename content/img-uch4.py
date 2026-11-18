@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Картинки к статье «Учебник HSK 4»
-# Обложка     — полоса прибавки уровня из трёх частей: том 4A, оценка 4B и добор
+# Обложка     — полоса прибавки уровня: том 4A, оценка 4B и то, что учат сами
 # Инфографика — две колонки: что написано в объявлении и что это значит
 import sys
 sys.path.insert(0, "/home/user/Kitai-Shool/content")
@@ -44,7 +44,7 @@ assert A_WORDS + B_EST + REST == STEP_NEW, "три части складываю
 PARTS = [
     ("Том " + VOL_A[0], A_WORDS, "подтверждено", "p1"),
     ("Том " + VOL_B[0], B_EST, "оценка", "p2"),
-    ("Добор сверх книг", REST, "расчёт", "p3"),
+    ("Учить самому", REST, "расчёт", "p3"),
 ]
 seg = ""
 for name, val, st, cls in PARTS:
@@ -98,7 +98,7 @@ hero = ('<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">' + FONTS
         + '<span class="vl"><b>' + str(BOOKS_STUDENT) + ' книги</b>: учебник и тетрадь '
           'каждого тома</span>'
         + '<span class="lb">Статус</span>'
-        + '<span class="vl">второй том — оценка, добор — расчёт</span></div>'
+        + '<span class="vl">второй том — оценка, остальное — расчёт</span></div>'
         + "</div></body></html>")
 
 # ───────────────────────── инфографика: объявление против книги ──────────────
@@ -144,7 +144,7 @@ fig = ('<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">' + FONTS
          'и список слов уровня</div></div>'
        + '<div class="cols"><span>в объявлении</span><span>на самом деле</span></div>'
        + '<div class="list">' + rows + '</div>'
-       + '<div class="foot"><span class="lb">Добор</span>'
+       + '<div class="foot"><span class="lb">Учить самому</span>'
        + '<span class="vl">около <b>' + str(REST) + ' слов</b> сверх двух книг</span>'
        + '<span class="lb">Одна книга</span>'
        + '<span class="vl"><b>' + str(A_SHARE) + ' %</b> прибавки уровня</span></div>'
