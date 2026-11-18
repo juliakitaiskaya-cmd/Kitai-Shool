@@ -12,8 +12,8 @@ OUT = "uchebnik-hsk-3.html"
 SLUG = "uchebnik-hsk-3"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/uch3-hero.png"
-FIG = "assets/uch3-info.png"
+HERO = "https://static.tildacdn.com/tila3065-3030-4563-b733-323238346132/uch3-hero.png"
+FIG = "https://static.tildacdn.com/tila3862-6261-4634-a563-356533623636/uch3-info.png"
 HERO_ALT = ("Три столбика прибавки слов по уровням: триста на первом, двести на втором и "
             "пятьсот на третьем, равные сумме первых двух")
 FIG_ALT = ("Матрица из трёх строк: чтение без пиньиня и письменные задания комплект тома "
