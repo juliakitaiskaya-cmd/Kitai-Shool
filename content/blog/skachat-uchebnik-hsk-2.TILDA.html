@@ -1,0 +1,459 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/skachat-uchebnik-hsk-2#article",
+      "headline": "Скачать учебник HSK 2: две разные книги под один уровень и что есть в цифре",
+      "description": "Разбор того, какую книгу ищут по запросу про учебник второго уровня экзамена по китайскому языку: почему под одним и тем же номером уровня сейчас выходят книги двух разных серий, когда вышли учебник и рабочая тетрадь второго уровня новой серии, что из этих материалов бывает в электронном виде, что означает заявленный в описаниях доступ к цифровым материалам и по каким трём признакам отличить книгу одной серии от другой при покупке.",
+      "image": "assets/sk2-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/skachat-uchebnik-hsk-2",
+      "about": {
+        "@type": "Thing",
+        "name": "Учебники второго уровня экзамена по китайскому языку и их электронные материалы"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/skachat-uchebnik-hsk-2#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Можно ли скачать учебник HSK 2 в PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Официальных электронных изданий нет ни у прежней серии, ни у новой: книги выходят на бумаге. Всё, что встречается в сети под видом учебника, — неофициальные копии, и блог на них не ссылается."}},
+        {"@type": "Question", "name": "Какой учебник второго уровня актуален в 2026 году?", "acceptedAnswer": {"@type": "Answer", "text": "Под новый стандарт выпущена отдельная серия, и её том второго уровня вышел в марте 2026 года. Прежняя серия сделана под старый стандарт и остаётся под ним: она не бесполезна, но это книга другого поколения."}},
+        {"@type": "Question", "name": "Вышла ли рабочая тетрадь к новому учебнику?", "acceptedAnswer": {"@type": "Answer", "text": "Да, отдельной книгой, примерно через месяц после учебника — в апреле 2026 года. Это данные каталогов магазинов; у издательства я их не сверяла. Практический смысл в том, что тетрадь может приехать в магазины позже учебника."}},
+        {"@type": "Question", "name": "Что за цифровые материалы у новой серии?", "acceptedAnswer": {"@type": "Answer", "text": "В описаниях изданий заявлен доступ к цифровым материалам. Что именно туда входит, по открытым данным я не выяснила, и считать это электронной версией книги точно не стоит: речь о дополнениях, а не о самом учебнике."}},
+        {"@type": "Question", "name": "Годится ли прежний учебник?", "acceptedAnswer": {"@type": "Answer", "text": "Для изучения языка — вполне: лексика младших уровней почти не изменилась. Расхождения начинаются в заданиях под формат экзамена, и закрываются они образцами заданий, а не сменой книги в середине тома."}},
+        {"@type": "Question", "name": "Где взять звук к урокам?", "acceptedAnswer": {"@type": "Answer", "text": "По коду, напечатанному в книге, — у более старых тиражей вместо кода шёл диск. Код привязан к экземпляру, поэтому у книги с рук он может быть уже использован: спрашивайте об этом до покупки."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/skachat-uchebnik-hsk-2#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Скачать учебник HSK 2: две разные книги под один уровень и что есть в цифре", "item": "https://kitai-school.ru/article/skachat-uchebnik-hsk-2"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамен</p>
+<h1>Скачать учебник HSK 2: <span class="italic">две разные книги под один уровень и что есть в цифре</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-18">18 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/sk2-hero.png" alt="Две книжные карточки рядом: прежняя серия под старый стандарт и новая серия 2026 года под новый, с пометкой, чем они различаются при покупке" width="1200" height="630"></figure>
+
+<p class="lead">Прежде чем искать файл, стоит понять, какую книгу вы ищете. <b>Под номером «HSK 2» сейчас продаются книги двух разных серий</b> — под прежний стандарт и под новый, и путают их постоянно.</p>
+
+<p>Разберём, чем они отличаются, что у каждой бывает в электронном виде и почему учебника в PDF нет ни у той, ни у другой.</p>
+
+<h2>Короткий ответ: <span class="italic">какую книгу вы ищете</span></h2>
+
+<p>Коротко: <b>книг в электронном виде нет</b>, звук есть по коду из книги, а у новой серии в описаниях заявлены ещё и цифровые материалы.</p>
+
+<p>Но сначала о самой книге. Серий сейчас две: прежняя — HSK Standard Course, сделанная под старый стандарт, и новая — New HSK Course (新HSK教程), выпущенная под новый. Это не переиздание одной серии, а две разные.</p>
+
+<p>Обе серии официальные, и ни одна не является подделкой или «пиратским переизданием» другой: это просто два поколения книг, которые сейчас продаются одновременно.</p>
+
+<p>Что из этого следует для поиска: <b>запрос «скачать учебник HSK 2» ведёт к двум разным книгам</b>, и прежде чем искать, стоит решить, какая вам нужна. Подробное сравнение серий у нас есть в отдельной статье.</p>
+
+<p>Сразу оговорюсь, почему этот разбор вообще нужен в статье про скачивание: половина неудачных поисков — это поиск не того файла. Человек ищет «учебник HSK 2», находит обложку другой серии и решает, что нашёл нужное.</p>
+
+<h2>Две разные книги <span class="italic">под один номер</span></h2>
+
+<p>Путаница эта не чья-то выдумка: обе серии официальные, у обеих на обложке стоит номер уровня, и обе сейчас лежат в продаже.</p>
+
+<p><b>Прежняя серия</b> остаётся под прежний стандарт. Она не стала хуже за год: лексика младших уровней почти не изменилась, тексты и упражнения работают. Расходится формат части заданий под экзамен.</p>
+
+<p>Для человека, который только выбирает книгу, разница практическая: прежняя серия готовит к экзамену, которого после перехода не будет, а язык даёт тот же самый. Выбор зависит от того, когда вы планируете сдавать.</p>
+
+<p><b>Новая серия</b> сделана под новый стандарт и к нему же готовит. На младших уровнях в комплекте две книги — учебник и рабочая тетрадь; пособия для преподавателя, как в прежней серии, в наборе нет.</p>
+
+<p>Что в самом томе второго уровня — сколько уроков, сколько слов и что приходится учить сверх книги, — разобрано у нас в отдельной статье про учебник второго уровня.</p>
+
+<p>И последнее перед цифрами: номер уровня на обложке в обеих сериях означает одно и то же — ступень экзамена. Расходятся не уровни, а стандарты, под которые книги сделаны.</p>
+
+<h2>Что вышло у новой серии <span class="italic">на втором уровне</span></h2>
+
+<p>Обе книги уровня уже изданы, и вышли они не одновременно. Это важно для заказа: привычка покупать комплект одним заходом здесь не срабатывает.</p>
+
+<table class="ks-tab ks-ed">
+  <thead><tr><th>Книга</th><th>Когда вышла</th><th>Номер издания</th><th>Источник</th></tr></thead>
+  <tbody>
+    <tr><td><b>Учебник</b></td><td>март 2026 года</td><td>9787521368048</td><td>по каталогам магазинов</td></tr>
+    <tr><td><b>Рабочая тетрадь</b></td><td>апрель 2026 года</td><td>9787521371789</td><td>по каталогам магазинов</td></tr>
+  </tbody>
+</table>
+
+<p><b>Разрыв в 1 месяц между учебником и тетрадью</b> — не мелочь при заказе. В магазины они приезжают с той же разницей, и бывает, что учебник уже лежит, а тетради ещё нет.</p>
+
+<p>Отдельно про источник этих чисел. <b>Я беру их из каталогов магазинов, а не со страницы издательства</b> — её я не открывала. Для поиска книги этого достаточно, а для разговора о тиражах и изданиях — нет, поэтому больше ничего по ним не утверждаю.</p>
+
+<p>Номера изданий я привожу не для красоты: по ним книгу находят точно, без догадок по обложке и переводу названия.</p>
+
+<h2>Что из этого бывает <span class="italic">в электронном виде</span></h2>
+
+<p>Ещё одна мелочь, которую стоит знать до заказа: у новой серии нумерация томов на младших уровнях такая же простая, как у прежней, — один том на уровень, без букв. Буквы начинаются выше, и к второму уровню это отношения не имеет.</p>
+
+<p>Теперь к самому запросу. Разложу по трём строкам, потому что ответ на каждую свой.</p>
+
+<figure class="ks-fig"><img src="assets/sk2-info.png" alt="Три строки про электронный вид: книги целиком — нет, цифровые материалы новой серии — заявлены в описаниях, звук к урокам — да, по коду" width="1200" height="470"><figcaption>Книги в электронном виде не выходят, звук выдают по коду, а цифровые материалы новой серии заявлены в описаниях.</figcaption></figure>
+
+<table class="ks-tab ks-dg">
+  <thead><tr><th>Что ищут</th><th>Есть</th><th>Пояснение</th><th>Источник</th></tr></thead>
+  <tbody>
+    <tr><td><b>Учебник и тетрадь целиком</b></td><td>нет</td><td>электронных изданий у серий нет</td><td>подтверждено</td></tr>
+    <tr><td><b>Цифровые материалы новой серии</b></td><td>да</td><td>доступ к ним заявлен в описаниях изданий</td><td>по описаниям</td></tr>
+    <tr><td><b>Звук к урокам</b></td><td>да</td><td>открывается по коду из книги</td><td>подтверждено</td></tr>
+  </tbody>
+</table>
+
+<p>Читать таблицу удобнее снизу вверх: то, что подтверждено, стоит в крайних строках, а спорное — посередине.</p>
+
+<p><b>Первая строка — главный ответ.</b> Электронных изданий книг нет ни у прежней серии, ни у новой: обе выходят на бумаге. Почему так устроено, разобрано у нас в статье про материалы в цифре.</p>
+
+<p>Обратите внимание на столбец с источником: у двух строк стоит «подтверждено», у одной — «по описаниям». Это не формальность: третья строка держится на словах продавцов, и относиться к ней стоит соответственно.</p>
+
+<p>Вторая строка — новое и самое любопытное, о ней ниже отдельно. Третья — то, что работало и раньше: звук к урокам открывают по коду.</p>
+
+<h2>Как я разбираюсь, <span class="italic">что человек купил</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик прислал фотографию обложки и спросил: «Это правильный учебник?» Вопрос простой, а ответить на него с ходу я теперь не могу — и это новое за последний год.</p>
+  <p>Раньше хватало номера уровня: «HSK 2» на обложке означало одну-единственную книгу. Сейчас под этим номером выходят книги двух серий, и перепутать их легче лёгкого: обе официальные, обе с цифрой 2.</p>
+  <p><b>Я спрашиваю три вещи.</b> Как называется серия, какой год издания и что было в наборе, кроме учебника. Трёх ответов хватает, чтобы понять, что лежит на столе.</p>
+  <p>В тот раз оказалась прежняя серия, купленная летом. Расстраиваться было не из-за чего: он занимался по ней три месяца, и до конца тома оставалось немного.</p>
+  <p>Мы досчитали до конца по ней, а новую книгу он взял уже на третьем уровне. Менять учебник в середине тома — худшее из решений: порядок тем у серий свой, и половину материала пришлось бы проходить заново.</p>
+  <p><b>А вот с чем пришлось разбираться отдельно — со звуком.</b> Код в его книге был, но он про него не знал: страницу с кодом принял за рекламную. Звук мы открыли в тот же вечер, и аудирование перестало быть пустым местом.</p>
+  <p><b>Вывод, который я делаю:</b> «правильный учебник» — не тот, что новее, а тот, по которому вы уже идёте. Проверять стоит не серию, а то, что к ней прилагается: открыт ли звук и есть ли под рукой тетрадь.</p>
+</div>
+
+<h2>Цифровые материалы: что заявлено <span class="italic">и чего это не значит</span></h2>
+
+<p>В описаниях изданий новой серии указан доступ к цифровым материалам. Это новая строчка: у прежней серии в описаниях её не было.</p>
+
+<p><b>Чего это не значит.</b> Это не электронная версия учебника. В описаниях сказано про доступ к материалам, а не про книгу целиком, и подменять одно другим нельзя.</p>
+
+<p>Почему я вообще об этом пишу, а не пропускаю: именно эта строчка в описании и приводит людей к запросу «скачать учебник». Человек видит слово «цифровые» и понимает его как «книга будет в телефоне».</p>
+
+<p><b>Чего я не знаю.</b> Что именно входит в этот доступ — записи, задания, что-то ещё, — по открытым данным я не выяснила. Страницу издательства я не открывала и гадать не стану.</p>
+
+<p>Проверить это можно и до покупки: в карточке издания обычно написано, как открывается цифровая часть — по коду, по ссылке или через приложение. Если не написано ничего, спрашивайте.</p>
+
+<p>Практический вывод простой: если покупаете новую серию, спросите у продавца, что входит в цифровую часть и как её открывают. Ответ займёт минуту, а планировать по догадке — хуже всего.</p>
+
+<h2>Звук: <span class="italic">как он выдаётся</span></h2>
+
+<p>Это та часть ответа, которая не меняется от серии к серии и от года к году.</p>
+
+<p>Здесь всё по-прежнему, и это самая надёжная часть ответа.</p>
+
+<p><b>Звук к урокам открывают по коду</b> из книги; в более ранних тиражах вместо кода шёл диск. Код привязан к экземпляру: если книга с рук, он может быть уже использован.</p>
+
+<p>И ещё одно, что проверяют редко: звук привязан к тому тому, в котором напечатан код. Код из учебника первого уровня не откроет записи второго — это разные книги и разные наборы файлов.</p>
+
+<p>Как именно открывается доступ и что делать, если код не сработал, разобрано у нас в отдельной статье про электронные материалы — здесь повторять не буду.</p>
+
+<h2>Что есть по второму уровню <span class="italic">без покупки</span></h2>
+
+<p>Коротко, потому что подробный список у нас разобран для первого уровня и устроен одинаково.</p>
+
+<p><b>Открыто лежат два материала:</b> словник уровня и образцы экзаменационных заданий — оба публикуются вместе с описанием экзамена. Этого хватает, чтобы начать учить слова и понять формат, пока книга едет.</p>
+
+<p>Разница с первым уровнем здесь только в объёме: слов больше, а источники те же самые. Ничего специфического для второго уровня искать не нужно.</p>
+
+<p>Первые слова с произношением собраны у нас отдельно: <a href="https://kitai-school.ru/article/kitayskie-slova-dlya-nachinauschih" target="_blank" rel="noopener">китайские слова для начинающих</a>. Чем удерживать выученное — здесь: <a href="https://kitai-school.ru/article/kak-zapominat-ieroglify" target="_blank" rel="noopener">как запоминать иероглифы</a>. Как устроен пробник второго уровня: <a href="https://kitai-school.ru/article/hsk-2-probnyy-test-kak-ponyat-chto-ty-deystvitelno-gotov" target="_blank" rel="noopener">пробный тест HSK 2</a>.</p>
+
+<h2>Как не купить <span class="italic">не ту книгу</span></h2>
+
+<p>Три признака, которые видно в объявлении или на обложке.</p>
+
+<ul>
+  <li><b>Название на обложке</b> — New HSK Course против HSK Standard Course.</li>
+  <li><b>Год издания</b> — у новой серии тома выходят в 2026 году.</li>
+  <li><b>Состав комплекта</b> — у новой серии учебник и тетрадь, пособия для учителя в наборе нет.</li>
+</ul>
+
+<p>Четвёртый признак, не такой очевидный: посмотрите, есть ли в наборе пособие для преподавателя. У прежней серии оно было третьей книгой комплекта, у новой на младших уровнях его нет.</p>
+
+<p><b>И главное правило, которое я повторяю ученикам.</b> Если вы уже занимаетесь по книге и дошли до середины, не меняйте её на новую. Порядок тем у серий свой, и смена книги в середине означает, что часть материала придётся проходить заново.</p>
+
+<p>Разбор самого экзамена второго уровня у нас здесь: <a href="https://kitai-school.ru/article/hsk-2-sdaem-vtoroy-uroven-bez-stressa" target="_blank" rel="noopener">HSK 2: сдаём второй уровень</a>.</p>
+
+<p>И про сроки, раз речь о покупке. Если книга идёт из-за границы, закладывайте месяц, а не три недели, и начинайте заниматься по открытым материалам сразу — словник и образцы заданий доступны в тот же день, когда вы решили готовиться.</p>
+
+<h2>Частые ошибки</h2>
+
+<ol>
+  <li><b>Искать файл учебника, не выяснив серию.</b> Книг две, и они разные.</li>
+  <li><b>Считать цифровые материалы электронной книгой.</b> Это дополнение, а не учебник.</li>
+  <li><b>Менять серию в середине тома.</b> Порядок тем свой у каждой.</li>
+  <li><b>Покупать с рук, не спросив про код.</b> Звук может быть уже открыт.</li>
+  <li><b>Ждать тетрадь вместе с учебником.</b> Она вышла позже и приходит позже.</li>
+</ol>
+
+<div class="cta">
+  <p><b>Не понимаете, какая книга у вас на руках?</b> На пробном занятии мы смотрим на обложку, проверяем, открыт ли звук, и считаем, сколько слов уровня уже закрыто вашей книгой.</p>
+  <p><a href="#popup:zayavka">Приходите на пробное занятие</a>, форматы и программа — здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<p>Если свести всё к одному действию: посмотрите на обложку своей книги и найдите название серии. От этого зависит и то, к какому экзамену она готовит, и то, что к ней прилагается в электронном виде.</p>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Ссылок на файлы и названий магазинов.</b> Блог их не публикует.</li>
+  <li><b>Цен и тиражей.</b> Они меняются быстрее, чем живёт статья.</li>
+  <li><b>Состава цифровых материалов новой серии.</b> Выяснить его не удалось.</li>
+  <li><b>Полного сравнения серий.</b> Это отдельная статья блога.</li>
+  <li><b>Разбора самого тома второго уровня.</b> Тоже отдельная статья.</li>
+</ul>
+
+<p>И о том, чего эта статья намеренно не делает. Она не отговаривает вас от копий нравоучениями: если книга недоступна физически, решение принимаете вы. Она показывает, что именно теряется в копии — звук и часть страниц, — чтобы решение было с открытыми глазами.</p>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли скачать учебник HSK 2 в PDF?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Официальных электронных изданий нет ни у прежней серии, ни у новой: книги выходят на бумаге. Всё, что встречается в сети под видом учебника, — неофициальные копии, и блог на них не ссылается.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Какой учебник второго уровня актуален в 2026 году?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Под новый стандарт выпущена отдельная серия, и её том второго уровня вышел в марте 2026 года. Прежняя серия сделана под старый стандарт и остаётся под ним: она не бесполезна, но это книга другого поколения.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Вышла ли рабочая тетрадь к новому учебнику?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Да, отдельной книгой, примерно через месяц после учебника — в апреле 2026 года. Это данные каталогов магазинов; у издательства я их не сверяла. Практический смысл в том, что тетрадь может приехать в магазины позже учебника.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что за цифровые материалы у новой серии?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>В описаниях изданий заявлен доступ к цифровым материалам. Что именно туда входит, по открытым данным я не выяснила, и считать это электронной версией книги точно не стоит: речь о дополнениях, а не о самом учебнике.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Годится ли прежний учебник?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Для изучения языка — вполне: лексика младших уровней почти не изменилась. Расхождения начинаются в заданиях под формат экзамена, и закрываются они образцами заданий, а не сменой книги в середине тома.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где взять звук к урокам?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По коду, напечатанному в книге, — у более старых тиражей вместо кода шёл диск. Код привязан к экземпляру, поэтому у книги с рук он может быть уже использован: спрашивайте об этом до покупки.</p></div>
+  </details>
+</div>
+
+<p>И последняя мысль, которая, кажется, важнее всех частных ответов. Книга на втором уровне перестала быть единственным мерилом подготовки: часть материалов лежит открыто, часть прилагается к покупке, а часть не существует ни в каком виде. Полезнее знать, что к чему относится, чем искать один файл, который закроет всё сразу.</p>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li>Существование двух серий — прежней и выпущенной под новый стандарт — приведено по нашей же статье про серии учебников.</li>
+    <li><b>Даты выхода и номера изданий второго уровня новой серии взяты из каталогов магазинов</b> и совпали в двух независимых проверках. Со страницей издательства я их не сверяла.</li>
+    <li><b>Доступ к цифровым материалам указан в описаниях изданий;</b> что именно в него входит, выяснить не удалось, и электронной версией книги он не является.</li>
+    <li>Отсутствие электронных изданий книг у обеих серий приведено по нашей статье про материалы в цифре.</li>
+    <li>Выдача звука по коду и диски в ранних тиражах — оттуда же.</li>
+    <li>Публикация словника и образцов заданий вместе с описанием экзамена проверена по нашим материалам первого уровня: по второму устроено так же.</li>
+    <li><b>Цен, тиражей, названий магазинов и ссылок на файлы не привожу.</b></li>
+    <li>Случай с учеником, присылавшим фотографию обложки, взят из занятий Kitai School; имя не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Под номером «HSK 2» сейчас продаются книги двух разных серий — под разные стандарты</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
