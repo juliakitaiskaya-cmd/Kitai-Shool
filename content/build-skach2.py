@@ -11,8 +11,8 @@ OUT = "skachat-uchebnik-hsk-2.html"
 SLUG = "skachat-uchebnik-hsk-2"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/sk2-hero.png"
-FIG = "assets/sk2-info.png"
+HERO = "https://static.tildacdn.com/tila6430-6364-4563-a437-643166643430/sk2-hero.png"
+FIG = "https://static.tildacdn.com/tila3562-6238-4231-a539-343636326235/sk2-info.png"
 HERO_ALT = ("Две книжные карточки рядом: прежняя серия под старый стандарт и новая серия "
             "2026 года под новый, с пометкой, чем они различаются при покупке")
 FIG_ALT = ("Три строки про электронный вид: книги целиком — нет, цифровые материалы новой "
