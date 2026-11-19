@@ -1,0 +1,473 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/slova-hsk-3#article",
+      "headline": "Слова HSK 3: 500 новых слов, 284 знака и почему списков на уровне три",
+      "description": "Разбор лексики третьего уровня экзамена по китайскому языку: сколько слов добавляется на уровне и сколько требуется накопительно, почему кроме списка слов на уровне есть ещё два списка знаков — для узнавания и для письма от руки, сколько новых знаков приходится на сотню новых слов и почему из-за этого лексика уровня кажется труднее, с какого уровня начинается рукописная часть требований и что делать с файлом, в котором собраны все слова уровня.",
+      "image": "assets/sl3-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-19",
+      "dateModified": "2026-11-19",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/slova-hsk-3",
+      "about": {
+        "@type": "Thing",
+        "name": "Лексика третьего уровня экзамена по китайскому языку"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/slova-hsk-3#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Сколько слов нужно на HSK 3 сейчас?", "acceptedAnswer": {"@type": "Answer", "text": "Тысяча накопительно, из них пятьсот новых на самом уровне. Цифра тысяча включает лексику первых двух уровней, поэтому учить с нуля придётся только половину списка."}},
+        {"@type": "Question", "name": "Хватит ли выучить список слов?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, и это главное отличие третьего уровня от младших. Кроме слов в требованиях стоят два списка знаков: двести восемьдесят четыре новых для узнавания и сто пятьдесят новых для письма от руки. Файл со словами ни одного из них не закрывает."}},
+        {"@type": "Question", "name": "Сколько иероглифов нужно знать на третьем уровне?", "acceptedAnswer": {"@type": "Answer", "text": "Для узнавания — шестьсот пятьдесят пять накопительно, из них двести восемьдесят четыре добавляются на самом уровне. Эти числа сошлись у меня в нескольких сводных таблицах стандарта и складываются с цифрами младших уровней без остатка."}},
+        {"@type": "Question", "name": "Сколько знаков нужно уметь написать от руки?", "acceptedAnswer": {"@type": "Answer", "text": "Двести пятьдесят накопительно: сто приходит на втором уровне, ещё сто пятьдесят на третьем. На первом уровне письма от руки не требуется вовсе — список начинается со второго."}},
+        {"@type": "Question", "name": "Почему слова третьего уровня кажутся труднее, чем на втором?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что новых знаков в них мало: на сто новых слов приходится около пятидесяти семи новых знаков, а на первом уровне было восемьдесят два. Знаки в новом слове чаще знакомые, а значение у сочетания своё, и догадаться по знакам удаётся не всегда."}},
+        {"@type": "Question", "name": "Чем отличается список на 600 слов от списка на 1000?", "acceptedAnswer": {"@type": "Answer", "text": "Стандартом, по которому он собран: шестьсот — прежняя шкала, тысяча — действующая. Короткий список не испорчен, он просто старый, и для подготовки по новым правилам его не хватит."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/slova-hsk-3#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Слова HSK 3: 500 новых слов, 284 знака и почему списков на уровне три", "item": "https://kitai-school.ru/article/slova-hsk-3"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Лексика</p>
+<h1>Слова HSK 3: <span class="italic">500 новых слов, 284 знака и почему списков на уровне три</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-19">19 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/sl3-hero.png" alt="Три линии, растущие от первого уровня к третьему: слова, знаки для узнавания и знаки для письма от руки, причём линия письма начинается только со второго уровня" width="1200" height="630"></figure>
+
+<p class="lead">Запрос обычно звучит как «файл со всеми словами уровня». Файл найти можно, только <b>на третьем уровне он закрывает примерно треть требований</b>: кроме слов там спрашивают знаки, и спрашивают их двумя разными способами.</p>
+
+<p>Разберём, что именно требует уровень, почему новые слова здесь кажутся труднее прежних и как разложить найденный список на три работы вместо одной.</p>
+
+<h2>Короткий ответ: <span class="italic">сколько слов и почему списков три</span></h2>
+
+<p>Три числа и одно следствие.</p>
+
+<p><b>Слов на уровне прибавляется 500</b>, а накопительно к концу третьего уровня нужно знать 1000. Половина этой тысячи — лексика первых двух уровней, её вы уже проходили.</p>
+
+<p><b>Знаков для узнавания прибавляется 284</b>, накопительно 655. Это те знаки, которые нужно читать, но не обязательно уметь написать.</p>
+
+<p><b>Знаков для письма от руки прибавляется 150</b>, накопительно 250. Отдельный список, и он самый короткий из трёх.</p>
+
+<p>Следствие простое: <b>список слов — только один из трёх перечней уровня</b>. Человек, который учит файл со словами, закрывает самый длинный из них и не трогает два других.</p>
+
+<h2>Три списка <span class="italic">вместо одного</span></h2>
+
+<p>Соберу всё в таблицу, чтобы разница между тремя требованиями была видна сразу.</p>
+
+<table class="ks-tab ks-lists">
+  <thead><tr><th>Что требует уровень</th><th>Новых</th><th>Всего</th><th>Что это значит</th></tr></thead>
+  <tbody>
+    <tr><td><b>Слова</b></td><td>+500</td><td>1000</td><td>весь словарь уровня</td></tr>
+    <tr><td><b>Знаки для узнавания</b></td><td>+284</td><td>655</td><td>их нужно читать, но не писать</td></tr>
+    <tr><td><b>Знаки для письма от руки</b></td><td>+150</td><td>250</td><td>их нужно уметь написать</td></tr>
+  </tbody>
+</table>
+
+<p><b>Почему знаков два списка, а не один.</b> Узнать знак в тексте и написать его по памяти — разные умения, и требования к ним разные. Читать нужно больше, писать — меньше.</p>
+
+<p>Разница ощутимая: 655 знаков для чтения против 250 для письма. То есть большую часть знаков уровня достаточно узнавать.</p>
+
+<p>Ещё одно, что редко замечают: <b>число слов и число знаков считаются отдельно</b> и совпадать не обязаны. Одно слово часто записывается двумя знаками, а один знак входит в несколько слов.</p>
+
+<p><b>Откуда известны эти числа и почему я им верю.</b> Они стоят в сводных таблицах действующего стандарта, и главное — сходятся между собой: прибавки знаков по трём уровням складываются в накопительные цифры без остатка, и по чтению, и по письму. Таблица, собранная из разных источников, так обычно не сходится.</p>
+
+<p>Отдельно отмечу: складывать 655 и 250 не нужно. Это два требования к знакам одного уровня, измеренные по-разному — что вы должны узнавать и что должны уметь написать, — а не два набора, которые учат подряд.</p>
+
+<p>Что это меняет на практике. Планировать подготовку по одному списку нельзя: даже если вы выучили все слова уровня, у вас остаются два невыполненных требования, и проверяются они разными заданиями.</p>
+
+<h2>Пятьсот новых слов <span class="italic">на двести восемьдесят четыре знака</span></h2>
+
+<p>Теперь к расчёту, который объясняет, почему третий уровень ощущается тяжелее предыдущих.</p>
+
+<p><b>Новых знаков на уровне меньше, чем новых слов:</b> 284 против 500. В пересчёте на сотню новых слов это около 57 новых знаков.</p>
+
+<p>На первом уровне соотношение было другим: 82 знака на сотню слов, то есть почти каждое слово приносило с собой новый знак. На третьем уровне такого уже нет.</p>
+
+<p>Значит <b>большая часть новых слов собрана из знаков, которые вы уже знаете</b>. Выглядит как облегчение, а работает наоборот — и об этом следующий раздел.</p>
+
+<p>Оговорю, чего из этой цифры не следует. Сказать, сколько именно слов уровня состоят только из знакомых знаков, по ней нельзя: одно слово может принести сразу два новых знака, а другое — ни одного. Доля есть, поштучного разбора нет.</p>
+
+<h2>Почему слова третьего уровня <span class="italic">кажутся сложными</span></h2>
+
+<p>Жалоба на этом уровне звучит почти всегда одинаково: «знаки знакомые, а что значит — не понимаю».</p>
+
+<p>Причина в арифметике выше. <b>Когда слово собрано из знакомых знаков, подсказки от знака почти нет:</b> вы узнаёте обе половинки, а значение целого приходится просто запомнить.</p>
+
+<p>На первом уровне было проще в этом смысле: новое слово приходило с новым знаком, и знак работал меткой — увидел, вспомнил, что это новое.</p>
+
+<figure class="ks-fig"><img src="assets/sl3-info.png" alt="Две сетки по сто клеток: на первом уровне закрашены восемьдесят две клетки, на третьем пятьдесят семь — столько новых знаков приходится на каждые сто новых слов уровня" width="1200" height="490"><figcaption>На сто новых слов третьего уровня приходится около 57 новых знаков, а на первом уровне приходилось 82.</figcaption></figure>
+
+<p>Отсюда практический вывод для занятий: <b>на третьем уровне слово нужно учить как целое</b>, а не как сумму знаков. Разбор по частям помогает запомнить написание, но не значение.</p>
+
+<p>И второе следствие, про проверку себя. Узнавание знаков перестаёт быть показателем: можно знать все знаки в строке и не понять строку. Проверять нужно понимание сочетаний, а это другое задание.</p>
+
+<h2>Письмо от руки: <span class="italic">где оно начинается</span></h2>
+
+<p>Это та часть требований, о которой по спискам слов не догадаешься вообще.</p>
+
+<table class="ks-tab ks-lvl">
+  <thead><tr><th>Уровень</th><th>Слов</th><th>Знаков читать</th><th>Знаков писать</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>+300</td><td>+246</td><td>—</td></tr>
+    <tr><td><b>HSK 2</b></td><td>+200</td><td>+125</td><td>+100</td></tr>
+    <tr><td><b>HSK 3</b></td><td>+500</td><td>+284</td><td>+150</td></tr>
+  </tbody>
+</table>
+
+<p><b>На первом уровне письма от руки не требуется.</b> Список начинается со второго: сто знаков, и ещё сто пятьдесят добавляется на третьем.</p>
+
+<p>Прочерк в первой строке объясняет заодно одну путаницу. Если вам попадалась цифра «сто знаков» рядом с первым уровнем — это число второго: в сводных таблицах их легко прочитать вместе.</p>
+
+<p>Что это значит для подготовки. К третьему уровню рукописных знаков набирается 250, и набираются они постепенно. Начинать тренировать руку на третьем уровне поздно: двести пятьдесят знаков за несколько недель не выучить.</p>
+
+<p>Порядок черт и то, как вообще устроено письмо от руки, у нас разобрано здесь: <a href="https://kitai-school.ru/article/poryadok-chert-v-kitayskih-ieroglifah" target="_blank" rel="noopener">порядок черт</a>.</p>
+
+<h2>Как я проверяю список <span class="italic">третьего уровня</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик прислал файл и написал: «Тут все слова третьего уровня, начинаю учить». В файле была тысяча строк, и с числом всё было в порядке — это и сбило нас обоих на первой встрече.</p>
+  <p>Мы договорились, что он берёт по сорок слов в неделю, и месяц всё шло ровно. Проблемы начались на чтении: слова он узнавал, а предложения разбирал медленнее, чем раньше.</p>
+  <p><b>Причина нашлась не в словах.</b> Он читал с подсказкой, которой на экзамене не будет: в его файле рядом с иероглифами стояло чтение, и глаз привык опираться на него, а не на сам знак.</p>
+  <p>Мы убрали столбец с чтением и прогнали те же сорок слов заново. Из сорока он уверенно узнал двадцать шесть — остальные держались на пиньине.</p>
+  <p><b>Второе открытие было про письмо.</b> Я попросила написать десять слов от руки, без образца. Получилось четыре. Для третьего уровня это мало: часть заданий там рукописная, и файл со словами к ней не готовит вообще.</p>
+  <p>Дальше мы поделили его список на три работы. Узнавание знака без чтения, письмо от руки по короткому набору и сами слова как сочетания — каждая со своим временем в расписании.</p>
+  <p>Через полтора месяца разрыв между «узнаю слово» и «читаю предложение» почти исчез. Слов он к тому времени знал не больше прежнего, зато знаки перестали быть для него картинками с подписью.</p>
+  <p><b>Вывод, который я делаю:</b> на третьем уровне файл со словами — это ещё не подготовка, а её треть. Проверяйте себя без столбца с чтением, иначе ошибку видно только на экзамене.</p>
+</div>
+
+<h2>Что делать <span class="italic">с файлом «все слова уровня»</span></h2>
+
+<p>Файл — нормальная рабочая вещь, если понимать, что он даёт и чего не даёт. Три шага перед тем, как по нему заниматься.</p>
+
+<ul>
+  <li><b>Сверить число позиций</b> — в действующем словнике третьего уровня их 1000 вместе с младшими уровнями.</li>
+  <li><b>Отделить новые слова от прежних</b> — новых на этом уровне 500, остальное вы уже проходили.</li>
+  <li><b>Разметить знаки</b> — в файле со словами знаков нет, а их на уровне два разных списка.</li>
+</ul>
+
+<p><b>Про первый шаг.</b> В файлах встречаются обе цифры — и тысяча, и пятьсот: одни составители кладут весь накопительный словарь, другие только прибавку уровня. Обе версии правильные, но планировать по ним нужно по-разному.</p>
+
+<p><b>Про второй.</b> Если в файле тысяча строк, половина из них — повторение. Проходить их подряд значит тратить время занятий на знакомое; полезнее отметить, что узнаёте мгновенно, и работать с остатком.</p>
+
+<p><b>Про третий.</b> Знаков в файле со словами нет как отдельной величины, и это главный его пробел. Выпишите из своего остатка знаки, которые видите впервые, — получится ваш личный список для узнавания, а из него уже короткий набор для письма.</p>
+
+<p>Отдельно скажу про столбец с чтением. Он удобен, пока вы учите, и вреден, когда проверяете: глаз читает пиньинь вместо знака, и вы запоминаете слово с подсказкой, которой на экзамене не будет.</p>
+
+<p>Как это проверить за минуту: закройте столбец с чтением и пройдите двадцать слов. Разница между «узнал» и «вспомнил» обычно видна сразу.</p>
+
+<h2>Девяносто шесть новых конструкций</h2>
+
+<p>Рядом с лексикой на уровне стоит перечень грамматических пунктов, и новых на третьем уровне 96.</p>
+
+<p>Называю это число по одной причине: <b>часть новых слов работает только внутри конструкции</b>. Служебные элементы, оформители результата действия и показатели сравнения в списке слов выглядят как обычные позиции, а учить их отдельно от схемы бесполезно.</p>
+
+<p>Какие именно конструкции проходят на этом уровне и как они устроены, у нас разобрано в статье про экзамен третьего уровня: <a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">HSK 3: как сдать без пиньиня</a>. Проверить себя на заданиях можно на пробнике: <a href="https://kitai-school.ru/article/hsk-3-probnyy-test-kak-preodolet-barer-i-sdat-na-maksimum" target="_blank" rel="noopener">пробный тест HSK 3</a>.</p>
+
+<h2>Чего я <span class="italic">не подтвердила</span></h2>
+
+<p>Одно число по этому уровню я называть не стану.</p>
+
+<p><b>Накопительное число грамматических пунктов.</b> Прибавка в 96 сошлась везде, а вот сумма по трём уровням в источниках разная: в одних сводках стоит одна цифра, в других другая, и разница заметная.</p>
+
+<p>Поскольку сводки в остальном совпадают, расхождение похоже на разный способ счёта — но проверить это по открытым данным я не смогла и подставлять одно из двух значений не буду.</p>
+
+<p>На подготовку это почти не влияет: заниматься вы будете по прибавке уровня, а не по накопительной сумме. А вот числам по словам и знакам можно верить увереннее: там прибавки складываются в накопительные цифры без остатка, и сводки сходятся между собой.</p>
+
+<h2>Шестьсот и тысяча: <span class="italic">одно замечание</span></h2>
+
+<p>Списки на 600 слов для третьего уровня попадаются до сих пор. Это не брак и не подделка: такую цифру задавал прежний стандарт, и составители её честно переписывали.</p>
+
+<p>Готовиться по короткому списку сегодня не выйдет: в нём нет четырёхсот позиций действующего словника. Как отличить устаревший список от действующего и откуда берутся ещё и завышенные цифры, разобрано у нас в статье про слова по уровням.</p>
+
+<p>Быстрая проверка та же, что и на младших уровнях: посчитайте позиции. Тысяча — действующая цифра, шестьсот — прежняя.</p>
+
+<p><b>И что делать, если вы уже прошли половину по короткому списку.</b> Бросать его посреди уровня не нужно: базовая лексика в действующем словнике осталась на месте. Разумнее досчитать до конца по своему списку, а потом сверить его с действующим и взять разницу отдельным набором.</p>
+
+<p>Сверять лучше по числам, а не на глаз: шестьсот против тысячи — разница в четыреста позиций, и примерно столько же слов вам предстоит выучить сверх пройденного.</p>
+
+<p>Про устройство самого словника — почему слова в нём идут по алфавиту и почему тематических разделов в нём нет — написано в нашей статье про слова первого уровня. На третьем уровне всё устроено так же.</p>
+
+<h2>Частые ошибки</h2>
+
+<ol>
+  <li><b>Считать файл со словами всей подготовкой.</b> Это один список из трёх.</li>
+  <li><b>Проверять себя со столбцом чтения.</b> Глаз опирается на пиньинь вместо знака.</li>
+  <li><b>Учить слово как сумму знаков.</b> На этом уровне значение у сочетания своё.</li>
+  <li><b>Откладывать письмо от руки до третьего уровня.</b> Знаки копятся со второго.</li>
+  <li><b>Не смотреть, тысяча в списке или пятьсот.</b> Это накопительная цифра и прибавка.</li>
+</ol>
+
+<div class="cta">
+  <p><b>Застряли между «узнаю слово» и «читаю предложение»?</b> На пробном занятии мы проверяем узнавание знаков без подсказки и считаем, какая часть вашего списка держится на пиньине.</p>
+  <p><a href="#popup:zayavka">Приходите на пробное занятие</a>, форматы и программа — здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<p>Одно упражнение на сегодня: закройте в своём списке столбец с чтением и пройдите двадцать слов подряд. Сколько из двадцати вы узнали по самому знаку — столько и выучено по-настоящему.</p>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Самих списков — ни слов, ни знаков.</b> Блог их не перепечатывает.</li>
+  <li><b>Накопительного числа грамматических пунктов.</b> Источники расходятся.</li>
+  <li><b>Имён приложений, сервисов и файлов.</b> На внешние ресурсы блог не ссылается.</li>
+  <li><b>Полных таблиц по девяти уровням.</b> Это предмет отдельной статьи.</li>
+  <li><b>Разбора самих конструкций уровня.</b> Тоже отдельная статья.</li>
+</ul>
+
+<p>И ещё об одном умолчании. Я не говорю, сколько именно слов уровня состоят из знакомых знаков: из доли новых знаков такой вывод не следует, а считать поштучно по словнику я не бралась.</p>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько слов нужно на HSK 3 сейчас?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Тысяча накопительно, из них пятьсот новых на самом уровне. Цифра тысяча включает лексику первых двух уровней, поэтому учить с нуля придётся только половину списка.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Хватит ли выучить список слов?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет, и это главное отличие третьего уровня от младших. Кроме слов в требованиях стоят два списка знаков: двести восемьдесят четыре новых для узнавания и сто пятьдесят новых для письма от руки. Файл со словами ни одного из них не закрывает.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько иероглифов нужно знать на третьем уровне?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Для узнавания — шестьсот пятьдесят пять накопительно, из них двести восемьдесят четыре добавляются на самом уровне. Эти числа сошлись у меня в нескольких сводных таблицах стандарта и складываются с цифрами младших уровней без остатка.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько знаков нужно уметь написать от руки?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Двести пятьдесят накопительно: сто приходит на втором уровне, ещё сто пятьдесят на третьем. На первом уровне письма от руки не требуется вовсе — список начинается со второго.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему слова третьего уровня кажутся труднее, чем на втором?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что новых знаков в них мало: на сто новых слов приходится около пятидесяти семи новых знаков, а на первом уровне было восемьдесят два. Знаки в новом слове чаще знакомые, а значение у сочетания своё, и догадаться по знакам удаётся не всегда.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Чем отличается список на 600 слов от списка на 1000?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Стандартом, по которому он собран: шестьсот — прежняя шкала, тысяча — действующая. Короткий список не испорчен, он просто старый, и для подготовки по новым правилам его не хватит.</p></div>
+  </details>
+</div>
+
+<p>И напоследок то, что кажется мне важнее частных ответов. Третий уровень — первый, где подготовка перестаёт быть одним списком: слова, узнавание знаков и письмо расходятся в три разные работы, и каждая требует своего времени в расписании. Чем раньше вы их разделите, тем меньше неприятных открытий останется на последние недели.</p>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li><b>Прибавка и накопительные числа слов, знаков для узнавания и знаков для письма</b> взяты из сводных таблиц действующего стандарта; эти таблицы я сверила в нескольких независимых источниках.</li>
+    <li><b>Главный довод в пользу этих чисел — их сходимость:</b> прибавки знаков по трём уровням складываются в накопительные цифры без остатка.</li>
+    <li>Отсутствие требования писать от руки на первом уровне приведено по тем же таблицам.</li>
+    <li><b>Число новых грамматических пунктов</b> сошлось в проверках; накопительную сумму не привожу — источники дают разные значения.</li>
+    <li>Сколько новых знаков приходится на сотню новых слов — это я посчитала сама из приведённых выше чисел; в источниках такой величины нет.</li>
+    <li>Прежнее требование в шестьсот слов названо по описаниям прежнего стандарта, частью уже разобранным в блоге.</li>
+    <li><b>Ни словник, ни списки знаков в статье не воспроизводятся;</b> сервисы и приложения я по именам не называю и ссылок на них не даю.</li>
+    <li>Случай с файлом на тысячу строк взят из занятий Kitai School; имя ученика не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">На третьем уровне список слов — только один из трёх списков уровня</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
