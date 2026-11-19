@@ -12,8 +12,8 @@ OUT = "slova-hsk-3.html"
 SLUG = "slova-hsk-3"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/sl3-hero.png"
-FIG = "assets/sl3-info.png"
+HERO = "https://static.tildacdn.com/tila3234-3232-4631-b139-663461616530/sl3-hero.png"
+FIG = "https://static.tildacdn.com/tila3132-6463-4939-b436-623233666336/sl3-info.png"
 HERO_ALT = ("Три линии, растущие от первого уровня к третьему: слова, знаки для узнавания "
             "и знаки для письма от руки, причём линия письма начинается только со второго "
             "уровня")
