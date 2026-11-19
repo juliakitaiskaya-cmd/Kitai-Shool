@@ -1,0 +1,470 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/chto-nuzhno-znat-dlya-hsk#article",
+      "headline": "Что нужно знать для HSK 1–4: грамматика, которой нет в списках слов",
+      "description": "Разбор требований уровней с первого по четвёртый на экзамене по китайскому языку с упором на грамматику: сколько конструкций добавляется на каждом уровне, почему по грамматике в источниках ходят два разных ряда чисел, почему сторонние сборники конструкций расходятся по объёму в два с половиной раза, где прибавка грамматики останавливается при удвоении словаря и что на экзамене означает знание конструкции.",
+      "image": "assets/gr14-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-19",
+      "dateModified": "2026-11-19",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/chto-nuzhno-znat-dlya-hsk",
+      "about": {
+        "@type": "Thing",
+        "name": "Требования уровней экзамена по китайскому языку: слова, знаки и грамматика"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/chto-nuzhno-znat-dlya-hsk#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что входит в требования уровня HSK?", "acceptedAnswer": {"@type": "Answer", "text": "Четыре вещи: слова, знаки для узнавания, знаки для письма от руки и грамматические конструкции. По первым трём числа в источниках сходятся, по грамматике — нет."}},
+        {"@type": "Question", "name": "Сколько грамматических конструкций нужно знать на HSK 1?", "acceptedAnswer": {"@type": "Answer", "text": "Около семидесяти. Точнее сказать нельзя: в сводных таблицах стандарта ходят два ряда чисел, и по первому уровню они дают семьдесят и шестьдесят шесть. Разница невелика, но выбирать между ними я не берусь."}},
+        {"@type": "Question", "name": "Где взять список грамматики HSK 4?", "acceptedAnswer": {"@type": "Answer", "text": "Единого перечня в открытом виде нет. Сборники, которые встречаются в сети, собраны составителями и расходятся по объёму в два с половиной раза: от двух с небольшим сотен пунктов до почти шестисот на все девять уровней."}},
+        {"@type": "Question", "name": "Почему в разных источниках разное число грамматических пунктов?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что счёт у них разный: одни берут одну редакцию сводных таблиц, другие — более позднюю, третьи составляют свой перечень и объединяют или дробят пункты. Со словами и знаками такого не происходит."}},
+        {"@type": "Question", "name": "Что значит «знать конструкцию» на экзамене?", "acceptedAnswer": {"@type": "Answer", "text": "На младших уровнях — узнавать её в чтении и на слух. Начиная с третьего часть конструкций нужно уметь употребить самому: в письменных заданиях спрашивают не узнавание, а собственную фразу."}},
+        {"@type": "Question", "name": "Сколько слов и иероглифов нужно на уровнях 1–4?", "acceptedAnswer": {"@type": "Answer", "text": "Накопительно: триста слов на первом уровне, пятьсот на втором, тысяча на третьем и две тысячи на четвёртом. Знаков для узнавания к четвёртому уровню тысяча девяносто шесть, для письма от руки четыреста. Подробные разборы по каждому уровню у нас есть отдельно."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/chto-nuzhno-znat-dlya-hsk#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Что нужно знать для HSK 1–4: грамматика, которой нет в списках слов", "item": "https://kitai-school.ru/article/chto-nuzhno-znat-dlya-hsk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамен</p>
+<h1>Что нужно знать для HSK 1–4: <span class="italic">грамматика, которой нет в списках слов</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-19">19 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/gr14-hero.png" alt="Зеркальная диаграмма по уровням с первого по четвёртый: влево от оси растут полосы прибавки слов, вправо — полосы прибавки грамматических конструкций; слева размах увеличивается вдвое, справа остаётся прежним" width="1200" height="630"></figure>
+
+<p class="lead">Требования уровня состоят из четырёх частей, и о трёх из них спорить не о чем: слова и знаки посчитаны. <b>Четвёртая — грамматика, и вот с ней единого счёта нет.</b></p>
+
+<p>Разберём, сколько конструкций требует каждый уровень, почему эти числа в источниках разные и что вообще значит «знать конструкцию» применительно к экзамену.</p>
+
+<h2>Короткий ответ: <span class="italic">из чего состоят требования уровня</span></h2>
+
+<p>Четыре строки, и только одна из них спорная.</p>
+
+<table class="ks-tab ks-req">
+  <thead><tr><th>Что требует уровень</th><th>Как с числами</th><th>Источники</th></tr></thead>
+  <tbody>
+    <tr><td><b>Слова</b></td><td>числа сходятся</td><td>сошлось в нескольких источниках</td></tr>
+    <tr><td><b>Знаки для узнавания</b></td><td>числа сходятся</td><td>сошлось в нескольких источниках</td></tr>
+    <tr><td><b>Знаки для письма от руки</b></td><td>числа сходятся</td><td>сошлось в нескольких источниках</td></tr>
+    <tr><td><b>Грамматика</b></td><td>единого счёта нет</td><td>в обращении два ряда чисел</td></tr>
+  </tbody>
+</table>
+
+<p><b>По словам и знакам всё в порядке.</b> Сводные таблицы действующего стандарта совпадают между собой, и прибавки складываются в накопительные цифры без остатка — это у нас проверено в статьях по уровням.</p>
+
+<p><b>С грамматикой иначе.</b> В обращении два ряда чисел, а сторонние сборники конструкций различаются по объёму в несколько раз. Разберём по порядку, потому что для подготовки это важнее, чем кажется.</p>
+
+<p><b>Почему это вообще важно знать до подготовки.</b> Со словами всё просто: есть число, есть список, видно, сколько пройдено. С грамматикой такой опоры нет, и люди либо считают, что её «подхватят по ходу», либо берут первый попавшийся сборник и идут по нему как по словнику.</p>
+
+<p>Оба способа дают один и тот же провал в письменной части: конструкции узнаются, но не употребляются. Разберём, откуда берётся эта разница и что с ней делать.</p>
+
+<p>Сразу скажу, чего вы здесь не найдёте: перечня самих конструкций. Его не существует в одном общепринятом виде, и выдумывать свой я не стану.</p>
+
+<h2>Грамматика — требование, <span class="italic">по которому числа не сходятся</span></h2>
+
+<p>Вот оба ряда, которые встречаются в сводных таблицах.</p>
+
+<table class="ks-tab ks-gram">
+  <thead><tr><th>Уровень</th><th>Ряд A, новых</th><th>Всего</th><th>Ряд B, новых</th><th>Всего</th><th>Разница</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>+70</td><td>70</td><td>+66</td><td>66</td><td>расходятся на 4</td></tr>
+    <tr><td><b>HSK 2</b></td><td>+78</td><td>148</td><td>+75</td><td>141</td><td>расходятся на 3</td></tr>
+    <tr><td><b>HSK 3</b></td><td>+96</td><td>244</td><td>+96</td><td>237</td><td>прибавки совпали</td></tr>
+    <tr><td><b>HSK 4</b></td><td>+95</td><td>339</td><td>+94</td><td>331</td><td>расходятся на 1</td></tr>
+  </tbody>
+</table>
+
+<p><b>Расхождение невелико</b> — единицы пунктов на уровень, не десятки. Накопительно к четвёртому уровню получается 339 по одному ряду и 331 по другому.</p>
+
+<p>Любопытная подробность: <b>на третьем уровне оба ряда дают одну и ту же прибавку</b> — девяносто шесть пунктов. Накопительные суммы у них при этом всё равно разные: разница, набранная на первых двух уровнях, никуда не девается.</p>
+
+<p>Какой ряд верный, я не знаю и выбирать не стану. Один встречается чаще, второй помечен как более поздняя версия, и подтверждения нет ни у одного.</p>
+
+<p>Что из этого следует практически: <b>считайте, что на уровень приходится около сотни новых конструкций</b> — на первом чуть меньше, на третьем и четвёртом чуть больше. Эта точность и есть вся, которая у нас есть.</p>
+
+<p>И ещё одно, что стоит знать до того, как вы откроете чей-то сборник: расхождение в несколько пунктов — мелочь по сравнению с тем, что творится в сторонних сводках. Об этом следующий раздел.</p>
+
+<h2>Сколько сводок, <span class="italic">столько чисел</span></h2>
+
+<p>Сборники «всей грамматики HSK» составляют преподаватели, авторы приложений и энтузиасты. Это полезная работа, но единым перечнем она не стала.</p>
+
+<figure class="ks-fig"><img src="assets/gr14-info.png" alt="Два столбца чисел по уровням — два ряда грамматических пунктов, которые ходят в источниках, — с полосой расхождения между ними и пометкой, что на третьем уровне ряды совпали" width="1200" height="500"><figcaption>Два ряда чисел по уровням: расхождение в единицы пунктов, а на третьем уровне прибавки совпадают.</figcaption></figure>
+
+<p><b>Разброс по объёму — 362 пунктов разницы:</b> от 231 до 593 на все уровни, то есть в 2,6 раза. Это не ошибки составителей, а разные решения о том, что считать отдельным пунктом.</p>
+
+<p>Один объединяет конструкцию со всеми её вариантами в одну строку, другой разносит варианты по разным. Один включает служебные слова, другой считает их лексикой.</p>
+
+<p>Отсюда правило, которое я советую держать в голове: <b>длина сборника ничего не говорит о его полноте</b>. Сборник на двести пунктов может покрывать то же, что сборник на шестьсот.</p>
+
+<p>Как тогда выбирать. Смотрите не на число, а на то, есть ли у каждой конструкции пример и указано ли, с какого уровня она нужна. Без этих двух вещей сборник бесполезен, какой бы длины он ни был.</p>
+
+<h2>Где грамматика растёт, <span class="italic">а где останавливается</span></h2>
+
+<p>Теперь самое интересное — что происходит с грамматикой при переходе на четвёртый уровень.</p>
+
+<table class="ks-tab ks-flat">
+  <thead><tr><th>Уровень</th><th>Новых слов</th><th>Новых конструкций</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>+300</td><td>+70</td></tr>
+    <tr><td><b>HSK 2</b></td><td>+200</td><td>+78</td></tr>
+    <tr><td><b>HSK 3</b></td><td>+500</td><td>+96</td></tr>
+    <tr><td><b>HSK 4</b></td><td>+1000</td><td>+95</td></tr>
+  </tbody>
+</table>
+
+<p>Посмотрите на две последние строки. <b>Прибавка слов на четвёртом уровне вдвое больше, чем на третьем, а конструкций не прибавляется вовсе</b> — по обоим рядам их там даже чуть меньше.</p>
+
+<p>Это и объясняет ощущение, которое ученики описывают одинаково: «на четвёртом уровне не стало труднее по правилам, стало просто очень много слов».</p>
+
+<p>Для подготовки вывод практический. <b>До третьего уровня основная работа структурная</b>: вы собираете предложения новых типов. На четвёртом она становится словарной, а грамматика переходит в режим закрепления.</p>
+
+<p>Это же объясняет, почему на четвёртом уровне помогает чтение, а не разбор правил: конструкции вы уже видели, их нужно встретить много раз в разных словах.</p>
+
+<h2>Как я проверяю, <span class="italic">знает ли ученик конструкцию</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик перед третьим уровнем сказал, что грамматику закрыл: прошёл сборник на двести с лишним пунктов и отметил галочками каждый. Я предложила проверить одну конструкцию — ту, что с вынесенным дополнением.</p>
+  <p>Он её узнал мгновенно: назвал схему, объяснил порядок слов, привёл пример из сборника. На вопрос, зачем она нужна, ответил тоже верно — по учебнику.</p>
+  <p><b>Потом я попросила сказать ту же мысль своими словами</b> про вещь у него на столе. Получилась обычная фраза без этой конструкции — он её обошёл, потому что так проще.</p>
+  <p>Это и есть разрыв между «отметил в списке» и «знаю». В заданиях на выбор он эту конструкцию находил, а в собственной речи не употреблял ни разу.</p>
+  <p><b>Дальше мы поделили его сборник на две стопки.</b> В первую пошли конструкции, которые достаточно узнавать: они встречаются в чтении и аудировании. Во вторую — те, что нужны в своих фразах.</p>
+  <p>Вторая стопка оказалась короче первой примерно втрое. Это и был настоящий объём работы, хотя по списку выходило, что сделано уже всё.</p>
+  <p>Тренировали мы вторую стопку просто: по три своих предложения на конструкцию, вслух и письменно, с разными словами. На каждую уходило минут десять.</p>
+  <p><b>Вывод, который я делаю:</b> галочка в списке грамматики не означает ничего, пока конструкция не появилась в вашей собственной фразе. Проверяется это за минуту — попросите себя сказать то же самое иначе.</p>
+</div>
+
+<h2>Что значит <span class="italic">«знать конструкцию»</span></h2>
+
+<p>Список грамматики обычно устроен как перечень галочек, а требования уровня на самом деле двухслойные.</p>
+
+<p><b>Первый слой — узнавание.</b> Конструкция встречается в тексте или в записи, и её нужно понять. Это всё, что требуется от большинства конструкций на младших уровнях.</p>
+
+<p><b>Второй слой — собственное употребление.</b> Нужно построить фразу самому, и проверяется это в письменных заданиях. Начинается такое с третьего уровня, где появляется письменная часть.</p>
+
+<p>Разница между слоями огромная, а в списках она никак не помечена: пункт выглядит одинаково независимо от того, узнавать его или строить.</p>
+
+<p>Отсюда самый практичный совет этой статьи: <b>проходя список, помечайте каждую конструкцию своей пометкой</b> — узнаю или умею сказать. Вторая стопка будет заметно короче, и работать нужно с ней.</p>
+
+<h2>Чего нет <span class="italic">в списках грамматики</span></h2>
+
+<p>Три вещи, которых в любом сборнике не будет, и это не упрёк составителям.</p>
+
+<ul>
+  <li><b>Единого перечня</b> — у каждого составителя свой состав и свой счёт.</li>
+  <li><b>Разметки по заданиям</b> — в каком задании спросят конструкцию, нигде не сказано.</li>
+  <li><b>Порога «знаю»</b> — список не говорит, узнавать конструкцию или строить её самому.</li>
+</ul>
+
+<p><b>Про отсутствие разметки по заданиям.</b> Узнать, в каком разделе экзамена спросят конструкцию, по списку нельзя. Но косвенно это видно по уровню: то, что появилось недавно, обычно и проверяется.</p>
+
+<p><b>Про порог «знаю».</b> Его каждый ставит себе сам, и чаще всего ставит слишком низко: отметил галочкой, понял объяснение — и дальше не проверял.</p>
+
+<p>Что с этим делать практически. Берите конструкцию и составляйте три фразы с разными словами: про работу, про семью, про сегодняшний день. Если третья даётся так же легко, как первая, конструкция ваша.</p>
+
+<h2>Если вы готовитесь <span class="italic">по сборнику из приложения</span></h2>
+
+<p>Сборники в приложениях удобны: конструкции разложены по уровням, к каждой есть примеры и упражнения. Пользоваться ими можно, если помнить три вещи.</p>
+
+<p><b>Первое.</b> Состав у сборника авторский, и совпадать с чьим-то другим он не обязан. Если в вашем сборнике двести пунктов, а у знакомого четыреста, это не значит, что вы учите меньше.</p>
+
+<p><b>Второе.</b> Разметка по уровням в сборниках делается по прежнему стандарту чаще, чем по действующему: обновляют их не все и не сразу.</p>
+
+<p><b>Третье.</b> Упражнения в приложениях почти всегда на узнавание: выбрать правильный вариант, вставить пропущенное. Второй слой — собственную фразу — приложение не проверит, это придётся делать самостоятельно или с преподавателем.</p>
+
+<p>Как это совмещать: сборник берите как перечень тем, а тренируйте фразами. Десять минут на конструкцию с тремя своими примерами дают больше, чем сорок упражнений на выбор.</p>
+
+<h2>Слова и иероглифы: <span class="italic">сводка с передачей</span></h2>
+
+<p>Коротко, потому что по каждому пункту у нас есть отдельный разбор.</p>
+
+<p><b>Слова накопительно:</b> триста на первом уровне, пятьсот на втором, тысяча на третьем, две тысячи на четвёртом. Прибавка четвёртого уровня равна всему, что накоплено за первые три.</p>
+
+<p><b>Знаки для узнавания накопительно:</b> к четвёртому уровню тысяча девяносто шесть. <b>Знаки для письма от руки:</b> четыреста, и на первом уровне их не требуется вовсе — список начинается со второго.</p>
+
+<p>Как эти требования растут от уровня к уровню, у нас разобрано здесь: <a href="https://kitai-school.ru/article/ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu" target="_blank" rel="noopener">как меняются требования к числу слов и знаков</a>. Разборы самих уровней — здесь: <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">первый уровень</a>, <a href="https://kitai-school.ru/article/hsk-2-sdaem-vtoroy-uroven-bez-stressa" target="_blank" rel="noopener">второй</a>, <a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">третий</a> и <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">четвёртый</a>.</p>
+
+<h2>Частые ошибки</h2>
+
+<ol>
+  <li><b>Считать грамматику приложением к словам.</b> Это отдельное требование уровня.</li>
+  <li><b>Верить числу пунктов в сборнике.</b> Состав у всех разный.</li>
+  <li><b>Отмечать галочку после объяснения.</b> Понял — ещё не знаю.</li>
+  <li><b>Готовить все конструкции одинаково.</b> Часть достаточно узнавать.</li>
+  <li><b>Ждать на четвёртом уровне вала новых правил.</b> Там растёт словарь, а не грамматика.</li>
+</ol>
+
+<div class="cta">
+  <p><b>Не понимаете, какие конструкции у вас только «узнаются»?</b> На пробном занятии мы берём несколько конструкций вашего уровня и проверяем их не выбором варианта, а вашей собственной фразой.</p>
+  <p><a href="#popup:zayavka">Приходите на пробное занятие</a>, форматы и программа — здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<p>Если делать сегодня одно: возьмите любую конструкцию, которую считаете выученной, и скажите с ней три фразы про свой день. Там, где начнёте запинаться, и есть ваша настоящая грамматика.</p>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Перечня конструкций.</b> Единого списка не существует, а свой я не выдумываю.</li>
+  <li><b>Выбора между двумя рядами чисел.</b> Подтверждения нет ни у одного.</li>
+  <li><b>Официального деления грамматики на разделы.</b> Найти его не удалось.</li>
+  <li><b>Разбора отдельных конструкций.</b> Это уровневые статьи блога.</li>
+  <li><b>Имён приложений и сборников.</b> Блог на сторонние ресурсы не ссылается.</li>
+</ul>
+
+<p>И ещё об одном умолчании. Я не называю ни один сборник лучшим: пока состав у всех разный, сравнивать их по длине бессмысленно, а по качеству — можно только на своих примерах.</p>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что входит в требования уровня HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Четыре вещи: слова, знаки для узнавания, знаки для письма от руки и грамматические конструкции. По первым трём числа в источниках сходятся, по грамматике — нет.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько грамматических конструкций нужно знать на HSK 1?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Около семидесяти. Точнее сказать нельзя: в сводных таблицах стандарта ходят два ряда чисел, и по первому уровню они дают семьдесят и шестьдесят шесть. Разница невелика, но выбирать между ними я не берусь.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где взять список грамматики HSK 4?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Единого перечня в открытом виде нет. Сборники, которые встречаются в сети, собраны составителями и расходятся по объёму в два с половиной раза: от двух с небольшим сотен пунктов до почти шестисот на все девять уровней.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему в разных источниках разное число грамматических пунктов?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что счёт у них разный: одни берут одну редакцию сводных таблиц, другие — более позднюю, третьи составляют свой перечень и объединяют или дробят пункты. Со словами и знаками такого не происходит.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что значит «знать конструкцию» на экзамене?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На младших уровнях — узнавать её в чтении и на слух. Начиная с третьего часть конструкций нужно уметь употребить самому: в письменных заданиях спрашивают не узнавание, а собственную фразу.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько слов и иероглифов нужно на уровнях 1–4?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Накопительно: триста слов на первом уровне, пятьсот на втором, тысяча на третьем и две тысячи на четвёртом. Знаков для узнавания к четвёртому уровню тысяча девяносто шесть, для письма от руки четыреста. Подробные разборы по каждому уровню у нас есть отдельно.</p></div>
+  </details>
+</div>
+
+<p>И напоследок то, что кажется мне важнее частных чисел. Со словами и знаками подготовка измеряется: столько-то выучено, столько-то осталось. С грамматикой так не выйдет — её объём зависит от того, что вы называете знанием. Поэтому полезнее не искать точное число пунктов, а завести себе два списка: что узнаю и что умею сказать.</p>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li><b>Числа слов и знаков по уровням</b> приведены по сводным таблицам действующего стандарта, совпавшим в нескольких независимых проверках.</li>
+    <li><b>Два ряда чисел по грамматике</b> приведены как они есть: ряд A встречается чаще, ряд B помечен как более поздняя версия. Выбор между ними я не делаю.</li>
+    <li>Накопительные суммы по обоим рядам сходятся с прибавками по уровням — это я проверила сама.</li>
+    <li><b>Разброс сторонних сборников</b> приведён по самим сборникам: от двух с небольшим сотен пунктов до почти шестисот.</li>
+    <li>Деление требований на узнавание и собственное употребление описано по устройству заданий экзамена, разобранному в наших уровневых статьях.</li>
+    <li><b>Перечня конструкций не привожу,</b> названий приложений и сборников не называю, внешних ссылок не ставлю.</li>
+    <li>Случай с учеником и его сборником взят из занятий Kitai School; имя не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Слова и знаки в требованиях уровня посчитаны точно, грамматика — нет</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
