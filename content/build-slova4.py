@@ -13,8 +13,8 @@ OUT = "slova-hsk-4.html"
 SLUG = "slova-hsk-4"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/sl4-hero.png"
-FIG = "assets/sl4-info.png"
+HERO = "https://static.tildacdn.com/tila3762-3365-4630-b763-643966613532/sl4-hero.png"
+FIG = "https://static.tildacdn.com/tila3564-3066-4138-b639-396332633337/sl4-info.png"
 HERO_ALT = ("Определитель с ветвлением: от вопроса «сколько строк в вашем файле» отходят "
             "четыре ветки — две тысячи, тысяча, тысяча двести и список по урокам учебника, "
             "и у каждой свой ответ, что это за перечень")
