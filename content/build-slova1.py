@@ -12,8 +12,8 @@ OUT = "slova-hsk-1.html"
 SLUG = "slova-hsk-1"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/sl1-hero.png"
-FIG = "assets/sl1-info.png"
+HERO = "https://static.tildacdn.com/tila3632-6565-4964-b362-636366303430/sl1-hero.png"
+FIG = "https://static.tildacdn.com/tila3433-3835-4866-b638-363238666330/sl1-info.png"
 HERO_ALT = ("Сплошная лента слов словника, выстроенных по алфавиту пиньиня, и под ней те же "
             "слова, разрезанные на тематические группы разного размера — чужую разбивку, "
             "которой в самом словнике нет")
