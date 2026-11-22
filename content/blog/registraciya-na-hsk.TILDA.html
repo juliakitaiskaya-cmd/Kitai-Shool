@@ -1,0 +1,463 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/registraciya-na-hsk#article",
+      "headline": "Регистрация на HSK: почему запись закрывается за месяц до экзамена",
+      "description": "Расчёт того, сколько времени проходит между последним днём записи на экзамен по китайскому языку и самим экзаменом: по двадцати строкам расписания российских центров в середине получается месяц, крайние случаи — двадцать два дня и шестьдесят один. Разбор того, почему у соседних городов сроки расходятся в три раза, откуда в запросах берутся несуществующие даты вроде восьмого ноября и как соотносятся российская практика и общие описания порядка записи.",
+      "image": "assets/reg-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/registraciya-na-hsk",
+      "about": {
+        "@type": "Thing",
+        "name": "Регистрация на экзамен по китайскому языку и сроки записи"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/registraciya-na-hsk#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "До какого числа можно зарегистрироваться на HSK?", "acceptedAnswer": {"@type": "Answer", "text": "По нашему расчёту из расписания российских центров запись закрывается в среднем за месяц до экзамена: у одиннадцати строк из двадцати это тридцать или тридцать один день. Крайние случаи — двадцать два дня и шестьдесят один."}},
+        {"@type": "Question", "name": "Когда открывается запись на экзамен?", "acceptedAnswer": {"@type": "Answer", "text": "Единой даты открытия нет: окно своё у каждого центра, и начинается оно обычно за два месяца до экзамена. Как устроены эти окна, у нас разобрано в статье про даты сдачи."}},
+        {"@type": "Question", "name": "Экзамен 8 ноября — до какого числа была регистрация?", "acceptedAnswer": {"@type": "Answer", "text": "Восьмого ноября экзамена не было: осенняя сессия шла седьмого, в субботу, а восьмое пришлось на воскресенье. Запись на седьмое ноября закрывалась примерно за месяц, то есть в начале октября."}},
+        {"@type": "Question", "name": "Почему у соседних городов сроки разные?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что дату экзамена назначает общий календарь, а окно записи каждый центр определяет сам. Поэтому на одну и ту же дату в разных городах сроки расходятся — в нашем расчёте разница почти втрое."}},
+        {"@type": "Question", "name": "Запись закрывается за неделю или за месяц?", "acceptedAnswer": {"@type": "Answer", "text": "Общие описания порядка записи называют минимальный срок — от семи до четырнадцати дней. На практике российские центры закрывают запись заметно раньше: в середине получается месяц, то есть вдвое с лишним больше минимального срока."}},
+        {"@type": "Question", "name": "Как зарегистрироваться, если я живу не в Москве?", "acceptedAnswer": {"@type": "Answer", "text": "Так же, как и в Москве: через центр, который проводит экзамен в вашем городе. Сроки смотрите у него же — чужое расписание здесь не помогает. Где именно принимают экзамен, разобрано у нас в отдельной статье."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/registraciya-na-hsk#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Регистрация на HSK: почему запись закрывается за месяц до экзамена", "item": "https://kitai-school.ru/article/registraciya-na-hsk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамен</p>
+<h1>Регистрация на HSK: <span class="italic">почему запись закрывается за месяц до экзамена</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-22">22 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/reg-hero.png" alt="Два календарных месяца подряд: в первом отмечен последний день записи, во втором — день экзамена, а весь промежуток между ними, около месяца, залит цветом" width="1200" height="630"></figure>
+
+<p class="lead">У экзамена два срока, и путают их постоянно. Первый — день экзамена, второй — последний день записи. <b>Между ними проходит в среднем месяц</b>, и наступает второй, разумеется, раньше.</p>
+
+<p>Я посчитала этот промежуток по расписанию российских центров и разберу, что из него следует для планирования.</p>
+
+<h2>Короткий ответ: <span class="italic">запись закрывается за месяц, а не за неделю</span></h2>
+
+<p>Коротко: если до экзамена осталось три недели, записаться на него, скорее всего, уже нельзя.</p>
+
+<p><b>В середине расчёта — 31 день.</b> Это промежуток между последним днём записи и днём экзамена по двадцати строкам расписания: из них у 11 разрыв составил месяц.</p>
+
+<p><b>Крайние значения — 22 дня и 61 день.</b> Разница почти втрое: где-то запись закрывают за три недели, где-то за два месяца.</p>
+
+<p>Это наш расчёт, а не опубликованная величина: я взяла таблицу дат и окон регистрации из нашей же статьи про даты сдачи и посчитала разрыв по каждой строке.</p>
+
+<p>И сразу оговорка, важнее самих чисел: <b>таблица сверена 8 сентября 2026 года</b>. Сроки меняются, центры добавляют даты, поэтому расчёт показывает порядок величины, а не ваш конкретный дедлайн.</p>
+
+<h2>Сколько проходит <span class="italic">между записью и экзаменом</span></h2>
+
+<p>Разложу двадцать строк по длине промежутка.</p>
+
+<table class="ks-tab ks-dist">
+  <thead><tr><th>Промежуток</th><th>Сколько строк</th><th>Что это значит</th></tr></thead>
+  <tbody>
+    <tr><td><b>22 дня</b></td><td>1</td><td>самый короткий промежуток в расчёте</td></tr>
+    <tr><td><b>30–31 день</b></td><td>11</td><td>самый частый случай: месяц</td></tr>
+    <tr><td><b>37–40 дней</b></td><td>3</td><td>чуть больше месяца</td></tr>
+    <tr><td><b>48–53 дня</b></td><td>3</td><td>полтора месяца</td></tr>
+    <tr><td><b>61 день</b></td><td>2</td><td>два месяца: самый длинный промежуток</td></tr>
+  </tbody>
+</table>
+
+<p><b>Месяц — самый частый случай.</b> Одиннадцать строк из двадцати дают ровно тридцать или тридцать один день, и это не совпадение: окна записи у многих центров открываются и закрываются числом в число.</p>
+
+<p>Удобно это тем, что запомнить легко: у большинства центров запись закрывается в тот же день месяца, на который назначен экзамен, только месяцем раньше. Экзамен тринадцатого декабря — запись до тринадцатого ноября.</p>
+
+<p><b>Но полагаться на это правило нельзя</b>, и именно поэтому я привожу разброс. У четверти строк промежуток заметно больше месяца, а у одной — меньше, чем три недели.</p>
+
+<p><b>Почему удобное правило всё же стоит запомнить.</b> Даже если ваш центр закрывает запись раньше или позже, отметка «месяц до экзамена» работает как сигнал: когда до экзамена остаётся месяц, вопрос записи нужно считать срочным, а не плановым.</p>
+
+<p>А дальше уже смотреть конкретику. Два числа, которые нужно узнать, — день открытия окна и день закрытия: первое говорит, когда можно начинать, второе — когда станет поздно.</p>
+
+<p>Отдельно отмечу: короткое окно — не признак плохого центра. Иногда центр объявляет сессию позже других и сокращает запись, иногда наоборот открывает её за два месяца.</p>
+
+<h2>Почему у одних месяц, <span class="italic">а у других два</span></h2>
+
+<p>Причина в том, как устроено расписание: дата экзамена приходит из общего календаря, а окно записи назначает центр. Подробно это разобрано в нашей статье про даты сдачи, здесь важно следствие.</p>
+
+<p><b>Следствие простое: общего дедлайна не существует.</b> Разброс в 2,8 раза означает, что два человека, сдающие в один день в разных городах, записываются с разницей в месяц.</p>
+
+<p>Для планирования это значит, что чужой опыт здесь бесполезен. «Мой знакомый записался за три недели» — верное утверждение про чужой центр и ничего не говорящее про ваш.</p>
+
+<p>Сравнивать центры по длине окна тоже бесполезно: длинное окно не означает, что записаться проще, а короткое — что центр строже. Это просто разные внутренние порядки.</p>
+
+<p>И обратное тоже верно: если в вашем городе запись уже закрыта, стоит посмотреть другие города. Та же дата, другое окно — и иногда оно ещё открыто.</p>
+
+<figure class="ks-fig"><img src="assets/reg-info.png" alt="Точечная шкала дней: двадцать строк расписания разложены по длине промежутка между закрытием записи и экзаменом, видно сгущение на месяце и два хвоста — двадцать два дня и шестьдесят один" width="1200" height="500"><figcaption>Двадцать строк расписания по длине промежутка: сгущение на месяце и два хвоста — двадцать два дня и шестьдесят один.</figcaption></figure>
+
+<h2>«Восьмое ноября»: <span class="italic">дата, которой не было</span></h2>
+
+<p>Отдельный разговор про запросы, в которых фигурируют несуществующие даты. Разберу на свежем примере.</p>
+
+<p><b>Осенняя сессия шла 7 ноября — это была суббота.</b> Числа 8 ноября в расписании не было ни у одного центра: на него пришлось воскресенье.</p>
+
+<p>Откуда берётся ошибка. Сессии идут в разные дни недели: одна в субботу, другая в воскресенье, третья вообще в будний день. Человек помнит «экзамен в выходные» и прибавляет день.</p>
+
+<p><b>Почему это дорого стоит.</b> Ошибка в дате экзамена на день сдвигает и расчёт записи: вы ищете дедлайн не той сессии и рассчитываете на лишние сутки, которых нет.</p>
+
+<p>Как проверять себя: дату экзамена смотрите там же, где будете записываться, и записывайте сразу два числа — день экзамена и последний день записи. Второе число без первого бесполезно, а первое без второго опасно.</p>
+
+<h2>Что говорят общие описания <span class="italic">и почему цифры разные</span></h2>
+
+<p>Если искать сроки записи в общих описаниях порядка регистрации, там называют другие числа: от 7 до 14 дней до экзамена.</p>
+
+<p><b>Это не противоречие.</b> Общие описания говорят о нижней границе — раньше какого срока запись не закрывают. Центры закрывают её раньше: в нашем расчёте середина выходит в 2,2 раза больше верхней из этих цифр.</p>
+
+<p>Путаница из-за этого бывает обидная: человек читает «запись закрывается за десять дней», успокаивается и приходит за две недели, а у его центра всё закрылось месяц назад.</p>
+
+<p>Правило, которое из этого следует: <b>ориентируйтесь на срок своего центра, а общие числа держите как нижнюю границу</b>, ниже которой запись не бывает открыта.</p>
+
+<h2>Как я считаю срок <span class="italic">с учеником</span></h2>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Ученик написал в середине ноября: хочет сдавать в декабре, подготовка идёт хорошо, осталось «просто записаться». До экзамена оставалось три недели — по его расчётам, с запасом.</p>
+  <p>Запись на эту сессию закрылась за неделю до его письма. Не в его городе и не по его вине: так устроено у большинства центров, запись закрывают примерно за месяц.</p>
+  <p><b>Самое обидное было не это.</b> Он знал дату экзамена с лета и всё это время считал, что «успеет записаться», потому что экзамен ещё впереди. Дата экзамена в голове была, а второй даты — последнего дня записи — не было вовсе.</p>
+  <p>Мы посмотрели соседние города: там та же сессия, но окна свои. В одном запись закрывалась позже, но ехать было шесть часов, а экзамен в восемь утра.</p>
+  <p><b>Он выбрал следующую сессию.</b> Решение оказалось не худшим: появился лишний месяц, и мы потратили его на письменную часть, которая у него была слабее остальных.</p>
+  <p>С тех пор я спрашиваю учеников не «когда экзамен», а «когда закрывается запись». Это два разных числа, и второе важнее: оно наступает раньше и не прощает опоздания.</p>
+  <p>Записывать их стоит вместе, одной строкой. У меня в плане подготовки эта строка идёт первой — раньше, чем расписание занятий.</p>
+  <p><b>Вывод, который я делаю:</b> у экзамена два срока, и первый из них — не день экзамена. Узнавайте оба сразу, в тот же день, когда выбрали дату.</p>
+</div>
+
+<h2>Когда начинать <span class="italic">искать дату</span></h2>
+
+<p>Из расчёта следует простой ориентир по времени.</p>
+
+<p><b>За два месяца до желаемого экзамена</b> — смотреть расписание и сроки записи. К этому моменту окно обычно уже открыто, и у вас есть время собрать документы.</p>
+
+<p><b>За полтора месяца</b> — записываться. Это запас на случай, если у вашего центра окно короткое или если потребуется что-то переделать в заявке.</p>
+
+<p><b>За месяц</b> — последний рубеж для большинства центров. Если вы вспомнили об экзамене позже, смотрите следующую сессию: это не катастрофа, а обычное дело.</p>
+
+<p>Что делать, если запись всё-таки закрылась, у нас разобрано в статье про даты сдачи: там три рабочих варианта и один нерабочий. Повторять не буду.</p>
+
+<p><b>Отдельно про тех, кто сдаёт не в своём городе.</b> К срокам записи добавляется дорога: её тоже планируют заранее, а обратный рейс в тот же день после экзамена выходит не всегда. Это тоже планируется за полтора месяца, а не за неделю.</p>
+
+<p>И про тех, кто ждёт готовности. Запись и готовность — разные вещи: записываться приходится тогда, когда открыто окно, а не тогда, когда вы чувствуете себя готовым. Поэтому решение обычно принимается с запасом по уровню, а не впритык.</p>
+
+<h2>Что спросить у центра <span class="italic">за один заход</span></h2>
+
+<p>Чтобы не переписываться неделю, спрашивайте всё сразу.</p>
+
+<table class="ks-tab ks-ask">
+  <thead><tr><th>Вопрос</th><th>Что уточнить</th><th>Почему это важно</th></tr></thead>
+  <tbody>
+    <tr><td><b>Какой уровень у вас открыт</b></td><td>и в каком формате</td><td>бумажный есть не везде</td></tr>
+    <tr><td><b>Когда закрывается запись</b></td><td>именно на вашу дату</td><td>у соседей срок другой</td></tr>
+    <tr><td><b>Что принести и приложить</b></td><td>документ и фотография</td><td>требования к ним свои</td></tr>
+    <tr><td><b>Когда приходит подтверждение</b></td><td>и что делать, если не пришло</td><td>это выясняется заранее, а не в день экзамена</td></tr>
+  </tbody>
+</table>
+
+<p>Ответ на четыре вопроса обычно приходит одним письмом, и после него план становится понятным: вы знаете оба срока, формат и список того, что нужно приложить.</p>
+
+<p><b>Чего в таком письме лучше не спрашивать.</b> «Можно ли записаться после закрытия» — ответ будет отрицательным, и это известно заранее. «Какой уровень мне сдавать» — на этот вопрос центр не отвечает, он проводит экзамен, а не консультирует по подготовке.</p>
+
+<p>Зато спросить про формат стоит обязательно, даже если вам всё равно: от него зависит, сколько времени занимает сам экзамен и в каком виде приходят задания. Разбор того, чем бумажный формат отличается от компьютерного, есть в нашей статье про даты сдачи.</p>
+
+<p>Что именно требуется приложить к заявке, разобрано у нас во вчерашней статье про домашний формат: перечень там общий для любого способа сдачи.</p>
+
+<h2>Чего я <span class="italic">не подтверждаю</span></h2>
+
+<p>У этого расчёта есть срок годности, и сказать об этом нужно прямо.</p>
+
+<p><b>Таблица, по которой я считала, сверена 8 сентября 2026 года.</b> С тех пор окна закрывались, сессии проходили, часть строк уже история. Расчёт показывает, как устроены сроки, но не говорит, что сегодня открыто.</p>
+
+<p><b>Единой даты открытия записи я не называю.</b> Её нет: окна открываются в разное время, и утверждать «запись открывается такого-то числа» было бы выдумкой.</p>
+
+<p>И чего в этой статье нет совсем: ни адресов центров, ни ссылок на страницы регистрации. Они меняются, а ошибка здесь стоит сессии.</p>
+
+<p><b>И последнее, чего я не берусь утверждать.</b> Почему один центр закрывает запись за три недели, а другой за два месяца, по открытым объявлениям не видно. Возможно, дело в сроках отправки документов, возможно — во внутреннем порядке. Называть причину я не стану, а разброс показываю как есть.</p>
+
+<h2>Частые ошибки</h2>
+
+<ol>
+  <li><b>Помнить только дату экзамена.</b> Сроков два, и первый наступает раньше.</li>
+  <li><b>Считать по чужому центру.</b> Разброс в расчёте — почти втрое.</li>
+  <li><b>Верить общим числам про неделю.</b> Это нижняя граница, а не правило.</li>
+  <li><b>Искать дату «примерно».</b> Ошибка в один день сдвигает весь расчёт.</li>
+  <li><b>Откладывать запись до готовности.</b> Запись закрывается раньше, чем вы доучите.</li>
+</ol>
+
+<div class="cta">
+  <p><b>Не знаете, к какой сессии успеваете?</b> На пробном занятии мы смотрим ваш уровень и считаем назад от даты записи, а не от даты экзамена — так становится видно, какая сессия ваша.</p>
+  <p><a href="#popup:zayavka">Приходите на пробное занятие</a>, форматы и программа — здесь: <a href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener">онлайн-курсы китайского</a>.</p>
+</div>
+
+<p>Одно действие на сегодня: откройте календарь и поставьте две отметки — день экзамена и день, когда закрывается запись. Если второй даты вы не знаете, её и нужно выяснить первой.</p>
+
+<p>Эту пару отметок стоит ставить сразу на все сессии, которые вы рассматриваете: обычно их две или три до конца полугодия, и видно, какая из них ещё достижима, а какая уже нет.</p>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Расписания сессий.</b> Таблица дат живёт в отдельной статье.</li>
+  <li><b>Названий центров и адресов.</b> В расчёте я считаю по городам.</li>
+  <li><b>Разбора, что делать при опоздании.</b> Это тоже отдельная статья.</li>
+  <li><b>Списка документов для заявки.</b> Он разобран во вчерашней статье.</li>
+  <li><b>Цен и порядка оплаты.</b> Блог их не публикует.</li>
+</ul>
+
+<p>И ещё об одном умолчании. Я не называю «правильный» срок записи: он у каждого центра свой, а моё дело — показать порядок величины и то, как его проверить.</p>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>До какого числа можно зарегистрироваться на HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По нашему расчёту из расписания российских центров запись закрывается в среднем за месяц до экзамена: у одиннадцати строк из двадцати это тридцать или тридцать один день. Крайние случаи — двадцать два дня и шестьдесят один.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Когда открывается запись на экзамен?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Единой даты открытия нет: окно своё у каждого центра, и начинается оно обычно за два месяца до экзамена. Как устроены эти окна, у нас разобрано в статье про даты сдачи.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Экзамен 8 ноября — до какого числа была регистрация?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Восьмого ноября экзамена не было: осенняя сессия шла седьмого, в субботу, а восьмое пришлось на воскресенье. Запись на седьмое ноября закрывалась примерно за месяц, то есть в начале октября.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Почему у соседних городов сроки разные?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что дату экзамена назначает общий календарь, а окно записи каждый центр определяет сам. Поэтому на одну и ту же дату в разных городах сроки расходятся — в нашем расчёте разница почти втрое.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Запись закрывается за неделю или за месяц?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Общие описания порядка записи называют минимальный срок — от семи до четырнадцати дней. На практике российские центры закрывают запись заметно раньше: в середине получается месяц, то есть вдвое с лишним больше минимального срока.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как зарегистрироваться, если я живу не в Москве?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Так же, как и в Москве: через центр, который проводит экзамен в вашем городе. Сроки смотрите у него же — чужое расписание здесь не помогает. Где именно принимают экзамен, разобрано у нас в отдельной статье.</p></div>
+  </details>
+</div>
+
+<p>И напоследок то, что важнее любого из чисел выше. Подготовка к экзамену считается не от дня экзамена, а от дня записи: именно он закрывает доступ к сессии. Когда эта строка появляется в плане первой, остальное выстраивается само — и уровень, и темп, и выбор даты. Что потом даёт сертификат и сколько он действует, разобрано здесь: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK: что это за экзамен</a>.</p>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li><b>Все промежутки посчитаны мной</b> по таблице дат и окон регистрации из нашей же статьи про даты сдачи; это расчёт, а не опубликованная величина.</li>
+    <li><b>Исходная таблица сверена 8 сентября 2026 года</b> по объявлениям российских центров — на эту дату и опирается весь расчёт.</li>
+    <li>Дни недели седьмого и восьмого ноября проверены по календарю.</li>
+    <li><b>Числа общих описаний порядка записи</b> — от семи до четырнадцати дней — приведены по вчерашней сверке для статьи про домашний формат.</li>
+    <li>То, что дату экзамена назначает общий календарь, а окно записи — центр, приведено по нашей же статье про даты сдачи.</li>
+    <li><b>Названий центров, адресов, ссылок и цен не публикую;</b> в расчёте фигурируют только города.</li>
+    <li>Случай с учеником, опоздавшим на декабрьскую сессию, взят из занятий Kitai School; имя не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Запись закрывается примерно за месяц до экзамена, а не за неделю</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
