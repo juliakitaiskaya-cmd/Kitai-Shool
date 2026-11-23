@@ -1,0 +1,467 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/teksty-hsk#article",
+      "headline": "Тексты и диалоги для HSK 1–6: как понять, что текст вашего уровня",
+      "description": "Разбор того, как подобрать текст или диалог для подготовки к экзамену по китайскому языку HSK на уровнях с первого по шестой. Сложность текста измеряется одной меркой — долей незнакомых слов: при двух незнакомых позициях на сто слов текст читается самостоятельно, при пяти требуется словарь под рукой, при десяти это уже разбор, а не чтение. Отдельно разобраны три прохода по одному тексту, три шага отвыкания от пиньиня, который пропадает с третьего уровня, и то, чем работа с диалогом отличается от работы со связным текстом.",
+      "image": "assets/tek-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/teksty-hsk",
+      "about": {
+        "@type": "Thing",
+        "name": "Тексты и диалоги для подготовки к экзамену HSK"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/teksty-hsk#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как понять, что текст моего уровня?", "acceptedAnswer": {"@type": "Answer", "text": "Посчитайте незнакомые слова в одном абзаце. Если их около двух на сто слов, текст читается свободно. Если около пяти — читать можно, но со словарём под рукой. Если десять и больше, это уже не чтение, а разбор, и для тренировки чтения такой текст не подходит."}},
+        {"@type": "Question", "name": "Сколько незнакомых слов допустимо?", "acceptedAnswer": {"@type": "Answer", "text": "Две позиции на сто слов — это свободное чтение, пять — чтение с опорой. В строке из десяти слов это меньше одного незнакомого в первом случае и примерно одно через строку во втором. Доли взяты из исследований по чтению на иностранном языке."}},
+        {"@type": "Question", "name": "Что делать, если незнакомых слишком много?", "acceptedAnswer": {"@type": "Answer", "text": "Взять текст проще. Это не поражение и не признак слабого уровня: трудный текст отнимает время у чтения и отдаёт его словарю. Разбирать сложное тоже полезно, но это другое занятие, и смешивать их не стоит."}},
+        {"@type": "Question", "name": "Как читать без пиньиня?", "acceptedAnswer": {"@type": "Answer", "text": "Тремя шагами. Закрыть строку пиньиня листом бумаги, читать без подсказки сначала те слова, которые уже узнаёте, и возвращаться к пиньиню только для проверки, а не для чтения. Пиньинь над знаками пропадает с третьего уровня, так что привыкать стоит заранее."}},
+        {"@type": "Question", "name": "Сколько раз перечитывать текст?", "acceptedAnswer": {"@type": "Answer", "text": "Один текст стоит пройти трижды: первый раз целиком и без остановок, второй — со словарём, третий — вслух. Три прохода по одному тексту дают больше, чем один проход по трём разным."}},
+        {"@type": "Question", "name": "Где брать тексты своего уровня?", "acceptedAnswer": {"@type": "Answer", "text": "На первых двух уровнях — учебные тексты и диалоги по пройденным урокам: ничего другого мерке пока не соответствует. С третьего уровня подходят адаптированные истории, с четвёртого — адаптированные книги, с пятого — обычные тексты на знакомые темы. Конкретных площадок мы не называем, но проверить любой найденный текст можно той же меркой."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/teksty-hsk#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Тексты и диалоги для HSK 1–6: как понять, что текст вашего уровня", "item": "https://kitai-school.ru/article/teksty-hsk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамен</p>
+<h1>Тексты и диалоги для HSK 1–6: <span class="italic">как понять, что текст вашего уровня</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-23">23 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/tek-hero.png" alt="Три одинаковые строки текста-образца, в которых отмечено разное число незнакомых слов: при двух на сто текст читается свободно, при пяти нужен словарь, при десяти это уже не чтение, а разбор" width="1200" height="630"></figure>
+
+<p class="lead">Подборку текстов искать не нужно. Нужна мерка, по которой любой найденный текст проверяется за минуту: <b>сколько в нём незнакомых слов на сотню</b>. Две — читается свободно, пять — со словарём, десять — это уже не чтение.</p>
+
+<p>Разберу, как считать эту долю, как проходить один текст трижды, как отучаться от пиньиня и чем диалог отличается от связного текста. Зачем вообще сдавать этот экзамен, разобрано отдельно: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK и зачем он нужен</a>.</p>
+
+<h2>Короткий ответ: <span class="italic">проверьте текст за минуту</span></h2>
+
+<p>Возьмите первый абзац и отметьте слова, которых не знаете. Не те, о которых догадываетесь по контексту, а те, которые видите впервые.</p>
+
+<p><b>Если незнакомых около двух на сто слов</b> — это ваш текст, читайте. Словарь понадобится изредка, и чтение не будет прерываться.</p>
+
+<p><b>Если около пяти</b> — читать тоже можно, но со словарём под рукой. Это рабочий вариант для занятий, хотя удовольствия от такого чтения меньше.</p>
+
+<p><b>Если десять и больше</b> — текст не подходит для чтения. С ним можно работать, но это будет разбор, а не чтение, и путать эти два занятия не стоит.</p>
+
+<p>Считать до сотни при этом не нужно. В абзаце обычно пятьдесят-семьдесят слов, и трёх незнакомых в нём уже достаточно, чтобы насторожиться.</p>
+
+<p>Вся статья дальше — про то, откуда взялись эти числа и что делать с текстом, который мерку прошёл.</p>
+
+<h2>Сколько незнакомых слов <span class="italic">допустимо</span></h2>
+
+<p>Три ступени, между которыми меняется не скорость чтения, а само занятие.</p>
+
+<table class="ks-tab ks-cov">
+  <thead><tr><th>Знакомо</th><th>Незнакомых</th><th>Что происходит с текстом</th><th>Откуда</th></tr></thead>
+  <tbody>
+    <tr><td><b>98&nbsp;%</b></td><td>2 на сто слов</td><td>читается свободно, словарь нужен изредка</td><td>исследования</td></tr>
+    <tr><td><b>95&nbsp;%</b></td><td>5 на сто слов</td><td>читается с опорой: словарь под рукой</td><td>исследования</td></tr>
+    <tr><td><b>90&nbsp;%</b></td><td>10 на сто слов</td><td>это уже разбор, а не чтение</td><td>наш вывод</td></tr>
+  </tbody>
+</table>
+
+<p><b>Переведу в строки, так нагляднее.</b> В строке из десяти слов при первой ступени приходится 0,2 незнакомого слова — то есть одно слово на пять строк. При второй 0,5 — примерно одно через строку. При третьей 1,0 — по незнакомому слову в каждой строке.</p>
+
+<p>Разница между «одно на пять строк» и «одно в каждой строке» и есть разница между чтением и расшифровкой. В первом случае вы следите за смыслом, во втором — за словарём.</p>
+
+<h2>Откуда эти доли <span class="italic">и чего они не учитывают</span></h2>
+
+<p>Две верхние ступени — из исследований по чтению на иностранном языке: доля в девяносто восемь процентов считается порогом самостоятельного чтения, девяносто пять — нижней границей, при которой чтение ещё возможно с опорой.</p>
+
+<p><b>Третья ступень — наш вывод, а не данные.</b> Что при девяноста процентах чтение превращается в разбор, я вывожу из практики занятий и помечаю это отдельно.</p>
+
+<p><b>Главная оговорка, и она важнее самих чисел.</b> Исследования проводились на английском материале. Перенос этих долей на китайский — наше допущение, а не измеренный факт, и говорю я об этом прямо, а не сноской внизу.</p>
+
+<p>Вторая оговорка: часть исследователей резкого порога не находит вовсе — у них зависимость ближе к плавной. Это значит, что девяносто семь процентов не превращают чтение в муку, а девяносто девять не делают его мгновенным.</p>
+
+<p>Поэтому числа стоит читать как ориентир, а не как выключатель. Мерка полезна тем, что превращает смутное «тяжеловато» в проверяемую величину, а не тем, что проводит точную границу.</p>
+
+<p>И ещё одно, чего доли не учитывают: знакомое слово в незнакомом значении. Оно считается знакомым, а работает как незнакомое — поэтому счёт даёт нижнюю оценку трудности, а не точную.</p>
+
+<h2>Разбор и чтение — <span class="italic">разные занятия</span></h2>
+
+<p>Это различение я считаю главным в статье, потому что из-за его отсутствия пропадает больше всего времени.</p>
+
+<p><b>Чтение</b> тренирует скорость, узнавание знакомого и понимание связей между частями текста. Оно требует, чтобы текст был почти понятен — иначе тренировать нечего.</p>
+
+<p><b>Разбор</b> тренирует другое: грамматику, новые слова, умение раскладывать сложное предложение. Для него как раз нужен текст труднее вашего уровня.</p>
+
+<p>Оба занятия нужны. Беда начинается, когда трудный текст берут для чтения: человек получает усталость вместо скорости и делает вывод, что читать ему рано.</p>
+
+<p><b>Практическое следствие.</b> Держите два текста разом: один по мерке — для чтения, другой потруднее — для разбора. Тогда не придётся выбирать между скоростью и новым материалом.</p>
+
+<figure class="ks-fig"><img src="assets/tek-info.png" alt="Круговая схема из трёх проходов по одному тексту: первый без остановок, второй со словарём, третий вслух — у каждого названо, что делают и чего на этом проходе делать не нужно" width="1200" height="520"><figcaption>Три прохода по одному тексту: у каждого своё действие, своя цель и то, чего на этом проходе делать не нужно.</figcaption></figure>
+
+<h2>Три прохода <span class="italic">по одному тексту</span></h2>
+
+<p>Один текст, пройденный трижды, даёт больше, чем три текста по разу. Порядок проходов важен, и словарь появляется только на втором.</p>
+
+<ul>
+  <li><b>Проход первый:</b> прочитать целиком, не останавливаясь — понять, о чём текст, и не застрять на первом незнакомом слове.</li>
+  <li><b>Проход второй:</b> разобрать со словарём — выписать незнакомое и понять конструкции.</li>
+  <li><b>Проход третий:</b> перечитать вслух — связать написание и звучание, проверить, что текст стал понятным.</li>
+</ul>
+
+<p><b>Про первый проход скажу отдельно,</b> потому что его чаще всего пропускают. Соблазн заглянуть в словарь на первом же незнакомом слове и мешает чтению: вы перестаёте следить за смыслом. Договоритесь с собой, что первый проход идёт до конца, сколько бы слов в нём ни осталось непонятными.</p>
+
+<p><b>Третий проход вслух</b> связывает написание со звучанием: знак, прочитанный вслух, запоминается иначе, чем просмотренный глазами.</p>
+
+<h2>Как отучаться <span class="italic">от пиньиня</span></h2>
+
+<p>На первых двух уровнях пиньинь напечатан над знаками, с HSK 3 его уже нет. Переход тяжёл ровно настолько, насколько поздно к нему готовятся.</p>
+
+<ul>
+  <li><b>Закрыть строку пиньиня</b> — листом бумаги или полоской, и это проще, чем кажется.</li>
+  <li><b>Читать без подсказки знакомое</b> — начиная с тех слов, которые уже узнаёте.</li>
+  <li><b>Возвращаться к пиньиню для проверки</b> — а не для чтения — это разные вещи.</li>
+</ul>
+
+<p><b>Первый шаг самый действенный, и он самый простой.</b> Физически закрыть подсказку проще, чем заставлять себя не смотреть: глаз всё равно соскальзывает на неё, пока она видна.</p>
+
+<p>Знакомых знаков при этом обычно больше, чем кажется до первой попытки. Как устроено запоминание, разобрано отдельно: <a href="https://kitai-school.ru/article/kak-zapominat-ieroglify" target="_blank" rel="noopener">как запоминать иероглифы</a>, а из чего знак собирается — здесь: <a href="https://kitai-school.ru/article/poryadok-chert-v-kitayskih-ieroglifah" target="_blank" rel="noopener">порядок черт в китайских иероглифах</a>.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Один ученик приносил на занятия тексты, которые выбирал сам, и каждый раз это была свежая новость, где он не понимал половину слов.</p>
+  <p>Разбирали такую новость минут сорок. К концу он уставал и делал один и тот же вывод: читать ему ещё рано, уровень не тот.</p>
+  <p><b>Однажды мы просто посчитали.</b> Взяли первый абзац, отметили незнакомые слова — вышло около четверти. С таким текстом не работают: его расшифровывают.</p>
+  <p>Я дала ему другой текст, где незнакомых было два-три на абзац. Он прочёл страницу за десять минут и впервые сказал, что читать было интересно.</p>
+  <p><b>Уровень за эти десять минут не изменился.</b> Изменился только текст — и вместе с ним исчезло ощущение, что язык не поддаётся.</p>
+  <p>С тех пор первое, что я делаю с принесённым текстом, — считаю незнакомые слова в одном абзаце. Это занимает минуту и решает, будем мы его читать или отложим.</p>
+  <p>Отдельно скажу про выбор «посложнее». Его делают из лучших побуждений: кажется, что трудный текст подтянет быстрее. На деле он отнимает время у чтения и отдаёт его словарю.</p>
+  <p><b>Вывод, который я делаю:</b> ощущение «я не готов читать» чаще говорит о неверно выбранном тексте, чем об уровне человека. Проверяется это одним абзацем.</p>
+</div>
+
+<h2>Какие тексты подходят <span class="italic">на каждом уровне</span></h2>
+
+<p>Мерка одна для всех уровней — меняется не она, а то, сколько текстов ей соответствует. Словник растёт с 300 слов до 5400, то есть в 18 раз, и вместе с ним растёт выбор.</p>
+
+<table class="ks-tab ks-lvl">
+  <thead><tr><th>Уровень</th><th>Слов</th><th>Что проходит мерку</th><th>Пиньинь</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>300</td><td>учебные тексты и короткие диалоги по пройденным урокам</td><td>пиньинь есть</td></tr>
+    <tr><td><b>HSK 2</b></td><td>500</td><td>те же учебные тексты, но длиннее, и диалоги на несколько реплик</td><td>пиньинь есть</td></tr>
+    <tr><td><b>HSK 3</b></td><td>1000</td><td>учебные тексты без подсказок и первые адаптированные истории</td><td>пиньиня больше нет</td></tr>
+    <tr><td><b>HSK 4</b></td><td>2000</td><td>адаптированные книги для изучающих язык</td><td>пиньиня нет</td></tr>
+    <tr><td><b>HSK 5</b></td><td>3600</td><td>неадаптированные тексты на знакомые темы</td><td>пиньиня нет</td></tr>
+    <tr><td><b>HSK 6</b></td><td>5400</td><td>почти любой текст, включая публицистику</td><td>пиньиня нет</td></tr>
+  </tbody>
+</table>
+
+<p><b>Оговорюсь сразу:</b> правый столбец про тип текста — наш вывод из практики, а не измеренная величина. Числа словника взяты из действующего стандарта, а что при таком запасе проходит мерку, я вывожу из занятий. Как меняются требования по уровням, разобрано здесь: <a href="https://kitai-school.ru/article/ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu" target="_blank" rel="noopener">требования к количеству слов по уровням</a>.</p>
+
+<p><b>Про первые два уровня.</b> Искать «настоящие» тексты там бесполезно: при запасе в 300 слов мерке не соответствует почти ничего, кроме учебных текстов по пройденным урокам. Это не ограничение уровня, а арифметика. Разбор первого уровня у нас здесь: <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1: как сдать первый уровень</a>, а первые слова — здесь: <a href="https://kitai-school.ru/article/kitayskie-slova-dlya-nachinauschih" target="_blank" rel="noopener">китайские слова для начинающих</a>.</p>
+
+<p><b>Про третий уровень</b> — тот самый, где пропадает пиньинь и появляются первые адаптированные истории. Что ещё меняется на нём, разобрано здесь: <a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">HSK 3: как сдать без пиньиня</a>, а проверить себя можно пробником: <a href="https://kitai-school.ru/article/hsk-3-probnyy-test-kak-preodolet-barer-i-sdat-na-maksimum" target="_blank" rel="noopener">пробный тест HSK 3</a>.</p>
+
+<p><b>Про четвёртый и книги.</b> Запрос «книги на китайском для HSK 4» в основном про адаптированные издания — те, где словарь сознательно ограничен. Какие книги стоит читать и с какого уровня, у нас разобрано отдельно: <a href="https://kitai-school.ru/article/luchshie-kitajskie-knigi" target="_blank" rel="noopener">лучшие китайские книги</a>. Разбор самого уровня — здесь: <a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4 в 2026: разбор экзамена</a>.</p>
+
+<p><b>Про пятый и шестой.</b> Здесь мерке начинают соответствовать обычные тексты, и выбор перестаёт быть проблемой. Проблемой становится скорость — на шестом уровне особенно: текстов больше, они длиннее, а времени на них даётся не больше. Разбор пятого уровня: <a href="https://kitai-school.ru/article/hsk-5-kak-sdat-universitetskiy-kzamen" target="_blank" rel="noopener">HSK 5: как сдать «университетский» экзамен</a>.</p>
+
+<h2>Диалоги: <span class="italic">чем они отличаются от текстов</span></h2>
+
+<p>Диалог — это не короткий текст. Работа с ним устроена иначе, и подменять одно другим не стоит.</p>
+
+<table class="ks-tab ks-dia">
+  <thead><tr><th>Вопрос</th><th>Диалог</th><th>Связный текст</th></tr></thead>
+  <tbody>
+    <tr><td><b>Что держит внимание</b></td><td>кто говорит и кому</td><td>как связаны части текста</td></tr>
+    <tr><td><b>Чего в нём больше</b></td><td>частиц, обращений и коротких реплик</td><td>длинных предложений и связок</td></tr>
+    <tr><td><b>Что тренирует</b></td><td>узнавание на слух и интонацию</td><td>скорость и понимание связей</td></tr>
+    <tr><td><b>Где пригодится на экзамене</b></td><td>раздел аудирования</td><td>раздел чтения</td></tr>
+  </tbody>
+</table>
+
+<p><b>Отсюда простое правило.</b> Диалоги читают вслух и по ролям, а связные тексты — глазами и на скорость. Диалог, прочитанный молча, теряет половину смысла: в нём важно, кто говорит и с какой интонацией.</p>
+
+<p>Есть и обратная сторона: диалог прощает незнакомые слова лучше связного текста. Реплики короткие, собеседник часто переспрашивает, и пропущенное слово восстанавливается из ответа — поэтому мерка на диалогах работает мягче.</p>
+
+<p>На первом уровне диалог вообще главный вид текста: учебные тексты там короткие, а диалоги по пройденным урокам дают и лексику, и привычку к звучанию сразу.</p>
+
+<p>На экзамене это различие тоже видно. Диалоги достаются разделу аудирования, связные тексты — разделу чтения, и готовятся к ним по-разному: первые слушают, вторые читают на время.</p>
+
+<p><b>Готовых диалогов мы не выкладываем</b> — чужих текстов блог не перепечатывает. Но устроены они одинаково: две-три реплики на знакомую тему, вопрос и ответ, обращение в начале. Такой диалог несложно собрать и самому из слов пройденного урока — и это, кстати, лучшее упражнение, чем чтение готового.</p>
+
+<h2>Частые ошибки</h2>
+
+<ul>
+  <li><b>Брать текст «посложнее, чтобы подтянуться».</b> Трудный текст отнимает время у чтения и отдаёт его словарю.</li>
+  <li><b>Лезть в словарь на первом незнакомом слове.</b> Первый проход идёт целиком, иначе чтения не получается вовсе.</li>
+  <li><b>Читать каждый текст по разу.</b> Три прохода по одному дают больше, чем один проход по трём.</li>
+  <li><b>Тянуть с отвыканием от пиньиня до третьего уровня.</b> Там подсказки уже нет, и привыкать приходится на экзаменационных заданиях.</li>
+  <li><b>Читать диалоги молча.</b> В них половина смысла в том, кто говорит и как, а это слышно только вслух.</li>
+</ul>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Самих текстов и диалогов.</b> Чужих текстов блог не перепечатывает.</li>
+  <li><b>Названий сайтов, приложений и сборников.</b> Внешних ссылок блог не ставит, а мерка работает с любым найденным текстом.</li>
+  <li><b>Ссылок на файлы для скачивания и магазинов.</b> По той же причине.</li>
+  <li><b>Списка книг по уровням.</b> Он у нас в отдельной статье, ссылка стоит в тексте.</li>
+  <li><b>Разбора раздела чтения на экзамене.</b> Он разобран в статьях по уровням и в пробниках.</li>
+</ul>
+
+<p>И ещё об одном умолчании. Я не называю «правильное» число текстов в неделю: оно зависит от их длины, от уровня и от того, сколько у вас времени. Мерка отвечает на вопрос «какой текст», а не «сколько».</p>
+
+<p>И не называю точного числа слов, при котором «уже можно читать настоящее». Такой границы нет: она зависит от темы текста не меньше, чем от запаса слов.</p>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как понять, что текст моего уровня?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Посчитайте незнакомые слова в одном абзаце. Если их около двух на сто слов, текст читается свободно. Если около пяти — читать можно, но со словарём под рукой. Если десять и больше, это уже не чтение, а разбор, и для тренировки чтения такой текст не подходит.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько незнакомых слов допустимо?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Две позиции на сто слов — это свободное чтение, пять — чтение с опорой. В строке из десяти слов это меньше одного незнакомого в первом случае и примерно одно через строку во втором. Доли взяты из исследований по чтению на иностранном языке.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что делать, если незнакомых слишком много?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Взять текст проще. Это не поражение и не признак слабого уровня: трудный текст отнимает время у чтения и отдаёт его словарю. Разбирать сложное тоже полезно, но это другое занятие, и смешивать их не стоит.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как читать без пиньиня?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Тремя шагами. Закрыть строку пиньиня листом бумаги, читать без подсказки сначала те слова, которые уже узнаёте, и возвращаться к пиньиню только для проверки, а не для чтения. Пиньинь над знаками пропадает с третьего уровня, так что привыкать стоит заранее.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Сколько раз перечитывать текст?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Один текст стоит пройти трижды: первый раз целиком и без остановок, второй — со словарём, третий — вслух. Три прохода по одному тексту дают больше, чем один проход по трём разным.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Где брать тексты своего уровня?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>На первых двух уровнях — учебные тексты и диалоги по пройденным урокам: ничего другого мерке пока не соответствует. С третьего уровня подходят адаптированные истории, с четвёртого — адаптированные книги, с пятого — обычные тексты на знакомые темы. Конкретных площадок мы не называем, но проверить любой найденный текст можно той же меркой.</p></div>
+  </details>
+</div>
+
+<p>И напоследок то, что важнее любого числа выше. Чтение — единственная часть подготовки, которую почти целиком можно устроить себе самому: текст либо понятен, либо нет, и проверить это можно без преподавателя. Поэтому мерку стоит взять в привычку: минута счёта в начале бережёт часы, потраченные на расшифровку не того текста. А если хочется, чтобы тексты подбирали под ваш уровень и разбирали вместе с вами, <a href="#popup:zayavka">запишитесь на бесплатный урок</a> — начнём с того, что измерим ваш уровень.</p>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li><b>Доли в девяносто восемь и девяносто пять процентов знакомых слов</b> — по исследованиям чтения на иностранном языке; девяносто восемь считается порогом самостоятельного чтения, девяносто пять — нижней границей чтения с опорой.</li>
+    <li><b>Исследования проводились на английском материале.</b> Перенос долей на китайский — наше допущение, названное в тексте прямо.</li>
+    <li><b>То, что при девяноста процентах чтение превращается в разбор, — наш вывод</b> из практики занятий, а не данные исследований.</li>
+    <li>То, что часть исследователей резкого порога не находит, приведено по тем же работам и сказано в тексте.</li>
+    <li><b>Словник по уровням — 300, 500, 1000, 2000, 3600 и 5400 слов накопительно</b> — по действующему стандарту, из тех же данных, на которых построены наши разборы уровней.</li>
+    <li><b>Какой тип текста проходит мерку на каждом уровне — наш вывод</b> из занятий, а не измеренная величина; помечено и в таблице.</li>
+    <li><b>Самих текстов, названий площадок, ссылок на файлы и магазинов не публикую.</b></li>
+    <li>Случай с учеником, который приносил новости не своего уровня, взят из занятий Kitai School; имя не привожу.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Текст вашего уровня — тот, где незнакомых слов не больше пяти на сотню</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
