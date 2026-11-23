@@ -12,8 +12,8 @@ OUT = "teksty-hsk.html"
 SLUG = "teksty-hsk"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/tek-hero.png"
-FIG = "assets/tek-info.png"
+HERO = "https://static.tildacdn.com/tila6632-6238-4963-a435-663365356438/tek-hero.png"
+FIG = "https://static.tildacdn.com/tila6461-6164-4230-b030-666437366437/tek-info.png"
 HERO_ALT = ("Три одинаковые строки текста-образца, в которых отмечено разное число "
             "незнакомых слов: при двух на сто текст читается свободно, при пяти нужен "
             "словарь, при десяти это уже не чтение, а разбор")
