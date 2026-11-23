@@ -1,184 +1,182 @@
 # -*- coding: utf-8 -*-
-# Картинки к статье «Сколько действует сертификат HSK»
-# Обложка     — два бланка рядом: на одном стоит срок, на другом нет
-# Инфографика — полоса в двадцать четыре месяца с окном подачи и подвижной меткой
+# Картинки к статье «Сколько готовиться к HSK»
+# Обложка     — один вопрос и два разных ответа
+# Инфографика — треугольная матрица «откуда → куда»: сколько слов выучить
+import sys
+sys.path.insert(0, "/home/user/Kitai-Shool/content")
+from srok import NEW, gap, TIMES_3
+
 S = ("/tmp/claude-0/-home-user-Kitai-Shool/a463bfca-82a9-56fd-ae09-42a7257ff999/"
      "scratchpad/")
 
-FONTS = ("<link href=\"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600"
-         "&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap\" rel=\"stylesheet\">")
-VARS = (":root{--brick:#A41E3A;--brick-d:#841630;--brick-soft:#F7E6EB;--ink:#2C2420;--ink-2:#5A4F45;"
-        "--taupe:#8B7D6B;--cream:#FAF7F2;--cream-2:#F3EDE3;--hair:#EAE3D8;--surface:#fff;"
-        "--paper:#FDFBF6;--good:#1E7A46;--good-soft:#E8F3EC;--wait:#C9BFAE}")
+FONTS = ('<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,'
+         'wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" '
+         'rel="stylesheet">')
+VARS = (":root{--brick:#A41E3A;--brick-d:#841630;--brick-soft:#F7E6EB;--ink:#2C2420;"
+        "--ink-2:#5A4F45;--taupe:#8B7D6B;--cream:#FAF7F2;--cream-2:#F3EDE3;--hair:#EAE3D8;"
+        "--surface:#fff;--grey-soft:#EFEDE8;--grey:#9A9289}")
 
-# ─────────── вся геометрия шкалы считается из одного числа ───────────
-MONTHS = 24          # срок действия результата
-WAIT = 2             # месяцев, пока результат идёт (подаём как «несколько недель»)
-DEADLINE = 19        # месяц, на который приходится дедлайн подачи в примере
-
-assert MONTHS == 24, "срок должен быть двадцать четыре месяца"
-assert 0 < WAIT < MONTHS, "ожидание результата должно лежать внутри срока"
-assert WAIT < DEADLINE < MONTHS, "дедлайн должен лежать внутри окна подачи"
-PCT_WAIT = WAIT * 100 // MONTHS
-PCT_DL = DEADLINE * 100 // MONTHS
-assert PCT_WAIT < PCT_DL < 100, "отметки на шкале встали не по порядку"
-
-ticks = "".join(
-    '<div class="tk%s" style="left:%.4f%%"><i></i>%s</div>'
-    % ("" if m % 6 else " big", m * 100.0 / MONTHS,
-       '<span>%d</span>' % m if m in (6, 12, 18) else "")
-    for m in range(MONTHS + 1))
-
-# ─────────── обложка ───────────
-hero = """<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">
-%(fonts)s
-<style>
-%(vars)s
-*{margin:0;box-sizing:border-box}html,body{width:1200px;height:630px}
-.card{width:1200px;height:630px;background:radial-gradient(1020px 680px at 12%% 8%%, #fff 0%%, var(--cream) 50%%, var(--cream-2) 100%%);position:relative;overflow:hidden;font-family:'Inter',sans-serif;padding:54px 48px 0 72px;display:flex;justify-content:space-between}
+BASE = """
+*{margin:0;box-sizing:border-box}
+.card{position:relative;overflow:hidden;font-family:'Inter',sans-serif;
+ background:radial-gradient(1040px 700px at 6% 2%, #fff 0%, var(--cream) 56%, var(--cream-2) 100%);
+ display:flex;flex-direction:column}
 .card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;background:var(--brick)}
-.txt{flex:0 0 478px;padding-top:10px}
-.eyebrow{color:var(--brick);font-weight:700;font-size:18px;letter-spacing:.19em;text-transform:uppercase;margin-bottom:14px}
-h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:44px;line-height:1.06;color:var(--ink);letter-spacing:-.4px}
+.eyebrow{color:var(--brick);font-weight:700;font-size:17px;letter-spacing:.19em;
+ text-transform:uppercase;margin-bottom:7px}
+h1{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.06;
+ color:var(--ink);letter-spacing:-.3px}
 h1 i{font-style:italic;color:var(--brick)}
-.sub{font-size:18px;color:var(--ink-2);line-height:1.42;max-width:31ch;margin-top:17px}
-.tip{display:inline-block;margin-top:22px;background:var(--surface);border:1px solid var(--hair);border-left:4px solid var(--brick);border-radius:13px;padding:14px 20px;font-size:15.5px;color:var(--ink-2);line-height:1.38;max-width:34ch}
+.foot{display:flex;align-items:center;gap:14px;margin-top:auto;border-top:1px solid var(--hair);
+ padding-top:12px}
+.foot .lb{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+ color:var(--taupe);flex:0 0 auto}
+.foot .vl{font-size:14px;color:var(--ink-2)}
+.foot .vl b{color:var(--ink)}
+"""
+
+# ───────────────────── обложка: один вопрос, два ответа ─────────────────────
+A_FROM2, A_FROM0 = gap(2, 3), gap(0, 3)
+assert A_FROM0 == A_FROM2 * 2, "ответы отличаются ровно вдвое"
+
+ANSWERS = [
+    ("Если сдан HSK 2", A_FROM2, "выучить 500 слов", "это прибавка одного уровня"),
+    ("Если начинаете с нуля", A_FROM0, "выучить 1000 слов",
+     "плюс пиньинь, тоны и первые иероглифы"),
+]
+
+
+def ans(head, n, line, note, big):
+    return ('<div class="ans' + (" big" if big else "") + '">'
+            '<div class="ah">' + head + '</div>'
+            '<div class="anum"><div class="an">' + str(n) + '</div>'
+            '<div class="aw">слов, которые вас разделяют</div></div>'
+            '<div class="at">' + note + "</div></div>")
+
+
+HERO_CSS = BASE + """
+html,body{width:1200px;height:630px}
+.card{width:1200px;height:630px;padding:30px 48px 20px 64px}
+h1{font-size:44px;max-width:31ch;margin-bottom:6px}
+.sub{font-size:17px;color:var(--ink-2);margin-bottom:22px}
+.row{flex:1 1 auto;display:flex;align-items:stretch;gap:24px}
+.ans{flex:1 1 0;background:var(--surface);border:1px solid var(--hair);border-radius:16px;
+ padding:20px 24px 18px;display:flex;flex-direction:column;justify-content:space-between;
+ border-top:5px solid var(--grey)}
+.ans.big{border-top-color:var(--brick)}
+.ah{font-size:17px;font-weight:700;color:var(--taupe);letter-spacing:.04em;
+ text-transform:uppercase}
+.an{font-family:'Inter',sans-serif;font-size:84px;font-weight:700;line-height:1;
+ letter-spacing:-2px;color:var(--ink)}
+.ans.big .an{color:var(--brick)}
+.anum{}
+.aw{font-size:17px;color:var(--ink-2);margin-top:2px}
+.at{font-size:15px;color:var(--ink-2);line-height:1.35;padding-top:14px;
+ border-top:1px solid var(--hair)}
+.vs{flex:0 0 58px;display:flex;align-items:center;justify-content:center;
+ font-size:19px;font-weight:700;color:var(--taupe);letter-spacing:.06em}
+"""
+
+hero = ('<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">' + FONTS
+        + "<style>" + VARS + HERO_CSS + "</style></head><body><div class=\"card\">"
+        + '<div class="eyebrow">Сколько готовиться к HSK</div>'
+        + '<h1>Один и тот же HSK 3 — <i>это два разных ответа</i></h1>'
+        + '<div class="sub">Срок считается не до уровня, а от того уровня, '
+          'который у вас уже есть</div>'
+        + '<div class="row">'
+        + ans(ANSWERS[0][0], ANSWERS[0][1], ANSWERS[0][2], ANSWERS[0][3], False)
+        + '<div class="vs">вдвое</div>'
+        + ans(ANSWERS[1][0], ANSWERS[1][1], ANSWERS[1][2], ANSWERS[1][3], True)
+        + '</div>'
+        + '<div class="foot"><span class="lb">Вывод</span>'
+        + '<span class="vl">вопрос «сколько готовиться» <b>без второго числа ответа '
+          'не имеет</b></span>'
+        + '<span class="lb">Расчёт</span>'
+        + '<span class="vl">по словнику действующего стандарта</span></div>'
+        + "</div></body></html>")
+
+# ───────────────────── инфографика: матрица «откуда → куда» ─────────────────
+ROWS = [0, 1, 2, 3, 4]
+COLS = [1, 2, 3, 4, 5]
+NAMES = {0: "с нуля", 1: "HSK 1", 2: "HSK 2", 3: "HSK 3", 4: "HSK 4"}
+
+head_cells = "".join('<div class="hc">до HSK ' + str(c) + "</div>" for c in COLS)
+grid = ""
+for a in ROWS:
+    grid += '<div class="rh">' + NAMES[a] + "</div>"
+    for b in COLS:
+        if b <= a:
+            grid += '<div class="cell empty">—</div>'
+            continue
+        cls = "cell"
+        if b == a + 1:
+            cls += " diag"
+        if b in (3, 4):
+            cls += " col"
+        grid += '<div class="' + cls + '">' + str(gap(a, b)) + "</div>"
+assert grid.count('class="cell') == 25
+
+FIG_CSS = BASE + """
+html,body{width:1200px;height:520px}
+.card{width:1200px;height:520px;padding:22px 48px 14px 64px}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:34px;
+ margin-bottom:12px}
+h1{font-size:30px;max-width:25ch}
+.tip{background:var(--surface);border:1px solid var(--hair);border-left:4px solid var(--brick);
+ border-radius:13px;padding:10px 15px;font-size:13px;color:var(--ink-2);line-height:1.33;
+ flex:0 0 310px}
 .tip b{color:var(--ink)}
+.wrap{flex:1 1 auto;display:flex;gap:16px;align-items:flex-start}
+.tbl{flex:1 1 auto}
+.grid{display:grid;grid-template-columns:118px repeat(5,1fr);gap:6px}
+.hc{font-size:13.5px;font-weight:700;color:var(--taupe);text-transform:uppercase;
+ letter-spacing:.05em;text-align:center;padding-bottom:4px}
+.corner{}
+.rh{font-size:15px;font-weight:700;color:var(--ink-2);display:flex;align-items:center;
+ padding-right:8px}
+.cell{height:50px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+ font-size:19px;font-weight:600;color:var(--ink);background:var(--surface);
+ border:1px solid var(--hair)}
+.cell.empty{background:transparent;border-color:transparent;color:var(--hair)}
+.cell.col{background:var(--brick-soft);border-color:#E8C3CF;color:var(--brick-d);
+ font-weight:700}
+.cell.col.diag{background:var(--brick);border-color:var(--brick-d);color:#fff}
+.legend{flex:0 0 212px;display:flex;flex-direction:column;gap:9px;padding-top:26px}
+.lg{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--ink-2);
+ line-height:1.3}
+.sw{flex:0 0 18px;height:18px;border-radius:5px;border:1px solid var(--hair);margin-top:1px}
+.sw.a{background:var(--brick-soft);border-color:#E8C3CF}
+.sw.b{background:var(--brick);border-color:var(--brick-d)}
+.sw.c{background:var(--surface);border-color:var(--hair)}
+"""
 
-.scene{flex:0 0 530px;display:flex;flex-direction:column;align-items:center;padding-top:6px}
-.sheets{display:flex;gap:22px}
-.sh{width:238px;height:390px;background:var(--paper);border:1px solid var(--hair);border-radius:11px;box-shadow:0 12px 26px rgba(44,36,32,.15);padding:20px 18px;position:relative;display:flex;flex-direction:column}
-.sh .kind{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)}
-.sh .ttl{font-size:17px;font-weight:700;color:var(--ink);line-height:1.22;margin-top:8px}
-.sh .lines{margin-top:14px;display:flex;flex-direction:column;gap:9px}
-.sh .ln{height:7px;border-radius:4px;background:#E7E0D4}
-.sh .ln.s{width:62%%}
-.sh .ln.m{width:84%%}
-.stamp{position:absolute;left:18px;right:18px;bottom:20px;border:2px solid var(--brick);color:var(--brick-d);border-radius:9px;padding:9px 6px;text-align:center;font-size:15px;font-weight:700;line-height:1.24;transform:rotate(-3deg);background:rgba(247,230,235,.72)}
-.stamp.grey{border-color:var(--good);color:var(--good);background:rgba(232,243,236,.72);transform:rotate(2deg)}
-.cap{margin-top:22px;text-align:center;font-size:16.5px;color:var(--ink-2);line-height:1.42;max-width:40ch}
-.cap b{color:var(--ink)}
-.brand{position:absolute;left:72px;bottom:28px;display:flex;align-items:center;gap:11px;color:var(--ink)}
-.brand b{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px}
-.brand .bdot{width:10px;height:10px;border-radius:50%%;background:var(--brick)}
-.brand span{color:var(--taupe);font-size:16px}
-</style></head><body>
-<div class="card">
-  <div class="txt">
-    <div class="eyebrow">Экзамены</div>
-    <h1>Сколько действует сертификат HSK: <i>срок годности и что он значит на практике</i></h1>
-    <div class="sub">Два года — и считаются они не с того дня, с которого обычно думают.</div>
-    <div class="tip"><b>Срок стоит на результате, а не на самом документе:</b> в приёмную комиссию несут первое, в резюме — второе.</div>
-    <div class="brand"><span class="bdot"></span><b>Kitai School</b><span>&middot; kitai-school.ru</span></div>
-  </div>
+fig = ('<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">' + FONTS
+       + "<style>" + VARS + FIG_CSS + "</style></head><body><div class=\"card\">"
+       + '<div class="head"><div>'
+       + '<div class="eyebrow">Пятнадцать переходов</div>'
+       + '<h1>Сколько слов выучить, <i>чтобы дойти до цели</i></h1></div>'
+       + '<div class="tip"><b>Слева — уровень, который у вас есть. Сверху — тот, '
+         'который сдаёте.</b> В клетке число слов, которые вас разделяют</div></div>'
+       + '<div class="wrap"><div class="tbl"><div class="grid">'
+       + '<div class="corner"></div>' + head_cells + grid
+       + '</div></div>'
+       + '<div class="legend">'
+       + '<div class="lg"><span class="sw a"></span><span>Два столбца, вокруг которых '
+         'идёт вся статья: <b>до HSK 3</b> и <b>до HSK 4</b></span></div>'
+       + '<div class="lg"><span class="sw b"></span><span>Переход на соседний уровень '
+         'внутри этих столбцов</span></div>'
+       + '<div class="lg"><span class="sw c"></span><span>Все остальные клетки '
+         'таблицы</span></div>'
+       + '<div class="lg"><span style="flex:0 0 18px"></span><span>По столбцу число '
+         'меняется <b>вдвое</b> — цель без старта ничего не говорит</span></div>'
+       + '</div></div>'
+       + '<div class="foot"><span class="lb">Крайние значения</span>'
+       + '<span class="vl"><b>' + str(gap(1, 2)) + '</b> и <b>' + str(gap(0, 5))
+       + '</b> слов — между самым коротким и самым длинным переходом</span>'
+       + '<span class="lb">Расчёт</span>'
+       + '<span class="vl">вычитанием по словнику действующего стандарта</span></div>'
+       + "</div></body></html>")
 
-  <div class="scene">
-    <div class="sheets">
-      <div class="sh">
-        <div class="kind">Результат</div>
-        <div class="ttl">Отчёт с баллами по разделам</div>
-        <div class="lines"><span class="ln m"></span><span class="ln"></span><span class="ln s"></span><span class="ln m"></span><span class="ln s"></span></div>
-        <div class="stamp">действителен<br>два года</div>
-      </div>
-      <div class="sh">
-        <div class="kind">Документ</div>
-        <div class="ttl">Подтверждение факта сдачи</div>
-        <div class="lines"><span class="ln m"></span><span class="ln s"></span><span class="ln"></span><span class="ln s"></span><span class="ln m"></span></div>
-        <div class="stamp grey">остаётся<br>у вас</div>
-      </div>
-    </div>
-    <div class="cap">Это один и тот же лист — <b>но в приёмной комиссии и в резюме от него нужно разное</b></div>
-  </div>
-</div>
-</body></html>""" % dict(fonts=FONTS, vars=VARS)
-
-open(S + "srok-hero.html", "w", encoding="utf-8").write(hero)
-
-# ─────────── инфографика ───────────
-info = """<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">
-%(fonts)s
-<style>
-%(vars)s
-*{margin:0;box-sizing:border-box}html,body{width:1200px;height:%(h)dpx}
-.wrap{width:1200px;height:%(h)dpx;background:linear-gradient(180deg,#fff 0%%,var(--cream) 40%%,var(--cream-2) 100%%);font-family:'Inter',sans-serif;padding:38px 48px 30px;display:flex;flex-direction:column;position:relative;overflow:hidden}
-.wrap:before{content:"";position:absolute;left:0;right:0;top:0;height:9px;background:var(--brick)}
-.top{display:flex;align-items:flex-end;justify-content:space-between;gap:34px;margin-bottom:22px}
-.eyebrow{color:var(--brick);font-weight:700;font-size:15.5px;letter-spacing:.19em;text-transform:uppercase;margin-bottom:8px}
-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:38px;line-height:1.07;color:var(--ink);max-width:20ch}
-h2 i{font-style:italic;color:var(--brick)}
-.hint{flex:0 0 412px;background:var(--surface);border:1px solid var(--hair);border-left:4px solid var(--brick);border-radius:13px;padding:12px 18px;font-size:15px;color:var(--ink-2);line-height:1.36}
-.hint b{color:var(--ink)}
-
-.scale{position:relative;height:252px;margin:0 14px}
-.bar{position:absolute;left:0;right:0;top:112px;height:44px;border-radius:7px;background:var(--good-soft);border:1px solid #BFD9C9}
-.wait{position:absolute;left:0;top:112px;height:44px;width:%(pwait)s%%;border-radius:7px 0 0 7px;background:repeating-linear-gradient(135deg,var(--wait) 0 7px,#D9D1C2 7px 14px);border:1px solid #B5AB99}
-.tk{position:absolute;top:156px;transform:translateX(-50%%);color:var(--taupe);font-size:12px}
-.tk i{display:block;width:1px;height:7px;background:#CFC5B4;margin:0 auto 3px}
-.tk.big i{height:13px;background:var(--taupe)}
-.tk span{display:block;white-space:nowrap}
-
-.ans{position:absolute;left:0;top:4px;width:360px;display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:14px 18px}
-.ans .num{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:46px;line-height:1;color:var(--brick)}
-.ans .tx{font-size:14.5px;color:var(--ink-2);line-height:1.34}
-.ans .tx b{color:var(--ink)}
-
-.pin{position:absolute;top:0;transform:translateX(-50%%);text-align:center;width:210px}
-.pin .lbl{display:inline-block;background:var(--brick);color:#fff;border-radius:9px;padding:7px 13px;font-size:14px;font-weight:700;white-space:nowrap}
-.pin .note{font-size:12.5px;color:var(--ink-2);line-height:1.3;margin-top:5px}
-.pin .stick{position:absolute;left:50%%;top:62px;width:2px;height:50px;background:var(--brick);transform:translateX(-50%%)}
-
-.edge{position:absolute;top:196px;transform:translateX(-50%%);text-align:center;width:168px}
-.edge .t{font-size:13px;font-weight:700;color:var(--ink)}
-.edge .d{font-size:12px;color:var(--taupe);margin-top:1px}
-.edge .v{position:absolute;left:50%%;top:-38px;width:2px;height:34px;background:var(--taupe);transform:translateX(-50%%)}
-
-.legend{display:flex;gap:26px;margin-top:26px;padding-left:14px}
-.lg{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)}
-.lg i{width:26px;height:14px;border-radius:4px;display:block}
-.lg.a i{background:repeating-linear-gradient(135deg,var(--wait) 0 6px,#D9D1C2 6px 12px);border:1px solid #B5AB99}
-.lg.b i{background:var(--good-soft);border:1px solid #BFD9C9}
-
-.foot{margin-top:auto;display:flex;align-items:center;gap:18px;padding-top:20px}
-.foot .msg{flex:1 1 auto;background:var(--brick-soft);border:1px solid var(--brick);border-radius:14px;padding:11px 20px;font-size:14.5px;color:var(--ink);line-height:1.34}
-.foot .msg b{color:var(--brick)}
-.brand{display:flex;align-items:center;gap:10px;color:var(--ink);flex:0 0 auto}
-.brand b{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:23px}
-.brand .dot2{width:9px;height:9px;border-radius:50%%;background:var(--brick)}
-.brand span{color:var(--taupe);font-size:15px}
-</style></head><body>
-<div class="wrap">
-  <div class="top">
-    <div>
-      <div class="eyebrow">Двадцать четыре месяца</div>
-      <h2>Считать нужно <i>назад от дедлайна</i></h2>
-    </div>
-    <div class="hint">Срок идёт <b>с дня экзамена</b>, а не с того дня, когда вы получили результат на руки.</div>
-  </div>
-
-  <div class="scale">
-    <div class="ans"><span class="num">%(months)d</span><span class="tx"><b>месяца — весь срок результата.</b> Вся полоса ниже и есть эти два года</span></div>
-    <div class="bar"></div>
-    <div class="wait"></div>
-    %(ticks)s
-    <div class="edge" style="left:0%%"><div class="t">День экзамена</div><div class="d">отсчёт пошёл</div><span class="v"></span></div>
-    <div class="edge" style="left:100%%"><div class="t">Срок вышел</div><div class="d">подать уже нельзя</div><span class="v"></span></div>
-    <div class="pin" style="left:%(pdl)s%%"><span class="lbl">Ваш дедлайн подачи</span><div class="note">от него и отсчитывайте назад, выбирая дату экзамена</div><span class="stick"></span></div>
-  </div>
-
-  <div class="legend">
-    <span class="lg a"><i></i>результат ещё идёт — несколько недель</span>
-    <span class="lg b"><i></i>результат принимают</span>
-  </div>
-
-  <div class="foot">
-    <div class="msg">Месяцы на шкале — <b>для наглядности, а не норматив</b>: сроки получения результата зависят от сессии и центра</div>
-    <div class="brand"><span class="dot2"></span><b>Kitai School</b><span>&middot; kitai-school.ru</span></div>
-  </div>
-</div>
-</body></html>""" % dict(fonts=FONTS, vars=VARS, h=568, ticks=ticks,
-                          pwait=PCT_WAIT, pdl=PCT_DL, months=MONTHS)
-
-open(S + "srok-info.html", "w", encoding="utf-8").write(info)
-
-print("ok | срок:", MONTHS, "мес | ожидание:", WAIT, "| дедлайн на", DEADLINE)
-print("отметки: ожидание %d %%, дедлайн %d %% — по порядку" % (PCT_WAIT, PCT_DL))
+open(S + "srk-hero.html", "w", encoding="utf-8").write(hero)
+open(S + "srk-info.html", "w", encoding="utf-8").write(fig)
+print("готово: srk-hero.html, srk-info.html")
