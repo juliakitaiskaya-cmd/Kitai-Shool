@@ -11,8 +11,8 @@ OUT = "skolko-gotovitsya-k-hsk.html"
 SLUG = "skolko-gotovitsya-k-hsk"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/srk-hero.png"
-FIG = "assets/srk-info.png"
+HERO = "https://static.tildacdn.com/tila6339-3762-4433-b065-356433383234/srk-hero.png"
+FIG = "https://static.tildacdn.com/tila3238-3032-4135-b463-663631636530/srk-info.png"
 HERO_ALT = ("Вопрос «Сколько готовиться к HSK 3» и два разных ответа рядом: с уровня "
             "HSK 2 нужно выучить пятьсот слов, с нуля — тысячу, то есть вдвое больше")
 FIG_ALT = ("Треугольная таблица из пятнадцати клеток: сколько слов нужно выучить при "
