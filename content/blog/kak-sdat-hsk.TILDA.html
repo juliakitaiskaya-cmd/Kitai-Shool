@@ -1,0 +1,451 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/kak-sdat-hsk#article",
+      "headline": "Как сдать HSK: десять шагов по порядку и четыре, которые зависят не от вас",
+      "description": "Маршрут подготовки к экзамену по китайскому языку HSK: десять шагов от решения сдавать до получения сертификата, выстроенные по порядку. Шесть шагов зависят только от человека, четыре — от календаря центра тестирования, и первый календарный шаг стоит третьим по счёту, то есть расписание вмешивается в план раньше, чем начинается сама подготовка. Отдельно разобрано, почему выбор даты обычно делают седьмым шагом вместо третьего, что зависит не от вас и как на самом деле читается аббревиатура названия экзамена.",
+      "image": "assets/ksd-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-24",
+      "dateModified": "2026-11-24",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/kak-sdat-hsk",
+      "about": {
+        "@type": "Thing",
+        "name": "Порядок подготовки к экзамену по китайскому языку HSK"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/kak-sdat-hsk#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Как сдать HSK, если я только начинаю?", "acceptedAnswer": {"@type": "Answer", "text": "По порядку из десяти шагов: понять, что подтверждает сертификат, выбрать уровень, выбрать дату сессии, измерить стартовую точку прогоном, посчитать срок, записаться, заниматься, прогнать формат по времени, прийти на экзамен и получить результат. Четыре шага из этих десяти зависят не от вас, а от календаря центра."}},
+        {"@type": "Question", "name": "Как читается HSK?", "acceptedAnswer": {"@type": "Answer", "text": "По буквам: эйч-эс-кей. Это латинское сокращение, и читают его как латинское. В запросах встречаются «чискей», «хаэска» и «хск» — так аббревиатуру пытаются прочитать слитно или по русским названиям букв. Полное название экзамена — 汉语水平考试, в чтении ханьюй шуйпин каоши, то есть экзамен на уровень владения китайским языком."}},
+        {"@type": "Question", "name": "С какого шага начинать, если дата экзамена уже выбрана?", "acceptedAnswer": {"@type": "Answer", "text": "С измерения. Прогоните полный тест того уровня, который считаете своим, по времени и без подсказок, и дальше считайте срок от результата. Выбранная дата при этом становится не целью, а ограничением: она показывает, сколько у вас дней."}},
+        {"@type": "Question", "name": "Как сдать HSK 1 с нуля?", "acceptedAnswer": {"@type": "Answer", "text": "Тем же маршрутом, только на первом уровне он короче: над знаками есть пиньинь, письма от руки нет, все задания с выбором ответа. Разбор самого уровня у нас отдельный, ссылка стоит в тексте."}},
+        {"@type": "Question", "name": "Можно ли подготовиться к HSK 4 самостоятельно?", "acceptedAnswer": {"@type": "Answer", "text": "Материал для этого доступен почти весь, а вот проверка письменной части сама себя не сделает: свою работу оценить изнутри нельзя. Поэтому самостоятельная подготовка к четвёртому уровню обычно упирается не в нехватку материала, а в отсутствие обратной связи."}},
+        {"@type": "Question", "name": "Что нужно, чтобы сдать HSK 1 в 2027 году?", "acceptedAnswer": {"@type": "Answer", "text": "Про 2027 год я ничего утверждать не буду: таких данных у меня нет, а называть требования наугад в справочной статье нельзя. Ближайшее достоверное изменение — то, что происходит с 13 декабря 2026 года, и оно разобрано у нас отдельно."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/kak-sdat-hsk#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Как сдать HSK: десять шагов по порядку и четыре, которые зависят не от вас", "item": "https://kitai-school.ru/article/kak-sdat-hsk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Экзамен</p>
+<h1>Как сдать HSK: <span class="italic">десять шагов по порядку и четыре, которые зависят не от вас</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-24">24 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/ksd-hero.png" alt="Два ряда шагов друг под другом: в верхнем, как делают обычно, выбор даты экзамена стоит седьмым, в нижнем, как стоит делать, — третьим, и стрелка показывает сдвиг на четыре позиции" width="1200" height="630"></figure>
+
+<p class="lead">Эта страница — не разбор экзамена, а маршрут. <b>От решения сдавать до сертификата десять шагов</b>, и 4 из них зависят не от вас, а от календаря центра. Каждый шаг разобран у нас подробно, и ссылки стоят прямо в таблице.</p>
+
+<p>Главное, что стоит знать до всего остального: первый календарный шаг — 3 по счёту. То есть расписание вмешивается в ваш план раньше, чем начинается сама подготовка.</p>
+
+<h2>Короткий ответ: <span class="italic">десять шагов, и четыре из них не ваши</span></h2>
+
+<p>Порядок такой: понять, что подтверждает сертификат → выбрать уровень → выбрать дату сессии → измерить стартовую точку → посчитать срок → записаться → заниматься → прогнать формат по времени → прийти на экзамен → получить результат.</p>
+
+<p><b>6 шагов зависят только от вас.</b> Их можно начать в любой день и двигать как угодно: читать, считать, заниматься, прогонять задания.</p>
+
+<p><b>4 шага зависят от календаря центра.</b> Дату сессии назначаете не вы, окно записи закрывается без вашего участия, экзамен идёт в назначенный день, результат объявляют тогда, когда объявят.</p>
+
+<p>Отсюда правило, которое я считаю главным в этой статье: <b>сначала выясните то, что от вас не зависит</b>, и только потом стройте план внутри этих рамок. Обратный порядок — самая частая причина сорванной подготовки.</p>
+
+<p>Оговорюсь сразу: деление на десять шагов — наше. Это не чей-то стандарт и не официальная процедура, а то, как я выстраиваю работу с учениками.</p>
+
+<p>И ещё одно, про сам список. Шаги не равны по длине: седьмой занимает месяцы, а третий — полчаса. Но по важности они равны, потому что пропущенный получасовой шаг обесценивает все месяцы.</p>
+
+<h2>Десять шагов <span class="italic">по порядку</span></h2>
+
+<p>В правом столбце — наш разбор каждого шага. Там, где ссылки нет, страница ещё не опубликована: как только адрес появится, поставлю.</p>
+
+<p>Читать таблицу стоит сверху вниз один раз, а потом вернуться к третьей строке. Именно она определяет, сколько времени у вас на все остальные.</p>
+
+<table class="ks-tab ks-steps">
+  <thead><tr><th>№</th><th>Шаг</th><th>Зависит</th><th>Когда</th><th>Подробно</th></tr></thead>
+  <tbody>
+    <tr><td><b>1</b></td><td><b>Понять, что подтверждает сертификат</b></td><td>от вас</td><td>до всего остального</td><td><a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">что подтверждает сертификат</a></td></tr>
+    <tr><td><b>2</b></td><td><b>Выбрать уровень</b></td><td>от вас</td><td>до всего остального</td><td>—</td></tr>
+    <tr class="cal"><td><b>3</b></td><td><b>Выбрать дату сессии</b></td><td>от календаря центра</td><td>сразу после выбора уровня</td><td><a href="https://kitai-school.ru/article/daty-sdachi-hsk-raspisanie-sessiy" target="_blank" rel="noopener">расписание сессий</a></td></tr>
+    <tr><td><b>4</b></td><td><b>Измерить стартовую точку</b></td><td>от вас</td><td>до расчёта срока</td><td><a href="https://kitai-school.ru/article/hsk-3-probnyy-test-kak-preodolet-barer-i-sdat-na-maksimum" target="_blank" rel="noopener">пробный тест</a></td></tr>
+    <tr><td><b>5</b></td><td><b>Посчитать срок и дневную норму</b></td><td>от вас</td><td>после измерения</td><td><a href="https://kitai-school.ru/article/za-skolko-mojno-vyuchit-kitayskiy-yazyk-s-nulya" target="_blank" rel="noopener">сроки с нуля</a></td></tr>
+    <tr class="cal"><td><b>6</b></td><td><b>Записаться до закрытия окна</b></td><td>от календаря центра</td><td>раньше, чем кажется нужным</td><td>—</td></tr>
+    <tr><td><b>7</b></td><td><b>Заниматься по плану</b></td><td>от вас</td><td>всё время между решением и экзаменом</td><td><a href="https://kitai-school.ru/article/kak-izuchit-kitajskij-yazyk-samostoyatelno-iz-chego-sostoit-zanyatie" target="_blank" rel="noopener">как устроить занятия</a></td></tr>
+    <tr><td><b>8</b></td><td><b>Прогнать формат по времени</b></td><td>от вас</td><td>в последний месяц</td><td>—</td></tr>
+    <tr class="cal"><td><b>9</b></td><td><b>Прийти на экзамен</b></td><td>от календаря центра</td><td>в назначенный день</td><td><a href="https://kitai-school.ru/article/sdat-hsk-kak-prohodit-den-kzamena" target="_blank" rel="noopener">день экзамена</a></td></tr>
+    <tr class="cal"><td><b>10</b></td><td><b>Получить результат</b></td><td>от календаря центра</td><td>когда объявит центр</td><td><a href="https://kitai-school.ru/article/sistema-ocenki-hsk-4" target="_blank" rel="noopener">как считается результат</a></td></tr>
+  </tbody>
+</table>
+
+<p><b>Строки, отмеченные цветом, — календарные.</b> Их нельзя передвинуть, отложить или ускорить, и планировать нужно от них.</p>
+
+<p>Про шаг «выбрать уровень» скажу отдельно: он здесь только назван. Как устроена шкала, что на каждом уровне и какой подходит под какую задачу — это отдельный разбор, и пересказывать его здесь я не буду.</p>
+
+<p>То же касается остальных шагов: эта страница отвечает на вопрос «в каком порядке», а не «как именно». Каждое «как именно» у нас разобрано отдельно и обычно подробнее, чем помещается в одну строку таблицы.</p>
+
+<figure class="ks-fig"><img src="assets/ksd-info.png" alt="Лента из десяти шагов подготовки к экзамену: шесть отмечены как зависящие от вас, четыре — от календаря центра, и первый календарный стоит третьим по счёту" width="1200" height="520"><figcaption>Десять шагов маршрута: шесть зависят от вас, четыре — от календаря центра, и первый календарный стоит третьим по счёту.</figcaption></figure>
+
+<p>Два шага маршрута стоит пояснить, потому что их чаще всего понимают иначе. <b>Измерение стартовой точки</b> — это не «посмотреть задания», а полный прогон по времени и без подсказок. <b>Прогон формата</b> в конце — это не повторение материала, а тренировка темпа и порядка действий.</p>
+
+<p>Разница между ними в том, что проверяется. В начале — сколько вы знаете. В конце — успеете ли вы это показать за отведённое время.</p>
+
+<h2>Почему дату выбирают последней, <span class="italic">а надо третьей</span></h2>
+
+<p>В маршруте выбор даты стоит 3 шагом. В том порядке, в котором это делают на практике, он оказывается 7 — то есть уезжает на 4 позиции.</p>
+
+<p><b>Логика смещения понятна и даже разумна на вид.</b> Человек рассуждает так: сначала подготовлюсь, потом посмотрю, когда ближайший экзамен, и запишусь. Дата кажется формальностью, которую можно оставить на потом.</p>
+
+<p><b>А дальше происходит одно из двух.</b> Либо ближайшая сессия оказывается слишком близко и запись на неё уже закрыта, либо она слишком далеко, и приходится несколько месяцев держать форму без цели.</p>
+
+<p>Второе хуже первого, хотя выглядит безобиднее. Подготовка без даты держится у единиц: без срока нет ни дневной нормы, ни понятного конца.</p>
+
+<p><b>Поэтому дату я прошу выбирать третьей</b>, сразу после уровня, и ещё до того, как считать срок. Срок считается до даты, а не наоборот — иначе получается деление на неизвестное.</p>
+
+<p>Расписание сессий и то, как выбрать свою дату, разобрано у нас здесь: <a href="https://kitai-school.ru/article/daty-sdachi-hsk-raspisanie-sessiy" target="_blank" rel="noopener">даты сдачи HSK и расписание сессий</a>. Там же видно, что окно записи закрывается заметно раньше самого экзамена.</p>
+
+<p>В обычном порядке есть и вторая перестановка, помельче, но тоже дорогая: занятия начинают раньше, чем измеряют стартовую точку. План в итоге считается от уровня, которого нет.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Разговор о подготовке почти всегда начинается одинаково: «хочу сдать HSK, с чего начать». И почти всегда человек ждёт, что я назову учебник.</p>
+  <p>Я называю не учебник, а два числа: день экзамена и последний день записи. Пока их нет, любой план висит в воздухе.</p>
+  <p><b>Возражение всегда одно:</b> «я же ещё не готов, зачем мне дата». Но дата — не награда за готовность, а рамка, внутри которой готовность считается.</p>
+  <p>Без неё получается так: человек занимается полгода, потом идёт смотреть расписание и обнаруживает, что ближайшая сессия через неделю, а следующая через четыре месяца.</p>
+  <p><b>И то и другое плохо.</b> В первом случае он идёт неподготовленным, во втором — четыре месяца держит форму без цели, а это мало кто выдерживает.</p>
+  <p>Поэтому я прошу выбрать дату раньше, чем мы откроем учебник. Иногда выясняется, что подходящей даты в этом полугодии нет, — и это тоже результат, он меняет весь план.</p>
+  <p>Второе, о чём прошу, — прогон. Не «посмотреть задания», а полный тест по времени. Он занимает час и заменяет три разговора о том, какой у человека уровень.</p>
+  <p><b>Вывод, который я делаю:</b> подготовка начинается не с учебника, а с календаря и с измерения. Всё остальное считается уже от этих двух точек.</p>
+</div>
+
+<h2>Шаги, которые <span class="italic">зависят не от вас</span></h2>
+
+<p>Эти 4 строки стоит выписать отдельно и посмотреть на них до того, как открывать учебник.</p>
+
+<table class="ks-tab ks-cal">
+  <thead><tr><th>Шаг</th><th>Когда</th><th>Чем кончается</th></tr></thead>
+  <tbody>
+    <tr><td><b>3. Выбрать дату сессии</b></td><td>сразу после выбора уровня</td><td>двумя датами в календаре: экзамена и закрытия записи</td></tr>
+    <tr><td><b>6. Записаться до закрытия окна</b></td><td>раньше, чем кажется нужным</td><td>местом на сессии</td></tr>
+    <tr><td><b>9. Прийти на экзамен</b></td><td>в назначенный день</td><td>сданной работой</td></tr>
+    <tr><td><b>10. Получить результат</b></td><td>когда объявит центр</td><td>баллами и, если порог взят, сертификатом</td></tr>
+  </tbody>
+</table>
+
+<p><b>Первый из них — третий по счёту,</b> и это самое важное число в статье. Календарь вмешивается раньше, чем вы успеваете втянуться в занятия, и чем позже вы на него посмотрите, тем меньше у вас останется вариантов.</p>
+
+<p>Про запись скажу коротко, потому что подробно это разобрано отдельно: она закрывается заметно раньше дня экзамена, и «успею записаться» — самая дорогая иллюзия в этом списке.</p>
+
+<p>Про день экзамена и про то, где теряют баллы на формате, а не на языке, у нас есть отдельный разбор: <a href="https://kitai-school.ru/article/sdat-hsk-kak-prohodit-den-kzamena" target="_blank" rel="noopener">как проходит день экзамена</a>. А как считается результат и сколько нужно набрать — здесь: <a href="https://kitai-school.ru/article/sistema-ocenki-hsk-4" target="_blank" rel="noopener">система оценки HSK 4</a>.</p>
+
+<p>Сроки объявления результатов я не называю: у центров они свои, и выдумывать общее число для справочной статьи нельзя. Узнать свой срок можно там же, где записывались.</p>
+
+<h2>Куда идти дальше <span class="italic">по своему уровню</span></h2>
+
+<p>Маршрут одинаков для всех уровней, а содержание шагов — нет. Вот куда смотреть дальше.</p>
+
+<table class="ks-tab ks-lvl">
+  <thead><tr><th>Уровень</th><th>Чем отличается</th><th>Разбор</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>первый уровень, где над знаками есть пиньинь, а письма от руки нет</td><td><a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1: как сдать первый уровень</a></td></tr>
+    <tr><td><b>HSK 2</b></td><td>тот же формат, но заданий больше и времени на них меньше</td><td><a href="https://kitai-school.ru/article/hsk-2-sdaem-vtoroy-uroven-bez-stressa" target="_blank" rel="noopener">HSK 2: сдаём второй уровень</a></td></tr>
+    <tr><td><b>HSK 3</b></td><td>пиньинь исчезает, появляется письменная часть</td><td><a href="https://kitai-school.ru/article/hsk-3-kak-sdat-bez-pininya-vyuchit-600-slov-i-ne-soyti-s-uma" target="_blank" rel="noopener">HSK 3: как сдать без пиньиня</a></td></tr>
+    <tr><td><b>HSK 4</b></td><td>уровень, который чаще всего просят вузы и работодатели</td><td><a href="https://kitai-school.ru/article/hsk-4-v-2026-razbor-kzamena-lovushek-i-novyh-formatov" target="_blank" rel="noopener">HSK 4 в 2026: разбор экзамена</a></td></tr>
+    <tr><td><b>HSK 5</b></td><td>длинные тексты и близкие по смыслу слова</td><td><a href="https://kitai-school.ru/article/hsk-5-kak-sdat-universitetskiy-kzamen" target="_blank" rel="noopener">HSK 5: как сдать «университетский» экзамен</a></td></tr>
+  </tbody>
+</table>
+
+<p>Сколько слов и знаков требует каждая ступень, разобрано отдельно: <a href="https://kitai-school.ru/article/ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu" target="_blank" rel="noopener">требования к количеству слов и знаков</a>. А если нужен устный экзамен, он сдаётся отдельно от письменного: <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK: как подготовиться к устному экзамену</a>.</p>
+
+<p><b>О самостоятельной подготовке</b> чаще всего спрашивают применительно к четвёртому уровню. Материал для неё доступен почти весь, а вот проверку письменной части сам себе не устроишь: свою работу оценить изнутри нельзя. Из чего складывается самостоятельное занятие, смотрите здесь: <a href="https://kitai-school.ru/article/kak-izuchit-kitajskij-yazyk-samostoyatelno-iz-chego-sostoit-zanyatie" target="_blank" rel="noopener">как изучить китайский самостоятельно</a>, а начало с нуля — здесь: <a href="https://kitai-school.ru/article/izuchenie-kitajskogo-yazyka-s-nulya-s-chego-nachat" target="_blank" rel="noopener">изучение китайского с нуля: с чего начать</a>.</p>
+
+<h2>Как читается HSK <span class="italic">и откуда «чискей»</span></h2>
+
+<p>Вопрос выглядит мелким, но его задают постоянно, а ответа на него у нас до сих пор не было.</p>
+
+<p><b>Полное название экзамена — <span class="han">汉语水平考试</span></b>, в чтении ханьюй шуйпин каоши. Переводится как «экзамен на уровень владения китайским языком». Три латинские буквы — это сокращение от этого названия по первым звукам слогов.</p>
+
+<p>Отсюда и чтение: <b>по буквам, эйч-эс-кей</b>, как читают любое латинское сокращение. Варианты, которые встречаются в запросах:</p>
+
+<ul>
+  <li><b>эйч-эс-кей</b> — по буквам, как любое латинское сокращение. Так и читают.</li>
+  <li><b>хаэска</b> — попытка прочитать три буквы слитно, как одно слово.</li>
+  <li><b>чискей</b> — смесь английского чтения букв и русского окончания.</li>
+  <li><b>хэ-эс-ка</b> — чтение по русским названиям букв.</li>
+</ul>
+
+<p>Ошибкой я бы ни один из них не назвала — так говорят, и собеседник понимает. Но если вы пишете письмо в центр или рассказываете о сертификате работодателю, надёжнее читать по буквам.</p>
+
+<p>И ещё одно написание, которое встречается часто: «хск», без гласных. Это просто калька с латинского сокращения, записанная кириллицей, и ничего отдельного она не означает.</p>
+
+<h2>Частые ошибки <span class="italic">в порядке шагов</span></h2>
+
+<ul>
+  <li><b>Начинать с учебника, а не с календаря.</b> Пока нет даты, нет и срока, а значит, нет и плана.</li>
+  <li><b>Считать срок до неизвестной даты.</b> Это деление на неизвестное: получается число, которое ничего не значит.</li>
+  <li><b>Заниматься до измерения стартовой точки.</b> План в итоге считается от уровня, которого нет.</li>
+  <li><b>Оставлять прогон формата на последнюю неделю.</b> Привычка к темпу набирается не за один раз.</li>
+  <li><b>Думать, что записаться можно в любой момент до экзамена.</b> Нельзя: окно закрывается заметно раньше.</li>
+</ul>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul>
+  <li><b>Разбора уровней и шкалы.</b> Что на каждом уровне и какой выбрать — отдельная тема, здесь шаг только назван.</li>
+  <li><b>Структуры экзамена и того, что меняется с 13 декабря 2026 года.</b> Тоже отдельный разбор.</li>
+  <li><b>Дня экзамена по шагам.</b> Он разобран целиком в своей статье.</li>
+  <li><b>Проходных баллов и подсчёта результата.</b> Там своя арифметика.</li>
+  <li><b>Требований 2027 года.</b> Таких данных у меня нет, а называть их наугад в справочной статье нельзя.</li>
+</ul>
+
+<p>И ещё об одном умолчании. Я не называю сроков объявления результатов и не обещаю, что маршрут из десяти шагов подойдёт всем: кому-то хватит пяти, а кому-то понадобится повторить третий и четвёртый по два раза. Порядок важнее числа шагов.</p>
+
+<h2>Частые вопросы (FAQ)</h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сдать HSK, если я только начинаю?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По порядку из десяти шагов: понять, что подтверждает сертификат, выбрать уровень, выбрать дату сессии, измерить стартовую точку прогоном, посчитать срок, записаться, заниматься, прогнать формат по времени, прийти на экзамен и получить результат. Четыре шага из этих десяти зависят не от вас, а от календаря центра.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как читается HSK?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>По буквам: эйч-эс-кей. Это латинское сокращение, и читают его как латинское. В запросах встречаются «чискей», «хаэска» и «хск» — так аббревиатуру пытаются прочитать слитно или по русским названиям букв. Полное название экзамена — 汉语水平考试, в чтении ханьюй шуйпин каоши, то есть экзамен на уровень владения китайским языком.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>С какого шага начинать, если дата экзамена уже выбрана?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>С измерения. Прогоните полный тест того уровня, который считаете своим, по времени и без подсказок, и дальше считайте срок от результата. Выбранная дата при этом становится не целью, а ограничением: она показывает, сколько у вас дней.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Как сдать HSK 1 с нуля?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Тем же маршрутом, только на первом уровне он короче: над знаками есть пиньинь, письма от руки нет, все задания с выбором ответа. Разбор самого уровня у нас отдельный, ссылка стоит в тексте.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Можно ли подготовиться к HSK 4 самостоятельно?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Материал для этого доступен почти весь, а вот проверка письменной части сама себя не сделает: свою работу оценить изнутри нельзя. Поэтому самостоятельная подготовка к четвёртому уровню обычно упирается не в нехватку материала, а в отсутствие обратной связи.</p></div>
+  </details>
+  <details class="ksfaq-item">
+    <summary class="ksfaq-q"><span>Что нужно, чтобы сдать HSK 1 в 2027 году?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Про 2027 год я ничего утверждать не буду: таких данных у меня нет, а называть требования наугад в справочной статье нельзя. Ближайшее достоверное изменение — то, что происходит с 13 декабря 2026 года, и оно разобрано у нас отдельно.</p></div>
+  </details>
+</div>
+
+<p>И напоследок то, ради чего эта страница собрана. Подготовка к экзамену разваливается не от нехватки материала — материала в избытке, и почти весь он доступен. Она разваливается от порядка: когда то, что от вас не зависит, выясняется последним. Выпишите четыре календарных шага, поставьте их в календарь, и дальше всё остальное встанет на место само. А если собирать маршрут удобнее не в одиночку — <a href="#popup:zayavka">запишитесь на бесплатный урок</a>, разберём ваш случай по этим же шагам.</p>
+
+<h2>Источники</h2>
+
+<div class="src">
+  <ol>
+    <li><b>Деление маршрута на десять шагов и на шесть «ваших» и четыре календарных — наше</b>, из практики занятий; это не официальная процедура и не чей-то стандарт.</li>
+    <li><b>Числа посчитаны по самому списку шагов:</b> сколько из них календарных, каким по счёту стоит первый из них и на сколько позиций в обычном порядке уезжает выбор даты.</li>
+    <li><b>«Обычный порядок», с которым сравнивается маршрут, — наблюдение из занятий</b>, а не измеренная статистика; об этом сказано в тексте.</li>
+    <li>Содержание каждого шага не пересказывается: уровни, структура экзамена, день экзамена, запись, сроки подготовки и подсчёт баллов разобраны в отдельных статьях, ссылки стоят в таблицах.</li>
+    <li><b>Полное название экзамена — <span class="han">汉语水平考试</span>, в чтении ханьюй шуйпин каоши</b>, то есть «экзамен на уровень владения китайским языком»; латинское сокращение читается по буквам.</li>
+    <li><b>Требований 2027 года не называю:</b> таких данных у меня нет.</li>
+    <li><b>Сроков объявления результатов не называю:</b> у центров они свои.</li>
+  </ol>
+</div>
+
+</article>
+</main>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Четыре шага из десяти зависят не от вас, и первый из них — третий по счёту</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
