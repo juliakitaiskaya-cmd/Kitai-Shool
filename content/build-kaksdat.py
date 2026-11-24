@@ -12,8 +12,8 @@ OUT = "kak-sdat-hsk.html"
 SLUG = "kak-sdat-hsk"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/ksd-hero.png"
-FIG = "assets/ksd-info.png"
+HERO = "https://static.tildacdn.com/tila6264-6166-4466-a362-323261353134/ksd-hero.png"
+FIG = "https://static.tildacdn.com/tila3262-3466-4763-a436-383234656134/ksd-info.png"
 HERO_ALT = ("Два ряда шагов друг под другом: в верхнем, как делают обычно, выбор даты "
             "экзамена стоит седьмым, в нижнем, как стоит делать, — третьим, и стрелка "
             "показывает сдвиг на четыре позиции")
