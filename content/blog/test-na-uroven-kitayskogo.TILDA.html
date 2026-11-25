@@ -1,0 +1,462 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/test-na-uroven-kitayskogo#article",
+      "headline": "Тест на уровень китайского языка: почему короткий онлайн-тест его не определяет",
+      "description": "Разбор того, почему короткий онлайн-тест не определяет уровень владения китайским языком. Посчитана вероятность взять порог в три пятых чистым угадыванием: при четырёх вариантах ответа и десяти вопросах это удаётся каждому пятьдесят первому, при пяти вопросах — каждому десятому, а на сорока заданиях настоящего экзамена вероятность падает до одного случая из трёхсот пятидесяти тысяч. Отдельно показано, что задания с выбором ответа проверяют только узнавание: письмо от руки и речь таким способом не проверяются вовсе. В конце — три самостоятельные проверки, которые заменяют один короткий тест.",
+      "image": "assets/urt-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-25",
+      "dateModified": "2026-11-25",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/test-na-uroven-kitayskogo",
+      "about": {
+        "@type": "Thing",
+        "name": "Определение уровня владения китайским языком"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/test-na-uroven-kitayskogo#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Можно ли бесплатно узнать свой уровень китайского онлайн?", "acceptedAnswer": {"@type": "Answer", "text": "Приблизительно — да, точно — нет. Бесплатные тесты обычно короткие, а на коротком тесте слишком велика роль везения: по нашему расчёту из десяти вопросов с четырьмя вариантами порог берёт наугад каждый пятьдесят первый. Чтобы результату можно было верить, вопросов нужно хотя бы несколько десятков."}},
+        {"@type": "Question", "name": "Сколько вопросов должно быть в тесте, чтобы ему верить?", "acceptedAnswer": {"@type": "Answer", "text": "Чем больше, тем лучше, и перелом проходит примерно по двум десяткам. На сорока заданиях с четырьмя вариантами угадать порог практически невозможно — это один случай из трёхсот с лишним тысяч. Именно поэтому на настоящем экзамене заданий сорок и больше."}},
+        {"@type": "Question", "name": "Есть ли тест на первый уровень для начинающих?", "acceptedAnswer": {"@type": "Answer", "text": "Пробники под каждый уровень существуют, и первый уровень не исключение. Но пробник отвечает на другой вопрос: не «какой у меня уровень», а «готов ли я к этому экзамену». Если вы только начинаете и уровня пока не знаете, сначала проверьте себя по трём признакам, о которых речь в статье."}},
+        {"@type": "Question", "name": "Чем пробный тест отличается от теста на уровень?", "acceptedAnswer": {"@type": "Answer", "text": "Пробник повторяет формат конкретного экзамена и показывает готовность к нему. Тест на уровень обещает большее — назвать вашу ступень, — а для этого ему пришлось бы охватить все уровни сразу и проверить письмо и речь, чего выбор ответа не умеет."}},
+        {"@type": "Question", "name": "Как подтвердить уровень официально?", "acceptedAnswer": {"@type": "Answer", "text": "Только экзаменом и сертификатом: никакой онлайн-тест документом не является и в вуз или работодателю не предъявляется. Что такое сертификат и что он подтверждает, разобрано у нас отдельно, ссылка стоит в тексте."}},
+        {"@type": "Question", "name": "Почему результаты двух тестов на одном сайте расходятся?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что короткий тест показывает не уровень, а конкретный набор вопросов, который вам достался, плюс долю везения. Поменялись вопросы — поменялся результат. На длинном тесте разброс гораздо меньше."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/test-na-uroven-kitayskogo#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "Тест на уровень китайского языка: почему короткий онлайн-тест его не определяет", "item": "https://kitai-school.ru/article/test-na-uroven-kitayskogo"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Уровень</p>
+<h1>Тест на уровень китайского языка: <span class="italic">почему короткий онлайн-тест его не определяет</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-25">25 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/urt-hero.png" alt="Две колоды вопросов рядом: короткий тест из десяти вопросов, который каждый пятьдесят первый проходит чистым угадыванием, и настоящий экзамен из сорока заданий, где угадать почти невозможно" width="1200" height="630"></figure>
+
+<p class="lead">Тест из 10 вопросов с вариантами ответа берёт наугад каждый пятьдесят первый. <b>Это не придирка, а расчёт</b>: при таком числе вопросов результат слишком сильно зависит от везения, чтобы называть его уровнем.</p>
+
+<p>Разберу, сколько решает длина теста, что задания с выбором ответа вообще способны измерить и какие три проверки заменяют один короткий тест. Где брать пробники под конкретный экзамен, разобрано отдельно: <a href="https://kitai-school.ru/article/hsk-1-probnyy-test-kak-ispolzovat-onlayn-trenajer" target="_blank" rel="noopener">пробный тест и как им пользоваться</a>.</p>
+
+<h2>Короткий ответ: <span class="italic">коротким тестом — никак</span></h2>
+
+<p>Если вопросов меньше двух десятков, результату верить нельзя. Не потому, что вопросы плохие, а потому, что при такой длине случайное попадание слишком вероятно.</p>
+
+<p><b>Вот числа.</b> Чтобы взять порог в три пятых, отвечая полностью наугад, из пяти вопросов с четырьмя вариантами хватает удачи каждому десятому. Из 10 — каждому пятьдесят первому.</p>
+
+<p>На настоящем экзамене заданий 40 и больше. Там та же удача случается один раз из 353&nbsp;861 — то есть практически не случается.</p>
+
+<p>Разница между этими двумя числами и есть ответ на вопрос из заголовка. Дело не в том, что онлайн-тесты плохо составлены, а в том, что они слишком короткие, чтобы отличить знание от удачного попадания.</p>
+
+<p><b>Что это значит для вас.</b> Короткий тест способен грубо отделить «совсем начинающий» от «уже что-то умею». Назвать ступень он не может: для этого в нём слишком мало вопросов.</p>
+
+<p>Дальше — расчёт по длинам, разбор того, что выбор ответа меряет и чего не меряет, и три проверки, которые можно сделать самостоятельно за вечер.</p>
+
+<p>Оговорюсь сразу: конкретных сайтов с тестами я не называю и ссылок на них не ставлю. Речь об устройстве любого такого теста, а не о чьём-то конкретном.</p>
+
+<h2>Чем «определить уровень» отличается <span class="italic">от «проверить готовность»</span></h2>
+
+<p>Это два разных дела, и их постоянно путают. Пробник под экзамен отвечает на вопрос «готов ли я к этой ступени» — он повторяет её формат и сравнивает результат с порогом.</p>
+
+<p><b>Тест на уровень обещает большее:</b> назвать вашу ступень, когда вы её не знаете. Для этого ему пришлось бы охватить материал всех ступеней сразу, а не одной.</p>
+
+<p>Разница видна и по тому, как эти два теста заканчиваются. Пробник даёт число, которое вы сравниваете с порогом сами. Тест на уровень сам объявляет ступень, и сверить её не с чем.</p>
+
+<p>Отсюда первая причина, по которой такие тесты неточны. Чтобы различить шесть ступеней, вопросов нужно в разы больше, чем чтобы проверить одну: на каждую ступень их должно прийтись достаточно.</p>
+
+<p>Вторая причина — в том, что ступени не идут ровной лесенкой. Человек может узнавать знаки на одном уровне, понимать на слух на другом, а писать от руки на третьем.</p>
+
+<p>Проверить это легко на себе. Возьмите любой список слов своей предполагаемой ступени и честно отметьте те, которые понимаете без подсказки. Почти наверняка доля окажется не такой, как обещал тест.</p>
+
+<p><b>Одно число тут просто не помещается.</b> Тест выдаёт его потому, что обещал выдать, а не потому, что оно есть.</p>
+
+<p>Практический вывод простой. Если вы хотите проверить готовность к конкретному экзамену — берите пробник этого уровня. Если хотите понять, с чего начинать, — одного теста не хватит, и об этом ниже.</p>
+
+<h2>Сколько решает <span class="italic">длина теста</span></h2>
+
+<p>Теперь к расчёту. Он отвечает на простой вопрос: насколько часто порог берут люди, которые не знают вообще ничего и просто тыкают в варианты.</p>
+
+<p>Я посчитала вероятность взять порог в три пятых, отвечая вслепую. Два случая: когда в вопросе четыре варианта и когда вопрос устроен как «верно или нет».</p>
+
+<table class="ks-tab ks-luck">
+  <thead><tr><th>Вопросов</th><th>Нужно верных</th><th>Четыре варианта</th><th>«Верно или нет»</th></tr></thead>
+  <tbody>
+    <tr><td><b>5</b></td><td>3</td><td>один из 10</td><td>один из 2</td></tr>
+    <tr class="hot"><td><b>10</b></td><td>6</td><td>один из 51</td><td>один из 3</td></tr>
+    <tr><td><b>20</b></td><td>12</td><td>один из 1&nbsp;069</td><td>один из 4</td></tr>
+    <tr class="hot"><td><b>40</b></td><td>24</td><td>один из 353&nbsp;861</td><td>один из 7</td></tr>
+    <tr><td><b>60</b></td><td>36</td><td>один из 102&nbsp;810&nbsp;335</td><td>один из 13</td></tr>
+    <tr><td><b>80</b></td><td>48</td><td>один из 28&nbsp;266&nbsp;947&nbsp;749</td><td>один из 22</td></tr>
+    <tr><td><b>100</b></td><td>60</td><td>один из 7&nbsp;536&nbsp;733&nbsp;998&nbsp;027</td><td>один из 35</td></tr>
+  </tbody>
+</table>
+
+<figure class="ks-fig"><img src="assets/urt-info.png" alt="Падающая кривая: чем длиннее тест, тем меньше вероятность взять порог наугад. Верхняя линия — для вопросов с двумя вариантами ответа, нижняя — с четырьмя" width="1200" height="520"><figcaption>Чем длиннее тест, тем меньше в результате везения. Верхняя линия — вопросы с двумя вариантами, нижняя — с четырьмя. Наш расчёт.</figcaption></figure>
+
+<p><b>Это наш расчёт</b>, а не чья-то опубликованная оценка. Допущения названы прямо: порог взят в три пятых, все вопросы считаются равными, отвечающий не знает ничего.</p>
+
+<p>Посмотрите на выделенные строки. На 10 вопросах везёт каждому пятьдесят первому — в группе из полусотни человек это один. На 40 такого человека можно не ждать вовсе.</p>
+
+<p><b>Перелом проходит примерно по двум десяткам вопросов.</b> До него результат наполовину про удачу, после — уже в основном про знание.</p>
+
+<p>Вот почему экзамен устроен длинным. На первом уровне 40 заданий, дальше больше, и это не для строгости, а ради устойчивости результата.</p>
+
+<table class="ks-tab ks-tasks">
+  <thead><tr><th>Уровень</th><th>Заданий на экзамене</th><th>Нужно верных для порога</th></tr></thead>
+  <tbody>
+    <tr><td><b>HSK 1</b></td><td>40</td><td>24</td></tr>
+    <tr><td><b>HSK 2</b></td><td>60</td><td>36</td></tr>
+    <tr><td><b>HSK 3</b></td><td>80</td><td>48</td></tr>
+    <tr><td><b>HSK 4</b></td><td>100</td><td>60</td></tr>
+    <tr><td><b>HSK 5</b></td><td>100</td><td>60</td></tr>
+  </tbody>
+</table>
+
+<p>Числа заданий — из наших разборов уровней. Третий столбец я посчитала по той же доле в три пятых, чтобы ряд читался вместе с таблицей выше.</p>
+
+<p>Обратите внимание, насколько самый короткий экзамен длиннее обычного онлайн-теста. Разница не в строгости, а в том, что одно измеряет, а другое прикидывает.</p>
+
+<h2>Два варианта вместо четырёх: <span class="italic">почему это монетка</span></h2>
+
+<p>Длина — не единственное, что решает. Второй столбец расчёта показывает, что бывает, когда в вопросе всего два варианта: «верно» и «нет».</p>
+
+<p><b>Там картина совсем другая.</b> Даже на 40 заданиях порог берёт наугад каждый седьмой. На десяти — больше трети отвечающих.</p>
+
+<p>Причина очевидна, стоит её назвать. С двумя вариантами случайный ответ верен в половине случаев, и никакая длина теста этого до конца не выправляет.</p>
+
+<p><b>Что отсюда следует практически.</b> Смотрите не только на число вопросов, но и на то, как они устроены. Тест из «верно или нет» — это монетка с подписями.</p>
+
+<p>Задания такого вида на экзамене встречаются, но они там не одни и не составляют весь тест. В коротком онлайн-тесте они часто и есть весь тест, потому что их проще всего составить.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Года три назад ко мне пришёл человек с готовым ответом: прошёл тест в интернете, получил третий уровень и хотел заниматься сразу с него.</p>
+  <p>На первом же занятии выяснилось, что знаков он узнаёт примерно на первый уровень, а на слух не разбирает почти ничего. Тест при этом не врал — он просто спрашивал не то.</p>
+  <p><b>Вопросов в нём было около десяти</b>, все с вариантами ответа, и половину он, по собственному признанию, выбрал наугад. Везение и уверенный вид сложились в красивое число.</p>
+  <p>Неприятно было не это, а то, что он успел взять учебник третьего уровня и месяц по нему мучился, решив, что дело в нём самом.</p>
+  <p><b>С тех пор я всегда спрашиваю, сколько в тесте было вопросов.</b> Если меньше двадцати, дальше можно не обсуждать: такой результат ничего не говорит ни о чём.</p>
+  <p>И прошу сделать одну вещь, которая занимает пять минут: написать от руки десяток знаков своего предполагаемого уровня. Выбором ответа это не проверяется никак.</p>
+  <p><b>Обычно картина сразу меняется.</b> Узнавать человек умеет заметно больше, чем писать, и настоящий уровень оказывается там, где труднее.</p>
+  <p>Тот ученик, кстати, начал с первого уровня и через год сдал третий. Просто начал с правильного места, а не с того, которое ему подсказала монетка.</p>
+</div>
+
+<h2>Что тест с выбором ответа <span class="italic">меряет, а что нет</span></h2>
+
+<p>Даже длинный тест с вариантами проверяет не всё. Вот что он способен показать, а что остаётся за рамками.</p>
+
+<table class="ks-tab ks-meas">
+  <thead><tr><th>Что проверяем</th><th>Выбором ответа?</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td><b>Узнавание слова</b></td><td>да</td><td>ответ уже на экране, его нужно только выбрать</td></tr>
+    <tr><td><b>Понимание на слух</b></td><td>частично</td><td>зависит от записи и от того, сколько раз её дают послушать</td></tr>
+    <tr><td><b>Письмо от руки</b></td><td>нет</td><td>выбором из вариантов знак не напишешь</td></tr>
+    <tr><td><b>Речь</b></td><td>нет</td><td>это отдельный экзамен и отдельный результат</td></tr>
+  </tbody>
+</table>
+
+<p><b>Главный разрыв — между узнаванием и порождением.</b> Узнать слово в списке вариантов легче, чем вспомнить его самому, и намного легче, чем написать от руки.</p>
+
+<p>Поэтому результат теста с вариантами почти всегда выше настоящего уровня. Это не обман: тест честно меряет узнавание, просто узнавание — самая лёгкая часть.</p>
+
+<p>Для китайского разрыв особенно велик. Знак можно уверенно узнавать годами и при этом не уметь его написать, и ни один тест с вариантами этого не покажет.</p>
+
+<p>С речью ещё проще: проверить её, выбирая из вариантов, нельзя никак. Для неё существует своя проверка, и устроена она совсем иначе: <a href="https://kitai-school.ru/article/hskk-kak-podgotovitsya-k-ustnomu-kzamenu" target="_blank" rel="noopener">HSKK: как подготовиться к устному экзамену</a>.</p>
+
+<h2>Три проверки <span class="italic">вместо одного теста</span></h2>
+
+<p>Это то, что я прошу сделать человека, который не знает своего уровня. Занимает вечер, а даёт больше, чем любой тест с вариантами.</p>
+
+<ul class="ks-list">
+  <li><b>Узнавание</b> — взять список слов своего предполагаемого уровня: отмечать не «видел», а «понимаю без подсказки».</li>
+  <li><b>Слух</b> — включить запись для этого уровня без текста перед глазами: считать не общее впечатление, а долю понятых заданий.</li>
+  <li><b>Письмо</b> — написать от руки несколько знаков из списка: это то, что выбором ответа не проверяется вовсе.</li>
+</ul>
+
+<p><b>Смотреть нужно на самую низкую из трёх.</b> Уровень определяется по тому, что получается хуже всего, а не по тому, что лучше.</p>
+
+<p>Списки слов и знаков по ступеням у нас посчитаны отдельно, и к такой проверке они прикладываются напрямую: <a href="https://kitai-school.ru/article/ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu" target="_blank" rel="noopener">как меняются требования к количеству иероглифов и слов</a>.</p>
+
+<p>Если три проверки дали разные ответы — это нормально и даже полезно. Теперь вы знаете не одно число, а то, где у вас провал, и начинать нужно оттуда.</p>
+
+<p>И последнее. Когда ступень определена, дальше уже уместен пробник: он покажет готовность именно к этому экзамену. С первого уровня это разобрано здесь: <a href="https://kitai-school.ru/article/hsk-1-kak-sdat-pervyy-uroven-s-pervogo-raza" target="_blank" rel="noopener">HSK 1: как сдать первый уровень с первого раза</a>.</p>
+
+<h2>Частые ошибки</h2>
+
+<ul class="ks-list">
+  <li><b>Верить короткому тесту на слово</b> — до двух десятков вопросов результат наполовину про везение.</li>
+  <li><b>Проходить тест несколько раз подряд</b> — вопросы повторяются, и растёт не уровень, а память на ответы.</li>
+  <li><b>Определять уровень по узнаванию</b> — оно всегда выше остального, и опираться на него значит завысить себе ступень.</li>
+  <li><b>Брать учебник по результату теста</b> — ошибка на ступень стоит месяца мучений с неподходящей книгой.</li>
+  <li><b>Считать онлайн-тест подтверждением уровня</b> — документом он не является, для этого есть экзамен: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK и что он подтверждает</a>.</li>
+</ul>
+
+<p>Вторая ошибка встречается чаще, чем кажется. Человек проходит тест трижды, видит растущее число и решает, что дело в прогрессе, хотя дело в повторении.</p>
+
+<p>Четвёртая дороже всех остальных. Неподходящий учебник не просто бесполезен: он убеждает человека, что язык ему не даётся, хотя дело было в неверно выбранной ступени.</p>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul class="ks-list">
+  <li><b>Названий сайтов с тестами.</b> Ссылок на сторонние ресурсы блог не ставит, и советовать конкретный тест я не буду.</li>
+  <li><b>Готового теста внутри статьи.</b> Короткий тест здесь противоречил бы всему, что в ней посчитано.</li>
+  <li><b>Разбора шкалы уровней.</b> Что значит каждая ступень, разобрано у нас отдельно.</li>
+  <li><b>Инструкции, где брать пробники.</b> Это тема соседней статьи, ссылка стоит выше.</li>
+  <li><b>Сколько вариантов в каждом задании экзамена.</b> Я считаю два случая как модели, а не утверждаю устройство каждого задания.</li>
+</ul>
+
+<p>Отдельно скажу про готовый тест. Его здесь нет не из скромности: любой тест, который поместился бы в статью, был бы коротким, а короткому тесту, как посчитано выше, верить нельзя. Ставить его после такого расчёта было бы странно.</p>
+
+<p>И ещё об одном умолчании. Я не называю «средний срок», за который люди доходят до той или иной ступени: он зависит от того, с чего вы начали и сколько занимаетесь, а не от самой ступени.</p>
+
+<h2>Частые вопросы <span class="italic">(FAQ)</span></h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Можно ли бесплатно узнать свой уровень китайского онлайн?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Приблизительно — да, точно — нет. Бесплатные тесты обычно короткие, а на коротком тесте слишком велика роль везения: по нашему расчёту из десяти вопросов с четырьмя вариантами порог берёт наугад каждый пятьдесят первый. Чтобы результату можно было верить, вопросов нужно хотя бы несколько десятков.</p></div>
+  </details>
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Сколько вопросов должно быть в тесте, чтобы ему верить?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Чем больше, тем лучше, и перелом проходит примерно по двум десяткам. На сорока заданиях с четырьмя вариантами угадать порог практически невозможно — это один случай из трёхсот с лишним тысяч. Именно поэтому на настоящем экзамене заданий сорок и больше.</p></div>
+  </details>
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Есть ли тест на первый уровень для начинающих?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Пробники под каждый уровень существуют, и первый уровень не исключение. Но пробник отвечает на другой вопрос: не «какой у меня уровень», а «готов ли я к этому экзамену». Если вы только начинаете и уровня пока не знаете, сначала проверьте себя по трём признакам, о которых речь в статье.</p></div>
+  </details>
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Чем пробный тест отличается от теста на уровень?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Пробник повторяет формат конкретного экзамена и показывает готовность к нему. Тест на уровень обещает большее — назвать вашу ступень, — а для этого ему пришлось бы охватить все уровни сразу и проверить письмо и речь, чего выбор ответа не умеет.</p></div>
+  </details>
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Как подтвердить уровень официально?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Только экзаменом и сертификатом: никакой онлайн-тест документом не является и в вуз или работодателю не предъявляется. Что такое сертификат и что он подтверждает, разобрано у нас отдельно, ссылка стоит в тексте.</p></div>
+  </details>
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Почему результаты двух тестов на одном сайте расходятся?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Потому что короткий тест показывает не уровень, а конкретный набор вопросов, который вам достался, плюс долю везения. Поменялись вопросы — поменялся результат. На длинном тесте разброс гораздо меньше.</p></div>
+  </details>
+</div>
+
+<p>Ещё один вопрос, который задают после таких расчётов: а стоит ли вообще проходить онлайн-тесты. Стоит, но с ясной целью — как быструю прикидку перед настоящей проверкой, а не как приговор.</p>
+
+<p>И напоследок то, что важнее всех расчётов выше. Вопрос «какой у меня уровень» почти всегда задают, чтобы понять, с чего начинать, — и для этого число нужно не точное, а честное. Три проверки дают его за вечер и бесплатно. Если хотите, <a href="#popup:zayavka">приходите на бесплатный урок</a>: посмотрим все три вместе и назовём ступень, с которой вам стоит начать.</p>
+
+<h2>Источники</h2>
+
+<ul class="ks-list ks-src">
+  <li><b>Вероятности взять порог наугад</b> — наш расчёт по сочетаниям, с ассертами в коде. Допущения названы в тексте.</li>
+  <li><b>Порог в три пятых</b> — по нашим разборам системы оценки, взят в расчёт как постоянная величина.</li>
+  <li><b>Числа заданий по уровням</b> — 40, 60, 80, 100 и 100 — по нашим разборам уровней.</li>
+  <li><b>Сколько вариантов в заданиях экзамена, не утверждаю:</b> расчёт ведётся для четырёх и для двух как для двух моделей.</li>
+  <li><b>Конкретных тестов и сайтов не называю</b> и не оцениваю: блог не ставит ссылок на сторонние ресурсы.</li>
+  <li><b>Случай с учеником</b> взят из занятий Kitai School; имени не привожу.</li>
+</ul>
+
+</article>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Короткий тест меряет не уровень, а везение. Длина решает больше, чем вопросы</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+</main>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
