@@ -10,8 +10,8 @@ OUT = "olimpiada-po-kitayskomu-podgotovka.html"
 SLUG = "olimpiada-po-kitayskomu-podgotovka"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/olm-hero.png"
-FIG = "assets/olm-info.png"
+HERO = "https://static.tildacdn.com/tila3038-3365-4063-b163-643137643639/olm-hero.png"
+FIG = "https://static.tildacdn.com/tila6533-3939-4136-b864-626339613935/olm-info.png"
 HERO_ALT = ("Два табло рядом: у экзамена все четыре строки «известно заранее» "
             "отмечены, у олимпиады почти все пустые — список материала, мерка "
             "успеха и собственный результат заранее не известны")
