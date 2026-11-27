@@ -10,8 +10,8 @@ OUT = "ege-po-kitayskomu-i-hsk.html"
 SLUG = "ege-po-kitayskomu-i-hsk"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/ege-hero.png"
-FIG = "assets/ege-info.png"
+HERO = "https://static.tildacdn.com/tila6637-3762-4938-a165-353432643033/ege-hero.png"
+FIG = "https://static.tildacdn.com/tila6161-3261-4463-b537-306134346265/ege-info.png"
 HERO_ALT = ("Две двери с табличками: за одной российский вуз, и ключ к ней — "
             "школьный экзамен, за другой китайский вуз, и ключ к ней — "
             "международный сертификат; ключ от одной двери к другой не подходит")
