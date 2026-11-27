@@ -11,8 +11,8 @@ OUT = "test-na-uroven-kitayskogo.html"
 SLUG = "test-na-uroven-kitayskogo"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/urt-hero.png"
-FIG = "assets/urt-info.png"
+HERO = "https://static.tildacdn.com/tila3736-6530-4334-b261-643063376362/urt-hero.png"
+FIG = "https://static.tildacdn.com/tila3035-6334-4261-b332-386638393538/urt-info.png"
 HERO_ALT = ("Две колоды вопросов рядом: короткий тест из десяти вопросов, который "
             "каждый пятьдесят первый проходит чистым угадыванием, и настоящий "
             "экзамен из сорока заданий, где угадать почти невозможно")
