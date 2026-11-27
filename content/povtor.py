@@ -19,7 +19,7 @@ mg = grams(mv)
 tot = 0
 for p in sorted(glob.glob("blog/*.html")):
     b = os.path.basename(p)[:-5]
-    if b == me or b.endswith(".TILDA") or b.startswith("_"):
+    if b == me or ".TILDA" in b or b.startswith("_"):
         continue
     try: og = grams(vis(p))
     except Exception: continue
