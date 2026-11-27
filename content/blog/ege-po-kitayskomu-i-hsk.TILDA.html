@@ -1,0 +1,451 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+#ks-wrap{
+  --brick:#A41E3A;--brick-deep:#841630;--brick-soft:#F7E6EB;
+  --ink:#2C2420;--ink-2:#5A4F45;--taupe:#8B7D6B;--taupe-soft:#B8AC9C;
+  --cream:#FAF7F2;--cream-2:#F3EDE3;--surface:#FFFFFF;--highlight:#FCF6E2;
+  --hairline:#EAE3D8;--hairline-2:#DED5C6;--shadow-card:0 2px 14px rgba(44,36,32,.06);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-btn:14px;--r-pill:999px;
+  --fd:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --fs:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --fh:'Noto Serif SC','Songti SC','SimSun',serif;
+  max-width:1120px;margin:0 auto;padding:28px 22px 48px;
+  display:flex;gap:44px;align-items:flex-start;background:var(--cream);
+  font-family:var(--fs)!important;color:var(--ink-2);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+#ks-wrap *{box-sizing:border-box}
+#ks-art{flex:1 1 auto;min-width:0}
+#ks-side{flex:0 0 300px;align-self:flex-start;height:fit-content;position:sticky!important;top:90px;padding-top:12px}
+#ks-side .side-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);padding:20px 22px;margin-bottom:18px;box-shadow:var(--shadow-card)}
+#ks-side .side-h{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)!important;margin:0 0 12px}
+#ks-side .side-note{font-family:var(--fs)!important;font-size:13px;line-height:1.45;color:var(--taupe)!important;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hairline)}
+#ks-side .side-link{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hairline);color:var(--ink)!important;text-decoration:none;font-family:var(--fs)!important;font-size:14.5px;font-weight:500}
+#ks-side .side-link:last-of-type{border-bottom:0}
+#ks-side .side-link:hover{color:var(--brick)!important}
+#ks-side .side-link svg{flex:0 0 auto;width:15px;height:15px;color:var(--brick)}
+#ks-side .side-btn{display:block!important;text-align:center;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:14.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:12px 18px!important;margin-top:14px}
+#ks-side .side-btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .crumbs{font-size:13px;color:var(--taupe);margin-bottom:26px}
+#ks-art .crumbs a{color:var(--taupe);text-decoration:none}#ks-art .crumbs a:hover{color:var(--brick)}
+#ks-art .eyebrow{font-family:var(--fs)!important;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 12px}
+#ks-art h1{font-family:var(--fd)!important;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-.01em;color:var(--ink)!important;margin:0 0 20px}
+#ks-art h2{font-family:var(--fd)!important;font-weight:600;font-size:33px;line-height:1.14;color:var(--ink)!important;margin:52px 0 16px;padding-top:30px;border-top:1px solid var(--hairline)}
+#ks-art h3{font-family:var(--fd)!important;font-weight:600;font-size:23px;line-height:1.22;color:var(--ink)!important;margin:30px 0 8px}
+#ks-art .italic{font-style:italic!important;font-weight:600;color:var(--brick)!important}
+#ks-art p{font-family:var(--fs)!important;margin:0 0 16px;color:var(--ink-2)}
+#ks-art a{color:var(--brick)}
+#ks-art .passport{font-size:19px;line-height:1.55;color:var(--ink)!important}
+#ks-art .hanline{font-family:var(--fh)!important;color:var(--brick);font-weight:500}
+#ks-art .ks-hero{margin:6px 0 8px}
+#ks-art .ks-hero img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig{margin:30px 0}
+#ks-art figure.ks-fig img{width:100%;height:auto;display:block;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-card)}
+#ks-art figure.ks-fig figcaption{font-size:13.5px;line-height:1.5;color:var(--taupe)!important;margin:12px 0 0;text-align:center}
+
+#ks-art .byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+#ks-art .byline img{width:52px;height:52px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .byline>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .byline>div{min-width:0}
+#ks-art .byline .n{font-weight:600;color:var(--ink)!important;font-size:15.5px}
+#ks-art .byline .r{font-size:13px;color:var(--taupe)!important;line-height:1.4}
+#ks-art .byline time{font-size:13px;color:var(--taupe)!important}
+
+#ks-art .tldr{background:var(--brick-soft);border-left:4px solid var(--brick);padding:20px 24px;margin:28px 0;border-radius:0 var(--r-md) var(--r-md) 0}
+#ks-art .tldr>b{display:block;font-family:var(--fs)!important;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin-bottom:8px}
+#ks-art .tldr p{margin:0;color:var(--ink)!important}
+#ks-art .tldr p b{font-weight:700;color:var(--ink)!important}
+
+#ks-art .ks-quote{margin:24px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--brick);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--fd)!important;font-size:22px;line-height:1.35;color:var(--ink)!important}
+#ks-art .ks-quote p{margin:0 0 10px;font-family:var(--fd)!important;color:var(--ink)!important}
+#ks-art .ks-quote cite{display:block;font-family:var(--fs)!important;font-style:normal;font-size:13.5px;color:var(--taupe)!important}
+
+#ks-art .table-wrap{overflow-x:auto;margin:20px 0}
+#ks-art table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+#ks-art caption{text-align:left;font-family:var(--fs)!important;font-size:13.5px;color:var(--taupe)!important;margin-bottom:10px;line-height:1.45}
+#ks-art th,#ks-art td{border-bottom:1px solid var(--hairline);padding:11px 15px;text-align:left;vertical-align:top}
+#ks-art thead th{background:var(--cream-2);color:var(--ink)!important;font-weight:600;font-size:13px;border-bottom:1px solid var(--hairline-2)}
+#ks-art thead th:first-child{border-top-left-radius:var(--r-md)}#ks-art thead th:last-child{border-top-right-radius:var(--r-md)}
+#ks-art tbody tr:last-child td{border-bottom:0}
+#ks-art tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r-md)}#ks-art tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r-md)}
+#ks-art tbody td:first-child{font-weight:600;color:var(--ink)!important}
+#ks-art .han-cell{font-family:var(--fh)!important;font-size:19px;color:var(--brick)!important;font-weight:700}
+#ks-art .note{font-size:14.5px;line-height:1.55;color:var(--ink-2)!important;background:var(--highlight);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px 18px;margin:18px 0}
+#ks-art .han-big{font-family:var(--fh)!important;color:var(--brick)!important;font-weight:700}
+
+#ks-art .story{background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 28px;margin:28px 0}
+#ks-art .story .lbl{font-family:var(--fs)!important;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick)!important;margin:0 0 10px}
+#ks-art .story p:last-child{margin:0}
+
+#ks-art .ksfaq__list{margin:8px 0 0;padding:0}
+#ks-art .ksfaq-item{border-top:1px solid var(--hairline)}#ks-art .ksfaq-item:last-child{border-bottom:1px solid var(--hairline)}
+#ks-art .ksfaq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--fd)!important;font-weight:600;font-size:21px;line-height:1.3;color:var(--ink)!important}
+#ks-art .ksfaq-q::-webkit-details-marker{display:none}#ks-art .ksfaq-q:hover{color:var(--brick)!important}
+#ks-art .ksfaq-chev{flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 0;border-right:2px solid var(--taupe-soft);border-bottom:2px solid var(--taupe-soft);transform:rotate(45deg);transition:.22s}
+#ks-art .ksfaq-item[open] .ksfaq-chev{transform:rotate(225deg);border-color:var(--brick)}
+#ks-art .ksfaq-a{padding:0 4px 22px}#ks-art .ksfaq-a p{font-size:16px;line-height:1.7;color:var(--ink-2)!important;margin:0}
+
+#ks-art .cta{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px 30px;margin:34px 0;box-shadow:var(--shadow-card)}
+#ks-art .cta p{color:var(--ink-2)!important}#ks-art .cta p:last-child{margin:0}
+#ks-art .btn{display:inline-block!important;background:var(--brick)!important;color:#fff!important;font-family:var(--fs)!important;font-weight:600!important;font-size:15.5px!important;text-decoration:none!important;border:0!important;border-radius:var(--r-btn)!important;padding:13px 26px!important;margin:6px 0 2px}
+#ks-art .btn:hover{background:var(--brick-deep)!important}
+
+#ks-art .sources{margin:34px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md)}
+#ks-art .sources h2{font-size:22px;margin:0 0 12px;padding:0;border:0}
+#ks-art .sources ol{margin:0;padding-left:20px}#ks-art .sources li{font-size:14px;line-height:1.6;color:var(--ink-2)!important;margin-bottom:8px}
+#ks-art .sources a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(164,30,58,.3)}
+
+#ks-art .sign{font-family:var(--fd)!important;font-style:italic;font-size:21px;color:var(--ink)!important;margin-top:32px}
+#ks-art .sign .han{font-family:var(--fh)!important;font-style:normal;color:var(--brick)}
+#ks-art .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+#ks-art .tags span{font-size:12.5px;color:var(--taupe)!important;background:var(--surface);border:1px solid var(--hairline-2);border-radius:var(--r-pill);padding:5px 13px}
+
+#ks-art .author-card{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:var(--cream-2);border:1px solid var(--hairline);border-radius:var(--r-lg)}
+#ks-art .author-card img{width:88px;height:88px;border-radius:var(--r-pill);object-fit:cover;flex:0 0 auto}
+#ks-art .author-card>a{flex:0 0 auto;display:block;line-height:0}
+#ks-art .author-card>div{min-width:0}
+#ks-art .author-card .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+#ks-art .author-card h3{font-family:var(--fd)!important;font-size:24px;margin:0 0 8px;color:var(--ink)!important}
+#ks-art .author-card p{font-size:14.5px;line-height:1.6;color:var(--ink-2)!important;margin:0 0 10px}
+#ks-art .author-card a{color:var(--brick);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(164,30,58,.35)}
+
+#ks-art .ok{color:#1E7A46!important;font-weight:700}
+#ks-art .bad{color:var(--brick)!important;font-weight:700;text-decoration:line-through}
+@media(max-width:900px){#ks-wrap{flex-direction:column;gap:0;padding:24px 16px 44px;overflow-x:hidden;align-items:stretch}#ks-art{width:100%;max-width:100%}#ks-side{position:static!important;top:auto;flex:1 1 auto;width:100%;order:2;margin-top:8px;padding-top:0}}
+@media(max-width:600px){#ks-art h1{font-size:29px}#ks-art h2{font-size:24px}#ks-art .author-card{flex-direction:column}}
+#ks-art .han{font-family:var(--fh)!important;white-space:nowrap;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kitai-school.ru/article/ege-po-kitayskomu-i-hsk#article",
+      "headline": "ЕГЭ по китайскому языку и HSK: зачем нужен каждый и почему один не заменяет другой",
+      "description": "Разбор того, чем школьный экзамен по китайскому языку отличается от международного сертификата и почему сдача одного не засчитывается вместо другого. Школьные баллы идут в конкурс российского вуза, сертификат подтверждает уровень владения языком для китайского вуза, программ обмена и работодателей: совпадений между двумя документами нет ни по тому, кто их принимает, ни по тому, что они дают, ни по языку заданий. Отдельно разобрано, что из подготовки переносится между ними, а что нет. Состава и шкалы школьного экзамена в статье нет: их задают официальные документы на текущий учебный год.",
+      "image": "assets/ege-hero.png",
+      "inLanguage": "ru",
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "author": {"@id": "https://kitai-school.ru/#yulia-goryaina"},
+      "publisher": {"@id": "https://kitai-school.ru/#org"},
+      "mainEntityOfPage": "https://kitai-school.ru/article/ege-po-kitayskomu-i-hsk",
+      "about": {
+        "@type": "Thing",
+        "name": "Школьный экзамен по китайскому языку и международный сертификат"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kitai-school.ru/#yulia-goryaina",
+      "name": "Юлия Горяина",
+      "url": "https://kitai-school.ru/about",
+      "jobTitle": "Китаист, лингвокоуч, основатель Kitai School",
+      "worksFor": {"@id": "https://kitai-school.ru/#org"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Шаньдунский университет (山东大学)"},
+      "description": "Китаист и лингвокоуч, докторант Шаньдунского университета (山大), преподаватель МГУ ВШБ, более 20 лет практики. Основатель международной лицензированной онлайн-школы Kitai School.",
+      "image": "https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://kitai-school.ru/#org",
+      "name": "Kitai School",
+      "url": "https://kitai-school.ru",
+      "description": "Международная лицензированная онлайн-школа китайского языка: групповые и индивидуальные занятия, подготовка к HSK и HSKK.",
+      "sameAs": ["https://t.me/kitai_school"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kitai-school.ru/article/ege-po-kitayskomu-i-hsk#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какой HSK нужен, чтобы сдать школьный экзамен по китайскому?", "acceptedAnswer": {"@type": "Answer", "text": "Прямого соответствия между ступенями сертификата и школьным экзаменом не существует, и называть ступень я не стану: это были бы выдуманные цифры. Школьный экзамен проверяет школьную программу, а сертификат — свой объявленный список, и совпадают они только частично. Почему единой таблицы нет, у нас разобрано отдельно."}},
+        {"@type": "Question", "name": "Зачем сдавать ЕГЭ по китайскому при поступлении?", "acceptedAnswer": {"@type": "Answer", "text": "Затем, что в конкурс российского вуза идут школьные баллы, а не сертификат. Если направление связано с языком и китайский можно сдать как профильный предмет, это обычно выгоднее: материал вы и так учите, а балл идёт в зачёт. Какие предметы принимает конкретная программа, смотрите в её правилах приёма."}},
+        {"@type": "Question", "name": "Засчитывается ли сертификат вместо школьного экзамена?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Это документы разных систем: один выдаёт международный экзаменационный центр, другой относится к российской школе. Обратное тоже верно — школьные баллы не заменяют сертификат там, где просят его."}},
+        {"@type": "Question", "name": "Что нужно, чтобы поступить на китайское направление после колледжа?", "acceptedAnswer": {"@type": "Answer", "text": "Правила приёма после колледжа устанавливает сам вуз, и они различаются: где-то сдают вступительные испытания вуза, где-то школьные экзамены. Единого ответа нет, и выдумывать его я не стану — спрашивайте в приёмной комиссии той программы, куда собираетесь."}},
+        {"@type": "Question", "name": "Проводится ли ОГЭ по китайскому языку?", "acceptedAnswer": {"@type": "Answer", "text": "Подтвердить это я не могу: в наших материалах таких данных нет, а утверждать наугад не стану. Состав школьных экзаменов по языкам задаётся официальными документами на текущий учебный год — проверять нужно там и в своей школе, а не в статьях."}},
+        {"@type": "Question", "name": "Можно ли готовиться к обоим экзаменам сразу?", "acceptedAnswer": {"@type": "Answer", "text": "Частично. Запас слов работает на оба, чтение — наполовину, а форматы заданий не переносятся вовсе. На практике разумнее идти по очереди: сначала тот экзамен, который ближе по сроку, потом второй."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kitai-school.ru/article/ege-po-kitayskomu-i-hsk#breadcrumbs",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://kitai-school.ru"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://kitai-school.ru/blog"},
+        {"@type": "ListItem", "position": 3, "name": "ЕГЭ по китайскому языку и HSK: зачем нужен каждый и почему один не заменяет другой", "item": "https://kitai-school.ru/article/ege-po-kitayskomu-i-hsk"}
+      ]
+    }
+  ]
+}
+</script>
+<div id="ks-wrap">
+<main id="ks-art">
+<article>
+<p class="eyebrow">Школьникам</p>
+<h1>ЕГЭ по китайскому языку и HSK: <span class="italic">зачем нужен каждый и почему один не заменяет другой</span></h1>
+
+<div class="byline">
+  <a href="https://kitai-school.ru/about" target="_blank" rel="noopener"><img src="https://static.tildacdn.com/tild3265-6431-4361-a262-343162663636/DSC01652_1.jpg" alt="Юлия Горяина, основатель Kitai School"></a>
+  <div>
+    <div class="n">Юлия Горяина</div>
+    <div class="r">Китаист, докторант Шаньдунского университета (山大), основатель Kitai School</div>
+    <time datetime="2026-11-27">27 ноября 2026</time>
+  </div>
+</div>
+
+<figure class="ks-hero"><img src="assets/ege-hero.png" alt="Две двери с табличками: за одной российский вуз, и ключ к ней — школьный экзамен, за другой китайский вуз, и ключ к ней — международный сертификат; ключ от одной двери к другой не подходит" width="1200" height="630"></figure>
+
+<p class="lead">Школьный экзамен даёт баллы в конкурс российского вуза. Международный сертификат подтверждает владение языком там, где его спрашивают. <b>Это два разных документа</b>, и сдача одного не засчитывается вместо другого — ни в одну сторону.</p>
+
+<p>Разберу, кто какой документ спрашивает, что из подготовки переносится между ними и как выбрать, если направление ещё не определено. Что требует китайский вуз вместо школьных баллов, разобрано отдельно: <a href="https://kitai-school.ru/article/postuplenie-v-kitaj-bez-egeh-chto-trebuet-vuz" target="_blank" rel="noopener">поступление в Китай без ЕГЭ: что требует вуз вместо него</a>.</p>
+
+<h2>Короткий ответ: <span class="italic">это разные документы</span></h2>
+
+<p>Путаница возникает из-за того, что оба экзамена «по китайскому». На этом сходство заканчивается: у них разные владельцы, разные цели, и читают их разные люди.</p>
+
+<p><b>Школьный экзамен нужен российскому вузу.</b> Его результат идёт в конкурс наравне с другими предметами, и заменить его ничем нельзя — ни сертификатом, ни дипломом, ни годами занятий.</p>
+
+<p><b>Сертификат нужен китайской стороне.</b> Вузу, программе обмена, работодателю, который работает с Китаем. Для них школьные баллы — внутреннее дело другой системы образования.</p>
+
+<p>Отсюда главный практический вывод: выбирать нужно не между экзаменами, а по тому, куда вы поступаете. Экзамен — следствие, а не исходная точка.</p>
+
+<p>Дальше — построчное сравнение, разбор того, что из подготовки переносится, и три типичных случая. Отдельным разделом — то, чего я в этой статье не утверждаю, и почему.</p>
+
+<p>Оговорюсь сразу: состава и шкалы школьного экзамена здесь не будет. Их задают официальные документы на текущий учебный год, и пересказывать их по памяти — значит подставить читателя.</p>
+
+<h2>Кто какой экзамен <span class="italic">спрашивает</span></h2>
+
+<p>Выпишем по строкам. Это самый быстрый способ увидеть, что общего между двумя экзаменами почти нет.</p>
+
+<table class="ks-tab ks-who">
+  <thead><tr><th>Что сравниваем</th><th>Школьный экзамен</th><th>Международный сертификат</th></tr></thead>
+  <tbody>
+    <tr><td><b>Кто принимает</b></td><td>российский вуз при приёме</td><td>китайский вуз, программы обмена, работодатели</td></tr>
+    <tr><td><b>Что это даёт</b></td><td>баллы в конкурсе на место</td><td>подтверждение уровня владения языком</td></tr>
+    <tr><td><b>Где сдают</b></td><td>в школе по месту учёбы</td><td>в экзаменационном центре</td></tr>
+    <tr><td><b>На каком языке задания и инструкции</b></td><td>на русском</td><td>на китайском</td></tr>
+    <tr><td><b>Кто назначает правила</b></td><td>российская система школьных экзаменов</td><td>международный экзаменационный центр</td></tr>
+  </tbody>
+</table>
+
+<p><b>Ни одна строка не совпадает.</b> Разные принимающие стороны, разный смысл результата, разное место сдачи и даже разный язык, на котором написаны задания.</p>
+
+<p>Отдельно стоит последняя строка. Правила назначают разные организации, и это объясняет, почему они не договариваются между собой о взаимном зачёте: им незачем.</p>
+
+<p>Обратите внимание и на строку про язык заданий. Школьный экзамен объясняет задания по-русски, международный — по-китайски, и для начинающего это само по себе разница в сложности, никак не связанная со знанием языка.</p>
+
+<p>Часто спрашивают, что из этого «серьёзнее». Вопрос бессмысленный: сравнивать можно вещи с одной меркой, а здесь мерки разные.</p>
+
+<p>Что действительно стоит сравнивать — это ваши планы. Если вуз российский, нужен школьный экзамен. Если китайский, нужен сертификат. Если оба варианта открыты, нужны оба документа.</p>
+
+<h2>Почему один <span class="italic">не заменяет другой</span></h2>
+
+<p>Причина не в строгости правил, а в том, что документы отвечают на разные вопросы. Школьный балл говорит, какое место вы занимаете среди выпускников. Сертификат говорит, каким объёмом языка вы владеете.</p>
+
+<p><b>Это не переводится одно в другое.</b> Даже если бы кто-то взялся пересчитать, у двух систем нет общей шкалы: ступени сертификата описывают язык, а школьные баллы описывают результат в конкурсе.</p>
+
+<p>Прямого соответствия между ступенями и школьным экзаменом тоже не существует, и мы об этом уже писали отдельно. Назвать ступень, которая «равна» школьному экзамену, я не могу: такой величины просто нет.</p>
+
+<p><b>Для международного экзамена устройство известно:</b> шесть ступеней, порог в 60&nbsp;% от максимума на каждой. Это из наших разборов системы оценки, и к школьному экзамену отношения не имеет.</p>
+
+<p>То же самое, но с другой стороны: школьный балл нельзя «перевести» в уровень владения языком. Высокий балл говорит, что выпускник хорошо справился со школьной программой, а не что он свободно читает и говорит.</p>
+
+<p>Есть и обратная сторона, приятная. Раз документы разные, они не конкурируют: сертификат не обесценивается оттого, что вы сдали школьный экзамен, и наоборот.</p>
+
+<p>Многие в итоге получают оба — просто в разное время и под разные задачи. Что именно подтверждает сертификат, разобрано у нас отдельно: <a href="https://kitai-school.ru/article/sertifikat-hsk-chto-to-za-kzamen" target="_blank" rel="noopener">сертификат HSK и что он подтверждает</a>.</p>
+
+<figure class="ks-fig"><img src="assets/ege-info.png" alt="Пять строк сравнения двух экзаменов в две колонки: кто принимает, что даёт, где сдают, на каком языке задания и кто назначает правила — совпадений нет ни в одной строке" width="1200" height="520"><figcaption>Слева школьный экзамен, справа международный сертификат. Снизу — что из подготовки всё-таки переходит из одной в другую.</figcaption></figure>
+
+<h2>Что из подготовки <span class="italic">переносится</span></h2>
+
+<p>Хорошая новость: пересечение есть, хотя и неполное. Вот что переходит из одной подготовки в другую, а что приходится ставить заново.</p>
+
+<table class="ks-tab ks-over">
+  <thead><tr><th>Что именно</th><th>Переносится?</th><th>Почему</th></tr></thead>
+  <tbody>
+    <tr><td><b>Запас слов</b></td><td>переносится</td><td>общая лексика пригодится и там и там</td></tr>
+    <tr><td><b>Чтение</b></td><td>переносится частично</td><td>тексты разные по темам, но сам навык один</td></tr>
+    <tr><td><b>Формат заданий</b></td><td class="no">не переносится</td><td>каждая сторона задаёт его по-своему</td></tr>
+    <tr><td><b>Устная часть</b></td><td class="no">не переносится</td><td>у международного экзамена для неё отдельная сдача</td></tr>
+  </tbody>
+</table>
+
+<p><b>Половина переносится, половина нет.</b> Запас слов работает всегда, а формат заданий у каждой стороны свой и тренируется отдельно.</p>
+
+<p>Устная сторона выпадает из обоих планов чаще всего. Её тренируют последней, а на деле именно она определяет, сможете ли вы объясниться там, куда едете.</p>
+
+<p>Отсюда понятно, почему «готовлюсь к обоим сразу» обычно не выходит. Словарь растёт общий, но упражнения разные, и времени хватает на один формат.</p>
+
+<p>На практике разумнее идти по очереди: сначала тот экзамен, который ближе по сроку, потом второй. Общая часть при этом не пропадает.</p>
+
+<p>Сколько слов требует каждая ступень международного экзамена, посчитано у нас отдельно, и к плану это прикладывается удобно: <a href="https://kitai-school.ru/article/ot-hsk-1-do-hsk-4-kak-menyautsya-trebovaniya-k-kolichestvu" target="_blank" rel="noopener">требования к количеству иероглифов и слов по ступеням</a>.</p>
+
+<div class="story">
+  <b>Из личного опыта</b>
+  <p>Одна моя ученица два года шла к сертификату, получила его с хорошим результатом и была уверена, что с поступлением в российский вуз вопрос решён.</p>
+  <p>Выяснилось это в приёмной комиссии, и поздно: сертификат там посмотрели с уважением, а в конкурс он не пошёл — туда идут школьные баллы.</p>
+  <p><b>Обиднее всего было не это.</b> Язык она знала заметно лучше многих, кто прошёл на то же направление, — просто подтверждала знание не тем документом.</p>
+  <p>Мы потеряли год. Следующей весной она сдала школьный экзамен, поступила, и сертификат пригодился уже внутри учёбы: с ним её взяли на программу обмена.</p>
+  <p><b>С тех пор я начинаю разговор с другого вопроса.</b> Не «какой у вас уровень», а «кто будет смотреть ваши документы» — ответ на него определяет всё остальное.</p>
+  <p>Чаще всего выясняется, что человек готовится к одному, а поступать собирается туда, где спрашивают другое. И узнаёт он об этом в последний момент.</p>
+  <p><b>Обратный случай тоже был.</b> Школьник сдал школьный экзамен на высокий балл и подал документы в китайский вуз, где этих баллов просто не понимают.</p>
+  <p>Там спросили сертификат, которого не было, и год он потерял точно так же — только с другой стороны.</p>
+</div>
+
+<h2>Три случая: <span class="italic">кому что нужно</span></h2>
+
+<p>Разбираю по тому, куда человек собирается, а не по тому, что он уже сдавал.</p>
+
+<ul class="ks-list">
+  <li><b>Поступаю в российский вуз</b> — нужен школьный экзамен: сертификат сам по себе баллов в конкурс не добавляет, но пригодится на собеседовании и в портфолио.</li>
+  <li><b>Поступаю в китайский вуз</b> — нужен сертификат: школьные баллы там не считают, а аттестат и документы смотрят отдельно.</li>
+  <li><b>Пока не решил</b> — сначала школьный экзамен: его сдают один раз в своё время, а сертификат получают в любой момент.</li>
+</ul>
+
+<p>Первые два случая обычно вопросов не вызывают: человек знает, куда идёт, и собирает нужное. Сложности начинаются там, где решение ещё не принято, а время уже идёт.</p>
+
+<p><b>Третий случай встречается чаще всего</b>, и он же вызывает больше всего споров дома. Школьный экзамен сдают в своё время и один раз, а сертификат можно получить и через год, и через три.</p>
+
+<p>Поэтому при неопределённости я советую не пропускать школьный экзамен: он привязан к выпуску, а сертификат — нет.</p>
+
+<p>Есть и практическая причина не тянуть со школьным экзаменом. Решение о стране нередко меняется за год до выпуска, и человек, у которого школьные баллы уже есть, просто выбирает из двух вариантов вместо одного.</p>
+
+<p>Если вы уже решили в сторону Китая, порядок обратный: сертификат становится главным, а остальные документы собираются вокруг него. Как выбирают вуз, разобрано отдельно: <a href="https://kitai-school.ru/article/postuplenie-v-vuz-kitaya" target="_blank" rel="noopener">поступление в вуз Китая: как выбрать университет</a>.</p>
+
+<p>Отдельно про программы на английском языке: там китайский при поступлении могут не спрашивать вовсе, и это меняет весь расчёт: <a href="https://kitai-school.ru/article/kitajskie-vuzy-dlya-russkikh-studentov-bez-znaniya-yazyka" target="_blank" rel="noopener">китайские вузы с программами на английском</a>.</p>
+
+<h2>Частые ошибки</h2>
+
+<ul class="ks-list">
+  <li><b>Считать сертификат заменой школьному экзамену</b> — в конкурс российского вуза идут школьные баллы, и ничем другим их не закрыть.</li>
+  <li><b>Считать школьные баллы доказательством уровня</b> — за пределами российской системы их просто не читают.</li>
+  <li><b>Выбирать экзамен раньше направления</b> — сначала выясняют, кто будет смотреть документы, и только потом готовятся.</li>
+  <li><b>Готовиться к обоим в один период</b> — словарь общий, а форматы разные, и внимания обычно хватает на один.</li>
+  <li><b>Искать таблицу соответствия ступеней и школьных баллов</b> — её не существует, и всё, что находится, кто-то придумал сам.</li>
+</ul>
+
+<p>Третья ошибка дороже всех остальных, потому что обнаруживается позже всех — обычно в приёмной комиссии, когда менять что-то уже поздно.</p>
+
+<p>Пятая встречается реже, но уводит дальше всех: человек находит в сети таблицу, верит ей и строит план на числах, которых никто не устанавливал.</p>
+
+<h2>Про ОГЭ и про формат: <span class="italic">чего я не утверждаю</span></h2>
+
+<p>Два вопроса из тех, что задают чаще всего, я оставляю без ответа намеренно. Объясню оба.</p>
+
+<p><b>Проводится ли ОГЭ по китайскому языку, я подтвердить не могу.</b> В наших материалах таких данных нет, а писать «да» или «нет» наугад в статье, которую читают девятиклассники и их родители, нельзя.</p>
+
+<p>Где это проверяют: состав школьных экзаменов по языкам задаётся официальными документами на текущий учебный год, и ещё быстрее — вопросом завучу в своей школе.</p>
+
+<p><b>Состав и шкалу школьного экзамена я тоже не называю.</b> Они устанавливаются на каждый год, и статья с числами устареет быстрее, чем вы её откроете.</p>
+
+<p>Это не отговорка, а расчёт на то, что вы придёте за ответом через полгода или через год. Числа к тому времени поменяются, а логика двух документов останется прежней.</p>
+
+<p>И третье, о чём спрашивают: какой ступени сертификата «равен» школьный экзамен. Такой величины нет, об этом у нас написано подробно, и выдумывать её я не стану.</p>
+
+<h2>Чего в статье нет <span class="italic">намеренно</span></h2>
+
+<ul class="ks-list">
+  <li><b>Состава, шкалы и числа заданий школьного экзамена.</b> Их задают официальные документы на текущий год.</li>
+  <li><b>Утверждений про ОГЭ по китайскому.</b> Подтвердить их нечем, поэтому в статье только отказ и совет, где проверить.</li>
+  <li><b>Таблицы соответствия ступеней и школьных баллов.</b> Её не существует, и об этом у нас есть отдельный разбор.</li>
+  <li><b>Требований конкретных вузов и программ.</b> У каждой свои правила приёма, и меняются они чаще, чем статьи.</li>
+  <li><b>Порядка поступления после колледжа.</b> Его устанавливает вуз, и спрашивать нужно в его приёмной комиссии.</li>
+</ul>
+
+<p>Про поступление после колледжа добавлю только одно: именно с этим вопросом чаще всего приходят в последний момент, когда правила уже объявлены и менять подготовку поздно. Спрашивать стоит за год.</p>
+
+<p>И про сам поиск ответа. Всё, что касается правил приёма, стоит проверять в двух местах: на странице конкретной программы и в своей школе. Третьего надёжного источника здесь нет.</p>
+
+<p>Список получился длинным, и это честнее, чем короткая статья с выдуманной точностью. Про экзамены вокруг поступления вообще много текстов, которые выглядят уверенно, а опираются на прошлогодние правила.</p>
+
+<h2>Частые вопросы <span class="italic">(FAQ)</span></h2>
+
+<div class="ksfaq">
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Какой HSK нужен, чтобы сдать школьный экзамен по китайскому?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Прямого соответствия между ступенями сертификата и школьным экзаменом не существует, и называть ступень я не стану: это были бы выдуманные цифры. Школьный экзамен проверяет школьную программу, а сертификат — свой объявленный список, и совпадают они только частично. Почему единой таблицы нет, у нас разобрано отдельно.</p></div>
+  </details>
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Зачем сдавать ЕГЭ по китайскому при поступлении?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Затем, что в конкурс российского вуза идут школьные баллы, а не сертификат. Если направление связано с языком и китайский можно сдать как профильный предмет, это обычно выгоднее: материал вы и так учите, а балл идёт в зачёт. Какие предметы принимает конкретная программа, смотрите в её правилах приёма.</p></div>
+  </details>
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Засчитывается ли сертификат вместо школьного экзамена?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Нет. Это документы разных систем: один выдаёт международный экзаменационный центр, другой относится к российской школе. Обратное тоже верно — школьные баллы не заменяют сертификат там, где просят его.</p></div>
+  </details>
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Что нужно, чтобы поступить на китайское направление после колледжа?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Правила приёма после колледжа устанавливает сам вуз, и они различаются: где-то сдают вступительные испытания вуза, где-то школьные экзамены. Единого ответа нет, и выдумывать его я не стану — спрашивайте в приёмной комиссии той программы, куда собираетесь.</p></div>
+  </details>
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Проводится ли ОГЭ по китайскому языку?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Подтвердить это я не могу: в наших материалах таких данных нет, а утверждать наугад не стану. Состав школьных экзаменов по языкам задаётся официальными документами на текущий учебный год — проверять нужно там и в своей школе, а не в статьях.</p></div>
+  </details>
+  <details class="ksfaq-i">
+    <summary class="ksfaq-q"><span>Можно ли готовиться к обоим экзаменам сразу?</span><i class="ksfaq-chev"></i></summary>
+    <div class="ksfaq-a"><p>Частично. Запас слов работает на оба, чтение — наполовину, а форматы заданий не переносятся вовсе. На практике разумнее идти по очереди: сначала тот экзамен, который ближе по сроку, потом второй.</p></div>
+  </details>
+</div>
+
+<p>И ещё одно, о чём спрашивают родители девятиклассников. Если до выпуска далеко, спешить с сертификатом незачем: он не пропадёт, но и преимущества, полученного слишком рано, тоже не даст.</p>
+
+<p>И напоследок то, что важнее всех различий выше. Вопрос «какой экзамен сдавать» почти всегда задают раньше, чем вопрос «куда я поступаю», — и именно поэтому теряют год. Сначала выясните, кто будет читать ваши документы; экзамен из этого следует сам. Если хотите разобрать свой случай, <a href="#popup:zayavka">приходите на бесплатный урок</a>: посмотрим, куда вы идёте, и соберём план под это.</p>
+
+<h2>Источники</h2>
+
+<ul class="ks-list ks-src">
+  <li><b>Устройство международного экзамена</b> — шесть ступеней и порог в 60 процентов — по нашим разборам системы оценки.</li>
+  <li><b>Различие двух документов и то, что из подготовки переносится</b> — наша практика работы со школьниками и их семьями.</li>
+  <li><b>Состава и шкалы школьного экзамена не привожу:</b> они задаются официальными документами на текущий учебный год.</li>
+  <li><b>Про ОГЭ по китайскому ничего не утверждаю:</b> подтвердить нечем.</li>
+  <li><b>Таблицы соответствия ступеней и школьных баллов не привожу:</b> её не существует, этому посвящена отдельная наша статья.</li>
+  <li><b>Случаи с ученицей и школьником</b> взяты из занятий Kitai School; имён и названий учебных заведений не привожу.</li>
+</ul>
+
+</article>
+<aside id="ks-side">
+  <div class="side-card">
+    <div class="side-h">Разделы</div>
+    <a class="side-link" href="https://kitai-school.ru/onlayn-kursy-kitayskogo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Онлайн-курсы</a>
+    <a class="side-link" href="https://kitai-school.ru/hsk-exam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Экзамены HSK</a>
+    <a class="side-link" href="https://kitai-school.ru/kitayskiy-dlya-detey" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15a4 4 0 0 0 7 0"/></svg>Китайский детям</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-indiv" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Индивидуально</a>
+    <a class="side-link" href="https://kitai-school.ru/ks-university" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>Учёба в Китае</a>
+    <p class="side-note">Школьный экзамен — ключ к российскому вузу, сертификат — к китайскому</p>
+    <a class="side-btn" href="#popup:zayavka">Пробный урок →</a>
+  </div>
+</aside>
+</main>
+<script>
+/* Kitai School — sticky-сайдбар (как на «Сроки», но самовосстанавливающийся):
+   снимаем overflow/transform/filter у ВСЕХ предков (до <html>), которые ломают
+   position:sticky. Повторяем несколько раз, т.к. Tilda применяет стили после
+   загрузки. Работает только на ПК; на мобиле сайдбар обычный. */
+(function(){
+  function fix(){
+    if (window.innerWidth <= 900) return;
+    var side = document.getElementById('ks-side'); if (!side) return;
+    var el = side.parentElement;
+    while (el) {
+      var s = getComputedStyle(el);
+      if (/(auto|hidden|scroll|clip)/.test(s.overflow + s.overflowX + s.overflowY)) {
+        el.style.setProperty('overflow','visible','important');
+        el.style.setProperty('overflow-x','visible','important');
+        el.style.setProperty('overflow-y','visible','important');
+      }
+      if (s.transform !== 'none') el.style.setProperty('transform','none','important');
+      if (s.filter !== 'none') el.style.setProperty('filter','none','important');
+      if (s.perspective !== 'none') el.style.setProperty('perspective','none','important');
+      el = el.parentElement;
+    }
+  }
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+  window.addEventListener('load', fix);
+  [150,500,1200,2500].forEach(function(t){ setTimeout(fix, t); });
+  window.addEventListener('resize', fix);
+})();
+</script>
+</div>
