@@ -12,8 +12,8 @@ OUT = "chto-daet-hsk-4.html"
 SLUG = "chto-daet-hsk-4"
 U = "https://kitai-school.ru/article/"
 
-HERO = "assets/dyt-hero.png"
-FIG = "assets/dyt-info.png"
+HERO = "https://static.tildacdn.com/tila3237-3033-4361-a162-373465666230/dyt-hero.png"
+FIG = "https://static.tildacdn.com/tila3935-3637-4637-b765-323966333234/dyt-info.png"
 HERO_ALT = ("Две шкалы одна под другой: по номеру ступени четвёртый уровень "
             "выглядит как две трети пути, а по числу выученных слов это только "
             "тридцать семь процентов")
